@@ -1,0 +1,161 @@
+{
+  "artifact_id": "e37_evidence_sprint_focus_recommendation",
+  "cluster_scores": [
+    {
+      "Y-star-gov_alignment_risk": [
+        "evidence-boundary risk",
+        "terminology risk"
+      ],
+      "buyer_language_clarity": "higher",
+      "cluster": "AI productivity / workflow / toolchain",
+      "commercial_plausibility": "higher",
+      "evidence_readiness": "higher",
+      "expert_review_usefulness": "high",
+      "gov_mcp_execution_risk": [
+        "automated outreach/publication without owner approval"
+      ],
+      "no_fake_evidence_risk": "controlled by public/customer/paid-signal boundary",
+      "owner_burden": "low for prepared packet; owner approval required before E38 execution",
+      "public_read_only_evidence_availability": "high",
+      "score": 75,
+      "strategic_upside": "medium",
+      "taxonomy_confidence": "high"
+    },
+    {
+      "Y-star-gov_alignment_risk": [
+        "evidence-boundary risk",
+        "terminology risk"
+      ],
+      "buyer_language_clarity": "higher",
+      "cluster": "enterprise / professional AI transformation",
+      "commercial_plausibility": "higher",
+      "evidence_readiness": "higher",
+      "expert_review_usefulness": "high",
+      "gov_mcp_execution_risk": [
+        "automated outreach/publication without owner approval"
+      ],
+      "no_fake_evidence_risk": "controlled by public/customer/paid-signal boundary",
+      "owner_burden": "low for prepared packet; owner approval required before E38 execution",
+      "public_read_only_evidence_availability": "high",
+      "score": 75,
+      "strategic_upside": "medium",
+      "taxonomy_confidence": "high"
+    },
+    {
+      "Y-star-gov_alignment_risk": [
+        "no conflict"
+      ],
+      "buyer_language_clarity": "medium",
+      "cluster": "education / creator / family / small business",
+      "commercial_plausibility": "uncertain",
+      "evidence_readiness": "watchlist",
+      "expert_review_usefulness": "high",
+      "gov_mcp_execution_risk": [],
+      "no_fake_evidence_risk": "controlled by public/customer/paid-signal boundary",
+      "owner_burden": "low for prepared packet; owner approval required before E38 execution",
+      "public_read_only_evidence_availability": "high",
+      "score": 20,
+      "strategic_upside": "medium",
+      "taxonomy_confidence": "high"
+    },
+    {
+      "Y-star-gov_alignment_risk": [
+        "evidence-boundary risk",
+        "terminology risk"
+      ],
+      "buyer_language_clarity": "medium",
+      "cluster": "governance / trust / audit / legitimacy",
+      "commercial_plausibility": "uncertain",
+      "evidence_readiness": "watchlist",
+      "expert_review_usefulness": "high",
+      "gov_mcp_execution_risk": [],
+      "no_fake_evidence_risk": "controlled by public/customer/paid-signal boundary",
+      "owner_burden": "low for prepared packet; owner approval required before E38 execution",
+      "public_read_only_evidence_availability": "high",
+      "score": 20,
+      "strategic_upside": "high",
+      "taxonomy_confidence": "high"
+    },
+    {
+      "Y-star-gov_alignment_risk": [
+        "no conflict"
+      ],
+      "buyer_language_clarity": "medium",
+      "cluster": "human-life / sleep / health / home",
+      "commercial_plausibility": "uncertain",
+      "evidence_readiness": "low",
+      "expert_review_usefulness": "high",
+      "gov_mcp_execution_risk": [],
+      "no_fake_evidence_risk": "controlled by public/customer/paid-signal boundary",
+      "owner_burden": "low for prepared packet; owner approval required before E38 execution",
+      "public_read_only_evidence_availability": "medium",
+      "score": 10,
+      "strategic_upside": "medium",
+      "taxonomy_confidence": "high"
+    },
+    {
+      "Y-star-gov_alignment_risk": [
+        "evidence-boundary risk",
+        "governance-authority risk",
+        "contract-lifecycle risk"
+      ],
+      "buyer_language_clarity": "medium",
+      "cluster": "agent economy / autonomous company",
+      "commercial_plausibility": "uncertain",
+      "evidence_readiness": "low",
+      "expert_review_usefulness": "high",
+      "gov_mcp_execution_risk": [
+        "agent-to-agent payment or external action execution"
+      ],
+      "no_fake_evidence_risk": "controlled by public/customer/paid-signal boundary",
+      "owner_burden": "low for prepared packet; owner approval required before E38 execution",
+      "public_read_only_evidence_availability": "medium",
+      "score": -5,
+      "strategic_upside": "high",
+      "taxonomy_confidence": "high"
+    },
+    {
+      "Y-star-gov_alignment_risk": [
+        "governance-authority risk",
+        "contract-lifecycle risk"
+      ],
+      "buyer_language_clarity": "medium",
+      "cluster": "hardware + AI / physical interface",
+      "commercial_plausibility": "uncertain",
+      "evidence_readiness": "low",
+      "expert_review_usefulness": "high",
+      "gov_mcp_execution_risk": [
+        "physical-world actuation"
+      ],
+      "no_fake_evidence_risk": "controlled by public/customer/paid-signal boundary",
+      "owner_burden": "low for prepared packet; owner approval required before E38 execution",
+      "public_read_only_evidence_availability": "medium",
+      "score": -5,
+      "strategic_upside": "medium",
+      "taxonomy_confidence": "high"
+    }
+  ],
+  "final_product_selected": false,
+  "generated_at": "2026-05-05T00:00:01Z",
+  "high_imagination_clusters_to_preserve": [
+    "agent economy / autonomous company",
+    "hardware + AI / physical interface",
+    "human-life / sleep / health / home"
+  ],
+  "parked_clusters": [
+    "hardware + AI / physical interface until physical actuation is out-of-scope and evidence path is clearer"
+  ],
+  "primary_evidence_sprint_clusters": [
+    "AI productivity / workflow / toolchain",
+    "enterprise / professional AI transformation"
+  ],
+  "ranking_correction": "E36 near-term buckets were repaired by actual domain/name; AI productivity and enterprise remain top only after selecting semantic-clean opportunities, not inherited bucket membership.",
+  "reason_not_customer_validation": "No reviewer or customer is contacted in E37.",
+  "reason_not_final_product_selection": "E37 selects evidence focus only; products/routes remain hypotheses until E38 evidence and owner decision.",
+  "reason_not_paid_signal": "No payment, offer acceptance, or buyer commitment occurs in E37.",
+  "secondary_watchlist_clusters": [
+    "governance / trust / audit / legitimacy",
+    "education / creator / family / small business"
+  ],
+  "taxonomy_repair_changed_ranking": true
+}

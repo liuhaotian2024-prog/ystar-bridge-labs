@@ -1,0 +1,479 @@
+{
+  "active_clusters": [
+    "AI productivity / workflow / toolchain",
+    "enterprise / professional AI transformation"
+  ],
+  "artifact_id": "e37_normalized_opportunity_clusters",
+  "clusters": [
+    {
+      "buyer_adopter_hypothesis": "households, wellness/care operators, health behavior reviewers",
+      "cluster": "human-life / sleep / health / home",
+      "domains": {
+        "health behavior change and care navigation": 3,
+        "home / family / environment / rituals": 4,
+        "human body / sleep / waking / energy": 4,
+        "human emotion / anxiety / motivation / loneliness / transition states": 4
+      },
+      "evidence_level_distribution": {
+        "0": 15
+      },
+      "gov_mcp_alignment_summary": {
+        "adapters": [],
+        "blocked": [],
+        "boundary": [
+          "no execution needed yet",
+          "Labs-only artifact"
+        ]
+      },
+      "governance_alignment_summary": {
+        "candidate": "",
+        "primitives": [
+          "no Y-star-gov primitive needed for E37 preflight"
+        ],
+        "risks": [
+          "no conflict"
+        ]
+      },
+      "historical_e35_categories": {
+        "agent_economy_autonomous_company": 1,
+        "ai_productivity_workflow": 4,
+        "education_creator_family_small_business": 1,
+        "enterprise_professional": 3,
+        "hardware_ai_hybrid": 3,
+        "human_life_home_health": 3
+      },
+      "next_evidence_type": "public behavior/product research and prototype-first internal simulation",
+      "opportunity_ids": [
+        "e35_opportunity_01",
+        "e35_opportunity_02",
+        "e35_opportunity_03",
+        "e35_opportunity_16",
+        "e35_opportunity_19",
+        "e35_opportunity_20",
+        "e35_opportunity_21",
+        "e35_opportunity_34",
+        "e35_opportunity_37",
+        "e35_opportunity_38",
+        "e35_opportunity_39",
+        "e35_opportunity_52",
+        "e35_opportunity_55",
+        "e35_opportunity_56",
+        "e35_opportunity_57"
+      ],
+      "opportunity_names": [
+        "human body / sleep / waking / energy opportunity 01",
+        "human emotion / anxiety / motivation / loneliness / transition states opportunity 02",
+        "home / family / environment / rituals opportunity 03",
+        "health behavior change and care navigation opportunity 16",
+        "human body / sleep / waking / energy opportunity 19",
+        "human emotion / anxiety / motivation / loneliness / transition states opportunity 20",
+        "home / family / environment / rituals opportunity 21",
+        "health behavior change and care navigation opportunity 34",
+        "human body / sleep / waking / energy opportunity 37",
+        "human emotion / anxiety / motivation / loneliness / transition states opportunity 38",
+        "home / family / environment / rituals opportunity 39",
+        "health behavior change and care navigation opportunity 52",
+        "human body / sleep / waking / energy opportunity 55",
+        "human emotion / anxiety / motivation / loneliness / transition states opportunity 56",
+        "home / family / environment / rituals opportunity 57"
+      ],
+      "reason": "preserve as high-imagination or capability-heavy watch area; not first sprint focus",
+      "route_status": "parked",
+      "taxonomy_confidence": "high"
+    },
+    {
+      "buyer_adopter_hypothesis": "students, creators, family operators, educators, small-business owners",
+      "cluster": "education / creator / family / small business",
+      "domains": {
+        "creator economy": 3,
+        "education / learning / student development": 4,
+        "local community coordination": 3,
+        "personal finance and household operations": 3,
+        "small business operations": 3
+      },
+      "evidence_level_distribution": {
+        "0": 16
+      },
+      "gov_mcp_alignment_summary": {
+        "adapters": [],
+        "blocked": [],
+        "boundary": [
+          "no execution needed yet",
+          "Labs-only artifact"
+        ]
+      },
+      "governance_alignment_summary": {
+        "candidate": "",
+        "primitives": [
+          "no Y-star-gov primitive needed for E37 preflight"
+        ],
+        "risks": [
+          "no conflict"
+        ]
+      },
+      "historical_e35_categories": {
+        "agent_economy_autonomous_company": 1,
+        "ai_productivity_workflow": 3,
+        "education_creator_family_small_business": 2,
+        "enterprise_professional": 4,
+        "hardware_ai_hybrid": 3,
+        "human_life_home_health": 3
+      },
+      "next_evidence_type": "public read-only research or owner-approved review prep",
+      "opportunity_ids": [
+        "e35_opportunity_04",
+        "e35_opportunity_07",
+        "e35_opportunity_09",
+        "e35_opportunity_17",
+        "e35_opportunity_18",
+        "e35_opportunity_22",
+        "e35_opportunity_25",
+        "e35_opportunity_27",
+        "e35_opportunity_35",
+        "e35_opportunity_36",
+        "e35_opportunity_40",
+        "e35_opportunity_43",
+        "e35_opportunity_45",
+        "e35_opportunity_53",
+        "e35_opportunity_54",
+        "e35_opportunity_58"
+      ],
+      "opportunity_names": [
+        "education / learning / student development opportunity 04",
+        "small business operations opportunity 07",
+        "creator economy opportunity 09",
+        "local community coordination opportunity 17",
+        "personal finance and household operations opportunity 18",
+        "education / learning / student development opportunity 22",
+        "small business operations opportunity 25",
+        "creator economy opportunity 27",
+        "local community coordination opportunity 35",
+        "personal finance and household operations opportunity 36",
+        "education / learning / student development opportunity 40",
+        "small business operations opportunity 43",
+        "creator economy opportunity 45",
+        "local community coordination opportunity 53",
+        "personal finance and household operations opportunity 54",
+        "education / learning / student development opportunity 58"
+      ],
+      "reason": "strategically relevant but should not outrank active clusters until evidence improves",
+      "route_status": "watchlist",
+      "taxonomy_confidence": "high"
+    },
+    {
+      "buyer_adopter_hypothesis": "AI-heavy operators, founders, workflow owners, productivity power users",
+      "cluster": "AI productivity / workflow / toolchain",
+      "domains": {
+        "AI tool productivity / AI workflow yield": 4
+      },
+      "evidence_level_distribution": {
+        "1": 4
+      },
+      "gov_mcp_alignment_summary": {
+        "adapters": [
+          "workflow/evidence collection adapter candidate after route selection"
+        ],
+        "blocked": [
+          "automated outreach/publication without owner approval"
+        ],
+        "boundary": [
+          "Labs-only artifact in E37",
+          "can be governed by existing gov_check/gov_enforce if automated action is later approved",
+          "requires contract load/validate/activate before executable route"
+        ]
+      },
+      "governance_alignment_summary": {
+        "candidate": "",
+        "primitives": [
+          "existing IntentContract semantics if evidence route becomes executable",
+          "existing CIEU semantics for governed action evidence",
+          "existing trust hierarchy semantics"
+        ],
+        "risks": [
+          "evidence-boundary risk",
+          "terminology risk"
+        ]
+      },
+      "historical_e35_categories": {
+        "ai_productivity_workflow": 1,
+        "enterprise_professional": 1,
+        "hardware_ai_hybrid": 1,
+        "human_life_home_health": 1
+      },
+      "next_evidence_type": "public read-only research plus optional expert review prep",
+      "opportunity_ids": [
+        "e35_opportunity_05",
+        "e35_opportunity_23",
+        "e35_opportunity_41",
+        "e35_opportunity_59"
+      ],
+      "opportunity_names": [
+        "AI tool productivity / AI workflow yield opportunity 05",
+        "AI tool productivity / AI workflow yield opportunity 23",
+        "AI tool productivity / AI workflow yield opportunity 41",
+        "AI tool productivity / AI workflow yield opportunity 59"
+      ],
+      "reason": "taxonomy-clean enough for first evidence sprint planning, not final route",
+      "route_status": "active",
+      "taxonomy_confidence": "high"
+    },
+    {
+      "buyer_adopter_hypothesis": "enterprise AI leads, professional services operators, implementation consultants",
+      "cluster": "enterprise / professional AI transformation",
+      "domains": {
+        "enterprise AI transformation": 3,
+        "founder / executive decision-making": 4,
+        "professional services": 3
+      },
+      "evidence_level_distribution": {
+        "2": 10
+      },
+      "gov_mcp_alignment_summary": {
+        "adapters": [
+          "workflow/evidence collection adapter candidate after route selection"
+        ],
+        "blocked": [
+          "automated outreach/publication without owner approval"
+        ],
+        "boundary": [
+          "Labs-only artifact in E37",
+          "can be governed by existing gov_check/gov_enforce if automated action is later approved",
+          "requires contract load/validate/activate before executable route"
+        ]
+      },
+      "governance_alignment_summary": {
+        "candidate": "",
+        "primitives": [
+          "existing IntentContract semantics if evidence route becomes executable",
+          "existing CIEU semantics for governed action evidence",
+          "existing trust hierarchy semantics"
+        ],
+        "risks": [
+          "evidence-boundary risk",
+          "terminology risk"
+        ]
+      },
+      "historical_e35_categories": {
+        "agent_economy_autonomous_company": 1,
+        "ai_productivity_workflow": 1,
+        "education_creator_family_small_business": 2,
+        "enterprise_professional": 2,
+        "hardware_ai_hybrid": 1,
+        "human_life_home_health": 3
+      },
+      "next_evidence_type": "public read-only research plus expert review prep",
+      "opportunity_ids": [
+        "e35_opportunity_06",
+        "e35_opportunity_08",
+        "e35_opportunity_10",
+        "e35_opportunity_24",
+        "e35_opportunity_26",
+        "e35_opportunity_28",
+        "e35_opportunity_42",
+        "e35_opportunity_44",
+        "e35_opportunity_46",
+        "e35_opportunity_60"
+      ],
+      "opportunity_names": [
+        "founder / executive decision-making opportunity 06",
+        "professional services opportunity 08",
+        "enterprise AI transformation opportunity 10",
+        "founder / executive decision-making opportunity 24",
+        "professional services opportunity 26",
+        "enterprise AI transformation opportunity 28",
+        "founder / executive decision-making opportunity 42",
+        "professional services opportunity 44",
+        "enterprise AI transformation opportunity 46",
+        "founder / executive decision-making opportunity 60"
+      ],
+      "reason": "taxonomy-clean enough for first evidence sprint planning, not final route",
+      "route_status": "active",
+      "taxonomy_confidence": "high"
+    },
+    {
+      "buyer_adopter_hypothesis": "agent platform builders, autonomous company operators, governance/security practitioners",
+      "cluster": "agent economy / autonomous company",
+      "domains": {
+        "agent-to-agent economy": 3,
+        "autonomous company operations": 3
+      },
+      "evidence_level_distribution": {
+        "1": 6
+      },
+      "gov_mcp_alignment_summary": {
+        "adapters": [
+          "agent-to-agent delegation/commerce adapter candidate"
+        ],
+        "blocked": [
+          "agent-to-agent payment or external action execution"
+        ],
+        "boundary": [
+          "blocked until owner approval",
+          "requires delegation/escalation",
+          "requires CIEU report/verify/audit",
+          "requires new MCP adapter candidate"
+        ]
+      },
+      "governance_alignment_summary": {
+        "candidate": "agentic commerce / non-human workforce authorization primitive",
+        "primitives": [
+          "existing IntentContract semantics",
+          "existing CIEU semantics",
+          "existing delegation semantics",
+          "existing contract lifecycle semantics",
+          "candidate new primitive"
+        ],
+        "risks": [
+          "evidence-boundary risk",
+          "governance-authority risk",
+          "contract-lifecycle risk"
+        ]
+      },
+      "historical_e35_categories": {
+        "agent_economy_autonomous_company": 2,
+        "education_creator_family_small_business": 2,
+        "human_life_home_health": 2
+      },
+      "next_evidence_type": "expert review prep first; public research as support",
+      "opportunity_ids": [
+        "e35_opportunity_11",
+        "e35_opportunity_12",
+        "e35_opportunity_29",
+        "e35_opportunity_30",
+        "e35_opportunity_47",
+        "e35_opportunity_48"
+      ],
+      "opportunity_names": [
+        "agent-to-agent economy opportunity 11",
+        "autonomous company operations opportunity 12",
+        "agent-to-agent economy opportunity 29",
+        "autonomous company operations opportunity 30",
+        "agent-to-agent economy opportunity 47",
+        "autonomous company operations opportunity 48"
+      ],
+      "reason": "preserve as high-imagination or capability-heavy watch area; not first sprint focus",
+      "route_status": "parked",
+      "taxonomy_confidence": "high"
+    },
+    {
+      "buyer_adopter_hypothesis": "hardware founders, smart-home or care product owners, physical-interface integrators",
+      "cluster": "hardware + AI / physical interface",
+      "domains": {
+        "hardware + AI hybrid products": 3
+      },
+      "evidence_level_distribution": {
+        "0": 3
+      },
+      "gov_mcp_alignment_summary": {
+        "adapters": [
+          "hardware simulator or physical-interface adapter candidate"
+        ],
+        "blocked": [
+          "physical-world actuation"
+        ],
+        "boundary": [
+          "no execution needed yet",
+          "unsafe / must not execute physical action",
+          "owner approval required before execution"
+        ]
+      },
+      "governance_alignment_summary": {
+        "candidate": "physical-world delegated action legitimacy primitive",
+        "primitives": [
+          "unclear / owner review required"
+        ],
+        "risks": [
+          "governance-authority risk",
+          "contract-lifecycle risk"
+        ]
+      },
+      "historical_e35_categories": {
+        "agent_economy_autonomous_company": 1,
+        "ai_productivity_workflow": 1,
+        "education_creator_family_small_business": 1
+      },
+      "next_evidence_type": "public product/source research; physical execution blocked",
+      "opportunity_ids": [
+        "e35_opportunity_13",
+        "e35_opportunity_31",
+        "e35_opportunity_49"
+      ],
+      "opportunity_names": [
+        "hardware + AI hybrid products opportunity 13",
+        "hardware + AI hybrid products opportunity 31",
+        "hardware + AI hybrid products opportunity 49"
+      ],
+      "reason": "preserve as high-imagination or capability-heavy watch area; not first sprint focus",
+      "route_status": "parked",
+      "taxonomy_confidence": "high"
+    },
+    {
+      "buyer_adopter_hypothesis": "AI governance/security reviewers, compliance operators, trust infrastructure builders",
+      "cluster": "governance / trust / audit / legitimacy",
+      "domains": {
+        "insurance / liability / audit / trust systems": 3,
+        "social institutions / proof / certification / legitimacy": 3
+      },
+      "evidence_level_distribution": {
+        "1": 6
+      },
+      "gov_mcp_alignment_summary": {
+        "adapters": [],
+        "blocked": [],
+        "boundary": [
+          "no execution needed yet",
+          "Labs-only artifact"
+        ]
+      },
+      "governance_alignment_summary": {
+        "candidate": "",
+        "primitives": [
+          "existing IntentContract semantics if evidence route becomes executable",
+          "existing CIEU semantics for governed action evidence",
+          "existing trust hierarchy semantics"
+        ],
+        "risks": [
+          "evidence-boundary risk",
+          "terminology risk"
+        ]
+      },
+      "historical_e35_categories": {
+        "agent_economy_autonomous_company": 2,
+        "ai_productivity_workflow": 2,
+        "education_creator_family_small_business": 2
+      },
+      "next_evidence_type": "public read-only research plus governance practitioner review prep",
+      "opportunity_ids": [
+        "e35_opportunity_14",
+        "e35_opportunity_15",
+        "e35_opportunity_32",
+        "e35_opportunity_33",
+        "e35_opportunity_50",
+        "e35_opportunity_51"
+      ],
+      "opportunity_names": [
+        "insurance / liability / audit / trust systems opportunity 14",
+        "social institutions / proof / certification / legitimacy opportunity 15",
+        "insurance / liability / audit / trust systems opportunity 32",
+        "social institutions / proof / certification / legitimacy opportunity 33",
+        "insurance / liability / audit / trust systems opportunity 50",
+        "social institutions / proof / certification / legitimacy opportunity 51"
+      ],
+      "reason": "strategically relevant but should not outrank active clusters until evidence improves",
+      "route_status": "watchlist",
+      "taxonomy_confidence": "high"
+    }
+  ],
+  "final_product_selected": false,
+  "generated_at": "2026-05-05T00:00:01Z",
+  "normalization_source_of_truth": "actual opportunity domain_universe and name, with historical E35/E36 labels retained as metadata",
+  "parked_clusters": [
+    "human-life / sleep / health / home",
+    "agent economy / autonomous company",
+    "hardware + AI / physical interface"
+  ],
+  "watchlist_clusters": [
+    "education / creator / family / small business",
+    "governance / trust / audit / legitimacy"
+  ]
+}

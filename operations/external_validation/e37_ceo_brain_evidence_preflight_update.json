@@ -1,0 +1,81 @@
+{
+  "Y-star-gov_alignment": {
+    "Y-star-gov_files_modified": false,
+    "primitive_candidates": [
+      "agentic commerce / non-human workforce authorization primitive",
+      "physical-world delegated action legitimacy primitive"
+    ],
+    "primitives_used": [
+      "candidate new primitive",
+      "existing CIEU semantics",
+      "existing CIEU semantics for governed action evidence",
+      "existing IntentContract semantics",
+      "existing IntentContract semantics if evidence route becomes executable",
+      "existing contract lifecycle semantics",
+      "existing delegation semantics",
+      "existing trust hierarchy semantics",
+      "no Y-star-gov primitive needed for E37 preflight",
+      "unclear / owner review required"
+    ],
+    "risks": [
+      "contract-lifecycle risk",
+      "evidence-boundary risk",
+      "governance-authority risk",
+      "no conflict",
+      "terminology risk"
+    ],
+    "routes_aligned": 7
+  },
+  "artifact_id": "e37_ceo_brain_evidence_preflight_update",
+  "canonical_learning_promoted": false,
+  "customer_validation_claimed": false,
+  "expert_review_route_readiness": "prepared_unsent",
+  "gov_mcp_alignment": {
+    "adapter_candidates": [
+      "agent-to-agent delegation/commerce adapter candidate",
+      "hardware simulator or physical-interface adapter candidate",
+      "workflow/evidence collection adapter candidate after route selection"
+    ],
+    "blocked_actions": [
+      "agent-to-agent payment or external action execution",
+      "automated outreach/publication without owner approval",
+      "physical-world actuation"
+    ],
+    "execution_boundary": "Labs-only prepared artifacts in E37; any execution/contact remains blocked until owner approval",
+    "gov_mcp_files_modified": false,
+    "routes_aligned": 7
+  },
+  "mismatches_found": 32,
+  "next_decision_horizon": "E38_owner_approved_public_readonly_evidence_sprint_execution",
+  "normalized_cluster_map": {
+    "active": [
+      "AI productivity / workflow / toolchain",
+      "enterprise / professional AI transformation"
+    ],
+    "parked": [
+      "human-life / sleep / health / home",
+      "agent economy / autonomous company",
+      "hardware + AI / physical interface"
+    ],
+    "watchlist": [
+      "education / creator / family / small business",
+      "governance / trust / audit / legitimacy"
+    ]
+  },
+  "paid_signal_claimed": false,
+  "parked_clusters": [
+    "hardware + AI / physical interface until physical actuation is out-of-scope and evidence path is clearer"
+  ],
+  "preserved_high_imagination_clusters": [
+    "agent economy / autonomous company",
+    "hardware + AI / physical interface",
+    "human-life / sleep / health / home"
+  ],
+  "public_readonly_route_readiness": "prepared_not_executed",
+  "recommended_evidence_sprint_focus": [
+    "AI productivity / workflow / toolchain",
+    "enterprise / professional AI transformation"
+  ],
+  "taxonomy_repair_result": "passed",
+  "updated_bottleneck": "execute owner-approved evidence sprint only after taxonomy-clean cluster focus and cross-repo boundary approval"
+}

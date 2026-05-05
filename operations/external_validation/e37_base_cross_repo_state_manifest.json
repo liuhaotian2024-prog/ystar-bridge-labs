@@ -1,0 +1,64 @@
+{
+  "E36_artifacts_found": true,
+  "Y-star-gov": {
+    "branch": "backflow/company-runtime-domain-pack",
+    "dirty_status": "",
+    "exists": true,
+    "head": "5f031f4be151b81ef1a1b1908a5c83c5420e8ce1",
+    "inspection_mode": "read_only",
+    "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+    "remote_tracking_head": "35d270c79f73fdd0bdf55ebdefe03fb4ccb2d397"
+  },
+  "Y-star-gov_files_modified": false,
+  "artifact_id": "e37_base_cross_repo_state_manifest",
+  "bridge_labs": {
+    "branch": "backflow/aiden-ceo-meeting-room",
+    "dirty_status": "",
+    "exists": true,
+    "head": "f0efa732b14c10e5c28bdb4401138849bdfce1af",
+    "inspection_mode": "primary_writable_via_bridge_only",
+    "path": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+    "remote_tracking_head": "f0efa732b14c10e5c28bdb4401138849bdfce1af"
+  },
+  "can_proceed_safely": true,
+  "cross_repo_alignment_artifacts_found": true,
+  "expected_bridge_labs_base_head": "f0efa732b14c10e5c28bdb4401138849bdfce1af",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "gov-mcp": {
+    "branch": "backflow/company-runtime-tools",
+    "dirty_status": "",
+    "exists": true,
+    "head": "4f758d9d4823eed108ae3d63be1f4db192a974d6",
+    "inspection_mode": "read_only",
+    "path": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+    "remote_tracking_head": "4f758d9d4823eed108ae3d63be1f4db192a974d6"
+  },
+  "gov_mcp_files_modified": false,
+  "no_rebuild_conventions_found": true,
+  "required_artifacts": [
+    {
+      "exists": true,
+      "path": "operations/external_validation/e36_czl_closure.json"
+    },
+    {
+      "exists": true,
+      "path": "operations/external_validation/e36_evidence_seeking_shortlist.json"
+    },
+    {
+      "exists": true,
+      "path": "operations/external_validation/e36_cross_repo_governance_primitive_alignment.json"
+    },
+    {
+      "exists": true,
+      "path": "operations/external_validation/e36_gov_mcp_execution_boundary_alignment.json"
+    },
+    {
+      "exists": true,
+      "path": "operations/external_validation/e35_cross_domain_opportunity_field.json"
+    },
+    {
+      "exists": true,
+      "path": "operations/external_validation/e35_cross_repo_governance_execution_alignment.json"
+    }
+  ]
+}

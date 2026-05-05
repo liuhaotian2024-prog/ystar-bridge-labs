@@ -1,0 +1,14 @@
+{
+  "E35_field_reused": true,
+  "E36_artifacts_reused": true,
+  "Y-star-gov_files_modified": false,
+  "artifact_id": "e37_no_rebuild_alignment_gate",
+  "examples_remained_probes": true,
+  "final_product_selected": false,
+  "gate_status": "passed",
+  "gov_mcp_files_modified": false,
+  "no_duplicate_governance_kernel_created": true,
+  "no_duplicate_mcp_execution_layer_created": true,
+  "no_second_ceo_brain_created": true,
+  "no_second_ceo_kg_created": true
+}

@@ -1,0 +1,967 @@
+{
+  "artifact_id": "e37_shortlist_taxonomy_repair",
+  "confidence_level": "high_after_repair",
+  "detected_taxonomy_issues": [
+    {
+      "actual_domain": "creator economy",
+      "historical_e35_category": "agent_economy_autonomous_company",
+      "issue_types": [
+        "cluster-label mismatch"
+      ],
+      "opportunity_id": "e35_opportunity_45",
+      "original_item_name": "creator economy opportunity 45",
+      "original_shortlist_bucket": "agent_economy_autonomous_company_opportunities",
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "actual_domain": "enterprise AI transformation",
+      "historical_e35_category": "agent_economy_autonomous_company",
+      "issue_types": [
+        "cluster-label mismatch"
+      ],
+      "opportunity_id": "e35_opportunity_46",
+      "original_item_name": "enterprise AI transformation opportunity 46",
+      "original_shortlist_bucket": "agent_economy_autonomous_company_opportunities",
+      "repaired_semantic_cluster": "enterprise / professional AI transformation"
+    },
+    {
+      "actual_domain": "hardware + AI hybrid products",
+      "historical_e35_category": "ai_productivity_workflow",
+      "issue_types": [
+        "cluster-label mismatch",
+        "AI productivity label used for non-AI-productivity opportunity"
+      ],
+      "opportunity_id": "e35_opportunity_13",
+      "original_item_name": "hardware + AI hybrid products opportunity 13",
+      "original_shortlist_bucket": "ai_productivity_opportunities",
+      "repaired_semantic_cluster": "hardware + AI / physical interface"
+    },
+    {
+      "actual_domain": "insurance / liability / audit / trust systems",
+      "historical_e35_category": "ai_productivity_workflow",
+      "issue_types": [
+        "cluster-label mismatch",
+        "AI productivity label used for non-AI-productivity opportunity"
+      ],
+      "opportunity_id": "e35_opportunity_14",
+      "original_item_name": "insurance / liability / audit / trust systems opportunity 14",
+      "original_shortlist_bucket": "ai_productivity_opportunities",
+      "repaired_semantic_cluster": "governance / trust / audit / legitimacy"
+    },
+    {
+      "actual_domain": "social institutions / proof / certification / legitimacy",
+      "historical_e35_category": "ai_productivity_workflow",
+      "issue_types": [
+        "cluster-label mismatch",
+        "AI productivity label used for non-AI-productivity opportunity"
+      ],
+      "opportunity_id": "e35_opportunity_15",
+      "original_item_name": "social institutions / proof / certification / legitimacy opportunity 15",
+      "original_shortlist_bucket": "ai_productivity_opportunities",
+      "repaired_semantic_cluster": "governance / trust / audit / legitimacy"
+    },
+    {
+      "actual_domain": "health behavior change and care navigation",
+      "historical_e35_category": "ai_productivity_workflow",
+      "issue_types": [
+        "cluster-label mismatch",
+        "AI productivity label used for non-AI-productivity opportunity"
+      ],
+      "opportunity_id": "e35_opportunity_16",
+      "original_item_name": "health behavior change and care navigation opportunity 16",
+      "original_shortlist_bucket": "ai_productivity_opportunities",
+      "repaired_semantic_cluster": "human-life / sleep / health / home"
+    },
+    {
+      "actual_domain": "human body / sleep / waking / energy",
+      "historical_e35_category": "human_life_home_health",
+      "issue_types": [
+        "cluster-label mismatch"
+      ],
+      "opportunity_id": "e35_opportunity_01",
+      "original_item_name": "human body / sleep / waking / energy opportunity 01",
+      "original_shortlist_bucket": "human_life_hardware_health_opportunities",
+      "repaired_semantic_cluster": "human-life / sleep / health / home"
+    },
+    {
+      "actual_domain": "human emotion / anxiety / motivation / loneliness / transition states",
+      "historical_e35_category": "human_life_home_health",
+      "issue_types": [
+        "cluster-label mismatch"
+      ],
+      "opportunity_id": "e35_opportunity_02",
+      "original_item_name": "human emotion / anxiety / motivation / loneliness / transition states opportunity 02",
+      "original_shortlist_bucket": "human_life_hardware_health_opportunities",
+      "repaired_semantic_cluster": "human-life / sleep / health / home"
+    },
+    {
+      "actual_domain": "home / family / environment / rituals",
+      "historical_e35_category": "human_life_home_health",
+      "issue_types": [
+        "cluster-label mismatch"
+      ],
+      "opportunity_id": "e35_opportunity_03",
+      "original_item_name": "home / family / environment / rituals opportunity 03",
+      "original_shortlist_bucket": "human_life_hardware_health_opportunities",
+      "repaired_semantic_cluster": "human-life / sleep / health / home"
+    },
+    {
+      "actual_domain": "education / learning / student development",
+      "historical_e35_category": "human_life_home_health",
+      "issue_types": [
+        "cluster-label mismatch"
+      ],
+      "opportunity_id": "e35_opportunity_04",
+      "original_item_name": "education / learning / student development opportunity 04",
+      "original_shortlist_bucket": "human_life_hardware_health_opportunities",
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "actual_domain": "local community coordination",
+      "historical_e35_category": "hardware_ai_hybrid",
+      "issue_types": [
+        "cluster-label mismatch"
+      ],
+      "opportunity_id": "e35_opportunity_53",
+      "original_item_name": "local community coordination opportunity 53",
+      "original_shortlist_bucket": "human_life_hardware_health_opportunities",
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "actual_domain": "personal finance and household operations",
+      "historical_e35_category": "hardware_ai_hybrid",
+      "issue_types": [
+        "cluster-label mismatch"
+      ],
+      "opportunity_id": "e35_opportunity_54",
+      "original_item_name": "personal finance and household operations opportunity 54",
+      "original_shortlist_bucket": "human_life_hardware_health_opportunities",
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "actual_domain": "hardware + AI hybrid products",
+      "historical_e35_category": "ai_productivity_workflow",
+      "issue_types": [
+        "cluster-label mismatch",
+        "hardware/consumer opportunity promoted into near-term route"
+      ],
+      "opportunity_id": "e35_opportunity_13",
+      "original_item_name": "hardware + AI hybrid products opportunity 13",
+      "original_shortlist_bucket": "near_term_evidence_ready_opportunities",
+      "repaired_semantic_cluster": "hardware + AI / physical interface"
+    },
+    {
+      "actual_domain": "insurance / liability / audit / trust systems",
+      "historical_e35_category": "ai_productivity_workflow",
+      "issue_types": [
+        "cluster-label mismatch"
+      ],
+      "opportunity_id": "e35_opportunity_14",
+      "original_item_name": "insurance / liability / audit / trust systems opportunity 14",
+      "original_shortlist_bucket": "near_term_evidence_ready_opportunities",
+      "repaired_semantic_cluster": "governance / trust / audit / legitimacy"
+    },
+    {
+      "actual_domain": "social institutions / proof / certification / legitimacy",
+      "historical_e35_category": "ai_productivity_workflow",
+      "issue_types": [
+        "cluster-label mismatch"
+      ],
+      "opportunity_id": "e35_opportunity_15",
+      "original_item_name": "social institutions / proof / certification / legitimacy opportunity 15",
+      "original_shortlist_bucket": "near_term_evidence_ready_opportunities",
+      "repaired_semantic_cluster": "governance / trust / audit / legitimacy"
+    },
+    {
+      "actual_domain": "local community coordination",
+      "historical_e35_category": "enterprise_professional",
+      "issue_types": [
+        "cluster-label mismatch"
+      ],
+      "opportunity_id": "e35_opportunity_35",
+      "original_item_name": "local community coordination opportunity 35",
+      "original_shortlist_bucket": "near_term_evidence_ready_opportunities",
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "actual_domain": "personal finance and household operations",
+      "historical_e35_category": "enterprise_professional",
+      "issue_types": [
+        "cluster-label mismatch"
+      ],
+      "opportunity_id": "e35_opportunity_36",
+      "original_item_name": "personal finance and household operations opportunity 36",
+      "original_shortlist_bucket": "near_term_evidence_ready_opportunities",
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "actual_domain": "human body / sleep / waking / energy",
+      "historical_e35_category": "enterprise_professional",
+      "issue_types": [
+        "cluster-label mismatch",
+        "hardware/consumer opportunity promoted into near-term route"
+      ],
+      "opportunity_id": "e35_opportunity_37",
+      "original_item_name": "human body / sleep / waking / energy opportunity 37",
+      "original_shortlist_bucket": "near_term_evidence_ready_opportunities",
+      "repaired_semantic_cluster": "human-life / sleep / health / home"
+    },
+    {
+      "issue_types": [
+        "duplicate opportunity reused in inconsistent categories"
+      ],
+      "opportunity_id": "e35_opportunity_45",
+      "original_shortlist_bucket": [
+        "agent_economy_autonomous_company_opportunities",
+        "high_imagination_high_upside_opportunities"
+      ],
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "issue_types": [
+        "duplicate opportunity reused in inconsistent categories"
+      ],
+      "opportunity_id": "e35_opportunity_46",
+      "original_shortlist_bucket": [
+        "agent_economy_autonomous_company_opportunities",
+        "high_imagination_high_upside_opportunities"
+      ],
+      "repaired_semantic_cluster": "enterprise / professional AI transformation"
+    },
+    {
+      "issue_types": [
+        "duplicate opportunity reused in inconsistent categories"
+      ],
+      "opportunity_id": "e35_opportunity_47",
+      "original_shortlist_bucket": [
+        "agent_economy_autonomous_company_opportunities",
+        "high_imagination_high_upside_opportunities"
+      ],
+      "repaired_semantic_cluster": "agent economy / autonomous company"
+    },
+    {
+      "issue_types": [
+        "duplicate opportunity reused in inconsistent categories"
+      ],
+      "opportunity_id": "e35_opportunity_13",
+      "original_shortlist_bucket": [
+        "ai_productivity_opportunities",
+        "near_term_evidence_ready_opportunities"
+      ],
+      "repaired_semantic_cluster": "hardware + AI / physical interface"
+    },
+    {
+      "issue_types": [
+        "duplicate opportunity reused in inconsistent categories"
+      ],
+      "opportunity_id": "e35_opportunity_14",
+      "original_shortlist_bucket": [
+        "ai_productivity_opportunities",
+        "near_term_evidence_ready_opportunities"
+      ],
+      "repaired_semantic_cluster": "governance / trust / audit / legitimacy"
+    },
+    {
+      "issue_types": [
+        "duplicate opportunity reused in inconsistent categories"
+      ],
+      "opportunity_id": "e35_opportunity_15",
+      "original_shortlist_bucket": [
+        "ai_productivity_opportunities",
+        "near_term_evidence_ready_opportunities"
+      ],
+      "repaired_semantic_cluster": "governance / trust / audit / legitimacy"
+    },
+    {
+      "issue_types": [
+        "duplicate opportunity reused in inconsistent categories"
+      ],
+      "opportunity_id": "e35_opportunity_35",
+      "original_shortlist_bucket": [
+        "commercially_plausible_service_first_opportunities",
+        "near_term_evidence_ready_opportunities"
+      ],
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "issue_types": [
+        "duplicate opportunity reused in inconsistent categories"
+      ],
+      "opportunity_id": "e35_opportunity_36",
+      "original_shortlist_bucket": [
+        "commercially_plausible_service_first_opportunities",
+        "near_term_evidence_ready_opportunities"
+      ],
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "issue_types": [
+        "duplicate opportunity reused in inconsistent categories"
+      ],
+      "opportunity_id": "e35_opportunity_37",
+      "original_shortlist_bucket": [
+        "commercially_plausible_service_first_opportunities",
+        "near_term_evidence_ready_opportunities"
+      ],
+      "repaired_semantic_cluster": "human-life / sleep / health / home"
+    },
+    {
+      "issue_types": [
+        "duplicate opportunity reused in inconsistent categories"
+      ],
+      "opportunity_id": "e35_opportunity_53",
+      "original_shortlist_bucket": [
+        "high_imagination_high_upside_opportunities",
+        "human_life_hardware_health_opportunities",
+        "opportunities_requiring_new_capability_before_validation",
+        "opportunities_to_reject_or_park"
+      ],
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "issue_types": [
+        "duplicate opportunity reused in inconsistent categories"
+      ],
+      "opportunity_id": "e35_opportunity_54",
+      "original_shortlist_bucket": [
+        "high_imagination_high_upside_opportunities",
+        "human_life_hardware_health_opportunities",
+        "opportunities_requiring_new_capability_before_validation",
+        "opportunities_to_reject_or_park"
+      ],
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "issue_types": [
+        "duplicate opportunity reused in inconsistent categories"
+      ],
+      "opportunity_id": "e35_opportunity_01",
+      "original_shortlist_bucket": [
+        "human_life_hardware_health_opportunities",
+        "opportunities_requiring_new_capability_before_validation"
+      ],
+      "repaired_semantic_cluster": "human-life / sleep / health / home"
+    },
+    {
+      "issue_types": [
+        "duplicate opportunity reused in inconsistent categories"
+      ],
+      "opportunity_id": "e35_opportunity_02",
+      "original_shortlist_bucket": [
+        "human_life_hardware_health_opportunities",
+        "opportunities_requiring_new_capability_before_validation"
+      ],
+      "repaired_semantic_cluster": "human-life / sleep / health / home"
+    },
+    {
+      "issue_types": [
+        "duplicate opportunity reused in inconsistent categories"
+      ],
+      "opportunity_id": "e35_opportunity_03",
+      "original_shortlist_bucket": [
+        "human_life_hardware_health_opportunities",
+        "opportunities_requiring_new_capability_before_validation"
+      ],
+      "repaired_semantic_cluster": "human-life / sleep / health / home"
+    }
+  ],
+  "evidence_route_design_unblocked": true,
+  "final_product_selected": false,
+  "generated_at": "2026-05-05T00:00:01Z",
+  "mismatches_found": 32,
+  "opportunities_excluded_from_first_evidence_sprint_due_to_taxonomy_uncertainty": [
+    "e35_opportunity_13",
+    "e35_opportunity_14",
+    "e35_opportunity_15",
+    "e35_opportunity_16",
+    "e35_opportunity_37"
+  ],
+  "opportunities_requiring_manual_owner_review": [
+    "e35_opportunity_01",
+    "e35_opportunity_02",
+    "e35_opportunity_03",
+    "e35_opportunity_13",
+    "e35_opportunity_14",
+    "e35_opportunity_15",
+    "e35_opportunity_35",
+    "e35_opportunity_36",
+    "e35_opportunity_37",
+    "e35_opportunity_45",
+    "e35_opportunity_46",
+    "e35_opportunity_47",
+    "e35_opportunity_53",
+    "e35_opportunity_54"
+  ],
+  "original_e36_cluster_mapping": [
+    {
+      "actual_domain": "creator economy",
+      "historical_e35_category": "agent_economy_autonomous_company",
+      "issue_types": [
+        "cluster-label mismatch"
+      ],
+      "opportunity_id": "e35_opportunity_45",
+      "original_item_name": "creator economy opportunity 45",
+      "original_shortlist_bucket": "agent_economy_autonomous_company_opportunities",
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "actual_domain": "enterprise AI transformation",
+      "historical_e35_category": "agent_economy_autonomous_company",
+      "issue_types": [
+        "cluster-label mismatch"
+      ],
+      "opportunity_id": "e35_opportunity_46",
+      "original_item_name": "enterprise AI transformation opportunity 46",
+      "original_shortlist_bucket": "agent_economy_autonomous_company_opportunities",
+      "repaired_semantic_cluster": "enterprise / professional AI transformation"
+    },
+    {
+      "actual_domain": "agent-to-agent economy",
+      "historical_e35_category": "agent_economy_autonomous_company",
+      "issue_types": [],
+      "opportunity_id": "e35_opportunity_47",
+      "original_item_name": "agent-to-agent economy opportunity 47",
+      "original_shortlist_bucket": "agent_economy_autonomous_company_opportunities",
+      "repaired_semantic_cluster": "agent economy / autonomous company"
+    },
+    {
+      "actual_domain": "autonomous company operations",
+      "historical_e35_category": "agent_economy_autonomous_company",
+      "issue_types": [],
+      "opportunity_id": "e35_opportunity_48",
+      "original_item_name": "autonomous company operations opportunity 48",
+      "original_shortlist_bucket": "agent_economy_autonomous_company_opportunities",
+      "repaired_semantic_cluster": "agent economy / autonomous company"
+    },
+    {
+      "actual_domain": "hardware + AI hybrid products",
+      "historical_e35_category": "ai_productivity_workflow",
+      "issue_types": [
+        "cluster-label mismatch",
+        "AI productivity label used for non-AI-productivity opportunity"
+      ],
+      "opportunity_id": "e35_opportunity_13",
+      "original_item_name": "hardware + AI hybrid products opportunity 13",
+      "original_shortlist_bucket": "ai_productivity_opportunities",
+      "repaired_semantic_cluster": "hardware + AI / physical interface"
+    },
+    {
+      "actual_domain": "insurance / liability / audit / trust systems",
+      "historical_e35_category": "ai_productivity_workflow",
+      "issue_types": [
+        "cluster-label mismatch",
+        "AI productivity label used for non-AI-productivity opportunity"
+      ],
+      "opportunity_id": "e35_opportunity_14",
+      "original_item_name": "insurance / liability / audit / trust systems opportunity 14",
+      "original_shortlist_bucket": "ai_productivity_opportunities",
+      "repaired_semantic_cluster": "governance / trust / audit / legitimacy"
+    },
+    {
+      "actual_domain": "social institutions / proof / certification / legitimacy",
+      "historical_e35_category": "ai_productivity_workflow",
+      "issue_types": [
+        "cluster-label mismatch",
+        "AI productivity label used for non-AI-productivity opportunity"
+      ],
+      "opportunity_id": "e35_opportunity_15",
+      "original_item_name": "social institutions / proof / certification / legitimacy opportunity 15",
+      "original_shortlist_bucket": "ai_productivity_opportunities",
+      "repaired_semantic_cluster": "governance / trust / audit / legitimacy"
+    },
+    {
+      "actual_domain": "health behavior change and care navigation",
+      "historical_e35_category": "ai_productivity_workflow",
+      "issue_types": [
+        "cluster-label mismatch",
+        "AI productivity label used for non-AI-productivity opportunity"
+      ],
+      "opportunity_id": "e35_opportunity_16",
+      "original_item_name": "health behavior change and care navigation opportunity 16",
+      "original_shortlist_bucket": "ai_productivity_opportunities",
+      "repaired_semantic_cluster": "human-life / sleep / health / home"
+    },
+    {
+      "actual_domain": "local community coordination",
+      "historical_e35_category": "enterprise_professional",
+      "issue_types": [],
+      "opportunity_id": "e35_opportunity_35",
+      "original_item_name": "local community coordination opportunity 35",
+      "original_shortlist_bucket": "commercially_plausible_service_first_opportunities",
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "actual_domain": "personal finance and household operations",
+      "historical_e35_category": "enterprise_professional",
+      "issue_types": [],
+      "opportunity_id": "e35_opportunity_36",
+      "original_item_name": "personal finance and household operations opportunity 36",
+      "original_shortlist_bucket": "commercially_plausible_service_first_opportunities",
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "actual_domain": "human body / sleep / waking / energy",
+      "historical_e35_category": "enterprise_professional",
+      "issue_types": [],
+      "opportunity_id": "e35_opportunity_37",
+      "original_item_name": "human body / sleep / waking / energy opportunity 37",
+      "original_shortlist_bucket": "commercially_plausible_service_first_opportunities",
+      "repaired_semantic_cluster": "human-life / sleep / health / home"
+    },
+    {
+      "actual_domain": "small business operations",
+      "historical_e35_category": "education_creator_family_small_business",
+      "issue_types": [],
+      "opportunity_id": "e35_opportunity_25",
+      "original_item_name": "small business operations opportunity 25",
+      "original_shortlist_bucket": "commercially_plausible_service_first_opportunities",
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "actual_domain": "professional services",
+      "historical_e35_category": "education_creator_family_small_business",
+      "issue_types": [],
+      "opportunity_id": "e35_opportunity_26",
+      "original_item_name": "professional services opportunity 26",
+      "original_shortlist_bucket": "commercially_plausible_service_first_opportunities",
+      "repaired_semantic_cluster": "enterprise / professional AI transformation"
+    },
+    {
+      "actual_domain": "creator economy",
+      "historical_e35_category": "agent_economy_autonomous_company",
+      "issue_types": [],
+      "opportunity_id": "e35_opportunity_45",
+      "original_item_name": "creator economy opportunity 45",
+      "original_shortlist_bucket": "high_imagination_high_upside_opportunities",
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "actual_domain": "enterprise AI transformation",
+      "historical_e35_category": "agent_economy_autonomous_company",
+      "issue_types": [],
+      "opportunity_id": "e35_opportunity_46",
+      "original_item_name": "enterprise AI transformation opportunity 46",
+      "original_shortlist_bucket": "high_imagination_high_upside_opportunities",
+      "repaired_semantic_cluster": "enterprise / professional AI transformation"
+    },
+    {
+      "actual_domain": "agent-to-agent economy",
+      "historical_e35_category": "agent_economy_autonomous_company",
+      "issue_types": [],
+      "opportunity_id": "e35_opportunity_47",
+      "original_item_name": "agent-to-agent economy opportunity 47",
+      "original_shortlist_bucket": "high_imagination_high_upside_opportunities",
+      "repaired_semantic_cluster": "agent economy / autonomous company"
+    },
+    {
+      "actual_domain": "local community coordination",
+      "historical_e35_category": "hardware_ai_hybrid",
+      "issue_types": [],
+      "opportunity_id": "e35_opportunity_53",
+      "original_item_name": "local community coordination opportunity 53",
+      "original_shortlist_bucket": "high_imagination_high_upside_opportunities",
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "actual_domain": "personal finance and household operations",
+      "historical_e35_category": "hardware_ai_hybrid",
+      "issue_types": [],
+      "opportunity_id": "e35_opportunity_54",
+      "original_item_name": "personal finance and household operations opportunity 54",
+      "original_shortlist_bucket": "high_imagination_high_upside_opportunities",
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "actual_domain": "human body / sleep / waking / energy",
+      "historical_e35_category": "human_life_home_health",
+      "issue_types": [
+        "cluster-label mismatch"
+      ],
+      "opportunity_id": "e35_opportunity_01",
+      "original_item_name": "human body / sleep / waking / energy opportunity 01",
+      "original_shortlist_bucket": "human_life_hardware_health_opportunities",
+      "repaired_semantic_cluster": "human-life / sleep / health / home"
+    },
+    {
+      "actual_domain": "human emotion / anxiety / motivation / loneliness / transition states",
+      "historical_e35_category": "human_life_home_health",
+      "issue_types": [
+        "cluster-label mismatch"
+      ],
+      "opportunity_id": "e35_opportunity_02",
+      "original_item_name": "human emotion / anxiety / motivation / loneliness / transition states opportunity 02",
+      "original_shortlist_bucket": "human_life_hardware_health_opportunities",
+      "repaired_semantic_cluster": "human-life / sleep / health / home"
+    },
+    {
+      "actual_domain": "home / family / environment / rituals",
+      "historical_e35_category": "human_life_home_health",
+      "issue_types": [
+        "cluster-label mismatch"
+      ],
+      "opportunity_id": "e35_opportunity_03",
+      "original_item_name": "home / family / environment / rituals opportunity 03",
+      "original_shortlist_bucket": "human_life_hardware_health_opportunities",
+      "repaired_semantic_cluster": "human-life / sleep / health / home"
+    },
+    {
+      "actual_domain": "education / learning / student development",
+      "historical_e35_category": "human_life_home_health",
+      "issue_types": [
+        "cluster-label mismatch"
+      ],
+      "opportunity_id": "e35_opportunity_04",
+      "original_item_name": "education / learning / student development opportunity 04",
+      "original_shortlist_bucket": "human_life_hardware_health_opportunities",
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "actual_domain": "local community coordination",
+      "historical_e35_category": "hardware_ai_hybrid",
+      "issue_types": [
+        "cluster-label mismatch"
+      ],
+      "opportunity_id": "e35_opportunity_53",
+      "original_item_name": "local community coordination opportunity 53",
+      "original_shortlist_bucket": "human_life_hardware_health_opportunities",
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "actual_domain": "personal finance and household operations",
+      "historical_e35_category": "hardware_ai_hybrid",
+      "issue_types": [
+        "cluster-label mismatch"
+      ],
+      "opportunity_id": "e35_opportunity_54",
+      "original_item_name": "personal finance and household operations opportunity 54",
+      "original_shortlist_bucket": "human_life_hardware_health_opportunities",
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "actual_domain": "hardware + AI hybrid products",
+      "historical_e35_category": "ai_productivity_workflow",
+      "issue_types": [
+        "cluster-label mismatch",
+        "hardware/consumer opportunity promoted into near-term route"
+      ],
+      "opportunity_id": "e35_opportunity_13",
+      "original_item_name": "hardware + AI hybrid products opportunity 13",
+      "original_shortlist_bucket": "near_term_evidence_ready_opportunities",
+      "repaired_semantic_cluster": "hardware + AI / physical interface"
+    },
+    {
+      "actual_domain": "insurance / liability / audit / trust systems",
+      "historical_e35_category": "ai_productivity_workflow",
+      "issue_types": [
+        "cluster-label mismatch"
+      ],
+      "opportunity_id": "e35_opportunity_14",
+      "original_item_name": "insurance / liability / audit / trust systems opportunity 14",
+      "original_shortlist_bucket": "near_term_evidence_ready_opportunities",
+      "repaired_semantic_cluster": "governance / trust / audit / legitimacy"
+    },
+    {
+      "actual_domain": "social institutions / proof / certification / legitimacy",
+      "historical_e35_category": "ai_productivity_workflow",
+      "issue_types": [
+        "cluster-label mismatch"
+      ],
+      "opportunity_id": "e35_opportunity_15",
+      "original_item_name": "social institutions / proof / certification / legitimacy opportunity 15",
+      "original_shortlist_bucket": "near_term_evidence_ready_opportunities",
+      "repaired_semantic_cluster": "governance / trust / audit / legitimacy"
+    },
+    {
+      "actual_domain": "local community coordination",
+      "historical_e35_category": "enterprise_professional",
+      "issue_types": [
+        "cluster-label mismatch"
+      ],
+      "opportunity_id": "e35_opportunity_35",
+      "original_item_name": "local community coordination opportunity 35",
+      "original_shortlist_bucket": "near_term_evidence_ready_opportunities",
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "actual_domain": "personal finance and household operations",
+      "historical_e35_category": "enterprise_professional",
+      "issue_types": [
+        "cluster-label mismatch"
+      ],
+      "opportunity_id": "e35_opportunity_36",
+      "original_item_name": "personal finance and household operations opportunity 36",
+      "original_shortlist_bucket": "near_term_evidence_ready_opportunities",
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "actual_domain": "human body / sleep / waking / energy",
+      "historical_e35_category": "enterprise_professional",
+      "issue_types": [
+        "cluster-label mismatch",
+        "hardware/consumer opportunity promoted into near-term route"
+      ],
+      "opportunity_id": "e35_opportunity_37",
+      "original_item_name": "human body / sleep / waking / energy opportunity 37",
+      "original_shortlist_bucket": "near_term_evidence_ready_opportunities",
+      "repaired_semantic_cluster": "human-life / sleep / health / home"
+    },
+    {
+      "actual_domain": "local community coordination",
+      "historical_e35_category": "hardware_ai_hybrid",
+      "issue_types": [],
+      "opportunity_id": "e35_opportunity_53",
+      "original_item_name": "local community coordination opportunity 53",
+      "original_shortlist_bucket": "opportunities_requiring_new_capability_before_validation",
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "actual_domain": "personal finance and household operations",
+      "historical_e35_category": "hardware_ai_hybrid",
+      "issue_types": [],
+      "opportunity_id": "e35_opportunity_54",
+      "original_item_name": "personal finance and household operations opportunity 54",
+      "original_shortlist_bucket": "opportunities_requiring_new_capability_before_validation",
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "actual_domain": "human body / sleep / waking / energy",
+      "historical_e35_category": "hardware_ai_hybrid",
+      "issue_types": [],
+      "opportunity_id": "e35_opportunity_55",
+      "original_item_name": "human body / sleep / waking / energy opportunity 55",
+      "original_shortlist_bucket": "opportunities_requiring_new_capability_before_validation",
+      "repaired_semantic_cluster": "human-life / sleep / health / home"
+    },
+    {
+      "actual_domain": "human body / sleep / waking / energy",
+      "historical_e35_category": "human_life_home_health",
+      "issue_types": [],
+      "opportunity_id": "e35_opportunity_01",
+      "original_item_name": "human body / sleep / waking / energy opportunity 01",
+      "original_shortlist_bucket": "opportunities_requiring_new_capability_before_validation",
+      "repaired_semantic_cluster": "human-life / sleep / health / home"
+    },
+    {
+      "actual_domain": "human emotion / anxiety / motivation / loneliness / transition states",
+      "historical_e35_category": "human_life_home_health",
+      "issue_types": [],
+      "opportunity_id": "e35_opportunity_02",
+      "original_item_name": "human emotion / anxiety / motivation / loneliness / transition states opportunity 02",
+      "original_shortlist_bucket": "opportunities_requiring_new_capability_before_validation",
+      "repaired_semantic_cluster": "human-life / sleep / health / home"
+    },
+    {
+      "actual_domain": "home / family / environment / rituals",
+      "historical_e35_category": "human_life_home_health",
+      "issue_types": [],
+      "opportunity_id": "e35_opportunity_03",
+      "original_item_name": "home / family / environment / rituals opportunity 03",
+      "original_shortlist_bucket": "opportunities_requiring_new_capability_before_validation",
+      "repaired_semantic_cluster": "human-life / sleep / health / home"
+    },
+    {
+      "actual_domain": "local community coordination",
+      "historical_e35_category": "hardware_ai_hybrid",
+      "issue_types": [],
+      "opportunity_id": "e35_opportunity_53",
+      "original_item_name": "local community coordination opportunity 53",
+      "original_shortlist_bucket": "opportunities_to_reject_or_park",
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    },
+    {
+      "actual_domain": "personal finance and household operations",
+      "historical_e35_category": "hardware_ai_hybrid",
+      "issue_types": [],
+      "opportunity_id": "e35_opportunity_54",
+      "original_item_name": "personal finance and household operations opportunity 54",
+      "original_shortlist_bucket": "opportunities_to_reject_or_park",
+      "repaired_semantic_cluster": "education / creator / family / small business"
+    }
+  ],
+  "repair_status": "passed",
+  "repaired_cluster_mapping": [
+    {
+      "cluster": "human-life / sleep / health / home",
+      "opportunity_ids": [
+        "e35_opportunity_01",
+        "e35_opportunity_02",
+        "e35_opportunity_03",
+        "e35_opportunity_16",
+        "e35_opportunity_19",
+        "e35_opportunity_20",
+        "e35_opportunity_21",
+        "e35_opportunity_34",
+        "e35_opportunity_37",
+        "e35_opportunity_38",
+        "e35_opportunity_39",
+        "e35_opportunity_52",
+        "e35_opportunity_55",
+        "e35_opportunity_56",
+        "e35_opportunity_57"
+      ],
+      "opportunity_names": [
+        "human body / sleep / waking / energy opportunity 01",
+        "human emotion / anxiety / motivation / loneliness / transition states opportunity 02",
+        "home / family / environment / rituals opportunity 03",
+        "health behavior change and care navigation opportunity 16",
+        "human body / sleep / waking / energy opportunity 19",
+        "human emotion / anxiety / motivation / loneliness / transition states opportunity 20",
+        "home / family / environment / rituals opportunity 21",
+        "health behavior change and care navigation opportunity 34",
+        "human body / sleep / waking / energy opportunity 37",
+        "human emotion / anxiety / motivation / loneliness / transition states opportunity 38",
+        "home / family / environment / rituals opportunity 39",
+        "health behavior change and care navigation opportunity 52",
+        "human body / sleep / waking / energy opportunity 55",
+        "human emotion / anxiety / motivation / loneliness / transition states opportunity 56",
+        "home / family / environment / rituals opportunity 57"
+      ],
+      "route_status": "parked",
+      "taxonomy_confidence": "high"
+    },
+    {
+      "cluster": "education / creator / family / small business",
+      "opportunity_ids": [
+        "e35_opportunity_04",
+        "e35_opportunity_07",
+        "e35_opportunity_09",
+        "e35_opportunity_17",
+        "e35_opportunity_18",
+        "e35_opportunity_22",
+        "e35_opportunity_25",
+        "e35_opportunity_27",
+        "e35_opportunity_35",
+        "e35_opportunity_36",
+        "e35_opportunity_40",
+        "e35_opportunity_43",
+        "e35_opportunity_45",
+        "e35_opportunity_53",
+        "e35_opportunity_54",
+        "e35_opportunity_58"
+      ],
+      "opportunity_names": [
+        "education / learning / student development opportunity 04",
+        "small business operations opportunity 07",
+        "creator economy opportunity 09",
+        "local community coordination opportunity 17",
+        "personal finance and household operations opportunity 18",
+        "education / learning / student development opportunity 22",
+        "small business operations opportunity 25",
+        "creator economy opportunity 27",
+        "local community coordination opportunity 35",
+        "personal finance and household operations opportunity 36",
+        "education / learning / student development opportunity 40",
+        "small business operations opportunity 43",
+        "creator economy opportunity 45",
+        "local community coordination opportunity 53",
+        "personal finance and household operations opportunity 54",
+        "education / learning / student development opportunity 58"
+      ],
+      "route_status": "watchlist",
+      "taxonomy_confidence": "high"
+    },
+    {
+      "cluster": "AI productivity / workflow / toolchain",
+      "opportunity_ids": [
+        "e35_opportunity_05",
+        "e35_opportunity_23",
+        "e35_opportunity_41",
+        "e35_opportunity_59"
+      ],
+      "opportunity_names": [
+        "AI tool productivity / AI workflow yield opportunity 05",
+        "AI tool productivity / AI workflow yield opportunity 23",
+        "AI tool productivity / AI workflow yield opportunity 41",
+        "AI tool productivity / AI workflow yield opportunity 59"
+      ],
+      "route_status": "active",
+      "taxonomy_confidence": "high"
+    },
+    {
+      "cluster": "enterprise / professional AI transformation",
+      "opportunity_ids": [
+        "e35_opportunity_06",
+        "e35_opportunity_08",
+        "e35_opportunity_10",
+        "e35_opportunity_24",
+        "e35_opportunity_26",
+        "e35_opportunity_28",
+        "e35_opportunity_42",
+        "e35_opportunity_44",
+        "e35_opportunity_46",
+        "e35_opportunity_60"
+      ],
+      "opportunity_names": [
+        "founder / executive decision-making opportunity 06",
+        "professional services opportunity 08",
+        "enterprise AI transformation opportunity 10",
+        "founder / executive decision-making opportunity 24",
+        "professional services opportunity 26",
+        "enterprise AI transformation opportunity 28",
+        "founder / executive decision-making opportunity 42",
+        "professional services opportunity 44",
+        "enterprise AI transformation opportunity 46",
+        "founder / executive decision-making opportunity 60"
+      ],
+      "route_status": "active",
+      "taxonomy_confidence": "high"
+    },
+    {
+      "cluster": "agent economy / autonomous company",
+      "opportunity_ids": [
+        "e35_opportunity_11",
+        "e35_opportunity_12",
+        "e35_opportunity_29",
+        "e35_opportunity_30",
+        "e35_opportunity_47",
+        "e35_opportunity_48"
+      ],
+      "opportunity_names": [
+        "agent-to-agent economy opportunity 11",
+        "autonomous company operations opportunity 12",
+        "agent-to-agent economy opportunity 29",
+        "autonomous company operations opportunity 30",
+        "agent-to-agent economy opportunity 47",
+        "autonomous company operations opportunity 48"
+      ],
+      "route_status": "parked",
+      "taxonomy_confidence": "high"
+    },
+    {
+      "cluster": "hardware + AI / physical interface",
+      "opportunity_ids": [
+        "e35_opportunity_13",
+        "e35_opportunity_31",
+        "e35_opportunity_49"
+      ],
+      "opportunity_names": [
+        "hardware + AI hybrid products opportunity 13",
+        "hardware + AI hybrid products opportunity 31",
+        "hardware + AI hybrid products opportunity 49"
+      ],
+      "route_status": "parked",
+      "taxonomy_confidence": "high"
+    },
+    {
+      "cluster": "governance / trust / audit / legitimacy",
+      "opportunity_ids": [
+        "e35_opportunity_14",
+        "e35_opportunity_15",
+        "e35_opportunity_32",
+        "e35_opportunity_33",
+        "e35_opportunity_50",
+        "e35_opportunity_51"
+      ],
+      "opportunity_names": [
+        "insurance / liability / audit / trust systems opportunity 14",
+        "social institutions / proof / certification / legitimacy opportunity 15",
+        "insurance / liability / audit / trust systems opportunity 32",
+        "social institutions / proof / certification / legitimacy opportunity 33",
+        "insurance / liability / audit / trust systems opportunity 50",
+        "social institutions / proof / certification / legitimacy opportunity 51"
+      ],
+      "route_status": "watchlist",
+      "taxonomy_confidence": "high"
+    }
+  ]
+}

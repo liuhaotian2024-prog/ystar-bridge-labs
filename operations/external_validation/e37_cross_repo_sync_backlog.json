@@ -1,0 +1,111 @@
+{
+  "artifact_id": "e37_cross_repo_sync_backlog",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "items": [
+    {
+      "affected_repo": "bridge-labs",
+      "disposition": "act next",
+      "external_side_effect": false,
+      "owner_decision_required": false,
+      "priority": "high",
+      "proposed_action": "update CEO KG/brain delta",
+      "risk_if_ignored": "Future route could inherit semantic drift or overclaim governance/execution readiness.",
+      "source_artifact": "e37_shortlist_taxonomy_repair",
+      "sync_item_id": "e37_sync_001",
+      "sync_reason": "Preserve repaired cluster map as route-readiness input."
+    },
+    {
+      "affected_repo": "bridge-labs",
+      "disposition": "act next",
+      "external_side_effect": false,
+      "owner_decision_required": true,
+      "priority": "high",
+      "proposed_action": "add bridge-labs mapping only",
+      "risk_if_ignored": "Future route could inherit semantic drift or overclaim governance/execution readiness.",
+      "source_artifact": "e37_public_readonly_evidence_sprint_design",
+      "sync_item_id": "e37_sync_002",
+      "sync_reason": "Prepare E38 public source manifest and evidence receipt execution."
+    },
+    {
+      "affected_repo": "bridge-labs",
+      "disposition": "act next",
+      "external_side_effect": false,
+      "owner_decision_required": true,
+      "priority": "high",
+      "proposed_action": "owner decision required",
+      "risk_if_ignored": "Future route could inherit semantic drift or overclaim governance/execution readiness.",
+      "source_artifact": "e37_expert_review_route_packet",
+      "sync_item_id": "e37_sync_003",
+      "sync_reason": "Keep review materials unsent pending owner approval."
+    },
+    {
+      "affected_repo": "Y-star-gov",
+      "disposition": "defer",
+      "external_side_effect": false,
+      "owner_decision_required": true,
+      "priority": "medium",
+      "proposed_action": "propose Y-star-gov primitive",
+      "risk_if_ignored": "Future route could inherit semantic drift or overclaim governance/execution readiness.",
+      "source_artifact": "agent_economy_watchlist",
+      "sync_item_id": "e37_sync_004",
+      "sync_reason": "Candidate primitive if agentic commerce/non-human workforce route becomes active."
+    },
+    {
+      "affected_repo": "Y-star-gov",
+      "disposition": "park",
+      "external_side_effect": false,
+      "owner_decision_required": true,
+      "priority": "medium",
+      "proposed_action": "propose Y-star-gov primitive",
+      "risk_if_ignored": "Future route could inherit semantic drift or overclaim governance/execution readiness.",
+      "source_artifact": "hardware_physical_interface_watchlist",
+      "sync_item_id": "e37_sync_005",
+      "sync_reason": "Physical delegated action legitimacy needs kernel review before execution."
+    },
+    {
+      "affected_repo": "gov-mcp",
+      "disposition": "defer",
+      "external_side_effect": false,
+      "owner_decision_required": true,
+      "priority": "medium",
+      "proposed_action": "propose gov-mcp adapter",
+      "risk_if_ignored": "Future route could inherit semantic drift or overclaim governance/execution readiness.",
+      "source_artifact": "future_evidence_execution_adapter",
+      "sync_item_id": "e37_sync_006",
+      "sync_reason": "Only needed if evidence route becomes executable via MCP tooling."
+    },
+    {
+      "affected_repo": "multiple",
+      "disposition": "defer",
+      "external_side_effect": false,
+      "owner_decision_required": true,
+      "priority": "high",
+      "proposed_action": "owner decision required",
+      "risk_if_ignored": "Future route could inherit semantic drift or overclaim governance/execution readiness.",
+      "source_artifact": "future_expert_contact_route",
+      "sync_item_id": "e37_sync_007",
+      "sync_reason": "External contact would need owner approval and possibly governance boundary."
+    },
+    {
+      "affected_repo": "bridge-labs",
+      "disposition": "act next",
+      "external_side_effect": false,
+      "owner_decision_required": false,
+      "priority": "medium",
+      "proposed_action": "update route registry",
+      "risk_if_ignored": "Future route could inherit semantic drift or overclaim governance/execution readiness.",
+      "source_artifact": "taxonomy_drift_guard",
+      "sync_item_id": "e37_sync_008",
+      "sync_reason": "Prevent future shortlist drift."
+    }
+  ],
+  "summary": {
+    "Y-star-gov_files_modified": false,
+    "Y-star-gov_items": 3,
+    "bridge_labs_items": 4,
+    "gov_mcp_files_modified": false,
+    "gov_mcp_items": 2,
+    "items": 8,
+    "owner_decision_items": 6
+  }
+}

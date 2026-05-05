@@ -1,0 +1,12 @@
+{"relation": "input_to", "source": "e36_evidence_seeking_shortlist", "target": "e37_taxonomy_repair"}
+{"relation": "input_to", "source": "e35_cross_domain_opportunity_field", "target": "e37_taxonomy_repair"}
+{"relation": "produces", "source": "e37_taxonomy_repair", "target": "e37_normalized_clusters"}
+{"relation": "feeds", "source": "e37_normalized_clusters", "target": "e37_focus_recommendation"}
+{"relation": "feeds", "source": "e37_focus_recommendation", "target": "e37_public_readonly_sprint_design"}
+{"relation": "feeds", "source": "e37_focus_recommendation", "target": "e37_expert_review_packet"}
+{"relation": "requires", "source": "e37_public_readonly_sprint_design", "target": "e37_y_star_gov_alignment"}
+{"relation": "requires", "source": "e37_public_readonly_sprint_design", "target": "e37_gov_mcp_alignment"}
+{"relation": "approves_or_blocks", "source": "e37_owner_packet_e38", "target": "e37_next_horizon"}
+{"relation": "bounds", "source": "e37_no_customer_validation", "target": "e37_focus_recommendation"}
+{"relation": "bounds", "source": "e37_no_paid_signal", "target": "e37_focus_recommendation"}
+{"relation": "prevents", "source": "e37_taxonomy_repair", "target": "semantic_cluster_drift"}

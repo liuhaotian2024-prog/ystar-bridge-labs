@@ -1,0 +1,13 @@
+{
+  "artifact_id": "e37_ceo_kg_evidence_preflight_feedback",
+  "canonical_learning_promoted": false,
+  "customer_validation_claimed": false,
+  "kg_delta_edges": 12,
+  "kg_delta_nodes": 11,
+  "paid_signal_claimed": false,
+  "recommended_evidence_sprint_focus": [
+    "AI productivity / workflow / toolchain",
+    "enterprise / professional AI transformation"
+  ],
+  "taxonomy_repair_status": "passed"
+}

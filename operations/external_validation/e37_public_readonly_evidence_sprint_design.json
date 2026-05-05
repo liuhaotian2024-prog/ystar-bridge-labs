@@ -1,0 +1,288 @@
+{
+  "artifact_id": "e37_public_readonly_evidence_sprint_design",
+  "customer_contact_occurred": false,
+  "execution_status": "prepared_not_executed",
+  "form_submitted": false,
+  "generated_at": "2026-05-05T00:00:01Z",
+  "plans": [
+    {
+      "claim_extraction_schema": [
+        "claim_id",
+        "claim_text_summary",
+        "support_label",
+        "source_id",
+        "contradictions",
+        "buyer_language",
+        "do_not_use_if_unsupported"
+      ],
+      "cluster": "AI productivity / workflow / toolchain",
+      "contradiction_handling": "record contradiction; downgrade route confidence; do not hide contrary evidence",
+      "evidence_receipt_schema": [
+        "receipt_id",
+        "source_url_or_reference",
+        "access_mode",
+        "timestamp",
+        "summary",
+        "no_login",
+        "no_form",
+        "no_contact",
+        "no_external_effect"
+      ],
+      "freshness_requirements": "prefer 2024-2026 public sources; older sources allowed only as historical context",
+      "no_fake_evidence_labels": [
+        "public_observation",
+        "internal_inference",
+        "hypothesis",
+        "unsupported_do_not_use"
+      ],
+      "public_evidence_vs_customer_validation": "public evidence can justify research direction; it is not customer feedback, buyer validation, or paid signal",
+      "ranking_change_triggers": [
+        "strong contrary public evidence",
+        "clear pricing/budget signal",
+        "expert review later rejects buyer pain",
+        "cluster lacks source availability"
+      ],
+      "research_questions": [
+        "What public evidence shows this pain exists now?",
+        "What language do buyers/vendors use for the pain?",
+        "What proof would separate real demand from interesting speculation?",
+        "Which claims must be removed or downgraded?"
+      ],
+      "source_categories": [
+        "official product docs",
+        "pricing pages",
+        "case studies",
+        "public failure reports",
+        "public reviews",
+        "analyst or market category pages",
+        "GitHub/project docs where relevant",
+        "regulatory or guidance documents where relevant"
+      ],
+      "source_quality_criteria": [
+        "public",
+        "current or freshness-labeled",
+        "claim-relevant",
+        "not a full-page dump",
+        "citation/reference retained"
+      ],
+      "target_source_types": [
+        "public only",
+        "no login",
+        "no form",
+        "no paywall bypass",
+        "no private data"
+      ],
+      "unsupported_claim_removal_rules": "unsupported claims cannot enter owner-facing evidence packet except as clearly labeled hypotheses"
+    },
+    {
+      "claim_extraction_schema": [
+        "claim_id",
+        "claim_text_summary",
+        "support_label",
+        "source_id",
+        "contradictions",
+        "buyer_language",
+        "do_not_use_if_unsupported"
+      ],
+      "cluster": "enterprise / professional AI transformation",
+      "contradiction_handling": "record contradiction; downgrade route confidence; do not hide contrary evidence",
+      "evidence_receipt_schema": [
+        "receipt_id",
+        "source_url_or_reference",
+        "access_mode",
+        "timestamp",
+        "summary",
+        "no_login",
+        "no_form",
+        "no_contact",
+        "no_external_effect"
+      ],
+      "freshness_requirements": "prefer 2024-2026 public sources; older sources allowed only as historical context",
+      "no_fake_evidence_labels": [
+        "public_observation",
+        "internal_inference",
+        "hypothesis",
+        "unsupported_do_not_use"
+      ],
+      "public_evidence_vs_customer_validation": "public evidence can justify research direction; it is not customer feedback, buyer validation, or paid signal",
+      "ranking_change_triggers": [
+        "strong contrary public evidence",
+        "clear pricing/budget signal",
+        "expert review later rejects buyer pain",
+        "cluster lacks source availability"
+      ],
+      "research_questions": [
+        "What public evidence shows this pain exists now?",
+        "What language do buyers/vendors use for the pain?",
+        "What proof would separate real demand from interesting speculation?",
+        "Which claims must be removed or downgraded?"
+      ],
+      "source_categories": [
+        "official product docs",
+        "pricing pages",
+        "case studies",
+        "public failure reports",
+        "public reviews",
+        "analyst or market category pages",
+        "GitHub/project docs where relevant",
+        "regulatory or guidance documents where relevant"
+      ],
+      "source_quality_criteria": [
+        "public",
+        "current or freshness-labeled",
+        "claim-relevant",
+        "not a full-page dump",
+        "citation/reference retained"
+      ],
+      "target_source_types": [
+        "public only",
+        "no login",
+        "no form",
+        "no paywall bypass",
+        "no private data"
+      ],
+      "unsupported_claim_removal_rules": "unsupported claims cannot enter owner-facing evidence packet except as clearly labeled hypotheses"
+    },
+    {
+      "claim_extraction_schema": [
+        "claim_id",
+        "claim_text_summary",
+        "support_label",
+        "source_id",
+        "contradictions",
+        "buyer_language",
+        "do_not_use_if_unsupported"
+      ],
+      "cluster": "governance / trust / audit / legitimacy",
+      "contradiction_handling": "record contradiction; downgrade route confidence; do not hide contrary evidence",
+      "evidence_receipt_schema": [
+        "receipt_id",
+        "source_url_or_reference",
+        "access_mode",
+        "timestamp",
+        "summary",
+        "no_login",
+        "no_form",
+        "no_contact",
+        "no_external_effect"
+      ],
+      "freshness_requirements": "prefer 2024-2026 public sources; older sources allowed only as historical context",
+      "no_fake_evidence_labels": [
+        "public_observation",
+        "internal_inference",
+        "hypothesis",
+        "unsupported_do_not_use"
+      ],
+      "public_evidence_vs_customer_validation": "public evidence can justify research direction; it is not customer feedback, buyer validation, or paid signal",
+      "ranking_change_triggers": [
+        "strong contrary public evidence",
+        "clear pricing/budget signal",
+        "expert review later rejects buyer pain",
+        "cluster lacks source availability"
+      ],
+      "research_questions": [
+        "What public evidence shows this pain exists now?",
+        "What language do buyers/vendors use for the pain?",
+        "What proof would separate real demand from interesting speculation?",
+        "Which claims must be removed or downgraded?"
+      ],
+      "source_categories": [
+        "official product docs",
+        "pricing pages",
+        "case studies",
+        "public failure reports",
+        "public reviews",
+        "analyst or market category pages",
+        "GitHub/project docs where relevant",
+        "regulatory or guidance documents where relevant"
+      ],
+      "source_quality_criteria": [
+        "public",
+        "current or freshness-labeled",
+        "claim-relevant",
+        "not a full-page dump",
+        "citation/reference retained"
+      ],
+      "target_source_types": [
+        "public only",
+        "no login",
+        "no form",
+        "no paywall bypass",
+        "no private data"
+      ],
+      "unsupported_claim_removal_rules": "unsupported claims cannot enter owner-facing evidence packet except as clearly labeled hypotheses"
+    },
+    {
+      "claim_extraction_schema": [
+        "claim_id",
+        "claim_text_summary",
+        "support_label",
+        "source_id",
+        "contradictions",
+        "buyer_language",
+        "do_not_use_if_unsupported"
+      ],
+      "cluster": "education / creator / family / small business",
+      "contradiction_handling": "record contradiction; downgrade route confidence; do not hide contrary evidence",
+      "evidence_receipt_schema": [
+        "receipt_id",
+        "source_url_or_reference",
+        "access_mode",
+        "timestamp",
+        "summary",
+        "no_login",
+        "no_form",
+        "no_contact",
+        "no_external_effect"
+      ],
+      "freshness_requirements": "prefer 2024-2026 public sources; older sources allowed only as historical context",
+      "no_fake_evidence_labels": [
+        "public_observation",
+        "internal_inference",
+        "hypothesis",
+        "unsupported_do_not_use"
+      ],
+      "public_evidence_vs_customer_validation": "public evidence can justify research direction; it is not customer feedback, buyer validation, or paid signal",
+      "ranking_change_triggers": [
+        "strong contrary public evidence",
+        "clear pricing/budget signal",
+        "expert review later rejects buyer pain",
+        "cluster lacks source availability"
+      ],
+      "research_questions": [
+        "What public evidence shows this pain exists now?",
+        "What language do buyers/vendors use for the pain?",
+        "What proof would separate real demand from interesting speculation?",
+        "Which claims must be removed or downgraded?"
+      ],
+      "source_categories": [
+        "official product docs",
+        "pricing pages",
+        "case studies",
+        "public failure reports",
+        "public reviews",
+        "analyst or market category pages",
+        "GitHub/project docs where relevant",
+        "regulatory or guidance documents where relevant"
+      ],
+      "source_quality_criteria": [
+        "public",
+        "current or freshness-labeled",
+        "claim-relevant",
+        "not a full-page dump",
+        "citation/reference retained"
+      ],
+      "target_source_types": [
+        "public only",
+        "no login",
+        "no form",
+        "no paywall bypass",
+        "no private data"
+      ],
+      "unsupported_claim_removal_rules": "unsupported claims cannot enter owner-facing evidence packet except as clearly labeled hypotheses"
+    }
+  ],
+  "provider_api_called": false,
+  "published_externally": false,
+  "reason_not_executed": "E37 prepares owner approval packet; E38 may execute safe public read-only research only after owner approval."
+}

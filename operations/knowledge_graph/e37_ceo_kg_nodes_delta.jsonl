@@ -1,0 +1,11 @@
+{"evidence_status": "internal_analysis", "label": "E37 shortlist taxonomy repair", "node_id": "e37_taxonomy_repair", "node_type": "TaxonomyRepair"}
+{"evidence_status": "methodology", "label": "Repaired opportunity cluster map", "node_id": "e37_normalized_clusters", "node_type": "NormalizedClusterMap"}
+{"evidence_status": "hypothesis", "label": "Evidence sprint focus recommendation", "node_id": "e37_focus_recommendation", "node_type": "EvidenceSprintFocus"}
+{"evidence_status": "methodology", "label": "Public read-only evidence sprint design", "node_id": "e37_public_readonly_sprint_design", "node_type": "EvidenceSprintDesign"}
+{"evidence_status": "methodology", "label": "Unsent expert review route packet", "node_id": "e37_expert_review_packet", "node_type": "ExpertReviewPacket"}
+{"evidence_status": "repo_observation", "label": "Y-star-gov evidence route alignment", "node_id": "e37_y_star_gov_alignment", "node_type": "CrossRepoAlignment"}
+{"evidence_status": "repo_observation", "label": "gov-mcp evidence route alignment", "node_id": "e37_gov_mcp_alignment", "node_type": "CrossRepoAlignment"}
+{"evidence_status": "owner_decision_pending", "label": "Owner approval packet for E38", "node_id": "e37_owner_packet_e38", "node_type": "OwnerDecisionPacket"}
+{"evidence_status": "evidence_boundary", "label": "E37 is not customer validation", "node_id": "e37_no_customer_validation", "node_type": "EvidenceBoundary"}
+{"evidence_status": "evidence_boundary", "label": "E37 is not paid signal", "node_id": "e37_no_paid_signal", "node_type": "EvidenceBoundary"}
+{"evidence_status": "owner_decision_pending", "label": "E38 owner-approved public read-only evidence sprint", "node_id": "e37_next_horizon", "node_type": "NextDecisionHorizon"}
