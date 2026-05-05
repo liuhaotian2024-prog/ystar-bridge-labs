@@ -1,0 +1,196 @@
+{
+  "artifact_id": "e39_ceo_decision_eval_benchmark",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "decisions_evaluated": 5,
+  "dimensions": [
+    "evidence_boundary_discipline",
+    "claim_support_accuracy",
+    "contradiction_awareness",
+    "buyer_pain_clarity",
+    "budget_proxy_clarity",
+    "market_language_fit",
+    "no_overclaim_discipline",
+    "cross_repo_alignment",
+    "owner_burden_reduction",
+    "route_reversibility",
+    "high_imagination_preservation",
+    "expert_review_readiness"
+  ],
+  "decisions": [
+    {
+      "decision_name": "E32 Black Box selection",
+      "input_evidence": "milestone artifacts and evidence boundaries",
+      "decision_made": "E32 Black Box selection",
+      "strengths": [
+        "strategic imagination or route framing"
+      ],
+      "weaknesses": [
+        "limited public evidence graph before E39"
+      ],
+      "overclaim_risk": "medium",
+      "missed_opportunity_risk": "medium",
+      "evidence_gap": "needs reusable graph/eval substrate",
+      "benchmark_score_by_dimension": {
+        "evidence_boundary_discipline": 3,
+        "claim_support_accuracy": 3,
+        "contradiction_awareness": 2,
+        "buyer_pain_clarity": 3,
+        "budget_proxy_clarity": 2,
+        "market_language_fit": 2,
+        "no_overclaim_discipline": 3,
+        "cross_repo_alignment": 3,
+        "owner_burden_reduction": 2,
+        "route_reversibility": 3,
+        "high_imagination_preservation": 3,
+        "expert_review_readiness": 2
+      },
+      "average_score": 2.58,
+      "what_E39_substrate_would_improve": [
+        "claim graph reuse",
+        "contradiction graph awareness",
+        "source quality burden scoring"
+      ]
+    },
+    {
+      "decision_name": "E35 expanded opportunity field",
+      "input_evidence": "milestone artifacts and evidence boundaries",
+      "decision_made": "E35 expanded opportunity field",
+      "strengths": [
+        "strategic imagination or route framing"
+      ],
+      "weaknesses": [
+        "limited public evidence graph before E39"
+      ],
+      "overclaim_risk": "medium",
+      "missed_opportunity_risk": "low/medium",
+      "evidence_gap": "needs reusable graph/eval substrate",
+      "benchmark_score_by_dimension": {
+        "evidence_boundary_discipline": 4,
+        "claim_support_accuracy": 3,
+        "contradiction_awareness": 2,
+        "buyer_pain_clarity": 3,
+        "budget_proxy_clarity": 2,
+        "market_language_fit": 3,
+        "no_overclaim_discipline": 4,
+        "cross_repo_alignment": 4,
+        "owner_burden_reduction": 3,
+        "route_reversibility": 4,
+        "high_imagination_preservation": 5,
+        "expert_review_readiness": 2
+      },
+      "average_score": 3.25,
+      "what_E39_substrate_would_improve": [
+        "claim graph reuse",
+        "contradiction graph awareness",
+        "source quality burden scoring"
+      ]
+    },
+    {
+      "decision_name": "E36 shortlist",
+      "input_evidence": "milestone artifacts and evidence boundaries",
+      "decision_made": "E36 shortlist",
+      "strengths": [
+        "strategic imagination or route framing"
+      ],
+      "weaknesses": [
+        "limited public evidence graph before E39"
+      ],
+      "overclaim_risk": "medium",
+      "missed_opportunity_risk": "medium",
+      "evidence_gap": "needs reusable graph/eval substrate",
+      "benchmark_score_by_dimension": {
+        "evidence_boundary_discipline": 4,
+        "claim_support_accuracy": 4,
+        "contradiction_awareness": 3,
+        "buyer_pain_clarity": 4,
+        "budget_proxy_clarity": 3,
+        "market_language_fit": 3,
+        "no_overclaim_discipline": 4,
+        "cross_repo_alignment": 5,
+        "owner_burden_reduction": 4,
+        "route_reversibility": 4,
+        "high_imagination_preservation": 4,
+        "expert_review_readiness": 3
+      },
+      "average_score": 3.75,
+      "what_E39_substrate_would_improve": [
+        "claim graph reuse",
+        "contradiction graph awareness",
+        "source quality burden scoring"
+      ]
+    },
+    {
+      "decision_name": "E37 repaired cluster focus",
+      "input_evidence": "milestone artifacts and evidence boundaries",
+      "decision_made": "E37 repaired cluster focus",
+      "strengths": [
+        "evidence boundary discipline"
+      ],
+      "weaknesses": [
+        "limited public evidence graph before E39"
+      ],
+      "overclaim_risk": "medium",
+      "missed_opportunity_risk": "low/medium",
+      "evidence_gap": "needs reusable graph/eval substrate",
+      "benchmark_score_by_dimension": {
+        "evidence_boundary_discipline": 5,
+        "claim_support_accuracy": 4,
+        "contradiction_awareness": 4,
+        "buyer_pain_clarity": 4,
+        "budget_proxy_clarity": 3,
+        "market_language_fit": 4,
+        "no_overclaim_discipline": 5,
+        "cross_repo_alignment": 5,
+        "owner_burden_reduction": 5,
+        "route_reversibility": 5,
+        "high_imagination_preservation": 4,
+        "expert_review_readiness": 4
+      },
+      "average_score": 4.33,
+      "what_E39_substrate_would_improve": [
+        "claim graph reuse",
+        "contradiction graph awareness",
+        "source quality burden scoring"
+      ]
+    },
+    {
+      "decision_name": "E38 public evidence ranking",
+      "input_evidence": "milestone artifacts and evidence boundaries",
+      "decision_made": "E38 public evidence ranking",
+      "strengths": [
+        "evidence boundary discipline"
+      ],
+      "weaknesses": [
+        "still no customer validation or paid signal"
+      ],
+      "overclaim_risk": "low",
+      "missed_opportunity_risk": "low/medium",
+      "evidence_gap": "needs expert review before external validation claims",
+      "benchmark_score_by_dimension": {
+        "evidence_boundary_discipline": 5,
+        "claim_support_accuracy": 5,
+        "contradiction_awareness": 5,
+        "buyer_pain_clarity": 5,
+        "budget_proxy_clarity": 4,
+        "market_language_fit": 5,
+        "no_overclaim_discipline": 5,
+        "cross_repo_alignment": 5,
+        "owner_burden_reduction": 5,
+        "route_reversibility": 5,
+        "high_imagination_preservation": 4,
+        "expert_review_readiness": 5
+      },
+      "average_score": 4.83,
+      "what_E39_substrate_would_improve": [
+        "claim graph reuse",
+        "contradiction graph awareness",
+        "source quality burden scoring"
+      ]
+    }
+  ],
+  "strongest_decision": "E38 public evidence ranking",
+  "weakest_decision": "E32 Black Box selection",
+  "recurring_failure_mode": "strategy choices repeatedly needed stronger claim/source/contradiction graphs before route pressure increased",
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false
+}

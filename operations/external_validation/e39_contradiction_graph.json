@@ -1,0 +1,67 @@
+{
+  "artifact_id": "e39_contradiction_graph",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "contradiction_count": 2,
+  "contradiction_nodes": [
+    {
+      "id": "contradiction_e38_claim_003_b",
+      "claim_id": "e38_claim_003_b",
+      "cluster": "AI productivity / workflow / toolchain",
+      "claim_text": "Public source supports productivity gap signal for AI productivity / workflow / toolchain: Developer AI usage is high while trust and accuracy concerns remain material, supporting a productivity-plus-verification pain.",
+      "support_level": "contradiction",
+      "buyer_facing_use": "internal only",
+      "overclaim_risk": "medium",
+      "what_cannot_be_claimed": [
+        "customers are ready to pay Y*",
+        "Y* is better than incumbents",
+        "ROI is guaranteed",
+        "enterprise demand is proven",
+        "consumer willingness-to-pay is proven",
+        "customer validation exists",
+        "paid signal exists"
+      ]
+    },
+    {
+      "id": "contradiction_e38_claim_008_b",
+      "claim_id": "e38_claim_008_b",
+      "cluster": "AI productivity / workflow / toolchain",
+      "claim_text": "Public source supports productivity gap signal for AI productivity / workflow / toolchain: Gartner reports individual productivity gains can coexist with team-level friction, supporting the need for workflow-level yield measurement.",
+      "support_level": "contradiction",
+      "buyer_facing_use": "internal only",
+      "overclaim_risk": "medium",
+      "what_cannot_be_claimed": [
+        "customers are ready to pay Y*",
+        "Y* is better than incumbents",
+        "ROI is guaranteed",
+        "enterprise demand is proven",
+        "consumer willingness-to-pay is proven",
+        "customer validation exists",
+        "paid signal exists"
+      ]
+    }
+  ],
+  "contradiction_edges": [
+    {
+      "id": "e39_contradiction_edge_001",
+      "from": "contradiction_e38_claim_003_b",
+      "to": "cluster_ai_productivity_workflow_toolchain",
+      "type": "contradiction_affects_cluster",
+      "evidence_boundary": "public_observation_only"
+    },
+    {
+      "id": "e39_contradiction_edge_002",
+      "from": "contradiction_e38_claim_008_b",
+      "to": "cluster_ai_productivity_workflow_toolchain",
+      "type": "contradiction_affects_cluster",
+      "evidence_boundary": "public_observation_only"
+    }
+  ],
+  "affected_clusters": [
+    "AI productivity / workflow / toolchain"
+  ],
+  "affected_route_implications": [
+    "proceed to expert review prep"
+  ],
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false
+}

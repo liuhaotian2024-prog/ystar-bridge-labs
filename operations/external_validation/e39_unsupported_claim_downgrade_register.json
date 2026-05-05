@@ -1,0 +1,149 @@
+{
+  "artifact_id": "e39_unsupported_claim_downgrade_register",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "unsupported_or_downgraded_count": 16,
+  "unsupported_claims": [
+    {
+      "unsupported_claim": "customers are ready to pay Y*",
+      "downgrade_reason": "Public evidence does not establish this claim for Y*.",
+      "buyer_facing_use": "internal only",
+      "overclaim_risk": "medium",
+      "what_cannot_be_claimed": "customers are ready to pay Y*",
+      "evidence_boundary": "unsupported_do_not_use"
+    },
+    {
+      "unsupported_claim": "Y* is better than incumbents",
+      "downgrade_reason": "Public evidence does not establish this claim for Y*.",
+      "buyer_facing_use": "internal only",
+      "overclaim_risk": "medium",
+      "what_cannot_be_claimed": "Y* is better than incumbents",
+      "evidence_boundary": "unsupported_do_not_use"
+    },
+    {
+      "unsupported_claim": "ROI is guaranteed",
+      "downgrade_reason": "Public evidence does not establish this claim for Y*.",
+      "buyer_facing_use": "forbidden",
+      "overclaim_risk": "high",
+      "what_cannot_be_claimed": "ROI is guaranteed",
+      "evidence_boundary": "unsupported_do_not_use"
+    },
+    {
+      "unsupported_claim": "enterprise demand is proven",
+      "downgrade_reason": "Public evidence does not establish this claim for Y*.",
+      "buyer_facing_use": "internal only",
+      "overclaim_risk": "medium",
+      "what_cannot_be_claimed": "enterprise demand is proven",
+      "evidence_boundary": "unsupported_do_not_use"
+    },
+    {
+      "unsupported_claim": "consumer willingness-to-pay is proven",
+      "downgrade_reason": "Public evidence does not establish this claim for Y*.",
+      "buyer_facing_use": "internal only",
+      "overclaim_risk": "medium",
+      "what_cannot_be_claimed": "consumer willingness-to-pay is proven",
+      "evidence_boundary": "unsupported_do_not_use"
+    },
+    {
+      "unsupported_claim": "customer validation exists",
+      "downgrade_reason": "Public evidence does not establish this claim for Y*.",
+      "buyer_facing_use": "forbidden",
+      "overclaim_risk": "high",
+      "what_cannot_be_claimed": "customer validation exists",
+      "evidence_boundary": "unsupported_do_not_use"
+    },
+    {
+      "unsupported_claim": "paid signal exists",
+      "downgrade_reason": "Public evidence does not establish this claim for Y*.",
+      "buyer_facing_use": "forbidden",
+      "overclaim_risk": "high",
+      "what_cannot_be_claimed": "paid signal exists",
+      "evidence_boundary": "unsupported_do_not_use"
+    },
+    {
+      "unsupported_claim": "proven customer demand",
+      "downgrade_reason": "Public evidence does not establish this claim for Y*.",
+      "buyer_facing_use": "internal only",
+      "overclaim_risk": "medium",
+      "what_cannot_be_claimed": "proven customer demand",
+      "evidence_boundary": "unsupported_do_not_use"
+    },
+    {
+      "unsupported_claim": "proven Y* willingness-to-pay",
+      "downgrade_reason": "Public evidence does not establish this claim for Y*.",
+      "buyer_facing_use": "internal only",
+      "overclaim_risk": "medium",
+      "what_cannot_be_claimed": "proven Y* willingness-to-pay",
+      "evidence_boundary": "unsupported_do_not_use"
+    },
+    {
+      "unsupported_claim": "guaranteed ROI",
+      "downgrade_reason": "Public evidence does not establish this claim for Y*.",
+      "buyer_facing_use": "forbidden",
+      "overclaim_risk": "high",
+      "what_cannot_be_claimed": "guaranteed ROI",
+      "evidence_boundary": "unsupported_do_not_use"
+    },
+    {
+      "unsupported_claim": "superiority over incumbents",
+      "downgrade_reason": "Public evidence does not establish this claim for Y*.",
+      "buyer_facing_use": "forbidden",
+      "overclaim_risk": "high",
+      "what_cannot_be_claimed": "superiority over incumbents",
+      "evidence_boundary": "unsupported_do_not_use"
+    },
+    {
+      "unsupported_claim": "compliance certification",
+      "downgrade_reason": "Public evidence does not establish this claim for Y*.",
+      "buyer_facing_use": "forbidden",
+      "overclaim_risk": "high",
+      "what_cannot_be_claimed": "compliance certification",
+      "evidence_boundary": "unsupported_do_not_use"
+    },
+    {
+      "unsupported_claim": "customer validation",
+      "downgrade_reason": "Public evidence does not establish this claim for Y*.",
+      "buyer_facing_use": "forbidden",
+      "overclaim_risk": "high",
+      "what_cannot_be_claimed": "customer validation",
+      "evidence_boundary": "unsupported_do_not_use"
+    },
+    {
+      "unsupported_claim": "paid signal",
+      "downgrade_reason": "Public evidence does not establish this claim for Y*.",
+      "buyer_facing_use": "forbidden",
+      "overclaim_risk": "high",
+      "what_cannot_be_claimed": "paid signal",
+      "evidence_boundary": "unsupported_do_not_use"
+    },
+    {
+      "unsupported_claim": "external endorsement",
+      "downgrade_reason": "Public evidence does not establish this claim for Y*.",
+      "buyer_facing_use": "forbidden",
+      "overclaim_risk": "high",
+      "what_cannot_be_claimed": "external endorsement",
+      "evidence_boundary": "unsupported_do_not_use"
+    },
+    {
+      "unsupported_claim": "product-market fit",
+      "downgrade_reason": "Public evidence does not establish this claim for Y*.",
+      "buyer_facing_use": "forbidden",
+      "overclaim_risk": "high",
+      "what_cannot_be_claimed": "product-market fit",
+      "evidence_boundary": "unsupported_do_not_use"
+    }
+  ],
+  "forbidden_buyer_facing_claims": [
+    "ROI is guaranteed",
+    "customer validation exists",
+    "paid signal exists",
+    "guaranteed ROI",
+    "superiority over incumbents",
+    "compliance certification",
+    "customer validation",
+    "paid signal",
+    "external endorsement",
+    "product-market fit"
+  ],
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false
+}

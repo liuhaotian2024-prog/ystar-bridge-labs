@@ -1,0 +1,92 @@
+{
+  "artifact_id": "e39_capability_import_scope_guard",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "allowed_imports": [
+    "source graph schema",
+    "claim graph schema",
+    "contradiction graph schema",
+    "market language lexicon schema",
+    "durable strategic research thread schema",
+    "decision eval benchmark schema",
+    "source quality evaluator",
+    "evidence burden evaluator",
+    "CEO KG / brain delta updates",
+    "cross-repo read-only alignment"
+  ],
+  "forbidden_actions": [
+    "customer contact",
+    "expert contact",
+    "message send",
+    "publication",
+    "form submission",
+    "login",
+    "provider/API execution",
+    "external tool integration",
+    "payment",
+    "secret use",
+    "Y-star-gov modification",
+    "gov-mcp modification",
+    "new governance kernel",
+    "new MCP execution layer",
+    "second CEO brain",
+    "second CEO KG",
+    "final product selection",
+    "claim of customer validation",
+    "claim of paid signal"
+  ],
+  "new_file_classification": [
+    {
+      "path": "office/mission_command/e39_capability_import_scope_guard.py",
+      "classification": "builder"
+    },
+    {
+      "path": "office/mission_command/e39_e38_evidence_ingestion_adapter.py",
+      "classification": "builder"
+    },
+    {
+      "path": "office/mission_command/e39_deep_research_claim_graph.py",
+      "classification": "builder"
+    },
+    {
+      "path": "office/mission_command/e39_contradiction_graph_and_downgrader.py",
+      "classification": "builder"
+    },
+    {
+      "path": "office/mission_command/e39_durable_strategic_research_thread.py",
+      "classification": "schema"
+    },
+    {
+      "path": "office/mission_command/e39_market_language_mining_lexicon.py",
+      "classification": "builder"
+    },
+    {
+      "path": "office/mission_command/e39_ceo_decision_eval_benchmark.py",
+      "classification": "evaluator"
+    },
+    {
+      "path": "office/mission_command/e39_source_quality_evidence_burden_evaluator.py",
+      "classification": "evaluator"
+    },
+    {
+      "path": "office/mission_command/e39_expert_review_readiness_reassessment.py",
+      "classification": "evaluator"
+    },
+    {
+      "path": "office/mission_command/e39_cross_repo_alignment_after_capability_import.py",
+      "classification": "builder"
+    },
+    {
+      "path": "office/mission_command/e39_ceo_kg_evidence_intelligence_feedback.py",
+      "classification": "delta"
+    },
+    {
+      "path": "office/mission_command/e39_ceo_brain_evidence_intelligence_update.py",
+      "classification": "delta"
+    }
+  ],
+  "all_new_files_are_allowed_classes": true,
+  "external_execution_implied": false,
+  "duplicate_governance_or_execution_semantics_created": false,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false
+}

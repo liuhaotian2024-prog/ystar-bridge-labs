@@ -1,0 +1,17 @@
+{
+  "artifact_id": "e39_ceo_kg_evidence_intelligence_feedback",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "nodes_delta_count": 19,
+  "edges_delta_count": 18,
+  "capabilities_referenced": [
+    "claim graph",
+    "contradiction graph",
+    "durable research thread",
+    "market lexicon",
+    "decision eval benchmark",
+    "source quality/evidence burden evaluator"
+  ],
+  "canonical_learning_promoted": false,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false
+}

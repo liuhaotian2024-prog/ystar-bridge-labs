@@ -1,0 +1,87 @@
+{
+  "artifact_id": "e39_cross_repo_alignment_after_capability_import",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "Y-star-gov_head": "5f031f4be151b81ef1a1b1908a5c83c5420e8ce1",
+  "gov_mcp_head": "4f758d9d4823eed108ae3d63be1f4db192a974d6",
+  "inspection_mode": "read_only",
+  "capabilities": [
+    {
+      "capability": "Deep Research Claim Graph",
+      "bridge_labs_only": true,
+      "maps_to_Y_star_gov_primitive": "CIEU/evidence semantics as reference only",
+      "maps_to_gov_mcp_execution_boundary": "no execution needed",
+      "future_Y_star_gov_primitive_candidate": "none",
+      "future_gov_mcp_adapter_candidate": "none",
+      "sync": "no sync needed",
+      "owner_review_required": false,
+      "risk": "claim graph must not replace CIEU"
+    },
+    {
+      "capability": "Contradiction Graph and Unsupported Claim Downgrader",
+      "bridge_labs_only": true,
+      "maps_to_Y_star_gov_primitive": "check/enforce concept only, not enforcement",
+      "maps_to_gov_mcp_execution_boundary": "no execution needed",
+      "future_Y_star_gov_primitive_candidate": "none",
+      "future_gov_mcp_adapter_candidate": "none",
+      "sync": "no sync needed",
+      "owner_review_required": false,
+      "risk": "does not replace governance kernel"
+    },
+    {
+      "capability": "Durable Strategic Research Thread",
+      "bridge_labs_only": true,
+      "maps_to_Y_star_gov_primitive": "CZL closure/replay safety reference only",
+      "maps_to_gov_mcp_execution_boundary": "no execution needed",
+      "future_Y_star_gov_primitive_candidate": "none",
+      "future_gov_mcp_adapter_candidate": "none",
+      "sync": "no sync needed",
+      "owner_review_required": false,
+      "risk": "does not replace CZL"
+    },
+    {
+      "capability": "Market Language Mining Lexicon",
+      "bridge_labs_only": true,
+      "maps_to_Y_star_gov_primitive": "none until owner approves contract language",
+      "maps_to_gov_mcp_execution_boundary": "no execution needed",
+      "future_Y_star_gov_primitive_candidate": "contract language provenance candidate only",
+      "future_gov_mcp_adapter_candidate": "none",
+      "sync": "owner review required",
+      "owner_review_required": true,
+      "risk": "lexicon must not become contract without approval"
+    },
+    {
+      "capability": "CEO Decision Eval Benchmark",
+      "bridge_labs_only": true,
+      "maps_to_Y_star_gov_primitive": "does not replace check/enforce",
+      "maps_to_gov_mcp_execution_boundary": "no execution needed",
+      "future_Y_star_gov_primitive_candidate": "none",
+      "future_gov_mcp_adapter_candidate": "none",
+      "sync": "no sync needed",
+      "owner_review_required": false,
+      "risk": "eval benchmark is advisory, not governance authority"
+    },
+    {
+      "capability": "Source Quality and Evidence Burden Evaluator",
+      "bridge_labs_only": true,
+      "maps_to_Y_star_gov_primitive": "evidence boundary semantics as reference",
+      "maps_to_gov_mcp_execution_boundary": "no execution needed",
+      "future_Y_star_gov_primitive_candidate": "evidence burden primitive candidate only if owner wants kernel-level semantics",
+      "future_gov_mcp_adapter_candidate": "none",
+      "sync": "owner review required",
+      "owner_review_required": true,
+      "risk": "evidence scores cannot be enforcement decisions"
+    }
+  ],
+  "specific_checks": {
+    "claim_graph_does_not_replace_CIEU": true,
+    "contradiction_graph_does_not_replace_governance_kernel": true,
+    "durable_research_thread_does_not_replace_CZL": true,
+    "decision_eval_benchmark_does_not_replace_Y_star_gov_check_enforce": true,
+    "market_language_lexicon_does_not_become_contract_without_approval": true,
+    "no_execution_adapter_implemented_in_Labs": true
+  },
+  "Y-star-gov_files_modified": false,
+  "gov_mcp_files_modified": false,
+  "duplicate_governance_kernel_created": false,
+  "duplicate_mcp_execution_layer_created": false
+}

@@ -1,0 +1,74 @@
+{
+  "artifact_id": "e39_cross_repo_sync_backlog",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "item_count": 6,
+  "items": [
+    {
+      "sync_item_id": "e39_sync_001",
+      "classification": "bridge-labs implemented",
+      "source": "E39 evidence intelligence substrate",
+      "affected_repo": "bridge-labs",
+      "proposed_action": "use in E40 owner packet",
+      "owner_decision_required": false,
+      "priority": "high",
+      "status": "implemented"
+    },
+    {
+      "sync_item_id": "e39_sync_002",
+      "classification": "bridge-labs future",
+      "source": "CEO decision eval benchmark",
+      "affected_repo": "bridge-labs",
+      "proposed_action": "run before route decisions",
+      "owner_decision_required": false,
+      "priority": "high",
+      "status": "future"
+    },
+    {
+      "sync_item_id": "e39_sync_003",
+      "classification": "Y-star-gov proposal",
+      "source": "evidence burden evaluator",
+      "affected_repo": "Y-star-gov",
+      "proposed_action": "consider evidence-burden primitive only if owner wants kernel semantics",
+      "owner_decision_required": true,
+      "priority": "low/medium",
+      "status": "proposal"
+    },
+    {
+      "sync_item_id": "e39_sync_004",
+      "classification": "gov-mcp proposal",
+      "source": "future prototype simulation",
+      "affected_repo": "gov-mcp",
+      "proposed_action": "defer sandbox adapter until owner-approved executable route",
+      "owner_decision_required": true,
+      "priority": "medium",
+      "status": "proposal"
+    },
+    {
+      "sync_item_id": "e39_sync_005",
+      "classification": "owner decision required",
+      "source": "expert review readiness reassessment",
+      "affected_repo": "bridge-labs",
+      "proposed_action": "choose E40 expert preflight vs more public research vs simulation",
+      "owner_decision_required": true,
+      "priority": "high",
+      "status": "act next"
+    },
+    {
+      "sync_item_id": "e39_sync_006",
+      "classification": "parked",
+      "source": "agent economy/payment routes",
+      "affected_repo": "multiple",
+      "proposed_action": "no action until owner chooses agent-commerce route",
+      "owner_decision_required": true,
+      "priority": "low",
+      "status": "parked"
+    }
+  ],
+  "summary": {
+    "bridge_labs_items": 3,
+    "Y-star-gov_items": 1,
+    "gov_mcp_items": 1,
+    "owner_decision_items": 4,
+    "parked_items": 1
+  }
+}
