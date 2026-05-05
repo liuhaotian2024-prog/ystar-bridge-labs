@@ -1,0 +1,7 @@
+{
+  "artifact_id": "e45_ceo_kg_first_value_demo_feedback",
+  "declared_to_actual_invocation": true,
+  "first_5_minute_blocker_fixed": true,
+  "local_demo_readiness_class": "ready_for_owner_review",
+  "updated_bottleneck": "CEO can now invoke full-history runtime capabilities and run a local first-value demo, but must next obtain owner approval for one real external user attempt only after unresolved local/demo/docs blockers are cleared."
+}

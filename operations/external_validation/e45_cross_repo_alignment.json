@@ -1,0 +1,16 @@
+{
+  "Bridge_Labs_owns_CEO_runtime_and_demo_bundle": true,
+  "K9Audit_modified": false,
+  "K9Audit_owns_audit_layer_and_later_proof_add_on": true,
+  "Y_star_gov_modified": false,
+  "Y_star_gov_owns_governance_kernel_and_demo_doctor": true,
+  "artifact_id": "e45_cross_repo_alignment",
+  "gov_mcp_modified_and_pushed": true,
+  "gov_mcp_owns_execution_boundary_and_first_5_minute_docs": true,
+  "gov_mcp_result_head": "998e62c0fa2dd28797d853f6e054210a1823891f",
+  "no_duplicate_MCP_execution_layer": true,
+  "no_duplicate_audit_layer": true,
+  "no_duplicate_governance_kernel": true,
+  "no_second_CEO_KG": true,
+  "no_second_CEO_brain": true
+}

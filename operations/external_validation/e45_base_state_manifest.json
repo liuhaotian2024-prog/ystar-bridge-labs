@@ -1,0 +1,14 @@
+{
+  "E44A_reports_found": {
+    "/tmp/ystar_delivery_bridge/completed/e44a_ceo_cognition_runtime_reconnection_replay_20260505T000001Z.report.json": true,
+    "/tmp/ystar_delivery_bridge/completed/e44a_full_history_ceo_runtime_reconnection_addendum_20260505T000001Z.report.json": true
+  },
+  "artifact_id": "e45_base_state_manifest",
+  "bridge_labs_expected_base": "82192922783ba475a52ed30f263a76dbc0fdbc10",
+  "bridge_labs_local_head": "82192922783ba475a52ed30f263a76dbc0fdbc10",
+  "bridge_labs_remote_head": "82192922783ba475a52ed30f263a76dbc0fdbc10",
+  "bridge_labs_worktree_clean": true,
+  "generated_at": "2026-05-05T00:00:01Z",
+  "gov_mcp_base_at_phase0": "4f758d9d4823eed108ae3d63be1f4db192a974d6",
+  "gov_mcp_head_after_docs_fix": "998e62c0fa2dd28797d853f6e054210a1823891f"
+}

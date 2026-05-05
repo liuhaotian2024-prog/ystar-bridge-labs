@@ -1,0 +1,195 @@
+{
+  "K9_CIEU_CZL_audit_context": "K9/CIEU/CZL attaches later as audit proof and watchdog context; no duplicate audit ledger created.",
+  "artifact_id": "e45_first_value_demo_bundle",
+  "customer_validation_claimed": false,
+  "generated_at": "2026-05-05T00:00:01Z",
+  "local_first_command_path": [
+    {
+      "classification": "passed",
+      "label": "gov_mcp_server_help",
+      "record": {
+        "command": [
+          "python3",
+          "-m",
+          "gov_mcp",
+          "--help"
+        ],
+        "cwd": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "usage: __main__.py [-h] [--session-config SESSION_CONFIG]\n                   [--agents-md AGENTS_MD] [--transport {stdio,sse}]\n                   [--host HOST] [--port PORT]\n                   [--exec-whitelist EXEC_WHITELIST]\n\nGOV MCP \u2014 Y*gov as a standard MCP server\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --session-config SESSION_CONFIG\n                        Path to .ystar_session.json (Y*gov runtime config).\n                        Recommended since gov-mcp 0.2.0. Direct dict load,\n                        confidence \u22650.95.\n  --agents-md AGENTS_MD\n                        [DEPRECATED since 0.2.0] Path to AGENTS.md governance\n                        file. Falls back to regex translation, confidence\n                        \u22640.7. Use --session-config instead.\n  --transport {stdio,sse}\n                        MCP transport (default: stdio)\n  --host HOST           SSE host (only with --transport sse)\n  --port PORT           SSE port (required with --transport sse)\n  --exec-whitelist EXEC_WHITELIST\n                        Path to exec_whitelist.yaml (default: adjacent to\n                        server.py)\n",
+        "timed_out": false
+      }
+    },
+    {
+      "classification": "passed",
+      "label": "gov_mcp_install_help",
+      "record": {
+        "command": [
+          "python3",
+          "-m",
+          "gov_mcp",
+          "install",
+          "--help"
+        ],
+        "cwd": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "usage: gov-mcp install [-h] [--agents-md AGENTS_MD] [--port PORT]\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --agents-md AGENTS_MD\n                        Path to AGENTS.md (auto-detected if omitted)\n  --port PORT           Server port (default: 7922, auto if busy)\n",
+        "timed_out": false
+      }
+    },
+    {
+      "classification": "passed",
+      "label": "gov_mcp_status",
+      "record": {
+        "command": [
+          "python3",
+          "-m",
+          "gov_mcp",
+          "status"
+        ],
+        "cwd": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "gov-mcp status\n==================================================\n  Running:    no\n  Run 'gov-mcp install' to start.\n",
+        "timed_out": false
+      }
+    },
+    {
+      "classification": "passed",
+      "label": "gov_mcp_command_help",
+      "record": {
+        "command": [
+          "gov-mcp",
+          "--help"
+        ],
+        "cwd": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "usage: gov-mcp [-h] {install,uninstall,status,restart} ...\n\nGOV MCP \u2014 Governed execution for AI agents\n\npositional arguments:\n  {install,uninstall,status,restart}\n    install             Detect, start, configure GOV MCP\n    uninstall           Stop server and remove configs\n    status              Show server status\n    restart             Restart server\n\noptions:\n  -h, --help            show this help message and exit\n",
+        "timed_out": false
+      }
+    },
+    {
+      "classification": "skipped_safety",
+      "label": "gov_mcp_install_start_server",
+      "reason": "Would bind a local port and may configure MCP clients; E45 records install --help/status and docs proof instead."
+    },
+    {
+      "classification": "passed",
+      "label": "ystar_help",
+      "record": {
+        "command": [
+          "python3",
+          "-m",
+          "ystar",
+          "--help"
+        ],
+        "cwd": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "\nystar CLI\n\nCommands:\n  ystar setup          Generate .ystar_session.json (required for full governance)\n  ystar hook-install   Register PreToolUse hook\n  ystar init           Generate policy.py contract template\n  ystar audit          View causal audit report\n  ystar archive-cieu   Archive CIEU database to JSONL for permanent preservation\n  ystar simulate       Simulate A/B effect evaluation\n  ystar quality        Evaluate contract quality (coverage/FP rate)\n  ystar check          Run policy check on JSONL events file\n  ystar check-impact   Analyze session file for P0 risks and downstream impact\n  ystar report         Generate governance report\n  ystar baseline       Capture current governance state as baseline\n  ystar delta          Compare current state against baseline\n  ystar trend          Show 7-day CIEU event trend (total/deny/rate)\n  ystar demo           5-second wow moment -- governance in action\n  ystar doctor         Diagnose environment integrity (--layer1, --layer2)\n  ystar reset-breaker      Reset circuit breaker after manual intervention\n  ystar verify             Verify CIEU cryptographic integrity\n  ystar seal               Seal CIEU session with Merkle root\n  ystar policy-builder     Launch local HTML policy builder (port 7921)\n  ystar domain             Discover and use domain packs (list|describe|init)\n  ystar governance-coverage Show governance coverage report (agent/tool coverage)\n  ystar safemode           Board override mechanism (bypass governance with audit trail)\n  ystar version            Show version\n\nQuick start (3 steps to integrate with OpenClaw):\n  pip install ystar\n  ystar setup            <- Step 1: generate session config\n  ystar hook-install     <- Step 2: register hook\n  # Write AGENTS.md      <- Step 3: define your contract\n\n",
+        "timed_out": false
+      }
+    },
+    {
+      "classification": "passed",
+      "label": "ystar_demo",
+      "record": {
+        "command": [
+          "python3",
+          "-m",
+          "ystar",
+          "demo"
+        ],
+        "cwd": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "\nY*gov Demo \u2014 governance in action\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n[1] ALLOW  read ./projects/data.txt               0.07ms\n[2] DENY   read /etc/passwd                       0.04ms\n    \u2192 '/etc' is not allowed in file_path\n[3] ALLOW  run echo \"hello\"                       0.01ms\n[4] DENY   run rm -rf /                           0.01ms\n    \u2192 'rm -rf' is a forbidden command\n[5] DENY   fetch http://evil.com/steal            0.03ms\n    \u2192 domain not in allowed list\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n5 decisions in 0.15ms \u00b7 CIEU chain: intact \u2713\n\nNext: ystar setup && ystar hook-install && ystar doctor\n\n",
+        "timed_out": false
+      }
+    },
+    {
+      "classification": "failed",
+      "label": "ystar_doctor",
+      "record": {
+        "command": [
+          "python3",
+          "-m",
+          "ystar",
+          "doctor"
+        ],
+        "cwd": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+        "returncode": 1,
+        "stderr": "",
+        "stdout": "\n  Y*gov Doctor \u2014 Layer1 (Zero-dependency checks)\n  ============================================================\n\n  [1] CIEU Database\n  [\u2713] CIEU Database \u2014 .ystar_cieu.db (52300 events)\n\n  [2] Omission Database\n  [\u2713] Omission Database \u2014 .ystar_cieu_omission.db (1310 violations)\n\n  [3] Contract File\n  [\u2713] Contract File \u2014 AGENTS.md (loaded, 58 lines)\n\n  [4] Interrupt Gate\n  [\u2717] Interrupt Gate \u2014 BLOCKING (9 overdue obligations)\n      \u2192 Complete pending obligations to clear gate\n  [ ] Circuit Breaker \u2014 engine not loaded (check at runtime)\n\n  [5] Unreachable Obligations\n  [\u2717] Unreachable Obligations \u2014 9 found\n      \u2192 Review obligations pending >7 days\n\n  [6] Engine Configuration\n  [\u2713] Engine Config \u2014 Valid (1 agents, 18 rules)\n\n  [7] Archive Freshness\n  [\u2717] Archive Freshness \u2014 31 days since last archive (>7 days)\n      \u2192 Run 'ystar archive-cieu' to preserve CIEU data\n\n  [8] External Config Reads\n  [\u2717] External Config Reads \u2014 1 unique paths detected\n      \u2192 Review external CLAUDE.md for context poisoning\n      \u2192 /Users/haotianliu/.openclaw/workspace/ystar-company/CLAUDE.md (2 reads)\n\n  [9] Runtime Constraints\n  [ ] Runtime deny \u2014 not present (ok)\n  [ ] Runtime relax \u2014 not present (ok)\n\n  [10] Governance Heartbeat\n  [\u2717] Governance Heartbeat \u2014 DEAD (orchestrator not initialized)\n      \u2192 Run agent commands to trigger hook initialization\n  [ ] Path B deny events: 0\n  [ ] Metalearning relax events: 0\n\n  Y*gov Doctor \u2014 Layer2 (Dependency checks)\n  ============================================================\n\n  [1] Git Repository\n  [\u2713] Git Repository \u2014 Available\n\n  [2] Python Dependencies\n  [\u2713] Python Dependencies \u2014 ystar installed (v0.48.0)\n\n  [3] Hook Installation\n  [\u2713] Hook Installation \u2014 Registered in settings.json\n\n  [4] Test Suite\n  [\u2713] Test Suite \u2014 85 test files found\n\n  ============================================================\n  8 passed, 5 failed\n  Run the suggested commands above to fix issues\n",
+        "timed_out": false
+      }
+    },
+    {
+      "classification": "passed",
+      "label": "ystar_command_demo",
+      "record": {
+        "command": [
+          "ystar",
+          "demo"
+        ],
+        "cwd": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "\nY*gov Demo \u2014 governance in action\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n[1] ALLOW  read ./projects/data.txt               0.08ms\n[2] DENY   read /etc/passwd                       0.03ms\n    \u2192 '/etc' is not allowed in file_path\n[3] ALLOW  run echo \"hello\"                       0.01ms\n[4] DENY   run rm -rf /                           0.01ms\n    \u2192 'rm -rf' is a forbidden command\n[5] DENY   fetch http://evil.com/steal            0.03ms\n    \u2192 domain not in allowed list\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n5 decisions in 0.16ms \u00b7 CIEU chain: intact \u2713\n\nNext: ystar setup && ystar hook-install && ystar doctor\n\n",
+        "timed_out": false
+      }
+    }
+  ],
+  "name": "First Value Demo Bundle: Governed Agent Action Proof Packet",
+  "one_line_promise": "See deterministic governance block/allow agent actions and produce evidence in minutes.",
+  "paid_signal_claimed": false,
+  "plugin_commercial_wrapper_comparison": [
+    {
+      "reason": "CLI and status help are locally available; install server start is documented but skipped in E45 safety envelope.",
+      "role": "first local demo substrate",
+      "route": "pure gov-mcp CLI install",
+      "status": "active"
+    },
+    {
+      "reason": "Existing marketing/plugin assets support it, but E45 did not package or publish.",
+      "role": "first commercial wrapper candidate",
+      "route": "Claude Desktop plugin / MCPB path",
+      "status": "watchlist"
+    },
+    {
+      "reason": "Best explains user-visible value without claiming validation.",
+      "role": "first external user story wrapper",
+      "route": "commercial proof packet / agent action passport",
+      "status": "active_for_owner_review"
+    },
+    {
+      "reason": "Needs stronger local proof and owner-approved outreach before revenue claims.",
+      "role": "later revenue route",
+      "route": "bug bounty / workflow resale / enterprise route",
+      "status": "parked"
+    }
+  ],
+  "readiness_class": "ready_for_owner_review",
+  "target_user_persona": "AI engineer / agent framework power user / local MCP user",
+  "what_it_does_not_prove": [
+    "customer validation",
+    "paid signal",
+    "compliance certification",
+    "production readiness"
+  ],
+  "what_it_proves": [
+    "local governance path exists",
+    "install/demo path is understandable",
+    "proof object can be shown to owner/user"
+  ],
+  "what_user_should_see": [
+    "gov-mcp status proof",
+    "Y-star-gov demo proof",
+    "Y-star-gov doctor proof with honest environment blockers",
+    "governed allow/deny proof",
+    "governance envelope / CIEU proof where available"
+  ]
+}

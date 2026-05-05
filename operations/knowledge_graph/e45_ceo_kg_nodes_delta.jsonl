@@ -1,0 +1,4 @@
+{"id": "e45:actual_invocation_trace", "label": "E45 actual full-history invocation trace", "type": "runtime_invocation"}
+{"id": "e45:local_first_value_demo", "label": "E45 local first value demo", "type": "local_demo_run"}
+{"id": "e45:first_value_demo_bundle", "label": "First Value Demo Bundle", "type": "owner_packet"}
+{"id": "gov_mcp:998e62c0:first_5_minute_docs", "label": "gov-mcp first 5-minute proof docs", "type": "cross_repo_doc_fix"}

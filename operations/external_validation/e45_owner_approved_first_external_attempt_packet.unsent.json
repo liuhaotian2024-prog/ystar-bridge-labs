@@ -1,0 +1,58 @@
+{
+  "artifact_id": "e45_owner_approved_first_external_attempt_packet_unsent",
+  "based_on_actual_E45_local_run": true,
+  "contact_info_scraped": false,
+  "external_user_persona": "AI engineer or agent-framework power user who runs local agents touching files/tools",
+  "feedback_questions": [
+    "What was confusing in the first 5 minutes?",
+    "Did the allow/deny proof feel valuable?",
+    "Would you prefer CLI, plugin, or proof-packet packaging?",
+    "What would need to work before you trusted this with a real agent?"
+  ],
+  "first_user_success_metrics": [
+    "can run documented command path",
+    "can explain what was allowed/denied",
+    "can identify whether proof packet is useful",
+    "reports blockers without Y* claiming validation"
+  ],
+  "generated_at": "2026-05-05T00:00:01Z",
+  "message_draft_status": "unsent",
+  "must_fix_blocker_status": "fixed_in_gov_mcp",
+  "owner_approval_required_before_any_outreach": true,
+  "real_human_targets_identified": false,
+  "sent": false,
+  "stop_conditions": [
+    "any login/payment/API required",
+    "install path fails",
+    "user cannot explain proof",
+    "owner approval absent"
+  ],
+  "unsent_message_draft": "I\u2019m testing a local governed-agent-action proof: install gov-mcp, run a short Y*gov demo, and see allow/deny governance evidence in minutes. Would you be willing to try it only after I send the exact owner-approved steps?",
+  "what_failed": [
+    "ystar_doctor"
+  ],
+  "what_passed": [
+    "gov_mcp_server_help",
+    "gov_mcp_install_help",
+    "gov_mcp_status",
+    "gov_mcp_command_help",
+    "ystar_help",
+    "ystar_demo",
+    "ystar_command_demo"
+  ],
+  "what_remains_unverified": [
+    "full gov-mcp server install/start with real MCP client config",
+    "real external user comprehension",
+    "paid willingness"
+  ],
+  "what_was_run_locally": [
+    "gov_mcp_server_help",
+    "gov_mcp_install_help",
+    "gov_mcp_status",
+    "gov_mcp_command_help",
+    "ystar_help",
+    "ystar_demo",
+    "ystar_doctor",
+    "ystar_command_demo"
+  ]
+}

@@ -1,0 +1,3 @@
+{"source": "e45:actual_invocation_trace", "target": "e45:local_first_value_demo", "type": "enables"}
+{"source": "e45:local_first_value_demo", "target": "e45:first_value_demo_bundle", "type": "produces"}
+{"source": "gov_mcp:998e62c0:first_5_minute_docs", "target": "e45:first_value_demo_bundle", "type": "clarifies"}
