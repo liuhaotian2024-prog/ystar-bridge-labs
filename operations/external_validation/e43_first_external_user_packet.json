@@ -1,0 +1,60 @@
+{
+  "artifact_id": "e43_first_external_user_packet",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "status": "owner_ready_unsent_unpublished",
+  "product_value_one_liner": "Install gov-mcp to put Y*gov's deterministic governance in front of agent tool actions, then see allowed/blocked actions and evidence envelopes in minutes.",
+  "first_user_persona_role_type_only": "AI engineer or agent-framework power user using Claude Code, OpenClaw, Cursor, Windsurf, or another MCP-compatible workflow where agents touch files/tools.",
+  "no_real_people_identified": true,
+  "what_they_install": [
+    "pip install gov-mcp"
+  ],
+  "what_they_run_first_5_minutes": [
+    "create AGENTS.md with a minimal prohibited pattern rule",
+    "gov-mcp install --agents-md ./AGENTS.md",
+    "gov-mcp status",
+    "ystar demo",
+    "ystar doctor"
+  ],
+  "success_looks_like": [
+    "gov-mcp status shows server running or clear not-running instruction",
+    "ystar demo shows deterministic governance in action",
+    "ystar doctor reports environment integrity checks",
+    "MCP client can later call gov_check/gov_doctor and inspect governance envelope"
+  ],
+  "output_that_proves_value": [
+    "gov-mcp status/health reports server state",
+    "Y-star-gov demo/doctor exercises deterministic governance",
+    "MCP gov_check/gov_doctor responses include governance envelope/CIEU semantics when run after install"
+  ],
+  "pain_it_solves": [
+    "agent tool actions are otherwise invisible or prompt-only governed",
+    "dangerous file/command access should be blocked before execution",
+    "teams need a visible evidence trail for governance decisions"
+  ],
+  "what_not_to_claim": [
+    "not customer validation",
+    "not expert feedback",
+    "not paid signal",
+    "not compliance certification",
+    "not proof of product-market fit",
+    "not guaranteed ROI"
+  ],
+  "questions_to_ask_after_trying": [
+    "Could you install it without help?",
+    "Did the first governed action make sense?",
+    "Did status/doctor output prove that governance was active?",
+    "Where did wording or setup feel confusing?",
+    "Would you use this in a real agent workflow, and what would block you?"
+  ],
+  "owner_approval_required_before_outreach": [
+    "approve real target/person separately",
+    "approve exact message separately",
+    "approve whether publication is allowed separately",
+    "approve any external contact route separately"
+  ],
+  "handoff_artifact_after_approval": "e43_first_external_user_packet + selected path commands + fix-before-real-user list after blockers are resolved",
+  "customer_contact_occurred": false,
+  "publication_occurred": false,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false
+}

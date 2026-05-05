@@ -1,0 +1,191 @@
+{
+  "artifact_id": "e43_first_user_value_path_archaeology",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "scope": "first external user installation/value demonstration only, not generic inventory",
+  "inspected_assets": {
+    "bridge_labs": [
+      "README.md",
+      "AGENTS.md",
+      "OPERATIONS.md",
+      "DIRECTIVE_TRACKER.md",
+      "docs/gov_mcp_setup.md",
+      "scripts/gov_order.py",
+      "delivery bridge scripts/tests",
+      "E31-E42 artifacts"
+    ],
+    "Y-star-gov": [
+      "README.md",
+      "pyproject.toml",
+      "ystar/_cli.py",
+      "ystar/kernel",
+      "ystar/governance",
+      "tests/demo/check/doctor/hook"
+    ],
+    "gov-mcp": [
+      "README.md",
+      "pyproject.toml",
+      "gov_mcp/cli.py",
+      "gov_mcp/server.py",
+      "tests status/install/check"
+    ],
+    "K9Audit": [
+      "README.md",
+      "pyproject.toml",
+      "k9log/core.py",
+      "k9log/cli.py",
+      "docs/CIEU_spec.md"
+    ],
+    "ystar-company": [
+      "README/docs/commercial artifacts read-only"
+    ]
+  },
+  "most_credible_install_demo_path": "gov-mcp + Y-star-gov governed execution in 5 minutes",
+  "why": [
+    "gov-mcp README documents pip install, install, status, and MCP governance tools.",
+    "gov-mcp pyproject exposes the gov-mcp CLI and depends on ystar.",
+    "Y-star-gov README documents ystar demo and ystar doctor as visible governance proof.",
+    "Bridge Labs README already positions gov-mcp as the 30-second install path and Labs as dogfood proof."
+  ],
+  "user_visible_value_fastest": "User installs gov-mcp, starts governed MCP boundary, sees status/doctor/demo evidence that actions are allowed/denied under deterministic governance.",
+  "what_breaks_trust": [
+    "Bridge README's internal server setup references LAN SSE and is not first-external-user safe.",
+    "gov-mcp first-run path documents install/status but the 5-minute proof should more explicitly say whether to run ystar demo first or MCP gov_demo after install.",
+    "K9Audit has a strong selftest but is a second product path; making it first would split attention."
+  ],
+  "smallest_fix_or_packet_needed": "Owner-ready first external user packet with exact commands, expected predicates, no-claim boundaries, and fix-before-contact list.",
+  "avoid": [
+    "asking a person to clone bridge-labs first",
+    "requiring live provider/API calls",
+    "starting with K9Audit instead of gov-mcp/Y-star-gov",
+    "claiming validation before anyone runs it"
+  ],
+  "assets_summary": {
+    "bridge_labs": {
+      "readme_exists": true,
+      "mentions_install_gov_mcp": true,
+      "mentions_four_repos": true,
+      "commands": [
+        "pip install gov-mcp",
+        "gov-mcp install",
+        "python3.11 scripts/gov_order.py \"ethan finish the gov-008 migration by tonight\""
+      ]
+    },
+    "Y-star-gov": {
+      "readme_exists": true,
+      "pyproject_exists": true,
+      "package_name": "ystar",
+      "cli_entrypoint": true,
+      "commands": [
+        "[Y*gov] DENY — /etc is not allowed in command",
+        "CIEU record written: seq=1774555489773712",
+        "Y*gov CIEU Report",
+        "─────────────────────────────────────",
+        "Total decisions : 14",
+        "Allow           : 11  (78.6%)",
+        "Deny            : 3   (21.4%)",
+        "Top blocked     : /etc (2x), rm -rf (1x)",
+        "Chain integrity : verified",
+        "Evidence Grade Distribution:",
+        "Decision-grade   : 12 (85.7%) ← Audit weight",
+        "Governance-grade :  1 (7.1%)  ← Policy adaptation",
+        "Advisory-grade   :  1 (7.1%)  ← Causal suggestions",
+        "Ops-grade        :  0 (0.0%)  ← Health metrics",
+        "─────────────────────────────────────",
+        "Verifying session: my_session",
+        "Records: 14",
+        "Chain: SHA-256 Merkle chain intact",
+        "Result: VALID — audit chain is tamper-evident",
+        "Y*gov Doctor — Environment Check",
+        "─────────────────────────────────",
+        "[1] Session config    OK",
+        "[2] Hook registered   OK",
+        "[3] CIEU database     OK  14 records",
+        "[4] AGENTS.md         OK  3 rules loaded",
+        "[5] Hook self-test    OK  /etc/passwd blocked",
+        "[6] Chain integrity   OK  verified",
+        "[7] Obligations       OK  engine active",
+        "─────────────────────────────────",
+        "All 7 checks passed"
+      ],
+      "has_demo_command": true,
+      "has_doctor_command": true
+    },
+    "gov-mcp": {
+      "readme_exists": true,
+      "pyproject_exists": true,
+      "package_name": "gov-mcp",
+      "cli_entrypoint": true,
+      "commands": [
+        "pip install gov-mcp",
+        "gov-mcp install",
+        "pip install gov-mcp",
+        "This will:",
+        "1. Detect your environment (Claude Code, Cursor, Windsurf, OpenClaw)",
+        "2. Start the GOV MCP server (background, auto port selection)",
+        "3. Auto-configure detected clients",
+        "4. Verify the connection",
+        "5. Print a summary with next steps",
+        "If you prefer manual configuration:",
+        "Connect from any MCP client:",
+        "| Tool | Description |",
+        "|---|---|",
+        "| `gov_check` | Check action + auto-execute deterministic commands. Single entry point. |",
+        "| `gov_enforce` | Full pipeline: check + obligation scan + delegation verify. |",
+        "| `gov_exec` | **[DEPRECATED]** Use `gov_check` instead. Redirects with migration guide. |",
+        "| Tool | Description |",
+        "|---|---|",
+        "| `gov_delegate` | Register parent-child delegation with monotonicity validation. |",
+        "| `gov_escalate` | Request permission expansion from principal. CIEU audit trail. |",
+        "| `gov_chain_reset` | Clear stale delegation links (selective or full reset). |",
+        "| Tool | Description |",
+        "|---|---|",
+        "| `gov_contract_load` | Translate AGENTS.md into draft contract. |",
+        "| `gov_contract_validate` | Validate draft contract coverage and health. |",
+        "| `gov_contract_activate` | Activate validated contract for enforcement. |",
+        "| Tool | Description |",
+        "|---|---|",
+        "| `gov_report` | CIEU summary: decisions, deny rate, top violations. |",
+        "| `gov_verify` | SHA-256 Merkle chain integrity verification. |",
+        "| `gov_obligations` | Query obligation status from OmissionEngine. |",
+        "| `gov_doctor` | Full 14-layer health check (contract, CIEU, obligations, heartbeat, hooks). |",
+        "| `gov_benchmark` | Token savings benchmark: Mode A vs Mode B vs Mode C. |",
+        "| `gov_seal` | Seal CIEU session with Merkle root for tamper-evident preservation. |",
+        "| `gov_audit` | Causal audit report with violation replay for compliance evidence. |"
+      ],
+      "has_install_command": true,
+      "has_status_command": true,
+      "has_gov_check_tool": true,
+      "has_gov_doctor_tool": true,
+      "cli_supports_install_status": true
+    },
+    "K9Audit": {
+      "readme_exists": true,
+      "pyproject_exists": true,
+      "package_name": "k9audit-hook",
+      "cli_entrypoint": true,
+      "commands": [
+        "Because the syntax was valid, no error was thrown. A conventional logger would have buried this silently in a text file — quietly corrupting every subsequent backtest result.",
+        "Here is how K9 Audit traced the root cause using the Ledger immediately:",
+        "---",
+        "Every action monitored by K9 Audit produces a **CIEU record** — a rigorously structured five-tuple written into the causal evidence ledger:",
+        "| Field | Symbol | Meaning |",
+        "|-------|--------|---------|",
+        "| Context | `X_t` | Who acted, when, and under what conditions |",
+        "| Action | `U_t` | What the agent actually executed |",
+        "| Intent Contract | `Y*_t` | What the system expected the agent to do |",
+        "| Outcome | `Y_t+1` | What actually resulted |",
+        "| Assessment | `R_t+1` | How far the outcome diverged from intent, and why |",
+        "This is a fundamentally different category of infrastructure: **tamper-evident causal evidence**.",
+        "---",
+        "- Not an interception or firewall system *(Phase 1: zero-disruption observability only)*",
+        "- Not an LLM-as-judge platform — it consumes zero tokens",
+        "- Not a source of agent crashes or execution interruptions",
+        "In this phase, K9 Audit does one thing perfectly: turn hard-to-trace AI deviations into traceable, verifiable mathematics. Record, trace, verify, report. The evidence layer that everything else can be built on top of.",
+        "---",
+        "Other observability tools work like expensive cameras. K9 Audit works like an automated forensic investigator.",
+        "| | K9 Audit | Mainstream tools (LangSmith / Langfuse / Arize) |"
+      ],
+      "positioning": "causal audit add-on, not first install blocker"
+    }
+  }
+}

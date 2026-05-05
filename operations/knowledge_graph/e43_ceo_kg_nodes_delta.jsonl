@@ -1,0 +1,6 @@
+{"id": "e43_live_company_work_loop", "type": "CEO_work_loop", "label": "CEO Live Company Work Loop V1"}
+{"id": "e43_first_value_path", "type": "first_user_path", "label": "gov-mcp + Y-star-gov governed execution in 5 minutes"}
+{"id": "e43_first_value_runner", "type": "local_proof_runner", "label": "First value loop runner"}
+{"id": "e43_first_external_user_packet", "type": "owner_ready_packet", "label": "First external user packet"}
+{"id": "e43_fix_before_user_list", "type": "fix_list", "label": "Fix-before-real-user list"}
+{"id": "e43_updated_bottleneck", "type": "CEO_bottleneck", "label": "CEO can route concrete task to existing capabilities; next must convert path into owner-approved external user attempt"}

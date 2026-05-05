@@ -1,0 +1,216 @@
+{
+  "artifact_id": "e43_e42_router_preflight_result",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "task": "Prepare the fastest credible path toward one real external user successfully installing and understanding Y*gov / gov-mcp / Y*Bridge Labs' agent-company runtime value.",
+  "E42_router_called": true,
+  "recommended_execution_path": "blocked_wrong_layer",
+  "smallest_implementation_delta": "create Labs-only planning artifact or propose gov-mcp-aligned route; do not implement execution layer",
+  "repo_ownership_boundary": [
+    "bridge_labs_strategy",
+    "gov_mcp_execution_boundary",
+    "ystar_gov_governance_kernel"
+  ],
+  "relevant_existing_resources": [
+    {
+      "resource_id": "e42_gov_mcp_8d5f186dd4a3",
+      "resource_path": "gov_mcp/company_runtime_tools.py",
+      "repo": "gov-mcp",
+      "relevance_score": 46,
+      "relevance_reason": "matched ['company', 'gov', 'mcp', 'runtime'] via deterministic tags/path/keywords",
+      "reuse_mode": "do_not_modify",
+      "owner_layer": "gov_mcp_execution_boundary",
+      "boundary_warning": "Future execution/tool/send action belongs behind gov-mcp and owner approval; do not build a Labs execution layer.",
+      "recommended_action": "blocked_by_boundary",
+      "tests_to_run": [
+        "tests/test_company_runtime_tools.py"
+      ]
+    },
+    {
+      "resource_id": "e42_ystar_bridge_labs_5842293e41db",
+      "resource_path": "operations/external_validation/e36_gov_mcp_execution_boundary_alignment.json",
+      "repo": "ystar-bridge-labs",
+      "relevance_score": 46,
+      "relevance_reason": "matched ['boundary', 'execution', 'external', 'gov', 'mcp'] via deterministic tags/path/keywords",
+      "reuse_mode": "read_as_input",
+      "owner_layer": "bridge_labs_strategy",
+      "boundary_warning": "bridge-labs strategy/runtime resource; extend rather than rebuild when possible.",
+      "recommended_action": "read_existing",
+      "tests_to_run": []
+    },
+    {
+      "resource_id": "e42_Y_star_gov_3286c1f3d199",
+      "resource_path": "tests/domains/company_runtime/test_mission_permission_check.py",
+      "repo": "Y-star-gov",
+      "relevance_score": 38,
+      "relevance_reason": "matched ['check', 'company', 'runtime'] via deterministic tags/path/keywords",
+      "reuse_mode": "do_not_modify",
+      "owner_layer": "ystar_gov_governance_kernel",
+      "boundary_warning": "Y-star-gov owns governance semantics; bridge-labs may reference but must not rebuild or modify in this milestone.",
+      "recommended_action": "read_existing",
+      "tests_to_run": [
+        "tests/domains/company_runtime/test_mission_permission_check.py"
+      ]
+    },
+    {
+      "resource_id": "e42_ystar_bridge_labs_9b729c61556e",
+      "resource_path": "office/mission_command/c1_gov_mcp_execution_bridge.py",
+      "repo": "ystar-bridge-labs",
+      "relevance_score": 38,
+      "relevance_reason": "matched ['bridge', 'execution', 'gov', 'mcp'] via deterministic tags/path/keywords",
+      "reuse_mode": "direct_call",
+      "owner_layer": "bridge_labs_strategy",
+      "boundary_warning": "bridge-labs strategy/runtime resource; extend rather than rebuild when possible.",
+      "recommended_action": "call_existing",
+      "tests_to_run": []
+    },
+    {
+      "resource_id": "e42_ystar_bridge_labs_fabf45331b61",
+      "resource_path": "office/mission_command/e36_gov_mcp_execution_boundary_alignment.py",
+      "repo": "ystar-bridge-labs",
+      "relevance_score": 38,
+      "relevance_reason": "matched ['boundary', 'execution', 'gov', 'mcp'] via deterministic tags/path/keywords",
+      "reuse_mode": "direct_call",
+      "owner_layer": "bridge_labs_strategy",
+      "boundary_warning": "Use existing CEO brain/KG/daily memory conventions; do not create a second brain.",
+      "recommended_action": "call_existing",
+      "tests_to_run": []
+    },
+    {
+      "resource_id": "e42_ystar_bridge_labs_ad4c94814206",
+      "resource_path": "reports/integration/e36_gov_mcp_execution_boundary_alignment.md",
+      "repo": "ystar-bridge-labs",
+      "relevance_score": 38,
+      "relevance_reason": "matched ['boundary', 'execution', 'gov', 'mcp'] via deterministic tags/path/keywords",
+      "reuse_mode": "use_as_report_context",
+      "owner_layer": "bridge_labs_strategy",
+      "boundary_warning": "bridge-labs strategy/runtime resource; extend rather than rebuild when possible.",
+      "recommended_action": "read_existing",
+      "tests_to_run": []
+    },
+    {
+      "resource_id": "e42_Y_star_gov_cf80f71a7503",
+      "resource_path": "tests/demo_rle_path_a_bridge.py",
+      "repo": "Y-star-gov",
+      "relevance_score": 30,
+      "relevance_reason": "matched ['bridge', 'path'] via deterministic tags/path/keywords",
+      "reuse_mode": "do_not_modify",
+      "owner_layer": "ystar_gov_governance_kernel",
+      "boundary_warning": "Y-star-gov owns governance semantics; bridge-labs may reference but must not rebuild or modify in this milestone.",
+      "recommended_action": "read_existing",
+      "tests_to_run": [
+        "tests/demo_rle_path_a_bridge.py"
+      ]
+    },
+    {
+      "resource_id": "e42_Y_star_gov_2e7f513deb85",
+      "resource_path": "tests/domains/company_runtime/test_admin_rationalization.py",
+      "repo": "Y-star-gov",
+      "relevance_score": 30,
+      "relevance_reason": "matched ['company', 'runtime'] via deterministic tags/path/keywords",
+      "reuse_mode": "do_not_modify",
+      "owner_layer": "ystar_gov_governance_kernel",
+      "boundary_warning": "Y-star-gov owns governance semantics; bridge-labs may reference but must not rebuild or modify in this milestone.",
+      "recommended_action": "read_existing",
+      "tests_to_run": [
+        "tests/domains/company_runtime/test_admin_rationalization.py"
+      ]
+    },
+    {
+      "resource_id": "e42_Y_star_gov_5855a89f953b",
+      "resource_path": "tests/domains/company_runtime/test_e1_1_mission_spine_policy.py",
+      "repo": "Y-star-gov",
+      "relevance_score": 30,
+      "relevance_reason": "matched ['company', 'runtime'] via deterministic tags/path/keywords",
+      "reuse_mode": "do_not_modify",
+      "owner_layer": "ystar_gov_governance_kernel",
+      "boundary_warning": "Y-star-gov owns governance semantics; bridge-labs may reference but must not rebuild or modify in this milestone.",
+      "recommended_action": "read_existing",
+      "tests_to_run": [
+        "tests/domains/company_runtime/test_e1_1_mission_spine_policy.py"
+      ]
+    },
+    {
+      "resource_id": "e42_Y_star_gov_f45dc5137517",
+      "resource_path": "tests/domains/company_runtime/test_escalation_contract.py",
+      "repo": "Y-star-gov",
+      "relevance_score": 30,
+      "relevance_reason": "matched ['company', 'runtime'] via deterministic tags/path/keywords",
+      "reuse_mode": "do_not_modify",
+      "owner_layer": "ystar_gov_governance_kernel",
+      "boundary_warning": "Y-star-gov owns governance semantics; bridge-labs may reference but must not rebuild or modify in this milestone.",
+      "recommended_action": "read_existing",
+      "tests_to_run": [
+        "tests/domains/company_runtime/test_escalation_contract.py"
+      ]
+    }
+  ],
+  "top_reusable_modules": [
+    {
+      "resource_id": "e42_ystar_bridge_labs_9b729c61556e",
+      "resource_path": "office/mission_command/c1_gov_mcp_execution_bridge.py",
+      "repo": "ystar-bridge-labs",
+      "relevance_score": 38,
+      "relevance_reason": "matched ['bridge', 'execution', 'gov', 'mcp'] via deterministic tags/path/keywords",
+      "reuse_mode": "direct_call",
+      "owner_layer": "bridge_labs_strategy",
+      "boundary_warning": "bridge-labs strategy/runtime resource; extend rather than rebuild when possible.",
+      "recommended_action": "call_existing",
+      "tests_to_run": []
+    },
+    {
+      "resource_id": "e42_ystar_bridge_labs_fabf45331b61",
+      "resource_path": "office/mission_command/e36_gov_mcp_execution_boundary_alignment.py",
+      "repo": "ystar-bridge-labs",
+      "relevance_score": 38,
+      "relevance_reason": "matched ['boundary', 'execution', 'gov', 'mcp'] via deterministic tags/path/keywords",
+      "reuse_mode": "direct_call",
+      "owner_layer": "bridge_labs_strategy",
+      "boundary_warning": "Use existing CEO brain/KG/daily memory conventions; do not create a second brain.",
+      "recommended_action": "call_existing",
+      "tests_to_run": []
+    }
+  ],
+  "top_reusable_artifacts": [
+    {
+      "resource_id": "e42_ystar_bridge_labs_5842293e41db",
+      "resource_path": "operations/external_validation/e36_gov_mcp_execution_boundary_alignment.json",
+      "repo": "ystar-bridge-labs",
+      "relevance_score": 46,
+      "relevance_reason": "matched ['boundary', 'execution', 'external', 'gov', 'mcp'] via deterministic tags/path/keywords",
+      "reuse_mode": "read_as_input",
+      "owner_layer": "bridge_labs_strategy",
+      "boundary_warning": "bridge-labs strategy/runtime resource; extend rather than rebuild when possible.",
+      "recommended_action": "read_existing",
+      "tests_to_run": []
+    },
+    {
+      "resource_id": "e42_ystar_bridge_labs_ad4c94814206",
+      "resource_path": "reports/integration/e36_gov_mcp_execution_boundary_alignment.md",
+      "repo": "ystar-bridge-labs",
+      "relevance_score": 38,
+      "relevance_reason": "matched ['boundary', 'execution', 'gov', 'mcp'] via deterministic tags/path/keywords",
+      "reuse_mode": "use_as_report_context",
+      "owner_layer": "bridge_labs_strategy",
+      "boundary_warning": "bridge-labs strategy/runtime resource; extend rather than rebuild when possible.",
+      "recommended_action": "read_existing",
+      "tests_to_run": []
+    }
+  ],
+  "top_tests_to_run": [
+    "tests/test_company_runtime_tools.py",
+    "tests/domains/company_runtime/test_mission_permission_check.py",
+    "tests/demo_rle_path_a_bridge.py",
+    "tests/domains/company_runtime/test_admin_rationalization.py",
+    "tests/domains/company_runtime/test_e1_1_mission_spine_policy.py",
+    "tests/domains/company_runtime/test_escalation_contract.py"
+  ],
+  "forbidden_duplicate_work": [
+    "duplicate governance kernel",
+    "duplicate MCP execution layer",
+    "second CEO brain",
+    "second CEO KG",
+    "duplicate CIEU/CZL/route registry",
+    "new report pile when existing runtime can be called"
+  ],
+  "new_file_citation": "Direct reuse was insufficient because E42 routes resources/boundaries but does not assemble a concrete first-user install path, local proof predicates, owner packet, and fix-before-user list."
+}

@@ -1,0 +1,5 @@
+{"source": "e43_live_company_work_loop", "target": "e43_first_value_path", "type": "selects"}
+{"source": "e43_first_value_path", "target": "e43_first_value_runner", "type": "validated_by"}
+{"source": "e43_first_value_runner", "target": "e43_first_external_user_packet", "type": "enables"}
+{"source": "e43_first_value_runner", "target": "e43_fix_before_user_list", "type": "reveals"}
+{"source": "e43_fix_before_user_list", "target": "e43_updated_bottleneck", "type": "defines_next_blocker"}

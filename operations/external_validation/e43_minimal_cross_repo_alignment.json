@@ -1,0 +1,34 @@
+{
+  "artifact_id": "e43_minimal_cross_repo_alignment",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "Y-star-gov": {
+    "role": "governance kernel",
+    "modified": false,
+    "used_as": "read-only source of ystar CLI/demo/doctor and kernel semantics"
+  },
+  "gov-mcp": {
+    "role": "execution boundary",
+    "modified": false,
+    "used_as": "read-only source of install/status/MCP tool path"
+  },
+  "K9Audit": {
+    "role": "audit layer",
+    "modified": false,
+    "used_as": "read-only optional add-on positioning"
+  },
+  "ystar-bridge-labs": {
+    "role": "CEO company runtime and owner packet",
+    "modified": true,
+    "used_as": "E43 artifacts and first-value packet"
+  },
+  "ystar-company": {
+    "role": "commercial/company operation artifacts",
+    "modified": false,
+    "used_as": "read-only context only"
+  },
+  "duplicate_governance_kernel_created": false,
+  "duplicate_MCP_execution_layer_created": false,
+  "duplicate_CIEU_ledger_created": false,
+  "second_CEO_brain_created": false,
+  "second_CEO_KG_created": false
+}

@@ -1,0 +1,12 @@
+# E43 Fix Before Real User List
+
+- items: 5
+- must-fix before contact: 1
+
+## Items
+
+- issue_id: e43_fix_001, path: gov-mcp/README.md, problem: Install/status is clear, but the first 5-minute proof should explicitly connect gov-mcp install to a visible governed allow/deny demo., user_impact: First user may install but not know what success looks like., fix_type: demo_fix, owner_repo: gov-mcp, suggested_smallest_delta: Add a short 'First 5-minute proof' section with gov-mcp status plus MCP gov_demo/gov_check expected output., blocking_level: must_fix_before_contact
+- issue_id: e43_fix_002, path: ystar-bridge-labs/README.md, problem: Bridge README has strong product story but mixes company dogfood, gov-mcp install, and Board-only gov_order flow., user_impact: External user may not know whether to start with bridge-labs, Y-star-gov, gov-mcp, or K9Audit., fix_type: docs_fix, owner_repo: ystar-bridge-labs, suggested_smallest_delta: Add or link a concise first external user path pointing to gov-mcp + Y-star-gov., blocking_level: should_fix_before_contact
+- issue_id: e43_fix_003, path: docs/gov_mcp_setup.md, problem: Internal LAN SSE setup is useful for Labs but not safe as first external user guidance., user_impact: A new user could confuse internal server instructions with product install path., fix_type: docs_fix, owner_repo: ystar-bridge-labs, suggested_smallest_delta: Label as internal-only and keep external first path in owner packet/README., blocking_level: should_fix_before_contact
+- issue_id: e43_fix_004, path: Y-star-gov/README.md, problem: Y-star-gov has a strong ystar demo/doctor path but gov-mcp first-user path should state when the user needs ystar directly., user_impact: User may not understand kernel vs execution boundary., fix_type: trust_fix, owner_repo: Y-star-gov, suggested_smallest_delta: Add a tiny note: if using MCP, start with gov-mcp; use ystar demo/doctor to inspect the kernel directly., blocking_level: can_wait
+- issue_id: e43_fix_005, path: K9Audit/README.md, problem: K9Audit is compelling but should not be bundled as mandatory first install., user_impact: Trying to explain four packages at once dilutes first value., fix_type: packaging_fix, owner_repo: K9Audit, suggested_smallest_delta: Position as optional causal audit add-on after gov-mcp/Y-star-gov first proof., blocking_level: can_wait

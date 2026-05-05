@@ -1,0 +1,33 @@
+{
+  "artifact_id": "e43_selected_first_value_path",
+  "generated_at": "2026-05-05T00:00:01Z",
+  "selected_path": "gov-mcp + Y-star-gov governed execution in 5 minutes",
+  "selected_repo_package_path": [
+    "gov-mcp",
+    "Y-star-gov/ystar"
+  ],
+  "K9Audit_role": "causal audit add-on after first install, not first install blocker",
+  "Bridge_Labs_role": "dogfood company proof and owner-facing story, not first package to install",
+  "exact_install_command_documented": "pip install gov-mcp",
+  "exact_first_commands_to_run": [
+    "create AGENTS.md with a minimal prohibited pattern rule",
+    "gov-mcp install --agents-md ./AGENTS.md",
+    "gov-mcp status",
+    "ystar demo",
+    "ystar doctor"
+  ],
+  "expected_output_or_success_predicate": [
+    "gov-mcp status shows server running or clear not-running instruction",
+    "ystar demo shows deterministic governance in action",
+    "ystar doctor reports environment integrity checks",
+    "MCP client can later call gov_check/gov_doctor and inspect governance envelope"
+  ],
+  "proof_governance_is_active": [
+    "gov-mcp status/health reports server state",
+    "Y-star-gov demo/doctor exercises deterministic governance",
+    "MCP gov_check/gov_doctor responses include governance envelope/CIEU semantics when run after install"
+  ],
+  "next_step_for_user": "Run one harmless governed check/demo, then inspect allow/deny and governance envelope output.",
+  "story": "Y*gov is the deterministic governance kernel; gov-mcp is the execution boundary that lets a real MCP client feel it quickly; Bridge Labs is the public dogfood company proving the runtime matters.",
+  "not_final_product_selection": true
+}
