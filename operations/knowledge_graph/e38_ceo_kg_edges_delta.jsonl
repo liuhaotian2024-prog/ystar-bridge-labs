@@ -12,3 +12,44 @@
 {"relation": "bounds", "source": "e38_no_paid_signal", "target": "e38_public_evidence_receipts"}
 {"relation": "maps_to", "source": "e38_y_star_gov_alignment", "target": "Y-star-gov"}
 {"relation": "maps_to", "source": "e38_gov_mcp_alignment", "target": "gov-mcp"}
+{"from": "e38_fc_001", "to": "e38_frontier_category_autonomous_deep_research_agents", "edge_type": "belongs_to_category", "evidence_boundary": "public_observation_only"}
+{"from": "e38_fc_002", "to": "e38_frontier_category_sandboxed_long_task_agents", "edge_type": "belongs_to_category", "evidence_boundary": "public_observation_only"}
+{"from": "e38_fc_003", "to": "e38_frontier_category_computer_use_gui_agents", "edge_type": "belongs_to_category", "evidence_boundary": "public_observation_only"}
+{"from": "e38_fc_004", "to": "e38_frontier_category_agent_orchestration_frameworks", "edge_type": "belongs_to_category", "evidence_boundary": "public_observation_only"}
+{"from": "e38_fc_005", "to": "e38_frontier_category_agent_orchestration_frameworks", "edge_type": "belongs_to_category", "evidence_boundary": "public_observation_only"}
+{"from": "e38_fc_006", "to": "e38_frontier_category_guardrails_tool_safety_tripwire_systems", "edge_type": "belongs_to_category", "evidence_boundary": "public_observation_only"}
+{"from": "e38_fc_007", "to": "e38_frontier_category_agent_observability_and_command_centers", "edge_type": "belongs_to_category", "evidence_boundary": "public_observation_only"}
+{"from": "e38_fc_008", "to": "e38_frontier_category_agent_observability_and_command_centers", "edge_type": "belongs_to_category", "evidence_boundary": "public_observation_only"}
+{"from": "e38_fc_009", "to": "e38_frontier_category_agent_protocols_and_interoperability", "edge_type": "belongs_to_category", "evidence_boundary": "public_observation_only"}
+{"from": "e38_fc_010", "to": "e38_frontier_category_agent_protocols_and_interoperability", "edge_type": "belongs_to_category", "evidence_boundary": "public_observation_only"}
+{"from": "e38_fc_011", "to": "e38_frontier_category_agent_protocols_and_interoperability", "edge_type": "belongs_to_category", "evidence_boundary": "public_observation_only"}
+{"from": "e38_fc_012", "to": "e38_frontier_category_ai_coding_software_agents", "edge_type": "belongs_to_category", "evidence_boundary": "public_observation_only"}
+{"from": "e38_fc_013", "to": "e38_frontier_category_agent_memory_and_knowledge_systems", "edge_type": "belongs_to_category", "evidence_boundary": "public_observation_only"}
+{"from": "e38_fc_014", "to": "e38_frontier_category_simulation_synthetic_user_market_testing", "edge_type": "belongs_to_category", "evidence_boundary": "public_observation_only"}
+{"from": "e38_fc_015", "to": "e38_frontier_category_simulation_synthetic_user_market_testing", "edge_type": "belongs_to_category", "evidence_boundary": "public_observation_only"}
+{"from": "e38_gap_001", "to": "e38_fc_001", "edge_type": "may_be_addressed_by", "evidence_boundary": "hypothesis_from_public_capability_scan"}
+{"from": "e38_gap_002", "to": "e38_fc_001", "edge_type": "may_be_addressed_by", "evidence_boundary": "hypothesis_from_public_capability_scan"}
+{"from": "e38_gap_003", "to": "e38_fc_007", "edge_type": "may_be_addressed_by", "evidence_boundary": "hypothesis_from_public_capability_scan"}
+{"from": "e38_gap_004", "to": "e38_fc_005", "edge_type": "may_be_addressed_by", "evidence_boundary": "hypothesis_from_public_capability_scan"}
+{"from": "e38_gap_005", "to": "e38_fc_004", "edge_type": "may_be_addressed_by", "evidence_boundary": "hypothesis_from_public_capability_scan"}
+{"from": "e38_gap_006", "to": "e38_fc_002", "edge_type": "may_be_addressed_by", "evidence_boundary": "hypothesis_from_public_capability_scan"}
+{"from": "e38_gap_007", "to": "e38_fc_014", "edge_type": "may_be_addressed_by", "evidence_boundary": "hypothesis_from_public_capability_scan"}
+{"from": "e38_gap_008", "to": "e38_fc_007", "edge_type": "may_be_addressed_by", "evidence_boundary": "hypothesis_from_public_capability_scan"}
+{"from": "e38_gap_009", "to": "e38_fc_008", "edge_type": "may_be_addressed_by", "evidence_boundary": "hypothesis_from_public_capability_scan"}
+{"from": "e38_gap_010", "to": "e38_fc_014", "edge_type": "may_be_addressed_by", "evidence_boundary": "hypothesis_from_public_capability_scan"}
+{"from": "e38_gap_011", "to": "e38_fc_015", "edge_type": "may_be_addressed_by", "evidence_boundary": "hypothesis_from_public_capability_scan"}
+{"from": "e38_gap_012", "to": "e38_fc_015", "edge_type": "may_be_addressed_by", "evidence_boundary": "hypothesis_from_public_capability_scan"}
+{"from": "e38_gap_013", "to": "e38_fc_015", "edge_type": "may_be_addressed_by", "evidence_boundary": "hypothesis_from_public_capability_scan"}
+{"from": "e38_gap_014", "to": "e38_fc_003", "edge_type": "may_be_addressed_by", "evidence_boundary": "hypothesis_from_public_capability_scan"}
+{"from": "e38_gap_015", "to": "e38_fc_009", "edge_type": "may_be_addressed_by", "evidence_boundary": "hypothesis_from_public_capability_scan"}
+{"from": "e38_import_001", "to": "e38_ceo_brain_public_evidence_update", "edge_type": "prepared_import_backlog_for", "evidence_boundary": "internal_plan_not_execution"}
+{"from": "e38_import_002", "to": "e38_ceo_brain_public_evidence_update", "edge_type": "prepared_import_backlog_for", "evidence_boundary": "internal_plan_not_execution"}
+{"from": "e38_import_003", "to": "e38_ceo_brain_public_evidence_update", "edge_type": "prepared_import_backlog_for", "evidence_boundary": "internal_plan_not_execution"}
+{"from": "e38_import_004", "to": "e38_ceo_brain_public_evidence_update", "edge_type": "prepared_import_backlog_for", "evidence_boundary": "internal_plan_not_execution"}
+{"from": "e38_import_005", "to": "e38_ceo_brain_public_evidence_update", "edge_type": "prepared_import_backlog_for", "evidence_boundary": "internal_plan_not_execution"}
+{"from": "e38_import_006", "to": "e38_ceo_brain_public_evidence_update", "edge_type": "prepared_import_backlog_for", "evidence_boundary": "internal_plan_not_execution"}
+{"from": "e38_import_007", "to": "e38_ceo_brain_public_evidence_update", "edge_type": "prepared_import_backlog_for", "evidence_boundary": "internal_plan_not_execution"}
+{"from": "e38_import_008", "to": "e38_ceo_brain_public_evidence_update", "edge_type": "prepared_import_backlog_for", "evidence_boundary": "internal_plan_not_execution"}
+{"from": "e38_import_009", "to": "e38_ceo_brain_public_evidence_update", "edge_type": "prepared_import_backlog_for", "evidence_boundary": "internal_plan_not_execution"}
+{"from": "e38_import_010", "to": "e38_ceo_brain_public_evidence_update", "edge_type": "prepared_import_backlog_for", "evidence_boundary": "internal_plan_not_execution"}
+{"from": "e38_import_011", "to": "e38_ceo_brain_public_evidence_update", "edge_type": "prepared_import_backlog_for", "evidence_boundary": "internal_plan_not_execution"}

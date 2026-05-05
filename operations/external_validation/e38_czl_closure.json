@@ -28,5 +28,11 @@
   "recommended_next_milestone": "E39_expert_review_preflight_or_additional_public_evidence_sprint_owner_choice",
   "second_ceo_brain_created": false,
   "secret_used": false,
-  "unsupported_claims_removed_or_downgraded": true
+  "unsupported_claims_removed_or_downgraded": true,
+  "frontier_capability_import_scan_completed": true,
+  "ceo_capability_gap_mapping_completed": true,
+  "frontier_capability_import_backlog_created": true,
+  "external_tool_integration_occurred": false,
+  "provider_api_execution_occurred": false,
+  "duplicate_Y_star_gov_or_gov_mcp_wheels_created": false
 }

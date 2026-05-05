@@ -163,5 +163,75 @@
   "public_evidence_sources_collected": 27,
   "strongest_supported_cluster": "enterprise / professional AI transformation",
   "updated_bottleneck": "convert public evidence into owner-approved expert review or additional evidence route without claiming validation",
-  "weakest_remaining_assumption": "public source evidence still does not prove buyer willingness to pay Y* or validate a final product."
+  "weakest_remaining_assumption": "public source evidence still does not prove buyer willingness to pay Y* or validate a final product.",
+  "frontier_capability_import_scan_summary": {
+    "categories_inspected": 10,
+    "source_count": 15,
+    "capability_count": 15,
+    "top_external_capabilities_to_borrow": [
+      "citation-backed autonomous deep research with explicit source/claim boundaries",
+      "durable checkpointed long-task execution with replay and human-in-the-loop resume",
+      "tool/input/output guardrails with tripwire semantics",
+      "agent observability traces, evals, datasets, experiments, and span replay",
+      "protocol mapping across MCP, A2A, and AP2 without Labs-owned execution semantics",
+      "agent-managed memory blocks/archival memory as method inspiration, not a second CEO brain",
+      "synthetic user/persona simulation as pre-contact hypothesis stress test, not validation"
+    ],
+    "external_integration_occurred": false
+  },
+  "top_ceo_capability_gaps": [
+    "shallow public evidence gathering",
+    "weak deep case archaeology",
+    "weak contradiction graph",
+    "weak long-horizon research memory",
+    "weak durable strategic execution",
+    "weak tool-assisted prototype simulation",
+    "weak synthetic buyer/expert simulation"
+  ],
+  "top_external_capabilities_to_borrow": [
+    "citation-backed autonomous deep research agent",
+    "durable execution with checkpoint/replay/human interrupt",
+    "thread/checkpoint persistence and memory store",
+    "input/output/tool guardrails with tripwire semantics",
+    "agent traces, evals, datasets, experiments, span replay",
+    "LLM app traces, runs, threads, feedback metadata",
+    "Model Context Protocol tool/resource/prompt interoperability",
+    "multi-agent coding command center with worktrees, cloud envs, monitoring"
+  ],
+  "method_only_imports": [
+    "Durable Strategic Research Thread",
+    "Synthetic Reviewer Simulation Protocol"
+  ],
+  "future_tool_or_adapter_imports": [
+    "Sandboxed Prototype Experiment Gate",
+    "GUI Evidence / Computer-Use Replay Adapter Proposal"
+  ],
+  "belongs_to_bridge_labs": [
+    "Deep Research Claim Graph",
+    "Contradiction Graph and Unsupported Claim Downgrader",
+    "Durable Strategic Research Thread",
+    "CEO Decision Eval Benchmark",
+    "Synthetic Reviewer Simulation Protocol",
+    "Market Language Mining Lexicon"
+  ],
+  "belongs_to_Y_star_gov": [
+    "A2A Delegation Alignment Proposal",
+    "AP2 Mandate / Agent Payment Legitimacy Proposal"
+  ],
+  "belongs_to_gov_mcp": [
+    "Sandboxed Prototype Experiment Gate",
+    "GUI Evidence / Computer-Use Replay Adapter Proposal"
+  ],
+  "must_remain_blocked_until_owner_approval": [
+    "Sandboxed Prototype Experiment Gate",
+    "GUI Evidence / Computer-Use Replay Adapter Proposal",
+    "A2A Delegation Alignment Proposal",
+    "AP2 Mandate / Agent Payment Legitimacy Proposal",
+    "Future Simulation Lab Repo Option"
+  ],
+  "next_milestone_option_for_capability_import": "E39_frontier_capability_import_design_no_execution_or_expert_review_preflight_owner_choice",
+  "external_tool_integration_occurred": false,
+  "provider_api_execution_occurred": false,
+  "kg_delta_nodes": 52,
+  "kg_delta_edges": 55
 }
