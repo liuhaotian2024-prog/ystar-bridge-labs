@@ -336,6 +336,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e63_revenue_opportunity_state = {'opportunity_discovery_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
     try:
+        from office.mission_command.e64_ceo_brain_readback_smoke import load_e64_state_for_brain
+        e64_dual_axis_revenue_state = load_e64_state_for_brain()
+    except Exception as exc:
+        e64_dual_axis_revenue_state = {'dual_axis_retest_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -439,6 +444,14 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_revenue_opportunity_offer_package": e63_revenue_opportunity_state.get("offer_package_hypothesis"),
         "current_revenue_opportunity_next_milestone": e63_revenue_opportunity_state.get("recommended_next_milestone"),
         "current_revenue_opportunity_external_action_allowed": e63_revenue_opportunity_state.get("external_action_allowed"),
+        "latest_dual_axis_revenue_state": e64_dual_axis_revenue_state,
+        "current_dual_axis_revenue_status": e64_dual_axis_revenue_state.get("dual_axis_retest_status"),
+        "current_dual_axis_best_market_optimal_path": e64_dual_axis_revenue_state.get("best_market_optimal_path"),
+        "current_dual_axis_best_ybridge_unique_path": e64_dual_axis_revenue_state.get("best_YBridge_unique_path"),
+        "current_dual_axis_selected_first_cash_path": e64_dual_axis_revenue_state.get("selected_final_first_cash_path"),
+        "current_dual_axis_top3_offers": e64_dual_axis_revenue_state.get("top3_offer_names"),
+        "current_dual_axis_next_milestone": e64_dual_axis_revenue_state.get("recommended_next_milestone"),
+        "current_dual_axis_external_action_allowed": e64_dual_axis_revenue_state.get("external_action_allowed"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

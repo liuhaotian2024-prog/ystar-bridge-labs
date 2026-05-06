@@ -1,0 +1,6 @@
+{"from": "e63_public_read_opportunity_discovery", "to": "e64_dual_axis_revenue_retest", "edge_type": "feeds"}
+{"from": "e64_dual_axis_revenue_retest", "to": "founder_operator_decision_brief_service", "edge_type": "identifies_market_axis"}
+{"from": "e64_dual_axis_revenue_retest", "to": "governed_business_operations_blueprint_for_agent_teams", "edge_type": "identifies_unique_axis"}
+{"from": "founder_operator_decision_brief_service", "to": "governed_business_operations_blueprint_for_agent_teams", "edge_type": "bridged_by"}
+{"from": "governed_business_operations_blueprint_for_agent_teams", "to": "governed_business_operations_blueprint_for_agent_teams", "edge_type": "bridged_by"}
+{"from": "governed_business_operations_blueprint_for_agent_teams", "to": "E65_draft_runtime_harness_deployment_offer_and_delivery_blueprint_no_execution", "edge_type": "recommends"}

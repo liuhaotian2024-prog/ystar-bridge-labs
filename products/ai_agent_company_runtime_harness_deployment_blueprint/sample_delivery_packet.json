@@ -1,0 +1,14 @@
+{
+  "artifact_id": "e64_sample_delivery_packet",
+  "status": "internal_only_sample",
+  "sections": [
+    "current agent workflow diagnosis",
+    "business-operation centerline",
+    "action risk tiers",
+    "evidence closure plan",
+    "owner-gated next actions"
+  ],
+  "external_action_allowed": false,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false
+}

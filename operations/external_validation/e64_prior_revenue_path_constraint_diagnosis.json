@@ -1,0 +1,25 @@
+{
+  "artifact_id": "e64_prior_revenue_path_constraint_diagnosis",
+  "E62_E63_candidate_universe_constrained_around_AI_products": true,
+  "source_surfaces_biased_toward_AI_agent_runtime_governance_markets": true,
+  "scoring_overweighted_fit_to_existing_technical_assets": true,
+  "scoring_underweighted_fastest_cash_realization": true,
+  "non_AI_service_business_paths_underexplored": true,
+  "YBridge_unique_paths_outside_selling_runtime_underexplored": true,
+  "selected_path_likely_local_optimum_not_global_optimum": true,
+  "E63_selected_path_still_valid_candidate": true,
+  "evidence": {
+    "E62_candidate_count": 8,
+    "E63_source_surfaces": [
+      "AI agent framework / orchestration docs",
+      "AI agent governance / guardrail product pages",
+      "AI automation / ops product pages",
+      "AI observability / evaluation / tracing product pages",
+      "MCP / tool governance public docs",
+      "Public pricing / packaging pages for adjacent products"
+    ],
+    "E63_selected_path": "AI_agent_company_runtime_harness_deployment_service"
+  },
+  "honest_diagnosis": "E62/E63 correctly found a strong Y*Bridge-native route, but the search space was too AI-runtime/product centric. E64 removes that constraint and separately scores market-fast cash and Y*Bridge uniqueness.",
+  "external_action_allowed": false
+}

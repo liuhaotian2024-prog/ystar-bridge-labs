@@ -1,0 +1,49 @@
+{
+  "artifact_id": "e64_base_state_manifest",
+  "bridge_job_id": "e64_dual_axis_first_cash_path_retest_public_read_only_20260506T000001Z",
+  "bridge_labs": {
+    "path": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+    "branch": "backflow/aiden-ceo-meeting-room",
+    "head": "543f1256198785080f63b0f8cc94de697421c517",
+    "expected_head": "543f1256198785080f63b0f8cc94de697421c517",
+    "head_matches_expected": true,
+    "clean": false,
+    "status_short": "M office/mission_command/e46b_ceo_brain_adapter.py\n?? office/mission_command/__pycache__/\n?? office/mission_command/e64_behavior_authorization.py\n?? office/mission_command/e64_ceo_brain_readback_smoke.py\n?? office/mission_command/e64_completion_gate.py\n?? office/mission_command/e64_dual_axis_cross_selection_matrix.py\n?? office/mission_command/e64_dual_axis_first_cash_path_selection.py\n?? office/mission_command/e64_dual_axis_public_read.py\n?? office/mission_command/e64_dual_axis_repository_archaeology_inventory.py\n?? office/mission_command/e64_dual_axis_revenue_core.py\n?? office/mission_command/e64_dual_axis_revenue_route_universe.py\n?? office/mission_command/e64_market_optimal_path_matrix.py\n?? office/mission_command/e64_prior_revenue_path_constraint_diagnosis.py\n?? office/mission_command/e64_reuse_first_growth_audit.py\n?? office/mission_command/e64_top3_dual_axis_offer_hypotheses.py\n?? office/mission_command/e64_ybridge_unique_path_matrix.py\n?? operations/external_validation/e64_base_state_manifest.json\n?? operations/external_validation/e64_behavior_authorization_result.json\n?? operations/external_validation/e64_ceo_brain_dual_axis_revenue_update.json\n?? operations/external_validation/e64_ceo_brain_readback_smoke_result.json\n?? operations/external_validation/e64_cieu_residual_summary.json\n?? operations/external_validation/e64_completion_gate_result.json\n?? operations/external_validation/e64_czl_closure.json\n?? operations/external_validation/e64_dual_axis_cross_selection_matrix.json\n?? operations/external_validation/e64_dual_axis_first_cash_path_selection.json\n?? operations/external_validation/e64_dual_axis_public_read_evidence_atoms.json\n?? operations/external_validation/e64_dual_axis_public_read_plan.json\n?? operations/external_validation/e64_dual_axis_public_read_receipts.json\n?? operations/external_validation/e64_dual_axis_repository_archaeology_inventory.json\n?? operations/external_validation/e64_dual_axis_revenue_route_universe.json\n?? operations/external_validation/e64_market_optimal_path_matrix.json\n?? operations/external_validation/e64_no_overclaim_validation_result.json\n?? operations/external_validation/e64_owner_gated_business_action_plan_no_execution.json\n?? operations/external_validation/e64_prior_gate_preflight_result.json\n?? operations/external_validation/e64_prior_revenue_path_constraint_diagnosis.json\n?? operations/external_validation/e64_reuse_first_growth_audit.json\n?? operations/external_validation/e64_runtime_governance_validation_result.json\n?? operations/external_validation/e64_top3_dual_axis_offer_hypotheses.json\n?? operations/external_validation/e64_ybridge_unique_path_matrix.json\n?? operations/knowledge_graph/e64_ceo_kg_dual_axis_revenue_edges_delta.jsonl\n?? operations/knowledge_graph/e64_ceo_kg_dual_axis_revenue_nodes_delta.jsonl\n?? operations/knowledge_graph/e64_ceo_kg_dual_axis_revenue_read_model_update.json\n?? products/ai_agent_company_runtime_harness_deployment_blueprint/\n?? reports/integration/e64_completion_gate_result.md\n?? reports/integration/e64_dual_axis_cross_selection_matrix.md\n?? reports/integration/e64_dual_axis_first_cash_path_selection.md\n?? reports/integration/e64_dual_axis_public_read_summary.md\n?? reports/integration/e64_dual_axis_repository_archaeology_inventory.md\n?? reports/integration/e64_dual_axis_revenue_route_universe.md\n?? reports/integration/e64_market_optimal_path_matrix.md\n?? reports/integration/e64_operator_handoff.md\n?? reports/integration/e64_owner_gated_business_action_plan_no_execution.md\n?? reports/integration/e64_owner_handoff_chinese.md\n?? reports/integration/e64_prior_gate_preflight_result.md\n?? reports/integration/e64_prior_revenue_path_constraint_diagnosis.md\n?? reports/integration/e64_reuse_first_growth_audit.md\n?? reports/integration/e64_top3_dual_axis_offer_hypotheses.md\n?? reports/integration/e64_ybridge_unique_path_matrix.md\n?? tests/office/test_e64_00_artifact_generation.py\n?? tests/office/test_e64_behavior_authorization.py\n?? tests/office/test_e64_ceo_brain_readback.py\n?? tests/office/test_e64_completion_gate.py\n?? tests/office/test_e64_dual_axis_cross_selection_matrix.py\n?? tests/office/test_e64_dual_axis_first_cash_path_selection.py\n?? tests/office/test_e64_dual_axis_public_read.py\n?? tests/office/test_e64_dual_axis_repository_archaeology_inventory.py\n?? tests/office/test_e64_dual_axis_revenue_route_universe.py\n?? tests/office/test_e64_json_artifacts.py\n?? tests/office/test_e64_market_optimal_path_matrix.py\n?? tests/office/test_e64_no_overclaim.py\n?? tests/office/test_e64_prior_revenue_path_constraint_diagnosis.py\n?? tests/office/test_e64_reuse_first_growth_audit.py\n?? tests/office/test_e64_top3_dual_axis_offer_hypotheses.py\n?? tests/office/test_e64_ybridge_unique_path_matrix.py"
+  },
+  "expected_branch": "backflow/aiden-ceo-meeting-room",
+  "base_verified": true,
+  "bridge_labs_worktree_clean_or_e64_scoped": false,
+  "read_only_repos": {
+    "Y-star-gov": {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "branch": "backflow/company-runtime-domain-pack",
+      "head": "b0d9aa8b1badd1180127a2f79f73ceed48e16451",
+      "expected_head": "b0d9aa8b1badd1180127a2f79f73ceed48e16451",
+      "head_matches_expected": true,
+      "clean": true,
+      "status_short": ""
+    },
+    "gov-mcp": {
+      "path": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+      "branch": "backflow/company-runtime-tools",
+      "head": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+      "expected_head": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+      "head_matches_expected": true,
+      "clean": true,
+      "status_short": ""
+    },
+    "K9Audit": {
+      "path": "/Users/haotianliu/.openclaw/workspace/K9Audit",
+      "branch": "main",
+      "head": "37911e18ce4425470e3f745b30d155c43d76ff55",
+      "expected_head": "37911e18ce4425470e3f745b30d155c43d76ff55",
+      "head_matches_expected": true,
+      "clean": true,
+      "status_short": ""
+    }
+  },
+  "read_only_repos_clean": true,
+  "e63_completed_report_present": true,
+  "owner_decision_status": "pending_owner_decision",
+  "external_action_allowed": false
+}

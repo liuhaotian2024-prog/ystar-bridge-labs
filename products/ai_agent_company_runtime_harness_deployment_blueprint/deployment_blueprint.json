@@ -1,0 +1,23 @@
+{
+  "artifact_id": "e64_runtime_harness_deployment_blueprint",
+  "status": "internal_only_draft_only",
+  "blueprint_id": "AI_agent_company_runtime_harness_deployment_blueprint_E64",
+  "created_because": "runtime harness route remains top-3 after E64 dual-axis retest",
+  "selected_or_top3": true,
+  "target_buyer_category": "AI teams building agent workflows that need governed business operations",
+  "delivery_object": "deployment blueprint and sample delivery packet",
+  "not_client_specific": true,
+  "customer_validated": false,
+  "paid_validated": false,
+  "expert_reviewed": false,
+  "production_ready": false,
+  "owner_approval_required_before_external_use": true,
+  "components": [
+    "CEO brain state map",
+    "behavior action authorization model",
+    "internal operating loop map",
+    "KG/CZL/CIEU evidence closure checklist",
+    "no-overclaim boundary",
+    "public-read opportunity evidence appendix"
+  ]
+}

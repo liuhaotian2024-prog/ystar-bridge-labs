@@ -1,0 +1,128 @@
+{
+  "artifact_id": "e64_top3_dual_axis_offer_hypotheses",
+  "offer_count": 3,
+  "offers": [
+    {
+      "offer_id": "e64_offer_001",
+      "offer_name": "Governed Business Operations Blueprint for Agent Teams",
+      "route_id": "governed_business_operations_blueprint_for_agent_teams",
+      "route_type": "hybrid",
+      "buyer_category": "founder/operator or AI platform teams that need agent workflows to create governed business value",
+      "pain_point": "agent activity is not yet a governed business operation with action boundaries, evidence closure, and owner-gated execution",
+      "deliverable": "draft-only operations blueprint, runtime map, action risk tiers, evidence closure checklist, and owner-gated next-action plan",
+      "delivery_steps": [
+        "inspect the buyer's agent workflow at a high level",
+        "map governed business-operation centerline",
+        "define action risk tiers and owner gates",
+        "draft evidence closure/readback plan",
+        "produce an owner-review packet before any external execution"
+      ],
+      "estimated_complexity": "medium",
+      "required_capabilities": [
+        "CEO Brain L5",
+        "Behavior Control Center L5",
+        "KG/CZL/CIEU",
+        "public-read intelligence"
+      ],
+      "existing_assets_reused": [
+        "E62 revenue runtime centerline",
+        "E63 opportunity map",
+        "E54-E56 L5 runtime",
+        "E59/E61 public-read capability"
+      ],
+      "YBridge_unique_assets_used": [
+        "governed internal operating loop",
+        "behavior authorization",
+        "no-overclaim readback"
+      ],
+      "price_hypothesis_unvalidated": "$1,500-$5,000 blueprint sprint; unvalidated and not owner-approved for use",
+      "fastest_path_to_first_cash": "owner-approved controlled review of a draft sample packet, then scoped paid blueprint only if explicitly approved",
+      "uniqueness_defensibility": "bridges market-understandable business operations with Y*Bridge's unusual self-operating company runtime",
+      "commodity_risk": "medium",
+      "owner_approval_required_before_external_use": true,
+      "no_overclaim_language": "draft-only; public-read informed; not customer validated; not paid validated; not expert reviewed; not production ready"
+    },
+    {
+      "offer_id": "e64_offer_002",
+      "offer_name": "Founder/Operator Decision Brief",
+      "route_id": "founder_operator_decision_brief_service",
+      "route_type": "market_optimal",
+      "buyer_category": "founders/operators facing urgent public-information decisions",
+      "pain_point": "operators need concise, evidence-backed options without building a research process",
+      "deliverable": "public-read decision brief with options, risks, assumptions, and recommended next action",
+      "delivery_steps": [
+        "define decision question",
+        "read public sources only",
+        "atomize evidence",
+        "write decision packet",
+        "mark limitations"
+      ],
+      "estimated_complexity": "low",
+      "required_capabilities": [
+        "controlled public-read",
+        "evidence atoms",
+        "synthesis"
+      ],
+      "existing_assets_reused": [
+        "E59/E63 public-read receipts",
+        "E62 revenue risk tiers"
+      ],
+      "YBridge_unique_assets_used": [
+        "no-overclaim evidence closure and CEO readback"
+      ],
+      "price_hypothesis_unvalidated": "$300-$1,500 per brief; unvalidated and not owner-approved for use",
+      "fastest_path_to_first_cash": "cash-support fallback after owner-approved external action",
+      "uniqueness_defensibility": "lower than runtime routes; useful as cash-support wedge, not core identity",
+      "commodity_risk": "high",
+      "owner_approval_required_before_external_use": true,
+      "no_overclaim_language": "public-read decision support only; not advice, not validation, not a paid signal"
+    },
+    {
+      "offer_id": "e64_offer_003",
+      "offer_name": "AI Agent Company Runtime Harness Deployment Blueprint",
+      "route_id": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "route_type": "YBridge_unique",
+      "buyer_category": "AI teams building agent workflows that need governed operations",
+      "pain_point": "agent teams need a runtime harness for cognition, behavior, evidence closure, and no-overclaim execution",
+      "deliverable": "draft deployment blueprint and sample delivery packet for an AI agent company runtime harness",
+      "delivery_steps": [
+        "map current agent operating loop",
+        "define behavior gates",
+        "define KG/CZL/CIEU evidence path",
+        "draft runtime harness architecture",
+        "prepare owner-gated review plan"
+      ],
+      "estimated_complexity": "medium",
+      "required_capabilities": [
+        "E54-E56 L5 runtime",
+        "E58 case study",
+        "E63 evidence",
+        "behavior authorization"
+      ],
+      "existing_assets_reused": [
+        "E58 case study",
+        "E63 offer hypothesis",
+        "E62 revenue centerline"
+      ],
+      "YBridge_unique_assets_used": [
+        "CEO Brain L5",
+        "Behavior Control Center L5",
+        "Internal Company Operating Loop L5",
+        "Y-star-gov/gov-mcp validation"
+      ],
+      "price_hypothesis_unvalidated": "$2,500-$8,000 blueprint sprint; unvalidated and not owner-approved for use",
+      "fastest_path_to_first_cash": "owner-approved review of internal sample packet, then scoped blueprint if buyer interest exists",
+      "uniqueness_defensibility": "highest strategic defensibility, but harder to explain than the hybrid business-operations wedge",
+      "commodity_risk": "low",
+      "owner_approval_required_before_external_use": true,
+      "no_overclaim_language": "internal draft only; not customer validated; not paid validated; not expert reviewed; not production ready"
+    }
+  ],
+  "selected_offer": "Governed Business Operations Blueprint for Agent Teams",
+  "runtime_harness_path_top3": true,
+  "external_action_allowed": false,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false,
+  "expert_feedback_claimed": false,
+  "pricing_validation_claimed": false
+}

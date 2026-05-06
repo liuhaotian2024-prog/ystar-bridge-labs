@@ -1,0 +1,13 @@
+{
+  "artifact_id": "e64_no_overclaim_validation_result",
+  "paths_scanned": [
+    "operations/external_validation/e64_dual_axis_first_cash_path_selection.json",
+    "operations/external_validation/e64_top3_dual_axis_offer_hypotheses.json",
+    "products/ai_agent_company_runtime_harness_deployment_blueprint/deployment_blueprint.json",
+    "operations/external_validation/e64_owner_gated_business_action_plan_no_execution.json",
+    "operations/external_validation/e64_ceo_brain_dual_axis_revenue_update.json"
+  ],
+  "violations": [],
+  "passed": true,
+  "required_disclaimers_present": true
+}

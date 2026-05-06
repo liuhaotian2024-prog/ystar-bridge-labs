@@ -1,0 +1,214 @@
+{
+  "artifact_id": "e64_dual_axis_cross_selection_matrix",
+  "rows": [
+    {
+      "route_id": "governed_business_operations_blueprint_for_agent_teams",
+      "market_optimal_score": 82.36,
+      "YBridge_unique_score": 92.44,
+      "quadrant": "high_market / high_unique",
+      "combined_dual_axis_score": 87.4,
+      "selected_as_first_cash_wedge": true
+    },
+    {
+      "route_id": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "market_optimal_score": 78.0,
+      "YBridge_unique_score": 91.12,
+      "quadrant": "low_market / high_unique",
+      "combined_dual_axis_score": 84.56,
+      "selected_as_first_cash_wedge": false
+    },
+    {
+      "route_id": "agent_runtime_audit_and_repair_package",
+      "market_optimal_score": 78.64,
+      "YBridge_unique_score": 88.19,
+      "quadrant": "low_market / high_unique",
+      "combined_dual_axis_score": 83.41,
+      "selected_as_first_cash_wedge": false
+    },
+    {
+      "route_id": "no_overclaim_action_boundary_operating_system",
+      "market_optimal_score": 78.36,
+      "YBridge_unique_score": 88.25,
+      "quadrant": "low_market / high_unique",
+      "combined_dual_axis_score": 83.31,
+      "selected_as_first_cash_wedge": false
+    },
+    {
+      "route_id": "governance_backed_business_workflow_runtime",
+      "market_optimal_score": 78.36,
+      "YBridge_unique_score": 86.0,
+      "quadrant": "low_market / high_unique",
+      "combined_dual_axis_score": 82.18,
+      "selected_as_first_cash_wedge": false
+    },
+    {
+      "route_id": "governed_agent_action_control_layer",
+      "market_optimal_score": 75.07,
+      "YBridge_unique_score": 88.75,
+      "quadrant": "low_market / high_unique",
+      "combined_dual_axis_score": 81.91,
+      "selected_as_first_cash_wedge": false
+    },
+    {
+      "route_id": "self_operating_AI_company_prototype_operating_room_package",
+      "market_optimal_score": 71.71,
+      "YBridge_unique_score": 90.44,
+      "quadrant": "low_market / high_unique",
+      "combined_dual_axis_score": 81.07,
+      "selected_as_first_cash_wedge": false
+    },
+    {
+      "route_id": "public_read_market_intelligence_agent_with_governance_YBridge",
+      "market_optimal_score": 76.64,
+      "YBridge_unique_score": 85.44,
+      "quadrant": "low_market / high_unique",
+      "combined_dual_axis_score": 81.04,
+      "selected_as_first_cash_wedge": false
+    },
+    {
+      "route_id": "KG_CZL_CIEU_evidence_closure_package",
+      "market_optimal_score": 74.07,
+      "YBridge_unique_score": 87.81,
+      "quadrant": "low_market / high_unique",
+      "combined_dual_axis_score": 80.94,
+      "selected_as_first_cash_wedge": false
+    },
+    {
+      "route_id": "gov_mcp_Y_star_gov_governance_integration_package",
+      "market_optimal_score": 68.14,
+      "YBridge_unique_score": 88.44,
+      "quadrant": "low_market / high_unique",
+      "combined_dual_axis_score": 78.29,
+      "selected_as_first_cash_wedge": false
+    },
+    {
+      "route_id": "founder_operator_decision_brief_service",
+      "market_optimal_score": 83.64,
+      "YBridge_unique_score": 53.81,
+      "quadrant": "high_market / low_unique",
+      "combined_dual_axis_score": 68.72,
+      "selected_as_first_cash_wedge": false
+    },
+    {
+      "route_id": "public_read_market_intelligence_product",
+      "market_optimal_score": 76.5,
+      "YBridge_unique_score": 60.81,
+      "quadrant": "low_market / low_unique",
+      "combined_dual_axis_score": 68.66,
+      "selected_as_first_cash_wedge": false
+    },
+    {
+      "route_id": "niche_market_research_report_service",
+      "market_optimal_score": 78.5,
+      "YBridge_unique_score": 49.94,
+      "quadrant": "low_market / low_unique",
+      "combined_dual_axis_score": 64.22,
+      "selected_as_first_cash_wedge": false
+    },
+    {
+      "route_id": "competitive_intelligence_buying_guide_product",
+      "market_optimal_score": 74.79,
+      "YBridge_unique_score": 51.62,
+      "quadrant": "low_market / low_unique",
+      "combined_dual_axis_score": 63.2,
+      "selected_as_first_cash_wedge": false
+    },
+    {
+      "route_id": "documentation_SOP_compliance_preparation_service",
+      "market_optimal_score": 74.29,
+      "YBridge_unique_score": 52.12,
+      "quadrant": "low_market / low_unique",
+      "combined_dual_axis_score": 63.2,
+      "selected_as_first_cash_wedge": false
+    },
+    {
+      "route_id": "workflow_template_automation_template_product",
+      "market_optimal_score": 78.07,
+      "YBridge_unique_score": 48.0,
+      "quadrant": "low_market / low_unique",
+      "combined_dual_axis_score": 63.03,
+      "selected_as_first_cash_wedge": false
+    },
+    {
+      "route_id": "small_business_operations_automation_service",
+      "market_optimal_score": 79.5,
+      "YBridge_unique_score": 44.94,
+      "quadrant": "low_market / low_unique",
+      "combined_dual_axis_score": 62.22,
+      "selected_as_first_cash_wedge": false
+    },
+    {
+      "route_id": "content_product_paid_knowledge_product",
+      "market_optimal_score": 75.21,
+      "YBridge_unique_score": 46.38,
+      "quadrant": "low_market / low_unique",
+      "combined_dual_axis_score": 60.8,
+      "selected_as_first_cash_wedge": false
+    },
+    {
+      "route_id": "AI_assisted_business_operations_outsourcing",
+      "market_optimal_score": 72.36,
+      "YBridge_unique_score": 49.0,
+      "quadrant": "low_market / low_unique",
+      "combined_dual_axis_score": 60.68,
+      "selected_as_first_cash_wedge": false
+    },
+    {
+      "route_id": "public_read_sourcing_supplier_intelligence",
+      "market_optimal_score": 71.5,
+      "YBridge_unique_score": 49.81,
+      "quadrant": "low_market / low_unique",
+      "combined_dual_axis_score": 60.66,
+      "selected_as_first_cash_wedge": false
+    },
+    {
+      "route_id": "cross_border_product_opportunity_scouting",
+      "market_optimal_score": 70.86,
+      "YBridge_unique_score": 45.0,
+      "quadrant": "low_market / low_unique",
+      "combined_dual_axis_score": 57.93,
+      "selected_as_first_cash_wedge": false
+    },
+    {
+      "route_id": "local_business_digital_operations_support",
+      "market_optimal_score": 72.36,
+      "YBridge_unique_score": 42.44,
+      "quadrant": "low_market / low_unique",
+      "combined_dual_axis_score": 57.4,
+      "selected_as_first_cash_wedge": false
+    },
+    {
+      "route_id": "marketplace_micro_service_delivery",
+      "market_optimal_score": 73.93,
+      "YBridge_unique_score": 38.81,
+      "quadrant": "low_market / low_unique",
+      "combined_dual_axis_score": 56.37,
+      "selected_as_first_cash_wedge": false
+    },
+    {
+      "route_id": "grant_RFP_response_support_optional",
+      "market_optimal_score": 60.29,
+      "YBridge_unique_score": 46.81,
+      "quadrant": "low_market / low_unique",
+      "combined_dual_axis_score": 53.55,
+      "selected_as_first_cash_wedge": false
+    },
+    {
+      "route_id": "other_low_risk_public_read_supported_path",
+      "market_optimal_score": 63.71,
+      "YBridge_unique_score": 42.06,
+      "quadrant": "low_market / low_unique",
+      "combined_dual_axis_score": 52.89,
+      "selected_as_first_cash_wedge": false
+    }
+  ],
+  "does_market_optimal_and_YBridge_unique_overlap": true,
+  "overlapping_route": "governed_business_operations_blueprint_for_agent_teams",
+  "best_bridge_route": "governed_business_operations_blueprint_for_agent_teams",
+  "fastest_cash_but_commodity": "marketplace_micro_service_delivery",
+  "most_unique_but_too_slow": "gov_mcp_Y_star_gov_governance_integration_package",
+  "first_cash_wedge": "governed_business_operations_blueprint_for_agent_teams",
+  "long_term_strategic_direction": "AI_agent_company_runtime_harness_deployment_blueprint",
+  "fallback_cash_support_route": "founder_operator_decision_brief_service",
+  "external_action_allowed": false
+}

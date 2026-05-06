@@ -1,0 +1,976 @@
+{
+  "artifact_id": "e64_dual_axis_revenue_route_universe",
+  "route_family_count": 25,
+  "routes": [
+    {
+      "route_id": "small_business_operations_automation_service",
+      "route_family_type": "market_optimal",
+      "buyer_category": "small business operators",
+      "problem_pain": "manual admin and workflow handoffs waste operator time",
+      "what_could_be_delivered": "automation setup package for simple workflows and SOPs",
+      "how_fast_cash_could_plausibly_happen": "draft a narrow service package, owner-approved outreach later",
+      "required_capabilities": [
+        "public-read research",
+        "workflow mapping",
+        "automation planning"
+      ],
+      "existing_capability_fit": 74,
+      "YBridge_unique_capability_fit": 32,
+      "missing_capability": [
+        "client-specific access",
+        "owner approval"
+      ],
+      "capital_required": "low",
+      "labor_intensity": "medium",
+      "delivery_complexity": "low",
+      "time_to_first_offer": "2-4 days",
+      "time_to_first_cash_hypothesis": "2-5 weeks after owner-approved outreach",
+      "public_read_evidence_needed": [
+        "service category and pricing analogs"
+      ],
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "regulatory_legal_risk": "low",
+      "reputational_risk": "medium",
+      "commodity_risk": "high",
+      "defensibility": 38,
+      "scalability": 55,
+      "strategic_fit": 58,
+      "shortest_cash_score": 91,
+      "uniqueness_score": 32,
+      "confidence": "medium",
+      "selected": false
+    },
+    {
+      "route_id": "founder_operator_decision_brief_service",
+      "route_family_type": "market_optimal",
+      "buyer_category": "founders/operators making urgent business decisions",
+      "problem_pain": "operators need concise decision briefs from public information",
+      "what_could_be_delivered": "public-read decision brief with options, risks, and recommended action",
+      "how_fast_cash_could_plausibly_happen": "produce a sample brief internally, then owner-gated review/outreach",
+      "required_capabilities": [
+        "public-read intelligence",
+        "evidence atoms",
+        "writing"
+      ],
+      "existing_capability_fit": 86,
+      "YBridge_unique_capability_fit": 56,
+      "missing_capability": [
+        "buyer selection",
+        "owner approval"
+      ],
+      "capital_required": "low",
+      "labor_intensity": "low",
+      "delivery_complexity": "low",
+      "time_to_first_offer": "1-2 days",
+      "time_to_first_cash_hypothesis": "1-3 weeks after owner-approved outreach",
+      "public_read_evidence_needed": [
+        "decision brief examples",
+        "pricing analogs"
+      ],
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "regulatory_legal_risk": "low",
+      "reputational_risk": "low",
+      "commodity_risk": "medium",
+      "defensibility": 48,
+      "scalability": 70,
+      "strategic_fit": 66,
+      "shortest_cash_score": 96,
+      "uniqueness_score": 55,
+      "confidence": "medium",
+      "selected": false
+    },
+    {
+      "route_id": "niche_market_research_report_service",
+      "route_family_type": "market_optimal",
+      "buyer_category": "operators/investors evaluating a niche",
+      "problem_pain": "buyers need fast market snapshots without building research workflows",
+      "what_could_be_delivered": "paid or internal research report based on public-read receipts",
+      "how_fast_cash_could_plausibly_happen": "draft one sample report; owner-gated sale later",
+      "required_capabilities": [
+        "public-read intelligence",
+        "source receipts",
+        "synthesis"
+      ],
+      "existing_capability_fit": 82,
+      "YBridge_unique_capability_fit": 54,
+      "missing_capability": [
+        "market niche selection",
+        "owner approval"
+      ],
+      "capital_required": "low",
+      "labor_intensity": "medium",
+      "delivery_complexity": "low",
+      "time_to_first_offer": "2-3 days",
+      "time_to_first_cash_hypothesis": "2-4 weeks after owner-approved outreach",
+      "public_read_evidence_needed": [
+        "report product analogs"
+      ],
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "regulatory_legal_risk": "low",
+      "reputational_risk": "low",
+      "commodity_risk": "medium",
+      "defensibility": 50,
+      "scalability": 74,
+      "strategic_fit": 64,
+      "shortest_cash_score": 92,
+      "uniqueness_score": 52,
+      "confidence": "medium",
+      "selected": false
+    },
+    {
+      "route_id": "competitive_intelligence_buying_guide_product",
+      "route_family_type": "market_optimal",
+      "buyer_category": "buyers comparing tools/vendors",
+      "problem_pain": "tool selection is noisy and time-consuming",
+      "what_could_be_delivered": "comparison guide with public source receipts and decision criteria",
+      "how_fast_cash_could_plausibly_happen": "create an internal sample guide",
+      "required_capabilities": [
+        "public-read receipts",
+        "comparison scoring"
+      ],
+      "existing_capability_fit": 80,
+      "YBridge_unique_capability_fit": 58,
+      "missing_capability": [
+        "category choice",
+        "owner approval"
+      ],
+      "capital_required": "low",
+      "labor_intensity": "medium",
+      "delivery_complexity": "medium",
+      "time_to_first_offer": "3-5 days",
+      "time_to_first_cash_hypothesis": "3-6 weeks after owner-approved outreach",
+      "public_read_evidence_needed": [
+        "buying guide/pricing analogs"
+      ],
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "regulatory_legal_risk": "medium",
+      "reputational_risk": "medium",
+      "commodity_risk": "medium",
+      "defensibility": 57,
+      "scalability": 76,
+      "strategic_fit": 68,
+      "shortest_cash_score": 85,
+      "uniqueness_score": 58,
+      "confidence": "medium",
+      "selected": false
+    },
+    {
+      "route_id": "public_read_sourcing_supplier_intelligence",
+      "route_family_type": "market_optimal",
+      "buyer_category": "operators sourcing products/vendors",
+      "problem_pain": "supplier discovery requires structured public-read filtering",
+      "what_could_be_delivered": "supplier landscape brief without contact scraping",
+      "how_fast_cash_could_plausibly_happen": "draft public-read sourcing template",
+      "required_capabilities": [
+        "public-read policy",
+        "evidence atoms"
+      ],
+      "existing_capability_fit": 72,
+      "YBridge_unique_capability_fit": 45,
+      "missing_capability": [
+        "specific vertical",
+        "owner approval"
+      ],
+      "capital_required": "low",
+      "labor_intensity": "medium",
+      "delivery_complexity": "medium",
+      "time_to_first_offer": "4-6 days",
+      "time_to_first_cash_hypothesis": "4-8 weeks after owner-approved outreach",
+      "public_read_evidence_needed": [
+        "sourcing examples"
+      ],
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "regulatory_legal_risk": "medium",
+      "reputational_risk": "medium",
+      "commodity_risk": "medium",
+      "defensibility": 46,
+      "scalability": 66,
+      "strategic_fit": 57,
+      "shortest_cash_score": 78,
+      "uniqueness_score": 45,
+      "confidence": "low",
+      "selected": false
+    },
+    {
+      "route_id": "documentation_SOP_compliance_preparation_service",
+      "route_family_type": "market_optimal",
+      "buyer_category": "small regulated or process-heavy teams",
+      "problem_pain": "teams lack SOPs and evidence-ready procedures",
+      "what_could_be_delivered": "SOP/compliance prep drafts from public/internal materials",
+      "how_fast_cash_could_plausibly_happen": "draft template packet internally",
+      "required_capabilities": [
+        "documentation",
+        "process mapping",
+        "no-overclaim"
+      ],
+      "existing_capability_fit": 78,
+      "YBridge_unique_capability_fit": 62,
+      "missing_capability": [
+        "client materials",
+        "owner approval"
+      ],
+      "capital_required": "low",
+      "labor_intensity": "medium",
+      "delivery_complexity": "medium",
+      "time_to_first_offer": "2-4 days",
+      "time_to_first_cash_hypothesis": "3-6 weeks after owner-approved outreach",
+      "public_read_evidence_needed": [
+        "SOP service analogs"
+      ],
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "regulatory_legal_risk": "medium",
+      "reputational_risk": "medium",
+      "commodity_risk": "medium",
+      "defensibility": 55,
+      "scalability": 71,
+      "strategic_fit": 70,
+      "shortest_cash_score": 84,
+      "uniqueness_score": 60,
+      "confidence": "medium",
+      "selected": false
+    },
+    {
+      "route_id": "marketplace_micro_service_delivery",
+      "route_family_type": "market_optimal",
+      "buyer_category": "marketplace buyers seeking small tasks",
+      "problem_pain": "buyers want cheap scoped outputs quickly",
+      "what_could_be_delivered": "micro-service task delivery, likely generic",
+      "how_fast_cash_could_plausibly_happen": "prepare listing draft only",
+      "required_capabilities": [
+        "offer drafting"
+      ],
+      "existing_capability_fit": 66,
+      "YBridge_unique_capability_fit": 22,
+      "missing_capability": [
+        "marketplace posting approval"
+      ],
+      "capital_required": "low",
+      "labor_intensity": "high",
+      "delivery_complexity": "low",
+      "time_to_first_offer": "1 day",
+      "time_to_first_cash_hypothesis": "1-2 weeks after posting approval",
+      "public_read_evidence_needed": [
+        "marketplace category analogs"
+      ],
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "regulatory_legal_risk": "low",
+      "reputational_risk": "medium",
+      "commodity_risk": "very_high",
+      "defensibility": 15,
+      "scalability": 48,
+      "strategic_fit": 35,
+      "shortest_cash_score": 94,
+      "uniqueness_score": 22,
+      "confidence": "low",
+      "selected": false
+    },
+    {
+      "route_id": "local_business_digital_operations_support",
+      "route_family_type": "market_optimal",
+      "buyer_category": "local service businesses",
+      "problem_pain": "local businesses need digital operations cleanup",
+      "what_could_be_delivered": "operations checklist, forms, workflows, documentation",
+      "how_fast_cash_could_plausibly_happen": "draft service package; owner-gated contact later",
+      "required_capabilities": [
+        "workflow planning",
+        "SOP drafting"
+      ],
+      "existing_capability_fit": 70,
+      "YBridge_unique_capability_fit": 34,
+      "missing_capability": [
+        "local buyer access",
+        "owner approval"
+      ],
+      "capital_required": "low",
+      "labor_intensity": "high",
+      "delivery_complexity": "medium",
+      "time_to_first_offer": "2-4 days",
+      "time_to_first_cash_hypothesis": "3-8 weeks after owner-approved outreach",
+      "public_read_evidence_needed": [
+        "local services analogs"
+      ],
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "regulatory_legal_risk": "low",
+      "reputational_risk": "medium",
+      "commodity_risk": "high",
+      "defensibility": 30,
+      "scalability": 62,
+      "strategic_fit": 42,
+      "shortest_cash_score": 86,
+      "uniqueness_score": 34,
+      "confidence": "low",
+      "selected": false
+    },
+    {
+      "route_id": "content_product_paid_knowledge_product",
+      "route_family_type": "market_optimal",
+      "buyer_category": "operators needing packaged knowledge",
+      "problem_pain": "public information needs packaging",
+      "what_could_be_delivered": "draft knowledge product or paid guide",
+      "how_fast_cash_could_plausibly_happen": "draft table of contents and sample chapter",
+      "required_capabilities": [
+        "public-read synthesis",
+        "writing"
+      ],
+      "existing_capability_fit": 74,
+      "YBridge_unique_capability_fit": 44,
+      "missing_capability": [
+        "publication/payment approval"
+      ],
+      "capital_required": "low",
+      "labor_intensity": "medium",
+      "delivery_complexity": "medium",
+      "time_to_first_offer": "3-5 days",
+      "time_to_first_cash_hypothesis": "4-10 weeks after owner-approved publication",
+      "public_read_evidence_needed": [
+        "paid guide examples"
+      ],
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "regulatory_legal_risk": "low",
+      "reputational_risk": "medium",
+      "commodity_risk": "high",
+      "defensibility": 35,
+      "scalability": 72,
+      "strategic_fit": 48,
+      "shortest_cash_score": 80,
+      "uniqueness_score": 44,
+      "confidence": "medium",
+      "selected": false
+    },
+    {
+      "route_id": "workflow_template_automation_template_product",
+      "route_family_type": "market_optimal",
+      "buyer_category": "teams adopting automation tools",
+      "problem_pain": "teams want reusable workflow templates",
+      "what_could_be_delivered": "template pack for common operations workflows",
+      "how_fast_cash_could_plausibly_happen": "draft sample templates internally",
+      "required_capabilities": [
+        "workflow design",
+        "documentation"
+      ],
+      "existing_capability_fit": 76,
+      "YBridge_unique_capability_fit": 48,
+      "missing_capability": [
+        "platform choice",
+        "owner approval"
+      ],
+      "capital_required": "low",
+      "labor_intensity": "medium",
+      "delivery_complexity": "low",
+      "time_to_first_offer": "2-4 days",
+      "time_to_first_cash_hypothesis": "3-6 weeks after owner-approved distribution",
+      "public_read_evidence_needed": [
+        "template marketplace analogs"
+      ],
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "regulatory_legal_risk": "low",
+      "reputational_risk": "low",
+      "commodity_risk": "high",
+      "defensibility": 42,
+      "scalability": 76,
+      "strategic_fit": 55,
+      "shortest_cash_score": 88,
+      "uniqueness_score": 48,
+      "confidence": "medium",
+      "selected": false
+    },
+    {
+      "route_id": "cross_border_product_opportunity_scouting",
+      "route_family_type": "market_optimal",
+      "buyer_category": "operators looking for product opportunities",
+      "problem_pain": "opportunity scouting is noisy and data-heavy",
+      "what_could_be_delivered": "public-read product/opportunity scouting report",
+      "how_fast_cash_could_plausibly_happen": "draft a sample scouting report internally",
+      "required_capabilities": [
+        "public-read intelligence",
+        "comparison"
+      ],
+      "existing_capability_fit": 68,
+      "YBridge_unique_capability_fit": 42,
+      "missing_capability": [
+        "category selection",
+        "owner approval"
+      ],
+      "capital_required": "low",
+      "labor_intensity": "medium",
+      "delivery_complexity": "medium",
+      "time_to_first_offer": "5-7 days",
+      "time_to_first_cash_hypothesis": "4-10 weeks after owner-approved outreach",
+      "public_read_evidence_needed": [
+        "sourcing/opportunity examples"
+      ],
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "regulatory_legal_risk": "medium",
+      "reputational_risk": "medium",
+      "commodity_risk": "medium",
+      "defensibility": 40,
+      "scalability": 65,
+      "strategic_fit": 49,
+      "shortest_cash_score": 74,
+      "uniqueness_score": 42,
+      "confidence": "low",
+      "selected": false
+    },
+    {
+      "route_id": "AI_assisted_business_operations_outsourcing",
+      "route_family_type": "market_optimal",
+      "buyer_category": "small teams outsourcing operations tasks",
+      "problem_pain": "teams need done-for-you ops support",
+      "what_could_be_delivered": "AI-assisted back-office operations package",
+      "how_fast_cash_could_plausibly_happen": "draft service scope internally",
+      "required_capabilities": [
+        "ops design",
+        "governance"
+      ],
+      "existing_capability_fit": 80,
+      "YBridge_unique_capability_fit": 52,
+      "missing_capability": [
+        "client delivery approval",
+        "owner approval"
+      ],
+      "capital_required": "low",
+      "labor_intensity": "high",
+      "delivery_complexity": "medium",
+      "time_to_first_offer": "2-5 days",
+      "time_to_first_cash_hypothesis": "3-6 weeks after owner-approved outreach",
+      "public_read_evidence_needed": [
+        "outsourcing service analogs"
+      ],
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "regulatory_legal_risk": "medium",
+      "reputational_risk": "medium",
+      "commodity_risk": "high",
+      "defensibility": 39,
+      "scalability": 68,
+      "strategic_fit": 62,
+      "shortest_cash_score": 82,
+      "uniqueness_score": 52,
+      "confidence": "medium",
+      "selected": false
+    },
+    {
+      "route_id": "public_read_market_intelligence_product",
+      "route_family_type": "market_optimal",
+      "buyer_category": "operators needing recurring market learning",
+      "problem_pain": "teams need no-contact market monitoring with receipts",
+      "what_could_be_delivered": "public-read market intelligence brief/product",
+      "how_fast_cash_could_plausibly_happen": "draft sample intelligence issue internally",
+      "required_capabilities": [
+        "E59/E63 public-read intelligence",
+        "evidence closure"
+      ],
+      "existing_capability_fit": 86,
+      "YBridge_unique_capability_fit": 75,
+      "missing_capability": [
+        "recurring delivery cadence",
+        "owner approval"
+      ],
+      "capital_required": "low",
+      "labor_intensity": "medium",
+      "delivery_complexity": "medium",
+      "time_to_first_offer": "3-5 days",
+      "time_to_first_cash_hypothesis": "3-8 weeks after owner-approved review",
+      "public_read_evidence_needed": [
+        "market intelligence examples"
+      ],
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "regulatory_legal_risk": "low",
+      "reputational_risk": "low",
+      "commodity_risk": "medium",
+      "defensibility": 70,
+      "scalability": 82,
+      "strategic_fit": 78,
+      "shortest_cash_score": 84,
+      "uniqueness_score": 75,
+      "confidence": "medium",
+      "selected": false
+    },
+    {
+      "route_id": "grant_RFP_response_support_optional",
+      "route_family_type": "market_optimal",
+      "buyer_category": "teams responding to grants/RFPs",
+      "problem_pain": "applications and RFPs are time-intensive",
+      "what_could_be_delivered": "draft support and evidence organization",
+      "how_fast_cash_could_plausibly_happen": "only optional; not primary due compliance burden",
+      "required_capabilities": [
+        "documentation",
+        "evidence organization"
+      ],
+      "existing_capability_fit": 58,
+      "YBridge_unique_capability_fit": 40,
+      "missing_capability": [
+        "specific opportunity",
+        "legal review",
+        "owner approval"
+      ],
+      "capital_required": "low",
+      "labor_intensity": "high",
+      "delivery_complexity": "high",
+      "time_to_first_offer": "1-2 weeks",
+      "time_to_first_cash_hypothesis": "uncertain",
+      "public_read_evidence_needed": [
+        "grant/RFP examples"
+      ],
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "regulatory_legal_risk": "high",
+      "reputational_risk": "medium",
+      "commodity_risk": "medium",
+      "defensibility": 32,
+      "scalability": 45,
+      "strategic_fit": 38,
+      "shortest_cash_score": 50,
+      "uniqueness_score": 40,
+      "confidence": "low",
+      "selected": false
+    },
+    {
+      "route_id": "other_low_risk_public_read_supported_path",
+      "route_family_type": "market_optimal",
+      "buyer_category": "operators with public-read research needs",
+      "problem_pain": "open-world needs may emerge from public-read discovery",
+      "what_could_be_delivered": "bounded public-read-supported service",
+      "how_fast_cash_could_plausibly_happen": "use as discovery placeholder only",
+      "required_capabilities": [
+        "public-read policy"
+      ],
+      "existing_capability_fit": 55,
+      "YBridge_unique_capability_fit": 35,
+      "missing_capability": [
+        "specific niche"
+      ],
+      "capital_required": "low",
+      "labor_intensity": "medium",
+      "delivery_complexity": "medium",
+      "time_to_first_offer": "unknown",
+      "time_to_first_cash_hypothesis": "unknown",
+      "public_read_evidence_needed": [
+        "future public-read evidence"
+      ],
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "regulatory_legal_risk": "medium",
+      "reputational_risk": "medium",
+      "commodity_risk": "unknown",
+      "defensibility": 25,
+      "scalability": 45,
+      "strategic_fit": 38,
+      "shortest_cash_score": 52,
+      "uniqueness_score": 35,
+      "confidence": "low",
+      "selected": false
+    },
+    {
+      "route_id": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "route_family_type": "YBridge_unique",
+      "buyer_category": "founder/operator or AI platform teams building agent workflows",
+      "problem_pain": "agent teams need governed business operations, not just demos",
+      "what_could_be_delivered": "runtime harness deployment blueprint",
+      "how_fast_cash_could_plausibly_happen": "draft blueprint internally, owner-gated review later",
+      "required_capabilities": [
+        "CEO Brain L5",
+        "Behavior Center L5",
+        "Internal Loop L5",
+        "KG/CZL/CIEU"
+      ],
+      "existing_capability_fit": 90,
+      "YBridge_unique_capability_fit": 98,
+      "missing_capability": [
+        "owner approval",
+        "customer validation"
+      ],
+      "capital_required": "low",
+      "labor_intensity": "medium",
+      "delivery_complexity": "medium",
+      "time_to_first_offer": "3-5 days",
+      "time_to_first_cash_hypothesis": "3-6 weeks after owner-approved review",
+      "public_read_evidence_needed": [
+        "E63 AI-adjacent evidence",
+        "service analogs"
+      ],
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "regulatory_legal_risk": "low",
+      "reputational_risk": "low",
+      "commodity_risk": "low",
+      "defensibility": 94,
+      "scalability": 82,
+      "strategic_fit": 98,
+      "shortest_cash_score": 78,
+      "uniqueness_score": 98,
+      "confidence": "high",
+      "selected": false
+    },
+    {
+      "route_id": "agent_runtime_audit_and_repair_package",
+      "route_family_type": "YBridge_unique",
+      "buyer_category": "teams with agent workflow reliability or governance debt",
+      "problem_pain": "agent systems drift, overclaim, and bypass evidence closure",
+      "what_could_be_delivered": "audit and repair package for agent runtime governance",
+      "how_fast_cash_could_plausibly_happen": "draft audit checklist and sample repair packet",
+      "required_capabilities": [
+        "anti-drift",
+        "capability binding",
+        "behavior authorization"
+      ],
+      "existing_capability_fit": 88,
+      "YBridge_unique_capability_fit": 92,
+      "missing_capability": [
+        "K9Audit write integration optional",
+        "owner approval"
+      ],
+      "capital_required": "low",
+      "labor_intensity": "medium",
+      "delivery_complexity": "low",
+      "time_to_first_offer": "2-4 days",
+      "time_to_first_cash_hypothesis": "3-6 weeks after owner-approved review",
+      "public_read_evidence_needed": [
+        "AI observability/audit analogs"
+      ],
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "regulatory_legal_risk": "low",
+      "reputational_risk": "low",
+      "commodity_risk": "low",
+      "defensibility": 88,
+      "scalability": 78,
+      "strategic_fit": 93,
+      "shortest_cash_score": 82,
+      "uniqueness_score": 92,
+      "confidence": "high",
+      "selected": false
+    },
+    {
+      "route_id": "governed_agent_action_control_layer",
+      "route_family_type": "YBridge_unique",
+      "buyer_category": "AI teams using agents with tool/action execution",
+      "problem_pain": "unsafe tool execution needs policy and approval boundaries",
+      "what_could_be_delivered": "action proposal/authorization/evidence layer",
+      "how_fast_cash_could_plausibly_happen": "draft integration pattern internally",
+      "required_capabilities": [
+        "E55 behavior center",
+        "gov-mcp ALLOW/DENY"
+      ],
+      "existing_capability_fit": 86,
+      "YBridge_unique_capability_fit": 94,
+      "missing_capability": [
+        "real MCP transport if sold as integration",
+        "owner approval"
+      ],
+      "capital_required": "low",
+      "labor_intensity": "medium",
+      "delivery_complexity": "medium",
+      "time_to_first_offer": "4-6 days",
+      "time_to_first_cash_hypothesis": "4-8 weeks after owner-approved review",
+      "public_read_evidence_needed": [
+        "MCP/tool governance evidence"
+      ],
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "regulatory_legal_risk": "medium",
+      "reputational_risk": "low",
+      "commodity_risk": "low",
+      "defensibility": 90,
+      "scalability": 80,
+      "strategic_fit": 94,
+      "shortest_cash_score": 76,
+      "uniqueness_score": 94,
+      "confidence": "high",
+      "selected": false
+    },
+    {
+      "route_id": "KG_CZL_CIEU_evidence_closure_package",
+      "route_family_type": "YBridge_unique",
+      "buyer_category": "teams needing evidence-backed AI operations",
+      "problem_pain": "AI work needs durable closure/readback rather than loose reports",
+      "what_could_be_delivered": "evidence closure package and readback model",
+      "how_fast_cash_could_plausibly_happen": "draft sample closure packet",
+      "required_capabilities": [
+        "KG/CZL/CIEU",
+        "readback"
+      ],
+      "existing_capability_fit": 82,
+      "YBridge_unique_capability_fit": 95,
+      "missing_capability": [
+        "buyer education",
+        "owner approval"
+      ],
+      "capital_required": "low",
+      "labor_intensity": "medium",
+      "delivery_complexity": "medium",
+      "time_to_first_offer": "4-7 days",
+      "time_to_first_cash_hypothesis": "4-8 weeks after owner-approved review",
+      "public_read_evidence_needed": [
+        "evidence/audit language"
+      ],
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "regulatory_legal_risk": "low",
+      "reputational_risk": "low",
+      "commodity_risk": "low",
+      "defensibility": 90,
+      "scalability": 76,
+      "strategic_fit": 94,
+      "shortest_cash_score": 70,
+      "uniqueness_score": 95,
+      "confidence": "medium",
+      "selected": false
+    },
+    {
+      "route_id": "no_overclaim_action_boundary_operating_system",
+      "route_family_type": "YBridge_unique",
+      "buyer_category": "AI teams worried about unsafe claims/actions",
+      "problem_pain": "agents and teams need hard no-overclaim behavior boundaries",
+      "what_could_be_delivered": "no-overclaim operating boundary and tests",
+      "how_fast_cash_could_plausibly_happen": "draft boundary checklist and test suite",
+      "required_capabilities": [
+        "no-overclaim validators",
+        "behavior authorization"
+      ],
+      "existing_capability_fit": 84,
+      "YBridge_unique_capability_fit": 93,
+      "missing_capability": [
+        "external review",
+        "owner approval"
+      ],
+      "capital_required": "low",
+      "labor_intensity": "medium",
+      "delivery_complexity": "low",
+      "time_to_first_offer": "2-4 days",
+      "time_to_first_cash_hypothesis": "3-6 weeks after owner-approved review",
+      "public_read_evidence_needed": [
+        "AI safety/governance pages"
+      ],
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "regulatory_legal_risk": "low",
+      "reputational_risk": "low",
+      "commodity_risk": "low",
+      "defensibility": 87,
+      "scalability": 78,
+      "strategic_fit": 92,
+      "shortest_cash_score": 80,
+      "uniqueness_score": 93,
+      "confidence": "high",
+      "selected": false
+    },
+    {
+      "route_id": "gov_mcp_Y_star_gov_governance_integration_package",
+      "route_family_type": "YBridge_unique",
+      "buyer_category": "teams adopting MCP/tool governance",
+      "problem_pain": "MCP integrations need runtime governance and evidence tests",
+      "what_could_be_delivered": "gov-mcp/Y-star-gov integration package",
+      "how_fast_cash_could_plausibly_happen": "defer until real MCP transport gate",
+      "required_capabilities": [
+        "Y-star-gov",
+        "gov-mcp",
+        "real MCP transport"
+      ],
+      "existing_capability_fit": 78,
+      "YBridge_unique_capability_fit": 96,
+      "missing_capability": [
+        "real MCP transport closure",
+        "owner approval"
+      ],
+      "capital_required": "low",
+      "labor_intensity": "medium",
+      "delivery_complexity": "high",
+      "time_to_first_offer": "1-2 weeks",
+      "time_to_first_cash_hypothesis": "uncertain until MCP gate",
+      "public_read_evidence_needed": [
+        "MCP ecosystem evidence"
+      ],
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "regulatory_legal_risk": "medium",
+      "reputational_risk": "medium",
+      "commodity_risk": "low",
+      "defensibility": 95,
+      "scalability": 70,
+      "strategic_fit": 96,
+      "shortest_cash_score": 54,
+      "uniqueness_score": 96,
+      "confidence": "medium",
+      "selected": false
+    },
+    {
+      "route_id": "public_read_market_intelligence_agent_with_governance_YBridge",
+      "route_family_type": "hybrid",
+      "buyer_category": "operators needing governed no-contact market learning",
+      "problem_pain": "public-read research agents can drift into scraping/contact or overclaiming",
+      "what_could_be_delivered": "governed market intelligence agent with receipts and no-contact boundary",
+      "how_fast_cash_could_plausibly_happen": "draft sample intelligence packet",
+      "required_capabilities": [
+        "E59/E63 public-read",
+        "behavior boundary",
+        "KG/CZL/CIEU"
+      ],
+      "existing_capability_fit": 88,
+      "YBridge_unique_capability_fit": 86,
+      "missing_capability": [
+        "owner approval",
+        "recurring delivery design"
+      ],
+      "capital_required": "low",
+      "labor_intensity": "medium",
+      "delivery_complexity": "medium",
+      "time_to_first_offer": "3-5 days",
+      "time_to_first_cash_hypothesis": "3-8 weeks after owner-approved review",
+      "public_read_evidence_needed": [
+        "market intelligence product evidence"
+      ],
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "regulatory_legal_risk": "low",
+      "reputational_risk": "low",
+      "commodity_risk": "medium",
+      "defensibility": 82,
+      "scalability": 84,
+      "strategic_fit": 87,
+      "shortest_cash_score": 84,
+      "uniqueness_score": 86,
+      "confidence": "medium",
+      "selected": false
+    },
+    {
+      "route_id": "self_operating_AI_company_prototype_operating_room_package",
+      "route_family_type": "YBridge_unique",
+      "buyer_category": "founders exploring AI-operated company systems",
+      "problem_pain": "AI company operation needs cognition, behavior, evidence, and governance loops",
+      "what_could_be_delivered": "operating-room prototype package",
+      "how_fast_cash_could_plausibly_happen": "make internal demonstration packet; owner-gated review later",
+      "required_capabilities": [
+        "E54-E63 runtime",
+        "case study"
+      ],
+      "existing_capability_fit": 88,
+      "YBridge_unique_capability_fit": 99,
+      "missing_capability": [
+        "buyer education",
+        "customer validation",
+        "owner approval"
+      ],
+      "capital_required": "low",
+      "labor_intensity": "medium",
+      "delivery_complexity": "high",
+      "time_to_first_offer": "1-2 weeks",
+      "time_to_first_cash_hypothesis": "uncertain until review",
+      "public_read_evidence_needed": [
+        "runtime harness evidence"
+      ],
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "regulatory_legal_risk": "low",
+      "reputational_risk": "medium",
+      "commodity_risk": "low",
+      "defensibility": 97,
+      "scalability": 74,
+      "strategic_fit": 99,
+      "shortest_cash_score": 58,
+      "uniqueness_score": 99,
+      "confidence": "high",
+      "selected": false
+    },
+    {
+      "route_id": "governance_backed_business_workflow_runtime",
+      "route_family_type": "hybrid",
+      "buyer_category": "operators running repeatable AI-assisted workflows",
+      "problem_pain": "business workflows need AI speed plus governance and evidence closure",
+      "what_could_be_delivered": "governance-backed workflow runtime blueprint",
+      "how_fast_cash_could_plausibly_happen": "draft blueprint and sample packet",
+      "required_capabilities": [
+        "public-read intelligence",
+        "behavior authorization",
+        "evidence closure"
+      ],
+      "existing_capability_fit": 90,
+      "YBridge_unique_capability_fit": 88,
+      "missing_capability": [
+        "owner-approved review",
+        "delivery examples"
+      ],
+      "capital_required": "low",
+      "labor_intensity": "medium",
+      "delivery_complexity": "medium",
+      "time_to_first_offer": "3-5 days",
+      "time_to_first_cash_hypothesis": "3-6 weeks after owner-approved review",
+      "public_read_evidence_needed": [
+        "workflow automation and governance evidence"
+      ],
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "regulatory_legal_risk": "low",
+      "reputational_risk": "low",
+      "commodity_risk": "medium",
+      "defensibility": 84,
+      "scalability": 86,
+      "strategic_fit": 89,
+      "shortest_cash_score": 86,
+      "uniqueness_score": 88,
+      "confidence": "high",
+      "selected": false
+    },
+    {
+      "route_id": "governed_business_operations_blueprint_for_agent_teams",
+      "route_family_type": "hybrid",
+      "buyer_category": "agent teams and founder/operators who need business operations, not just agents",
+      "problem_pain": "teams need a buyer-understandable bridge from AI agent activity to governed business value",
+      "what_could_be_delivered": "governed business operations blueprint for agent teams",
+      "how_fast_cash_could_plausibly_happen": "prepare draft blueprint and owner-gated sample review packet",
+      "required_capabilities": [
+        "E62 revenue runtime",
+        "E63 opportunity evidence",
+        "E54-E56 runtime",
+        "KG/CZL/CIEU"
+      ],
+      "existing_capability_fit": 92,
+      "YBridge_unique_capability_fit": 94,
+      "missing_capability": [
+        "owner approval",
+        "external review",
+        "customer validation"
+      ],
+      "capital_required": "low",
+      "labor_intensity": "medium",
+      "delivery_complexity": "medium",
+      "time_to_first_offer": "2-4 days",
+      "time_to_first_cash_hypothesis": "3-6 weeks after owner-approved review",
+      "public_read_evidence_needed": [
+        "open-world ops evidence",
+        "AI governance evidence"
+      ],
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "regulatory_legal_risk": "low",
+      "reputational_risk": "low",
+      "commodity_risk": "low",
+      "defensibility": 92,
+      "scalability": 88,
+      "strategic_fit": 96,
+      "shortest_cash_score": 88,
+      "uniqueness_score": 94,
+      "confidence": "high",
+      "selected": true
+    }
+  ],
+  "market_optimal_route_count": 15,
+  "YBridge_unique_route_count": 7,
+  "hybrid_route_count": 3,
+  "includes_non_AI_product_routes": true,
+  "includes_YBridge_unique_routes": true,
+  "selected": "governed_business_operations_blueprint_for_agent_teams",
+  "external_action_allowed": false
+}

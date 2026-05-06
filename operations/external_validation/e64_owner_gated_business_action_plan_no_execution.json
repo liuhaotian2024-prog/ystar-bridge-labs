@@ -1,0 +1,31 @@
+{
+  "artifact_id": "e64_owner_gated_business_action_plan_no_execution",
+  "selected_path": "governed_business_operations_blueprint_for_agent_teams",
+  "allowed_now": [
+    "internal blueprint hardening",
+    "internal sample packet generation",
+    "internal owner decision packet",
+    "optional second public-read discovery if gaps remain",
+    "internal offer refinement"
+  ],
+  "requires_owner_approval": [
+    "external review",
+    "publication",
+    "outreach",
+    "customer conversation",
+    "pricing presentation",
+    "payment/invoice",
+    "client delivery"
+  ],
+  "still_prohibited": [
+    "contact scraping",
+    "human identification",
+    "unauthorized outreach",
+    "fabricated validation",
+    "private/provider API use",
+    "payment/secret use"
+  ],
+  "owner_decision_status": "pending_owner_decision",
+  "pending_owner_decision_is_not_approval": true,
+  "external_action_allowed": false
+}

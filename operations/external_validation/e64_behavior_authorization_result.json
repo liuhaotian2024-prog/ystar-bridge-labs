@@ -1,0 +1,42 @@
+{
+  "artifact_id": "e64_behavior_authorization_result",
+  "authorization_status": "ALLOW_INTERNAL_DUAL_AXIS_REVENUE_RETEST",
+  "allowed_actions": [
+    "repository_archaeology",
+    "public_read_only_dual_axis_opportunity_discovery",
+    "route_scoring",
+    "market_optimal_matrix",
+    "YBridge_unique_matrix",
+    "cross_selection",
+    "internal_offer_hypotheses",
+    "owner_gated_action_planning",
+    "draft_only_blueprint_if_selected_or_top3",
+    "KG_CZL_CIEU_writeback",
+    "CEO_brain_readback"
+  ],
+  "denied_actions": [
+    "outreach",
+    "publication",
+    "customer_conversation",
+    "expert_review",
+    "human_identification",
+    "contact_scraping",
+    "login_form_send",
+    "private_provider_API",
+    "payment",
+    "invoice",
+    "client_delivery",
+    "customer_validation_claim",
+    "paid_signal_claim",
+    "expert_feedback_claim",
+    "autonomous_revenue_achieved_claim",
+    "selected_path_market_validated_claim"
+  ],
+  "selected_action": "governed_business_operations_blueprint_for_agent_teams",
+  "selected_action_authorization_class": "T2_draft_only_external_material",
+  "external_business_execution_authorized": false,
+  "owner_decision_status": "pending_owner_decision",
+  "pending_owner_decision_is_not_approval": true,
+  "external_action_allowed": false,
+  "passed": true
+}

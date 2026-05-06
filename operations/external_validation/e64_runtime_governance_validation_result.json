@@ -1,0 +1,15 @@
+{
+  "artifact_id": "e64_runtime_governance_validation_result",
+  "checks": {
+    "reuse_first_audit_passed": true,
+    "behavior_authorization_passed": true,
+    "CEO_brain_readback_passed": true,
+    "no_overclaim_passed": true,
+    "KG_CZL_CIEU_writeback_exists": true,
+    "Y_star_gov_read_only": true,
+    "gov_mcp_read_only": true,
+    "no_external_action": true
+  },
+  "passed": true,
+  "external_action_allowed": false
+}

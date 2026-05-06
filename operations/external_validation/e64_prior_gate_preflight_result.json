@@ -1,0 +1,19 @@
+{
+  "artifact_id": "e64_prior_gate_preflight_result",
+  "bridge_job_id": "e64_dual_axis_first_cash_path_retest_public_read_only_20260506T000001Z",
+  "checks": {
+    "E63_completion_gate_passed": true,
+    "E63_public_read_opportunity_discovery_completed": true,
+    "E63_selected_path_consumed": true,
+    "E63_offer_hypothesis_consumed": true,
+    "owner_decision_pending": true,
+    "external_action_blocked": true,
+    "no_validation_or_revenue_claim": true
+  },
+  "passed": true,
+  "consumed_E63_final_status": "e63_public_read_opportunity_discovery_completed",
+  "consumed_E63_selected_path": "AI_agent_company_runtime_harness_deployment_service",
+  "consumed_E63_offer": "AI Agent Company Runtime Harness Deployment Blueprint",
+  "owner_decision_status": "pending_owner_decision",
+  "external_action_allowed": false
+}
