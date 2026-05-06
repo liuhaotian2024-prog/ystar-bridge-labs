@@ -1,0 +1,20 @@
+{
+  "artifact_id": "e58_cross_repo_evidence_packet",
+  "case_study_id": "ai_agent_company_runtime_harness_case_study_e58",
+  "source_artifacts": [
+    "products/ai_agent_company_runtime_harness_case_study/case_study.json",
+    "operations/external_validation/e57_post_l5_commercial_route_decision_packet.json",
+    "operations/external_validation/e56_internal_company_loop_l5_readiness_gate_result.json",
+    "operations/external_validation/e55_behavior_center_l5_readiness_gate_result.json",
+    "operations/external_validation/e54_ceo_brain_l5_readiness_gate_result.json"
+  ],
+  "KG_update": "operations/knowledge_graph/e58_ceo_kg_read_model_update.json",
+  "CZL_closure": "operations/external_validation/e58_czl_closure.json",
+  "CIEU_residual": "operations/external_validation/e58_cieu_residual_summary.json",
+  "no_customer_validation_claimed": true,
+  "no_paid_signal_claimed": true,
+  "no_real_mcp_transport_claimed": true,
+  "external_intelligence_L5_claimed_complete": false,
+  "external_action_allowed": false,
+  "no_external_action": true
+}

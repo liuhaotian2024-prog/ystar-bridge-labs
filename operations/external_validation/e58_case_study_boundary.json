@@ -1,0 +1,57 @@
+{
+  "artifact_id": "e58_case_study_boundary",
+  "case_study_name": "AI Agent Company Runtime Harness Case Study",
+  "one_sentence_definition": "An owner-reviewable internal L5 proof showing how an AI-agent-operated company can maintain a CEO brain, behavior control center, governed internal operating loop, evidence closure, anti-drift governance, and post-L5 commercial route selection without external-action overclaiming.",
+  "current_proof_level": [
+    "internal_L5_runtime_harness_proof",
+    "not_external_market_validation",
+    "not_customer_validation",
+    "not_paid_signal",
+    "not_real_mcp_transport_closure",
+    "not_published",
+    "not_externally_reviewed"
+  ],
+  "supported_claims": [
+    "CEO brain reached L5 cognitive center.",
+    "Behavior control center reached L5.",
+    "Internal company operating loop reached L5.",
+    "Internal action selection, authorization, dry-run execution, evidence capture, writeback, readback, and self-evaluation are proven locally.",
+    "Commercial route selection was rerun after L5 and selected the harness case study route.",
+    "External action remained blocked throughout."
+  ],
+  "unsupported_claims": [
+    "market demand",
+    "customer validation",
+    "paid demand",
+    "expert review",
+    "real MCP transport closure",
+    "production readiness",
+    "enterprise compliance readiness",
+    "latest external technology comparison",
+    "external-world intelligence L5"
+  ],
+  "allowed_language": [
+    "internal L5 proof",
+    "owner-reviewable case study",
+    "AI agent company runtime harness",
+    "governed internal operating loop",
+    "evidence-backed internal runtime",
+    "not externally validated",
+    "no customer or paid signal claim"
+  ],
+  "forbidden_language": [
+    "validated by customers",
+    "production-ready",
+    "enterprise-proven",
+    "paid demand exists",
+    "real MCP transport closed",
+    "customer-approved",
+    "expert-reviewed",
+    "externally validated",
+    "published",
+    "market-proven"
+  ],
+  "external_action_allowed": false,
+  "owner_decision_status": "pending_owner_decision",
+  "no_external_action": true
+}

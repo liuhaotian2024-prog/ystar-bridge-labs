@@ -1,0 +1,76 @@
+{
+  "case_study_id": "ai_agent_company_runtime_harness_case_study_e58",
+  "case_study_version": "0.1-owner-review",
+  "selected_route_from_E57": "AI_agent_company_runtime_harness_case_study",
+  "nearest_alternative_from_E57": "full_governed_execution_causal_audit_proof_stack",
+  "created_from_milestones": [
+    "E50A",
+    "E50B",
+    "E50C",
+    "E51",
+    "E52",
+    "E53",
+    "E54",
+    "E55",
+    "E56",
+    "E57"
+  ],
+  "proof_level": "internal_L5_runtime_harness_proof",
+  "target_reader": "owner / internal reviewer",
+  "supported_claims": [
+    "CEO brain reached L5 cognitive center.",
+    "Behavior control center reached L5.",
+    "Internal company operating loop reached L5.",
+    "Internal action selection, authorization, dry-run execution, evidence capture, writeback, readback, and self-evaluation are proven locally.",
+    "Commercial route selection was rerun after L5 and selected the harness case study route.",
+    "External action remained blocked throughout."
+  ],
+  "unsupported_claims": [
+    "market demand",
+    "customer validation",
+    "paid demand",
+    "expert review",
+    "real MCP transport closure",
+    "production readiness",
+    "enterprise compliance readiness",
+    "latest external technology comparison",
+    "external-world intelligence L5"
+  ],
+  "architecture_components": [
+    "CEO brain",
+    "behavior control center",
+    "internal company loop",
+    "anti-drift governance",
+    "capability centerline binding",
+    "Y-star-gov",
+    "gov-mcp",
+    "KG/CZL/CIEU",
+    "K9Audit context"
+  ],
+  "evidence_chain": [
+    "E50A gov-mcp tool-layer allow/deny proof",
+    "E52 Governed Agent Action Proof Packet",
+    "E54 CEO brain L5",
+    "E55 behavior control center L5",
+    "E56 internal company operating loop L5",
+    "E57 post-L5 money route retest"
+  ],
+  "no_go_boundaries": [
+    "no outreach",
+    "no publication",
+    "no customer validation claim",
+    "no paid signal claim",
+    "no real MCP transport claim",
+    "owner approval required before external action"
+  ],
+  "external_intelligence_gap": "External World Intelligence / Technology Capture / Market Learning L5 is not complete.",
+  "E59_required_before_market_contact": true,
+  "owner_approval_required_before_external_action": true,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false,
+  "real_mcp_transport_claimed": false,
+  "externally_validated": false,
+  "publication_status": "not_published",
+  "outreach_status": "not_contacted",
+  "next_recommended_milestone": "E59_external_world_intelligence_L5_convergence"
+}

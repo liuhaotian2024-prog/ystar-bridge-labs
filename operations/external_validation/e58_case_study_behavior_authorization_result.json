@@ -1,0 +1,318 @@
+{
+  "artifact_id": "e58_case_study_behavior_authorization_result",
+  "allowed_internal_actions": {
+    "package_case_study": {
+      "action_id": "package_case_study",
+      "authorization_status": "dry_run_only",
+      "reason": "internal action may run only as dry-run with evidence capture",
+      "Y_star_gov_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "read_only_validator": true
+      },
+      "gov_mcp_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "fake_fastmcp_harness": true
+      },
+      "owner_approval_status": "pending_owner_decision",
+      "no_go_boundary_result": {
+        "external_action_allowed": false,
+        "pending_owner_decision_not_approval": true
+      },
+      "capability_binding_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "anti_drift_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "external_action_allowed": false,
+      "no_external_action": true
+    },
+    "prepare_E59_requirements": {
+      "action_id": "prepare_E59_requirements",
+      "authorization_status": "dry_run_only",
+      "reason": "internal action may run only as dry-run with evidence capture",
+      "Y_star_gov_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "read_only_validator": true
+      },
+      "gov_mcp_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "fake_fastmcp_harness": true
+      },
+      "owner_approval_status": "pending_owner_decision",
+      "no_go_boundary_result": {
+        "external_action_allowed": false,
+        "pending_owner_decision_not_approval": true
+      },
+      "capability_binding_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "anti_drift_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "external_action_allowed": false,
+      "no_external_action": true
+    },
+    "owner_review_only_materials": {
+      "action_id": "owner_review_only_materials",
+      "authorization_status": "dry_run_only",
+      "reason": "internal action may run only as dry-run with evidence capture",
+      "Y_star_gov_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "read_only_validator": true
+      },
+      "gov_mcp_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "fake_fastmcp_harness": true
+      },
+      "owner_approval_status": "pending_owner_decision",
+      "no_go_boundary_result": {
+        "external_action_allowed": false,
+        "pending_owner_decision_not_approval": true
+      },
+      "capability_binding_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "anti_drift_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "external_action_allowed": false,
+      "no_external_action": true
+    }
+  },
+  "denied_actions": {
+    "outreach": {
+      "action_id": "outreach",
+      "authorization_status": "deny",
+      "reason": "external_contact denied while owner decision is pending",
+      "Y_star_gov_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "read_only_validator": true
+      },
+      "gov_mcp_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "fake_fastmcp_harness": true
+      },
+      "owner_approval_status": "pending_owner_decision",
+      "no_go_boundary_result": {
+        "external_action_allowed": false,
+        "pending_owner_decision_not_approval": true
+      },
+      "capability_binding_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "anti_drift_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "external_action_allowed": false,
+      "no_external_action": true
+    },
+    "publication": {
+      "action_id": "publication",
+      "authorization_status": "deny",
+      "reason": "publication denied while owner decision is pending",
+      "Y_star_gov_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "read_only_validator": true
+      },
+      "gov_mcp_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "fake_fastmcp_harness": true
+      },
+      "owner_approval_status": "pending_owner_decision",
+      "no_go_boundary_result": {
+        "external_action_allowed": false,
+        "pending_owner_decision_not_approval": true
+      },
+      "capability_binding_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "anti_drift_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "external_action_allowed": false,
+      "no_external_action": true
+    },
+    "external_review": {
+      "action_id": "external_review",
+      "authorization_status": "deny",
+      "reason": "external_contact denied while owner decision is pending",
+      "Y_star_gov_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "read_only_validator": true
+      },
+      "gov_mcp_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "fake_fastmcp_harness": true
+      },
+      "owner_approval_status": "pending_owner_decision",
+      "no_go_boundary_result": {
+        "external_action_allowed": false,
+        "pending_owner_decision_not_approval": true
+      },
+      "capability_binding_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "anti_drift_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "external_action_allowed": false,
+      "no_external_action": true
+    },
+    "customer_validation_claim": {
+      "action_id": "customer_validation_claim",
+      "authorization_status": "deny",
+      "reason": "customer validation claim denied",
+      "Y_star_gov_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "read_only_validator": true
+      },
+      "gov_mcp_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "fake_fastmcp_harness": true
+      },
+      "owner_approval_status": "pending_owner_decision",
+      "no_go_boundary_result": {
+        "external_action_allowed": false,
+        "pending_owner_decision_not_approval": true
+      },
+      "capability_binding_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "anti_drift_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "external_action_allowed": false,
+      "no_external_action": true
+    },
+    "paid_signal_claim": {
+      "action_id": "paid_signal_claim",
+      "authorization_status": "deny",
+      "reason": "paid signal claim denied",
+      "Y_star_gov_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "read_only_validator": true
+      },
+      "gov_mcp_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "fake_fastmcp_harness": true
+      },
+      "owner_approval_status": "pending_owner_decision",
+      "no_go_boundary_result": {
+        "external_action_allowed": false,
+        "pending_owner_decision_not_approval": true
+      },
+      "capability_binding_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "anti_drift_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "external_action_allowed": false,
+      "no_external_action": true
+    },
+    "real_mcp_transport_claim": {
+      "action_id": "real_mcp_transport_claim",
+      "authorization_status": "deny",
+      "reason": "real MCP transport closure cannot be claimed without proof",
+      "Y_star_gov_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "read_only_validator": true
+      },
+      "gov_mcp_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "fake_fastmcp_harness": true
+      },
+      "owner_approval_status": "pending_owner_decision",
+      "no_go_boundary_result": {
+        "external_action_allowed": false,
+        "pending_owner_decision_not_approval": true
+      },
+      "capability_binding_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "anti_drift_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "external_action_allowed": false,
+      "no_external_action": true
+    },
+    "external_intelligence_l5_claim": {
+      "action_id": "external_intelligence_l5_claim",
+      "authorization_status": "deny",
+      "reason": "external intelligence L5 is not complete",
+      "Y_star_gov_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "read_only_validator": true
+      },
+      "gov_mcp_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "fake_fastmcp_harness": true
+      },
+      "owner_approval_status": "pending_owner_decision",
+      "no_go_boundary_result": {
+        "external_action_allowed": false,
+        "pending_owner_decision_not_approval": true
+      },
+      "capability_binding_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "anti_drift_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "external_action_allowed": false,
+      "no_external_action": true
+    }
+  },
+  "checks": {
+    "selected_E58_action_internal_packaging_only": true,
+    "next_action_E59_internal_capability_building": true,
+    "external_action_remains_blocked": true,
+    "claims_denied": true,
+    "ceo_brain_not_executor": true
+  },
+  "passed": true,
+  "owner_decision_status": "pending_owner_decision",
+  "external_action_allowed": false,
+  "no_external_action": true
+}

@@ -1,0 +1,28 @@
+{
+  "artifact_id": "e58_case_study_source_artifact_manifest",
+  "sources": [
+    {
+      "source_id": "e54_brain_l5",
+      "path": "operations/external_validation/e54_ceo_brain_l5_readiness_gate_result.json"
+    },
+    {
+      "source_id": "e55_behavior_l5",
+      "path": "operations/external_validation/e55_behavior_center_l5_readiness_gate_result.json"
+    },
+    {
+      "source_id": "e56_internal_loop_l5",
+      "path": "operations/external_validation/e56_internal_company_loop_l5_readiness_gate_result.json"
+    },
+    {
+      "source_id": "e57_route_decision",
+      "path": "operations/external_validation/e57_post_l5_commercial_route_decision_packet.json"
+    },
+    {
+      "source_id": "e52_proof_packet",
+      "path": "products/governed_agent_action_proof_packet/proof_packet.json"
+    }
+  ],
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false,
+  "real_mcp_transport_claimed": false
+}

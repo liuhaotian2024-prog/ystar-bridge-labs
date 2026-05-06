@@ -1,0 +1,230 @@
+{
+  "artifact_id": "e58_case_study_evidence_manifest",
+  "evidence_count": 11,
+  "evidence_items": [
+    {
+      "evidence_id": "e50a_tool_layer_allow_deny",
+      "source_milestone": "E50A",
+      "source_path": "operations/external_validation/e50a_mcp_client_blocker_update.json",
+      "claim_supported": "gov-mcp tool-layer allow/deny proof",
+      "limitation": "real MCP transport not claimed",
+      "proof_type": "tool_layer_proof",
+      "readback_status": "read_back_or_inherited",
+      "included_in_case_study": true,
+      "overclaim_risk": "low",
+      "allowed_language": [
+        "internal proof",
+        "owner-reviewable evidence"
+      ],
+      "forbidden_language": [
+        "customer validation",
+        "paid signal",
+        "real MCP transport closure"
+      ]
+    },
+    {
+      "evidence_id": "e50b_route_decision",
+      "source_milestone": "E50B",
+      "source_path": "operations/external_validation/e50b_ceo_commercial_decision_packet.json",
+      "claim_supported": "counterfactual commercial route decision",
+      "limitation": "external evidence was public-read-only and limited",
+      "proof_type": "decision_packet",
+      "readback_status": "read_back_or_inherited",
+      "included_in_case_study": true,
+      "overclaim_risk": "medium",
+      "allowed_language": [
+        "internal proof",
+        "owner-reviewable evidence"
+      ],
+      "forbidden_language": [
+        "customer validation",
+        "paid signal",
+        "real MCP transport closure"
+      ]
+    },
+    {
+      "evidence_id": "e50c_brain_readback",
+      "source_milestone": "E50C",
+      "source_path": "operations/external_validation/e50c_ceo_brain_centerline_smoke_result.json",
+      "claim_supported": "CEO brain centerline readback",
+      "limitation": "milestone-specific before later generic registry",
+      "proof_type": "readback_proof",
+      "readback_status": "read_back_or_inherited",
+      "included_in_case_study": true,
+      "overclaim_risk": "low",
+      "allowed_language": [
+        "internal proof",
+        "owner-reviewable evidence"
+      ],
+      "forbidden_language": [
+        "customer validation",
+        "paid signal",
+        "real MCP transport closure"
+      ]
+    },
+    {
+      "evidence_id": "e51_anti_drift",
+      "source_milestone": "E51",
+      "source_path": "operations/external_validation/e51_current_readiness_anti_drift_gate_result.json",
+      "claim_supported": "cross-repo runtime linkage governance",
+      "limitation": "not product-market evidence",
+      "proof_type": "governance_gate",
+      "readback_status": "read_back_or_inherited",
+      "included_in_case_study": true,
+      "overclaim_risk": "low",
+      "allowed_language": [
+        "internal proof",
+        "owner-reviewable evidence"
+      ],
+      "forbidden_language": [
+        "customer validation",
+        "paid signal",
+        "real MCP transport closure"
+      ]
+    },
+    {
+      "evidence_id": "e51_capability_binding",
+      "source_milestone": "E51",
+      "source_path": "operations/external_validation/e51_capability_centerline_binding_repair_result.json",
+      "claim_supported": "capability centerline binding",
+      "limitation": "not external validation",
+      "proof_type": "governance_gate",
+      "readback_status": "read_back_or_inherited",
+      "included_in_case_study": true,
+      "overclaim_risk": "low",
+      "allowed_language": [
+        "internal proof",
+        "owner-reviewable evidence"
+      ],
+      "forbidden_language": [
+        "customer validation",
+        "paid signal",
+        "real MCP transport closure"
+      ]
+    },
+    {
+      "evidence_id": "e52_proof_packet",
+      "source_milestone": "E52",
+      "source_path": "products/governed_agent_action_proof_packet/proof_packet.json",
+      "claim_supported": "Governed Agent Action Proof Packet inheritance",
+      "limitation": "owner-reviewable only",
+      "proof_type": "product_packet",
+      "readback_status": "read_back_or_inherited",
+      "included_in_case_study": true,
+      "overclaim_risk": "low",
+      "allowed_language": [
+        "internal proof",
+        "owner-reviewable evidence"
+      ],
+      "forbidden_language": [
+        "customer validation",
+        "paid signal",
+        "real MCP transport closure"
+      ]
+    },
+    {
+      "evidence_id": "e53_owner_gate",
+      "source_milestone": "E53",
+      "source_path": "operations/external_validation/e53_first_user_review_risk_gate_result.json",
+      "claim_supported": "owner-review gate and pending owner decision",
+      "limitation": "no approval granted",
+      "proof_type": "boundary_gate",
+      "readback_status": "read_back_or_inherited",
+      "included_in_case_study": true,
+      "overclaim_risk": "low",
+      "allowed_language": [
+        "internal proof",
+        "owner-reviewable evidence"
+      ],
+      "forbidden_language": [
+        "customer validation",
+        "paid signal",
+        "real MCP transport closure"
+      ]
+    },
+    {
+      "evidence_id": "e54_brain_l5",
+      "source_milestone": "E54",
+      "source_path": "operations/external_validation/e54_ceo_brain_l5_readiness_gate_result.json",
+      "claim_supported": "CEO brain L5 readiness",
+      "limitation": "internal proof only",
+      "proof_type": "readiness_gate",
+      "readback_status": "read_back_or_inherited",
+      "included_in_case_study": true,
+      "overclaim_risk": "low",
+      "allowed_language": [
+        "internal proof",
+        "owner-reviewable evidence"
+      ],
+      "forbidden_language": [
+        "customer validation",
+        "paid signal",
+        "real MCP transport closure"
+      ]
+    },
+    {
+      "evidence_id": "e55_behavior_l5",
+      "source_milestone": "E55",
+      "source_path": "operations/external_validation/e55_behavior_center_l5_readiness_gate_result.json",
+      "claim_supported": "behavior control center L5 readiness",
+      "limitation": "internal proof only",
+      "proof_type": "readiness_gate",
+      "readback_status": "read_back_or_inherited",
+      "included_in_case_study": true,
+      "overclaim_risk": "low",
+      "allowed_language": [
+        "internal proof",
+        "owner-reviewable evidence"
+      ],
+      "forbidden_language": [
+        "customer validation",
+        "paid signal",
+        "real MCP transport closure"
+      ]
+    },
+    {
+      "evidence_id": "e56_loop_l5",
+      "source_milestone": "E56",
+      "source_path": "operations/external_validation/e56_internal_company_loop_l5_readiness_gate_result.json",
+      "claim_supported": "internal company operating loop L5 readiness",
+      "limitation": "dry-run internal only",
+      "proof_type": "readiness_gate",
+      "readback_status": "read_back_or_inherited",
+      "included_in_case_study": true,
+      "overclaim_risk": "low",
+      "allowed_language": [
+        "internal proof",
+        "owner-reviewable evidence"
+      ],
+      "forbidden_language": [
+        "customer validation",
+        "paid signal",
+        "real MCP transport closure"
+      ]
+    },
+    {
+      "evidence_id": "e57_route_retest",
+      "source_milestone": "E57",
+      "source_path": "operations/external_validation/e57_post_l5_commercial_route_decision_packet.json",
+      "claim_supported": "post-L5 selected route: AI agent company runtime harness case study",
+      "limitation": "public evidence refresh skipped",
+      "proof_type": "decision_packet",
+      "readback_status": "read_back_or_inherited",
+      "included_in_case_study": true,
+      "overclaim_risk": "medium",
+      "allowed_language": [
+        "internal proof",
+        "owner-reviewable evidence"
+      ],
+      "forbidden_language": [
+        "customer validation",
+        "paid signal",
+        "real MCP transport closure"
+      ]
+    }
+  ],
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false,
+  "real_mcp_transport_claimed": false,
+  "external_action_allowed": false
+}

@@ -1,0 +1,5 @@
+# E59 Requirements Packet
+
+E59 must first audit current external observation capabilities and reuse existing assets before building anything new.
+Required capabilities: source discovery, safe public-read-only access, source credibility scoring, freshness tracking, competitor and adjacent technology comparison, latest technology capture, claim extraction, evidence atomization, contradiction and gap detection, learning writeback to CEO brain / KG / CIEU, route impact analysis, Y-star-gov and gov-mcp governance, anti-drift and readback, no login, no contact, no contact scraping, no publication.
+Baseline inspection must include: E50B public-read-only observation artifacts, E57 skipped evidence refresh blocker, controlled public page read adapter if present, source receipt builders, external observation manifests, provider availability checks, AI transparency / risk boundary manifests, public-read-only source policies, E6/E8/E9 observation assets if present, E51-E57 anti-drift/capability binding/gov-mcp tooling.

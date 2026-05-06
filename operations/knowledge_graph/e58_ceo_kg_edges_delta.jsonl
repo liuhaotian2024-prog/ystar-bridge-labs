@@ -1,0 +1,3 @@
+{"from": "E57_post_L5_money_route", "to": "e58_case_study", "edge": "selects_and_packages"}
+{"from": "e58_case_study", "to": "CEO_brain", "edge": "readback"}
+{"from": "e58_external_intelligence_gap", "to": "E59_external_world_intelligence_L5_convergence", "edge": "requires"}

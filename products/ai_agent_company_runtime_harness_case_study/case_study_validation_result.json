@@ -1,0 +1,8 @@
+{
+  "artifact_id": "e58_case_study_validation_result",
+  "no_overclaim_validation_passed": true,
+  "external_action_allowed": false,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false,
+  "real_mcp_transport_claimed": false
+}

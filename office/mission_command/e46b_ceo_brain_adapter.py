@@ -306,6 +306,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e57_money_route_state = {'money_route_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
     try:
+        from office.mission_command.e58_ceo_brain_readback_smoke import load_case_study_state_for_brain
+        e58_case_study_state = load_case_study_state_for_brain()
+    except Exception as exc:
+        e58_case_study_state = {'case_study_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -368,6 +373,12 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_money_route_nearest_alternative": e57_money_route_state.get("nearest_alternative"),
         "current_money_route_external_action_allowed": e57_money_route_state.get("external_action_allowed"),
         "current_money_route_next_milestone": e57_money_route_state.get("next_recommended_milestone"),
+        "latest_case_study_state": e58_case_study_state,
+        "current_case_study_status": e58_case_study_state.get("case_study_status"),
+        "current_case_study_id": e58_case_study_state.get("case_study_id"),
+        "current_case_study_external_intelligence_gap": e58_case_study_state.get("external_intelligence_gap_declared"),
+        "current_case_study_external_action_allowed": e58_case_study_state.get("external_action_allowed"),
+        "current_case_study_next_milestone": e58_case_study_state.get("next_recommended_milestone"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

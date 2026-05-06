@@ -1,0 +1,56 @@
+{
+  "artifact_id": "e58_prior_gate_preflight_result",
+  "bridge_job_id": "e58_package_ai_agent_company_runtime_harness_case_study_20260506T000001Z",
+  "bridge_labs": {
+    "path": "/private/tmp/e58_bridge_labs_validation_1778084754",
+    "head": "180eede652dc0d4c453f67b9434441d2714b29b4",
+    "expected_head": "180eede652dc0d4c453f67b9434441d2714b29b4",
+    "head_matches_expected": true,
+    "clean": false,
+    "status_short": "M office/mission_command/e46b_ceo_brain_adapter.py\n?? office/mission_command/e58_case_study_anti_drift_gate.py\n?? office/mission_command/e58_case_study_behavior_authorization.py\n?? office/mission_command/e58_case_study_boundary.py\n?? office/mission_command/e58_case_study_capability_binding_gate.py\n?? office/mission_command/e58_case_study_completion_gate.py\n?? office/mission_command/e58_case_study_evidence_manifest.py\n?? office/mission_command/e58_case_study_evidence_writeback.py\n?? office/mission_command/e58_case_study_no_overclaim_validator.py\n?? office/mission_command/e58_ceo_brain_readback_smoke.py\n?? office/mission_command/e58_external_intelligence_gap.py\n?? office/mission_command/e58_gov_mcp_validation_harness.py\n?? office/mission_command/e58_handoff.py\n?? office/mission_command/e58_harness_category_narrative.py\n?? office/mission_command/e58_owner_review_package.py\n?? office/mission_command/e58_prior_gate_preflight.py\n?? office/mission_command/e58_y_star_gov_validation_runner.py\n?? operations/external_validation/e58_base_state_manifest.json\n?? operations/external_validation/e58_case_study_anti_drift_gate_result.json\n?? operations/external_validation/e58_case_study_behavior_authorization_result.json\n?? operations/external_validation/e58_case_study_boundary.json\n?? operations/external_validation/e58_case_study_capability_binding_gate_result.json\n?? operations/external_validation/e58_case_study_completion_gate_result.json\n?? operations/external_validation/e58_case_study_evidence_manifest.json\n?? operations/external_validation/e58_case_study_no_overclaim_validation_result.json\n?? operations/external_validation/e58_ceo_brain_case_study_update.json\n?? operations/external_validation/e58_ceo_brain_readback_smoke_result.json\n?? operations/external_validation/e58_cieu_residual_summary.json\n?? operations/external_validation/e58_cross_repo_evidence_packet.json\n?? operations/external_validation/e58_czl_closure.json\n?? operations/external_validation/e58_external_intelligence_gap.json\n?? operations/external_validation/e58_gov_mcp_validation_harness_result.json\n?? operations/external_validation/e58_harness_category_narrative.json\n?? operations/external_validation/e58_owner_review_packet_result.json\n?? operations/external_validation/e58_prior_gate_preflight_result.json\n?? operations/external_validation/e58_y_star_gov_validation_result.json\n?? operations/knowledge_graph/e58_ceo_kg_edges_delta.jsonl\n?? operations/knowledge_graph/e58_ceo_kg_nodes_delta.jsonl\n?? operations/knowledge_graph/e58_ceo_kg_read_model_update.json\n?? products/ai_agent_company_runtime_harness_case_study/\n?? reports/integration/e58_case_study_anti_drift_gate_result.md\n?? reports/integration/e58_case_study_behavior_authorization_result.md\n?? reports/integration/e58_case_study_boundary.md\n?? reports/integration/e58_case_study_capability_binding_gate_result.md\n?? reports/integration/e58_case_study_completion_gate_result.md\n?? reports/integration/e58_case_study_evidence_manifest.md\n?? reports/integration/e58_case_study_no_overclaim_validation_result.md\n?? reports/integration/e58_ceo_brain_readback_smoke_result.md\n?? reports/integration/e58_cross_repo_evidence_packet.md\n?? reports/integration/e58_external_intelligence_gap.md\n?? reports/integration/e58_gov_mcp_validation_harness_result.md\n?? reports/integration/e58_harness_category_narrative.md\n?? reports/integration/e58_operator_handoff.md\n?? reports/integration/e58_owner_handoff_chinese.md\n?? reports/integration/e58_owner_review_packet_chinese.md\n?? reports/integration/e58_prior_gate_preflight_result.md\n?? reports/integration/e58_y_star_gov_validation_result.md\n?? tests/office/test_e58_case_study_anti_drift_gate.py\n?? tests/office/test_e58_case_study_behavior_authorization.py\n?? tests/office/test_e58_case_study_boundary.py\n?? tests/office/test_e58_case_study_capability_binding_gate.py\n?? tests/office/test_e58_case_study_completion_gate.py\n?? tests/office/test_e58_case_study_evidence_manifest.py\n?? tests/office/test_e58_case_study_no_overclaim_validator.py\n?? tests/office/test_e58_ceo_brain_readback_smoke.py\n?? tests/office/test_e58_external_intelligence_gap.py\n?? tests/office/test_e58_gov_mcp_validation_harness.py\n?? tests/office/test_e58_harness_category_narrative.py\n?? tests/office/test_e58_json_artifacts.py\n?? tests/office/test_e58_owner_review_package.py\n?? tests/office/test_e58_y_star_gov_validation_runner.py"
+  },
+  "read_only_repos": {
+    "Y-star-gov": {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "head": "b0d9aa8b1badd1180127a2f79f73ceed48e16451",
+      "expected_head": "b0d9aa8b1badd1180127a2f79f73ceed48e16451",
+      "head_matches_expected": true,
+      "clean": true,
+      "status_short": ""
+    },
+    "gov-mcp": {
+      "path": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+      "head": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+      "expected_head": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+      "head_matches_expected": true,
+      "clean": true,
+      "status_short": ""
+    },
+    "K9Audit": {
+      "path": "/Users/haotianliu/.openclaw/workspace/K9Audit",
+      "head": "37911e18ce4425470e3f745b30d155c43d76ff55",
+      "expected_head": "37911e18ce4425470e3f745b30d155c43d76ff55",
+      "head_matches_expected": true,
+      "clean": true,
+      "status_short": ""
+    }
+  },
+  "checks": {
+    "bridge_labs_expected_base": true,
+    "bridge_labs_no_unrelated_dirty": true,
+    "read_only_repos_clean": true,
+    "E54_brain_L5_passed": true,
+    "E55_behavior_L5_passed": true,
+    "E56_internal_loop_L5_passed": true,
+    "E57_retest_closed": true,
+    "E57_selected_route_consumed": true,
+    "E52_proof_packet_available": true,
+    "E53_owner_review_packet_available": true,
+    "pending_owner_decision_remains_pending": true,
+    "external_action_allowed_false": true
+  },
+  "passed": true,
+  "owner_decision_status": "pending_owner_decision",
+  "external_action_allowed": false,
+  "no_external_action": true
+}
