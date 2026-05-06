@@ -1,0 +1,20 @@
+{
+  "artifact_id": "e49_money_route_deep_semantic_retest",
+  "runtime_artifact_id": "e49_deep_semantic_runtime_smoke_result",
+  "selected_route_id": "governed_agent_action_proof_packet",
+  "selected_value_object": "Governed Agent Action Proof Packet",
+  "selected_route_kind": "service_wedge_anchored_by_proof_artifact",
+  "semantic_score": 0.84,
+  "route_count": 12,
+  "answers": {
+    "governed_agent_action_proof_packet_remains_selected": true,
+    "selected_as_product_service_or_proof": "service wedge anchored by proof artifact",
+    "missing_mcp_client_path_blocks_external_attempt": true,
+    "ystar_doctor_nonblocking": true,
+    "paid_setup_service_more_direct_than_proof_packet": false,
+    "plugin_mcpb_first_or_second": "second after packaging/client maturity",
+    "exact_next_milestone": "E50_build_minimal_gov_mcp_local_test_client"
+  },
+  "score_matrix_ref": "operations/external_validation/e49_semantic_route_score_matrix.json",
+  "no_external_action": true
+}

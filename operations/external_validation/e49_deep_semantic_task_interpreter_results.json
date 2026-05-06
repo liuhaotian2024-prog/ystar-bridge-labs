@@ -1,0 +1,422 @@
+{
+  "artifact_id": "e49_deep_semantic_task_interpreter_results",
+  "fixture_count": 6,
+  "results": {
+    "Make the deep semantic layer fully mature.": {
+      "artifact_id": "e49_deep_semantic_task_interpretation",
+      "task_text": "Make the deep semantic layer fully mature.",
+      "semantic_task": {
+        "object_type": "SemanticTask",
+        "schema_version": "e49.semantic.v1",
+        "confidence": "artifact_supported",
+        "maturity": "partial_runtime",
+        "no_external_action": true,
+        "task_id": "task_38424069",
+        "owner_request": "Make the deep semantic layer fully mature.",
+        "explicit_goal": "Make the deep semantic layer fully mature.",
+        "implicit_goal": "produce value-oriented CEO action without shallow artifact churn",
+        "m_triangle_alignment": "value production + governance discipline + learning closure",
+        "urgency": "near_term",
+        "permitted_action_boundary": [
+          "local deterministic code",
+          "read-only repo inspection",
+          "artifact generation",
+          "tests"
+        ],
+        "forbidden_action_boundary": [
+          "customer contact",
+          "expert contact",
+          "human identification",
+          "scraping",
+          "send",
+          "publish",
+          "login",
+          "provider/API execution",
+          "internet install",
+          "payment",
+          "secret use"
+        ]
+      },
+      "semantic_task_validation": {
+        "valid": true,
+        "errors": []
+      },
+      "explicit_request": "Make the deep semantic layer fully mature.",
+      "implicit_strategic_intent": "produce value-oriented CEO action without shallow artifact churn",
+      "capability_families_required": [
+        "route_scorer",
+        "runtime_validation",
+        "semantic_graph",
+        "semantic_object_model"
+      ],
+      "value_production_relation": "enabling_runtime",
+      "field_projection_requirement": "required",
+      "ceo_brain_requirement": "contextual",
+      "commercial_evidence_execution_audit_requirements": [
+        "CIEU/CZL closure",
+        "graph edges",
+        "no-overclaim boundary",
+        "runtime integration",
+        "side-effect guard",
+        "typed semantic objects",
+        "validation"
+      ],
+      "forbidden_shortcuts": [
+        "customer validation claim without customer use",
+        "external action without owner approval",
+        "keyword/tag matching without typed object validation",
+        "paid-signal claim without payment"
+      ],
+      "what_would_count_as_shallow_answer": [
+        "keyword/tag matching without typed object validation",
+        "report-only output with no runtime object validation"
+      ],
+      "required_output_type": "semantic_runtime_packet",
+      "no_external_action": true
+    },
+    "How do we make money fastest?": {
+      "artifact_id": "e49_deep_semantic_task_interpretation",
+      "task_text": "How do we make money fastest?",
+      "semantic_task": {
+        "object_type": "SemanticTask",
+        "schema_version": "e49.semantic.v1",
+        "confidence": "artifact_supported",
+        "maturity": "partial_runtime",
+        "no_external_action": true,
+        "task_id": "task_32580792",
+        "owner_request": "How do we make money fastest?",
+        "explicit_goal": "How do we make money fastest?",
+        "implicit_goal": "produce value-oriented CEO action without shallow artifact churn",
+        "m_triangle_alignment": "value production + governance discipline + learning closure",
+        "urgency": "near_term",
+        "permitted_action_boundary": [
+          "local deterministic code",
+          "read-only repo inspection",
+          "artifact generation",
+          "tests"
+        ],
+        "forbidden_action_boundary": [
+          "customer contact",
+          "expert contact",
+          "human identification",
+          "scraping",
+          "send",
+          "publish",
+          "login",
+          "provider/API execution",
+          "internet install",
+          "payment",
+          "secret use"
+        ]
+      },
+      "semantic_task_validation": {
+        "valid": true,
+        "errors": []
+      },
+      "explicit_request": "How do we make money fastest?",
+      "implicit_strategic_intent": "produce value-oriented CEO action without shallow artifact churn",
+      "capability_families_required": [
+        "commercial_route",
+        "evidence_burden",
+        "execution_blocker",
+        "value_object"
+      ],
+      "value_production_relation": "direct",
+      "field_projection_requirement": "required",
+      "ceo_brain_requirement": "required",
+      "commercial_evidence_execution_audit_requirements": [
+        "CIEU/CZL closure",
+        "buyer pain",
+        "commercial assets",
+        "no-overclaim boundary",
+        "paid-signal boundary",
+        "proof readiness",
+        "side-effect guard"
+      ],
+      "forbidden_shortcuts": [
+        "customer validation claim without customer use",
+        "external action without owner approval",
+        "paid-signal claim without payment"
+      ],
+      "what_would_count_as_shallow_answer": [
+        "report-only output with no runtime object validation"
+      ],
+      "required_output_type": "money_route_decision",
+      "no_external_action": true
+    },
+    "Prepare a first external user attempt.": {
+      "artifact_id": "e49_deep_semantic_task_interpretation",
+      "task_text": "Prepare a first external user attempt.",
+      "semantic_task": {
+        "object_type": "SemanticTask",
+        "schema_version": "e49.semantic.v1",
+        "confidence": "artifact_supported",
+        "maturity": "partial_runtime",
+        "no_external_action": true,
+        "task_id": "task_42427648",
+        "owner_request": "Prepare a first external user attempt.",
+        "explicit_goal": "Prepare a first external user attempt.",
+        "implicit_goal": "produce value-oriented CEO action without shallow artifact churn",
+        "m_triangle_alignment": "value production + governance discipline + learning closure",
+        "urgency": "near_term",
+        "permitted_action_boundary": [
+          "local deterministic code",
+          "read-only repo inspection",
+          "artifact generation",
+          "tests"
+        ],
+        "forbidden_action_boundary": [
+          "customer contact",
+          "expert contact",
+          "human identification",
+          "scraping",
+          "send",
+          "publish",
+          "login",
+          "provider/API execution",
+          "internet install",
+          "payment",
+          "secret use"
+        ]
+      },
+      "semantic_task_validation": {
+        "valid": true,
+        "errors": []
+      },
+      "explicit_request": "Prepare a first external user attempt.",
+      "implicit_strategic_intent": "produce value-oriented CEO action without shallow artifact churn",
+      "capability_families_required": [
+        "first_user_packet",
+        "no_contact_boundary",
+        "owner_approval_gate"
+      ],
+      "value_production_relation": "direct",
+      "field_projection_requirement": "contextual",
+      "ceo_brain_requirement": "contextual",
+      "commercial_evidence_execution_audit_requirements": [
+        "CIEU/CZL closure",
+        "no contact info",
+        "no real human identification",
+        "no-overclaim boundary",
+        "owner approval required",
+        "side-effect guard"
+      ],
+      "forbidden_shortcuts": [
+        "customer validation claim without customer use",
+        "external action without owner approval",
+        "message draft or target list before approval",
+        "paid-signal claim without payment"
+      ],
+      "what_would_count_as_shallow_answer": [
+        "message draft or target list before approval",
+        "report-only output with no runtime object validation"
+      ],
+      "required_output_type": "semantic_runtime_packet",
+      "no_external_action": true
+    },
+    "Fix gov-mcp server/client demo.": {
+      "artifact_id": "e49_deep_semantic_task_interpretation",
+      "task_text": "Fix gov-mcp server/client demo.",
+      "semantic_task": {
+        "object_type": "SemanticTask",
+        "schema_version": "e49.semantic.v1",
+        "confidence": "artifact_supported",
+        "maturity": "partial_runtime",
+        "no_external_action": true,
+        "task_id": "task_58229588",
+        "owner_request": "Fix gov-mcp server/client demo.",
+        "explicit_goal": "Fix gov-mcp server/client demo.",
+        "implicit_goal": "produce value-oriented CEO action without shallow artifact churn",
+        "m_triangle_alignment": "value production + governance discipline + learning closure",
+        "urgency": "near_term",
+        "permitted_action_boundary": [
+          "local deterministic code",
+          "read-only repo inspection",
+          "artifact generation",
+          "tests"
+        ],
+        "forbidden_action_boundary": [
+          "customer contact",
+          "expert contact",
+          "human identification",
+          "scraping",
+          "send",
+          "publish",
+          "login",
+          "provider/API execution",
+          "internet install",
+          "payment",
+          "secret use"
+        ]
+      },
+      "semantic_task_validation": {
+        "valid": true,
+        "errors": []
+      },
+      "explicit_request": "Fix gov-mcp server/client demo.",
+      "implicit_strategic_intent": "produce value-oriented CEO action without shallow artifact churn",
+      "capability_families_required": [
+        "gov_mcp_execution_boundary",
+        "local_cleanup",
+        "minimal_mcp_client_path"
+      ],
+      "value_production_relation": "enabling_runtime",
+      "field_projection_requirement": "contextual",
+      "ceo_brain_requirement": "contextual",
+      "commercial_evidence_execution_audit_requirements": [
+        "CIEU/CZL closure",
+        "no-overclaim boundary",
+        "process/port cleanup",
+        "sandbox",
+        "server/client code inspection",
+        "side-effect guard"
+      ],
+      "forbidden_shortcuts": [
+        "customer validation claim without customer use",
+        "external action without owner approval",
+        "paid-signal claim without payment"
+      ],
+      "what_would_count_as_shallow_answer": [
+        "report-only output with no runtime object validation"
+      ],
+      "required_output_type": "semantic_runtime_packet",
+      "no_external_action": true
+    },
+    "Use our previous imagination and innovation modules.": {
+      "artifact_id": "e49_deep_semantic_task_interpretation",
+      "task_text": "Use our previous imagination and innovation modules.",
+      "semantic_task": {
+        "object_type": "SemanticTask",
+        "schema_version": "e49.semantic.v1",
+        "confidence": "artifact_supported",
+        "maturity": "partial_runtime",
+        "no_external_action": true,
+        "task_id": "task_46989247",
+        "owner_request": "Use our previous imagination and innovation modules.",
+        "explicit_goal": "Use our previous imagination and innovation modules.",
+        "implicit_goal": "produce value-oriented CEO action without shallow artifact churn",
+        "m_triangle_alignment": "value production + governance discipline + learning closure",
+        "urgency": "near_term",
+        "permitted_action_boundary": [
+          "local deterministic code",
+          "read-only repo inspection",
+          "artifact generation",
+          "tests"
+        ],
+        "forbidden_action_boundary": [
+          "customer contact",
+          "expert contact",
+          "human identification",
+          "scraping",
+          "send",
+          "publish",
+          "login",
+          "provider/API execution",
+          "internet install",
+          "payment",
+          "secret use"
+        ]
+      },
+      "semantic_task_validation": {
+        "valid": true,
+        "errors": []
+      },
+      "explicit_request": "Use our previous imagination and innovation modules.",
+      "implicit_strategic_intent": "produce value-oriented CEO action without shallow artifact churn",
+      "capability_families_required": [
+        "E34_strategic_imagination",
+        "E35_six_dimensional_cognition",
+        "E36_opportunity_evidence_ladder"
+      ],
+      "value_production_relation": "enabling_runtime",
+      "field_projection_requirement": "contextual",
+      "ceo_brain_requirement": "required",
+      "commercial_evidence_execution_audit_requirements": [
+        "CIEU/CZL closure",
+        "E34/E35/E36 cognition assets",
+        "high-imagination preservation",
+        "no-overclaim boundary",
+        "side-effect guard"
+      ],
+      "forbidden_shortcuts": [
+        "customer validation claim without customer use",
+        "external action without owner approval",
+        "paid-signal claim without payment"
+      ],
+      "what_would_count_as_shallow_answer": [
+        "report-only output with no runtime object validation"
+      ],
+      "required_output_type": "semantic_runtime_packet",
+      "no_external_action": true
+    },
+    "Reconnect CEO brain and field projection.": {
+      "artifact_id": "e49_deep_semantic_task_interpretation",
+      "task_text": "Reconnect CEO brain and field projection.",
+      "semantic_task": {
+        "object_type": "SemanticTask",
+        "schema_version": "e49.semantic.v1",
+        "confidence": "artifact_supported",
+        "maturity": "partial_runtime",
+        "no_external_action": true,
+        "task_id": "task_13313788",
+        "owner_request": "Reconnect CEO brain and field projection.",
+        "explicit_goal": "Reconnect CEO brain and field projection.",
+        "implicit_goal": "produce value-oriented CEO action without shallow artifact churn",
+        "m_triangle_alignment": "value production + governance discipline + learning closure",
+        "urgency": "near_term",
+        "permitted_action_boundary": [
+          "local deterministic code",
+          "read-only repo inspection",
+          "artifact generation",
+          "tests"
+        ],
+        "forbidden_action_boundary": [
+          "customer contact",
+          "expert contact",
+          "human identification",
+          "scraping",
+          "send",
+          "publish",
+          "login",
+          "provider/API execution",
+          "internet install",
+          "payment",
+          "secret use"
+        ]
+      },
+      "semantic_task_validation": {
+        "valid": true,
+        "errors": []
+      },
+      "explicit_request": "Reconnect CEO brain and field projection.",
+      "implicit_strategic_intent": "produce value-oriented CEO action without shallow artifact churn",
+      "capability_families_required": [
+        "ceo_brain_context",
+        "field_functional_projection",
+        "wisdom_memory_kg"
+      ],
+      "value_production_relation": "enabling_runtime",
+      "field_projection_requirement": "required",
+      "ceo_brain_requirement": "required",
+      "commercial_evidence_execution_audit_requirements": [
+        "CEO brain adapter",
+        "CIEU/CZL closure",
+        "KG/read-model context",
+        "field projection adapter",
+        "no-overclaim boundary",
+        "side-effect guard"
+      ],
+      "forbidden_shortcuts": [
+        "customer validation claim without customer use",
+        "external action without owner approval",
+        "paid-signal claim without payment"
+      ],
+      "what_would_count_as_shallow_answer": [
+        "report-only output with no runtime object validation"
+      ],
+      "required_output_type": "semantic_runtime_packet",
+      "no_external_action": true
+    }
+  },
+  "no_external_action": true
+}

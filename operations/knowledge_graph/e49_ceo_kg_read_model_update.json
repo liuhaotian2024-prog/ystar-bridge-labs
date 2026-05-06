@@ -1,0 +1,6 @@
+{
+  "artifact_id": "e49_ceo_kg_read_model_update",
+  "read_model_update": "E49 deep semantic runtime should be read before any money route or external attempt decision.",
+  "selected_route": "governed_agent_action_proof_packet",
+  "next_milestone": "E50_build_minimal_gov_mcp_local_test_client"
+}

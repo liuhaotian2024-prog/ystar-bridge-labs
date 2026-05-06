@@ -1,0 +1,7 @@
+{
+  "artifact_id": "e49_ceo_kg_deep_semantic_runtime_feedback",
+  "selected_route": "governed_agent_action_proof_packet",
+  "semantic_score": 0.84,
+  "blocker": "blocked_missing_local_mcp_dependency",
+  "next_milestone": "E50_build_minimal_gov_mcp_local_test_client"
+}

@@ -1,0 +1,55 @@
+{
+  "artifact_id": "e49_minimal_mcp_client_path_maturity",
+  "gov_mcp_head": "998e62c0fa2dd28797d853f6e054210a1823891f",
+  "questions": {
+    "has_in_process_fastmcp_test_helper": true,
+    "exposes_direct_python_callable_for_gov_check_gov_demo": "nested_fastmcp_tool_only",
+    "local_mcp_dependency_available": false,
+    "can_minimal_client_be_built_without_internet_install": false,
+    "safe_stdio_or_sse_call_currently_available": false
+  },
+  "tool_names_sample": [
+    "gov_acknowledge",
+    "gov_archive",
+    "gov_audit",
+    "gov_baseline",
+    "gov_benchmark",
+    "gov_chain_reset",
+    "gov_check",
+    "gov_check_impact",
+    "gov_contract_activate",
+    "gov_contract_conflicts",
+    "gov_contract_load",
+    "gov_contract_validate",
+    "gov_counterfactual",
+    "gov_coverage",
+    "gov_delegate",
+    "gov_delta",
+    "gov_demo",
+    "gov_dispatch",
+    "gov_doctor",
+    "gov_domain_describe",
+    "gov_domain_init",
+    "gov_domain_list",
+    "gov_enforce",
+    "gov_escalate"
+  ],
+  "server_import_check": {
+    "command": [
+      "python3",
+      "-c",
+      "from gov_mcp.server import create_server; print(\"ok\")"
+    ],
+    "cwd": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/Users/haotianliu/.openclaw/workspace/gov-mcp/gov_mcp/server.py\", line 17, in <module>\n    from mcp.server.fastmcp import FastMCP\nModuleNotFoundError: No module named 'mcp'\n",
+    "timed_out": false
+  },
+  "pyproject_declares_mcp_dependency": true,
+  "classification": "blocked_missing_local_mcp_dependency",
+  "exact_minimal_test_client_module_needed_next": "E50_build_minimal_gov_mcp_local_test_client_dependency_gate",
+  "blocked_external_requirement": true,
+  "no_internet_install": true,
+  "no_external_action": true
+}

@@ -1,0 +1,757 @@
+{
+  "artifact_id": "e49_semantic_graph",
+  "node_count": 25,
+  "edge_count": 31,
+  "nodes": [
+    {
+      "id": "task:e49_money_route",
+      "type": "task",
+      "payload": {
+        "object_type": "SemanticTask",
+        "schema_version": "e49.semantic.v1",
+        "confidence": "artifact_supported",
+        "maturity": "partial_runtime",
+        "no_external_action": true,
+        "task_id": "e49_money_route_task",
+        "owner_request": "What is the fastest credible route for Y*Bridge Labs to make real money or obtain the strongest near-term real user / usage / paid signal, using existing assets and without overclaiming?",
+        "explicit_goal": "What is the fastest credible route for Y*Bridge Labs to make real money or obtain the strongest near-term real user / usage / paid signal, using existing assets and without overclaiming?",
+        "implicit_goal": "convert runtime capability into value production without overclaiming",
+        "m_triangle_alignment": "value production + governance discipline + learning closure",
+        "urgency": "near_term",
+        "permitted_action_boundary": [
+          "local deterministic code",
+          "read-only repo inspection",
+          "artifact generation",
+          "tests"
+        ],
+        "forbidden_action_boundary": [
+          "customer contact",
+          "expert contact",
+          "human identification",
+          "scraping",
+          "send",
+          "publish",
+          "login",
+          "provider/API execution",
+          "internet install",
+          "payment",
+          "secret use"
+        ]
+      }
+    },
+    {
+      "id": "projection:e49",
+      "type": "projection",
+      "payload": {
+        "object_type": "SemanticProjection",
+        "schema_version": "e49.semantic.v1",
+        "confidence": "artifact_supported",
+        "maturity": "partial_runtime",
+        "no_external_action": true,
+        "projection_id": "e49_projection",
+        "mission": "Y*Bridge Labs produces real governed-agent value without fake validation",
+        "company_objective": "make governed agent action proof understandable and locally verifiable",
+        "milestone_objective": "mature semantic layer and retest route",
+        "session_objective": "local dry-run semantic route decision",
+        "task_objective": "What is the fastest credible route for Y*Bridge Labs to make real money or obtain the strongest near-term real user / usage / paid signal, using existing assets and without overclaiming?",
+        "action_candidates": [
+          "run canonical dry-run",
+          "reuse E45 local demo",
+          "close gov-mcp server/client demo gap",
+          "prepare owner-approved external attempt only after blockers"
+        ],
+        "behavior_constraints": [
+          "no contact",
+          "no send",
+          "no provider/API",
+          "no internet install",
+          "no duplicate governance/execution/audit/brain/KG"
+        ],
+        "y_star_candidate": "Governed Agent Action Proof Packet over gov-mcp + Y-star-gov substrate",
+        "governance_gate": "owner approval before external action",
+        "cieu_czl_closure_expectation": "record proof, blockers, route decision, next milestone",
+        "residual_learning_expectation": "blockers become learning candidates, not validation claims"
+      }
+    },
+    {
+      "id": "ceo_brain:e46b_context",
+      "type": "boundary",
+      "payload": {
+        "object_type": "CEOBrainContext",
+        "source": "e46b_ceo_brain_adapter",
+        "wisdom_invoked": true,
+        "commercial_asset_count": 12,
+        "no_external_action": true
+      }
+    },
+    {
+      "id": "capability:e47_coverage_gate",
+      "type": "capability",
+      "payload": {
+        "object_type": "SemanticCapability",
+        "schema_version": "e49.semantic.v1",
+        "confidence": "artifact_supported",
+        "maturity": "partial",
+        "no_external_action": true,
+        "capability_id": "e47_full_capability_coverage_gate",
+        "source_path": "operations/external_validation/e47_capability_final_status_matrix.json",
+        "canonical_spine_layer": "capability_activation_layer",
+        "runtime_status": "active_runtime_adapter",
+        "semantic_role": "coverage_gate",
+        "inputs": [],
+        "outputs": [],
+        "side_effects": "none",
+        "test_coverage": "artifact_or_targeted_test",
+        "evidence_support": "unknown resources classified"
+      }
+    },
+    {
+      "id": "value_object:governed_agent_action_proof_packet",
+      "type": "value_object",
+      "payload": {
+        "object_type": "SemanticValueObject",
+        "schema_version": "e49.semantic.v1",
+        "confidence": "artifact_supported",
+        "maturity": "partial_runtime",
+        "no_external_action": true,
+        "value_object_name": "Governed Agent Action Proof Packet",
+        "buyer_persona": "AI engineer / agent team",
+        "pain_solved": "trust and explain agent actions",
+        "proof_needed": [
+          "local allow/deny proof",
+          "governance envelope",
+          "no-overclaim boundary"
+        ],
+        "demo_artifact": "First Value Demo Bundle",
+        "overclaim_boundary": [
+          "not customer validation",
+          "not paid signal",
+          "not compliance certification"
+        ],
+        "monetization_mode": "service wedge anchored by proof artifact",
+        "route_dependency": [
+          "minimal local MCP client proof",
+          "owner approval before outreach"
+        ]
+      }
+    },
+    {
+      "id": "execution:gov_mcp_ystar",
+      "type": "execution_path",
+      "payload": {
+        "object_type": "SemanticExecutionPath",
+        "schema_version": "e49.semantic.v1",
+        "confidence": "artifact_supported",
+        "maturity": "partial_runtime",
+        "no_external_action": true,
+        "execution_path_id": "gov_mcp_ystar_execution_path",
+        "command_tool_server_client_path": "gov-mcp gov_demo/gov_check over local MCP client + Y-star-gov kernel",
+        "local_proof_status": "partial_allow_deny_kernel_passed",
+        "blocker": "missing_mcp_dependency_blocks_server_import_no_internet_install_allowed",
+        "cleanup": "no process started; no port opened",
+        "owner_approval_boundary": "owner approval required before external action",
+        "side_effect_risk": "install can mutate real client config, blocked unless sandboxed"
+      }
+    },
+    {
+      "id": "blocker:missing_mcp_client_path",
+      "type": "blocker",
+      "payload": {
+        "blocker_id": "missing_mcp_client_path",
+        "severity": "major_manageable",
+        "source": "operations/external_validation/e48_server_client_proof_result.json",
+        "classification": "missing_mcp_dependency_blocks_server_import_no_internet_install_allowed",
+        "fatal_to_route": false,
+        "blocks_external_attempt": true
+      }
+    },
+    {
+      "id": "blocker:ystar_doctor",
+      "type": "blocker",
+      "payload": {
+        "blocker_id": "ystar_doctor_status",
+        "severity": "nonblocking_classified",
+        "source": "operations/external_validation/e48_ystar_doctor_codegrounded_result.json",
+        "classification": [
+          "heartbeat/archive_blocker",
+          "local_environment_blocker",
+          "stale_obligation_state"
+        ],
+        "fatal_to_route": false,
+        "blocks_external_attempt": false
+      }
+    },
+    {
+      "id": "evidence:e48_allow_deny",
+      "type": "evidence",
+      "payload": {
+        "object_type": "SemanticEvidence",
+        "schema_version": "e49.semantic.v1",
+        "confidence": "artifact_supported",
+        "maturity": "partial_runtime",
+        "no_external_action": true,
+        "evidence_id": "e48_allow_deny_kernel_proof",
+        "source_artifact": "operations/external_validation/e48_server_client_proof_result.json",
+        "claim": "Y-star-gov kernel allowed echo e48_safe and denied rm -rf /tmp/e48_nonexistent",
+        "support_level": "local_codegrounded_proof",
+        "contradiction": [],
+        "limitation": [
+          "full gov-mcp server/client transport not closed"
+        ],
+        "not_customer_validation": true,
+        "not_paid_signal": true,
+        "allowed_language": [
+          "local proof",
+          "hypothesis",
+          "owner-ready packet"
+        ],
+        "forbidden_language": [
+          "validated by customers",
+          "paid signal",
+          "guaranteed ROI",
+          "compliance certified"
+        ]
+      }
+    },
+    {
+      "id": "evidence:e38_e39_claim_graph",
+      "type": "evidence",
+      "payload": {
+        "object_type": "SemanticEvidence",
+        "schema_version": "e49.semantic.v1",
+        "confidence": "artifact_supported",
+        "maturity": "partial_runtime",
+        "no_external_action": true,
+        "evidence_id": "e38_e39_public_evidence_context",
+        "source_artifact": "operations/external_validation/e39_deep_research_claim_graph.json",
+        "claim": "public evidence and claim graph inform route but do not validate demand",
+        "support_level": "public_observation",
+        "contradiction": [],
+        "limitation": [],
+        "not_customer_validation": true,
+        "not_paid_signal": true,
+        "allowed_language": [
+          "local proof",
+          "hypothesis",
+          "owner-ready packet"
+        ],
+        "forbidden_language": [
+          "validated by customers",
+          "paid signal",
+          "guaranteed ROI",
+          "compliance certified"
+        ]
+      }
+    },
+    {
+      "id": "boundary:governance_execution_audit",
+      "type": "boundary",
+      "payload": {
+        "boundary_id": "governance_execution_audit",
+        "Y_star_gov": "governance kernel",
+        "gov_mcp": "execution boundary",
+        "K9Audit": "audit layer",
+        "Bridge Labs": "CEO semantic route runtime",
+        "no_external_action": true
+      }
+    },
+    {
+      "id": "closure:e49",
+      "type": "closure",
+      "payload": {
+        "closure_expectation": "semantic route decision + blocker + next milestone + no external action",
+        "CIEU_CZL": "artifact closure only"
+      }
+    },
+    {
+      "id": "capability:minimal_mcp_client_maturity",
+      "type": "capability",
+      "payload": {
+        "object_type": "SemanticCapability",
+        "schema_version": "e49.semantic.v1",
+        "confidence": "artifact_supported",
+        "maturity": "partial",
+        "no_external_action": true,
+        "capability_id": "minimal_mcp_client_path_maturity",
+        "source_path": "office/mission_command/e49_minimal_mcp_client_path_maturity.py",
+        "canonical_spine_layer": "capability_activation_layer",
+        "runtime_status": "active_runtime_adapter",
+        "semantic_role": "execution_blocker_classifier",
+        "inputs": [],
+        "outputs": [],
+        "side_effects": "none",
+        "test_coverage": "artifact_or_targeted_test",
+        "evidence_support": "blocked_missing_local_mcp_dependency"
+      }
+    },
+    {
+      "id": "route:gov_mcp_ystar_local_proof",
+      "type": "route",
+      "payload": {
+        "buyer": "AI engineer / local MCP user",
+        "credibility_risk": "medium",
+        "current_assets": "help/status/demo/docs",
+        "dependency_on_unresolved_local_blockers": "depends on doctor/server blockers",
+        "evidence_burden": "medium",
+        "execution_complexity": "low",
+        "local_proof_status": "partial",
+        "missing_assets": "server/client start and doctor closure",
+        "overclaim_risk": "low",
+        "owner_burden": "low",
+        "pain_solved": "trust in agent actions",
+        "recommended_action": "harden_first",
+        "revenue_potential": "medium",
+        "route_id": "gov_mcp_ystar_local_proof",
+        "time_to_first_user": "hours-days",
+        "time_to_paid_signal": "not paid by itself",
+        "value_object": "gov-mcp + Y-star-gov local proof packet"
+      }
+    },
+    {
+      "id": "route:governed_agent_action_proof_packet",
+      "type": "route",
+      "payload": {
+        "buyer": "AI engineer / agent team",
+        "credibility_risk": "medium",
+        "current_assets": "E45 bundle + docs + demos",
+        "dependency_on_unresolved_local_blockers": "depends on local blockers",
+        "evidence_burden": "medium",
+        "execution_complexity": "low-medium",
+        "local_proof_status": "ready_for_owner_review",
+        "missing_assets": "server/client closure and owner-approved trial script",
+        "overclaim_risk": "low",
+        "owner_burden": "low",
+        "pain_solved": "make allow/deny governance legible",
+        "recommended_action": "harden_first",
+        "revenue_potential": "medium",
+        "route_id": "governed_agent_action_proof_packet",
+        "time_to_first_user": "days",
+        "time_to_paid_signal": "days-weeks after approval",
+        "value_object": "Governed Agent Action Proof Packet"
+      }
+    },
+    {
+      "id": "route:claude_desktop_mcpb_packaging",
+      "type": "route",
+      "payload": {
+        "buyer": "Claude Desktop / MCP power user",
+        "credibility_risk": "medium",
+        "current_assets": "plugin/commercial assets",
+        "dependency_on_unresolved_local_blockers": "depends on packaging",
+        "evidence_burden": "medium",
+        "execution_complexity": "medium",
+        "local_proof_status": "not verified",
+        "missing_assets": "packaging closure",
+        "overclaim_risk": "medium",
+        "owner_burden": "medium",
+        "pain_solved": "easy install",
+        "recommended_action": "package_first",
+        "revenue_potential": "medium",
+        "route_id": "claude_desktop_mcpb_packaging",
+        "time_to_first_user": "days-weeks",
+        "time_to_paid_signal": "weeks",
+        "value_object": "MCPB/plugin wrapper"
+      }
+    },
+    {
+      "id": "route:ystar_claude_code_plugin_marketplace",
+      "type": "route",
+      "payload": {
+        "buyer": "Claude Code user",
+        "credibility_risk": "high",
+        "current_assets": "historical plugin/pricing assets",
+        "dependency_on_unresolved_local_blockers": "requires publish/approval",
+        "evidence_burden": "medium",
+        "execution_complexity": "medium-high",
+        "local_proof_status": "not verified",
+        "missing_assets": "marketplace packaging/publish approval",
+        "overclaim_risk": "high",
+        "owner_burden": "medium",
+        "pain_solved": "governed coding actions",
+        "recommended_action": "parked",
+        "revenue_potential": "medium",
+        "route_id": "ystar_claude_code_plugin_marketplace",
+        "time_to_first_user": "weeks",
+        "time_to_paid_signal": "weeks",
+        "value_object": "Y*gov Claude Code plugin"
+      }
+    },
+    {
+      "id": "route:ai_agent_bug_bounty_service",
+      "type": "route",
+      "payload": {
+        "buyer": "AI tooling teams",
+        "credibility_risk": "high",
+        "current_assets": "sales/bug bounty concepts",
+        "dependency_on_unresolved_local_blockers": "needs external validation",
+        "evidence_burden": "high",
+        "execution_complexity": "medium",
+        "local_proof_status": "not verified",
+        "missing_assets": "offer/test cases/proof",
+        "overclaim_risk": "medium",
+        "owner_burden": "high",
+        "pain_solved": "find unsafe agent behavior",
+        "recommended_action": "parked",
+        "revenue_potential": "high",
+        "route_id": "ai_agent_bug_bounty_service",
+        "time_to_first_user": "weeks",
+        "time_to_paid_signal": "weeks",
+        "value_object": "bug bounty / agent risk service"
+      }
+    },
+    {
+      "id": "route:workflow_resale_n8n_czl",
+      "type": "route",
+      "payload": {
+        "buyer": "SMB ops buyer",
+        "credibility_risk": "high",
+        "current_assets": "workflow resale assets",
+        "dependency_on_unresolved_local_blockers": "weak current proof",
+        "evidence_burden": "medium",
+        "execution_complexity": "medium",
+        "local_proof_status": "not verified",
+        "missing_assets": "packaged workflow and proof",
+        "overclaim_risk": "medium",
+        "owner_burden": "medium",
+        "pain_solved": "automated process control",
+        "recommended_action": "parked",
+        "revenue_potential": "high",
+        "route_id": "workflow_resale_n8n_czl",
+        "time_to_first_user": "weeks",
+        "time_to_paid_signal": "weeks",
+        "value_object": "workflow resale with CZL"
+      }
+    },
+    {
+      "id": "route:enterprise_compliance_pilot",
+      "type": "route",
+      "payload": {
+        "buyer": "enterprise AI governance buyer",
+        "credibility_risk": "high",
+        "current_assets": "enterprise/governance assets",
+        "dependency_on_unresolved_local_blockers": "requires buyer trust",
+        "evidence_burden": "high",
+        "execution_complexity": "high",
+        "local_proof_status": "not verified",
+        "missing_assets": "credible case study and buyer proof",
+        "overclaim_risk": "high",
+        "owner_burden": "high",
+        "pain_solved": "auditability/trust",
+        "recommended_action": "parked",
+        "revenue_potential": "medium-high",
+        "route_id": "enterprise_compliance_pilot",
+        "time_to_first_user": "weeks-months",
+        "time_to_paid_signal": "months",
+        "value_object": "compliance pilot"
+      }
+    },
+    {
+      "id": "route:k9audit_causal_audit_proof",
+      "type": "route",
+      "payload": {
+        "buyer": "agent platform builder",
+        "credibility_risk": "high",
+        "current_assets": "K9/CIEU context",
+        "dependency_on_unresolved_local_blockers": "K9 integration not active",
+        "evidence_burden": "medium",
+        "execution_complexity": "medium",
+        "local_proof_status": "read-only context",
+        "missing_assets": "integration proof",
+        "overclaim_risk": "medium",
+        "owner_burden": "medium",
+        "pain_solved": "causal traceability",
+        "recommended_action": "parked",
+        "revenue_potential": "medium",
+        "route_id": "k9audit_causal_audit_proof",
+        "time_to_first_user": "weeks",
+        "time_to_paid_signal": "weeks",
+        "value_object": "K9Audit causal audit proof"
+      }
+    },
+    {
+      "id": "route:bridge_labs_agent_company_case_study",
+      "type": "route",
+      "payload": {
+        "buyer": "agent-company builder",
+        "credibility_risk": "medium",
+        "current_assets": "E42-E47 artifacts",
+        "dependency_on_unresolved_local_blockers": "publish approval required",
+        "evidence_burden": "medium",
+        "execution_complexity": "medium",
+        "local_proof_status": "strong internal proof",
+        "missing_assets": "readable case packaging",
+        "overclaim_risk": "medium",
+        "owner_burden": "medium",
+        "pain_solved": "operating an AI agent company",
+        "recommended_action": "package_first",
+        "revenue_potential": "medium",
+        "route_id": "bridge_labs_agent_company_case_study",
+        "time_to_first_user": "days-weeks",
+        "time_to_paid_signal": "weeks",
+        "value_object": "Bridge Labs runtime proof/case study"
+      }
+    },
+    {
+      "id": "route:consulting_advisory_proof_packet",
+      "type": "route",
+      "payload": {
+        "buyer": "founder / AI ops lead",
+        "credibility_risk": "medium",
+        "current_assets": "proof packet + runtime spine",
+        "dependency_on_unresolved_local_blockers": "needs exact offer and no-overclaim wording",
+        "evidence_burden": "medium",
+        "execution_complexity": "low-medium",
+        "local_proof_status": "partial",
+        "missing_assets": "service scope and owner-approved outreach",
+        "overclaim_risk": "medium",
+        "owner_burden": "medium",
+        "pain_solved": "adopt governed agents",
+        "recommended_action": "package_first",
+        "revenue_potential": "medium",
+        "route_id": "consulting_advisory_proof_packet",
+        "time_to_first_user": "days",
+        "time_to_paid_signal": "days-weeks",
+        "value_object": "paid setup/advisory proof packet"
+      }
+    },
+    {
+      "id": "route:paid_setup_implementation_service",
+      "type": "route",
+      "payload": {
+        "buyer": "local AI team",
+        "credibility_risk": "medium",
+        "current_assets": "gov-mcp docs + proof packet",
+        "dependency_on_unresolved_local_blockers": "depends on server/client proof",
+        "evidence_burden": "medium",
+        "execution_complexity": "medium",
+        "local_proof_status": "partial",
+        "missing_assets": "server/client closure",
+        "overclaim_risk": "medium",
+        "owner_burden": "medium",
+        "pain_solved": "hands-on install/config",
+        "recommended_action": "harden_first",
+        "revenue_potential": "medium",
+        "route_id": "paid_setup_implementation_service",
+        "time_to_first_user": "days",
+        "time_to_paid_signal": "days-weeks",
+        "value_object": "paid implementation setup"
+      }
+    },
+    {
+      "id": "route:commercial_asset_surfaced_route",
+      "type": "route",
+      "payload": {
+        "buyer": "developer-led growth audience",
+        "credibility_risk": "medium",
+        "current_assets": "commercial assets from CEO brain",
+        "dependency_on_unresolved_local_blockers": "depends on selected package",
+        "evidence_burden": "medium",
+        "execution_complexity": "medium",
+        "local_proof_status": "partial",
+        "missing_assets": "packaging/pricing",
+        "overclaim_risk": "medium",
+        "owner_burden": "medium",
+        "pain_solved": "quick comprehension",
+        "recommended_action": "package_first",
+        "revenue_potential": "medium",
+        "route_id": "commercial_asset_surfaced_route",
+        "time_to_first_user": "days-weeks",
+        "time_to_paid_signal": "weeks",
+        "value_object": "developer-led proof bundle"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "route:gov_mcp_ystar_local_proof",
+      "target": "task:e49_money_route",
+      "type": "derives_from",
+      "reason": "route is evaluated for money task"
+    },
+    {
+      "source": "route:governed_agent_action_proof_packet",
+      "target": "task:e49_money_route",
+      "type": "derives_from",
+      "reason": "route is evaluated for money task"
+    },
+    {
+      "source": "route:governed_agent_action_proof_packet",
+      "target": "value_object:governed_agent_action_proof_packet",
+      "type": "produces",
+      "reason": "route packages proof object"
+    },
+    {
+      "source": "evidence:e48_allow_deny",
+      "target": "route:governed_agent_action_proof_packet",
+      "type": "supports",
+      "reason": "local allow/deny proof supports the wedge"
+    },
+    {
+      "source": "blocker:missing_mcp_client_path",
+      "target": "route:governed_agent_action_proof_packet",
+      "type": "blocks",
+      "reason": "blocks external attempt until local client proof exists"
+    },
+    {
+      "source": "blocker:ystar_doctor",
+      "target": "route:governed_agent_action_proof_packet",
+      "type": "blocks",
+      "reason": "doctor is classified nonfatal"
+    },
+    {
+      "source": "route:claude_desktop_mcpb_packaging",
+      "target": "task:e49_money_route",
+      "type": "derives_from",
+      "reason": "route is evaluated for money task"
+    },
+    {
+      "source": "route:claude_desktop_mcpb_packaging",
+      "target": "ceo_brain:e46b_context",
+      "type": "requires",
+      "reason": "commercial assets and wisdom context required"
+    },
+    {
+      "source": "route:ystar_claude_code_plugin_marketplace",
+      "target": "task:e49_money_route",
+      "type": "derives_from",
+      "reason": "route is evaluated for money task"
+    },
+    {
+      "source": "route:ystar_claude_code_plugin_marketplace",
+      "target": "ceo_brain:e46b_context",
+      "type": "requires",
+      "reason": "commercial assets and wisdom context required"
+    },
+    {
+      "source": "route:ai_agent_bug_bounty_service",
+      "target": "task:e49_money_route",
+      "type": "derives_from",
+      "reason": "route is evaluated for money task"
+    },
+    {
+      "source": "route:ai_agent_bug_bounty_service",
+      "target": "ceo_brain:e46b_context",
+      "type": "requires",
+      "reason": "commercial assets and wisdom context required"
+    },
+    {
+      "source": "route:workflow_resale_n8n_czl",
+      "target": "task:e49_money_route",
+      "type": "derives_from",
+      "reason": "route is evaluated for money task"
+    },
+    {
+      "source": "route:workflow_resale_n8n_czl",
+      "target": "ceo_brain:e46b_context",
+      "type": "requires",
+      "reason": "commercial assets and wisdom context required"
+    },
+    {
+      "source": "route:enterprise_compliance_pilot",
+      "target": "task:e49_money_route",
+      "type": "derives_from",
+      "reason": "route is evaluated for money task"
+    },
+    {
+      "source": "route:enterprise_compliance_pilot",
+      "target": "ceo_brain:e46b_context",
+      "type": "requires",
+      "reason": "commercial assets and wisdom context required"
+    },
+    {
+      "source": "route:k9audit_causal_audit_proof",
+      "target": "task:e49_money_route",
+      "type": "derives_from",
+      "reason": "route is evaluated for money task"
+    },
+    {
+      "source": "route:bridge_labs_agent_company_case_study",
+      "target": "task:e49_money_route",
+      "type": "derives_from",
+      "reason": "route is evaluated for money task"
+    },
+    {
+      "source": "route:consulting_advisory_proof_packet",
+      "target": "task:e49_money_route",
+      "type": "derives_from",
+      "reason": "route is evaluated for money task"
+    },
+    {
+      "source": "route:consulting_advisory_proof_packet",
+      "target": "ceo_brain:e46b_context",
+      "type": "requires",
+      "reason": "commercial assets and wisdom context required"
+    },
+    {
+      "source": "route:paid_setup_implementation_service",
+      "target": "task:e49_money_route",
+      "type": "derives_from",
+      "reason": "route is evaluated for money task"
+    },
+    {
+      "source": "route:paid_setup_implementation_service",
+      "target": "ceo_brain:e46b_context",
+      "type": "requires",
+      "reason": "commercial assets and wisdom context required"
+    },
+    {
+      "source": "route:commercial_asset_surfaced_route",
+      "target": "task:e49_money_route",
+      "type": "derives_from",
+      "reason": "route is evaluated for money task"
+    },
+    {
+      "source": "task:e49_money_route",
+      "target": "projection:e49",
+      "type": "requires",
+      "reason": "field projection is required"
+    },
+    {
+      "source": "projection:e49",
+      "target": "ceo_brain:e46b_context",
+      "type": "requires",
+      "reason": "brain context grounds route semantics"
+    },
+    {
+      "source": "ceo_brain:e46b_context",
+      "target": "capability:e47_coverage_gate",
+      "type": "read_by",
+      "reason": "runtime uses full capability mainline status"
+    },
+    {
+      "source": "execution:gov_mcp_ystar",
+      "target": "boundary:governance_execution_audit",
+      "type": "owned_by",
+      "reason": "execution path is owned by gov-mcp/Y-star-gov boundaries"
+    },
+    {
+      "source": "value_object:governed_agent_action_proof_packet",
+      "target": "evidence:e48_allow_deny",
+      "type": "requires",
+      "reason": "value object requires proof evidence"
+    },
+    {
+      "source": "evidence:e48_allow_deny",
+      "target": "boundary:governance_execution_audit",
+      "type": "must_not_claim",
+      "reason": "not customer validation or paid signal"
+    },
+    {
+      "source": "route:governed_agent_action_proof_packet",
+      "target": "closure:e49",
+      "type": "next_action",
+      "reason": "semantic decision writes closure"
+    },
+    {
+      "source": "capability:minimal_mcp_client_maturity",
+      "target": "blocker:missing_mcp_client_path",
+      "type": "produces",
+      "reason": "maturity check explains blocker"
+    }
+  ],
+  "selected_route_id": "governed_agent_action_proof_packet",
+  "selected_route_has_evidence_semantics": true,
+  "selected_route_has_blocker_semantics": true,
+  "no_orphan_selected_route": true,
+  "no_external_action": true
+}

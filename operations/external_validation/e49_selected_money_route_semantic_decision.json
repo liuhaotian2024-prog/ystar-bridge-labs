@@ -1,0 +1,21 @@
+{
+  "artifact_id": "e49_selected_money_route_semantic_decision",
+  "selected_route_id": "governed_agent_action_proof_packet",
+  "selected_value_object": "Governed Agent Action Proof Packet",
+  "selected_as": "service_wedge_anchored_by_proof_artifact",
+  "does_governed_agent_action_proof_packet_remain_selected": true,
+  "missing_mcp_client_path_blocks_external_attempt": true,
+  "ystar_doctor_remains_nonblocking": true,
+  "paid_setup_service_more_direct_than_proof_packet": false,
+  "plugin_mcpb_route_position": "second_wave_after_local_client_or_packaging_readiness",
+  "next_milestone": "E50_build_minimal_gov_mcp_local_test_client",
+  "evidence_semantics": [
+    "e48_allow_deny_kernel_proof",
+    "e38_e39_public_evidence_context"
+  ],
+  "blocker_semantics": [
+    "major_manageable_missing_mcp_client_path",
+    "blocked_missing_local_mcp_dependency"
+  ],
+  "no_external_action": true
+}

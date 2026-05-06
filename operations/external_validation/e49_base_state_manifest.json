@@ -1,0 +1,35 @@
+{
+  "artifact_id": "e49_base_state_manifest",
+  "created_at": "2026-05-06T03:21:33.137346+00:00",
+  "bridge_labs": {
+    "path": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+    "branch": "backflow/aiden-ceo-meeting-room",
+    "expected_base_head": "9fd93d3b83fb628e655cb554559dd449fb766641",
+    "local_head": "9fd93d3b83fb628e655cb554559dd449fb766641",
+    "remote_head": "9fd93d3b83fb628e655cb554559dd449fb766641",
+    "clean_worktree": true
+  },
+  "gov_mcp": {
+    "path": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+    "expected_head": "998e62c0fa2dd28797d853f6e054210a1823891f",
+    "local_head": "998e62c0fa2dd28797d853f6e054210a1823891f",
+    "clean_worktree": true,
+    "modified_in_e49": false
+  },
+  "y_star_gov": {
+    "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+    "expected_head": "5f031f4be151b81ef1a1b1908a5c83c5420e8ce1",
+    "local_head": "5f031f4be151b81ef1a1b1908a5c83c5420e8ce1",
+    "clean_worktree": true,
+    "modified_in_e49": false
+  },
+  "required_artifacts_found": {
+    "operations/external_validation/e48_server_client_proof_result.json": true,
+    "operations/external_validation/e47_canonical_runtime_v2_smoke_result.json": true,
+    "operations/external_validation/e46b_canonical_runtime_v1_1_smoke_result.json": true,
+    "operations/external_validation/e45_first_value_demo_bundle.json": true,
+    "operations/external_validation/e42_ceo_runtime_reuse_router_integration.json": true
+  },
+  "can_proceed_safely": true,
+  "no_external_action": true
+}

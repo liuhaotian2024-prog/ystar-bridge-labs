@@ -1,0 +1,2 @@
+{"source": "e49_deep_semantic_runtime", "target": "semantic_value_object_governed_proof_packet", "type": "selects"}
+{"source": "semantic_blocker_missing_mcp_client_path", "target": "semantic_value_object_governed_proof_packet", "type": "blocks_external_attempt"}

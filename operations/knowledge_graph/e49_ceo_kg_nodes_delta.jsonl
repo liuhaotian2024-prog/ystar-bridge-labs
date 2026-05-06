@@ -1,0 +1,3 @@
+{"id": "e49_deep_semantic_runtime", "type": "runtime", "label": "Deep Semantic Operating Runtime V1"}
+{"id": "semantic_value_object_governed_proof_packet", "type": "value_object", "label": "Governed Agent Action Proof Packet"}
+{"id": "semantic_blocker_missing_mcp_client_path", "type": "blocker", "label": "blocked_missing_local_mcp_dependency"}

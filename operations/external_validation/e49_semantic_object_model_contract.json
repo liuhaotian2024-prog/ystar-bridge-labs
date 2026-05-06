@@ -1,0 +1,135 @@
+{
+  "artifact_id": "e49_semantic_object_model_contract",
+  "kinds": [
+    "SemanticCapability",
+    "SemanticEvidence",
+    "SemanticExecutionPath",
+    "SemanticProjection",
+    "SemanticRouteDecision",
+    "SemanticTask",
+    "SemanticValueObject"
+  ],
+  "required_fields": {
+    "SemanticTask": [
+      "object_type",
+      "task_id",
+      "owner_request",
+      "explicit_goal",
+      "implicit_goal",
+      "m_triangle_alignment",
+      "permitted_action_boundary",
+      "forbidden_action_boundary"
+    ],
+    "SemanticProjection": [
+      "object_type",
+      "projection_id",
+      "mission",
+      "company_objective",
+      "milestone_objective",
+      "task_objective",
+      "action_candidates",
+      "behavior_constraints",
+      "y_star_candidate",
+      "governance_gate",
+      "cieu_czl_closure_expectation",
+      "residual_learning_expectation"
+    ],
+    "SemanticCapability": [
+      "object_type",
+      "capability_id",
+      "source_path",
+      "canonical_spine_layer",
+      "runtime_status",
+      "semantic_role",
+      "inputs",
+      "outputs",
+      "side_effects",
+      "maturity",
+      "test_coverage",
+      "evidence_support"
+    ],
+    "SemanticValueObject": [
+      "object_type",
+      "value_object_name",
+      "buyer_persona",
+      "pain_solved",
+      "proof_needed",
+      "demo_artifact",
+      "overclaim_boundary",
+      "monetization_mode",
+      "route_dependency"
+    ],
+    "SemanticEvidence": [
+      "object_type",
+      "evidence_id",
+      "source_artifact",
+      "claim",
+      "support_level",
+      "contradiction",
+      "limitation",
+      "not_customer_validation",
+      "not_paid_signal",
+      "allowed_language",
+      "forbidden_language"
+    ],
+    "SemanticExecutionPath": [
+      "object_type",
+      "execution_path_id",
+      "command_tool_server_client_path",
+      "local_proof_status",
+      "blocker",
+      "cleanup",
+      "owner_approval_boundary",
+      "side_effect_risk"
+    ],
+    "SemanticRouteDecision": [
+      "object_type",
+      "decision_id",
+      "selected_route",
+      "rejected_routes",
+      "parked_routes",
+      "evidence_burden",
+      "execution_burden",
+      "owner_burden",
+      "next_milestone",
+      "stop_conditions",
+      "evidence_semantics",
+      "blocker_semantics"
+    ]
+  },
+  "sample_validation": {
+    "valid": true,
+    "results": [
+      {
+        "valid": true,
+        "errors": []
+      },
+      {
+        "valid": true,
+        "errors": []
+      },
+      {
+        "valid": true,
+        "errors": []
+      },
+      {
+        "valid": true,
+        "errors": []
+      },
+      {
+        "valid": true,
+        "errors": []
+      },
+      {
+        "valid": true,
+        "errors": []
+      },
+      {
+        "valid": true,
+        "errors": []
+      }
+    ],
+    "object_count": 7
+  },
+  "no_external_action": true
+}

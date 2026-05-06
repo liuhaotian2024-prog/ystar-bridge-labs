@@ -1,0 +1,821 @@
+{
+  "artifact_id": "e49_deep_semantic_runtime_smoke_result",
+  "status": "completed",
+  "mode": "local_dry_run",
+  "interpretation": {
+    "artifact_id": "e49_deep_semantic_task_interpretation",
+    "task_text": "What is the fastest credible route for Y*Bridge Labs to make real money or obtain the strongest near-term real user / usage / paid signal, using existing assets and without overclaiming?",
+    "semantic_task": {
+      "object_type": "SemanticTask",
+      "schema_version": "e49.semantic.v1",
+      "confidence": "artifact_supported",
+      "maturity": "partial_runtime",
+      "no_external_action": true,
+      "task_id": "task_38191336",
+      "owner_request": "What is the fastest credible route for Y*Bridge Labs to make real money or obtain the strongest near-term real user / usage / paid signal, using existing assets and without overclaiming?",
+      "explicit_goal": "What is the fastest credible route for Y*Bridge Labs to make real money or obtain the strongest near-term real user / usage / paid signal, using existing assets and without overclaiming?",
+      "implicit_goal": "produce value-oriented CEO action without shallow artifact churn",
+      "m_triangle_alignment": "value production + governance discipline + learning closure",
+      "urgency": "near_term",
+      "permitted_action_boundary": [
+        "local deterministic code",
+        "read-only repo inspection",
+        "artifact generation",
+        "tests"
+      ],
+      "forbidden_action_boundary": [
+        "customer contact",
+        "expert contact",
+        "human identification",
+        "scraping",
+        "send",
+        "publish",
+        "login",
+        "provider/API execution",
+        "internet install",
+        "payment",
+        "secret use"
+      ]
+    },
+    "semantic_task_validation": {
+      "valid": true,
+      "errors": []
+    },
+    "explicit_request": "What is the fastest credible route for Y*Bridge Labs to make real money or obtain the strongest near-term real user / usage / paid signal, using existing assets and without overclaiming?",
+    "implicit_strategic_intent": "produce value-oriented CEO action without shallow artifact churn",
+    "capability_families_required": [
+      "commercial_route",
+      "evidence_burden",
+      "execution_blocker",
+      "value_object"
+    ],
+    "value_production_relation": "direct",
+    "field_projection_requirement": "required",
+    "ceo_brain_requirement": "required",
+    "commercial_evidence_execution_audit_requirements": [
+      "CIEU/CZL closure",
+      "buyer pain",
+      "commercial assets",
+      "no-overclaim boundary",
+      "paid-signal boundary",
+      "proof readiness",
+      "side-effect guard"
+    ],
+    "forbidden_shortcuts": [
+      "customer validation claim without customer use",
+      "external action without owner approval",
+      "paid-signal claim without payment"
+    ],
+    "what_would_count_as_shallow_answer": [
+      "report-only output with no runtime object validation"
+    ],
+    "required_output_type": "money_route_decision",
+    "no_external_action": true
+  },
+  "field_projection": {
+    "artifact_id": "e46b_field_projection_adapter_result",
+    "task_id": "E49 deep semantic runtime",
+    "m_triangle_alignment": "value production before claim expansion; learning must close through CIEU/CZL",
+    "board_directive_link": [
+      "| 1 | Enterprise customer research | CSO | ✅ 完成 | sales/enterprise_prospects_0.48.0.md (10.8KB) |",
+      "| 2 | Phase 2 OmissionEngine | CTO | ✅ 7/7 | 同上 |",
+      "| #009 CFO OmissionEngine | 2026-03-27 | 3/3 |",
+      "## 🎯 Mission Accomplished"
+    ],
+    "company_objective": "prove governed agent action is understandable and locally demonstrable without external claims",
+    "milestone_objective": "E46B canonical spine turns prior runtime/projection/brain/capability assets into one task-time flow",
+    "session_objective": "produce local dry-run route decision with no external side effects",
+    "task_objective": "What is the fastest credible route for Y*Bridge Labs to make real money or obtain the strongest near-term real user / usage / paid signal, using existing assets and without overclaiming?",
+    "action_candidates": [
+      "run canonical dry-run",
+      "reuse E45 local demo",
+      "close gov-mcp server/client demo gap",
+      "prepare owner-approved external attempt only after blockers"
+    ],
+    "behavior_constraints": [
+      "no contact",
+      "no send",
+      "no provider/API",
+      "no internet install",
+      "no duplicate governance/execution/audit/brain/KG"
+    ],
+    "y_star_candidate": "Governed Agent Action Proof Packet over gov-mcp + Y-star-gov substrate",
+    "governance_gate_needed": true,
+    "cieu_closure_expectation": "record local proof, failures, route decision, owner approval boundary, and next projection",
+    "residual_learning_expectation": "doctor/server-client gaps become residual learning candidates, not canonical learning until reviewed",
+    "projection_maturity": "partial_adapter",
+    "source_snippets": {
+      "DIRECTIVE_TRACKER": [
+        "| 1 | Enterprise customer research | CSO | ✅ 完成 | sales/enterprise_prospects_0.48.0.md (10.8KB) |",
+        "| 2 | Phase 2 OmissionEngine | CTO | ✅ 7/7 | 同上 |",
+        "| #009 CFO OmissionEngine | 2026-03-27 | 3/3 |",
+        "## 🎯 Mission Accomplished",
+        "- Omission DB: **600 violations** (117 HARD_OVERDUE obligations)",
+        "Accenture/Deloitte/PwC partnerships（revenue model待pilot谈判确定）",
+        "- **Omission DB violations: 600** (117 HARD_OVERDUE obligations)",
+        "- **Top violation:** required_acknowledgement_omission (2,038)"
+      ],
+      "OPERATIONS": [
+        "| W4 | Series 4 | 周二 08:30 ET | omission detection |",
+        "The central challenge was simple but unforgiving: Could a company operated by AI agents use its own governance product to prevent chaos? The answer arrived in the form of a Windows Git Bash error that blocked all governed sessions. The CTO ",
+        "But fixing code was the smaller revelation. The larger one came when the Board noticed the agents executing lower-priority tasks while a P0 blocker sat open. The governance framework's OmissionEngine could enforce deadlines but not dependen",
+        "Then came the SLA redesign. Human organizations measure response time in hours or days. But AI agents operate at millisecond-to-minute scales. A one-hour P0 window allows thousands of ungoverned decisions to accumulate. The Board rewrote th",
+        "All of this happened under audit. Every command, every file read, every decision is now sealed in the CIEU database with SHA-256 hash chains. When the first enterprise customer asks \"Can you prove your agents didn't access restricted data?\"",
+        "The company runs at roughly $52 per day—API costs and a Claude Max subscription, plus two USPTO provisional patents filed as insurance. Projected monthly burn: $1,550. Revenue: $0. Users: 0. But the product works on itself, which means it w",
+        "- **Revenue:** $0",
+        "Today's autonomous cycle focused on closing the gap. The CEO upgraded the local installation to v0.48.0, verified CIEU hook liveness (Directive #024), collected metrics across GitHub/PyPI, wrote a complete Show HN submission draft, updated "
+      ],
+      "M_TRIANGLE": [
+        "# M Triangle — Y* Bridge Labs 的根本目标 (v1)",
+        "**位置**: `knowledge/ceo/wisdom/M_TRIANGLE.md`",
+        "Survivability Governability Value",
+        "### M-3 Value Production (价值产出)",
+        "- S-3.5 **dogfood 是销售证据**: Y\\* Bridge Labs 每一个 CIEU event, 每一个 agent ship, 每一次 Board catch — 都能变成 \"AI agent company operating real\" 的 case study. dogfood 不是内部玩, 是**销售 pitch 的核心弹药**.",
+        "我们通过 **Survivability + Governability + Value** 三角保持同时前进.",
+        "每一次 GitHub star / 客户下载 / 付费都是 Value 在积累."
+      ],
+      "WORK_METHODOLOGY": [
+        "Purpose: Enable every agent (CEO 自己 + 全团队) 在每次 task / spec / ruling / impl / commit 之前自动跑过这 14 条 checklist; 同时让 Samantha AMENDMENT-024 把本文件加入 CLAUDE.md + AGENTS.md 必读引用; 同时让 forget_guard 加 rule work_methodology_violation 检测关键违反.",
+        "**强制级别**: Constitutional — 所有 agent boot 必读, 所有 task 必过此 checklist",
+        "**方法论 = 让 M Triangle 不在 plan 和 action 之间断链的 structural discipline. 不走完这 14 条的 task 不算 done, 哪怕 document 写了很多.**",
+        "## 2. 每 task 前 checklist (15 秒过一遍)",
+        "任何 agent 任何 task 开工前, 过这个 8 问 checklist (从 14 条原则提炼):"
+      ]
+    },
+    "no_external_action": true
+  },
+  "ceo_brain_context": {
+    "active_task_time_source": "e46b_ceo_brain_adapter.load_ceo_brain_context",
+    "wisdom_invoked": true,
+    "commercial_asset_count": 12
+  },
+  "semantic_graph_summary": {
+    "node_count": 25,
+    "edge_count": 31,
+    "no_orphan_selected_route": true
+  },
+  "coverage_gate": {
+    "passed": true,
+    "unknown_status_count": 0
+  },
+  "canonical_runtime_v2": {
+    "route": {
+      "selected_route_id": "governed_agent_action_proof_packet",
+      "selected_value_object": "Governed Agent Action Proof Packet",
+      "selected_recommended_action": "harden_first",
+      "next_recommended_milestone": "E48_gov_mcp_server_client_demo_closure",
+      "why": "Fastest credible revenue-adjacent path is the proof packet service/wedge, but full runtime still sees gov-mcp server/client and Y-star-gov doctor blockers before outreach or paid-signal claims."
+    },
+    "adapter_count": 12,
+    "no_external_action": true
+  },
+  "evidence_audit_closure_context": {
+    "evidence_nodes": 2,
+    "audit_boundary_present": true,
+    "closure_nodes": 1
+  },
+  "semantic_route_scores": {
+    "artifact_id": "e49_semantic_route_score_matrix",
+    "routes": [
+      {
+        "route_id": "ai_agent_bug_bounty_service",
+        "buyer": "AI tooling teams",
+        "value_object": "agent bug bounty/risk service",
+        "route_kind": "service_concept",
+        "semantic_goal_fit": 0.72,
+        "buyer_pain_clarity": 0.62,
+        "current_asset_support": 0.5,
+        "proof_readiness": 0.32,
+        "execution_blocker_severity": 0.62,
+        "time_to_first_user": 0.48,
+        "time_to_paid_signal": 0.54,
+        "evidence_burden": 0.72,
+        "overclaim_risk": 0.52,
+        "owner_burden": 0.64,
+        "implementation_complexity": 0.62,
+        "revenue_potential": 0.74,
+        "learning_value": 0.7,
+        "M_triangle_alignment": 0.72,
+        "m_triangle_alignment": 0.72,
+        "blocker_class": "needs_market_validation",
+        "unresolved_fatal_blocker": false,
+        "semantic_score": 0.4894,
+        "recommended_action": "parked"
+      },
+      {
+        "route_id": "bridge_labs_agent_company_case_study",
+        "buyer": "agent-company builder",
+        "value_object": "case study / runtime proof",
+        "route_kind": "case_study",
+        "semantic_goal_fit": 0.72,
+        "buyer_pain_clarity": 0.62,
+        "current_asset_support": 0.8,
+        "proof_readiness": 0.68,
+        "execution_blocker_severity": 0.5,
+        "time_to_first_user": 0.48,
+        "time_to_paid_signal": 0.38,
+        "evidence_burden": 0.72,
+        "overclaim_risk": 0.44,
+        "owner_burden": 0.48,
+        "implementation_complexity": 0.5,
+        "revenue_potential": 0.52,
+        "learning_value": 0.82,
+        "M_triangle_alignment": 0.84,
+        "m_triangle_alignment": 0.84,
+        "blocker_class": "publish_approval_required",
+        "unresolved_fatal_blocker": false,
+        "semantic_score": 0.6118,
+        "recommended_action": "parked"
+      },
+      {
+        "route_id": "claude_desktop_mcpb_packaging",
+        "buyer": "Claude Desktop / MCP power user",
+        "value_object": "MCPB/plugin package",
+        "route_kind": "packaged_install",
+        "semantic_goal_fit": 0.72,
+        "buyer_pain_clarity": 0.62,
+        "current_asset_support": 0.6,
+        "proof_readiness": 0.43,
+        "execution_blocker_severity": 0.55,
+        "time_to_first_user": 0.48,
+        "time_to_paid_signal": 0.46,
+        "evidence_burden": 0.72,
+        "overclaim_risk": 0.3,
+        "owner_burden": 0.44,
+        "implementation_complexity": 0.55,
+        "revenue_potential": 0.7,
+        "learning_value": 0.72,
+        "M_triangle_alignment": 0.78,
+        "m_triangle_alignment": 0.78,
+        "blocker_class": "major_manageable",
+        "unresolved_fatal_blocker": false,
+        "semantic_score": 0.5694,
+        "recommended_action": "parked"
+      },
+      {
+        "route_id": "consulting_advisory_proof_packet",
+        "buyer": "founder / AI ops lead",
+        "value_object": "advisory proof packet",
+        "route_kind": "consulting_offer",
+        "semantic_goal_fit": 0.72,
+        "buyer_pain_clarity": 0.86,
+        "current_asset_support": 0.68,
+        "proof_readiness": 0.54,
+        "execution_blocker_severity": 0.46,
+        "time_to_first_user": 0.48,
+        "time_to_paid_signal": 0.64,
+        "evidence_burden": 0.55,
+        "overclaim_risk": 0.44,
+        "owner_burden": 0.54,
+        "implementation_complexity": 0.46,
+        "revenue_potential": 0.68,
+        "learning_value": 0.7,
+        "M_triangle_alignment": 0.78,
+        "m_triangle_alignment": 0.78,
+        "blocker_class": "offer_language_needed",
+        "unresolved_fatal_blocker": false,
+        "semantic_score": 0.6374,
+        "recommended_action": "package_after_client_proof"
+      },
+      {
+        "route_id": "developer_led_proof_bundle",
+        "buyer": "developer-led growth audience",
+        "value_object": "developer-led proof bundle",
+        "route_kind": "developer_package",
+        "semantic_goal_fit": 0.72,
+        "buyer_pain_clarity": 0.62,
+        "current_asset_support": 0.62,
+        "proof_readiness": 0.5,
+        "execution_blocker_severity": 0.52,
+        "time_to_first_user": 0.48,
+        "time_to_paid_signal": 0.5,
+        "evidence_burden": 0.72,
+        "overclaim_risk": 0.32,
+        "owner_burden": 0.42,
+        "implementation_complexity": 0.52,
+        "revenue_potential": 0.62,
+        "learning_value": 0.74,
+        "M_triangle_alignment": 0.78,
+        "m_triangle_alignment": 0.78,
+        "blocker_class": "packaging_needed",
+        "unresolved_fatal_blocker": false,
+        "semantic_score": 0.5832,
+        "recommended_action": "package_after_client_proof"
+      },
+      {
+        "route_id": "enterprise_compliance_pilot",
+        "buyer": "enterprise AI governance buyer",
+        "value_object": "compliance pilot",
+        "route_kind": "enterprise_pilot",
+        "semantic_goal_fit": 0.72,
+        "buyer_pain_clarity": 0.62,
+        "current_asset_support": 0.58,
+        "proof_readiness": 0.34,
+        "execution_blocker_severity": 0.78,
+        "time_to_first_user": 0.48,
+        "time_to_paid_signal": 0.3,
+        "evidence_burden": 0.72,
+        "overclaim_risk": 0.76,
+        "owner_burden": 0.82,
+        "implementation_complexity": 0.78,
+        "revenue_potential": 0.86,
+        "learning_value": 0.72,
+        "M_triangle_alignment": 0.8,
+        "m_triangle_alignment": 0.8,
+        "blocker_class": "fatal_overclaim_risk_now",
+        "unresolved_fatal_blocker": true,
+        "semantic_score": 0.4352,
+        "recommended_action": "parked"
+      },
+      {
+        "route_id": "gov_mcp_ystar_local_proof",
+        "buyer": "local MCP user",
+        "value_object": "local proof substrate",
+        "route_kind": "technical_substrate",
+        "semantic_goal_fit": 0.72,
+        "buyer_pain_clarity": 0.62,
+        "current_asset_support": 0.78,
+        "proof_readiness": 0.7,
+        "execution_blocker_severity": 0.64,
+        "time_to_first_user": 0.85,
+        "time_to_paid_signal": 0.25,
+        "evidence_burden": 0.72,
+        "overclaim_risk": 0.1,
+        "owner_burden": 0.18,
+        "implementation_complexity": 0.64,
+        "revenue_potential": 0.3,
+        "learning_value": 0.82,
+        "M_triangle_alignment": 0.82,
+        "m_triangle_alignment": 0.82,
+        "blocker_class": "major_manageable",
+        "unresolved_fatal_blocker": false,
+        "semantic_score": 0.6356,
+        "recommended_action": "parked"
+      },
+      {
+        "route_id": "governed_agent_action_proof_packet",
+        "buyer": "AI engineer / agent team",
+        "value_object": "Governed Agent Action Proof Packet",
+        "route_kind": "service_wedge_anchored_by_proof_artifact",
+        "semantic_goal_fit": 0.92,
+        "buyer_pain_clarity": 0.86,
+        "current_asset_support": 0.82,
+        "proof_readiness": 0.78,
+        "execution_blocker_severity": 0.42,
+        "time_to_first_user": 0.85,
+        "time_to_paid_signal": 0.58,
+        "evidence_burden": 0.38,
+        "overclaim_risk": 0.2,
+        "owner_burden": 0.24,
+        "implementation_complexity": 0.42,
+        "revenue_potential": 0.62,
+        "learning_value": 0.88,
+        "M_triangle_alignment": 0.92,
+        "m_triangle_alignment": 0.92,
+        "blocker_class": "major_manageable_missing_mcp_client_path",
+        "unresolved_fatal_blocker": false,
+        "semantic_score": 0.84,
+        "recommended_action": "harden_first"
+      },
+      {
+        "route_id": "k9audit_causal_audit_proof",
+        "buyer": "agent platform builder",
+        "value_object": "causal audit proof",
+        "route_kind": "audit_addon",
+        "semantic_goal_fit": 0.72,
+        "buyer_pain_clarity": 0.62,
+        "current_asset_support": 0.56,
+        "proof_readiness": 0.38,
+        "execution_blocker_severity": 0.58,
+        "time_to_first_user": 0.48,
+        "time_to_paid_signal": 0.42,
+        "evidence_burden": 0.72,
+        "overclaim_risk": 0.36,
+        "owner_burden": 0.5,
+        "implementation_complexity": 0.58,
+        "revenue_potential": 0.62,
+        "learning_value": 0.68,
+        "M_triangle_alignment": 0.76,
+        "m_triangle_alignment": 0.76,
+        "blocker_class": "integration_not_active",
+        "unresolved_fatal_blocker": false,
+        "semantic_score": 0.5228,
+        "recommended_action": "parked"
+      },
+      {
+        "route_id": "paid_setup_implementation_service",
+        "buyer": "AI ops team",
+        "value_object": "paid setup / implementation service",
+        "route_kind": "service_offer",
+        "semantic_goal_fit": 0.92,
+        "buyer_pain_clarity": 0.86,
+        "current_asset_support": 0.66,
+        "proof_readiness": 0.52,
+        "execution_blocker_severity": 0.48,
+        "time_to_first_user": 0.85,
+        "time_to_paid_signal": 0.72,
+        "evidence_burden": 0.55,
+        "overclaim_risk": 0.34,
+        "owner_burden": 0.5,
+        "implementation_complexity": 0.48,
+        "revenue_potential": 0.72,
+        "learning_value": 0.78,
+        "M_triangle_alignment": 0.84,
+        "m_triangle_alignment": 0.84,
+        "blocker_class": "major_manageable",
+        "unresolved_fatal_blocker": false,
+        "semantic_score": 0.7276,
+        "recommended_action": "package_after_client_proof"
+      },
+      {
+        "route_id": "workflow_resale_n8n_czl",
+        "buyer": "SMB ops buyer",
+        "value_object": "workflow resale with CZL",
+        "route_kind": "workflow_offer",
+        "semantic_goal_fit": 0.72,
+        "buyer_pain_clarity": 0.62,
+        "current_asset_support": 0.44,
+        "proof_readiness": 0.26,
+        "execution_blocker_severity": 0.66,
+        "time_to_first_user": 0.48,
+        "time_to_paid_signal": 0.52,
+        "evidence_burden": 0.72,
+        "overclaim_risk": 0.46,
+        "owner_burden": 0.6,
+        "implementation_complexity": 0.66,
+        "revenue_potential": 0.66,
+        "learning_value": 0.54,
+        "M_triangle_alignment": 0.6,
+        "m_triangle_alignment": 0.6,
+        "blocker_class": "weak_current_proof",
+        "unresolved_fatal_blocker": false,
+        "semantic_score": 0.432,
+        "recommended_action": "parked"
+      },
+      {
+        "route_id": "ystar_claude_code_plugin_marketplace",
+        "buyer": "Claude Code user",
+        "value_object": "plugin marketplace listing",
+        "route_kind": "marketplace",
+        "semantic_goal_fit": 0.72,
+        "buyer_pain_clarity": 0.62,
+        "current_asset_support": 0.55,
+        "proof_readiness": 0.28,
+        "execution_blocker_severity": 0.7,
+        "time_to_first_user": 0.48,
+        "time_to_paid_signal": 0.48,
+        "evidence_burden": 0.72,
+        "overclaim_risk": 0.62,
+        "owner_burden": 0.72,
+        "implementation_complexity": 0.7,
+        "revenue_potential": 0.76,
+        "learning_value": 0.58,
+        "M_triangle_alignment": 0.7,
+        "m_triangle_alignment": 0.7,
+        "blocker_class": "fatal_external_publish_dependency",
+        "unresolved_fatal_blocker": true,
+        "semantic_score": 0.4388,
+        "recommended_action": "parked"
+      }
+    ],
+    "selected_route": {
+      "route_id": "governed_agent_action_proof_packet",
+      "buyer": "AI engineer / agent team",
+      "value_object": "Governed Agent Action Proof Packet",
+      "route_kind": "service_wedge_anchored_by_proof_artifact",
+      "semantic_goal_fit": 0.92,
+      "buyer_pain_clarity": 0.86,
+      "current_asset_support": 0.82,
+      "proof_readiness": 0.78,
+      "execution_blocker_severity": 0.42,
+      "time_to_first_user": 0.85,
+      "time_to_paid_signal": 0.58,
+      "evidence_burden": 0.38,
+      "overclaim_risk": 0.2,
+      "owner_burden": 0.24,
+      "implementation_complexity": 0.42,
+      "revenue_potential": 0.62,
+      "learning_value": 0.88,
+      "M_triangle_alignment": 0.92,
+      "m_triangle_alignment": 0.92,
+      "blocker_class": "major_manageable_missing_mcp_client_path",
+      "unresolved_fatal_blocker": false,
+      "semantic_score": 0.84,
+      "recommended_action": "harden_first"
+    },
+    "why_not_other_routes": [
+      {
+        "route_id": "ai_agent_bug_bounty_service",
+        "reason": "lower semantic score or higher burden/blocker severity",
+        "score_delta": 0.3506
+      },
+      {
+        "route_id": "bridge_labs_agent_company_case_study",
+        "reason": "lower semantic score or higher burden/blocker severity",
+        "score_delta": 0.2282
+      },
+      {
+        "route_id": "claude_desktop_mcpb_packaging",
+        "reason": "lower semantic score or higher burden/blocker severity",
+        "score_delta": 0.2706
+      },
+      {
+        "route_id": "consulting_advisory_proof_packet",
+        "reason": "lower semantic score or higher burden/blocker severity",
+        "score_delta": 0.2026
+      },
+      {
+        "route_id": "developer_led_proof_bundle",
+        "reason": "lower semantic score or higher burden/blocker severity",
+        "score_delta": 0.2568
+      },
+      {
+        "route_id": "enterprise_compliance_pilot",
+        "reason": "fatal blocker",
+        "score_delta": 0.4048
+      },
+      {
+        "route_id": "gov_mcp_ystar_local_proof",
+        "reason": "lower semantic score or higher burden/blocker severity",
+        "score_delta": 0.2044
+      },
+      {
+        "route_id": "k9audit_causal_audit_proof",
+        "reason": "lower semantic score or higher burden/blocker severity",
+        "score_delta": 0.3172
+      },
+      {
+        "route_id": "paid_setup_implementation_service",
+        "reason": "lower semantic score or higher burden/blocker severity",
+        "score_delta": 0.1124
+      },
+      {
+        "route_id": "workflow_resale_n8n_czl",
+        "reason": "lower semantic score or higher burden/blocker severity",
+        "score_delta": 0.408
+      },
+      {
+        "route_id": "ystar_claude_code_plugin_marketplace",
+        "reason": "fatal blocker",
+        "score_delta": 0.4012
+      }
+    ],
+    "semantic_route_decision": {
+      "object_type": "SemanticRouteDecision",
+      "schema_version": "e49.semantic.v1",
+      "confidence": "artifact_supported",
+      "maturity": "partial_runtime",
+      "no_external_action": true,
+      "decision_id": "e49_money_route_decision",
+      "selected_route": "governed_agent_action_proof_packet",
+      "rejected_routes": [
+        {
+          "route_id": "enterprise_compliance_pilot",
+          "reason": "fatal blocker",
+          "score_delta": 0.4048
+        },
+        {
+          "route_id": "ystar_claude_code_plugin_marketplace",
+          "reason": "fatal blocker",
+          "score_delta": 0.4012
+        }
+      ],
+      "parked_routes": [
+        {
+          "route_id": "ai_agent_bug_bounty_service",
+          "reason": "lower semantic score or higher burden/blocker severity",
+          "score_delta": 0.3506
+        },
+        {
+          "route_id": "bridge_labs_agent_company_case_study",
+          "reason": "lower semantic score or higher burden/blocker severity",
+          "score_delta": 0.2282
+        },
+        {
+          "route_id": "claude_desktop_mcpb_packaging",
+          "reason": "lower semantic score or higher burden/blocker severity",
+          "score_delta": 0.2706
+        },
+        {
+          "route_id": "consulting_advisory_proof_packet",
+          "reason": "lower semantic score or higher burden/blocker severity",
+          "score_delta": 0.2026
+        },
+        {
+          "route_id": "developer_led_proof_bundle",
+          "reason": "lower semantic score or higher burden/blocker severity",
+          "score_delta": 0.2568
+        },
+        {
+          "route_id": "gov_mcp_ystar_local_proof",
+          "reason": "lower semantic score or higher burden/blocker severity",
+          "score_delta": 0.2044
+        },
+        {
+          "route_id": "k9audit_causal_audit_proof",
+          "reason": "lower semantic score or higher burden/blocker severity",
+          "score_delta": 0.3172
+        },
+        {
+          "route_id": "paid_setup_implementation_service",
+          "reason": "lower semantic score or higher burden/blocker severity",
+          "score_delta": 0.1124
+        },
+        {
+          "route_id": "workflow_resale_n8n_czl",
+          "reason": "lower semantic score or higher burden/blocker severity",
+          "score_delta": 0.408
+        }
+      ],
+      "evidence_burden": 0.38,
+      "execution_burden": 0.42,
+      "owner_burden": 0.24,
+      "next_milestone": "E50_build_minimal_gov_mcp_local_test_client",
+      "stop_conditions": [
+        "missing MCP client path persists",
+        "route would require external action before approval",
+        "overclaim language appears"
+      ],
+      "evidence_semantics": [
+        "e48_allow_deny_kernel_proof",
+        "e38_e39_public_evidence_context"
+      ],
+      "blocker_semantics": [
+        "major_manageable_missing_mcp_client_path",
+        "blocked_missing_local_mcp_dependency"
+      ]
+    },
+    "mcp_client_path_maturity": {
+      "artifact_id": "e49_minimal_mcp_client_path_maturity",
+      "gov_mcp_head": "998e62c0fa2dd28797d853f6e054210a1823891f",
+      "questions": {
+        "has_in_process_fastmcp_test_helper": true,
+        "exposes_direct_python_callable_for_gov_check_gov_demo": "nested_fastmcp_tool_only",
+        "local_mcp_dependency_available": false,
+        "can_minimal_client_be_built_without_internet_install": false,
+        "safe_stdio_or_sse_call_currently_available": false
+      },
+      "tool_names_sample": [
+        "gov_acknowledge",
+        "gov_archive",
+        "gov_audit",
+        "gov_baseline",
+        "gov_benchmark",
+        "gov_chain_reset",
+        "gov_check",
+        "gov_check_impact",
+        "gov_contract_activate",
+        "gov_contract_conflicts",
+        "gov_contract_load",
+        "gov_contract_validate",
+        "gov_counterfactual",
+        "gov_coverage",
+        "gov_delegate",
+        "gov_delta",
+        "gov_demo",
+        "gov_dispatch",
+        "gov_doctor",
+        "gov_domain_describe",
+        "gov_domain_init",
+        "gov_domain_list",
+        "gov_enforce",
+        "gov_escalate"
+      ],
+      "server_import_check": {
+        "command": [
+          "python3",
+          "-c",
+          "from gov_mcp.server import create_server; print(\"ok\")"
+        ],
+        "cwd": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/Users/haotianliu/.openclaw/workspace/gov-mcp/gov_mcp/server.py\", line 17, in <module>\n    from mcp.server.fastmcp import FastMCP\nModuleNotFoundError: No module named 'mcp'\n",
+        "timed_out": false
+      },
+      "pyproject_declares_mcp_dependency": true,
+      "classification": "blocked_missing_local_mcp_dependency",
+      "exact_minimal_test_client_module_needed_next": "E50_build_minimal_gov_mcp_local_test_client_dependency_gate",
+      "blocked_external_requirement": true,
+      "no_internet_install": true,
+      "no_external_action": true
+    },
+    "packaging_readiness_override": false,
+    "no_external_action": true
+  },
+  "execution_blockers": {
+    "minimal_mcp_client_path": "blocked_missing_local_mcp_dependency",
+    "server_import_returncode": 1
+  },
+  "route_decision": {
+    "object_type": "SemanticRouteDecision",
+    "schema_version": "e49.semantic.v1",
+    "confidence": "artifact_supported",
+    "maturity": "partial_runtime",
+    "no_external_action": true,
+    "decision_id": "e49_money_route_decision",
+    "selected_route": "governed_agent_action_proof_packet",
+    "rejected_routes": [
+      {
+        "route_id": "enterprise_compliance_pilot",
+        "reason": "fatal blocker",
+        "score_delta": 0.4048
+      },
+      {
+        "route_id": "ystar_claude_code_plugin_marketplace",
+        "reason": "fatal blocker",
+        "score_delta": 0.4012
+      }
+    ],
+    "parked_routes": [
+      {
+        "route_id": "ai_agent_bug_bounty_service",
+        "reason": "lower semantic score or higher burden/blocker severity",
+        "score_delta": 0.3506
+      },
+      {
+        "route_id": "bridge_labs_agent_company_case_study",
+        "reason": "lower semantic score or higher burden/blocker severity",
+        "score_delta": 0.2282
+      },
+      {
+        "route_id": "claude_desktop_mcpb_packaging",
+        "reason": "lower semantic score or higher burden/blocker severity",
+        "score_delta": 0.2706
+      },
+      {
+        "route_id": "consulting_advisory_proof_packet",
+        "reason": "lower semantic score or higher burden/blocker severity",
+        "score_delta": 0.2026
+      },
+      {
+        "route_id": "developer_led_proof_bundle",
+        "reason": "lower semantic score or higher burden/blocker severity",
+        "score_delta": 0.2568
+      },
+      {
+        "route_id": "gov_mcp_ystar_local_proof",
+        "reason": "lower semantic score or higher burden/blocker severity",
+        "score_delta": 0.2044
+      },
+      {
+        "route_id": "k9audit_causal_audit_proof",
+        "reason": "lower semantic score or higher burden/blocker severity",
+        "score_delta": 0.3172
+      },
+      {
+        "route_id": "paid_setup_implementation_service",
+        "reason": "lower semantic score or higher burden/blocker severity",
+        "score_delta": 0.1124
+      },
+      {
+        "route_id": "workflow_resale_n8n_czl",
+        "reason": "lower semantic score or higher burden/blocker severity",
+        "score_delta": 0.408
+      }
+    ],
+    "evidence_burden": 0.38,
+    "execution_burden": 0.42,
+    "owner_burden": 0.24,
+    "next_milestone": "E50_build_minimal_gov_mcp_local_test_client",
+    "stop_conditions": [
+      "missing MCP client path persists",
+      "route would require external action before approval",
+      "overclaim language appears"
+    ],
+    "evidence_semantics": [
+      "e48_allow_deny_kernel_proof",
+      "e38_e39_public_evidence_context"
+    ],
+    "blocker_semantics": [
+      "major_manageable_missing_mcp_client_path",
+      "blocked_missing_local_mcp_dependency"
+    ]
+  },
+  "next_milestone": "E50_build_minimal_gov_mcp_local_test_client",
+  "closure_packet": {
+    "route_decision_produced": true,
+    "selected_route": "governed_agent_action_proof_packet",
+    "selected_value_object": "Governed Agent Action Proof Packet",
+    "selected_route_kind": "service_wedge_anchored_by_proof_artifact",
+    "missing_client_path_blocks_external_attempt": true,
+    "owner_approval_required_before_external_action": true,
+    "no_external_action": true
+  },
+  "side_effect_report": {
+    "customer_contact": false,
+    "expert_contact": false,
+    "human_identification": false,
+    "scraping": false,
+    "send": false,
+    "publish": false,
+    "form_submission": false,
+    "login": false,
+    "provider_api_execution": false,
+    "internet_install": false,
+    "payment": false,
+    "secret_use": false,
+    "real_client_config_mutation": false
+  },
+  "no_external_action": true
+}
