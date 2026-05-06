@@ -1,0 +1,39 @@
+{
+  "artifact_id": "e55_behavior_center_readback_smoke_result",
+  "state": {
+    "behavior_center_status": "behavior_control_center_l5_ready",
+    "behavior_queue_status": "valid",
+    "authorization_gate_status": "passed",
+    "dry_run_executor_status": "passed",
+    "allowed_internal_dry_run_actions": [
+      "e55_validate_behavior_action_model",
+      "e55_validate_behavior_queue",
+      "e55_validate_authorization_gate",
+      "e55_validate_no_external_action_allowed"
+    ],
+    "external_actions_blocked": true,
+    "owner_decision_status": "pending_owner_decision",
+    "owner_approval_fabricated": false,
+    "external_action_allowed": false,
+    "next_recommended_milestone": "E56_internal_company_operating_loop_L5",
+    "no_external_action": true
+  },
+  "ceo_brain_context_excerpt": {
+    "current_behavior_center_status": "behavior_control_center_l5_ready",
+    "current_behavior_next_milestone": "E56_internal_company_operating_loop_L5",
+    "current_behavior_external_action_allowed": false
+  },
+  "checks": {
+    "ceo_brain_sees_behavior_center_l5_status": true,
+    "ceo_brain_sees_action_queue_exists": true,
+    "ceo_brain_sees_allowed_internal_dry_run_actions": true,
+    "ceo_brain_sees_external_actions_blocked": true,
+    "pending_owner_decision_still_pending": true,
+    "no_owner_approval_fabricated": true,
+    "next_milestone_recommendation_loaded": true,
+    "canonical_runtime_can_see_behavior_center_state": true
+  },
+  "passes": true,
+  "external_action_allowed": false,
+  "no_external_action": true
+}

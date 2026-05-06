@@ -291,6 +291,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e54_current_state_registry_resolution = {'registry_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_approval_status': 'pending_owner_decision'}
     try:
+        from office.mission_command.e55_behavior_center_readback_smoke import load_behavior_center_state_for_brain
+        e55_behavior_center_state = load_behavior_center_state_for_brain()
+    except Exception as exc:
+        e55_behavior_center_state = {'behavior_center_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -334,6 +339,12 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_state_registry_status": e54_current_state_registry_resolution.get("registry_status"),
         "current_l5_brain_next_action": e54_current_state_registry_resolution.get("next_milestone"),
         "current_l5_external_action_allowed": e54_current_state_registry_resolution.get("external_action_allowed"),
+        "latest_behavior_center_state": e55_behavior_center_state,
+        "current_behavior_center_status": e55_behavior_center_state.get("behavior_center_status"),
+        "current_behavior_queue_status": e55_behavior_center_state.get("behavior_queue_status"),
+        "current_behavior_authorization_status": e55_behavior_center_state.get("authorization_gate_status"),
+        "current_behavior_external_action_allowed": e55_behavior_center_state.get("external_action_allowed"),
+        "current_behavior_next_milestone": e55_behavior_center_state.get("next_recommended_milestone"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

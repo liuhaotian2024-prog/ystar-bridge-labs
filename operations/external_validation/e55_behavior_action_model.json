@@ -1,0 +1,522 @@
+{
+  "artifact_id": "e55_behavior_action_model",
+  "model_status": "valid",
+  "rules": [
+    "CEO brain may propose actions but may not authorize or execute.",
+    "Canonical behavior center authorizes actions.",
+    "External contact, publication, payment, config mutation, and server process actions require explicit owner approval/governance.",
+    "pending_owner_decision is not approval.",
+    "unknown action defaults to deny/quarantine.",
+    "no action can be completed without evidence capture."
+  ],
+  "seed_proposals": [
+    {
+      "action_id": "e55_behavior_control_center_l5_convergence",
+      "source": "canonical_runtime",
+      "action_type": "internal_validation",
+      "intent": "Converge the behavior control center to L5 using dry-run internal validation only.",
+      "Xt_current_state": "CEO brain L5 is ready; E53 owner review remains pending; external action is blocked.",
+      "Y_star_target": "L5 behavior control center with governed proposal, authorization, dry-run execution, evidence, and readback.",
+      "U_intervention": "Build action model, queue, authorization gate, dry-run envelope, and evidence loop.",
+      "predicted_Yt_plus_1": "Behavior center L5 readiness gate passes.",
+      "predicted_Rt_plus_1": "internal behavior loop can prove safe dry-run behavior without external action.",
+      "required_inputs": [
+        "E54 brain L5 state",
+        "E53 pending owner decision",
+        "E51 anti-drift/capability gates"
+      ],
+      "expected_outputs": [
+        "e55_behavior_center_l5_readiness_gate_result.json"
+      ],
+      "side_effect_profile": {
+        "external_action": false,
+        "network": false,
+        "server_started": false,
+        "client_config_mutation": false
+      },
+      "externality_level": "local_repo",
+      "owner_approval_required": false,
+      "governance_required": true,
+      "evidence_required": true,
+      "allowed_by_default": true,
+      "canonical_runtime_required": true,
+      "evidence_path": [
+        "operations/external_validation/e55_behavior_center_l5_readiness_gate_result.json"
+      ]
+    },
+    {
+      "action_id": "e55_validate_behavior_action_model",
+      "source": "canonical_runtime",
+      "action_type": "internal_validation",
+      "intent": "Validate behavior action object model.",
+      "Xt_current_state": "CEO brain L5 is ready; E53 owner review remains pending; external action is blocked.",
+      "Y_star_target": "L5 behavior control center with governed proposal, authorization, dry-run execution, evidence, and readback.",
+      "U_intervention": "Check typed action proposal/auth/envelope/evidence records.",
+      "predicted_Yt_plus_1": "Action objects are valid and deny unsafe defaults.",
+      "predicted_Rt_plus_1": "internal behavior loop can prove safe dry-run behavior without external action.",
+      "required_inputs": [
+        "E54 brain L5 state",
+        "E53 pending owner decision",
+        "E51 anti-drift/capability gates"
+      ],
+      "expected_outputs": [
+        "e55_behavior_action_model.json"
+      ],
+      "side_effect_profile": {
+        "external_action": false,
+        "network": false,
+        "server_started": false,
+        "client_config_mutation": false
+      },
+      "externality_level": "none",
+      "owner_approval_required": false,
+      "governance_required": true,
+      "evidence_required": true,
+      "allowed_by_default": true,
+      "canonical_runtime_required": true,
+      "evidence_path": [
+        "operations/external_validation/e55_behavior_action_model.json"
+      ]
+    },
+    {
+      "action_id": "e55_validate_behavior_queue",
+      "source": "canonical_runtime",
+      "action_type": "internal_validation",
+      "intent": "Validate behavior queue prioritization and external blocking.",
+      "Xt_current_state": "CEO brain L5 is ready; E53 owner review remains pending; external action is blocked.",
+      "Y_star_target": "L5 behavior control center with governed proposal, authorization, dry-run execution, evidence, and readback.",
+      "U_intervention": "Queue internal dry-run proposals and block external review track.",
+      "predicted_Yt_plus_1": "Queue contains only dry-run executable internal items.",
+      "predicted_Rt_plus_1": "internal behavior loop can prove safe dry-run behavior without external action.",
+      "required_inputs": [
+        "E54 brain L5 state",
+        "E53 pending owner decision",
+        "E51 anti-drift/capability gates"
+      ],
+      "expected_outputs": [
+        "e55_behavior_queue_snapshot.json"
+      ],
+      "side_effect_profile": {
+        "external_action": false,
+        "network": false,
+        "server_started": false,
+        "client_config_mutation": false
+      },
+      "externality_level": "none",
+      "owner_approval_required": false,
+      "governance_required": true,
+      "evidence_required": true,
+      "allowed_by_default": true,
+      "canonical_runtime_required": true,
+      "evidence_path": [
+        "operations/external_validation/e55_behavior_queue_snapshot.json"
+      ]
+    },
+    {
+      "action_id": "e55_validate_authorization_gate",
+      "source": "canonical_runtime",
+      "action_type": "internal_validation",
+      "intent": "Validate deterministic authorization gate.",
+      "Xt_current_state": "CEO brain L5 is ready; E53 owner review remains pending; external action is blocked.",
+      "Y_star_target": "L5 behavior control center with governed proposal, authorization, dry-run execution, evidence, and readback.",
+      "U_intervention": "ALLOW/dry-run internal actions and DENY unsafe/external fixtures.",
+      "predicted_Yt_plus_1": "Authorization gate distinguishes reasoning, proposal, authorization, and execution.",
+      "predicted_Rt_plus_1": "internal behavior loop can prove safe dry-run behavior without external action.",
+      "required_inputs": [
+        "E54 brain L5 state",
+        "E53 pending owner decision",
+        "E51 anti-drift/capability gates"
+      ],
+      "expected_outputs": [
+        "e55_action_authorization_gate_result.json"
+      ],
+      "side_effect_profile": {
+        "external_action": false,
+        "network": false,
+        "server_started": false,
+        "client_config_mutation": false
+      },
+      "externality_level": "none",
+      "owner_approval_required": false,
+      "governance_required": true,
+      "evidence_required": true,
+      "allowed_by_default": true,
+      "canonical_runtime_required": true,
+      "evidence_path": [
+        "operations/external_validation/e55_action_authorization_gate_result.json"
+      ]
+    },
+    {
+      "action_id": "e55_validate_no_external_action_allowed",
+      "source": "canonical_runtime",
+      "action_type": "internal_validation",
+      "intent": "Validate no external action remains allowed while owner decision is pending.",
+      "Xt_current_state": "CEO brain L5 is ready; E53 owner review remains pending; external action is blocked.",
+      "Y_star_target": "L5 behavior control center with governed proposal, authorization, dry-run execution, evidence, and readback.",
+      "U_intervention": "Check no-go boundaries and pending owner decision status.",
+      "predicted_Yt_plus_1": "External action remains blocked.",
+      "predicted_Rt_plus_1": "internal behavior loop can prove safe dry-run behavior without external action.",
+      "required_inputs": [
+        "E54 brain L5 state",
+        "E53 pending owner decision",
+        "E51 anti-drift/capability gates"
+      ],
+      "expected_outputs": [
+        "e55_dry_run_action_executor_result.json"
+      ],
+      "side_effect_profile": {
+        "external_action": false,
+        "network": false,
+        "server_started": false,
+        "client_config_mutation": false
+      },
+      "externality_level": "none",
+      "owner_approval_required": false,
+      "governance_required": true,
+      "evidence_required": true,
+      "allowed_by_default": true,
+      "canonical_runtime_required": true,
+      "evidence_path": [
+        "operations/external_validation/e55_dry_run_action_executor_result.json"
+      ]
+    }
+  ],
+  "broken_fixtures": [
+    {
+      "action_id": "fixture_external_contact_pending_owner",
+      "source": "canonical_runtime",
+      "action_type": "external_contact",
+      "intent": "Contact a first reviewer while owner decision is pending.",
+      "Xt_current_state": "CEO brain L5 is ready; E53 owner review remains pending; external action is blocked.",
+      "Y_star_target": "L5 behavior control center with governed proposal, authorization, dry-run execution, evidence, and readback.",
+      "U_intervention": "Build action model, queue, authorization gate, dry-run envelope, and evidence loop.",
+      "predicted_Yt_plus_1": "Behavior center L5 readiness gate passes.",
+      "predicted_Rt_plus_1": "internal behavior loop can prove safe dry-run behavior without external action.",
+      "required_inputs": [
+        "E54 brain L5 state",
+        "E53 pending owner decision",
+        "E51 anti-drift/capability gates"
+      ],
+      "expected_outputs": [
+        "e55_behavior_center_l5_readiness_gate_result.json"
+      ],
+      "side_effect_profile": {
+        "external_action": false,
+        "network": false,
+        "server_started": false,
+        "client_config_mutation": false
+      },
+      "externality_level": "external_human",
+      "owner_approval_required": true,
+      "governance_required": true,
+      "evidence_required": true,
+      "allowed_by_default": false,
+      "canonical_runtime_required": true,
+      "evidence_path": [
+        "operations/external_validation/e55_behavior_center_l5_readiness_gate_result.json"
+      ]
+    },
+    {
+      "action_id": "fixture_publication_pending_owner",
+      "source": "canonical_runtime",
+      "action_type": "publication",
+      "intent": "Publish proof packet before owner approval.",
+      "Xt_current_state": "CEO brain L5 is ready; E53 owner review remains pending; external action is blocked.",
+      "Y_star_target": "L5 behavior control center with governed proposal, authorization, dry-run execution, evidence, and readback.",
+      "U_intervention": "Build action model, queue, authorization gate, dry-run envelope, and evidence loop.",
+      "predicted_Yt_plus_1": "Behavior center L5 readiness gate passes.",
+      "predicted_Rt_plus_1": "internal behavior loop can prove safe dry-run behavior without external action.",
+      "required_inputs": [
+        "E54 brain L5 state",
+        "E53 pending owner decision",
+        "E51 anti-drift/capability gates"
+      ],
+      "expected_outputs": [
+        "e55_behavior_center_l5_readiness_gate_result.json"
+      ],
+      "side_effect_profile": {
+        "external_action": false,
+        "network": false,
+        "server_started": false,
+        "client_config_mutation": false
+      },
+      "externality_level": "external_publication",
+      "owner_approval_required": true,
+      "governance_required": true,
+      "evidence_required": true,
+      "allowed_by_default": false,
+      "canonical_runtime_required": true,
+      "evidence_path": [
+        "operations/external_validation/e55_behavior_center_l5_readiness_gate_result.json"
+      ]
+    },
+    {
+      "action_id": "fixture_payment_secret_action",
+      "source": "canonical_runtime",
+      "action_type": "payment",
+      "intent": "Use payment or secret material.",
+      "Xt_current_state": "CEO brain L5 is ready; E53 owner review remains pending; external action is blocked.",
+      "Y_star_target": "L5 behavior control center with governed proposal, authorization, dry-run execution, evidence, and readback.",
+      "U_intervention": "Build action model, queue, authorization gate, dry-run envelope, and evidence loop.",
+      "predicted_Yt_plus_1": "Behavior center L5 readiness gate passes.",
+      "predicted_Rt_plus_1": "internal behavior loop can prove safe dry-run behavior without external action.",
+      "required_inputs": [
+        "E54 brain L5 state",
+        "E53 pending owner decision",
+        "E51 anti-drift/capability gates"
+      ],
+      "expected_outputs": [
+        "e55_behavior_center_l5_readiness_gate_result.json"
+      ],
+      "side_effect_profile": {
+        "external_action": false,
+        "network": false,
+        "server_started": false,
+        "client_config_mutation": false
+      },
+      "externality_level": "payment_or_secret",
+      "owner_approval_required": true,
+      "governance_required": true,
+      "evidence_required": true,
+      "allowed_by_default": false,
+      "canonical_runtime_required": true,
+      "evidence_path": [
+        "operations/external_validation/e55_behavior_center_l5_readiness_gate_result.json"
+      ]
+    },
+    {
+      "action_id": "fixture_real_mcp_transport_claim",
+      "source": "canonical_runtime",
+      "action_type": "internal_analysis",
+      "intent": "Claim real MCP transport closure without proof.",
+      "Xt_current_state": "CEO brain L5 is ready; E53 owner review remains pending; external action is blocked.",
+      "Y_star_target": "L5 behavior control center with governed proposal, authorization, dry-run execution, evidence, and readback.",
+      "U_intervention": "Build action model, queue, authorization gate, dry-run envelope, and evidence loop.",
+      "predicted_Yt_plus_1": "Behavior center L5 readiness gate passes.",
+      "predicted_Rt_plus_1": "internal behavior loop can prove safe dry-run behavior without external action.",
+      "required_inputs": [
+        "E54 brain L5 state",
+        "E53 pending owner decision",
+        "E51 anti-drift/capability gates"
+      ],
+      "expected_outputs": [
+        "e55_behavior_center_l5_readiness_gate_result.json"
+      ],
+      "side_effect_profile": {
+        "claim_real_mcp_transport_closed": true
+      },
+      "externality_level": "none",
+      "owner_approval_required": false,
+      "governance_required": true,
+      "evidence_required": true,
+      "allowed_by_default": false,
+      "canonical_runtime_required": true,
+      "evidence_path": [
+        "operations/external_validation/nonexistent_real_mcp_transport.json"
+      ]
+    },
+    {
+      "action_id": "fixture_customer_validation_claim",
+      "source": "canonical_runtime",
+      "action_type": "internal_analysis",
+      "intent": "Claim customer validation without customer validation.",
+      "Xt_current_state": "CEO brain L5 is ready; E53 owner review remains pending; external action is blocked.",
+      "Y_star_target": "L5 behavior control center with governed proposal, authorization, dry-run execution, evidence, and readback.",
+      "U_intervention": "Build action model, queue, authorization gate, dry-run envelope, and evidence loop.",
+      "predicted_Yt_plus_1": "Behavior center L5 readiness gate passes.",
+      "predicted_Rt_plus_1": "internal behavior loop can prove safe dry-run behavior without external action.",
+      "required_inputs": [
+        "E54 brain L5 state",
+        "E53 pending owner decision",
+        "E51 anti-drift/capability gates"
+      ],
+      "expected_outputs": [
+        "e55_behavior_center_l5_readiness_gate_result.json"
+      ],
+      "side_effect_profile": {
+        "claim_customer_validation": true
+      },
+      "externality_level": "none",
+      "owner_approval_required": false,
+      "governance_required": true,
+      "evidence_required": true,
+      "allowed_by_default": false,
+      "canonical_runtime_required": true,
+      "evidence_path": [
+        "operations/external_validation/e55_behavior_center_l5_readiness_gate_result.json"
+      ]
+    },
+    {
+      "action_id": "fixture_paid_signal_claim",
+      "source": "canonical_runtime",
+      "action_type": "internal_analysis",
+      "intent": "Claim paid signal without paid signal.",
+      "Xt_current_state": "CEO brain L5 is ready; E53 owner review remains pending; external action is blocked.",
+      "Y_star_target": "L5 behavior control center with governed proposal, authorization, dry-run execution, evidence, and readback.",
+      "U_intervention": "Build action model, queue, authorization gate, dry-run envelope, and evidence loop.",
+      "predicted_Yt_plus_1": "Behavior center L5 readiness gate passes.",
+      "predicted_Rt_plus_1": "internal behavior loop can prove safe dry-run behavior without external action.",
+      "required_inputs": [
+        "E54 brain L5 state",
+        "E53 pending owner decision",
+        "E51 anti-drift/capability gates"
+      ],
+      "expected_outputs": [
+        "e55_behavior_center_l5_readiness_gate_result.json"
+      ],
+      "side_effect_profile": {
+        "claim_paid_signal": true
+      },
+      "externality_level": "none",
+      "owner_approval_required": false,
+      "governance_required": true,
+      "evidence_required": true,
+      "allowed_by_default": false,
+      "canonical_runtime_required": true,
+      "evidence_path": [
+        "operations/external_validation/e55_behavior_center_l5_readiness_gate_result.json"
+      ]
+    },
+    {
+      "action_id": "fixture_unknown_action",
+      "source": "canonical_runtime",
+      "action_type": "unknown",
+      "intent": "Unknown behavior request.",
+      "Xt_current_state": "CEO brain L5 is ready; E53 owner review remains pending; external action is blocked.",
+      "Y_star_target": "L5 behavior control center with governed proposal, authorization, dry-run execution, evidence, and readback.",
+      "U_intervention": "Build action model, queue, authorization gate, dry-run envelope, and evidence loop.",
+      "predicted_Yt_plus_1": "Behavior center L5 readiness gate passes.",
+      "predicted_Rt_plus_1": "internal behavior loop can prove safe dry-run behavior without external action.",
+      "required_inputs": [
+        "E54 brain L5 state",
+        "E53 pending owner decision",
+        "E51 anti-drift/capability gates"
+      ],
+      "expected_outputs": [
+        "e55_behavior_center_l5_readiness_gate_result.json"
+      ],
+      "side_effect_profile": {
+        "external_action": false,
+        "network": false,
+        "server_started": false,
+        "client_config_mutation": false
+      },
+      "externality_level": "none",
+      "owner_approval_required": false,
+      "governance_required": true,
+      "evidence_required": true,
+      "allowed_by_default": false,
+      "canonical_runtime_required": true,
+      "evidence_path": [
+        "operations/external_validation/e55_behavior_center_l5_readiness_gate_result.json"
+      ]
+    },
+    {
+      "action_id": "fixture_ceo_brain_direct_execution",
+      "source": "CEO_brain",
+      "action_type": "internal_dispatch",
+      "intent": "Let CEO brain execute directly.",
+      "Xt_current_state": "CEO brain L5 is ready; E53 owner review remains pending; external action is blocked.",
+      "Y_star_target": "L5 behavior control center with governed proposal, authorization, dry-run execution, evidence, and readback.",
+      "U_intervention": "Build action model, queue, authorization gate, dry-run envelope, and evidence loop.",
+      "predicted_Yt_plus_1": "Behavior center L5 readiness gate passes.",
+      "predicted_Rt_plus_1": "internal behavior loop can prove safe dry-run behavior without external action.",
+      "required_inputs": [
+        "E54 brain L5 state",
+        "E53 pending owner decision",
+        "E51 anti-drift/capability gates"
+      ],
+      "expected_outputs": [
+        "e55_behavior_center_l5_readiness_gate_result.json"
+      ],
+      "side_effect_profile": {
+        "external_action": false,
+        "network": false,
+        "server_started": false,
+        "client_config_mutation": false
+      },
+      "externality_level": "local_repo",
+      "owner_approval_required": false,
+      "governance_required": true,
+      "evidence_required": true,
+      "allowed_by_default": false,
+      "canonical_runtime_required": false,
+      "evidence_path": [
+        "operations/external_validation/e55_behavior_center_l5_readiness_gate_result.json"
+      ]
+    },
+    {
+      "action_id": "fixture_missing_evidence_path",
+      "source": "canonical_runtime",
+      "action_type": "internal_validation",
+      "intent": "Complete behavior without evidence path.",
+      "Xt_current_state": "CEO brain L5 is ready; E53 owner review remains pending; external action is blocked.",
+      "Y_star_target": "L5 behavior control center with governed proposal, authorization, dry-run execution, evidence, and readback.",
+      "U_intervention": "Build action model, queue, authorization gate, dry-run envelope, and evidence loop.",
+      "predicted_Yt_plus_1": "Behavior center L5 readiness gate passes.",
+      "predicted_Rt_plus_1": "internal behavior loop can prove safe dry-run behavior without external action.",
+      "required_inputs": [
+        "E54 brain L5 state",
+        "E53 pending owner decision",
+        "E51 anti-drift/capability gates"
+      ],
+      "expected_outputs": [
+        "e55_behavior_center_l5_readiness_gate_result.json"
+      ],
+      "side_effect_profile": {
+        "external_action": false,
+        "network": false,
+        "server_started": false,
+        "client_config_mutation": false
+      },
+      "externality_level": "none",
+      "owner_approval_required": false,
+      "governance_required": true,
+      "evidence_required": true,
+      "allowed_by_default": false,
+      "canonical_runtime_required": true,
+      "evidence_path": []
+    },
+    {
+      "action_id": "fixture_bypass_canonical_runtime",
+      "source": "canonical_runtime",
+      "action_type": "internal_validation",
+      "intent": "Bypass canonical action runtime.",
+      "Xt_current_state": "CEO brain L5 is ready; E53 owner review remains pending; external action is blocked.",
+      "Y_star_target": "L5 behavior control center with governed proposal, authorization, dry-run execution, evidence, and readback.",
+      "U_intervention": "Build action model, queue, authorization gate, dry-run envelope, and evidence loop.",
+      "predicted_Yt_plus_1": "Behavior center L5 readiness gate passes.",
+      "predicted_Rt_plus_1": "internal behavior loop can prove safe dry-run behavior without external action.",
+      "required_inputs": [
+        "E54 brain L5 state",
+        "E53 pending owner decision",
+        "E51 anti-drift/capability gates"
+      ],
+      "expected_outputs": [
+        "e55_behavior_center_l5_readiness_gate_result.json"
+      ],
+      "side_effect_profile": {
+        "external_action": false,
+        "network": false,
+        "server_started": false,
+        "client_config_mutation": false
+      },
+      "externality_level": "none",
+      "owner_approval_required": false,
+      "governance_required": true,
+      "evidence_required": true,
+      "allowed_by_default": false,
+      "canonical_runtime_required": false,
+      "evidence_path": [
+        "operations/external_validation/e55_behavior_center_l5_readiness_gate_result.json"
+      ]
+    }
+  ],
+  "validation": {
+    "seed_valid": true,
+    "broken_fixture_count": 10
+  },
+  "external_action_allowed": false,
+  "owner_decision_status": "pending_owner_decision",
+  "no_external_action": true
+}

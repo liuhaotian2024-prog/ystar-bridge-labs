@@ -1,0 +1,15 @@
+{
+  "artifact_id": "e55_base_state_manifest",
+  "bridge_labs": {
+    "expected_base": "92a64c816a8960d1963b348437db4fac2043726f",
+    "branch": "backflow/aiden-ceo-meeting-room",
+    "worktree_clean_at_start": true
+  },
+  "read_only_repos": {
+    "Y-star-gov": "b0d9aa8b1badd1180127a2f79f73ceed48e16451",
+    "gov-mcp": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+    "K9Audit": "37911e18ce4425470e3f745b30d155c43d76ff55"
+  },
+  "ports_7920_7930_clear_at_preflight": true,
+  "no_external_action": true
+}

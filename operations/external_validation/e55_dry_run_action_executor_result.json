@@ -1,0 +1,180 @@
+{
+  "artifact_id": "e55_dry_run_action_executor_result",
+  "executor_status": "passed",
+  "envelopes": [
+    {
+      "action_id": "e55_validate_behavior_action_model",
+      "execution_mode": "dry_run",
+      "command_or_operation": "dry_run::e55_validate_behavior_action_model",
+      "allowed_paths": [
+        "operations/external_validation/",
+        "reports/integration/",
+        "operations/knowledge_graph/"
+      ],
+      "forbidden_paths": [
+        "/Users/haotianliu/.claude",
+        "/Users/haotianliu/.cursor",
+        "/Users/haotianliu/.windsurf",
+        ".env",
+        "secrets",
+        "payment",
+        "external_contact"
+      ],
+      "expected_artifacts": [
+        "operations/external_validation/e55_validate_behavior_action_model_dry_run_evidence.json"
+      ],
+      "cleanup_required": false,
+      "evidence_capture_required": true,
+      "result_status": "ready_for_dry_run"
+    },
+    {
+      "action_id": "e55_validate_behavior_queue",
+      "execution_mode": "dry_run",
+      "command_or_operation": "dry_run::e55_validate_behavior_queue",
+      "allowed_paths": [
+        "operations/external_validation/",
+        "reports/integration/",
+        "operations/knowledge_graph/"
+      ],
+      "forbidden_paths": [
+        "/Users/haotianliu/.claude",
+        "/Users/haotianliu/.cursor",
+        "/Users/haotianliu/.windsurf",
+        ".env",
+        "secrets",
+        "payment",
+        "external_contact"
+      ],
+      "expected_artifacts": [
+        "operations/external_validation/e55_validate_behavior_queue_dry_run_evidence.json"
+      ],
+      "cleanup_required": false,
+      "evidence_capture_required": true,
+      "result_status": "ready_for_dry_run"
+    },
+    {
+      "action_id": "e55_validate_authorization_gate",
+      "execution_mode": "dry_run",
+      "command_or_operation": "dry_run::e55_validate_authorization_gate",
+      "allowed_paths": [
+        "operations/external_validation/",
+        "reports/integration/",
+        "operations/knowledge_graph/"
+      ],
+      "forbidden_paths": [
+        "/Users/haotianliu/.claude",
+        "/Users/haotianliu/.cursor",
+        "/Users/haotianliu/.windsurf",
+        ".env",
+        "secrets",
+        "payment",
+        "external_contact"
+      ],
+      "expected_artifacts": [
+        "operations/external_validation/e55_validate_authorization_gate_dry_run_evidence.json"
+      ],
+      "cleanup_required": false,
+      "evidence_capture_required": true,
+      "result_status": "ready_for_dry_run"
+    },
+    {
+      "action_id": "e55_validate_no_external_action_allowed",
+      "execution_mode": "dry_run",
+      "command_or_operation": "dry_run::e55_validate_no_external_action_allowed",
+      "allowed_paths": [
+        "operations/external_validation/",
+        "reports/integration/",
+        "operations/knowledge_graph/"
+      ],
+      "forbidden_paths": [
+        "/Users/haotianliu/.claude",
+        "/Users/haotianliu/.cursor",
+        "/Users/haotianliu/.windsurf",
+        ".env",
+        "secrets",
+        "payment",
+        "external_contact"
+      ],
+      "expected_artifacts": [
+        "operations/external_validation/e55_validate_no_external_action_allowed_dry_run_evidence.json"
+      ],
+      "cleanup_required": false,
+      "evidence_capture_required": true,
+      "result_status": "ready_for_dry_run"
+    }
+  ],
+  "dry_run_results": [
+    {
+      "action_id": "e55_validate_behavior_action_model",
+      "result_status": "dry_run_passed",
+      "executed": true,
+      "execution_mode": "dry_run",
+      "server_started": false,
+      "network_used": false,
+      "external_contact": false,
+      "client_config_mutated": false,
+      "evidence_artifacts": [
+        "operations/external_validation/e55_validate_behavior_action_model_dry_run_evidence.json"
+      ],
+      "no_external_action": true
+    },
+    {
+      "action_id": "e55_validate_behavior_queue",
+      "result_status": "dry_run_passed",
+      "executed": true,
+      "execution_mode": "dry_run",
+      "server_started": false,
+      "network_used": false,
+      "external_contact": false,
+      "client_config_mutated": false,
+      "evidence_artifacts": [
+        "operations/external_validation/e55_validate_behavior_queue_dry_run_evidence.json"
+      ],
+      "no_external_action": true
+    },
+    {
+      "action_id": "e55_validate_authorization_gate",
+      "result_status": "dry_run_passed",
+      "executed": true,
+      "execution_mode": "dry_run",
+      "server_started": false,
+      "network_used": false,
+      "external_contact": false,
+      "client_config_mutated": false,
+      "evidence_artifacts": [
+        "operations/external_validation/e55_validate_authorization_gate_dry_run_evidence.json"
+      ],
+      "no_external_action": true
+    },
+    {
+      "action_id": "e55_validate_no_external_action_allowed",
+      "result_status": "dry_run_passed",
+      "executed": true,
+      "execution_mode": "dry_run",
+      "server_started": false,
+      "network_used": false,
+      "external_contact": false,
+      "client_config_mutated": false,
+      "evidence_artifacts": [
+        "operations/external_validation/e55_validate_no_external_action_allowed_dry_run_evidence.json"
+      ],
+      "no_external_action": true
+    }
+  ],
+  "refused_external_fixture": {
+    "action_id": "fixture_external_contact_pending_owner",
+    "result_status": "refused_non_dry_run",
+    "executed": false,
+    "no_external_action": true
+  },
+  "checks": {
+    "only_dry_run_actions_executed": true,
+    "external_action_refused": true,
+    "no_server_started": true,
+    "no_network_used": true,
+    "no_client_config_mutated": true,
+    "authorization_gate_passed": true
+  },
+  "external_action_allowed": false,
+  "no_external_action": true
+}

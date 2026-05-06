@@ -1,0 +1,5 @@
+{"node_id": "e55_behavior_control_center", "node_type": "behavior_control_capability", "status": "L5_ready"}
+{"node_id": "e55_action_queue", "node_type": "behavior_queue", "status": "valid"}
+{"node_id": "e55_authorization_gate", "node_type": "boundary_capability", "status": "passed"}
+{"node_id": "e55_dry_run_executor", "node_type": "execution_envelope", "status": "dry_run_only"}
+{"node_id": "e56_internal_company_operating_loop_L5", "node_type": "next_milestone", "status": "recommended"}

@@ -1,0 +1,520 @@
+{
+  "artifact_id": "e55_action_authorization_gate_result",
+  "gate_status": "passed",
+  "proposal_results": [
+    {
+      "action_id": "e55_behavior_control_center_l5_convergence",
+      "authorization_status": "dry_run_only",
+      "reason": "internal action may run only as dry-run with evidence capture",
+      "Y_star_gov_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "read_only_validator": true
+      },
+      "gov_mcp_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "fake_fastmcp_harness": true
+      },
+      "owner_approval_status": "pending_owner_decision",
+      "no_go_boundary_result": {
+        "external_action_allowed": false,
+        "pending_owner_decision_not_approval": true
+      },
+      "capability_binding_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "anti_drift_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "external_action_allowed": false,
+      "no_external_action": true
+    },
+    {
+      "action_id": "e55_validate_behavior_action_model",
+      "authorization_status": "dry_run_only",
+      "reason": "internal action may run only as dry-run with evidence capture",
+      "Y_star_gov_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "read_only_validator": true
+      },
+      "gov_mcp_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "fake_fastmcp_harness": true
+      },
+      "owner_approval_status": "pending_owner_decision",
+      "no_go_boundary_result": {
+        "external_action_allowed": false,
+        "pending_owner_decision_not_approval": true
+      },
+      "capability_binding_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "anti_drift_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "external_action_allowed": false,
+      "no_external_action": true
+    },
+    {
+      "action_id": "e55_validate_behavior_queue",
+      "authorization_status": "dry_run_only",
+      "reason": "internal action may run only as dry-run with evidence capture",
+      "Y_star_gov_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "read_only_validator": true
+      },
+      "gov_mcp_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "fake_fastmcp_harness": true
+      },
+      "owner_approval_status": "pending_owner_decision",
+      "no_go_boundary_result": {
+        "external_action_allowed": false,
+        "pending_owner_decision_not_approval": true
+      },
+      "capability_binding_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "anti_drift_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "external_action_allowed": false,
+      "no_external_action": true
+    },
+    {
+      "action_id": "e55_validate_authorization_gate",
+      "authorization_status": "dry_run_only",
+      "reason": "internal action may run only as dry-run with evidence capture",
+      "Y_star_gov_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "read_only_validator": true
+      },
+      "gov_mcp_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "fake_fastmcp_harness": true
+      },
+      "owner_approval_status": "pending_owner_decision",
+      "no_go_boundary_result": {
+        "external_action_allowed": false,
+        "pending_owner_decision_not_approval": true
+      },
+      "capability_binding_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "anti_drift_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "external_action_allowed": false,
+      "no_external_action": true
+    },
+    {
+      "action_id": "e55_validate_no_external_action_allowed",
+      "authorization_status": "dry_run_only",
+      "reason": "internal action may run only as dry-run with evidence capture",
+      "Y_star_gov_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "read_only_validator": true
+      },
+      "gov_mcp_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "fake_fastmcp_harness": true
+      },
+      "owner_approval_status": "pending_owner_decision",
+      "no_go_boundary_result": {
+        "external_action_allowed": false,
+        "pending_owner_decision_not_approval": true
+      },
+      "capability_binding_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "anti_drift_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "external_action_allowed": false,
+      "no_external_action": true
+    }
+  ],
+  "fixture_results": [
+    {
+      "action_id": "fixture_external_contact_pending_owner",
+      "authorization_status": "deny",
+      "reason": "external_contact denied while owner decision is pending",
+      "Y_star_gov_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "read_only_validator": true
+      },
+      "gov_mcp_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "fake_fastmcp_harness": true
+      },
+      "owner_approval_status": "pending_owner_decision",
+      "no_go_boundary_result": {
+        "external_action_allowed": false,
+        "pending_owner_decision_not_approval": true
+      },
+      "capability_binding_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "anti_drift_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "external_action_allowed": false,
+      "no_external_action": true
+    },
+    {
+      "action_id": "fixture_publication_pending_owner",
+      "authorization_status": "deny",
+      "reason": "publication denied while owner decision is pending",
+      "Y_star_gov_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "read_only_validator": true
+      },
+      "gov_mcp_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "fake_fastmcp_harness": true
+      },
+      "owner_approval_status": "pending_owner_decision",
+      "no_go_boundary_result": {
+        "external_action_allowed": false,
+        "pending_owner_decision_not_approval": true
+      },
+      "capability_binding_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "anti_drift_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "external_action_allowed": false,
+      "no_external_action": true
+    },
+    {
+      "action_id": "fixture_payment_secret_action",
+      "authorization_status": "deny",
+      "reason": "payment denied without explicit owner/governance approval",
+      "Y_star_gov_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "read_only_validator": true
+      },
+      "gov_mcp_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "fake_fastmcp_harness": true
+      },
+      "owner_approval_status": "pending_owner_decision",
+      "no_go_boundary_result": {
+        "external_action_allowed": false,
+        "pending_owner_decision_not_approval": true
+      },
+      "capability_binding_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "anti_drift_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "external_action_allowed": false,
+      "no_external_action": true
+    },
+    {
+      "action_id": "fixture_real_mcp_transport_claim",
+      "authorization_status": "deny",
+      "reason": "real MCP transport closure cannot be claimed without proof",
+      "Y_star_gov_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "read_only_validator": true
+      },
+      "gov_mcp_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "fake_fastmcp_harness": true
+      },
+      "owner_approval_status": "pending_owner_decision",
+      "no_go_boundary_result": {
+        "external_action_allowed": false,
+        "pending_owner_decision_not_approval": true
+      },
+      "capability_binding_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "anti_drift_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "external_action_allowed": false,
+      "no_external_action": true
+    },
+    {
+      "action_id": "fixture_customer_validation_claim",
+      "authorization_status": "deny",
+      "reason": "customer validation claim denied",
+      "Y_star_gov_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "read_only_validator": true
+      },
+      "gov_mcp_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "fake_fastmcp_harness": true
+      },
+      "owner_approval_status": "pending_owner_decision",
+      "no_go_boundary_result": {
+        "external_action_allowed": false,
+        "pending_owner_decision_not_approval": true
+      },
+      "capability_binding_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "anti_drift_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "external_action_allowed": false,
+      "no_external_action": true
+    },
+    {
+      "action_id": "fixture_paid_signal_claim",
+      "authorization_status": "deny",
+      "reason": "paid signal claim denied",
+      "Y_star_gov_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "read_only_validator": true
+      },
+      "gov_mcp_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "fake_fastmcp_harness": true
+      },
+      "owner_approval_status": "pending_owner_decision",
+      "no_go_boundary_result": {
+        "external_action_allowed": false,
+        "pending_owner_decision_not_approval": true
+      },
+      "capability_binding_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "anti_drift_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "external_action_allowed": false,
+      "no_external_action": true
+    },
+    {
+      "action_id": "fixture_unknown_action",
+      "authorization_status": "quarantine",
+      "reason": "unknown action type defaults to quarantine",
+      "Y_star_gov_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "read_only_validator": true
+      },
+      "gov_mcp_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "fake_fastmcp_harness": true
+      },
+      "owner_approval_status": "pending_owner_decision",
+      "no_go_boundary_result": {
+        "external_action_allowed": false,
+        "pending_owner_decision_not_approval": true
+      },
+      "capability_binding_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "anti_drift_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "external_action_allowed": false,
+      "no_external_action": true
+    },
+    {
+      "action_id": "fixture_ceo_brain_direct_execution",
+      "authorization_status": "deny",
+      "reason": "CEO brain may propose but cannot execute behavior directly",
+      "Y_star_gov_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "read_only_validator": true
+      },
+      "gov_mcp_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "fake_fastmcp_harness": true
+      },
+      "owner_approval_status": "pending_owner_decision",
+      "no_go_boundary_result": {
+        "external_action_allowed": false,
+        "pending_owner_decision_not_approval": true
+      },
+      "capability_binding_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "anti_drift_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "external_action_allowed": false,
+      "no_external_action": true
+    },
+    {
+      "action_id": "fixture_missing_evidence_path",
+      "authorization_status": "deny",
+      "reason": "behavior action missing evidence path",
+      "Y_star_gov_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "read_only_validator": true
+      },
+      "gov_mcp_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "fake_fastmcp_harness": true
+      },
+      "owner_approval_status": "pending_owner_decision",
+      "no_go_boundary_result": {
+        "external_action_allowed": false,
+        "pending_owner_decision_not_approval": true
+      },
+      "capability_binding_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "anti_drift_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "external_action_allowed": false,
+      "no_external_action": true
+    },
+    {
+      "action_id": "fixture_bypass_canonical_runtime",
+      "authorization_status": "deny",
+      "reason": "behavior action bypasses canonical runtime",
+      "Y_star_gov_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "read_only_validator": true
+      },
+      "gov_mcp_gate_result": {
+        "status": "ALLOW",
+        "allowed": true,
+        "fake_fastmcp_harness": true
+      },
+      "owner_approval_status": "pending_owner_decision",
+      "no_go_boundary_result": {
+        "external_action_allowed": false,
+        "pending_owner_decision_not_approval": true
+      },
+      "capability_binding_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "anti_drift_result": {
+        "status": "ALLOW",
+        "allowed": true
+      },
+      "external_action_allowed": false,
+      "no_external_action": true
+    }
+  ],
+  "allowed_actions": [
+    "e55_behavior_control_center_l5_convergence",
+    "e55_validate_behavior_action_model",
+    "e55_validate_behavior_queue",
+    "e55_validate_authorization_gate",
+    "e55_validate_no_external_action_allowed"
+  ],
+  "denied_actions": [
+    "fixture_external_contact_pending_owner",
+    "fixture_publication_pending_owner",
+    "fixture_payment_secret_action",
+    "fixture_real_mcp_transport_claim",
+    "fixture_customer_validation_claim",
+    "fixture_paid_signal_claim",
+    "fixture_ceo_brain_direct_execution",
+    "fixture_missing_evidence_path",
+    "fixture_bypass_canonical_runtime"
+  ],
+  "quarantined_actions": [
+    "fixture_unknown_action"
+  ],
+  "owner_approval_required_actions": [],
+  "dry_run_only_actions": [
+    "e55_behavior_control_center_l5_convergence",
+    "e55_validate_behavior_action_model",
+    "e55_validate_behavior_queue",
+    "e55_validate_authorization_gate",
+    "e55_validate_no_external_action_allowed"
+  ],
+  "reasons": {
+    "e55_behavior_control_center_l5_convergence": "internal action may run only as dry-run with evidence capture",
+    "e55_validate_behavior_action_model": "internal action may run only as dry-run with evidence capture",
+    "e55_validate_behavior_queue": "internal action may run only as dry-run with evidence capture",
+    "e55_validate_authorization_gate": "internal action may run only as dry-run with evidence capture",
+    "e55_validate_no_external_action_allowed": "internal action may run only as dry-run with evidence capture",
+    "fixture_external_contact_pending_owner": "external_contact denied while owner decision is pending",
+    "fixture_publication_pending_owner": "publication denied while owner decision is pending",
+    "fixture_payment_secret_action": "payment denied without explicit owner/governance approval",
+    "fixture_real_mcp_transport_claim": "real MCP transport closure cannot be claimed without proof",
+    "fixture_customer_validation_claim": "customer validation claim denied",
+    "fixture_paid_signal_claim": "paid signal claim denied",
+    "fixture_unknown_action": "unknown action type defaults to quarantine",
+    "fixture_ceo_brain_direct_execution": "CEO brain may propose but cannot execute behavior directly",
+    "fixture_missing_evidence_path": "behavior action missing evidence path",
+    "fixture_bypass_canonical_runtime": "behavior action bypasses canonical runtime"
+  },
+  "checks": {
+    "internal_validation_dry_run_only": true,
+    "external_contact_denied": true,
+    "publication_denied": true,
+    "payment_secret_denied": true,
+    "real_mcp_transport_claim_denied": true,
+    "customer_validation_claim_denied": true,
+    "paid_signal_claim_denied": true,
+    "unknown_action_quarantined": true,
+    "ceo_brain_direct_execution_denied": true,
+    "missing_evidence_denied": true,
+    "canonical_runtime_bypass_denied": true
+  },
+  "external_action_allowed": false,
+  "owner_decision_status": "pending_owner_decision",
+  "no_external_action": true
+}

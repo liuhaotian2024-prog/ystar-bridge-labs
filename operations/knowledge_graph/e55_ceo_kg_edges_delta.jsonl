@@ -1,0 +1,4 @@
+{"from": "e54_ceo_brain_l5", "to": "e55_action_queue", "edge": "proposes"}
+{"from": "e55_authorization_gate", "to": "e55_dry_run_executor", "edge": "authorizes_dry_run"}
+{"from": "e55_dry_run_executor", "to": "e55_behavior_evidence_loop", "edge": "produces_evidence"}
+{"from": "e55_behavior_evidence_loop", "to": "CEO_brain", "edge": "readback"}

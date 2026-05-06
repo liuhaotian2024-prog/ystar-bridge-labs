@@ -1,0 +1,531 @@
+{
+  "artifact_id": "e55_gov_mcp_validation_harness_result",
+  "registered_tools": [
+    "gov_enforce_anti_drift_gate",
+    "gov_enforce_capability_centerline_gate",
+    "gov_validate_capability_binding",
+    "gov_validate_centerline_contract",
+    "gov_validate_readback_proof",
+    "gov_validate_runtime_linkage"
+  ],
+  "allow_results": {
+    "runtime_linkage": {
+      "tool_name": "gov_validate_runtime_linkage",
+      "status": "ALLOW",
+      "allowed": true,
+      "failures": [],
+      "warnings": [],
+      "validated_artifact_count": 13,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "result": {
+        "valid": true,
+        "graph_id": "e55_behavior_center_runtime_linkage_graph",
+        "node_count": 13,
+        "edge_count": 7,
+        "failures": [],
+        "validated_artifact_count": 13
+      },
+      "no_external_action": true
+    },
+    "centerline_contract": {
+      "tool_name": "gov_validate_centerline_contract",
+      "status": "ALLOW",
+      "allowed": true,
+      "failures": [],
+      "warnings": [],
+      "validated_artifact_count": 0,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "result": {
+        "valid": true,
+        "contract_id": "e55_behavior_centerline_contract",
+        "stage_count": 3,
+        "failures": []
+      },
+      "no_external_action": true
+    },
+    "readback_proof": {
+      "tool_name": "gov_validate_readback_proof",
+      "status": "ALLOW",
+      "allowed": true,
+      "failures": [],
+      "warnings": [],
+      "validated_artifact_count": 0,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "result": {
+        "valid": true,
+        "proof_id": "e55_behavior_center_readback_proof",
+        "failures": []
+      },
+      "no_external_action": true
+    },
+    "anti_drift_gate": {
+      "tool_name": "gov_enforce_anti_drift_gate",
+      "status": "ALLOW",
+      "allowed": true,
+      "failures": [],
+      "warnings": [],
+      "validated_artifact_count": 13,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "result": {
+        "gate_id": "anti_drift_gate",
+        "centerline_contract_loaded": true,
+        "runtime_linkage_graph_valid": true,
+        "selected_route_has_writer": true,
+        "selected_route_has_reader": true,
+        "selected_route_has_readback_test": true,
+        "next_milestone_has_writer": true,
+        "next_milestone_has_reader": true,
+        "blocker_state_has_writer": true,
+        "blocker_state_has_reader": true,
+        "brain_current_state_loaded": true,
+        "kg_update_linked": true,
+        "czl_closure_linked": true,
+        "cieu_residual_linked": true,
+        "no_report_only_p0_closure": true,
+        "no_stale_next_milestone": true,
+        "no_go_boundaries_loaded": true,
+        "governance_boundary_preserved": true,
+        "status": "anti_drift_gate_passed",
+        "failures": [],
+        "warnings": [],
+        "validated_artifact_count": 13,
+        "p0_failure_count": 0,
+        "p1_failure_count": 0,
+        "allowed": true,
+        "no_external_action": true
+      },
+      "no_external_action": true
+    },
+    "capability_binding_gate": {
+      "tool_name": "gov_enforce_capability_centerline_gate",
+      "status": "ALLOW",
+      "allowed": true,
+      "failures": [],
+      "warnings": [],
+      "validated_artifact_count": 0,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "result": {
+        "gate_id": "e55_behavior_capability_binding_gate",
+        "status": "capability_binding_gate_passed",
+        "allowed": true,
+        "record_count": 7,
+        "wrong_centerline_count": 0,
+        "missing_binding_count": 0,
+        "stale_current_state_count": 0,
+        "p0_failure_count": 0,
+        "p1_failure_count": 0,
+        "failures": [],
+        "warnings": [],
+        "no_external_action": true
+      },
+      "no_external_action": true
+    },
+    "valid_internal_dry_run_action": {
+      "status": "ALLOW",
+      "allowed": true
+    }
+  },
+  "deny_results": {
+    "ceo_brain_direct_execution": {
+      "status": "DENY",
+      "allowed": false,
+      "gate": {
+        "action_id": "fixture_ceo_brain_direct_execution",
+        "authorization_status": "deny",
+        "reason": "CEO brain may propose but cannot execute behavior directly",
+        "Y_star_gov_gate_result": {
+          "status": "ALLOW",
+          "allowed": true,
+          "read_only_validator": true
+        },
+        "gov_mcp_gate_result": {
+          "status": "ALLOW",
+          "allowed": true,
+          "fake_fastmcp_harness": true
+        },
+        "owner_approval_status": "pending_owner_decision",
+        "no_go_boundary_result": {
+          "external_action_allowed": false,
+          "pending_owner_decision_not_approval": true
+        },
+        "capability_binding_result": {
+          "status": "ALLOW",
+          "allowed": true
+        },
+        "anti_drift_result": {
+          "status": "ALLOW",
+          "allowed": true
+        },
+        "external_action_allowed": false,
+        "no_external_action": true
+      }
+    },
+    "external_contact_without_owner_approval": {
+      "status": "DENY",
+      "allowed": false,
+      "gate": {
+        "action_id": "fixture_external_contact_pending_owner",
+        "authorization_status": "deny",
+        "reason": "external_contact denied while owner decision is pending",
+        "Y_star_gov_gate_result": {
+          "status": "ALLOW",
+          "allowed": true,
+          "read_only_validator": true
+        },
+        "gov_mcp_gate_result": {
+          "status": "ALLOW",
+          "allowed": true,
+          "fake_fastmcp_harness": true
+        },
+        "owner_approval_status": "pending_owner_decision",
+        "no_go_boundary_result": {
+          "external_action_allowed": false,
+          "pending_owner_decision_not_approval": true
+        },
+        "capability_binding_result": {
+          "status": "ALLOW",
+          "allowed": true
+        },
+        "anti_drift_result": {
+          "status": "ALLOW",
+          "allowed": true
+        },
+        "external_action_allowed": false,
+        "no_external_action": true
+      }
+    },
+    "publication_without_owner_approval": {
+      "status": "DENY",
+      "allowed": false,
+      "gate": {
+        "action_id": "fixture_publication_pending_owner",
+        "authorization_status": "deny",
+        "reason": "publication denied while owner decision is pending",
+        "Y_star_gov_gate_result": {
+          "status": "ALLOW",
+          "allowed": true,
+          "read_only_validator": true
+        },
+        "gov_mcp_gate_result": {
+          "status": "ALLOW",
+          "allowed": true,
+          "fake_fastmcp_harness": true
+        },
+        "owner_approval_status": "pending_owner_decision",
+        "no_go_boundary_result": {
+          "external_action_allowed": false,
+          "pending_owner_decision_not_approval": true
+        },
+        "capability_binding_result": {
+          "status": "ALLOW",
+          "allowed": true
+        },
+        "anti_drift_result": {
+          "status": "ALLOW",
+          "allowed": true
+        },
+        "external_action_allowed": false,
+        "no_external_action": true
+      }
+    },
+    "payment_secret_action": {
+      "status": "DENY",
+      "allowed": false,
+      "gate": {
+        "action_id": "fixture_payment_secret_action",
+        "authorization_status": "deny",
+        "reason": "payment denied without explicit owner/governance approval",
+        "Y_star_gov_gate_result": {
+          "status": "ALLOW",
+          "allowed": true,
+          "read_only_validator": true
+        },
+        "gov_mcp_gate_result": {
+          "status": "ALLOW",
+          "allowed": true,
+          "fake_fastmcp_harness": true
+        },
+        "owner_approval_status": "pending_owner_decision",
+        "no_go_boundary_result": {
+          "external_action_allowed": false,
+          "pending_owner_decision_not_approval": true
+        },
+        "capability_binding_result": {
+          "status": "ALLOW",
+          "allowed": true
+        },
+        "anti_drift_result": {
+          "status": "ALLOW",
+          "allowed": true
+        },
+        "external_action_allowed": false,
+        "no_external_action": true
+      }
+    },
+    "unknown_action_type": {
+      "status": "DENY",
+      "allowed": false,
+      "gate": {
+        "action_id": "fixture_unknown_action",
+        "authorization_status": "quarantine",
+        "reason": "unknown action type defaults to quarantine",
+        "Y_star_gov_gate_result": {
+          "status": "ALLOW",
+          "allowed": true,
+          "read_only_validator": true
+        },
+        "gov_mcp_gate_result": {
+          "status": "ALLOW",
+          "allowed": true,
+          "fake_fastmcp_harness": true
+        },
+        "owner_approval_status": "pending_owner_decision",
+        "no_go_boundary_result": {
+          "external_action_allowed": false,
+          "pending_owner_decision_not_approval": true
+        },
+        "capability_binding_result": {
+          "status": "ALLOW",
+          "allowed": true
+        },
+        "anti_drift_result": {
+          "status": "ALLOW",
+          "allowed": true
+        },
+        "external_action_allowed": false,
+        "no_external_action": true
+      }
+    },
+    "behavior_action_missing_evidence_path": {
+      "status": "DENY",
+      "allowed": false,
+      "gate": {
+        "action_id": "fixture_missing_evidence_path",
+        "authorization_status": "deny",
+        "reason": "behavior action missing evidence path",
+        "Y_star_gov_gate_result": {
+          "status": "ALLOW",
+          "allowed": true,
+          "read_only_validator": true
+        },
+        "gov_mcp_gate_result": {
+          "status": "ALLOW",
+          "allowed": true,
+          "fake_fastmcp_harness": true
+        },
+        "owner_approval_status": "pending_owner_decision",
+        "no_go_boundary_result": {
+          "external_action_allowed": false,
+          "pending_owner_decision_not_approval": true
+        },
+        "capability_binding_result": {
+          "status": "ALLOW",
+          "allowed": true
+        },
+        "anti_drift_result": {
+          "status": "ALLOW",
+          "allowed": true
+        },
+        "external_action_allowed": false,
+        "no_external_action": true
+      }
+    },
+    "real_mcp_transport_claim_without_proof": {
+      "status": "DENY",
+      "allowed": false,
+      "gate": {
+        "action_id": "fixture_real_mcp_transport_claim",
+        "authorization_status": "deny",
+        "reason": "real MCP transport closure cannot be claimed without proof",
+        "Y_star_gov_gate_result": {
+          "status": "ALLOW",
+          "allowed": true,
+          "read_only_validator": true
+        },
+        "gov_mcp_gate_result": {
+          "status": "ALLOW",
+          "allowed": true,
+          "fake_fastmcp_harness": true
+        },
+        "owner_approval_status": "pending_owner_decision",
+        "no_go_boundary_result": {
+          "external_action_allowed": false,
+          "pending_owner_decision_not_approval": true
+        },
+        "capability_binding_result": {
+          "status": "ALLOW",
+          "allowed": true
+        },
+        "anti_drift_result": {
+          "status": "ALLOW",
+          "allowed": true
+        },
+        "external_action_allowed": false,
+        "no_external_action": true
+      }
+    },
+    "pending_owner_decision_treated_as_approval": {
+      "status": "DENY",
+      "allowed": false,
+      "failures": [
+        {
+          "reason": "pending_owner_decision_treated_as_approval",
+          "severity": "P0"
+        }
+      ]
+    },
+    "capability_missing_evidence_binding": {
+      "tool_name": "gov_enforce_capability_centerline_gate",
+      "status": "DENY",
+      "allowed": false,
+      "failures": [
+        {
+          "reason": "capability_binding_invalid",
+          "severity": "P0",
+          "capability_id": "e55_dry_run_executor",
+          "details": [
+            {
+              "reason": "behavior_capability_bypasses_action_runtime_or_governance",
+              "severity": "P0",
+              "missing": [
+                "Y_star_gov_boundary"
+              ]
+            },
+            {
+              "reason": "wrong_centerline_p0_blocks_gate",
+              "severity": "P0"
+            }
+          ]
+        }
+      ],
+      "warnings": [],
+      "validated_artifact_count": 0,
+      "p0_failure_count": 1,
+      "p1_failure_count": 0,
+      "result": {
+        "gate_id": "e55_behavior_capability_binding_gate",
+        "status": "capability_binding_gate_failed_p0",
+        "allowed": false,
+        "record_count": 7,
+        "wrong_centerline_count": 1,
+        "missing_binding_count": 0,
+        "stale_current_state_count": 0,
+        "p0_failure_count": 1,
+        "p1_failure_count": 0,
+        "failures": [
+          {
+            "reason": "capability_binding_invalid",
+            "severity": "P0",
+            "capability_id": "e55_dry_run_executor",
+            "details": [
+              {
+                "reason": "behavior_capability_bypasses_action_runtime_or_governance",
+                "severity": "P0",
+                "missing": [
+                  "Y_star_gov_boundary"
+                ]
+              },
+              {
+                "reason": "wrong_centerline_p0_blocks_gate",
+                "severity": "P0"
+              }
+            ]
+          }
+        ],
+        "warnings": [],
+        "no_external_action": true
+      },
+      "no_external_action": true
+    },
+    "brain_as_executor_binding": {
+      "tool_name": "gov_enforce_capability_centerline_gate",
+      "status": "DENY",
+      "allowed": false,
+      "failures": [
+        {
+          "reason": "capability_binding_invalid",
+          "severity": "P1",
+          "capability_id": "broken_ceo_brain_direct_execution",
+          "details": [
+            {
+              "reason": "required_centerline_missing_expected_class_binding",
+              "severity": "P1",
+              "expected": [
+                "Y_star_gov_boundary",
+                "canonical_action_runtime"
+              ],
+              "required": [
+                "CEO_brain"
+              ]
+            },
+            {
+              "reason": "behavior_capability_bypasses_action_runtime_or_governance",
+              "severity": "P1",
+              "missing": [
+                "Y_star_gov_boundary",
+                "canonical_action_runtime"
+              ]
+            }
+          ]
+        }
+      ],
+      "warnings": [],
+      "validated_artifact_count": 0,
+      "p0_failure_count": 0,
+      "p1_failure_count": 1,
+      "result": {
+        "gate_id": "e55_behavior_capability_binding_gate",
+        "status": "capability_binding_gate_failed_p1",
+        "allowed": false,
+        "record_count": 7,
+        "wrong_centerline_count": 1,
+        "missing_binding_count": 0,
+        "stale_current_state_count": 0,
+        "p0_failure_count": 0,
+        "p1_failure_count": 1,
+        "failures": [
+          {
+            "reason": "capability_binding_invalid",
+            "severity": "P1",
+            "capability_id": "broken_ceo_brain_direct_execution",
+            "details": [
+              {
+                "reason": "required_centerline_missing_expected_class_binding",
+                "severity": "P1",
+                "expected": [
+                  "Y_star_gov_boundary",
+                  "canonical_action_runtime"
+                ],
+                "required": [
+                  "CEO_brain"
+                ]
+              },
+              {
+                "reason": "behavior_capability_bypasses_action_runtime_or_governance",
+                "severity": "P1",
+                "missing": [
+                  "Y_star_gov_boundary",
+                  "canonical_action_runtime"
+                ]
+              }
+            ]
+          }
+        ],
+        "warnings": [],
+        "no_external_action": true
+      },
+      "no_external_action": true
+    }
+  },
+  "passed": true,
+  "no_server_started": true,
+  "no_port_opened": true,
+  "no_real_client_config_mutation": true,
+  "external_action_allowed": false,
+  "no_external_action": true
+}
