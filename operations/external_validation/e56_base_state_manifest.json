@@ -1,0 +1,44 @@
+{
+  "artifact_id": "e56_base_state_manifest",
+  "generated_at": "2026-05-06T15:10:41.039868+00:00",
+  "expected_bridge_base": "9efad42401ecbe7ad9d6f3c8deb6e8a096e7a6e4",
+  "repos": {
+    "bridge_labs": {
+      "path": "/private/tmp/e56_bridge_labs_validation_1778079781",
+      "head": "9efad42401ecbe7ad9d6f3c8deb6e8a096e7a6e4",
+      "branch": "HEAD",
+      "status_short": "M office/mission_command/e46b_ceo_brain_adapter.py\n?? office/mission_command/e56_counterfactual_internal_action_selector.py\n?? office/mission_command/e56_gov_mcp_validation_harness.py\n?? office/mission_command/e56_internal_company_loop_l5_readiness_gate.py\n?? office/mission_command/e56_internal_company_loop_model.py\n?? office/mission_command/e56_internal_cycle_scenario_builder.py\n?? office/mission_command/e56_internal_loop_anti_drift_gate.py\n?? office/mission_command/e56_internal_loop_authorization.py\n?? office/mission_command/e56_internal_loop_behavior_queue.py\n?? office/mission_command/e56_internal_loop_capability_binding_gate.py\n?? office/mission_command/e56_internal_loop_dry_run_executor.py\n?? office/mission_command/e56_internal_loop_evidence_writeback.py\n?? office/mission_command/e56_internal_loop_maturity_diagnosis.py\n?? office/mission_command/e56_internal_loop_readback_smoke.py\n?? office/mission_command/e56_internal_loop_self_evaluation.py\n?? office/mission_command/e56_y_star_gov_validation_runner.py\n?? tests/office/test_e56_counterfactual_internal_action_selector.py\n?? tests/office/test_e56_gov_mcp_validation_harness.py\n?? tests/office/test_e56_internal_company_loop_l5_readiness_gate.py\n?? tests/office/test_e56_internal_company_loop_model.py\n?? tests/office/test_e56_internal_cycle_scenario_builder.py\n?? tests/office/test_e56_internal_loop_anti_drift_gate.py\n?? tests/office/test_e56_internal_loop_authorization.py\n?? tests/office/test_e56_internal_loop_behavior_queue.py\n?? tests/office/test_e56_internal_loop_capability_binding_gate.py\n?? tests/office/test_e56_internal_loop_dry_run_executor.py\n?? tests/office/test_e56_internal_loop_evidence_writeback.py\n?? tests/office/test_e56_internal_loop_maturity_diagnosis.py\n?? tests/office/test_e56_internal_loop_readback_smoke.py\n?? tests/office/test_e56_internal_loop_self_evaluation.py\n?? tests/office/test_e56_y_star_gov_validation_runner.py",
+      "clean": false,
+      "read_only": false
+    },
+    "Y_star_gov": {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "head": "b0d9aa8b1badd1180127a2f79f73ceed48e16451",
+      "branch": "backflow/company-runtime-domain-pack",
+      "status_short": "",
+      "clean": true,
+      "read_only": true
+    },
+    "gov_mcp": {
+      "path": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+      "head": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+      "branch": "backflow/company-runtime-tools",
+      "status_short": "",
+      "clean": true,
+      "read_only": true
+    },
+    "K9Audit": {
+      "path": "/Users/haotianliu/.openclaw/workspace/K9Audit",
+      "head": "37911e18ce4425470e3f745b30d155c43d76ff55",
+      "branch": "main",
+      "status_short": "",
+      "clean": true,
+      "read_only": true
+    }
+  },
+  "ports_7920_7930_clear": true,
+  "gov_mcp_process_running": false,
+  "no_e56_leftovers_before_generation": true,
+  "external_action_allowed": false,
+  "no_external_action": true
+}

@@ -1,0 +1,15 @@
+{
+  "artifact_id": "e56_ceo_kg_read_model_update",
+  "nodes_added": [
+    "e56_internal_company_loop",
+    "e56_internal_self_test_action",
+    "e56_internal_loop_evidence",
+    "E57_post_L5_money_route_retest"
+  ],
+  "cycle_id": "e56_internal_company_operating_cycle_20260506T000001Z",
+  "selected_action": "run_internal_operating_loop_self_test",
+  "selected_next_milestone": "E57_post_L5_money_route_retest",
+  "owner_decision_status": "pending_owner_decision",
+  "external_action_allowed": false,
+  "no_external_action": true
+}

@@ -1,0 +1,90 @@
+{
+  "artifact_id": "e56_internal_company_loop_model",
+  "model_status": "valid",
+  "cycle_id": "e56_internal_company_operating_cycle_20260506T000001Z",
+  "current_state": {
+    "ceo_brain_l5_status": "ceo_brain_l5_cognitive_center_ready",
+    "behavior_center_l5_status": "behavior_control_center_l5_ready",
+    "owner_decision_status": "pending_owner_decision",
+    "risk_gate_status": "blocked_pending_owner_decision",
+    "external_action_allowed": false,
+    "proof_packet_status": "owner_reviewable_only",
+    "real_mcp_transport_claimed": false,
+    "customer_validation_claimed": false,
+    "paid_signal_claimed": false
+  },
+  "stages": [
+    {
+      "stage_id": "load_ceo_brain_state",
+      "required_input": "E54 CEO brain L5 state",
+      "required_output": "current state summary"
+    },
+    {
+      "stage_id": "interpret_mission_and_current_state",
+      "required_input": "owner directive plus current state",
+      "required_output": "internal loop task interpretation"
+    },
+    {
+      "stage_id": "generate_candidate_next_actions",
+      "required_input": "current blockers and no-go boundaries",
+      "required_output": "candidate internal/external actions"
+    },
+    {
+      "stage_id": "run_counterfactual_comparison",
+      "required_input": "candidate actions",
+      "required_output": "selected internal self-test action and nearest alternative"
+    },
+    {
+      "stage_id": "enqueue_selected_internal_action",
+      "required_input": "selected action",
+      "required_output": "behavior queue item"
+    },
+    {
+      "stage_id": "authorize_action",
+      "required_input": "queue item",
+      "required_output": "dry-run-only authorization"
+    },
+    {
+      "stage_id": "dry_run_execute_internal_action",
+      "required_input": "authorization",
+      "required_output": "internal dry-run trace"
+    },
+    {
+      "stage_id": "capture_evidence",
+      "required_input": "dry-run trace",
+      "required_output": "evidence packet"
+    },
+    {
+      "stage_id": "write_KG_CZL_CIEU",
+      "required_input": "evidence packet",
+      "required_output": "KG/CZL/CIEU artifacts"
+    },
+    {
+      "stage_id": "readback_into_CEO_brain",
+      "required_input": "brain update",
+      "required_output": "CEO brain readback smoke"
+    },
+    {
+      "stage_id": "self_evaluate",
+      "required_input": "cycle evidence and readback",
+      "required_output": "self-evaluation"
+    },
+    {
+      "stage_id": "propose_next_milestone",
+      "required_input": "self-evaluation",
+      "required_output": "E57_post_L5_money_route_retest"
+    }
+  ],
+  "rules": [
+    "external actions must be blocked",
+    "pending_owner_decision is not approval",
+    "CEO brain cannot execute directly",
+    "action must pass authorization before dry-run execution",
+    "every executed dry-run action must produce evidence",
+    "evidence must be read back by CEO brain",
+    "cycle must produce next milestone proposal"
+  ],
+  "external_action_allowed": false,
+  "owner_decision_status": "pending_owner_decision",
+  "no_external_action": true
+}

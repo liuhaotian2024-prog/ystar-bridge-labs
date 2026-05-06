@@ -1,0 +1,74 @@
+{
+  "artifact_id": "e56_internal_cycle_scenario",
+  "cycle_id": "e56_internal_company_operating_cycle_20260506T000001Z",
+  "current_state": {
+    "ceo_brain_l5_status": "ceo_brain_l5_cognitive_center_ready",
+    "behavior_center_l5_status": "behavior_control_center_l5_ready",
+    "owner_decision_status": "pending_owner_decision",
+    "risk_gate_status": "blocked_pending_owner_decision",
+    "external_action_allowed": false,
+    "proof_packet_status": "owner_reviewable_only",
+    "real_mcp_transport_claimed": false,
+    "customer_validation_claimed": false,
+    "paid_signal_claimed": false
+  },
+  "candidate_actions": [
+    {
+      "action_id": "run_internal_operating_loop_self_test",
+      "action_type": "internal_validation",
+      "intent": "prove the internal company loop before any money-route retest",
+      "disposition": "select",
+      "owner_approval_required": false,
+      "external_action_allowed": false,
+      "pending_owner_decision_not_approval": true,
+      "evidence_required": true
+    },
+    {
+      "action_id": "prepare_E57_post_L5_money_route_retest",
+      "action_type": "internal_analysis",
+      "intent": "prepare the post-L5 money route retest after E56 proof passes",
+      "disposition": "defer",
+      "owner_approval_required": false,
+      "external_action_allowed": false,
+      "pending_owner_decision_not_approval": true,
+      "evidence_required": true
+    },
+    {
+      "action_id": "wait_for_owner_decision",
+      "action_type": "internal_analysis",
+      "intent": "safe but passive; does not prove operating loop readiness",
+      "disposition": "defer",
+      "owner_approval_required": false,
+      "external_action_allowed": false,
+      "pending_owner_decision_not_approval": true,
+      "evidence_required": true
+    },
+    {
+      "action_id": "close_real_mcp_transport_gate",
+      "action_type": "internal_validation",
+      "intent": "important but not required to prove internal company loop L5",
+      "disposition": "defer",
+      "owner_approval_required": false,
+      "external_action_allowed": false,
+      "pending_owner_decision_not_approval": true,
+      "evidence_required": true
+    },
+    {
+      "action_id": "execute_external_first_user_review_now",
+      "action_type": "external_contact",
+      "intent": "owner decision remains pending; external action blocked",
+      "disposition": "deny",
+      "owner_approval_required": true,
+      "external_action_allowed": false,
+      "pending_owner_decision_not_approval": true,
+      "evidence_required": true
+    }
+  ],
+  "selected_action": "run_internal_operating_loop_self_test",
+  "nearest_alternative": "prepare_E57_post_L5_money_route_retest",
+  "external_first_user_review_action": "denied",
+  "owner_decision_status": "pending_owner_decision",
+  "external_action_allowed": false,
+  "next_milestone_if_cycle_passes": "E57_post_L5_money_route_retest",
+  "no_external_action": true
+}

@@ -1,0 +1,36 @@
+{
+  "artifact_id": "e56_internal_loop_readback_smoke_result",
+  "state": {
+    "internal_company_loop_status": "internal_company_operating_loop_l5_ready",
+    "cycle_id": "e56_internal_company_operating_cycle_20260506T000001Z",
+    "selected_action": "run_internal_operating_loop_self_test",
+    "authorization_result": "passed",
+    "dry_run_result": "passed",
+    "external_action_denied": true,
+    "KG_update": "operations/knowledge_graph/e56_ceo_kg_read_model_update.json",
+    "CZL_closure": "operations/external_validation/e56_czl_closure.json",
+    "CIEU_residual": "operations/external_validation/e56_cieu_residual_summary.json",
+    "next_recommended_milestone": "E57_post_L5_money_route_retest",
+    "owner_decision_status": "pending_owner_decision",
+    "external_action_allowed": false,
+    "no_external_action": true
+  },
+  "ceo_brain_context_excerpt": {
+    "current_internal_company_loop_status": "internal_company_operating_loop_l5_ready",
+    "current_internal_loop_selected_action": "run_internal_operating_loop_self_test",
+    "current_internal_loop_next_milestone": "E57_post_L5_money_route_retest"
+  },
+  "checks": {
+    "ceo_brain_sees_e56_internal_loop_cycle": true,
+    "ceo_brain_sees_selected_action": true,
+    "ceo_brain_sees_authorization_result": true,
+    "ceo_brain_sees_dry_run_result": true,
+    "ceo_brain_sees_external_action_denied": true,
+    "ceo_brain_sees_KG_CZL_CIEU_evidence": true,
+    "ceo_brain_sees_next_milestone_proposal": true,
+    "canonical_runtime_can_see_internal_loop_state": true
+  },
+  "passes": true,
+  "external_action_allowed": false,
+  "no_external_action": true
+}

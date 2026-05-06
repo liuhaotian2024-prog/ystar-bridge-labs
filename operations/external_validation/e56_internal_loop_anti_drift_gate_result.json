@@ -1,0 +1,561 @@
+{
+  "artifact_id": "e56_internal_loop_anti_drift_gate_result",
+  "manifest": {
+    "artifact_id": "e56_internal_loop_runtime_linkage_manifest",
+    "artifacts": [
+      {
+        "artifact_id": "e56_internal_loop_model",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e56_internal_company_loop_model.json",
+        "artifact_type": "runtime_module",
+        "milestone_origin": "E56",
+        "writer": "E56 internal company loop",
+        "readers": [
+          "e56_readiness_gate"
+        ],
+        "next_runtime_readers": [
+          "E57_post_L5_money_route_retest"
+        ],
+        "tests": [
+          "tests/office/test_e56_internal_loop_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E56 internal loop manifest"
+      },
+      {
+        "artifact_id": "e56_scenario",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e56_internal_cycle_scenario.json",
+        "artifact_type": "decision_packet",
+        "milestone_origin": "E56",
+        "writer": "E56 internal company loop",
+        "readers": [
+          "e56_selector"
+        ],
+        "next_runtime_readers": [
+          "E57_post_L5_money_route_retest"
+        ],
+        "tests": [
+          "tests/office/test_e56_internal_loop_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E56 internal loop manifest"
+      },
+      {
+        "artifact_id": "e56_selected_route",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e56_counterfactual_internal_action_selection.json",
+        "artifact_type": "selected_route",
+        "milestone_origin": "E56",
+        "writer": "E56 internal company loop",
+        "readers": [
+          "e56_queue",
+          "e56_readiness_gate"
+        ],
+        "next_runtime_readers": [
+          "E57_post_L5_money_route_retest"
+        ],
+        "tests": [
+          "tests/office/test_e56_internal_loop_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E56 internal loop manifest"
+      },
+      {
+        "artifact_id": "e56_behavior_queue",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e56_internal_loop_behavior_queue.json",
+        "artifact_type": "decision_packet",
+        "milestone_origin": "E56",
+        "writer": "E56 internal company loop",
+        "readers": [
+          "e56_authorization"
+        ],
+        "next_runtime_readers": [
+          "E57_post_L5_money_route_retest"
+        ],
+        "tests": [
+          "tests/office/test_e56_internal_loop_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E56 internal loop manifest"
+      },
+      {
+        "artifact_id": "e56_authorization",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e56_internal_loop_authorization_result.json",
+        "artifact_type": "boundary",
+        "milestone_origin": "E56",
+        "writer": "E56 internal company loop",
+        "readers": [
+          "e56_dry_run_executor"
+        ],
+        "next_runtime_readers": [
+          "E57_post_L5_money_route_retest"
+        ],
+        "tests": [
+          "tests/office/test_e56_internal_loop_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E56 internal loop manifest"
+      },
+      {
+        "artifact_id": "e56_dry_run_result",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e56_internal_loop_dry_run_result.json",
+        "artifact_type": "runtime_module",
+        "milestone_origin": "E56",
+        "writer": "E56 internal company loop",
+        "readers": [
+          "e56_evidence_writeback"
+        ],
+        "next_runtime_readers": [
+          "E57_post_L5_money_route_retest"
+        ],
+        "tests": [
+          "tests/office/test_e56_internal_loop_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E56 internal loop manifest"
+      },
+      {
+        "artifact_id": "e56_evidence_packet",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e56_internal_loop_evidence_packet.json",
+        "artifact_type": "evidence_receipt",
+        "milestone_origin": "E56",
+        "writer": "E56 internal company loop",
+        "readers": [
+          "e56_readback_smoke"
+        ],
+        "next_runtime_readers": [
+          "E57_post_L5_money_route_retest"
+        ],
+        "tests": [
+          "tests/office/test_e56_internal_loop_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E56 internal loop manifest"
+      },
+      {
+        "artifact_id": "e56_brain_update",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e56_ceo_brain_internal_loop_update.json",
+        "artifact_type": "brain_update",
+        "milestone_origin": "E56",
+        "writer": "E56 internal company loop",
+        "readers": [
+          "e46b_ceo_brain_adapter",
+          "e56_readback_smoke"
+        ],
+        "next_runtime_readers": [
+          "E57_post_L5_money_route_retest"
+        ],
+        "tests": [
+          "tests/office/test_e56_internal_loop_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E56 internal loop manifest"
+      },
+      {
+        "artifact_id": "e56_blocker_state",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e56_cieu_residual_summary.json",
+        "artifact_type": "blocker_state",
+        "milestone_origin": "E56",
+        "writer": "E56 internal company loop",
+        "readers": [
+          "e56_readiness_gate"
+        ],
+        "next_runtime_readers": [
+          "E57_post_L5_money_route_retest"
+        ],
+        "tests": [
+          "tests/office/test_e56_internal_loop_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E56 internal loop manifest"
+      },
+      {
+        "artifact_id": "e56_no_go_boundaries",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e56_internal_loop_authorization_result.json",
+        "artifact_type": "no_go_boundary",
+        "milestone_origin": "E56",
+        "writer": "E56 internal company loop",
+        "readers": [
+          "e56_authorization",
+          "e56_readiness_gate"
+        ],
+        "next_runtime_readers": [
+          "E57_post_L5_money_route_retest"
+        ],
+        "tests": [
+          "tests/office/test_e56_internal_loop_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E56 internal loop manifest"
+      },
+      {
+        "artifact_id": "e56_kg_update",
+        "repo": "bridge-labs",
+        "path": "operations/knowledge_graph/e56_ceo_kg_read_model_update.json",
+        "artifact_type": "kg_update",
+        "milestone_origin": "E56",
+        "writer": "E56 internal company loop",
+        "readers": [
+          "e56_readback_smoke"
+        ],
+        "next_runtime_readers": [
+          "E57_post_L5_money_route_retest"
+        ],
+        "tests": [
+          "tests/office/test_e56_internal_loop_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P1",
+        "evidence_basis": "E56 internal loop manifest"
+      },
+      {
+        "artifact_id": "e56_czl_closure",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e56_czl_closure.json",
+        "artifact_type": "czl_closure",
+        "milestone_origin": "E56",
+        "writer": "E56 internal company loop",
+        "readers": [
+          "e56_readiness_gate"
+        ],
+        "next_runtime_readers": [
+          "E57_post_L5_money_route_retest"
+        ],
+        "tests": [
+          "tests/office/test_e56_internal_loop_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P1",
+        "evidence_basis": "E56 internal loop manifest"
+      },
+      {
+        "artifact_id": "e56_cieu_residual",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e56_cieu_residual_summary.json",
+        "artifact_type": "cieu_residual",
+        "milestone_origin": "E56",
+        "writer": "E56 internal company loop",
+        "readers": [
+          "e56_readiness_gate"
+        ],
+        "next_runtime_readers": [
+          "E57_post_L5_money_route_retest"
+        ],
+        "tests": [
+          "tests/office/test_e56_internal_loop_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P1",
+        "evidence_basis": "E56 internal loop manifest"
+      },
+      {
+        "artifact_id": "e56_next_milestone",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e56_internal_company_loop_l5_readiness_gate_result.json",
+        "artifact_type": "next_milestone",
+        "milestone_origin": "E56",
+        "writer": "E56 internal company loop",
+        "readers": [
+          "future_E57_runtime"
+        ],
+        "next_runtime_readers": [
+          "E57_post_L5_money_route_retest"
+        ],
+        "tests": [
+          "tests/office/test_e56_internal_loop_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E56 internal loop manifest"
+      }
+    ],
+    "runtime_linkage_graph": {
+      "graph_id": "e56_internal_company_loop_runtime_linkage_graph",
+      "nodes": [
+        {
+          "node_id": "e56_internal_loop_model",
+          "node_type": "runtime_module"
+        },
+        {
+          "node_id": "e56_scenario",
+          "node_type": "decision_packet"
+        },
+        {
+          "node_id": "e56_selected_route",
+          "node_type": "selected_route"
+        },
+        {
+          "node_id": "e56_behavior_queue",
+          "node_type": "decision_packet"
+        },
+        {
+          "node_id": "e56_authorization",
+          "node_type": "boundary"
+        },
+        {
+          "node_id": "e56_dry_run_result",
+          "node_type": "runtime_module"
+        },
+        {
+          "node_id": "e56_evidence_packet",
+          "node_type": "evidence_receipt"
+        },
+        {
+          "node_id": "e56_brain_update",
+          "node_type": "brain_update"
+        },
+        {
+          "node_id": "e56_blocker_state",
+          "node_type": "blocker_state"
+        },
+        {
+          "node_id": "e56_no_go_boundaries",
+          "node_type": "no_go_boundary"
+        },
+        {
+          "node_id": "e56_kg_update",
+          "node_type": "kg_update"
+        },
+        {
+          "node_id": "e56_czl_closure",
+          "node_type": "czl_closure"
+        },
+        {
+          "node_id": "e56_cieu_residual",
+          "node_type": "cieu_residual"
+        },
+        {
+          "node_id": "e56_next_milestone",
+          "node_type": "next_milestone"
+        }
+      ],
+      "edges": [
+        {
+          "from": "E56 internal company loop",
+          "to": "e56_internal_loop_model",
+          "edge_type": "writes"
+        },
+        {
+          "from": "e56_scenario",
+          "to": "e56_selected_route",
+          "edge_type": "reads"
+        },
+        {
+          "from": "e56_selected_route",
+          "to": "e56_behavior_queue",
+          "edge_type": "reads"
+        },
+        {
+          "from": "e56_behavior_queue",
+          "to": "e56_authorization",
+          "edge_type": "reads"
+        },
+        {
+          "from": "e56_authorization",
+          "to": "e56_dry_run_result",
+          "edge_type": "reads"
+        },
+        {
+          "from": "e56_dry_run_result",
+          "to": "e56_evidence_packet",
+          "edge_type": "writes"
+        },
+        {
+          "from": "e56_evidence_packet",
+          "to": "e56_brain_update",
+          "edge_type": "writes"
+        },
+        {
+          "from": "e56_brain_update",
+          "to": "e46b_ceo_brain_adapter",
+          "edge_type": "reads"
+        },
+        {
+          "from": "e56_next_milestone",
+          "to": "E57_post_L5_money_route_retest",
+          "edge_type": "consumes_next"
+        }
+      ],
+      "generated_at": "2026-05-06T00:00:00Z",
+      "subject_system": "E56 internal company operating loop L5",
+      "validation_context": {
+        "cycle_id": "e56_internal_company_operating_cycle_20260506T000001Z"
+      }
+    },
+    "centerline_contract": {
+      "contract_id": "e56_internal_loop_centerline_contract",
+      "stages": [
+        {
+          "stage_id": "selection",
+          "required_input": "candidate actions",
+          "required_output": "run_internal_operating_loop_self_test",
+          "required_writer": "E56 selector",
+          "required_reader": "E56 queue",
+          "required_test": "test_e56_counterfactual_internal_action_selector",
+          "failure_class_if_missing": "P0",
+          "no_go_if_missing": true
+        },
+        {
+          "stage_id": "authorization",
+          "required_input": "queued selected action",
+          "required_output": "dry_run_only authorization",
+          "required_writer": "E56 authorization",
+          "required_reader": "E56 dry-run executor",
+          "required_test": "test_e56_internal_loop_authorization",
+          "failure_class_if_missing": "P0",
+          "no_go_if_missing": true
+        },
+        {
+          "stage_id": "evidence_readback",
+          "required_input": "dry-run result",
+          "required_output": "KG/CZL/CIEU/brain readback",
+          "required_writer": "E56 evidence writeback",
+          "required_reader": "CEO brain",
+          "required_test": "test_e56_internal_loop_readback_smoke",
+          "failure_class_if_missing": "P0",
+          "no_go_if_missing": true
+        }
+      ],
+      "owner_approval_boundaries": [
+        "external_contact",
+        "publication",
+        "payment"
+      ],
+      "governance_boundaries": [
+        "Y-star-gov",
+        "gov-mcp"
+      ],
+      "audit_boundaries": [
+        "KG",
+        "CZL",
+        "CIEU"
+      ],
+      "runtime_roles": {
+        "CEO brain": "cognitive source only",
+        "behavior center": "authorization and dry-run control",
+        "internal loop": "dry-run evidence producer"
+      }
+    },
+    "readback_proof": {
+      "proof_id": "e56_internal_loop_readback_proof",
+      "written_artifacts": [
+        "e56_internal_loop_model",
+        "e56_scenario",
+        "e56_selected_route",
+        "e56_behavior_queue",
+        "e56_authorization",
+        "e56_dry_run_result",
+        "e56_evidence_packet",
+        "e56_brain_update",
+        "e56_blocker_state",
+        "e56_no_go_boundaries",
+        "e56_kg_update",
+        "e56_czl_closure",
+        "e56_cieu_residual",
+        "e56_next_milestone"
+      ],
+      "readback_observations": [
+        {
+          "reader": "e56_internal_loop_readback_smoke",
+          "artifact_id": "e56_brain_update"
+        }
+      ],
+      "expected_current_state": {
+        "internal_company_loop_status": "internal_company_operating_loop_l5_ready",
+        "selected_action": "run_internal_operating_loop_self_test",
+        "next_milestone": "E57_post_L5_money_route_retest",
+        "external_action_allowed": false
+      },
+      "observed_current_state": {
+        "internal_company_loop_status": "internal_company_operating_loop_l5_ready",
+        "selected_action": "run_internal_operating_loop_self_test",
+        "next_milestone": "E57_post_L5_money_route_retest",
+        "external_action_allowed": false
+      },
+      "missing_reads": [],
+      "stale_reads": [],
+      "passed": true
+    },
+    "governance_boundary": {
+      "preserved": true
+    },
+    "no_external_action": true
+  },
+  "validation": {
+    "runtime_linkage_graph": {
+      "valid": true,
+      "graph_id": "e56_internal_company_loop_runtime_linkage_graph",
+      "node_count": 14,
+      "edge_count": 9,
+      "failures": []
+    },
+    "centerline_contract": {
+      "valid": true,
+      "contract_id": "e56_internal_loop_centerline_contract",
+      "stage_count": 3,
+      "failures": []
+    },
+    "readback_proof": {
+      "valid": true,
+      "proof_id": "e56_internal_loop_readback_proof",
+      "failures": []
+    },
+    "anti_drift_gate": {
+      "gate_id": "e56_internal_loop_anti_drift_gate",
+      "centerline_contract_loaded": true,
+      "runtime_linkage_graph_valid": true,
+      "selected_route_has_writer": true,
+      "selected_route_has_reader": true,
+      "selected_route_has_readback_test": true,
+      "next_milestone_has_writer": true,
+      "next_milestone_has_reader": true,
+      "blocker_state_has_writer": true,
+      "blocker_state_has_reader": true,
+      "brain_current_state_loaded": true,
+      "kg_update_linked": true,
+      "czl_closure_linked": true,
+      "cieu_residual_linked": true,
+      "no_report_only_p0_closure": true,
+      "no_stale_next_milestone": true,
+      "no_go_boundaries_loaded": true,
+      "governance_boundary_preserved": true,
+      "status": "anti_drift_gate_passed",
+      "failures": [],
+      "warnings": [],
+      "validated_artifact_count": 14,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "allowed": true,
+      "no_external_action": true
+    }
+  },
+  "checks": {
+    "runtime_linkage_valid": true,
+    "readback_proof_valid": true,
+    "no_p0_written_not_read": true,
+    "no_stale_route_consumed_as_current": true,
+    "KG_CZL_CIEU_linked": true,
+    "external_action_denied": true
+  },
+  "passed": true,
+  "external_action_allowed": false,
+  "no_external_action": true
+}

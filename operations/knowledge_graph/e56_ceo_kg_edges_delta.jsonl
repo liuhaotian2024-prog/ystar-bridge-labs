@@ -1,0 +1,4 @@
+{"from": "CEO_brain_L5", "to": "run_internal_operating_loop_self_test", "edge": "proposes"}
+{"from": "run_internal_operating_loop_self_test", "to": "E55_behavior_control_center", "edge": "authorized_by"}
+{"from": "E55_behavior_control_center", "to": "e56_internal_loop_evidence", "edge": "dry_run_evidenced"}
+{"from": "e56_internal_loop_evidence", "to": "CEO_brain", "edge": "readback"}

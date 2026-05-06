@@ -1,0 +1,78 @@
+{
+  "artifact_id": "e56_internal_loop_authorization_result",
+  "authorization_status": "passed",
+  "selected_action": "run_internal_operating_loop_self_test",
+  "selected_action_authorization": {
+    "action_id": "run_internal_operating_loop_self_test",
+    "authorization_status": "dry_run_only",
+    "reason": "internal action may run only as dry-run with evidence capture",
+    "Y_star_gov_gate_result": {
+      "status": "ALLOW",
+      "allowed": true,
+      "read_only_validator": true
+    },
+    "gov_mcp_gate_result": {
+      "status": "ALLOW",
+      "allowed": true,
+      "fake_fastmcp_harness": true
+    },
+    "owner_approval_status": "pending_owner_decision",
+    "no_go_boundary_result": {
+      "external_action_allowed": false,
+      "pending_owner_decision_not_approval": true
+    },
+    "capability_binding_result": {
+      "status": "ALLOW",
+      "allowed": true
+    },
+    "anti_drift_result": {
+      "status": "ALLOW",
+      "allowed": true
+    },
+    "external_action_allowed": false,
+    "no_external_action": true
+  },
+  "external_action_authorization": {
+    "action_id": "execute_external_first_user_review_now",
+    "authorization_status": "deny",
+    "reason": "external_contact denied while owner decision is pending",
+    "Y_star_gov_gate_result": {
+      "status": "ALLOW",
+      "allowed": true,
+      "read_only_validator": true
+    },
+    "gov_mcp_gate_result": {
+      "status": "ALLOW",
+      "allowed": true,
+      "fake_fastmcp_harness": true
+    },
+    "owner_approval_status": "pending_owner_decision",
+    "no_go_boundary_result": {
+      "external_action_allowed": false,
+      "pending_owner_decision_not_approval": true
+    },
+    "capability_binding_result": {
+      "status": "ALLOW",
+      "allowed": true
+    },
+    "anti_drift_result": {
+      "status": "ALLOW",
+      "allowed": true
+    },
+    "external_action_allowed": false,
+    "no_external_action": true
+  },
+  "checks": {
+    "selected_internal_action_queued": true,
+    "selected_action_authorized_dry_run": true,
+    "external_first_user_review_denied": true,
+    "pending_owner_decision_remains_pending": true,
+    "no_external_action_allowed": true,
+    "action_has_evidence_path": true,
+    "requires_KG_CZL_CIEU_writeback": true,
+    "ceo_brain_is_source_not_executor": true
+  },
+  "external_action_allowed": false,
+  "owner_decision_status": "pending_owner_decision",
+  "no_external_action": true
+}

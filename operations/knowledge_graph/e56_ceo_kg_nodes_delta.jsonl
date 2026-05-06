@@ -1,0 +1,4 @@
+{"node_id": "e56_internal_company_loop", "node_type": "internal_company_cycle", "status": "L5_ready"}
+{"node_id": "run_internal_operating_loop_self_test", "node_type": "internal_action", "status": "dry_run_completed"}
+{"node_id": "e56_external_first_user_review_now", "node_type": "external_action", "status": "denied_pending_owner_decision"}
+{"node_id": "E57_post_L5_money_route_retest", "node_type": "next_milestone", "status": "recommended"}

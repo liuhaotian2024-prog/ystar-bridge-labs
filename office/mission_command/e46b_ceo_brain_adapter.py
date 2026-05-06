@@ -296,6 +296,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e55_behavior_center_state = {'behavior_center_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
     try:
+        from office.mission_command.e56_internal_loop_readback_smoke import load_internal_loop_state_for_brain
+        e56_internal_company_loop_state = load_internal_loop_state_for_brain()
+    except Exception as exc:
+        e56_internal_company_loop_state = {'internal_company_loop_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -345,6 +350,13 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_behavior_authorization_status": e55_behavior_center_state.get("authorization_gate_status"),
         "current_behavior_external_action_allowed": e55_behavior_center_state.get("external_action_allowed"),
         "current_behavior_next_milestone": e55_behavior_center_state.get("next_recommended_milestone"),
+        "latest_internal_company_loop_state": e56_internal_company_loop_state,
+        "current_internal_company_loop_status": e56_internal_company_loop_state.get("internal_company_loop_status"),
+        "current_internal_loop_selected_action": e56_internal_company_loop_state.get("selected_action"),
+        "current_internal_loop_authorization_result": e56_internal_company_loop_state.get("authorization_result"),
+        "current_internal_loop_dry_run_result": e56_internal_company_loop_state.get("dry_run_result"),
+        "current_internal_loop_external_action_allowed": e56_internal_company_loop_state.get("external_action_allowed"),
+        "current_internal_loop_next_milestone": e56_internal_company_loop_state.get("next_recommended_milestone"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

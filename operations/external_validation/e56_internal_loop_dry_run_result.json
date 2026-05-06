@@ -1,0 +1,95 @@
+{
+  "artifact_id": "e56_internal_loop_dry_run_result",
+  "cycle_id": "e56_internal_company_operating_cycle_20260506T000001Z",
+  "selected_action": "run_internal_operating_loop_self_test",
+  "execution_mode": "dry_run",
+  "executor_status": "passed",
+  "stage_trace": [
+    {
+      "order": 1,
+      "stage_id": "load_ceo_brain_state",
+      "status": "dry_run_completed",
+      "external_action": false
+    },
+    {
+      "order": 2,
+      "stage_id": "interpret_mission_and_current_state",
+      "status": "dry_run_completed",
+      "external_action": false
+    },
+    {
+      "order": 3,
+      "stage_id": "generate_candidate_next_actions",
+      "status": "dry_run_completed",
+      "external_action": false
+    },
+    {
+      "order": 4,
+      "stage_id": "run_counterfactual_comparison",
+      "status": "dry_run_completed",
+      "external_action": false
+    },
+    {
+      "order": 5,
+      "stage_id": "enqueue_selected_internal_action",
+      "status": "dry_run_completed",
+      "external_action": false
+    },
+    {
+      "order": 6,
+      "stage_id": "authorize_action",
+      "status": "dry_run_completed",
+      "external_action": false
+    },
+    {
+      "order": 7,
+      "stage_id": "dry_run_execute_internal_action",
+      "status": "dry_run_completed",
+      "external_action": false
+    },
+    {
+      "order": 8,
+      "stage_id": "capture_evidence",
+      "status": "dry_run_completed",
+      "external_action": false
+    },
+    {
+      "order": 9,
+      "stage_id": "write_KG_CZL_CIEU",
+      "status": "dry_run_completed",
+      "external_action": false
+    },
+    {
+      "order": 10,
+      "stage_id": "readback_into_CEO_brain",
+      "status": "dry_run_completed",
+      "external_action": false
+    },
+    {
+      "order": 11,
+      "stage_id": "self_evaluate",
+      "status": "dry_run_completed",
+      "external_action": false
+    },
+    {
+      "order": 12,
+      "stage_id": "propose_next_milestone",
+      "status": "dry_run_completed",
+      "external_action": false
+    }
+  ],
+  "evidence_packet_seed": "operations/external_validation/e56_internal_loop_evidence_packet.json",
+  "self_evaluation_seed": "operations/external_validation/e56_internal_loop_self_evaluation.json",
+  "next_milestone_proposal_seed": "E57_post_L5_money_route_retest",
+  "server_started": false,
+  "network_used": false,
+  "human_contacted": false,
+  "published": false,
+  "external_config_mutated": false,
+  "secrets_used": false,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false,
+  "real_mcp_transport_claimed": false,
+  "external_action_allowed": false,
+  "no_external_action": true
+}
