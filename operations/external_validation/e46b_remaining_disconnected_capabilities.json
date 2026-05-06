@@ -1,0 +1,5014 @@
+{
+  "artifact_id": "e46b_remaining_disconnected_capabilities",
+  "no_external_action": true,
+  "rows": [
+    {
+      "class": "static_artifact",
+      "path": ".claude/agents/cfo.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": ".claude/agents/cso.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": ".claude/tasks/.completed/README.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": ".claude/tasks/W16_leo_session_omission.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": ".claude/tasks/W16_ryan_hook_chaos_others.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": ".claude/tasks/cto-20260413-phase3-architecture-skeleton.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": ".claude/tasks/cto-m2-ryan-l6-lesson-capture.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": ".claude/tasks/czl-165-hook-format-fix.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": ".claude/tasks/eng-platform-a025-p2-self-heal-whitelist.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/blog/001-introducing-ystar-gov.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/cmo_k9audit_content_ideas.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/build/txt/sub_0.txt",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/build/txt/sub_1.txt",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/build/txt/sub_3.txt",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/build/txt/sub_4.txt",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/build/txt/sub_7.txt",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/build/txt/sub_8.txt",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/build/txt/sub_9.txt",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/build/txt/wm.txt",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/episode_001_v3_script_us_standup.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/episode_001_v5_script.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/episode_002_planning_notes.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "closure_learning_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v10/bg_upload.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v10/generate_request.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v10/generate_response.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "content/offended_ai/v10/heygen_pipeline.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v10/portrait_upload.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v3/bg_upload.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v3/gen_image_asset_id.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v3/generate_request.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "content/offended_ai/v3/heygen_pipeline.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v3/portrait_upload.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v4/bg_upload.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v4/generate_request.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v4/generate_response.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "content/offended_ai/v4/heygen_pipeline.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v4/portrait_upload.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v5/bg_upload.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v5/generate_request.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v5/generate_response.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "content/offended_ai/v5/heygen_pipeline.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "content/offended_ai/v5/make_lower_third.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v5/portrait_upload.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "orphaned",
+      "path": "content/offended_ai/v6/apply_rembg.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "governance_kernel_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v6/generate_request.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v6/generate_response.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "content/offended_ai/v6/heygen_pipeline.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "content/offended_ai/v6/make_lower_third.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v6/portrait_upload.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "content/offended_ai/v7/kling_replicate_pipeline.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "governance_kernel_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v8/bg_upload.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v8/generate_request.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v8/generate_response.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "content/offended_ai/v8/heygen_pipeline.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "content/offended_ai/v8/make_lower_third.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v8/portrait_upload.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v9/bg_upload.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v9/generate_request.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v9/generate_response.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "content/offended_ai/v9/heygen_pipeline.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/offended_ai/v9/portrait_upload.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/product/demo_script_60s.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/whitepaper/enterprise_compliance_audit_trails.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "content/x_twitter/10_HIGHLIGHTS.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "finance/cfo_claims_audit.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "finance/cost_analysis_001.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "finance/cost_analysis_002.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "finance/daily_burn.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "finance/expenditure_log.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "finance/expense_tracker.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "finance/financial_forecast_12m.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "finance/financial_health_20260415.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "finance/forecast_q2_2026.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "finance/master_ledger_20260415.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "finance/pricing/discount_authority_matrix.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "finance/pricing/proof_economics.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "governance/ACTIVE_OPERATING_CHARTER.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "governance/agent_id_canonical.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "governance/proposed_rules/feedback_close_stub_trigger_proposed.yaml",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "governance/proposed_rules/feedback_no_clock_out_proposed.yaml",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cases/CASE_002_CFO_fabrication.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cases/CASE_004_directive_subtasks_lost.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/board_decisions_log.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/board_mental_model.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/cases/README.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/cieu_brain_fusion_findings_20260419.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/decision_making.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/feedback/always_running_no_rest.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/README.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/p3_feedback_deployment_planning_1776047936.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/p3_feedback_security_review_1775935433.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/p3_feedback_stakeholder_negotiation_1776037596.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/p3_feedback_system_integration_1776037596.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/p3_meta_1776037596.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/p3_meta_1776047936.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/p3_meta_1776084939.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/p3_meta_1776111802.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/p3_meta_1776115755.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/p3_meta_1776309460.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/p3_meta_1776313341.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/p3_meta_1776367410.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/p3_meta_1776453811.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/p3_meta_1776626611.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/p3_meta_1776713011.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/p3_meta_1776885783.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/p3_meta_1776972211.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/p3_meta_1777058611.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/simulation_1775883470.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/simulation_1776084939.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/simulation_1776306032.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/simulation_1776309460.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/simulation_1776313341.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/simulation_1776367410.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/simulation_1776453811.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/simulation_1776626611.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/simulation_1776713011.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/simulation_1776972211.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/gaps/simulation_1777058611.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/lessons/atomic_task_per_dispatch_2026_04_13.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/organization_building.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/role_definition/README.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/role_definition/task_type_map.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/role_definition/world_class_standard.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/strategy/STRAT-001_governance_moat_vs_bounty_speed_20260416.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/strategy_frameworks.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/theory/architecture_design.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/theory/compliance_audit.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/theory/data_migration.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/theory/deployment_planning.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/theory/performance_optimization.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/theory/security_review.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/theory/stakeholder_negotiation.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/theory/system_integration.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/ceo/theory/team_coordination.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_read_model",
+      "path": "knowledge/ceo/wisdom/WISDOM_INDEX.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "ceo_brain_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_read_model",
+      "path": "knowledge/ceo/wisdom/ceo_learning/crisis_management.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_read_model",
+      "path": "knowledge/ceo/wisdom/ceo_learning/financial_literacy_saas.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_read_model",
+      "path": "knowledge/ceo/wisdom/ceo_learning/talent_organization_culture.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_read_model",
+      "path": "knowledge/ceo/wisdom/dreams/dream_20260419_05_future_vision.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_read_model",
+      "path": "knowledge/ceo/wisdom/meta/aiden_neural_network_subgoals.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_read_model",
+      "path": "knowledge/ceo/wisdom/meta/engineer_culture_design_5_factors.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_read_model",
+      "path": "knowledge/ceo/wisdom/meta/global_workspace_architecture.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_read_model",
+      "path": "knowledge/ceo/wisdom/meta/personal_neural_network_concept.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_read_model",
+      "path": "knowledge/ceo/wisdom/meta/self_as_software.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_read_model",
+      "path": "knowledge/ceo/wisdom/self_knowledge/reactive_default.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_read_model",
+      "path": "knowledge/ceo/wisdom/strategic/risk_cross_domain_bridges.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "ceo_brain_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cfo/cases/README.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cfo/gaps/README.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cfo/gaps/p3_meta_1776335010.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cfo/gaps/p3_meta_1776507870.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cfo/gaps/simulation_1775883344.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cfo/gaps/simulation_1776335010.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cfo/gaps/simulation_1776507870.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cfo/pricing_strategy.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cfo/role_definition/README.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cfo/role_definition/gap_map.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cfo/role_definition/task_type_map.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cfo/saas_metrics.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cfo/theory/pricing_strategy.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cfo/unit_economics.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/active_learning_plan.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/active_task.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/cases/README.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/developer_marketing.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/gaps/README.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/gaps/comedy_research_gaps_20260410.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/gaps/p3_meta_1776302624.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/gaps/p3_meta_1776648211.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/gaps/p3_meta_1776669811.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/gaps/p3_meta_1776734611.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/gaps/p3_meta_1776821010.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/gaps/p3_meta_1776842610.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/gaps/p3_meta_1776907410.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/gaps/p3_meta_1776993811.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/gaps/p3_meta_1777016455.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/gaps/p3_meta_1777080210.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/gaps/simulation_1776648211.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/gaps/simulation_1776669811.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/gaps/simulation_1776734611.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/gaps/simulation_1776821010.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/gaps/simulation_1776842610.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/gaps/simulation_1776907410.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/gaps/simulation_1776993811.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/gaps/simulation_1777016455.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/gaps/simulation_1777080210.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/personas/offended_ai_charter.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/platform_research_jinjin_2026_03_30.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/real_world_operations_research.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/role_definition/README.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/role_definition/gap_map.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/role_definition/task_type_map.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/theory/case_studies_talk_shows.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/theory/comedy_and_satire.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/theory/compliance_audit.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/theory/deployment_planning.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/theory/late_night_monologue_60s_template.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "closure_learning_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/theory/system_integration.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cmo/theory/video_generation_tooling_research_20260413.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/cases/README.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/developer_led_growth.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/gaps/README.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/gaps/p3_meta_1776350714.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/gaps/p3_meta_1776350806.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/gaps/p3_meta_1776350869.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/gaps/p3_meta_1776432211.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/gaps/p3_meta_1776518611.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/gaps/p3_meta_1776605101.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/gaps/p3_meta_1776691411.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/gaps/p3_meta_1776864211.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/gaps/p3_meta_1776950611.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/gaps/p3_meta_1777037010.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/gaps/simulation_1776350714.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/gaps/simulation_1776350806.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/gaps/simulation_1776350869.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/gaps/simulation_1776432211.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/gaps/simulation_1776518611.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/gaps/simulation_1776605101.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/gaps/simulation_1776691411.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/gaps/simulation_1776864211.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/gaps/simulation_1776950611.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/gaps/simulation_1777037010.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/role_definition/README.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/role_definition/gap_map.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/role_definition/role_heroes.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/role_definition/task_type_map.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cso/user_engagement_research.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/cases/README.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/README.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/p3_feedback_performance_optimization_1776032627.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/p3_feedback_rollback_execution_1776054228.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/p3_meta_1776032627.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/p3_meta_1776309699.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/p3_meta_1776378211.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/p3_meta_1776399811.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/p3_meta_1776464947.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/p3_meta_1776551011.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/p3_meta_1776572611.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/p3_meta_1776637410.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/p3_meta_1776660003.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/p3_meta_1776810212.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/p3_meta_1776896727.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/p3_meta_1776918210.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/p3_meta_1776983011.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/simulation_1776032627.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/simulation_1776378211.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/simulation_1776399811.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/simulation_1776464947.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/simulation_1776551011.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/simulation_1776572611.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/simulation_1776637410.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/simulation_1776660003.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/simulation_1776810212.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/simulation_1776918210.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/gaps/simulation_1776983010.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/role_definition/README.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/role_definition/gap_map.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/self_eval/BLOCKING_ENFORCEMENT_RESEARCH.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/technical_community_research.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/theory/architecture_design.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/theory/code_refactoring.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/theory/compliance_audit.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/theory/data_migration.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/theory/deployment_planning.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/theory/performance_optimization.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/theory/rollback_execution.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/theory/security_review.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/cto/theory/system_integration.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/decisions/2026-04-05_discord_token.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/decisions/30day_mining_plant_2026-04-15/30day_mining_plant_v1_CEO.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/decisions/30day_mining_plant_2026-04-15/bounty_platform_market_CSO_Zara.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/decisions/30day_mining_plant_2026-04-15/distribution_strategy_CMO_Sofia.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/decisions/30day_mining_plant_2026-04-15/monetization_models_CFO_Marco.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/eng-kernel/theory/primary_task_type.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/eng-ml/methodology/eng_ml_methodology_v1.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/eng-perf/methodology/eng_perf_methodology_v1.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/eng-platform/gaps/p3_feedback_architecture_design_1776047893.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/eng-platform/gaps/p3_feedback_code_refactoring_1776308205.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/eng-platform/gaps/p3_feedback_rollback_execution_1776047893.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/eng-platform/gaps/p3_feedback_security_review_1776080325.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/eng-platform/gaps/p3_feedback_team_onboarding_1776115900.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/eng-platform/gaps/p3_meta_1775929160.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/eng-platform/gaps/p3_meta_1776047893.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/eng-platform/gaps/p3_meta_1776094206.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/eng-platform/gaps/p3_meta_1776115713.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/eng-platform/gaps/p3_meta_1776115900.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/eng-platform/gaps/p3_meta_1776312897.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/eng-platform/gaps/p3_meta_1776313036.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/eng-platform/role_definition/role_heroes.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/eng-platform/role_definition/task_type_map.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/eng-platform/role_definition/world_class_standard.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/eng-platform/theory/primary_task_type.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/cases/README.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/gaps/README.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/gaps/p3_feedback_emergency_response_1776270235.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/gaps/p3_feedback_performance_optimization_1776270235.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/gaps/p3_feedback_system_integration_1776097424.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/gaps/p3_meta_1776356610.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/gaps/p3_meta_1776443010.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/gaps/p3_meta_1776529410.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/gaps/p3_meta_1776615811.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/gaps/p3_meta_1776702211.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/gaps/p3_meta_1776788610.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/gaps/p3_meta_1776874982.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/gaps/p3_meta_1776961411.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/gaps/p3_meta_1777047810.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/gaps/simulation_1775924623.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/gaps/simulation_1776356610.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/gaps/simulation_1776443010.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/gaps/simulation_1776529410.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/gaps/simulation_1776615811.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/gaps/simulation_1776702211.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/gaps/simulation_1776788610.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/gaps/simulation_1776961411.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/gaps/simulation_1777047810.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/role_definition/README.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/role_definition/gap_map.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/skills/session_close_curation.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/theory/compliance_audit.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/theory/deployment_planning.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/theory/emergency_response.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/theory/incident_response.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/theory/performance_optimization.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/theory/retrospective_facilitation.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/theory/system_integration.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/secretary/todo/ryan_event_trigger_realtime_archival.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "knowledge/shared/avoidance_phrases.yaml",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "marketing/skill_marketplace_listing.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "memory/boot_packages/_seed/cmo.json",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "memory/claude_code_memory_mirror/MEMORY.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "memory/claude_code_memory_mirror/feedback_ai_disclosure_mandatory.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "memory/claude_code_memory_mirror/feedback_aiden_authority_no_questions.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "memory/claude_code_memory_mirror/feedback_close_stub_trigger.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "memory/claude_code_memory_mirror/feedback_no_clock_out.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "memory/claude_code_memory_mirror/feedback_no_static_image_for_video.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "memory/claude_code_memory_mirror/feedback_restart_quietude.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "memory/claude_code_memory_mirror/feedback_status_maturity_taxonomy.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "static_artifact",
+      "path": "memory/claude_code_memory_mirror/feedback_taskcard_not_dispatch.md",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "orphaned",
+      "path": "office/mission_command/__init__.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/action_inventory.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/action_semantics.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/b2r_account_governance.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "governance_kernel_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/b2r_authenticated_session_policy.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/b2r_c1_entry_gate.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/b2r_czl_closure.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/b2r_external_validation_messaging.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/b2r_form_governance.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "governance_kernel_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/b2r_gov_mcp_execution_contract.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/b2r_owner_constitutional_envelope.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "governance_kernel_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/b2r_progressive_unlock.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "evidence_audit_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/b2r_publication_governance.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "governance_kernel_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/b2r_y_gov_action_packet.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "governance_kernel_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/c1_action_intent_packet.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/c1_action_ledger.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/c1_constitutional_envelope.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/c1_czl_closure.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/c1_feedback_events.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/c1_gov_mcp_execution_bridge.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/c1_readiness_report.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/c1_signal_evaluator.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/c1_y_gov_decision_bridge.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/counterfactual_decision_gate.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/e10_buyer_signal_taxonomy.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/e10_cycle.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/e10_owner_decision_packet.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/e11_cycle.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "governance_kernel_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/e12_cycle.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "keep",
+      "risk": "low if parked/proposal is explicit",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "evidence_audit_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/e12_feedback_capture.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/e14_manual_validation_draft.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/e17_offer_revision_runtime.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/e17_response_classifier.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/e18_batch_response_classifier.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/e18_commercial_kpi.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/e18_offer_variant_matrix.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/e18_route_decision.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/e19_commercial_route_decision.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/e19_feedback_import_control_path.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/e19_future_alignment_gate.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/e20_future_outbound_policy.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/e22_future_dry_run_live_policy.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/e22_kpi_dry_run_delta.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/e22_route_decision.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/e23_batch_reclassification.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/e23_compliance_registry.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "commercial_value_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/e23_kpi_update.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/e23_optional_dry_run_iteration.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_runtime",
+      "path": "office/mission_command/e23_route_decision.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_read_model",
+      "path": "office/mission_command/e24_ceo_kg_read_model.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "ceo_brain_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "orphaned",
+      "path": "office/mission_command/e24_ceo_knowledge_graph_builder.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "ceo_brain_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "orphaned",
+      "path": "office/mission_command/e24_field_functional_opportunity_map.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "active_read_model",
+      "path": "office/mission_command/e25_ceo_brain_update.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "ceo_brain_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "orphaned",
+      "path": "office/mission_command/e26_one_action_canary_plan.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "orphaned",
+      "path": "office/mission_command/e30_action_falsification.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "orphaned",
+      "path": "office/mission_command/e30_action_objective_scoring.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "orphaned",
+      "path": "office/mission_command/e30_future_methodological_action_policy.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "orphaned",
+      "path": "office/mission_command/e30_methodological_action_control_room.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "orphaned",
+      "path": "office/mission_command/e30_open_action_space_generator.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e31_ceo_brain_real_world_signal_update.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e31_ceo_kg_real_world_evidence_needs.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e31_ceo_kg_real_world_feedback.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e31_ecosystem_alignment_gate.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e31_evidence_extraction_claim_binding.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "evidence_audit_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e31_existing_real_world_observation_wheel_inventory.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e31_future_real_world_behavior_policy.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e31_paid_readiness_review_signal_package.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e31_public_source_selection.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e31_real_signal_route_decision.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e31_real_world_observation_runner.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e31_real_world_signal_control_room.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e32_ceo_brain_deep_learning_update.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e32_ceo_brain_frontier_mvp_update.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e32_ceo_kg_learning_strategy_feedback.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e32_ceo_learning_agenda.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e32_ceo_strategy_control_room.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e32_controlled_research_plan.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e32_ecosystem_alignment_gate.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e32_existing_player_failure_analysis.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e32_frontier_research_agenda.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e32_frontier_research_runner.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "misleading_runtime_name",
+      "path": "office/mission_command/e32_frontier_world_model.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "misleading_runtime_name",
+      "path": "office/mission_command/e32_full_ecosystem_runtime_archaeology.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e32_future_ceo_learning_policy.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e32_future_frontier_mvp_policy.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e32_market_buyer_understanding_synthesis.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e32_multi_path_business_plan_builder.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "misleading_runtime_name",
+      "path": "office/mission_command/e32_open_monetization_path_generator.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e32_portfolio_selection_owner_discussion.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e32_real_world_learning_runner.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "misleading_runtime_name",
+      "path": "office/mission_command/e32_shock_level_mvp_generator.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "misleading_runtime_name",
+      "path": "office/mission_command/e32_shock_level_mvp_selector.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e32_technical_understanding_synthesis.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e32_unique_advantage_weakness_analysis.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e32_world_fracture_map.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e32_y_star_unique_fitness_analysis.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e33_agent_action_black_box_builder.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "closure_learning_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e33_agent_action_black_box_demo_packet.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e33_agent_action_black_box_schema.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e33_black_box_buyer_view.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e33_ceo_brain_black_box_update.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e33_ceo_kg_black_box_feedback.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e33_no_rebuild_alignment_gate.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e33_owner_validation_route.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "misleading_runtime_name",
+      "path": "office/mission_command/e34_analogy_transfer_engine.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "misleading_runtime_name",
+      "path": "office/mission_command/e34_ceo_brain_imagination_methodology_update.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e34_ceo_decision_failure_diagnosis.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "ceo_brain_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "misleading_runtime_name",
+      "path": "office/mission_command/e34_ceo_imagination_to_decision_protocol.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "misleading_runtime_name",
+      "path": "office/mission_command/e34_ceo_kg_imagination_methodology_feedback.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e34_commercial_reality_discipline.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e34_frontier_case_archaeology_methodology.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e34_institutional_void_mapper.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "misleading_runtime_name",
+      "path": "office/mission_command/e34_non_obvious_opportunity_generator.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e34_primitive_shift_detector.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e35_capability_abstraction_recombination_method.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e35_ceo_brain_unified_six_dimensional_update.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e35_ceo_kg_unified_brain_expansion_feedback.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "ceo_brain_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e35_ceo_methodology_quality_audit.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "misleading_runtime_name",
+      "path": "office/mission_command/e35_cross_domain_opportunity_field_generator.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e35_cross_domain_universe_expansion_method.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e35_cross_repo_governance_execution_alignment.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e35_cross_repo_sync_backlog.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "misleading_runtime_name",
+      "path": "office/mission_command/e35_multi_hop_abstraction_jump_engine.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "field_functional_projection_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e35_one_brain_integration_guard.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "ceo_brain_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "misleading_runtime_name",
+      "path": "office/mission_command/e35_six_dimensional_ceo_cognition_model.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "misleading_runtime_name",
+      "path": "office/mission_command/e35_six_dimensional_opportunity_cognition_protocol.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "misleading_runtime_name",
+      "path": "office/mission_command/e35_superhuman_ceo_cognition_challenge.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e36_adversarial_ceo_board_review.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "constitutional_target_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e36_ceo_brain_strategy_field_trial_update.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e36_ceo_kg_strategy_field_trial_feedback.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "ceo_brain_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e36_cross_repo_governance_primitive_alignment.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "governance_kernel_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e36_demand_budget_reality_screen.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e36_e35_capability_effect_audit.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e36_evidence_seeking_shortlist_builder.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e36_gov_mcp_execution_boundary_alignment.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "misleading_runtime_name",
+      "path": "office/mission_command/e36_new_capability_creation_planner.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e36_opportunity_evidence_ladder.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e36_strategic_field_trial_runner.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e37_ceo_brain_evidence_preflight_update.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e37_ceo_kg_evidence_preflight_feedback.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "ceo_brain_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e37_evidence_route_gov_mcp_alignment.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e37_evidence_route_y_star_gov_alignment.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e37_evidence_sprint_focus_recommender.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e37_expert_review_route_packet.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e37_opportunity_cluster_normalizer.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e37_owner_approval_packet_for_e38.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e37_public_readonly_evidence_sprint_design.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e37_shortlist_taxonomy_repair.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e38_ceo_brain_public_evidence_update.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e38_ceo_capability_gap_mapping.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e38_ceo_kg_public_evidence_feedback.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": true,
+      "spine_layer": "ceo_brain_layer",
+      "why_not_active": "callable_without_direct_test"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e38_claim_extraction_evidence_grading.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "evidence_audit_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e38_cluster_evidence_update.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e38_comparative_cluster_ranking.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e38_expert_review_packet_refinement.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e38_frontier_capability_import_scan.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e38_gov_mcp_alignment_after_evidence.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e38_owner_decision_packet_for_e39.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e38_public_evidence_research_agenda.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e38_public_readonly_permission_envelope.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e38_public_source_collector.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e38_y_star_gov_alignment_after_evidence.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    },
+    {
+      "class": "artifact_accessor",
+      "path": "office/mission_command/e39_capability_import_scope_guard.py",
+      "repo": "ystar-bridge-labs",
+      "resolution": "bridge",
+      "risk": "future task may bypass or duplicate this capability",
+      "should_affect_ceo_runtime": false,
+      "spine_layer": "execution_boundary_layer",
+      "why_not_active": "bridge"
+    }
+  ],
+  "summary_by_resolution": {
+    "bridge": 1165,
+    "cross_repo_proposal": 36261,
+    "keep": 1261,
+    "park": 15
+  },
+  "total_remaining": 38702,
+  "truncated_after": 500
+}

@@ -1,0 +1,31 @@
+{
+  "active_task_time_source": "e46b_ceo_brain_adapter.load_ceo_brain_context",
+  "artifact_id": "e46b_ceo_brain_operationalization_gap_matrix",
+  "no_external_action": true,
+  "rows": [
+    {
+      "after_E46B": "read by e46b_ceo_brain_adapter",
+      "before": "not always read before E42/E43",
+      "remaining_gap": "load may be unavailable; capture remains explicit/nonfatal",
+      "source": "working_memory_snapshot/LRS"
+    },
+    {
+      "after_E46B": "queried for task-time context",
+      "before": "not part of E43 route",
+      "remaining_gap": "semantic depth remains TF-IDF",
+      "source": "wisdom_search"
+    },
+    {
+      "after_E46B": "latest read-models included in context",
+      "before": "many deltas written",
+      "remaining_gap": "full graph query still future",
+      "source": "CEO KG/read-model"
+    },
+    {
+      "after_E46B": "commercial assets included in route comparison",
+      "before": "disconnected from first-user loop",
+      "remaining_gap": "pricing/revenue proof still unvalidated",
+      "source": "commercial/revenue assets"
+    }
+  ]
+}

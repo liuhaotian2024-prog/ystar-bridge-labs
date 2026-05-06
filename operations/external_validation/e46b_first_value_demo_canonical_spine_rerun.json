@@ -1,0 +1,29 @@
+{
+  "E43_original_route": "gov-mcp + Y-star-gov first 5-minute install/status/demo path",
+  "E44A_cognition_route": "Governed Agent Action Proof Packet over gov-mcp + Y-star-gov substrate",
+  "E45_local_demo_route": "local proof ready for owner review, with ystar_doctor/server-start gaps",
+  "artifact_id": "e46b_first_value_demo_canonical_spine_rerun",
+  "canonical_spine_chooses_external_attempt_or_polish": "more local polish",
+  "canonical_spine_route": {
+    "first_external_attempt_now": false,
+    "next_recommended_milestone": "E47_gov_mcp_server_client_demo_closure",
+    "reason": "Canonical spine keeps the proof packet route but requires server/client and doctor closure before outreach.",
+    "selected_value_object": "Governed Agent Action Proof Packet",
+    "technical_substrate": "gov-mcp + Y-star-gov governed execution"
+  },
+  "ceo_brain_context_altered_route": true,
+  "ceo_brain_effect": "forced M Triangle, wisdom, working memory, directives, and prior closures into route decision",
+  "commercial_assets_altered_route": true,
+  "commercial_effect": "kept plugin/proof packet comparison; parked revenue claims",
+  "field_projection_altered_route": true,
+  "field_projection_effect": "converted install path into mission/company/milestone/action/closure chain",
+  "local_demo_effect": "doctor failure and server-start skip recommend local server/client closure before outreach",
+  "local_demo_result_altered_route": true,
+  "no_external_action": true,
+  "recommended_next_milestone": "E47_gov_mcp_server_client_demo_closure",
+  "task": {
+    "task_description": "Prepare the fastest credible path toward one real external user successfully installing, understanding, and valuing Y*gov / gov-mcp / Y*Bridge Labs agent-company runtime.",
+    "task_id": "e46b_first_value_demo",
+    "task_title": "First value canonical spine rerun"
+  }
+}

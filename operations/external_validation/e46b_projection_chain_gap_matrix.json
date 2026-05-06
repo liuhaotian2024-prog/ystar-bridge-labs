@@ -1,0 +1,79 @@
+{
+  "artifact_id": "e46b_projection_chain_gap_matrix",
+  "missing_stage_count": 0,
+  "no_external_action": true,
+  "rows": [
+    {
+      "current_maturity": "static_recovered",
+      "gap": "not connected to canonical CEO task runtime",
+      "required_adapter_behavior": "read existing runtime/static sources and expose canonical projection field",
+      "stage": "mission"
+    },
+    {
+      "current_maturity": "active_runtime",
+      "gap": "needs adapter invocation from canonical spine",
+      "required_adapter_behavior": "read existing runtime/static sources and expose canonical projection field",
+      "stage": "company"
+    },
+    {
+      "current_maturity": "active_runtime",
+      "gap": "needs adapter invocation from canonical spine",
+      "required_adapter_behavior": "read existing runtime/static sources and expose canonical projection field",
+      "stage": "milestone"
+    },
+    {
+      "current_maturity": "static_recovered",
+      "gap": "not connected to canonical CEO task runtime",
+      "required_adapter_behavior": "read existing runtime/static sources and expose canonical projection field",
+      "stage": "session"
+    },
+    {
+      "current_maturity": "static_recovered",
+      "gap": "not connected to canonical CEO task runtime",
+      "required_adapter_behavior": "read existing runtime/static sources and expose canonical projection field",
+      "stage": "task"
+    },
+    {
+      "current_maturity": "static_recovered",
+      "gap": "not connected to canonical CEO task runtime",
+      "required_adapter_behavior": "read existing runtime/static sources and expose canonical projection field",
+      "stage": "action"
+    },
+    {
+      "current_maturity": "static_recovered",
+      "gap": "not connected to canonical CEO task runtime",
+      "required_adapter_behavior": "read existing runtime/static sources and expose canonical projection field",
+      "stage": "behavior"
+    },
+    {
+      "current_maturity": "static_recovered",
+      "gap": "not connected to canonical CEO task runtime",
+      "required_adapter_behavior": "read existing runtime/static sources and expose canonical projection field",
+      "stage": "y_star_candidate"
+    },
+    {
+      "current_maturity": "static_recovered",
+      "gap": "not connected to canonical CEO task runtime",
+      "required_adapter_behavior": "read existing runtime/static sources and expose canonical projection field",
+      "stage": "pre_u_governance_gate"
+    },
+    {
+      "current_maturity": "static_recovered",
+      "gap": "not connected to canonical CEO task runtime",
+      "required_adapter_behavior": "read existing runtime/static sources and expose canonical projection field",
+      "stage": "execution"
+    },
+    {
+      "current_maturity": "static_recovered",
+      "gap": "not connected to canonical CEO task runtime",
+      "required_adapter_behavior": "read existing runtime/static sources and expose canonical projection field",
+      "stage": "cieu_czl_closure"
+    },
+    {
+      "current_maturity": "static_recovered",
+      "gap": "not connected to canonical CEO task runtime",
+      "required_adapter_behavior": "read existing runtime/static sources and expose canonical projection field",
+      "stage": "residual_learning"
+    }
+  ]
+}

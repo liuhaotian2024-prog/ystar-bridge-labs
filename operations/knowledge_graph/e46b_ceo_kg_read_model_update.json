@@ -1,0 +1,5 @@
+{
+  "active_runtime_spine": "e46b_canonical_ceo_operating_runtime.run_canonical_ceo_operating_runtime",
+  "artifact_id": "e46b_ceo_kg_read_model_update",
+  "updated_bottleneck": "CEO now has a canonical runtime spine connecting field projection, CEO brain, capability activation, execution, audit, and closure; remaining work is to harden unresolved runtime gaps before or during the first owner-approved external user attempt."
+}

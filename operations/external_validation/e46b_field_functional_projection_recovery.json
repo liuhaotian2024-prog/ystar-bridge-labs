@@ -1,0 +1,183 @@
+{
+  "adapter_needed": "e46b_field_projection_adapter.project_task_from_m_triangle",
+  "artifact_id": "e46b_field_functional_projection_recovery",
+  "canonical_spine_action": "recover existing field/residual/Pre-U lines as partial adapter; do not rebuild Y-star-gov projection/governance kernel",
+  "current_E42_E44A_E45_runtime_bypasses_projection": true,
+  "existing_projection_chain_found": true,
+  "no_external_action": true,
+  "projection_stages": [
+    {
+      "gap": "not connected to canonical CEO task runtime",
+      "maturity": "static_recovered",
+      "runtime_paths": [],
+      "stage": "mission",
+      "static_or_read_model_paths": [
+        "ystar-bridge-labs:.claude/settings.json",
+        "ystar-bridge-labs:.claude/settings.local.json",
+        "ystar-bridge-labs:.claude/tasks/AMENDMENT_015_SYSTEMIC_UNLOCK_20260413.md",
+        "ystar-bridge-labs:.claude/tasks/CTO_RITUAL_AND_AUTONOMY_FIX_20260413.md",
+        "ystar-bridge-labs:.claude/tasks/W16_leo_session_omission.md",
+        "ystar-bridge-labs:.claude/tasks/board-github-token-workflow-scope.md"
+      ]
+    },
+    {
+      "gap": "needs adapter invocation from canonical spine",
+      "maturity": "active_runtime",
+      "runtime_paths": [
+        "ystar-bridge-labs:office/mission_command/c3_feedback_intake_runtime.py"
+      ],
+      "stage": "company",
+      "static_or_read_model_paths": [
+        "ystar-bridge-labs:content/linkedin/001_company_founding.md",
+        "ystar-bridge-labs:content/whitepaper/ystar_gov_runtime_governance_for_multi_agent_systems.md",
+        "ystar-bridge-labs:governance/runtime_capability_registry.json",
+        "ystar-bridge-labs:knowledge/secretary/lessons/company_formalization_audit_20260415.md",
+        "ystar-bridge-labs:memory/archive/wisdom_package_ystar-company_0a84f3c6_archived_1776273549.md",
+        "ystar-bridge-labs:memory/boot_packages/history/ceo_ystar-company_0a84f3c6.json"
+      ]
+    },
+    {
+      "gap": "needs adapter invocation from canonical spine",
+      "maturity": "active_runtime",
+      "runtime_paths": [
+        "ystar-bridge-labs:office/mission_command/b2r_y_gov_action_packet.py",
+        "ystar-bridge-labs:office/mission_command/c1_gov_mcp_execution_bridge.py"
+      ],
+      "stage": "milestone",
+      "static_or_read_model_paths": [
+        "ystar-bridge-labs:finance/cfo_claims_audit.md",
+        "ystar-bridge-labs:finance/daily_burn.md",
+        "ystar-bridge-labs:finance/forecast_q2_2026.md",
+        "ystar-bridge-labs:governance/proposed_rules/feedback_no_clock_out_proposed.yaml",
+        "ystar-bridge-labs:knowledge/ceo/gaps/p3_meta_1776306384.md",
+        "ystar-bridge-labs:knowledge/ceo/gaps/simulation_1776021829.md"
+      ]
+    },
+    {
+      "gap": "not connected to canonical CEO task runtime",
+      "maturity": "static_recovered",
+      "runtime_paths": [],
+      "stage": "session",
+      "static_or_read_model_paths": [
+        "ystar-bridge-labs:.claude/settings.json",
+        "ystar-bridge-labs:.claude/tasks/.completed/README.md",
+        "ystar-bridge-labs:.claude/tasks/.completed/exp-004-w3-w5.md",
+        "ystar-bridge-labs:.claude/tasks/.completed/exp-004-w8-w10.md",
+        "ystar-bridge-labs:.claude/tasks/AMENDMENT_015_SYSTEMIC_UNLOCK_20260413.md",
+        "ystar-bridge-labs:.claude/tasks/CTO_RITUAL_AND_AUTONOMY_FIX_20260413.md"
+      ]
+    },
+    {
+      "gap": "not connected to canonical CEO task runtime",
+      "maturity": "static_recovered",
+      "runtime_paths": [],
+      "stage": "task",
+      "static_or_read_model_paths": [
+        "ystar-bridge-labs:.claude/tasks/.completed/README.md",
+        "ystar-bridge-labs:.claude/tasks/.completed/exp-004-w3-w5.md",
+        "ystar-bridge-labs:.claude/tasks/.completed/exp-004-w8-w10.md",
+        "ystar-bridge-labs:.claude/tasks/AMENDMENT_015_SYSTEMIC_UNLOCK_20260413.md",
+        "ystar-bridge-labs:.claude/tasks/CTO_RITUAL_AND_AUTONOMY_FIX_20260413.md",
+        "ystar-bridge-labs:.claude/tasks/NEXT_SESSION_P0_yml_session_bridge.md"
+      ]
+    },
+    {
+      "gap": "not connected to canonical CEO task runtime",
+      "maturity": "static_recovered",
+      "runtime_paths": [],
+      "stage": "action",
+      "static_or_read_model_paths": [
+        "ystar-bridge-labs:.claude/agents/ceo.md",
+        "ystar-bridge-labs:.claude/agents/cfo.md",
+        "ystar-bridge-labs:.claude/agents/cmo.md",
+        "ystar-bridge-labs:.claude/agents/cso.md",
+        "ystar-bridge-labs:.claude/agents/cto.md",
+        "ystar-bridge-labs:.claude/agents/eng-governance.md"
+      ]
+    },
+    {
+      "gap": "not connected to canonical CEO task runtime",
+      "maturity": "static_recovered",
+      "runtime_paths": [],
+      "stage": "behavior",
+      "static_or_read_model_paths": [
+        "ystar-bridge-labs:.claude/settings.json",
+        "ystar-bridge-labs:.claude/tasks/W16_ryan_hook_chaos_others.md",
+        "ystar-bridge-labs:.claude/tasks/agent-behavior-rules-spec.md",
+        "ystar-bridge-labs:.claude/tasks/cto-m3-leo-a025-p1-invariant.md",
+        "ystar-bridge-labs:.claude/tasks/czl-165-hook-format-fix.md",
+        "ystar-bridge-labs:.claude/tasks/eng-governance-20260414-rule-mirror-experiment.md"
+      ]
+    },
+    {
+      "gap": "not connected to canonical CEO task runtime",
+      "maturity": "static_recovered",
+      "runtime_paths": [],
+      "stage": "y_star_candidate",
+      "static_or_read_model_paths": [
+        "ystar-bridge-labs:.claude/settings.json",
+        "ystar-bridge-labs:.claude/settings.local.json",
+        "ystar-bridge-labs:.claude/tasks/.completed/exp-004-w3-w5.md",
+        "ystar-bridge-labs:.claude/tasks/.completed/exp-004-w8-w10.md",
+        "ystar-bridge-labs:.claude/tasks/NEXT_SESSION_P0_yml_session_bridge.md",
+        "ystar-bridge-labs:.claude/tasks/_archive/eng-kernel-k9-causal_completed_20260415.md"
+      ]
+    },
+    {
+      "gap": "not connected to canonical CEO task runtime",
+      "maturity": "static_recovered",
+      "runtime_paths": [],
+      "stage": "pre_u_governance_gate",
+      "static_or_read_model_paths": [
+        "ystar-bridge-labs:.claude/agents/cfo.md",
+        "ystar-bridge-labs:.claude/agents/cto.md",
+        "ystar-bridge-labs:.claude/agents/eng-compliance.md",
+        "ystar-bridge-labs:.claude/agents/eng-data.md",
+        "ystar-bridge-labs:.claude/agents/eng-domains.md",
+        "ystar-bridge-labs:.claude/agents/eng-governance.md"
+      ]
+    },
+    {
+      "gap": "not connected to canonical CEO task runtime",
+      "maturity": "static_recovered",
+      "runtime_paths": [],
+      "stage": "execution",
+      "static_or_read_model_paths": [
+        "ystar-bridge-labs:.claude/settings.json",
+        "ystar-bridge-labs:.claude/tasks/AMENDMENT_015_SYSTEMIC_UNLOCK_20260413.md",
+        "ystar-bridge-labs:.claude/tasks/NEXT_SESSION_P0_yml_session_bridge.md",
+        "ystar-bridge-labs:.claude/tasks/_archive/eng-kernel-k9-causal_completed_20260415.md",
+        "ystar-bridge-labs:.claude/tasks/archived/eng-governance-w7-3.md",
+        "ystar-bridge-labs:.claude/tasks/cmo-v6-heygen-3mod-20260413.md"
+      ]
+    },
+    {
+      "gap": "not connected to canonical CEO task runtime",
+      "maturity": "static_recovered",
+      "runtime_paths": [],
+      "stage": "cieu_czl_closure",
+      "static_or_read_model_paths": [
+        "ystar-bridge-labs:.claude/agents/ceo.md",
+        "ystar-bridge-labs:.claude/agents/cfo.md",
+        "ystar-bridge-labs:.claude/agents/cmo.md",
+        "ystar-bridge-labs:.claude/agents/cso.md",
+        "ystar-bridge-labs:.claude/agents/cto.md",
+        "ystar-bridge-labs:.claude/agents/eng-compliance.md"
+      ]
+    },
+    {
+      "gap": "not connected to canonical CEO task runtime",
+      "maturity": "static_recovered",
+      "runtime_paths": [],
+      "stage": "residual_learning",
+      "static_or_read_model_paths": [
+        "ystar-bridge-labs:.claude/settings.json",
+        "ystar-bridge-labs:.claude/tasks/.completed/exp-004-w3-w5.md",
+        "ystar-bridge-labs:.claude/tasks/W16_ryan_hook_chaos_others.md",
+        "ystar-bridge-labs:.claude/tasks/cmo-\u9876\u5c97-20260413-offended-ai-v4.md",
+        "ystar-bridge-labs:.claude/tasks/cto-m2-ryan-l6-lesson-capture.md",
+        "ystar-bridge-labs:.claude/tasks/eng-governance-heartbeat.md"
+      ]
+    }
+  ]
+}

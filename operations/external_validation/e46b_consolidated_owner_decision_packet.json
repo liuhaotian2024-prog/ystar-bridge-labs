@@ -1,0 +1,22 @@
+{
+  "artifact_id": "e46b_consolidated_owner_decision_packet",
+  "no_external_action": true,
+  "owner_approval_required_for_external_action": true,
+  "recommendation_mode": "single_recommendation_not_menu",
+  "recommended_next_milestone": "E47_gov_mcp_server_client_demo_closure",
+  "stop_conditions": [
+    "server/client demo unsafe",
+    "doctor remains failed without owner waiver",
+    "any login/API/payment required",
+    "owner approval absent"
+  ],
+  "what_does_not_happen": [
+    "no outreach",
+    "no publish",
+    "no provider/API",
+    "no paid signal claim",
+    "no customer validation claim"
+  ],
+  "what_happens": "Close the gov-mcp server/client demo path and Y-star-gov doctor/environment blockers under the canonical spine before any external attempt.",
+  "why": "Canonical spine keeps the proof packet route but requires server/client and doctor closure before outreach."
+}

@@ -1,0 +1,146 @@
+{
+  "artifact_id": "e46b_canonical_runtime_spine_contract",
+  "no_external_action": true,
+  "stages": [
+    {
+      "failure_behavior": "block if missing owner constraints",
+      "input": "Board/M Triangle/directive context",
+      "output": "target alignment",
+      "owner_approval_boundary": "owner approves external action",
+      "required_adapter": "field projection adapter",
+      "side_effect_policy": "no side effects",
+      "stage_id": "constitutional_target",
+      "tests": "E46B runtime tests"
+    },
+    {
+      "failure_behavior": "mark partial/missing",
+      "input": "task + brain context",
+      "output": "projection chain",
+      "owner_approval_boundary": "cross-repo projection changes",
+      "required_adapter": "field projection adapter",
+      "side_effect_policy": "read-only",
+      "stage_id": "field_projection",
+      "tests": "field projection tests"
+    },
+    {
+      "failure_behavior": "nonfatal missing memory",
+      "input": "task",
+      "output": "brain context",
+      "owner_approval_boundary": "canonical writeback",
+      "required_adapter": "CEO brain adapter",
+      "side_effect_policy": "read-only",
+      "stage_id": "ceo_brain_context",
+      "tests": "brain adapter tests"
+    },
+    {
+      "failure_behavior": "no report pile only",
+      "input": "task/context",
+      "output": "capability matches",
+      "owner_approval_boundary": "new capabilities",
+      "required_adapter": "E42/E44A registry",
+      "side_effect_policy": "read-only",
+      "stage_id": "capability_activation",
+      "tests": "E42/E44A tests"
+    },
+    {
+      "failure_behavior": "park disconnected lenses",
+      "input": "task/context",
+      "output": "route lenses",
+      "owner_approval_boundary": "none",
+      "required_adapter": "E44A cascade",
+      "side_effect_policy": "read-only",
+      "stage_id": "cognition_cascade",
+      "tests": "E44A cascade tests"
+    },
+    {
+      "failure_behavior": "park unsupported revenue",
+      "input": "brain/commercial assets",
+      "output": "wrapper comparison",
+      "owner_approval_boundary": "external attempt",
+      "required_adapter": "brain adapter",
+      "side_effect_policy": "read-only",
+      "stage_id": "commercial_value_route",
+      "tests": "E46B tests"
+    },
+    {
+      "failure_behavior": "skip unsafe commands",
+      "input": "route",
+      "output": "local demo status",
+      "owner_approval_boundary": "server/client start",
+      "required_adapter": "E45 runner",
+      "side_effect_policy": "local only",
+      "stage_id": "execution_feasibility",
+      "tests": "E45 tests"
+    },
+    {
+      "failure_behavior": "block duplicate kernel",
+      "input": "route/action",
+      "output": "owner/gov boundary",
+      "owner_approval_boundary": "governance changes",
+      "required_adapter": "Y-star-gov read-only mapping",
+      "side_effect_policy": "no Y-star-gov edits",
+      "stage_id": "governance_boundary",
+      "tests": "alignment tests"
+    },
+    {
+      "failure_behavior": "no duplicate ledger",
+      "input": "route/evidence",
+      "output": "CIEU/CZL/K9 context",
+      "owner_approval_boundary": "K9 integration",
+      "required_adapter": "E45 trace",
+      "side_effect_policy": "read-only",
+      "stage_id": "audit_context",
+      "tests": "closure tests"
+    },
+    {
+      "failure_behavior": "block external side effects",
+      "input": "planned action",
+      "output": "allow/block report",
+      "owner_approval_boundary": "owner approval",
+      "required_adapter": "runtime side effect report",
+      "side_effect_policy": "no external action",
+      "stage_id": "side_effect_guard",
+      "tests": "E46B tests"
+    },
+    {
+      "failure_behavior": "recommend hardening if blockers",
+      "input": "all stages",
+      "output": "selected route",
+      "owner_approval_boundary": "owner decision",
+      "required_adapter": "canonical runtime",
+      "side_effect_policy": "read-only",
+      "stage_id": "route_decision",
+      "tests": "runtime tests"
+    },
+    {
+      "failure_behavior": "skip unsafe execution",
+      "input": "route decision",
+      "output": "local proof",
+      "owner_approval_boundary": "external attempt",
+      "required_adapter": "E45 runner",
+      "side_effect_policy": "local only",
+      "stage_id": "local_demo_or_execution",
+      "tests": "E45 tests"
+    },
+    {
+      "failure_behavior": "no canonical learning without review",
+      "input": "runtime output",
+      "output": "CZL/KG/brain update",
+      "owner_approval_boundary": "learning promotion",
+      "required_adapter": "E46B closure artifacts",
+      "side_effect_policy": "artifact write only",
+      "stage_id": "closure_writeback",
+      "tests": "artifact tests"
+    },
+    {
+      "failure_behavior": "single recommendation",
+      "input": "closure",
+      "output": "next milestone",
+      "owner_approval_boundary": "owner decision",
+      "required_adapter": "owner packet",
+      "side_effect_policy": "no external action",
+      "stage_id": "next_projection",
+      "tests": "owner packet tests"
+    }
+  ]
+}
