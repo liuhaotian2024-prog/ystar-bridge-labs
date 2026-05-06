@@ -1,0 +1,11 @@
+{
+  "artifact_id": "e57_y_star_gov_validation_result",
+  "runtime_linkage_valid": true,
+  "readback_proof_valid": true,
+  "anti_drift_gate_passed": true,
+  "capability_binding_gate_passed": true,
+  "passed": true,
+  "read_only_validator": true,
+  "external_action_allowed": false,
+  "no_external_action": true
+}

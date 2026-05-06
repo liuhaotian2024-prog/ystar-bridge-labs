@@ -1,0 +1,44 @@
+{
+  "artifact_id": "e57_base_state_manifest",
+  "generated_at": "2026-05-06T15:35:50.654025+00:00",
+  "expected_bridge_base": "b222a48ea481ec0f4f179e5014064ea96ce6bd0e",
+  "repos": {
+    "bridge_labs": {
+      "path": "/private/tmp/e57_bridge_labs_validation_1778081291",
+      "head": "b222a48ea481ec0f4f179e5014064ea96ce6bd0e",
+      "branch": "HEAD",
+      "status_short": "M office/mission_command/e46b_ceo_brain_adapter.py\n?? office/mission_command/e57_ceo_brain_readback_smoke.py\n?? office/mission_command/e57_commercial_route_candidates.py\n?? office/mission_command/e57_commercial_route_decision.py\n?? office/mission_command/e57_counterfactual_route_scorer.py\n?? office/mission_command/e57_gov_mcp_validation_harness.py\n?? office/mission_command/e57_money_route_anti_drift_gate.py\n?? office/mission_command/e57_money_route_capability_binding_gate.py\n?? office/mission_command/e57_money_route_evidence_writeback.py\n?? office/mission_command/e57_post_l5_capability_delta.py\n?? office/mission_command/e57_post_l5_money_route_retest_gate.py\n?? office/mission_command/e57_public_readonly_evidence_preflight.py\n?? office/mission_command/e57_public_readonly_evidence_refresh.py\n?? office/mission_command/e57_selected_route_behavior_authorization.py\n?? office/mission_command/e57_y_star_gov_validation_runner.py\n?? tests/office/test_e57_ceo_brain_readback_smoke.py\n?? tests/office/test_e57_commercial_route_candidates.py\n?? tests/office/test_e57_commercial_route_decision.py\n?? tests/office/test_e57_counterfactual_route_scorer.py\n?? tests/office/test_e57_gov_mcp_validation_harness.py\n?? tests/office/test_e57_json_artifacts.py\n?? tests/office/test_e57_money_route_anti_drift_gate.py\n?? tests/office/test_e57_money_route_capability_binding_gate.py\n?? tests/office/test_e57_post_l5_capability_delta.py\n?? tests/office/test_e57_post_l5_money_route_retest_gate.py\n?? tests/office/test_e57_public_readonly_evidence_preflight.py\n?? tests/office/test_e57_selected_route_behavior_authorization.py\n?? tests/office/test_e57_y_star_gov_validation_runner.py",
+      "clean": false,
+      "read_only": false
+    },
+    "Y_star_gov": {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "head": "b0d9aa8b1badd1180127a2f79f73ceed48e16451",
+      "branch": "backflow/company-runtime-domain-pack",
+      "status_short": "",
+      "clean": true,
+      "read_only": true
+    },
+    "gov_mcp": {
+      "path": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+      "head": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+      "branch": "backflow/company-runtime-tools",
+      "status_short": "",
+      "clean": true,
+      "read_only": true
+    },
+    "K9Audit": {
+      "path": "/Users/haotianliu/.openclaw/workspace/K9Audit",
+      "head": "37911e18ce4425470e3f745b30d155c43d76ff55",
+      "branch": "main",
+      "status_short": "",
+      "clean": true,
+      "read_only": true
+    }
+  },
+  "ports_7920_7930_clear": true,
+  "gov_mcp_process_running": false,
+  "no_e57_leftovers_before_generation": true,
+  "external_action_allowed": false,
+  "no_external_action": true
+}

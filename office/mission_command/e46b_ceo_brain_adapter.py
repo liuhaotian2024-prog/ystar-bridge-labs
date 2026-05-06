@@ -301,6 +301,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e56_internal_company_loop_state = {'internal_company_loop_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
     try:
+        from office.mission_command.e57_ceo_brain_readback_smoke import load_money_route_state_for_brain
+        e57_money_route_state = load_money_route_state_for_brain()
+    except Exception as exc:
+        e57_money_route_state = {'money_route_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -357,6 +362,12 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_internal_loop_dry_run_result": e56_internal_company_loop_state.get("dry_run_result"),
         "current_internal_loop_external_action_allowed": e56_internal_company_loop_state.get("external_action_allowed"),
         "current_internal_loop_next_milestone": e56_internal_company_loop_state.get("next_recommended_milestone"),
+        "latest_money_route_state": e57_money_route_state,
+        "current_money_route_status": e57_money_route_state.get("money_route_status"),
+        "current_money_route_selected_route": e57_money_route_state.get("selected_route"),
+        "current_money_route_nearest_alternative": e57_money_route_state.get("nearest_alternative"),
+        "current_money_route_external_action_allowed": e57_money_route_state.get("external_action_allowed"),
+        "current_money_route_next_milestone": e57_money_route_state.get("next_recommended_milestone"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

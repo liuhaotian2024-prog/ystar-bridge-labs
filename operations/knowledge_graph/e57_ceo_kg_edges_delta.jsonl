@@ -1,0 +1,4 @@
+{"from": "E56_internal_company_loop_L5", "to": "e57_post_l5_money_route_decision", "edge": "enables"}
+{"from": "e57_post_l5_money_route_decision", "to": "AI_agent_company_runtime_harness_case_study", "edge": "selects"}
+{"from": "e57_post_l5_money_route_decision", "to": "full_governed_execution_causal_audit_proof_stack", "edge": "defers"}
+{"from": "e57_cross_repo_evidence_packet", "to": "CEO_brain", "edge": "readback"}

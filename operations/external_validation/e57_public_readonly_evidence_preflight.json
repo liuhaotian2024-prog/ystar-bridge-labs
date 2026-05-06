@@ -1,0 +1,21 @@
+{
+  "artifact_id": "e57_public_readonly_evidence_preflight",
+  "safe_public_readonly_observation_available": false,
+  "repo_controlled_page_read_adapter_available": false,
+  "session_network_available_for_repo_runtime": false,
+  "existing_E50B_observation_context_available": true,
+  "blocker": "external_page_read_adapter_unavailable",
+  "secondary_blocker": "network_disabled",
+  "decision": "skip_live_refresh_and_use_internal_existing_evidence_only",
+  "boundaries": {
+    "no_contact": true,
+    "no_login": true,
+    "no_form_submission": true,
+    "no_personal_contact_scraping": true,
+    "no_send_or_publish": true,
+    "not_customer_validation": true,
+    "not_paid_signal": true
+  },
+  "external_action_allowed": false,
+  "no_external_action": true
+}

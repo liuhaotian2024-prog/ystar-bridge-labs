@@ -1,0 +1,42 @@
+{
+  "artifact_id": "e57_l5_preflight_result",
+  "required_artifacts": {
+    "e54_readiness": "operations/external_validation/e54_ceo_brain_l5_readiness_gate_result.json",
+    "e54_readback": "operations/external_validation/e54_ceo_brain_l5_readback_smoke_result.json",
+    "e54_reasoning": "operations/external_validation/e54_ceo_next_action_reasoning_packet.json",
+    "e55_readiness": "operations/external_validation/e55_behavior_center_l5_readiness_gate_result.json",
+    "e55_readback": "operations/external_validation/e55_behavior_center_readback_smoke_result.json",
+    "e55_authorization": "operations/external_validation/e55_action_authorization_gate_result.json",
+    "e56_readiness": "operations/external_validation/e56_internal_company_loop_l5_readiness_gate_result.json",
+    "e56_readback": "operations/external_validation/e56_internal_loop_readback_smoke_result.json",
+    "e56_self_eval": "operations/external_validation/e56_internal_loop_self_evaluation.json",
+    "e56_selection": "operations/external_validation/e56_counterfactual_internal_action_selection.json",
+    "e56_evidence": "operations/external_validation/e56_internal_loop_evidence_packet.json",
+    "e50b_decision": "operations/external_validation/e50b_ceo_commercial_decision_packet.json",
+    "e52_proof_packet": "products/governed_agent_action_proof_packet/proof_packet.json",
+    "e53_risk_gate": "operations/external_validation/e53_first_user_review_risk_gate_result.json"
+  },
+  "artifacts_loaded": {
+    "e54_readiness": true,
+    "e54_readback": true,
+    "e54_reasoning": true,
+    "e55_readiness": true,
+    "e55_readback": true,
+    "e55_authorization": true,
+    "e56_readiness": true,
+    "e56_readback": true,
+    "e56_self_eval": true,
+    "e56_selection": true,
+    "e56_evidence": true,
+    "e50b_decision": true,
+    "e52_proof_packet": true,
+    "e53_risk_gate": true
+  },
+  "E54_brain_L5_passed": true,
+  "E55_behavior_L5_passed": true,
+  "E56_internal_loop_L5_passed": true,
+  "owner_decision_status": "pending_owner_decision",
+  "external_action_allowed": false,
+  "preflight_status": "passed",
+  "no_external_action": true
+}

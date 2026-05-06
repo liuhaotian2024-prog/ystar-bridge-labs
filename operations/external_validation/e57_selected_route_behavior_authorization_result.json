@@ -1,0 +1,107 @@
+{
+  "artifact_id": "e57_selected_route_behavior_authorization_result",
+  "selected_route": "AI_agent_company_runtime_harness_case_study",
+  "selected_next_action": "E58_package_AI_agent_company_runtime_harness_case_study",
+  "authorization_outcome": "internal_analysis_allowed",
+  "selected_action_authorization": {
+    "action_id": "E58_package_AI_agent_company_runtime_harness_case_study",
+    "authorization_status": "dry_run_only",
+    "reason": "internal action may run only as dry-run with evidence capture",
+    "Y_star_gov_gate_result": {
+      "status": "ALLOW",
+      "allowed": true,
+      "read_only_validator": true
+    },
+    "gov_mcp_gate_result": {
+      "status": "ALLOW",
+      "allowed": true,
+      "fake_fastmcp_harness": true
+    },
+    "owner_approval_status": "pending_owner_decision",
+    "no_go_boundary_result": {
+      "external_action_allowed": false,
+      "pending_owner_decision_not_approval": true
+    },
+    "capability_binding_result": {
+      "status": "ALLOW",
+      "allowed": true
+    },
+    "anti_drift_result": {
+      "status": "ALLOW",
+      "allowed": true
+    },
+    "external_action_allowed": false,
+    "no_external_action": true
+  },
+  "direct_outreach_authorization": {
+    "action_id": "direct_customer_outreach_now",
+    "authorization_status": "deny",
+    "reason": "external_contact denied while owner decision is pending",
+    "Y_star_gov_gate_result": {
+      "status": "ALLOW",
+      "allowed": true,
+      "read_only_validator": true
+    },
+    "gov_mcp_gate_result": {
+      "status": "ALLOW",
+      "allowed": true,
+      "fake_fastmcp_harness": true
+    },
+    "owner_approval_status": "pending_owner_decision",
+    "no_go_boundary_result": {
+      "external_action_allowed": false,
+      "pending_owner_decision_not_approval": true
+    },
+    "capability_binding_result": {
+      "status": "ALLOW",
+      "allowed": true
+    },
+    "anti_drift_result": {
+      "status": "ALLOW",
+      "allowed": true
+    },
+    "external_action_allowed": false,
+    "no_external_action": true
+  },
+  "external_review_authorization": {
+    "action_id": "controlled_single_first_user_review_now",
+    "authorization_status": "deny",
+    "reason": "external_contact denied while owner decision is pending",
+    "Y_star_gov_gate_result": {
+      "status": "ALLOW",
+      "allowed": true,
+      "read_only_validator": true
+    },
+    "gov_mcp_gate_result": {
+      "status": "ALLOW",
+      "allowed": true,
+      "fake_fastmcp_harness": true
+    },
+    "owner_approval_status": "pending_owner_decision",
+    "no_go_boundary_result": {
+      "external_action_allowed": false,
+      "pending_owner_decision_not_approval": true
+    },
+    "capability_binding_result": {
+      "status": "ALLOW",
+      "allowed": true
+    },
+    "anti_drift_result": {
+      "status": "ALLOW",
+      "allowed": true
+    },
+    "external_action_allowed": false,
+    "no_external_action": true
+  },
+  "checks": {
+    "direct_outreach_denied": true,
+    "external_review_execution_denied_without_owner_approval": true,
+    "selected_internal_next_action_has_evidence_path": true,
+    "behavior_center_controls_next_action": true,
+    "ceo_brain_not_executor": true
+  },
+  "passed": true,
+  "owner_decision_status": "pending_owner_decision",
+  "external_action_allowed": false,
+  "no_external_action": true
+}

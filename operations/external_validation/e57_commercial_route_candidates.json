@@ -1,0 +1,411 @@
+{
+  "artifact_id": "e57_commercial_route_candidates",
+  "route_count": 12,
+  "routes": [
+    {
+      "route_id": "governed_agent_action_proof_packet_owner_review_path",
+      "description": "Continue the E52 proof packet owner-review path.",
+      "value_object": "owner-reviewable proof packet",
+      "target_persona_category": "AI agent builder / governance-minded developer",
+      "current_proof_support": [
+        "E50A tool-layer allow/deny",
+        "E52 packet",
+        "E53 owner gate"
+      ],
+      "missing_evidence": [
+        "owner approval",
+        "external reviewer feedback"
+      ],
+      "blocker_state": "pending_owner_decision",
+      "owner_approval_required": true,
+      "external_action_required": false,
+      "real_mcp_transport_dependency": false,
+      "customer_validation_dependency": false,
+      "paid_signal_dependency": false,
+      "near_term_cash_potential": 0.56,
+      "proof_strength": 0.78,
+      "governance_risk": 0.1,
+      "commercial_risk": 0.2,
+      "reversibility": 0.92,
+      "no_overclaim_boundary": [
+        "no customer validation claim",
+        "no paid signal claim",
+        "no real MCP transport claim",
+        "owner approval required before external action"
+      ],
+      "allowed_now": true,
+      "allowed_action_type": "owner_review_only"
+    },
+    {
+      "route_id": "controlled_single_first_user_review_after_owner_approval",
+      "description": "Prepare for one controlled first-user review only after explicit owner approval.",
+      "value_object": "review protocol",
+      "target_persona_category": "MCP power user / AI ops lead",
+      "current_proof_support": [
+        "E52 packet",
+        "E53 protocol"
+      ],
+      "missing_evidence": [
+        "explicit owner approval",
+        "review evidence"
+      ],
+      "blocker_state": "owner_approval_missing",
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "real_mcp_transport_dependency": false,
+      "customer_validation_dependency": true,
+      "paid_signal_dependency": false,
+      "near_term_cash_potential": 0.72,
+      "proof_strength": 0.64,
+      "governance_risk": 0.34,
+      "commercial_risk": 0.36,
+      "reversibility": 0.62,
+      "no_overclaim_boundary": [
+        "no customer validation claim",
+        "no paid signal claim",
+        "no real MCP transport claim",
+        "owner approval required before external action"
+      ],
+      "allowed_now": false,
+      "allowed_action_type": "owner_approval_required"
+    },
+    {
+      "route_id": "real_mcp_transport_gate_first",
+      "description": "Close real MCP package/client transport before market-facing work.",
+      "value_object": "technical transport proof",
+      "target_persona_category": "developer tooling evaluator",
+      "current_proof_support": [
+        "E50A tool-layer proof"
+      ],
+      "missing_evidence": [
+        "real MCP transport proof"
+      ],
+      "blocker_state": "real_mcp_transport_not_closed",
+      "owner_approval_required": false,
+      "external_action_required": false,
+      "real_mcp_transport_dependency": true,
+      "customer_validation_dependency": false,
+      "paid_signal_dependency": false,
+      "near_term_cash_potential": 0.34,
+      "proof_strength": 0.5,
+      "governance_risk": 0.08,
+      "commercial_risk": 0.22,
+      "reversibility": 0.76,
+      "no_overclaim_boundary": [
+        "no customer validation claim",
+        "no paid signal claim",
+        "no real MCP transport claim",
+        "owner approval required before external action"
+      ],
+      "allowed_now": true,
+      "allowed_action_type": "internal_analysis"
+    },
+    {
+      "route_id": "gov_mcp_integration_service",
+      "description": "Package a gov-mcp integration service wedge.",
+      "value_object": "integration service",
+      "target_persona_category": "AI ops / platform engineer",
+      "current_proof_support": [
+        "E50A tool-layer proof",
+        "E51 gov-mcp tools"
+      ],
+      "missing_evidence": [
+        "real integration case",
+        "external review"
+      ],
+      "blocker_state": "real_mcp_transport_not_closed",
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "real_mcp_transport_dependency": true,
+      "customer_validation_dependency": true,
+      "paid_signal_dependency": false,
+      "near_term_cash_potential": 0.7,
+      "proof_strength": 0.62,
+      "governance_risk": 0.22,
+      "commercial_risk": 0.31,
+      "reversibility": 0.7,
+      "no_overclaim_boundary": [
+        "no customer validation claim",
+        "no paid signal claim",
+        "no real MCP transport claim",
+        "owner approval required before external action"
+      ],
+      "allowed_now": false,
+      "allowed_action_type": "owner_approval_required"
+    },
+    {
+      "route_id": "Y_star_gov_standalone_governance_kernel_wedge",
+      "description": "Lead with Y-star-gov standalone policy/kernel wedge.",
+      "value_object": "governance kernel",
+      "target_persona_category": "governance-minded developer",
+      "current_proof_support": [
+        "Y-star-gov validators",
+        "anti-drift gates"
+      ],
+      "missing_evidence": [
+        "market language",
+        "external review"
+      ],
+      "blocker_state": "commercial_positioning_unclear",
+      "owner_approval_required": true,
+      "external_action_required": false,
+      "real_mcp_transport_dependency": false,
+      "customer_validation_dependency": true,
+      "paid_signal_dependency": false,
+      "near_term_cash_potential": 0.45,
+      "proof_strength": 0.66,
+      "governance_risk": 0.12,
+      "commercial_risk": 0.34,
+      "reversibility": 0.84,
+      "no_overclaim_boundary": [
+        "no customer validation claim",
+        "no paid signal claim",
+        "no real MCP transport claim",
+        "owner approval required before external action"
+      ],
+      "allowed_now": true,
+      "allowed_action_type": "internal_analysis"
+    },
+    {
+      "route_id": "K9Audit_causal_audit_wedge",
+      "description": "Lead with causal audit evidence wedge.",
+      "value_object": "audit/evidence concept",
+      "target_persona_category": "AI audit / compliance developer",
+      "current_proof_support": [
+        "KG/CZL/CIEU artifacts",
+        "K9Audit context"
+      ],
+      "missing_evidence": [
+        "K9 write integration",
+        "case proof"
+      ],
+      "blocker_state": "K9_write_integration_not_closed",
+      "owner_approval_required": false,
+      "external_action_required": false,
+      "real_mcp_transport_dependency": false,
+      "customer_validation_dependency": false,
+      "paid_signal_dependency": false,
+      "near_term_cash_potential": 0.48,
+      "proof_strength": 0.58,
+      "governance_risk": 0.14,
+      "commercial_risk": 0.38,
+      "reversibility": 0.78,
+      "no_overclaim_boundary": [
+        "no customer validation claim",
+        "no paid signal claim",
+        "no real MCP transport claim",
+        "owner approval required before external action"
+      ],
+      "allowed_now": true,
+      "allowed_action_type": "internal_analysis"
+    },
+    {
+      "route_id": "full_governed_execution_causal_audit_proof_stack",
+      "description": "Package the full governed execution + causal audit + proof packet stack.",
+      "value_object": "full proof stack",
+      "target_persona_category": "AI ops lead / agent platform owner",
+      "current_proof_support": [
+        "CEO brain L5",
+        "behavior control center L5",
+        "internal company loop L5",
+        "E52 proof packet",
+        "E51 anti-drift/capability gates"
+      ],
+      "missing_evidence": [
+        "real MCP transport",
+        "external review"
+      ],
+      "blocker_state": "real_mcp_transport_not_closed",
+      "owner_approval_required": true,
+      "external_action_required": false,
+      "real_mcp_transport_dependency": true,
+      "customer_validation_dependency": true,
+      "paid_signal_dependency": false,
+      "near_term_cash_potential": 0.74,
+      "proof_strength": 0.8,
+      "governance_risk": 0.18,
+      "commercial_risk": 0.24,
+      "reversibility": 0.72,
+      "no_overclaim_boundary": [
+        "no customer validation claim",
+        "no paid signal claim",
+        "no real MCP transport claim",
+        "owner approval required before external action"
+      ],
+      "allowed_now": true,
+      "allowed_action_type": "internal_analysis"
+    },
+    {
+      "route_id": "AI_agent_company_runtime_harness_case_study",
+      "description": "Package the L5 internal company runtime as a case study/harness.",
+      "value_object": "company runtime harness case study",
+      "target_persona_category": "AI agent builder / founder-operator",
+      "current_proof_support": [
+        "CEO brain L5",
+        "behavior control center L5",
+        "internal company loop L5",
+        "E52 proof packet",
+        "E51 anti-drift/capability gates"
+      ],
+      "missing_evidence": [
+        "owner review",
+        "external feedback later"
+      ],
+      "blocker_state": "owner_approval_missing_for_external_review",
+      "owner_approval_required": true,
+      "external_action_required": false,
+      "real_mcp_transport_dependency": false,
+      "customer_validation_dependency": true,
+      "paid_signal_dependency": false,
+      "near_term_cash_potential": 0.76,
+      "proof_strength": 0.86,
+      "governance_risk": 0.12,
+      "commercial_risk": 0.2,
+      "reversibility": 0.88,
+      "no_overclaim_boundary": [
+        "no customer validation claim",
+        "no paid signal claim",
+        "no real MCP transport claim",
+        "owner approval required before external action"
+      ],
+      "allowed_now": true,
+      "allowed_action_type": "internal_analysis"
+    },
+    {
+      "route_id": "paid_setup_or_advisory_service",
+      "description": "Offer paid setup/advisory around governed agents.",
+      "value_object": "service offer",
+      "target_persona_category": "startup / SMB operator",
+      "current_proof_support": [
+        "proof packet",
+        "L5 internal loop"
+      ],
+      "missing_evidence": [
+        "owner approval",
+        "offer validation",
+        "payment evidence"
+      ],
+      "blocker_state": "no_paid_signal_and_no_owner_approval",
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "real_mcp_transport_dependency": false,
+      "customer_validation_dependency": true,
+      "paid_signal_dependency": true,
+      "near_term_cash_potential": 0.82,
+      "proof_strength": 0.5,
+      "governance_risk": 0.42,
+      "commercial_risk": 0.54,
+      "reversibility": 0.48,
+      "no_overclaim_boundary": [
+        "no customer validation claim",
+        "no paid signal claim",
+        "no real MCP transport claim",
+        "owner approval required before external action"
+      ],
+      "allowed_now": false,
+      "allowed_action_type": "owner_approval_required"
+    },
+    {
+      "route_id": "public_readonly_market_observation_refresh",
+      "description": "Run bounded public-read-only market observation refresh.",
+      "value_object": "evidence refresh",
+      "target_persona_category": "internal CEO runtime",
+      "current_proof_support": [
+        "E50B observation pattern"
+      ],
+      "missing_evidence": [
+        "repo-controlled adapter or safe source seed"
+      ],
+      "blocker_state": "external_page_read_adapter_unavailable",
+      "owner_approval_required": false,
+      "external_action_required": false,
+      "real_mcp_transport_dependency": false,
+      "customer_validation_dependency": false,
+      "paid_signal_dependency": false,
+      "near_term_cash_potential": 0.42,
+      "proof_strength": 0.46,
+      "governance_risk": 0.16,
+      "commercial_risk": 0.22,
+      "reversibility": 0.9,
+      "no_overclaim_boundary": [
+        "no customer validation claim",
+        "no paid signal claim",
+        "no real MCP transport claim",
+        "owner approval required before external action"
+      ],
+      "allowed_now": false,
+      "allowed_action_type": "public_readonly_observation"
+    },
+    {
+      "route_id": "wait_for_owner_decision",
+      "description": "Hold external-review track until owner decides.",
+      "value_object": "safe pause",
+      "target_persona_category": "owner",
+      "current_proof_support": [
+        "E53 owner gate"
+      ],
+      "missing_evidence": [
+        "owner decision"
+      ],
+      "blocker_state": "pending_owner_decision",
+      "owner_approval_required": false,
+      "external_action_required": false,
+      "real_mcp_transport_dependency": false,
+      "customer_validation_dependency": false,
+      "paid_signal_dependency": false,
+      "near_term_cash_potential": 0.18,
+      "proof_strength": 0.44,
+      "governance_risk": 0.04,
+      "commercial_risk": 0.46,
+      "reversibility": 0.96,
+      "no_overclaim_boundary": [
+        "no customer validation claim",
+        "no paid signal claim",
+        "no real MCP transport claim",
+        "owner approval required before external action"
+      ],
+      "allowed_now": true,
+      "allowed_action_type": "internal_analysis"
+    },
+    {
+      "route_id": "direct_customer_outreach_now",
+      "description": "Direct customer outreach immediately.",
+      "value_object": "outreach attempt",
+      "target_persona_category": "external human",
+      "current_proof_support": [],
+      "missing_evidence": [
+        "owner approval",
+        "recipient identity",
+        "contact evidence"
+      ],
+      "blocker_state": "denied_owner_approval_missing",
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "real_mcp_transport_dependency": false,
+      "customer_validation_dependency": true,
+      "paid_signal_dependency": true,
+      "near_term_cash_potential": 0.8,
+      "proof_strength": 0.08,
+      "governance_risk": 0.96,
+      "commercial_risk": 0.88,
+      "reversibility": 0.12,
+      "no_overclaim_boundary": [
+        "no customer validation claim",
+        "no paid signal claim",
+        "no real MCP transport claim",
+        "owner approval required before external action"
+      ],
+      "allowed_now": false,
+      "allowed_action_type": "denied"
+    }
+  ],
+  "rules": {
+    "direct_customer_outreach_now": "deny",
+    "controlled_single_first_user_review_after_owner_approval": "owner_approval_required",
+    "public_readonly_market_observation_refresh": "blocked unless safe adapter exists",
+    "no_route_claims_customer_validation_or_paid_signal": true
+  },
+  "owner_decision_status": "pending_owner_decision",
+  "external_action_allowed": false,
+  "no_external_action": true
+}

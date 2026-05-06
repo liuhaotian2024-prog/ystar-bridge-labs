@@ -1,0 +1,208 @@
+{
+  "artifact_id": "e57_money_route_capability_binding_gate_result",
+  "payload": {
+    "gate_id": "e57_money_route_capability_binding_gate",
+    "capability_centerline_contract": {
+      "contract_id": "e57_capability_centerline_contract",
+      "class_rules": {
+        "cognitive_capability": {
+          "required_centerline": [
+            "CEO_brain"
+          ]
+        },
+        "behavior_control_capability": {
+          "required_centerline": [
+            "canonical_action_runtime",
+            "Y_star_gov_boundary"
+          ]
+        },
+        "evidence_closure_capability": {
+          "required_centerline": [
+            "KG_CZL_CIEU_K9_evidence"
+          ]
+        },
+        "boundary_capability": {
+          "required_centerline": [
+            "Y_star_gov_boundary"
+          ]
+        },
+        "reference_only_artifact": {
+          "required_centerline": [
+            "reference_only"
+          ]
+        }
+      },
+      "no_external_action": true
+    },
+    "capability_bindings": [
+      {
+        "capability_id": "e57_capability_delta",
+        "path": "office/mission_command/e57_post_l5_capability_delta.py",
+        "repo": "bridge-labs",
+        "functional_class": "cognitive_capability",
+        "required_centerline": [
+          "CEO_brain"
+        ],
+        "actual_binding": [
+          "CEO_brain"
+        ],
+        "binding_status": "correctly_bound",
+        "required_reader": "CEO brain / behavior center",
+        "actual_reader": "e57_ceo_brain_readback_smoke",
+        "required_gate": "E57 capability binding gate",
+        "actual_gate": "passed",
+        "remediation": "no_action",
+        "severity": "P1",
+        "affects_current_state": true,
+        "agent_facing": false,
+        "consumed_as_current": false,
+        "evidence_basis": "E57 money route capability binding"
+      },
+      {
+        "capability_id": "e57_route_scorer",
+        "path": "office/mission_command/e57_counterfactual_route_scorer.py",
+        "repo": "bridge-labs",
+        "functional_class": "cognitive_capability",
+        "required_centerline": [
+          "CEO_brain"
+        ],
+        "actual_binding": [
+          "CEO_brain"
+        ],
+        "binding_status": "correctly_bound",
+        "required_reader": "CEO brain / behavior center",
+        "actual_reader": "e57_ceo_brain_readback_smoke",
+        "required_gate": "E57 capability binding gate",
+        "actual_gate": "passed",
+        "remediation": "no_action",
+        "severity": "P1",
+        "affects_current_state": true,
+        "agent_facing": false,
+        "consumed_as_current": false,
+        "evidence_basis": "E57 money route capability binding"
+      },
+      {
+        "capability_id": "e57_decision_packet",
+        "path": "office/mission_command/e57_commercial_route_decision.py",
+        "repo": "bridge-labs",
+        "functional_class": "cognitive_capability",
+        "required_centerline": [
+          "CEO_brain"
+        ],
+        "actual_binding": [
+          "CEO_brain"
+        ],
+        "binding_status": "correctly_bound",
+        "required_reader": "CEO brain / behavior center",
+        "actual_reader": "e57_ceo_brain_readback_smoke",
+        "required_gate": "E57 capability binding gate",
+        "actual_gate": "passed",
+        "remediation": "no_action",
+        "severity": "P0",
+        "affects_current_state": true,
+        "agent_facing": false,
+        "consumed_as_current": false,
+        "evidence_basis": "E57 money route capability binding"
+      },
+      {
+        "capability_id": "e57_behavior_authorization",
+        "path": "office/mission_command/e57_selected_route_behavior_authorization.py",
+        "repo": "bridge-labs",
+        "functional_class": "behavior_control_capability",
+        "required_centerline": [
+          "canonical_action_runtime",
+          "Y_star_gov_boundary"
+        ],
+        "actual_binding": [
+          "canonical_action_runtime",
+          "Y_star_gov_boundary"
+        ],
+        "binding_status": "correctly_bound",
+        "required_reader": "CEO brain / behavior center",
+        "actual_reader": "e57_ceo_brain_readback_smoke",
+        "required_gate": "E57 capability binding gate",
+        "actual_gate": "passed",
+        "remediation": "no_action",
+        "severity": "P0",
+        "affects_current_state": true,
+        "agent_facing": false,
+        "consumed_as_current": false,
+        "evidence_basis": "E57 money route capability binding"
+      },
+      {
+        "capability_id": "e57_no_go_boundary",
+        "path": "operations/external_validation/e57_selected_route_behavior_authorization_result.json",
+        "repo": "bridge-labs",
+        "functional_class": "boundary_capability",
+        "required_centerline": [
+          "Y_star_gov_boundary",
+          "gov_mcp_boundary"
+        ],
+        "actual_binding": [
+          "Y_star_gov_boundary",
+          "gov_mcp_boundary"
+        ],
+        "binding_status": "correctly_bound",
+        "required_reader": "CEO brain / behavior center",
+        "actual_reader": "e57_ceo_brain_readback_smoke",
+        "required_gate": "E57 capability binding gate",
+        "actual_gate": "passed",
+        "remediation": "no_action",
+        "severity": "P0",
+        "affects_current_state": true,
+        "agent_facing": true,
+        "consumed_as_current": false,
+        "evidence_basis": "E57 money route capability binding"
+      },
+      {
+        "capability_id": "e57_evidence_writeback",
+        "path": "office/mission_command/e57_money_route_evidence_writeback.py",
+        "repo": "bridge-labs",
+        "functional_class": "evidence_closure_capability",
+        "required_centerline": [
+          "KG_CZL_CIEU_K9_evidence"
+        ],
+        "actual_binding": [
+          "KG_CZL_CIEU_K9_evidence"
+        ],
+        "binding_status": "correctly_bound",
+        "required_reader": "CEO brain / behavior center",
+        "actual_reader": "e57_ceo_brain_readback_smoke",
+        "required_gate": "E57 capability binding gate",
+        "actual_gate": "passed",
+        "remediation": "no_action",
+        "severity": "P1",
+        "affects_current_state": true,
+        "agent_facing": false,
+        "consumed_as_current": false,
+        "evidence_basis": "E57 money route capability binding"
+      }
+    ],
+    "external_action_allowed": false,
+    "no_external_action": true
+  },
+  "gate": {
+    "gate_id": "e57_money_route_capability_binding_gate",
+    "status": "capability_binding_gate_passed",
+    "allowed": true,
+    "record_count": 6,
+    "wrong_centerline_count": 0,
+    "missing_binding_count": 0,
+    "stale_current_state_count": 0,
+    "p0_failure_count": 0,
+    "p1_failure_count": 0,
+    "failures": [],
+    "warnings": [],
+    "no_external_action": true
+  },
+  "checks": {
+    "capability_binding_correct": true,
+    "decision_is_cognitive_not_executor": true,
+    "behavior_authorization_bound_to_action_runtime": true,
+    "evidence_bound_to_KG_CZL_CIEU": true,
+    "external_action_blocked": true
+  },
+  "passed": true,
+  "external_action_allowed": false,
+  "no_external_action": true
+}
