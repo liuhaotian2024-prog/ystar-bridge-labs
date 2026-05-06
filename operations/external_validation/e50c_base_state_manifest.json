@@ -1,0 +1,19 @@
+{
+  "artifact_id": "e50c_base_state_manifest",
+  "created_at": "2026-05-06T12:28:56.107152+00:00",
+  "bridge_job_id": "e50c_ceo_brain_centerline_reconnection_20260506T000001Z",
+  "repo": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+  "branch": "backflow/aiden-ceo-meeting-room",
+  "expected_base_head": "8091cff42bb10e91ea19d7aacdeec2a785e328e9",
+  "local_head": "8091cff42bb10e91ea19d7aacdeec2a785e328e9",
+  "remote_head_local_tracking": "8091cff42bb10e91ea19d7aacdeec2a785e328e9",
+  "bridge_status_short": "",
+  "gov_mcp_status_short": "",
+  "y_star_gov_status_short": "",
+  "k9audit_status_short": "",
+  "ports_7920_7930_clear": true,
+  "process_check_limitation": "ps is denied in Codex sandbox; E50C starts no gov-mcp process or server.",
+  "no_e50c_leftovers_before_delivery": true,
+  "base_verified": true,
+  "no_external_action": true
+}

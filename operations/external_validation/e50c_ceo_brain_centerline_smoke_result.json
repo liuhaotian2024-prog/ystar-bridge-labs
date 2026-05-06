@@ -1,0 +1,51 @@
+{
+  "artifact_id": "e50c_ceo_brain_centerline_smoke_result",
+  "task": {
+    "task_id": "e50c_centerline_smoke",
+    "task_title": "E50C CEO brain centerline smoke",
+    "task_description": "Prepare E51 proof packet packaging only after loading E50B current decision state from CEO brain."
+  },
+  "brain_centerline_status": "ceo_brain_centerline_connected",
+  "current_selected_route": "package_governed_agent_action_proof_packet",
+  "current_nearest_alternative": "external_commercial_observation_now",
+  "current_next_milestone": "E51_package_governed_agent_action_proof_packet_for_first_user_review",
+  "current_blocker_state": "real_mcp_transport_not_closed_but_E50A_tool_layer_allow_deny_closed",
+  "current_e50a_status": "tool_layer_allow_deny_closed",
+  "current_e50b_status": "counterfactual_runtime_reconnected_external_observation_closed_money_route_selected",
+  "current_no_go_boundaries": {
+    "no_outreach": true,
+    "no_publication": true,
+    "no_customer_validation_claim": true,
+    "no_paid_signal_claim": true,
+    "no_expert_feedback_claim": true,
+    "no_contact_scraping": true,
+    "no_login": true,
+    "no_provider_private_api": true,
+    "no_payment_or_secret_use": true,
+    "owner_approval_required_before_external_action": true,
+    "brain_may_not_bypass_governance": true
+  },
+  "canonical_runtime_consumption": {
+    "canonical_runtime_invoked": true,
+    "canonical_brain_context_selected_route": "package_governed_agent_action_proof_packet",
+    "canonical_brain_context_next_milestone": "E51_package_governed_agent_action_proof_packet_for_first_user_review",
+    "canonical_route_decision": {
+      "selected_value_object": "Governed Agent Action Proof Packet",
+      "technical_substrate": "gov-mcp + Y-star-gov governed execution",
+      "first_external_attempt_now": true,
+      "reason": "Local proof is clean enough for one owner-approved attempt.",
+      "next_recommended_milestone": "E47_owner_approved_single_external_user_attempt"
+    },
+    "no_external_action": true
+  },
+  "assertions": {
+    "selected_route_loaded": true,
+    "nearest_alternative_loaded": true,
+    "next_milestone_loaded": true,
+    "blocker_loaded": true,
+    "boundaries_loaded": true,
+    "canonical_runtime_saw_brain_context": true
+  },
+  "passes": true,
+  "no_external_action": true
+}

@@ -1,0 +1,7 @@
+{"from": "e50c_e50b_decision_packet_consumed", "to": "e50c_ceo_brain_centerline", "type": "read_by"}
+{"from": "e50c_ceo_brain_centerline", "to": "e50c_selected_route_state", "type": "sets_current_route"}
+{"from": "e50c_ceo_brain_centerline", "to": "e50c_nearest_alternative_state", "type": "sets_nearest_alternative"}
+{"from": "e50c_ceo_brain_centerline", "to": "e50c_blocker_state", "type": "sets_current_blocker"}
+{"from": "e50c_ceo_brain_centerline", "to": "e50c_no_go_boundary_state", "type": "preserves_boundary"}
+{"from": "e50c_ceo_brain_centerline", "to": "e50c_next_milestone_state", "type": "sets_next_milestone"}
+{"from": "e50c_selected_route_state", "to": "Y-star-gov/gov-mcp/CIEU/CZL/owner-approval", "type": "must_pass_governance_boundary"}

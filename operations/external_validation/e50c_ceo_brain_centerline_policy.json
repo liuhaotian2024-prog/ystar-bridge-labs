@@ -1,0 +1,24 @@
+{
+  "artifact_id": "e50c_ceo_brain_centerline_policy",
+  "ceo_brain_is": [
+    "cognitive state center",
+    "wisdom/current decision/current blocker/current route/current no-go boundary store",
+    "read by canonical runtime before route/package decisions",
+    "updated after major milestones"
+  ],
+  "ceo_brain_is_not": [
+    "direct executor",
+    "governance bypass",
+    "replacement for Y-star-gov/gov-mcp",
+    "replacement for CIEU/CZL/K9 audit",
+    "authority to contact/publish/spend without owner approval"
+  ],
+  "canonical_control_model": {
+    "CEO brain": "remembers and frames",
+    "Canonical CEO runtime": "interprets and routes",
+    "Y-star-gov/gov-mcp": "gates and enforces",
+    "CIEU/CZL/K9": "records and audits",
+    "Owner approval": "required for external contact/publication/payment/product commitment"
+  },
+  "no_external_action": true
+}

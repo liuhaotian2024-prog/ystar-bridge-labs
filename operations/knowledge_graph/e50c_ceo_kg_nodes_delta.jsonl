@@ -1,0 +1,7 @@
+{"id": "e50c_ceo_brain_centerline", "type": "RuntimeCenterline", "label": "CEO brain centerline consumes current E50B state", "source_paths": ["office/mission_command/e46b_ceo_brain_adapter.py"]}
+{"id": "e50c_e50b_decision_packet_consumed", "type": "ConsumedArtifact", "label": "E50B commercial decision packet consumed by brain loader", "source_paths": ["operations/external_validation/e50b_ceo_commercial_decision_packet.json"]}
+{"id": "e50c_selected_route_state", "type": "CurrentState", "label": "package_governed_agent_action_proof_packet"}
+{"id": "e50c_nearest_alternative_state", "type": "CurrentState", "label": "external_commercial_observation_now"}
+{"id": "e50c_blocker_state", "type": "CurrentState", "label": "real_mcp_transport_not_closed_but_E50A_tool_layer_allow_deny_closed"}
+{"id": "e50c_no_go_boundary_state", "type": "BoundaryState", "label": "no outreach/publication/customer-validation/paid-signal claim"}
+{"id": "e50c_next_milestone_state", "type": "NextMilestone", "label": "E51_package_governed_agent_action_proof_packet_for_first_user_review"}

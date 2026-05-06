@@ -79,6 +79,100 @@ def _commercial_assets(limit: int = 12) -> list[dict[str, Any]]:
     return sorted(assets, key=lambda item: (-item["score"], item["path"]))[:limit]
 
 
+
+E50B_CURRENT_STATE_PATHS = {
+    "brain_update": "operations/external_validation/e50b_ceo_brain_counterfactual_update.json",
+    "commercial_decision_packet": "operations/external_validation/e50b_ceo_commercial_decision_packet.json",
+    "counterfactual_money_route_retest": "operations/external_validation/e50b_counterfactual_money_route_retest.json",
+    "counterfactual_money_route_matrix": "operations/external_validation/e50b_counterfactual_money_route_matrix.json",
+    "kg_read_model_update": "operations/knowledge_graph/e50b_ceo_kg_read_model_update.json",
+    "czl_closure": "operations/external_validation/e50b_czl_closure.json",
+    "cieu_residual_summary": "operations/external_validation/e50b_cieu_residual_summary.json",
+    "e50a_mcp_client_blocker_update": "operations/external_validation/e50a_mcp_client_blocker_update.json",
+}
+
+
+def _route_id(value: Any) -> str:
+    if isinstance(value, dict):
+        return str(value.get("route_id") or value.get("selected_route") or "")
+    if isinstance(value, str):
+        return value
+    return ""
+
+
+def _artifact_or_unavailable(rel: str) -> dict[str, Any]:
+    path = BRIDGE_ROOT / rel
+    if not path.exists():
+        return {"available": False, "path": rel, "data": None, "status": "unavailable_nonfatal"}
+    return {"available": True, "path": rel, "data": _json(path), "status": "loaded"}
+
+
+def _load_e50b_current_state() -> dict[str, Any]:
+    artifacts = {name: _artifact_or_unavailable(rel) for name, rel in E50B_CURRENT_STATE_PATHS.items()}
+    packet = artifacts["commercial_decision_packet"].get("data") or {}
+    retest = artifacts["counterfactual_money_route_retest"].get("data") or {}
+    matrix = artifacts["counterfactual_money_route_matrix"].get("data") or {}
+    kg = artifacts["kg_read_model_update"].get("data") or {}
+    czl = artifacts["czl_closure"].get("data") or {}
+    cieu = artifacts["cieu_residual_summary"].get("data") or {}
+    e50a = artifacts["e50a_mcp_client_blocker_update"].get("data") or {}
+
+    selected_route = _route_id(packet.get("selected_route")) or _route_id(retest.get("selected_route")) or _route_id(matrix.get("selected_route")) or _route_id(kg.get("selected_route"))
+    nearest_alternative = _route_id(packet.get("nearest_rejected_or_deferred_alternative")) or _route_id(retest.get("nearest_rejected_or_deferred_route")) or _route_id(matrix.get("nearest_rejected_or_deferred_route")) or _route_id(kg.get("nearest_counterfactual_alternative"))
+    selected_route_payload = packet.get("selected_route") if isinstance(packet.get("selected_route"), dict) else retest.get("selected_route", {})
+    blocker_state = selected_route_payload.get("blocker_state") if isinstance(selected_route_payload, dict) else ""
+    residuals = cieu.get("residuals", []) if isinstance(cieu.get("residuals", []), list) else []
+    if residuals:
+        blocker_state = blocker_state or "; ".join(str(item) for item in residuals)
+    current_next = packet.get("next_executable_milestone") or kg.get("next_decision_horizon") or ""
+    e50b_status = packet.get("final_status") or czl.get("external_observation_status") or "unavailable_nonfatal"
+    current_no_go_boundaries = {
+        "no_outreach": True,
+        "no_publication": True,
+        "no_customer_validation_claim": True,
+        "no_paid_signal_claim": True,
+        "no_expert_feedback_claim": True,
+        "no_contact_scraping": True,
+        "no_login": True,
+        "no_provider_private_api": True,
+        "no_payment_or_secret_use": True,
+        "owner_approval_required_before_external_action": True,
+        "brain_may_not_bypass_governance": True,
+    }
+    matrix_routes = matrix.get("routes", []) if isinstance(matrix.get("routes"), list) else []
+    counterfactual_summary = {
+        "available": artifacts["counterfactual_money_route_matrix"]["available"],
+        "selected_route": _route_id(matrix.get("selected_route")),
+        "nearest_rejected_or_deferred_route": _route_id(matrix.get("nearest_rejected_or_deferred_route")),
+        "route_count": len(matrix_routes),
+        "validation": matrix.get("validation", {}),
+    }
+    centerline_connected = all([
+        selected_route == "package_governed_agent_action_proof_packet",
+        nearest_alternative == "external_commercial_observation_now",
+        current_next == "E51_package_governed_agent_action_proof_packet_for_first_user_review",
+        "real_mcp_transport_not_closed" in blocker_state,
+        e50a.get("new_status") == "tool_layer_allow_deny_closed",
+    ])
+    return {
+        "current_decision_horizon": "E51 first-user-review proof packet packaging",
+        "current_selected_route": selected_route or "unavailable_nonfatal",
+        "current_nearest_alternative": nearest_alternative or "unavailable_nonfatal",
+        "current_counterfactual_matrix_summary": counterfactual_summary,
+        "current_commercial_decision_packet": packet if packet else {"available": False, "status": "unavailable_nonfatal"},
+        "current_blocker_state": blocker_state or "unavailable_nonfatal",
+        "current_no_go_boundaries": current_no_go_boundaries,
+        "current_next_milestone": current_next or "unavailable_nonfatal",
+        "current_e50a_status": e50a.get("new_status") or e50a.get("final_status") or "unavailable_nonfatal",
+        "current_e50b_status": e50b_status,
+        "current_czl_closure": czl if czl else {"available": False, "status": "unavailable_nonfatal"},
+        "current_cieu_residual_summary": cieu if cieu else {"available": False, "status": "unavailable_nonfatal"},
+        "current_kg_read_model_update": kg if kg else {"available": False, "status": "unavailable_nonfatal"},
+        "brain_centerline_status": "ceo_brain_centerline_connected" if centerline_connected else "e50b_current_state_unavailable_nonfatal",
+        "e50b_artifacts_loaded": {name: item["available"] for name, item in artifacts.items()},
+    }
+
+
 def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     query = f"{task.get('task_title', '')} {task.get('task_description', '')} M Triangle value production"
     wisdom = _run(["python3", "scripts/wisdom_search.py", "--top", "3", "--json", query])
@@ -91,7 +185,16 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "operations/external_validation/e42_ceo_runtime_reuse_router_integration.json",
         "operations/knowledge_graph/e45_ceo_kg_read_model_update.json",
         "operations/external_validation/e45_ceo_brain_first_value_demo_update.json",
+        "operations/external_validation/e50b_ceo_brain_counterfactual_update.json",
+        "operations/external_validation/e50b_ceo_commercial_decision_packet.json",
+        "operations/external_validation/e50b_counterfactual_money_route_retest.json",
+        "operations/external_validation/e50b_counterfactual_money_route_matrix.json",
+        "operations/knowledge_graph/e50b_ceo_kg_read_model_update.json",
+        "operations/external_validation/e50b_czl_closure.json",
+        "operations/external_validation/e50b_cieu_residual_summary.json",
+        "operations/external_validation/e50a_mcp_client_blocker_update.json",
     ])
+    e50b_current_state = _load_e50b_current_state()
     try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
@@ -109,7 +212,22 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
             "OPERATIONS": _lines(BRIDGE_ROOT / "OPERATIONS.md", ["first", "user", "revenue", "pmf", "install", "customer"]),
         },
         "latest_runtime_artifacts": latest,
+        "current_decision_horizon": e50b_current_state["current_decision_horizon"],
+        "current_selected_route": e50b_current_state["current_selected_route"],
+        "current_nearest_alternative": e50b_current_state["current_nearest_alternative"],
+        "current_counterfactual_matrix_summary": e50b_current_state["current_counterfactual_matrix_summary"],
+        "current_commercial_decision_packet": e50b_current_state["current_commercial_decision_packet"],
+        "current_blocker_state": e50b_current_state["current_blocker_state"],
+        "current_no_go_boundaries": e50b_current_state["current_no_go_boundaries"],
+        "current_next_milestone": e50b_current_state["current_next_milestone"],
+        "current_e50a_status": e50b_current_state["current_e50a_status"],
+        "current_e50b_status": e50b_current_state["current_e50b_status"],
+        "current_czl_closure": e50b_current_state["current_czl_closure"],
+        "current_cieu_residual_summary": e50b_current_state["current_cieu_residual_summary"],
+        "current_kg_read_model_update": e50b_current_state["current_kg_read_model_update"],
+        "brain_centerline_status": e50b_current_state["brain_centerline_status"],
+        "e50b_artifacts_loaded": e50b_current_state["e50b_artifacts_loaded"],
         "commercial_assets": _commercial_assets(),
-        "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, and commercial assets",
+        "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,
     }
