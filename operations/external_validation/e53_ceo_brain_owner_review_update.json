@@ -6,4 +6,4 @@
   "brain_role": "remember owner-review gate and block external action until explicit approval evidence exists",
   "next_recommended_milestone": "E54_owner_decision_or_controlled_first_user_review_plan",
   "no_external_action": true
-}\n
+}
