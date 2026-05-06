@@ -1,0 +1,14 @@
+{
+  "artifact_id": "e62_y_star_gov_validation_result",
+  "validation_scope": "read-only Y-star-gov runtime linkage and capability binding where available",
+  "checks": {
+    "anti_drift_gate_passed": true,
+    "capability_binding_gate_passed": true,
+    "behavior_authorization_present": true,
+    "CEO_brain_readback_passed": true,
+    "external_action_blocked": true
+  },
+  "passed": true,
+  "read_only_repo_mutation": false,
+  "external_action_allowed": false
+}

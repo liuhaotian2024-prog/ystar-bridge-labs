@@ -1,0 +1,62 @@
+{
+  "artifact_id": "e62_revenue_action_risk_tiers",
+  "tiers": [
+    {
+      "tier": "T0_internal_only",
+      "allowed_examples": [
+        "internal reasoning",
+        "route comparison",
+        "offer draft",
+        "delivery blueprint draft"
+      ],
+      "external_action": false,
+      "owner_approval_required": false,
+      "behavior_authorization": "ALLOW"
+    },
+    {
+      "tier": "T1_public_read_only",
+      "allowed_examples": [
+        "controlled public knowledge observation",
+        "source receipts",
+        "no-contact route learning"
+      ],
+      "external_action": false,
+      "owner_approval_required": false,
+      "behavior_authorization": "ALLOW_if_policy_and_network_permit"
+    },
+    {
+      "tier": "T2_draft_only_external_material",
+      "allowed_examples": [
+        "draft outreach copy",
+        "draft review plan",
+        "draft pricing page"
+      ],
+      "external_action": false,
+      "owner_approval_required": false,
+      "behavior_authorization": "ALLOW_draft_only_no_send_no_publish"
+    },
+    {
+      "tier": "T3_owner_approved_external_contact",
+      "allowed_examples": [
+        "single controlled review contact after explicit owner approval"
+      ],
+      "external_action": true,
+      "owner_approval_required": true,
+      "behavior_authorization": "DENY_until_owner_approval"
+    },
+    {
+      "tier": "T4_owner_approved_commercial_transaction",
+      "allowed_examples": [
+        "pricing, invoice, payment, paid pilot, client delivery"
+      ],
+      "external_action": true,
+      "owner_approval_required": true,
+      "behavior_authorization": "DENY_until_owner_approval_and_transaction_governance"
+    }
+  ],
+  "pending_owner_decision_is_not_approval": true,
+  "external_action_allowed": false,
+  "no_customer_validation_claim": true,
+  "no_paid_signal_claim": true,
+  "no_expert_feedback_claim": true
+}

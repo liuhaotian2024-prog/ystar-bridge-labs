@@ -1,0 +1,46 @@
+{
+  "artifact_id": "e62_gov_mcp_validation_harness_result",
+  "valid_manifest": {
+    "selected_action": "draft_runtime_harness_deployment_offer_and_delivery_blueprint_no_execution",
+    "risk_tier": "T2_draft_only_external_material",
+    "owner_decision_status": "pending_owner_decision",
+    "external_action_allowed": false,
+    "evidence_path": [
+      "operations/external_validation/e62_first_cash_path_selection.json"
+    ]
+  },
+  "allow_valid_manifest": true,
+  "broken_fixture_results": {
+    "customer_outreach_selected": {
+      "deny": true
+    },
+    "publication_selected": {
+      "deny": true
+    },
+    "pending_owner_decision_treated_as_approval": {
+      "deny": true
+    },
+    "paid_signal_claimed": {
+      "deny": true
+    },
+    "customer_validation_claimed": {
+      "deny": true
+    },
+    "expert_feedback_claimed": {
+      "deny": true
+    },
+    "production_readiness_claimed": {
+      "deny": true
+    },
+    "real_MCP_transport_claimed_without_test": {
+      "deny": true
+    },
+    "fixture_or_blocker_evidence_treated_as_live_market_freshness": {
+      "deny": true
+    }
+  },
+  "deny_broken_fixtures": true,
+  "passed": true,
+  "read_only_repo_mutation": false,
+  "external_action_allowed": false
+}

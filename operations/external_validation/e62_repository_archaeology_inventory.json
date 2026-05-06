@@ -1,0 +1,3851 @@
+{
+  "artifact_id": "e62_repository_archaeology_inventory",
+  "bridge_job_id": "e62_repository_grounded_network_probe_and_revenue_runtime_recenter_20260506T000001Z",
+  "asset_count": 240,
+  "discovered_assets": [
+    {
+      "path": "finance/cost_analysis_001.md",
+      "capability_type": "commercial_revenue_asset",
+      "milestone_origin": "business_directory",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "finance/cost_analysis_002.md",
+      "capability_type": "commercial_revenue_asset",
+      "milestone_origin": "business_directory",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "finance/daily_burn.md",
+      "capability_type": "commercial_revenue_asset",
+      "milestone_origin": "business_directory",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "finance/expenditure_log.md",
+      "capability_type": "commercial_revenue_asset",
+      "milestone_origin": "business_directory",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "finance/expense_tracker.md",
+      "capability_type": "commercial_revenue_asset",
+      "milestone_origin": "business_directory",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "finance/financial_forecast_12m.md",
+      "capability_type": "commercial_revenue_asset",
+      "milestone_origin": "business_directory",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "finance/financial_health_20260415.md",
+      "capability_type": "commercial_revenue_asset",
+      "milestone_origin": "business_directory",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "finance/forecast_q2_2026.md",
+      "capability_type": "commercial_revenue_asset",
+      "milestone_origin": "business_directory",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "finance/master_ledger_20260415.md",
+      "capability_type": "commercial_revenue_asset",
+      "milestone_origin": "business_directory",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "finance/pricing/discount_authority_matrix.md",
+      "capability_type": "commercial_revenue_asset",
+      "milestone_origin": "business_directory",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "finance/pricing/proof_economics.md",
+      "capability_type": "commercial_revenue_asset",
+      "milestone_origin": "business_directory",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "finance/pricing/ystar_gov_pricing_v1.md",
+      "capability_type": "commercial_revenue_asset",
+      "milestone_origin": "business_directory",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "finance/pricing_model_v1.md",
+      "capability_type": "commercial_revenue_asset",
+      "milestone_origin": "business_directory",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "finance/saas_balance_checklist_20260415.md",
+      "capability_type": "commercial_revenue_asset",
+      "milestone_origin": "business_directory",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "marketing/first_user_install_guide.md",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "business_directory",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "marketing/post_launch_faq.md",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "business_directory",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "marketing/post_launch_monitoring_protocol.md",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "business_directory",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "marketing/release_checklist_0.48.0.md",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "business_directory",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "marketing/show_hn_draft.md",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "business_directory",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "marketing/skill_launch_materials.md",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "business_directory",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "marketing/skill_marketplace_listing.md",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "business_directory",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "marketing/social_media_launch_plan.md",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "business_directory",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/action_authorization_router.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e11_action_authorization_router.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/b2r_external_validation_messaging.py",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/c3_validation_batch_selector.py",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_c3_validation_batch_selector.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/closure_status_router.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e11_closure_status_router.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/counterfactual_router.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e11_counterfactual_router.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e10_shortest_revenue_path_scorer.py",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e10_shortest_revenue_path_scorer.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e10_validation_batch_builder.py",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e10_validation_batch_builder.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e12_offer_learning_update.py",
+      "capability_type": "commercial_revenue_asset",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e12_validation_approval.py",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e12_validation_approval.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e13_paid_signal_readiness.py",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e13_paid_signal_readiness.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": true,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e13r_offer_revision.py",
+      "capability_type": "commercial_revenue_asset",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e13r_offer_revision.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e14_manual_validation_draft.py",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e15a_target_replacement_router.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e15a_target_replacement_router.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e17_offer_revision_runtime.py",
+      "capability_type": "commercial_revenue_asset",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e17_offer_revision_runtime.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e17_paid_signal_runtime.py",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e17_paid_signal_runtime.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e17_route_decision.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e17_route_decision.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e18_commercial_fit_scoring.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e18_commercial_fit_scoring.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e18_commercial_kpi.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e18_commercial_kpi.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e18_offer_variant_matrix.py",
+      "capability_type": "commercial_revenue_asset",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e18_offer_variant_matrix.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e18_route_decision.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e18_route_decision.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e19_commercial_route_decision.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e19_commercial_route_decision.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e19_revenue_validation_control_room.py",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e19_revenue_validation_control_room.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e20_route_decision.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e20_route_decision.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e21_route_decision.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e21_route_decision.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e22_route_decision.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e22_route_decision.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e23_route_decision.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e23_route_decision.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e24_ceo_execution_router.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E24",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e24_ceo_execution_router.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e24_commercial_imagination_engine.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E24",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e24_commercial_imagination_engine.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e24_ecosystem_route_registry.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E24",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e24_ecosystem_route_registry.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e24_revenue_path_portfolio_selector.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E24",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e24_revenue_path_portfolio_selector.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e25_ceo_kg_sandbox_route_selector.py",
+      "capability_type": "evidence_writeback",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e25_ceo_kg_sandbox_route_selector.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e25_revenue_portfolio_update.py",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e25_revenue_portfolio_update.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e28_ceo_kg_production_live_feedback.py",
+      "capability_type": "evidence_writeback",
+      "milestone_origin": "E28",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e28_ceo_kg_production_live_feedback.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e28_existing_production_live_wheel_inventory.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E28",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e28_existing_production_live_wheel_inventory.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e28_future_production_live_policy.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E28",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e28_future_production_live_policy.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e28_production_live_blocker_matrix.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E28",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e28_production_live_blocker_matrix.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e28_production_live_decision_gate.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E28",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e28_production_live_decision_gate.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e28_production_live_duplicate_conflict_map.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E28",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e28_production_live_duplicate_conflict_map.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e28r_existing_revenue_mode_wheel_inventory.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E28",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e28r_existing_revenue_mode_wheel_inventory.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e28r_future_revenue_mode_policy.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E28",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e28r_future_revenue_mode_policy.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e28r_revenue_mode_branch_registry.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E28",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e28r_revenue_mode_branch_registry.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e28r_route_decision.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E28",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e28r_route_decision.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e29_branch_scoped_execution_route_activation.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E29",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e29_branch_scoped_execution_route_activation.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e29_existing_revenue_branch_wheel_inventory.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E29",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e29_existing_revenue_branch_wheel_inventory.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e29_future_revenue_branch_policy.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E29",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e29_future_revenue_branch_policy.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e29_revenue_branch_duplicate_conflict_map.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E29",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e29_revenue_branch_duplicate_conflict_map.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e29_revenue_mode_branch_scoring.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E29",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e29_revenue_mode_branch_scoring.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e2_money_path_evaluator.py",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e2_money_path_evaluator.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e30_methodological_route_selection.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e30_methodological_route_selection.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e30_selected_action_execution_package.py",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e30_selected_action_execution_package.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e31_paid_readiness_review_signal_package.py",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e31_paid_readiness_review_signal_package.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": true,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e31_real_signal_route_decision.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e31_real_signal_route_decision.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e32_market_buyer_understanding_synthesis.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e32_market_buyer_understanding_synthesis.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e32_multi_path_business_plan_builder.py",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e32_multi_path_business_plan_builder.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e33_owner_validation_route.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e33_owner_validation_route.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e34_commercial_reality_discipline.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e34_commercial_reality_discipline.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e37_evidence_route_gov_mcp_alignment.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e37_evidence_route_gov_mcp_alignment.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e37_evidence_route_y_star_gov_alignment.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e37_evidence_route_y_star_gov_alignment.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e37_expert_review_route_packet.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e37_expert_review_route_packet.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e39_market_language_mining_lexicon.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e39_market_language_mining_lexicon.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e3_market_aware_evaluator.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e41_route_drift_correction_guard.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E41",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e41_route_drift_correction_guard.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e42_ceo_brain_reuse_router_update.py",
+      "capability_type": "ceo_brain_readback",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e42_ceo_brain_reuse_router_update.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e42_ceo_kg_reuse_router_feedback.py",
+      "capability_type": "evidence_writeback",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e42_ceo_kg_reuse_router_feedback.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e42_ceo_runtime_reuse_router_integration.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e42_ceo_runtime_reuse_router_integration.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e44a_router_cognition_overlay.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e44a_router_cognition_overlay.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e46b_ceo_brain_adapter.py",
+      "capability_type": "ceo_brain_readback",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e46b_ceo_brain_adapter.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e49_semantic_route_scorer.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e49_semantic_route_scorer.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e4_market_evidence_evaluator.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e4_market_evidence_evaluator.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e4_market_research_plan.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e4_market_research_plan.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e50b_ceo_commercial_decision_packet_builder.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E50B",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e50b_counterfactual_money_route_retest.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E50B",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e50b_counterfactual_money_route_retest.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e50b_external_commercial_semantic_graph.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E50B",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e51_y_star_gov_linkage_validation_runner.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E51",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e51_y_star_gov_linkage_validation_runner.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e52_gov_mcp_validation_harness.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E52",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e52_gov_mcp_validation_harness.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e52_proof_packet_package.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E52",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e52_y_star_gov_validation_runner.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E52",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e52_y_star_gov_validation_runner.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e53_gov_mcp_validation_harness.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E53",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e53_gov_mcp_validation_harness.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e53_y_star_gov_validation_runner.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E53",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e53_y_star_gov_validation_runner.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e54_gov_mcp_validation_harness.py",
+      "capability_type": "ceo_brain_readback",
+      "milestone_origin": "E54",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e54_gov_mcp_validation_harness.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e54_y_star_gov_validation_runner.py",
+      "capability_type": "ceo_brain_readback",
+      "milestone_origin": "E54",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e54_y_star_gov_validation_runner.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e55_action_authorization_gate.py",
+      "capability_type": "behavior_authorization",
+      "milestone_origin": "E55",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e55_action_authorization_gate.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e55_behavior_action_model.py",
+      "capability_type": "behavior_authorization",
+      "milestone_origin": "E55",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e55_behavior_action_model.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e55_gov_mcp_validation_harness.py",
+      "capability_type": "behavior_authorization",
+      "milestone_origin": "E55",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e55_gov_mcp_validation_harness.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e55_y_star_gov_validation_runner.py",
+      "capability_type": "behavior_authorization",
+      "milestone_origin": "E55",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e55_y_star_gov_validation_runner.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e56_gov_mcp_validation_harness.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E56",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e56_gov_mcp_validation_harness.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e56_internal_company_loop_model.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E56",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e56_internal_company_loop_model.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e56_y_star_gov_validation_runner.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E56",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e56_y_star_gov_validation_runner.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e57_commercial_route_candidates.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E57",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e57_commercial_route_candidates.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e57_commercial_route_decision.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E57",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e57_commercial_route_decision.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e57_counterfactual_route_scorer.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E57",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e57_counterfactual_route_scorer.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e57_gov_mcp_validation_harness.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E57",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e57_gov_mcp_validation_harness.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e57_money_route_anti_drift_gate.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E57",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e57_money_route_anti_drift_gate.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e57_money_route_capability_binding_gate.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E57",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e57_money_route_capability_binding_gate.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e57_money_route_evidence_writeback.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E57",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e57_post_l5_money_route_retest_gate.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E57",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e57_post_l5_money_route_retest_gate.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e57_selected_route_behavior_authorization.py",
+      "capability_type": "behavior_authorization",
+      "milestone_origin": "E57",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e57_selected_route_behavior_authorization.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e57_y_star_gov_validation_runner.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E57",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e57_y_star_gov_validation_runner.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e58_case_study_anti_drift_gate.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E58",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e58_case_study_anti_drift_gate.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": true,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e58_case_study_behavior_authorization.py",
+      "capability_type": "behavior_authorization",
+      "milestone_origin": "E58",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e58_case_study_behavior_authorization.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e58_case_study_boundary.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E58",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e58_case_study_boundary.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e58_case_study_capability_binding_gate.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E58",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e58_case_study_capability_binding_gate.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": true,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e58_case_study_completion_gate.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E58",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e58_case_study_completion_gate.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": true,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e58_case_study_evidence_manifest.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E58",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e58_case_study_evidence_manifest.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e58_case_study_evidence_writeback.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E58",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": true,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e58_case_study_no_overclaim_validator.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E58",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e58_case_study_no_overclaim_validator.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": true,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e58_gov_mcp_validation_harness.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E58",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e58_gov_mcp_validation_harness.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e58_owner_review_package.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E58",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e58_owner_review_package.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e58_y_star_gov_validation_runner.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E58",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e58_y_star_gov_validation_runner.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e59_claim_extraction_and_evidence_atomizer.py",
+      "capability_type": "external_intelligence",
+      "milestone_origin": "E59",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e59_source_receipt_builder.py",
+        "tests/office/test_e59_competitor_adjacent_technology_comparison.py",
+        "tests/office/test_e59_gov_mcp_validation_harness.py",
+        "tests/office/test_e60_post_e59_capability_synthesis.py",
+        "tests/office/test_e59_external_evidence_analysis.py",
+        "tests/office/test_e59_external_intelligence_maturity_diagnosis.py",
+        "tests/office/test_e59_external_intelligence_architecture.py",
+        "tests/office/test_e59_external_observation_archaeology.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e59_controlled_public_page_read_adapter.py",
+      "capability_type": "public_read_network_diagnostic",
+      "milestone_origin": "E59",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e59_source_receipt_builder.py",
+        "tests/office/test_e59_competitor_adjacent_technology_comparison.py",
+        "tests/office/test_e59_gov_mcp_validation_harness.py",
+        "tests/office/test_e60_post_e59_capability_synthesis.py",
+        "tests/office/test_e59_external_evidence_analysis.py",
+        "tests/office/test_e59_external_intelligence_maturity_diagnosis.py",
+        "tests/office/test_e59_external_intelligence_architecture.py",
+        "tests/office/test_e59_external_observation_archaeology.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e59_external_intelligence_core.py",
+      "capability_type": "external_intelligence",
+      "milestone_origin": "E59",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e59_source_receipt_builder.py",
+        "tests/office/test_e59_competitor_adjacent_technology_comparison.py",
+        "tests/office/test_e59_gov_mcp_validation_harness.py",
+        "tests/office/test_e60_post_e59_capability_synthesis.py",
+        "tests/office/test_e59_external_evidence_analysis.py",
+        "tests/office/test_e59_external_intelligence_maturity_diagnosis.py",
+        "tests/office/test_e59_external_intelligence_architecture.py",
+        "tests/office/test_e59_external_observation_archaeology.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e59_external_intelligence_route_impact.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E59",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e59_source_receipt_builder.py",
+        "tests/office/test_e59_competitor_adjacent_technology_comparison.py",
+        "tests/office/test_e59_gov_mcp_validation_harness.py",
+        "tests/office/test_e60_post_e59_capability_synthesis.py",
+        "tests/office/test_e59_external_evidence_analysis.py",
+        "tests/office/test_e59_external_intelligence_maturity_diagnosis.py",
+        "tests/office/test_e59_external_intelligence_architecture.py",
+        "tests/office/test_e59_external_observation_archaeology.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e59_gov_mcp_validation_harness.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E59",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e59_source_receipt_builder.py",
+        "tests/office/test_e59_competitor_adjacent_technology_comparison.py",
+        "tests/office/test_e59_gov_mcp_validation_harness.py",
+        "tests/office/test_e60_post_e59_capability_synthesis.py",
+        "tests/office/test_e59_external_evidence_analysis.py",
+        "tests/office/test_e59_external_intelligence_maturity_diagnosis.py",
+        "tests/office/test_e59_external_intelligence_architecture.py",
+        "tests/office/test_e59_external_observation_archaeology.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e59_source_receipt_builder.py",
+      "capability_type": "external_intelligence",
+      "milestone_origin": "E59",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e59_source_receipt_builder.py",
+        "tests/office/test_e59_competitor_adjacent_technology_comparison.py",
+        "tests/office/test_e59_gov_mcp_validation_harness.py",
+        "tests/office/test_e60_post_e59_capability_synthesis.py",
+        "tests/office/test_e59_external_evidence_analysis.py",
+        "tests/office/test_e59_external_intelligence_maturity_diagnosis.py",
+        "tests/office/test_e59_external_intelligence_architecture.py",
+        "tests/office/test_e59_external_observation_archaeology.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e59_y_star_gov_validation_runner.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E59",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e59_source_receipt_builder.py",
+        "tests/office/test_e59_competitor_adjacent_technology_comparison.py",
+        "tests/office/test_e59_gov_mcp_validation_harness.py",
+        "tests/office/test_e60_post_e59_capability_synthesis.py",
+        "tests/office/test_e59_external_evidence_analysis.py",
+        "tests/office/test_e59_external_intelligence_maturity_diagnosis.py",
+        "tests/office/test_e59_external_intelligence_architecture.py",
+        "tests/office/test_e59_external_observation_archaeology.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e5_market_evidence_evaluator.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e5_market_evidence_evaluator.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e60_counterfactual_market_readiness_scorer.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E60",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e60_market_readiness_anti_drift_gate.py",
+        "tests/office/test_e60_post_external_intelligence_market_readiness_gate.py",
+        "tests/office/test_e60_post_e59_capability_synthesis.py",
+        "tests/office/test_e60_counterfactual_market_readiness_scorer.py",
+        "tests/office/test_e60_route_candidates_after_external_intelligence.py",
+        "tests/office/test_e60_ceo_brain_readback_smoke.py",
+        "tests/office/test_e60_selected_action_behavior_authorization.py",
+        "tests/office/test_e60_market_entry_decision.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": true,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e60_gov_mcp_validation_harness.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E60",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e60_market_readiness_anti_drift_gate.py",
+        "tests/office/test_e60_post_external_intelligence_market_readiness_gate.py",
+        "tests/office/test_e60_post_e59_capability_synthesis.py",
+        "tests/office/test_e60_counterfactual_market_readiness_scorer.py",
+        "tests/office/test_e60_route_candidates_after_external_intelligence.py",
+        "tests/office/test_e60_ceo_brain_readback_smoke.py",
+        "tests/office/test_e60_selected_action_behavior_authorization.py",
+        "tests/office/test_e60_market_entry_decision.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e60_market_entry_decision.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E60",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e60_market_readiness_anti_drift_gate.py",
+        "tests/office/test_e60_post_external_intelligence_market_readiness_gate.py",
+        "tests/office/test_e60_post_e59_capability_synthesis.py",
+        "tests/office/test_e60_counterfactual_market_readiness_scorer.py",
+        "tests/office/test_e60_route_candidates_after_external_intelligence.py",
+        "tests/office/test_e60_ceo_brain_readback_smoke.py",
+        "tests/office/test_e60_selected_action_behavior_authorization.py",
+        "tests/office/test_e60_market_entry_decision.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e60_market_entry_readiness_criteria.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E60",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e60_market_readiness_anti_drift_gate.py",
+        "tests/office/test_e60_post_external_intelligence_market_readiness_gate.py",
+        "tests/office/test_e60_post_e59_capability_synthesis.py",
+        "tests/office/test_e60_counterfactual_market_readiness_scorer.py",
+        "tests/office/test_e60_route_candidates_after_external_intelligence.py",
+        "tests/office/test_e60_ceo_brain_readback_smoke.py",
+        "tests/office/test_e60_selected_action_behavior_authorization.py",
+        "tests/office/test_e60_market_entry_decision.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": true,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e60_market_readiness_anti_drift_gate.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E60",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e60_market_readiness_anti_drift_gate.py",
+        "tests/office/test_e60_post_external_intelligence_market_readiness_gate.py",
+        "tests/office/test_e60_post_e59_capability_synthesis.py",
+        "tests/office/test_e60_counterfactual_market_readiness_scorer.py",
+        "tests/office/test_e60_route_candidates_after_external_intelligence.py",
+        "tests/office/test_e60_ceo_brain_readback_smoke.py",
+        "tests/office/test_e60_selected_action_behavior_authorization.py",
+        "tests/office/test_e60_market_entry_decision.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": true,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e60_market_readiness_capability_binding_gate.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E60",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e60_market_readiness_anti_drift_gate.py",
+        "tests/office/test_e60_post_external_intelligence_market_readiness_gate.py",
+        "tests/office/test_e60_post_e59_capability_synthesis.py",
+        "tests/office/test_e60_counterfactual_market_readiness_scorer.py",
+        "tests/office/test_e60_route_candidates_after_external_intelligence.py",
+        "tests/office/test_e60_ceo_brain_readback_smoke.py",
+        "tests/office/test_e60_selected_action_behavior_authorization.py",
+        "tests/office/test_e60_market_entry_decision.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": true,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e60_market_readiness_core.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E60",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e60_market_readiness_anti_drift_gate.py",
+        "tests/office/test_e60_post_external_intelligence_market_readiness_gate.py",
+        "tests/office/test_e60_post_e59_capability_synthesis.py",
+        "tests/office/test_e60_counterfactual_market_readiness_scorer.py",
+        "tests/office/test_e60_route_candidates_after_external_intelligence.py",
+        "tests/office/test_e60_ceo_brain_readback_smoke.py",
+        "tests/office/test_e60_selected_action_behavior_authorization.py",
+        "tests/office/test_e60_market_entry_decision.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e60_market_readiness_writeback.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E60",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e60_market_readiness_anti_drift_gate.py",
+        "tests/office/test_e60_post_external_intelligence_market_readiness_gate.py",
+        "tests/office/test_e60_post_e59_capability_synthesis.py",
+        "tests/office/test_e60_counterfactual_market_readiness_scorer.py",
+        "tests/office/test_e60_route_candidates_after_external_intelligence.py",
+        "tests/office/test_e60_ceo_brain_readback_smoke.py",
+        "tests/office/test_e60_selected_action_behavior_authorization.py",
+        "tests/office/test_e60_market_entry_decision.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": true,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e60_post_external_intelligence_market_readiness_gate.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E60",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e60_market_readiness_anti_drift_gate.py",
+        "tests/office/test_e60_post_external_intelligence_market_readiness_gate.py",
+        "tests/office/test_e60_post_e59_capability_synthesis.py",
+        "tests/office/test_e60_counterfactual_market_readiness_scorer.py",
+        "tests/office/test_e60_route_candidates_after_external_intelligence.py",
+        "tests/office/test_e60_ceo_brain_readback_smoke.py",
+        "tests/office/test_e60_selected_action_behavior_authorization.py",
+        "tests/office/test_e60_market_entry_decision.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": true,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e60_route_candidates_after_external_intelligence.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E60",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e60_market_readiness_anti_drift_gate.py",
+        "tests/office/test_e60_post_external_intelligence_market_readiness_gate.py",
+        "tests/office/test_e60_post_e59_capability_synthesis.py",
+        "tests/office/test_e60_counterfactual_market_readiness_scorer.py",
+        "tests/office/test_e60_route_candidates_after_external_intelligence.py",
+        "tests/office/test_e60_ceo_brain_readback_smoke.py",
+        "tests/office/test_e60_selected_action_behavior_authorization.py",
+        "tests/office/test_e60_market_entry_decision.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e60_y_star_gov_validation_runner.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E60",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e60_market_readiness_anti_drift_gate.py",
+        "tests/office/test_e60_post_external_intelligence_market_readiness_gate.py",
+        "tests/office/test_e60_post_e59_capability_synthesis.py",
+        "tests/office/test_e60_counterfactual_market_readiness_scorer.py",
+        "tests/office/test_e60_route_candidates_after_external_intelligence.py",
+        "tests/office/test_e60_ceo_brain_readback_smoke.py",
+        "tests/office/test_e60_selected_action_behavior_authorization.py",
+        "tests/office/test_e60_market_entry_decision.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e61_controlled_public_read_smoke_probe.py",
+      "capability_type": "public_read_network_diagnostic",
+      "milestone_origin": "E61",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e61_live_public_read_anti_drift_gate.py",
+        "tests/office/test_e61_y_star_gov_validation_runner.py",
+        "tests/office/test_e61_ceo_brain_readback_smoke.py",
+        "tests/office/test_e61_live_public_read_capability_inventory.py",
+        "tests/office/test_e61_completion_gate.py",
+        "tests/office/test_e61_live_public_read_capability_binding_gate.py",
+        "tests/office/test_e61_external_intelligence_readiness_delta.py",
+        "tests/office/test_e61_behavior_authorization.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e61_gov_mcp_validation_harness.py",
+      "capability_type": "public_read_network_diagnostic",
+      "milestone_origin": "E61",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e61_live_public_read_anti_drift_gate.py",
+        "tests/office/test_e61_y_star_gov_validation_runner.py",
+        "tests/office/test_e61_ceo_brain_readback_smoke.py",
+        "tests/office/test_e61_live_public_read_capability_inventory.py",
+        "tests/office/test_e61_completion_gate.py",
+        "tests/office/test_e61_live_public_read_capability_binding_gate.py",
+        "tests/office/test_e61_external_intelligence_readiness_delta.py",
+        "tests/office/test_e61_behavior_authorization.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e61_live_public_read_core.py",
+      "capability_type": "public_read_network_diagnostic",
+      "milestone_origin": "E61",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e61_live_public_read_anti_drift_gate.py",
+        "tests/office/test_e61_y_star_gov_validation_runner.py",
+        "tests/office/test_e61_ceo_brain_readback_smoke.py",
+        "tests/office/test_e61_live_public_read_capability_inventory.py",
+        "tests/office/test_e61_completion_gate.py",
+        "tests/office/test_e61_live_public_read_capability_binding_gate.py",
+        "tests/office/test_e61_external_intelligence_readiness_delta.py",
+        "tests/office/test_e61_behavior_authorization.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e61_y_star_gov_validation_runner.py",
+      "capability_type": "public_read_network_diagnostic",
+      "milestone_origin": "E61",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e61_live_public_read_anti_drift_gate.py",
+        "tests/office/test_e61_y_star_gov_validation_runner.py",
+        "tests/office/test_e61_ceo_brain_readback_smoke.py",
+        "tests/office/test_e61_live_public_read_capability_inventory.py",
+        "tests/office/test_e61_completion_gate.py",
+        "tests/office/test_e61_live_public_read_capability_binding_gate.py",
+        "tests/office/test_e61_external_intelligence_readiness_delta.py",
+        "tests/office/test_e61_behavior_authorization.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e62_autonomous_revenue_runtime_centerline.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E62",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e62_first_cash_path_selection.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E62",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e62_first_cash_path_selection.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e62_gov_mcp_validation_harness.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E62",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e62_revenue_action_risk_tiers.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E62",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e62_revenue_action_risk_tiers.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e62_revenue_path_candidate_matrix.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E62",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e62_revenue_path_candidate_matrix.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e62_revenue_runtime_anti_drift_gate.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E62",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e62_revenue_runtime_behavior_authorization.py",
+      "capability_type": "behavior_authorization",
+      "milestone_origin": "E62",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e62_revenue_runtime_capability_binding_gate.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E62",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e62_revenue_runtime_core.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E62",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e62_y_star_gov_validation_runner.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E62",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e6_market_evidence_evaluator.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "E6",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e6_market_evidence_evaluator.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e6_offer_thesis.py",
+      "capability_type": "commercial_revenue_asset",
+      "milestone_origin": "E6",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e6_offer_thesis.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e7_offer_packet.py",
+      "capability_type": "commercial_revenue_asset",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e7_offer_packet.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e7_validation_protocol.py",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e7_validation_protocol.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e8_validation_approval.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E8",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e8_validation_approval.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e8_validation_result_evaluator.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E8",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e8_validation_result_evaluator.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e8_validation_signal_evaluator.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E8",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e8_validation_signal_evaluator.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e9_offer_learning.py",
+      "capability_type": "commercial_revenue_asset",
+      "milestone_origin": "E9",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [
+        "tests/office/test_e9_offer_learning.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e9_validation_execution.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E9",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e9_validation_execution.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e9_validation_manifest.py",
+      "capability_type": "unknown",
+      "milestone_origin": "E9",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e9_validation_manifest.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/evidence_gated_money_plan.py",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/evidence_signal_router.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e11_evidence_signal_router.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/learning_writeback_router.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e11_learning_writeback_router.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/market_reality_model.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_market_reality_model.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/mission_router.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/safe_public_page_reader.py",
+      "capability_type": "public_read_network_diagnostic",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_safe_public_page_reader.py"
+      ],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/target_lifecycle_router.py",
+      "capability_type": "commercial_route_or_market_readiness",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [
+        "tests/office/test_e11_target_lifecycle_router.py"
+      ],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/b2r_action_packet_examples.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/b2r_c1_governed_action_entry_gate.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/b2r_escalation_policy.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/b2r_owner_constitutional_envelope.request.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/b2r_progressive_capability_unlock_matrix.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c1_action_intent_examples.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c1_action_ledger.template.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c1_feedback_events.template.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c1_gov_mcp_execution_contract.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c1_governed_action_readiness_report.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c1_owner_constitutional_envelope.request.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c1_signal_evaluator_fixture.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c2_constitutional_activation_packet.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c2_constitutional_activation_packet.md",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c2_feedback_ingestion_template.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c2_gov_mcp_execution_contracts.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c2_governed_action_queue.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c2_owner_handoff_execution_capsule.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c2_owner_handoff_execution_capsule.md",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c2_signal_loop_fixture.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c2_ygov_decision_envelopes.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c3_action_ledger_state_fixture.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c3_action_ledger_state_template.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c3_decision_replay_report.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c3_dry_run_execution_receipts.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c3_e15_next_action_decision_packet.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c3_feedback_intake_template.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c3_feedback_signal_fixture.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c3_narrow_constitutional_envelope.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c3_narrow_constitutional_envelope.md",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c3_owner_handoff_validation_batch.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c3_owner_handoff_validation_batch.md",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c3_validation_batch.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e10_autonomous_target_candidates.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e10_external_validation_manifest.proposed.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e10_target_seeds.proposed.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e12_feedback_events.template.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e12_owner_approval.request.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e12_target_seeds.request.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e13_evidence_receipts.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e13_evidence_records.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e13_owner_decision_packet.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e13_paid_signal_readiness_report.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": true,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e13_tier1_evidence_request.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e13_tier1_evidence_request_schema.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e13r_buyer_pain_evidence_request.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e13r_evidence_receipts.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": false,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e13r_evidence_records.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e13r_offer_candidates.json",
+      "capability_type": "commercial_revenue_asset",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": true,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e13r_owner_decision_packet.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e13r_paid_signal_readiness_report.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": true,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e14_action_ledger.template.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e14_feedback_events.template.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e14_manual_send_draft.md",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "reference_or_report_only",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e14_owner_approval_packet.request.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": false,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e14_owner_decision_console.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e14_owner_decision_console.md",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e14_owner_decision_packet.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": true,
+      "do_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e14_target_batch.proposed.json",
+      "capability_type": "unknown",
+      "milestone_origin": "unknown",
+      "reusable": true,
+      "already_connected_or_disconnected": "connected",
+      "tests_found": [],
+      "supports_autonomous_revenue_operation": false,
+      "proof_or_readiness_only": false,
+      "action_execution_capable": true,
+      "owner_gated": true,
+      "has_KG_CZL_CIEU_writeback": false,
+      "do_not_rebuild": true
+    }
+  ],
+  "reusable_assets_count": 240,
+  "revenue_runtime_supporting_assets_count": 103,
+  "read_only_repo_context": {
+    "Y-star-gov": {
+      "root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "runtime_linkage_validator": true,
+      "capability_binding_validator": true,
+      "pre_execution_governance": true,
+      "mutated": false
+    },
+    "gov-mcp": {
+      "root": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+      "allow_deny_tests_present": false,
+      "runtime_linkage_tools_present": true,
+      "mutated": false
+    },
+    "K9Audit": {
+      "root": "/Users/haotianliu/.openclaw/workspace/K9Audit",
+      "ledger_capability_present": true,
+      "write_integration_in_bridge_labs_closed": false,
+      "mutated": false
+    }
+  },
+  "reuse_first_findings": [
+    "E61 already repaired a deterministic controlled probe path around safe_public_page_reader.",
+    "E55 behavior authorization conventions already define ALLOW/DENY boundaries and should be reused.",
+    "E54-E56 provide a real internal company loop substrate; E62 should connect revenue operation to it rather than build a separate proof system.",
+    "E57/E60 route matrices are useful inputs but remain readiness/commercial decision artifacts, not the company objective.",
+    "K9Audit ledger context exists read-only; bridge-labs K9 write integration remains future work."
+  ],
+  "what_must_not_be_rebuilt": [
+    "safe_public_page_reader",
+    "E61 controlled public-read smoke probe",
+    "E55 behavior action/authorization model",
+    "E54/E56 CEO brain and internal loop readback",
+    "E59 receipt/evidence atom schemas",
+    "E57/E60 commercial route matrices",
+    "E58 case study source artifacts"
+  ],
+  "missing_or_disconnected": [
+    "host delivery bridge network result is not available until host validation runs",
+    "live public read freshness remains blocked unless host DNS/network succeeds",
+    "autonomous revenue runtime centerline exists only as scattered route/readiness/commercial artifacts before E62"
+  ],
+  "supports_autonomous_revenue_operation": true,
+  "phase_0_completed_before_new_runtime_layer": true,
+  "external_action_allowed": false,
+  "owner_decision_status": "pending_owner_decision"
+}

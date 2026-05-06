@@ -1,0 +1,263 @@
+{
+  "artifact_id": "e62_revenue_path_candidate_matrix",
+  "candidate_count": 8,
+  "candidates": [
+    {
+      "route_id": "AI_agent_company_runtime_harness_deployment_service",
+      "source_asset_path_or_new_reason": [
+        "products/ai_agent_company_runtime_harness_case_study/case_study.json",
+        "operations/external_validation/e56_internal_company_loop_l5_readiness_gate_result.json",
+        "operations/external_validation/e55_behavior_center_l5_readiness_gate_result.json"
+      ],
+      "target_buyer_category": "founder/operator teams trying to run governed AI-agent operations",
+      "pain_point": "AI agents can produce activity, but companies need governed operating loops that create value without uncontrolled external action.",
+      "value_proposition": "Deploy or adapt the AI Agent Company Runtime Harness as an internal operating layer.",
+      "shortest_cash_path": "draft-only offer and delivery blueprint first; owner-gated external review later",
+      "current_capability_fit": 96,
+      "missing_capability": [
+        "owner-approved external review",
+        "live public-read freshness",
+        "packaged delivery blueprint"
+      ],
+      "delivery_complexity": "medium",
+      "external_action_required": true,
+      "owner_approval_required": true,
+      "live_public_read_dependency": false,
+      "real_mcp_dependency": false,
+      "K9Audit_write_dependency": false,
+      "risk_tier": "T2_draft_only_external_material",
+      "evidence_required": [
+        "case study",
+        "internal L5 gates",
+        "owner-reviewed delivery blueprint"
+      ],
+      "deterministic_internal_score": 78,
+      "selected": true,
+      "reason": "Selected because it best matches the owner's AI Agent Company Runtime target, reuses the L5 internal runtime, and can produce draft-only operational value before any owner-gated external action."
+    },
+    {
+      "route_id": "agent_runtime_audit_and_repair_package",
+      "source_asset_path_or_new_reason": [
+        "operations/external_validation/e51_runtime_linkage_anti_drift_gate_result.json",
+        "operations/external_validation/e62_repository_archaeology_inventory.json"
+      ],
+      "target_buyer_category": "teams with existing agent workflows that need governance repair",
+      "pain_point": "Agent systems drift, overclaim, or bypass evidence closure.",
+      "value_proposition": "Audit and repair runtime linkage, behavior authorization, no-overclaim, and evidence closure.",
+      "shortest_cash_path": "create internal audit checklist and sample repair packet; owner-gated external use later",
+      "current_capability_fit": 91,
+      "missing_capability": [
+        "K9Audit write integration if sold as audit ledger",
+        "owner-approved outreach"
+      ],
+      "delivery_complexity": "low",
+      "external_action_required": true,
+      "owner_approval_required": true,
+      "live_public_read_dependency": false,
+      "real_mcp_dependency": false,
+      "K9Audit_write_dependency": true,
+      "risk_tier": "T2_draft_only_external_material",
+      "evidence_required": [
+        "E51/E55/E61 gates",
+        "K9Audit read-only context",
+        "repair checklist"
+      ],
+      "deterministic_internal_score": 73,
+      "selected": false,
+      "reason": "Nearest alternative because it has a shorter audit-style delivery path, but it risks centering repair/audit instead of the broader autonomous company runtime product."
+    },
+    {
+      "route_id": "governed_agent_action_control_layer",
+      "source_asset_path_or_new_reason": [
+        "products/governed_agent_action_proof_packet/proof_packet.json",
+        "office/mission_command/e55_action_authorization_gate.py"
+      ],
+      "target_buyer_category": "teams using autonomous agents with unsafe action boundaries",
+      "pain_point": "Agents need a deterministic action proposal and authorization layer before execution.",
+      "value_proposition": "Provide a governed action-control layer with ALLOW/DENY fixtures and evidence requirements.",
+      "shortest_cash_path": "package owner-reviewable internal demo and authorization schema",
+      "current_capability_fit": 88,
+      "missing_capability": [
+        "live market freshness",
+        "owner-approved review"
+      ],
+      "delivery_complexity": "medium",
+      "external_action_required": true,
+      "owner_approval_required": true,
+      "live_public_read_dependency": false,
+      "real_mcp_dependency": false,
+      "K9Audit_write_dependency": false,
+      "risk_tier": "T2_draft_only_external_material",
+      "evidence_required": [
+        "E52 proof packet",
+        "E55 authorization gate",
+        "no-overclaim validator"
+      ],
+      "deterministic_internal_score": 70,
+      "selected": false,
+      "reason": "Useful supporting or future route, but less central to the autonomous revenue runtime recenter for E62."
+    },
+    {
+      "route_id": "internal_AI_company_operations_consulting",
+      "source_asset_path_or_new_reason": [
+        "sales/first_user_plan.md",
+        "finance/pricing_model_v1.md",
+        "reports/integration/e56_operator_handoff.md"
+      ],
+      "target_buyer_category": "small teams adopting AI operations internally",
+      "pain_point": "Teams need operating-loop design before trusting agents with business work.",
+      "value_proposition": "Consulting-style package for internal AI company operating-room setup.",
+      "shortest_cash_path": "draft offer and sample operating loop; owner-gated outreach later",
+      "current_capability_fit": 80,
+      "missing_capability": [
+        "offer hardening",
+        "owner approval",
+        "external review"
+      ],
+      "delivery_complexity": "low",
+      "external_action_required": true,
+      "owner_approval_required": true,
+      "live_public_read_dependency": false,
+      "real_mcp_dependency": false,
+      "K9Audit_write_dependency": false,
+      "risk_tier": "T2_draft_only_external_material",
+      "evidence_required": [
+        "pricing model",
+        "case study",
+        "internal loop proof"
+      ],
+      "deterministic_internal_score": 68,
+      "selected": false,
+      "reason": "Useful supporting or future route, but less central to the autonomous revenue runtime recenter for E62."
+    },
+    {
+      "route_id": "public_read_market_intelligence_agent_with_governance",
+      "source_asset_path_or_new_reason": [
+        "office/mission_command/e59_external_intelligence_core.py",
+        "office/mission_command/e61_live_public_read_core.py"
+      ],
+      "target_buyer_category": "operators needing safe no-contact market/technology learning",
+      "pain_point": "Market learning agents often drift into scraping/contact or overclaim freshness.",
+      "value_proposition": "Governed public-read intelligence pipeline with source receipts and route impact.",
+      "shortest_cash_path": "repair host/live public-read and then run internal opportunity discovery",
+      "current_capability_fit": 83,
+      "missing_capability": [
+        "host DNS/network public-read availability",
+        "live receipts"
+      ],
+      "delivery_complexity": "medium",
+      "external_action_required": false,
+      "owner_approval_required": false,
+      "live_public_read_dependency": true,
+      "real_mcp_dependency": false,
+      "K9Audit_write_dependency": false,
+      "risk_tier": "T1_public_read_only",
+      "evidence_required": [
+        "E59 schemas",
+        "E61 live-read blocker classification",
+        "source receipts"
+      ],
+      "deterministic_internal_score": 67,
+      "selected": false,
+      "reason": "Useful supporting or future route, but less central to the autonomous revenue runtime recenter for E62."
+    },
+    {
+      "route_id": "CIEU_KG_CZL_evidence_closure_package",
+      "source_asset_path_or_new_reason": [
+        "operations/knowledge_graph/e61_ceo_kg_read_model_update.json",
+        "operations/external_validation/e61_czl_closure.json",
+        "operations/external_validation/e61_cieu_residual_summary.json"
+      ],
+      "target_buyer_category": "teams that need evidence-backed agent decisions",
+      "pain_point": "Agent decisions often lack auditable closure and readback.",
+      "value_proposition": "Package evidence closure as a reusable system component.",
+      "shortest_cash_path": "draft evidence closure checklist and sample packet",
+      "current_capability_fit": 78,
+      "missing_capability": [
+        "positioning",
+        "owner-approved external review"
+      ],
+      "delivery_complexity": "low",
+      "external_action_required": true,
+      "owner_approval_required": true,
+      "live_public_read_dependency": false,
+      "real_mcp_dependency": false,
+      "K9Audit_write_dependency": true,
+      "risk_tier": "T2_draft_only_external_material",
+      "evidence_required": [
+        "KG/CZL/CIEU artifacts",
+        "readback proofs"
+      ],
+      "deterministic_internal_score": 60,
+      "selected": false,
+      "reason": "Useful supporting or future route, but less central to the autonomous revenue runtime recenter for E62."
+    },
+    {
+      "route_id": "custom_self_governing_agent_team_prototype",
+      "source_asset_path_or_new_reason": [
+        "operations/external_validation/e56_internal_company_loop_l5_readiness_gate_result.json",
+        "office/mission_command/e56_internal_company_loop_model.py"
+      ],
+      "target_buyer_category": "teams wanting a governed multi-agent prototype",
+      "pain_point": "Prototype agents need CEO brain, behavior gate, evidence, and readback before business execution.",
+      "value_proposition": "Build a custom internal self-governing agent team prototype.",
+      "shortest_cash_path": "draft prototype blueprint; owner-gated client scoping later",
+      "current_capability_fit": 82,
+      "missing_capability": [
+        "client requirements",
+        "owner-approved external discovery"
+      ],
+      "delivery_complexity": "high",
+      "external_action_required": true,
+      "owner_approval_required": true,
+      "live_public_read_dependency": false,
+      "real_mcp_dependency": false,
+      "K9Audit_write_dependency": false,
+      "risk_tier": "T2_draft_only_external_material",
+      "evidence_required": [
+        "internal loop proof",
+        "behavior center proof",
+        "case study"
+      ],
+      "deterministic_internal_score": 56,
+      "selected": false,
+      "reason": "Useful supporting or future route, but less central to the autonomous revenue runtime recenter for E62."
+    },
+    {
+      "route_id": "MCP_governance_adapter_gov_mcp_integration_package",
+      "source_asset_path_or_new_reason": [
+        "operations/external_validation/e59_gov_mcp_validation_harness_result.json",
+        "operations/external_validation/e60_gov_mcp_validation_harness_result.json"
+      ],
+      "target_buyer_category": "MCP adopters needing policy and runtime governance",
+      "pain_point": "MCP tool surfaces need safe allow/deny boundaries and evidence paths.",
+      "value_proposition": "Package gov-mcp integration patterns and governance fixtures.",
+      "shortest_cash_path": "finish real MCP transport gate before external promise",
+      "current_capability_fit": 76,
+      "missing_capability": [
+        "real MCP transport closure",
+        "owner-approved external review"
+      ],
+      "delivery_complexity": "medium",
+      "external_action_required": true,
+      "owner_approval_required": true,
+      "live_public_read_dependency": false,
+      "real_mcp_dependency": true,
+      "K9Audit_write_dependency": false,
+      "risk_tier": "T2_draft_only_external_material",
+      "evidence_required": [
+        "gov-mcp harness proof",
+        "real transport proof"
+      ],
+      "deterministic_internal_score": 50,
+      "selected": false,
+      "reason": "Useful supporting or future route, but less central to the autonomous revenue runtime recenter for E62."
+    }
+  ],
+  "selected_first_cash_path": "AI_agent_company_runtime_harness_deployment_service",
+  "nearest_alternative": "agent_runtime_audit_and_repair_package",
+  "snapshot_not_permanent_strategy": true,
+  "no_customer_validation_claimed": true,
+  "no_paid_signal_claimed": true,
+  "no_external_action": true
+}

@@ -1,0 +1,53 @@
+{
+  "artifact_id": "e62_first_cash_path_selection",
+  "selected_first_cash_path": "AI_agent_company_runtime_harness_deployment_service",
+  "nearest_alternative": "agent_runtime_audit_and_repair_package",
+  "selection_basis": [
+    "highest fit to the real objective: autonomous AI Agent Company Runtime",
+    "strongest reuse of CEO brain L5, behavior center L5, and internal operating loop L5",
+    "can create useful internal delivery artifacts before outreach",
+    "does not require claiming customer validation, paid signal, production readiness, or real MCP transport closure"
+  ],
+  "selected_candidate": {
+    "route_id": "AI_agent_company_runtime_harness_deployment_service",
+    "source_asset_path_or_new_reason": [
+      "products/ai_agent_company_runtime_harness_case_study/case_study.json",
+      "operations/external_validation/e56_internal_company_loop_l5_readiness_gate_result.json",
+      "operations/external_validation/e55_behavior_center_l5_readiness_gate_result.json"
+    ],
+    "target_buyer_category": "founder/operator teams trying to run governed AI-agent operations",
+    "pain_point": "AI agents can produce activity, but companies need governed operating loops that create value without uncontrolled external action.",
+    "value_proposition": "Deploy or adapt the AI Agent Company Runtime Harness as an internal operating layer.",
+    "shortest_cash_path": "draft-only offer and delivery blueprint first; owner-gated external review later",
+    "current_capability_fit": 96,
+    "missing_capability": [
+      "owner-approved external review",
+      "live public-read freshness",
+      "packaged delivery blueprint"
+    ],
+    "delivery_complexity": "medium",
+    "external_action_required": true,
+    "owner_approval_required": true,
+    "live_public_read_dependency": false,
+    "real_mcp_dependency": false,
+    "K9Audit_write_dependency": false,
+    "risk_tier": "T2_draft_only_external_material",
+    "evidence_required": [
+      "case study",
+      "internal L5 gates",
+      "owner-reviewed delivery blueprint"
+    ],
+    "deterministic_internal_score": 78,
+    "selected": true,
+    "reason": "Selected because it best matches the owner's AI Agent Company Runtime target, reuses the L5 internal runtime, and can produce draft-only operational value before any owner-gated external action."
+  },
+  "allowed_next_internal_action": "draft_runtime_harness_deployment_offer_and_delivery_blueprint_no_execution",
+  "selected_action_risk_tier": "T2_draft_only_external_material",
+  "owner_approval_required_before_external_action": true,
+  "external_action_allowed": false,
+  "revenue_not_achieved": true,
+  "autonomous_revenue_achieved": false,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false,
+  "expert_feedback_claimed": false
+}

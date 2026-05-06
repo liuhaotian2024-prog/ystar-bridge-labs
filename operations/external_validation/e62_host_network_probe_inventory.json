@@ -1,0 +1,29 @@
+{
+  "artifact_id": "e62_host_network_probe_inventory",
+  "reused_E61_probe_core": "office/mission_command/e61_live_public_read_core.py",
+  "reused_safe_reader": "office/mission_command/safe_public_page_reader.py",
+  "allowlisted_urls": [
+    "https://example.com/",
+    "https://www.iana.org/domains/reserved"
+  ],
+  "E61_failure_classes": [
+    "DNS_unavailable"
+  ],
+  "distinguishes": [
+    "sandbox DNS unavailable",
+    "sandbox DNS works",
+    "host delivery bridge DNS unavailable",
+    "host delivery bridge DNS works",
+    "TCP blocked",
+    "HTTPS/TLS blocked",
+    "adapter policy denied",
+    "adapter disconnected",
+    "fixture-only path",
+    "unknown"
+  ],
+  "no_search_provider_api": true,
+  "no_api_key_or_secret": true,
+  "no_crawl": true,
+  "no_contact_scraping": true,
+  "no_external_human_action": true
+}

@@ -1,0 +1,23 @@
+{
+  "artifact_id": "e62_sandbox_dns_probe_result",
+  "probe_environment": "codex_sandbox_or_staging",
+  "dns_probe": {
+    "host": "example.com",
+    "port": 443,
+    "dns_status": "dns_available",
+    "address_count": 4,
+    "sample_addresses": [
+      "104.20.23.154",
+      "172.66.147.243",
+      "2606:4700:10::6814:179a"
+    ],
+    "failure_classification": ""
+  },
+  "controlled_smoke_probe_passed": true,
+  "smoke_failure_classes": [],
+  "live_receipt_count": 2,
+  "sandbox_dns_available": true,
+  "sandbox_dns_unavailable": false,
+  "fixture_or_blocker_not_live_market_freshness": true,
+  "no_external_human_action": true
+}

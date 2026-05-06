@@ -1,0 +1,16 @@
+{
+  "artifact_id": "e62_public_read_blocker_classification",
+  "blocker_status": "host_public_read_available",
+  "sandbox_dns_status": "dns_available",
+  "sandbox_smoke_failure_classes": [],
+  "host_probe_available": true,
+  "host_probe_diagnosis": "host_public_read_available",
+  "adapter_policy_denied": false,
+  "adapter_disconnected": false,
+  "fixture_mode_only": false,
+  "live_public_read_available": true,
+  "live_market_freshness_available": true,
+  "fixture_or_blocker_not_live_market_freshness": true,
+  "recommended_network_followup": "E63_autonomous_revenue_opportunity_discovery_public_read_only",
+  "no_external_human_action": true
+}

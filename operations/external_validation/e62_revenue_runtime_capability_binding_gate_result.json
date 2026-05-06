@@ -1,0 +1,162 @@
+{
+  "artifact_id": "e62_revenue_runtime_capability_binding_gate_result",
+  "validator_available": true,
+  "payload": {
+    "gate_id": "e62_revenue_runtime_capability_binding_gate",
+    "capability_centerline_contract": {
+      "contract_id": "e62_capability_centerline_contract",
+      "class_rules": {
+        "cognitive_capability": {
+          "required_centerline": [
+            "CEO_brain"
+          ]
+        },
+        "behavior_control_capability": {
+          "required_centerline": [
+            "canonical_action_runtime",
+            "Y_star_gov_boundary"
+          ]
+        },
+        "evidence_closure_capability": {
+          "required_centerline": [
+            "KG_CZL_CIEU_K9_evidence"
+          ]
+        },
+        "boundary_capability": {
+          "required_centerline": [
+            "Y_star_gov_boundary"
+          ]
+        },
+        "reference_only_artifact": {
+          "required_centerline": [
+            "reference_only"
+          ]
+        }
+      },
+      "no_external_action": true
+    },
+    "capability_bindings": [
+      {
+        "capability_id": "e62_repository_archaeology",
+        "path": "office/mission_command/e62_repository_archaeology_inventory.py",
+        "repo": "bridge-labs",
+        "functional_class": "cognitive_capability",
+        "required_centerline": [
+          "CEO_brain"
+        ],
+        "actual_binding": [
+          "CEO_brain"
+        ],
+        "binding_status": "correctly_bound",
+        "remediation": "no_action",
+        "severity": "P0"
+      },
+      {
+        "capability_id": "e62_host_network_probe",
+        "path": "office/mission_command/e62_host_network_probe.py",
+        "repo": "bridge-labs",
+        "functional_class": "behavior_control_capability",
+        "required_centerline": [
+          "canonical_action_runtime",
+          "Y_star_gov_boundary"
+        ],
+        "actual_binding": [
+          "canonical_action_runtime",
+          "Y_star_gov_boundary"
+        ],
+        "binding_status": "correctly_bound",
+        "remediation": "no_action",
+        "severity": "P0"
+      },
+      {
+        "capability_id": "e62_revenue_path_selection",
+        "path": "office/mission_command/e62_first_cash_path_selection.py",
+        "repo": "bridge-labs",
+        "functional_class": "cognitive_capability",
+        "required_centerline": [
+          "CEO_brain"
+        ],
+        "actual_binding": [
+          "CEO_brain"
+        ],
+        "binding_status": "correctly_bound",
+        "remediation": "no_action",
+        "severity": "P0"
+      },
+      {
+        "capability_id": "e62_behavior_authorization",
+        "path": "office/mission_command/e62_revenue_runtime_behavior_authorization.py",
+        "repo": "bridge-labs",
+        "functional_class": "behavior_control_capability",
+        "required_centerline": [
+          "canonical_action_runtime",
+          "Y_star_gov_boundary"
+        ],
+        "actual_binding": [
+          "canonical_action_runtime",
+          "Y_star_gov_boundary"
+        ],
+        "binding_status": "correctly_bound",
+        "remediation": "no_action",
+        "severity": "P0"
+      },
+      {
+        "capability_id": "e62_evidence_writeback",
+        "path": "operations/knowledge_graph/e62_ceo_kg_revenue_read_model_update.json",
+        "repo": "bridge-labs",
+        "functional_class": "evidence_closure_capability",
+        "required_centerline": [
+          "KG_CZL_CIEU_K9_evidence"
+        ],
+        "actual_binding": [
+          "KG_CZL_CIEU_K9_evidence"
+        ],
+        "binding_status": "correctly_bound",
+        "remediation": "no_action",
+        "severity": "P1"
+      },
+      {
+        "capability_id": "e62_no_overclaim_boundary",
+        "path": "office/mission_command/e62_revenue_runtime_behavior_authorization.py",
+        "repo": "bridge-labs",
+        "functional_class": "boundary_capability",
+        "required_centerline": [
+          "Y_star_gov_boundary",
+          "gov_mcp_boundary"
+        ],
+        "actual_binding": [
+          "Y_star_gov_boundary",
+          "gov_mcp_boundary"
+        ],
+        "binding_status": "correctly_bound",
+        "remediation": "no_action",
+        "severity": "P0"
+      }
+    ],
+    "external_action_allowed": false,
+    "no_external_action": true
+  },
+  "gate": {
+    "gate_id": "e62_revenue_runtime_capability_binding_gate",
+    "status": "capability_binding_gate_passed",
+    "allowed": true,
+    "record_count": 6,
+    "wrong_centerline_count": 0,
+    "missing_binding_count": 0,
+    "stale_current_state_count": 0,
+    "p0_failure_count": 0,
+    "p1_failure_count": 0,
+    "failures": [],
+    "warnings": [],
+    "no_external_action": true
+  },
+  "checks": {
+    "revenue_selection_bound_to_ceo_brain": true,
+    "host_network_probe_bound_to_behavior_center_and_governance": true,
+    "evidence_writeback_bound_to_KG_CZL_CIEU": true,
+    "no_overclaim_boundary_bound_to_governance": true,
+    "external_action_blocked": true
+  },
+  "passed": true,
+  "external_action_allowed": false
+}

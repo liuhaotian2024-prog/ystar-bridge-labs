@@ -1,0 +1,53 @@
+{
+  "artifact_id": "e62_autonomous_revenue_runtime_centerline",
+  "centerline_status": "autonomous_revenue_runtime_recentered_internal_only",
+  "primary_objective": "autonomous value creation, business operation, revenue path selection, and governed future revenue execution",
+  "secondary_artifacts": [
+    "proof packets",
+    "case studies",
+    "owner-review packets",
+    "readiness reports"
+  ],
+  "repo_grounded": true,
+  "archaeology_asset_count": 240,
+  "stages": [
+    "CEO brain current state",
+    "business objective interpretation",
+    "opportunity discovery need",
+    "available evidence / missing evidence",
+    "revenue path candidates",
+    "first-cash route comparison",
+    "offer/package draftability",
+    "action risk tier",
+    "behavior authorization",
+    "owner approval boundary",
+    "evidence path",
+    "KG/CZL/CIEU writeback",
+    "CEO brain readback",
+    "next business cycle recommendation"
+  ],
+  "connected_existing_assets": [
+    "E54 CEO Brain L5",
+    "E55 Behavior Control Center L5",
+    "E56 Internal Company Operating Loop L5",
+    "E57/E60 commercial route matrices",
+    "E58 AI Agent Company Runtime Harness Case Study",
+    "E59/E61 external intelligence and public-read diagnostics",
+    "KG/CZL/CIEU evidence closure"
+  ],
+  "new_layer_added": "thin E62 revenue operation centerline over existing assets",
+  "not_rebuilt": [
+    "safe_public_page_reader",
+    "E61 controlled public-read smoke probe",
+    "E55 behavior action/authorization model",
+    "E54/E56 CEO brain and internal loop readback",
+    "E59 receipt/evidence atom schemas",
+    "E57/E60 commercial route matrices",
+    "E58 case study source artifacts"
+  ],
+  "external_business_execution_owner_gated": true,
+  "owner_decision_status": "pending_owner_decision",
+  "external_action_allowed": false,
+  "autonomous_revenue_achieved": false,
+  "real_client_delivery_claimed": false
+}

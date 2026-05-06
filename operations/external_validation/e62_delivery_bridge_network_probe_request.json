@@ -1,0 +1,27 @@
+{
+  "artifact_id": "e62_delivery_bridge_network_probe_request",
+  "request_id": "e62_repository_grounded_network_probe_and_revenue_runtime_recenter_20260506T000001Z_host_network_probe",
+  "request_status": "embedded_in_E62_host_delivery_validation",
+  "host_probe_execution_surface": "tests/office/test_e62_host_network_probe.py",
+  "allowlisted_urls": [
+    "https://example.com/",
+    "https://www.iana.org/domains/reserved"
+  ],
+  "allowed_operations": [
+    "DNS resolution for allowlisted hosts",
+    "controlled public GET through E61 smoke probe"
+  ],
+  "forbidden_operations": [
+    "search provider APIs",
+    "API keys or secrets",
+    "crawling",
+    "arbitrary link following",
+    "contact scraping",
+    "human identification",
+    "login",
+    "forms",
+    "posting or publishing"
+  ],
+  "expected_result_artifact": "operations/external_validation/e62_delivery_bridge_network_probe_result.json",
+  "no_external_human_action": true
+}

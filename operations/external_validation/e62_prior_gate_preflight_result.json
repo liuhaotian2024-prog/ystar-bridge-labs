@@ -1,0 +1,21 @@
+{
+  "artifact_id": "e62_prior_gate_preflight_result",
+  "bridge_job_id": "e62_repository_grounded_network_probe_and_revenue_runtime_recenter_20260506T000001Z",
+  "checks": {
+    "E60_selected_E61": true,
+    "E61_completion_gate_passed": true,
+    "E61_code_repaired_but_network_unavailable": true,
+    "E61_DNS_unavailable_visible": true,
+    "E61_live_receipts_zero": true,
+    "owner_decision_pending": true,
+    "external_action_allowed_false": true
+  },
+  "passed": true,
+  "consumed_E61_final_status": "live_public_read_code_repaired_but_host_network_unavailable",
+  "consumed_E61_failure_classes": [
+    "DNS_unavailable"
+  ],
+  "owner_decision_status": "pending_owner_decision",
+  "external_action_allowed": false,
+  "no_external_action": true
+}

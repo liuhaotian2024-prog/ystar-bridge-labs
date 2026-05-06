@@ -1,0 +1,16 @@
+from __future__ import annotations
+
+from pathlib import Path
+
+from . import e62_revenue_runtime_core as core
+
+
+def run_revenue_action_risk_tiers(root: Path | None = None) -> dict:
+    return core.build_revenue_action_risk_tiers(root or core.BRIDGE_ROOT)
+
+
+def write_revenue_action_risk_tiers(output_root: Path | None = None) -> dict:
+    root = output_root or core.BRIDGE_ROOT
+    data = run_revenue_action_risk_tiers(root)
+    core.write_json(root, "operations/external_validation/e62_revenue_action_risk_tiers.json", data)
+    return data

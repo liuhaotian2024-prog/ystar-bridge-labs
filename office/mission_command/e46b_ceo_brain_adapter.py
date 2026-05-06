@@ -326,6 +326,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e61_live_public_read_state = {'live_public_read_final_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
     try:
+        from office.mission_command.e62_ceo_brain_readback_smoke import load_e62_state_for_brain
+        e62_revenue_runtime_state = load_e62_state_for_brain()
+    except Exception as exc:
+        e62_revenue_runtime_state = {'revenue_runtime_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -414,6 +419,13 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_live_public_read_smoke_probe_passed": e61_live_public_read_state.get("controlled_public_read_smoke_probe_passed"),
         "current_live_public_read_recommended_next_milestone": e61_live_public_read_state.get("recommended_next_milestone"),
         "current_live_public_read_external_action_allowed": e61_live_public_read_state.get("external_action_allowed"),
+        "latest_autonomous_revenue_runtime_state": e62_revenue_runtime_state,
+        "current_autonomous_revenue_runtime_status": e62_revenue_runtime_state.get("revenue_runtime_status"),
+        "current_autonomous_revenue_runtime_primary_objective": e62_revenue_runtime_state.get("primary_objective"),
+        "current_autonomous_revenue_runtime_first_cash_path": e62_revenue_runtime_state.get("selected_first_cash_path"),
+        "current_autonomous_revenue_runtime_public_read_blocker": e62_revenue_runtime_state.get("public_read_blocker_status"),
+        "current_autonomous_revenue_runtime_next_milestone": e62_revenue_runtime_state.get("recommended_next_milestone"),
+        "current_autonomous_revenue_runtime_external_action_allowed": e62_revenue_runtime_state.get("external_action_allowed"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

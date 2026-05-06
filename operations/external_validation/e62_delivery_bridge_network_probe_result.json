@@ -1,0 +1,72 @@
+{
+  "artifact_id": "e62_delivery_bridge_network_probe_result",
+  "host_probe_result_available": true,
+  "probe_environment": "host_delivery_bridge",
+  "dns_probe": {
+    "host": "example.com",
+    "port": 443,
+    "dns_status": "dns_available",
+    "address_count": 4,
+    "sample_addresses": [
+      "104.20.23.154",
+      "172.66.147.243",
+      "2606:4700:10::6814:179a"
+    ],
+    "failure_classification": ""
+  },
+  "controlled_smoke_probe_passed": true,
+  "smoke_status": "fetch_succeeded",
+  "smoke_failure_classes": [],
+  "live_receipt_count": 2,
+  "receipts": [
+    {
+      "receipt_id": "e61_live_read_receipt_001",
+      "source_url": "https://example.com/",
+      "retrieval_status": "public_read_success",
+      "failure_classification": "",
+      "http_status": 200,
+      "content_type": "text/html",
+      "title": "Example Domain",
+      "snippet": "Example Domain Example Domain This domain is for use in documentation examples without needing permission. Avoid use in operations. Learn more",
+      "content_hash": "fb91d75a6bb430787a61b0aec5e374f580030f2878e1613eab5ca6310f7bbb9a",
+      "bytes_read": 528,
+      "retrieved_at": "2026-05-06T20:20:11Z",
+      "safety_errors": [],
+      "no_contact_info_extracted": true,
+      "no_login": true,
+      "no_form_submission": true,
+      "no_crawl": true,
+      "no_arbitrary_link_follow": true,
+      "no_external_human_action": true,
+      "not_customer_validation": true,
+      "not_paid_signal": true,
+      "not_expert_feedback": true
+    },
+    {
+      "receipt_id": "e61_live_read_receipt_002",
+      "source_url": "https://www.iana.org/domains/reserved",
+      "retrieval_status": "public_read_success",
+      "failure_classification": "",
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "IANA-managed Reserved Domains",
+      "snippet": "IANA-managed Reserved Domains Domains Protocols Numbers About IANA-managed Reserved Domains Certain domains are set aside, and nominally registered to &ldquo;IANA&rdquo;, for specific policy or technical purposes. Example domains As described in RFC 2606 and RFC 6761 , a number of domains such as example.com and example.org are maintained for documentation p",
+      "content_hash": "8440cb54a05640256f47a4a115eac7ca2c1303db3b2ba1a415dcbe156cdfa8c4",
+      "bytes_read": 10817,
+      "retrieved_at": "2026-05-06T20:20:11Z",
+      "safety_errors": [],
+      "no_contact_info_extracted": true,
+      "no_login": true,
+      "no_form_submission": true,
+      "no_crawl": true,
+      "no_arbitrary_link_follow": true,
+      "no_external_human_action": true,
+      "not_customer_validation": true,
+      "not_paid_signal": true,
+      "not_expert_feedback": true
+    }
+  ],
+  "diagnosis": "host_public_read_available",
+  "fixture_or_blocker_not_live_market_freshness": true,
+  "no_external_human_action": true
+}

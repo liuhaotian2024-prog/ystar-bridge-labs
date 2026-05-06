@@ -1,0 +1,4 @@
+{"from": "e61_live_public_read_diagnostic", "to": "e62_public_read_blocker_classification", "edge_type": "consumed_by"}
+{"from": "e62_repository_archaeology_inventory", "to": "e62_autonomous_revenue_runtime_centerline", "edge_type": "grounds"}
+{"from": "e62_autonomous_revenue_runtime_centerline", "to": "AI_agent_company_runtime_harness_deployment_service", "edge_type": "selects"}
+{"from": "AI_agent_company_runtime_harness_deployment_service", "to": "E63_autonomous_revenue_opportunity_discovery_public_read_only", "edge_type": "recommends_next"}
