@@ -1,0 +1,8 @@
+{
+  "artifact_id": "e50a_ceo_brain_mcp_client_update",
+  "mcp_client_blocker_new_status": "tool_layer_allow_deny_closed",
+  "mcp_client_blocker_previous": "blocked_missing_local_mcp_dependency",
+  "next_decision_horizon": "E50B_external_commercial_observation_and_money_route_retest",
+  "no_external_action": true,
+  "semantic_effect": "gov-mcp tool-layer allow/deny proof is now closed through fake FastMCP harness"
+}

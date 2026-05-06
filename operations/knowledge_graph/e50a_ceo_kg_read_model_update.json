@@ -1,0 +1,6 @@
+{
+  "artifact_id": "e50a_ceo_kg_read_model_update",
+  "mcp_client_blocker_status": "tool_layer_allow_deny_closed",
+  "read_model_update": "E50A closes the minimal gov-mcp tool-layer ALLOW/DENY blocker via fake FastMCP harness; future commercial observation may proceed without claiming real MCP transport.",
+  "recommended_next_milestone": "E50B_external_commercial_observation_and_money_route_retest"
+}

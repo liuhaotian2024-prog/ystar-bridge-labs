@@ -1,0 +1,24 @@
+{
+  "artifact_id": "e50a_mcp_client_blocker_update",
+  "new_status": "tool_layer_allow_deny_closed",
+  "no_external_action": true,
+  "previous_blocker": "blocked_missing_local_mcp_dependency",
+  "proof_artifacts": [
+    "operations/external_validation/e50a_gov_mcp_tool_registration_inspection.json",
+    "operations/external_validation/e50a_fake_fastmcp_harness_result.json",
+    "operations/external_validation/e50a_local_tool_layer_proof_result.json"
+  ],
+  "recommended_next_milestone": "E50B_external_commercial_observation_and_money_route_retest",
+  "what_closed": [
+    "fake FastMCP registration captured gov-mcp tool-layer functions",
+    "gov_demo callable through captured gov-mcp tool function",
+    "gov_check ALLOW callable through captured gov-mcp tool function",
+    "gov_check DENY callable through captured gov-mcp tool function"
+  ],
+  "what_remains": [
+    "real external MCP package/client transport is still not installed or claimed",
+    "no production client config mutation occurred",
+    "future server/client transport proof can be built from this local harness"
+  ],
+  "whether_external_attempt_blocker_remains": false
+}

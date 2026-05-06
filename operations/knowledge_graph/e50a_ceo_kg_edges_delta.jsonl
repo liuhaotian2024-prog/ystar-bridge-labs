@@ -1,0 +1,2 @@
+{"source": "capability:e50a_fake_fastmcp_harness", "target": "blocker:blocked_missing_local_mcp_dependency", "type": "closes"}
+{"source": "capability:e50a_fake_fastmcp_harness", "target": "route:governed_agent_action_proof_packet", "type": "strengthens_local_proof"}

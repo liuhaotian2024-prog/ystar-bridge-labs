@@ -1,0 +1,307 @@
+{
+  "allow_closed": true,
+  "artifact_id": "e50a_local_tool_layer_proof_result",
+  "command": [
+    "python3",
+    "-m",
+    "office.mission_command.e50a_fake_fastmcp_harness"
+  ],
+  "deny_closed": true,
+  "final_status": "tool_layer_allow_deny_closed",
+  "harness_result": {
+    "allow_result": {
+      "actual": "ALLOW",
+      "auto_executed": true,
+      "expected": "ALLOW",
+      "passed": true,
+      "stdout": "e50a_safe\n"
+    },
+    "artifact_id": "e50a_fake_fastmcp_harness_result",
+    "deny_result": {
+      "actual": "DENY",
+      "auto_executed": false,
+      "expected": "DENY",
+      "passed": true,
+      "violations": [
+        {
+          "actual": "rm -rf /tmp/e50a_nonexistent",
+          "constraint": "deny_commands contains 'rm -rf'",
+          "dimension": "deny_commands",
+          "field": "command",
+          "fix_suggestion": "Command blocked: 'rm -rf' is prohibited. To allow this command, remove 'rm -rf' from deny_commands in AGENTS.md.",
+          "message": "Command 'rm -rf' is blocked in command",
+          "severity": 0.9
+        }
+      ]
+    },
+    "external_attempt_blocker_remains": false,
+    "external_mcp_dependency_required": false,
+    "final_status": "tool_layer_allow_deny_closed",
+    "gov_demo_result": {
+      "actual": "PASS",
+      "expected": "PASS",
+      "passed": true
+    },
+    "import_status": "passed",
+    "mutated_real_client_config": false,
+    "no_external_action": true,
+    "ports_opened": [],
+    "proof_is_gov_mcp_tool_layer": true,
+    "registered_tool_names": [
+      "gov_6pager_validate",
+      "gov_acknowledge",
+      "gov_archive",
+      "gov_article11_pass",
+      "gov_audit",
+      "gov_baseline",
+      "gov_benchmark",
+      "gov_boot_gate_check",
+      "gov_chain_reset",
+      "gov_check",
+      "gov_check_impact",
+      "gov_company_action_preflight",
+      "gov_company_admin_rule_check",
+      "gov_company_escalation_check",
+      "gov_company_mission_action_preflight",
+      "gov_company_mission_check",
+      "gov_company_record_owner_decision",
+      "gov_company_value_alignment_check",
+      "gov_contract_activate",
+      "gov_contract_conflicts",
+      "gov_contract_load",
+      "gov_contract_validate",
+      "gov_counterfactual",
+      "gov_coverage",
+      "gov_delegate",
+      "gov_delta",
+      "gov_demo",
+      "gov_dispatch",
+      "gov_doctor",
+      "gov_domain_describe",
+      "gov_domain_init",
+      "gov_domain_list",
+      "gov_enforce",
+      "gov_escalate",
+      "gov_exec",
+      "gov_forget",
+      "gov_health",
+      "gov_health_retrospective",
+      "gov_impact",
+      "gov_init",
+      "gov_install",
+      "gov_memory_decay",
+      "gov_memory_reinforce",
+      "gov_memory_summary",
+      "gov_obligations",
+      "gov_omission_scan",
+      "gov_path_verify",
+      "gov_policy_builder",
+      "gov_precheck",
+      "gov_pretrain",
+      "gov_quality",
+      "gov_query_cieu",
+      "gov_rapid_assign",
+      "gov_recall",
+      "gov_recall_v2",
+      "gov_remember",
+      "gov_report",
+      "gov_reset_breaker",
+      "gov_risk_classify",
+      "gov_route",
+      "gov_safemode",
+      "gov_seal",
+      "gov_secretary_curate_trigger",
+      "gov_session_info",
+      "gov_simulate",
+      "gov_skill_register",
+      "gov_tombstone_mark",
+      "gov_trend",
+      "gov_verify",
+      "gov_version"
+    ],
+    "required_tools_present": {
+      "gov_check": true,
+      "gov_demo": true,
+      "gov_doctor": true,
+      "gov_enforce": true
+    },
+    "scratch_dir": "/var/folders/2z/g7w3ngz50nvbccv7rdxp3rqw0000gn/T/e50a_fake_fastmcp_h1upwzho",
+    "scratch_removed": true,
+    "started_real_server": false,
+    "stderr": "",
+    "stdout": "",
+    "strategy": "in_process_fake_fastmcp_harness",
+    "tool_calls": {
+      "gov_check_allow": {
+        "called": true,
+        "result": {
+          "agent_id": "ceo",
+          "auto_executed": true,
+          "command": "echo e50a_safe",
+          "decision": "ALLOW",
+          "governance": {
+            "approval_chain": null,
+            "cieu_level": "decision",
+            "cieu_seq": 2,
+            "confidence_score": 0.95,
+            "contract_hash": "sha256:33f9d148dec9491bb1dd88ad2f889c94f1e74e9f4a5e7cc730b69e3814ffd38c",
+            "contract_version": "e50a_fake_fastmcp_contract",
+            "event_hash": "ee37281785d9ba7baabbe3577ffa9efa7f45d2f326c76f2f959af0a7294c7a23",
+            "host": "generic",
+            "human_approved": false,
+            "latency_ms": 5.9633,
+            "writer_verified": true
+          },
+          "returncode": 0,
+          "route_reason": "deterministic: echo (output)",
+          "stderr": "",
+          "stdout": "e50a_safe\n",
+          "tool_name": "Bash"
+        },
+        "status": "passed",
+        "tool": "gov_check"
+      },
+      "gov_check_deny": {
+        "called": true,
+        "result": {
+          "agent_id": "ceo",
+          "auto_executed": false,
+          "decision": "DENY",
+          "delegated_contract": false,
+          "governance": {
+            "approval_chain": null,
+            "cieu_level": "decision",
+            "cieu_seq": 3,
+            "confidence_score": 1.0,
+            "contract_hash": "sha256:33f9d148dec9491bb1dd88ad2f889c94f1e74e9f4a5e7cc730b69e3814ffd38c",
+            "contract_version": "e50a_fake_fastmcp_contract",
+            "event_hash": "732c4d1f0c9b2da17c9cb130a7e0ef7122b0fccaf8967aa3145060214c2e6ea2",
+            "host": "generic",
+            "human_approved": false,
+            "latency_ms": 0.1355,
+            "writer_verified": true
+          },
+          "tool_name": "Bash",
+          "violations": [
+            {
+              "actual": "rm -rf /tmp/e50a_nonexistent",
+              "constraint": "deny_commands contains 'rm -rf'",
+              "dimension": "deny_commands",
+              "field": "command",
+              "fix_suggestion": "Command blocked: 'rm -rf' is prohibited. To allow this command, remove 'rm -rf' from deny_commands in AGENTS.md.",
+              "message": "Command 'rm -rf' is blocked in command",
+              "severity": 0.9
+            }
+          ]
+        },
+        "status": "passed",
+        "tool": "gov_check"
+      },
+      "gov_demo": {
+        "called": true,
+        "result": {
+          "governance": {
+            "approval_chain": null,
+            "cieu_level": "ops",
+            "cieu_seq": 1,
+            "confidence_score": 0.7,
+            "contract_hash": "sha256:33f9d148dec9491bb1dd88ad2f889c94f1e74e9f4a5e7cc730b69e3814ffd38c",
+            "contract_version": "e50a_fake_fastmcp_contract",
+            "event_hash": "fb1728da2be78cab07fbce30fd179975dc4a945efe4a66119428ea067af38d31",
+            "host": "generic",
+            "human_approved": false,
+            "latency_ms": 0.0644,
+            "writer_verified": true
+          },
+          "message": "gov-mcp is working correctly!",
+          "scenarios": [
+            {
+              "correct": true,
+              "decision": "ALLOW",
+              "expected": "ALLOW",
+              "scenario": "Read safe file",
+              "violations": []
+            },
+            {
+              "correct": true,
+              "decision": "DENY",
+              "expected": "DENY",
+              "scenario": "Read secret file",
+              "violations": [
+                {
+                  "actual": "/etc/shadow",
+                  "constraint": "deny contains '/etc'",
+                  "dimension": "deny",
+                  "field": "file_path",
+                  "fix_suggestion": "'/etc/shadow' is blocked because '/etc' is in the deny list. To allow this, remove '/etc' from the deny list in AGENTS.md.",
+                  "message": "'/etc' is not allowed in file_path",
+                  "severity": 0.8
+                }
+              ]
+            },
+            {
+              "correct": true,
+              "decision": "DENY",
+              "expected": "DENY",
+              "scenario": "Read .env file",
+              "violations": [
+                {
+                  "actual": "/app/.env.production",
+                  "constraint": "deny contains '/.env'",
+                  "dimension": "deny",
+                  "field": "file_path",
+                  "fix_suggestion": "'/app/.env.production' is blocked because '/.env' is in the deny list. To allow this, remove '/.env' from the deny list in AGENTS.md.",
+                  "message": "'/.env' is not allowed in file_path",
+                  "severity": 0.8
+                }
+              ]
+            },
+            {
+              "correct": true,
+              "decision": "ALLOW",
+              "expected": "ALLOW",
+              "scenario": "Safe command",
+              "violations": []
+            },
+            {
+              "correct": true,
+              "decision": "DENY",
+              "expected": "DENY",
+              "scenario": "Dangerous command",
+              "violations": [
+                {
+                  "actual": "rm -rf /",
+                  "constraint": "deny_commands contains 'rm -rf'",
+                  "dimension": "deny_commands",
+                  "field": "command",
+                  "fix_suggestion": "Command blocked: 'rm -rf' is prohibited. To allow this command, remove 'rm -rf' from deny_commands in AGENTS.md.",
+                  "message": "Command 'rm -rf' is blocked in command",
+                  "severity": 0.9
+                }
+              ]
+            }
+          ],
+          "status": "PASS",
+          "summary": "5/5 correct"
+        },
+        "status": "passed",
+        "tool": "gov_demo"
+      }
+    },
+    "tool_capture_surface": "FakeFastMCP.tool decorator captured functions registered by gov_mcp.server.create_server",
+    "tool_count": 70
+  },
+  "mutated_real_client_config": false,
+  "no_external_action": true,
+  "ports_opened": [],
+  "returncode": 0,
+  "scratch_home_used": true,
+  "scratch_removed": true,
+  "started_real_server": false,
+  "stderr_excerpt": "",
+  "stdout_excerpt": " from the deny list in AGENTS.md.\",\n                \"message\": \"'/etc' is not allowed in file_path\",\n                \"severity\": 0.8\n              }\n            ]\n          },\n          {\n            \"correct\": true,\n            \"decision\": \"DENY\",\n            \"expected\": \"DENY\",\n            \"scenario\": \"Read .env file\",\n            \"violations\": [\n              {\n                \"actual\": \"/app/.env.production\",\n                \"constraint\": \"deny contains '/.env'\",\n                \"dimension\": \"deny\",\n                \"field\": \"file_path\",\n                \"fix_suggestion\": \"'/app/.env.production' is blocked because '/.env' is in the deny list. To allow this, remove '/.env' from the deny list in AGENTS.md.\",\n                \"message\": \"'/.env' is not allowed in file_path\",\n                \"severity\": 0.8\n              }\n            ]\n          },\n          {\n            \"correct\": true,\n            \"decision\": \"ALLOW\",\n            \"expected\": \"ALLOW\",\n            \"scenario\": \"Safe command\",\n            \"violations\": []\n          },\n          {\n            \"correct\": true,\n            \"decision\": \"DENY\",\n            \"expected\": \"DENY\",\n            \"scenario\": \"Dangerous command\",\n            \"violations\": [\n              {\n                \"actual\": \"rm -rf /\",\n                \"constraint\": \"deny_commands contains 'rm -rf'\",\n                \"dimension\": \"deny_commands\",\n                \"field\": \"command\",\n                \"fix_suggestion\": \"Command blocked: 'rm -rf' is prohibited. To allow this command, remove 'rm -rf' from deny_commands in AGENTS.md.\",\n                \"message\": \"Command 'rm -rf' is blocked in command\",\n                \"severity\": 0.9\n              }\n            ]\n          }\n        ],\n        \"status\": \"PASS\",\n        \"summary\": \"5/5 correct\"\n      },\n      \"status\": \"passed\",\n      \"tool\": \"gov_demo\"\n    }\n  },\n  \"tool_capture_surface\": \"FakeFastMCP.tool decorator captured functions registered by gov_mcp.server.create_server\",\n  \"tool_count\": 70\n}\n",
+  "strategy": "scratch_subprocess_fake_fastmcp_harness",
+  "timed_out": false,
+  "timeout_seconds": 20,
+  "tool_layer_allow_deny_closed": true
+}

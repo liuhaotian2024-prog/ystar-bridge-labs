@@ -1,0 +1,65 @@
+{
+  "artifact_id": "e50a_gov_mcp_tool_registration_inspection",
+  "cli_commands": [
+    "install",
+    "restart",
+    "status",
+    "uninstall"
+  ],
+  "contract_session_needed": ".ystar_session.json is preferred; E50A uses scratch session_config",
+  "fake_fastmcp_can_capture_registration": true,
+  "fake_fastmcp_required_tools_present": {
+    "gov_check": true,
+    "gov_demo": true,
+    "gov_doctor": true,
+    "gov_enforce": true
+  },
+  "fake_fastmcp_tool_count": 70,
+  "files_inspected": [
+    "gov_mcp/server.py",
+    "gov_mcp/__main__.py",
+    "gov_mcp/cli.py",
+    "pyproject.toml",
+    "tests/"
+  ],
+  "gov_check_kernel_path": "captured gov_check calls gov_mcp.server._get_contract_for_agent, check(...), and deterministic Bash auto-exec path over Y-star-gov IntentContract/check",
+  "gov_mcp_head": "998e62c0fa2dd28797d853f6e054210a1823891f",
+  "gov_mcp_root": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+  "minimum_local_tool_layer_call_path": "inject fake mcp.server.fastmcp.FastMCP -> import gov_mcp.server -> create_server(session_config_path=scratch) -> call captured gov_check/gov_demo functions",
+  "no_external_action": true,
+  "pyproject_declares_mcp_dependency": true,
+  "server_import_with_fake_yaml_without_local_mcp": {
+    "missing_import": "mcp",
+    "returncode": 1,
+    "stderr_excerpt": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/Users/haotianliu/.openclaw/workspace/gov-mcp/gov_mcp/server.py\", line 17, in <module>\n    from mcp.server.fastmcp import FastMCP\nModuleNotFoundError: No module named 'mcp'\n"
+  },
+  "server_import_without_local_mcp": {
+    "missing_import": "mcp",
+    "returncode": 1,
+    "stderr_excerpt": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/Users/haotianliu/.openclaw/workspace/gov-mcp/gov_mcp/server.py\", line 17, in <module>\n    from mcp.server.fastmcp import FastMCP\nModuleNotFoundError: No module named 'mcp'\n"
+  },
+  "state_object_needed": "_State created by create_server from scratch .ystar_session.json or AGENTS.md",
+  "tests_reference_mcp_helpers": true,
+  "tool_locations": {
+    "gov_check": {
+      "line": 874,
+      "module_level_function": false,
+      "nested_fastmcp_registration": true
+    },
+    "gov_demo": {
+      "line": 2642,
+      "module_level_function": false,
+      "nested_fastmcp_registration": true
+    },
+    "gov_doctor": {
+      "line": 2058,
+      "module_level_function": false,
+      "nested_fastmcp_registration": true
+    },
+    "gov_enforce": {
+      "line": 989,
+      "module_level_function": false,
+      "nested_fastmcp_registration": true
+    }
+  }
+}

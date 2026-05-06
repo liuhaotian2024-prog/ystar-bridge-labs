@@ -1,0 +1,30 @@
+{
+  "artifact_id": "e50a_ceo_kg_mcp_client_feedback",
+  "gov_check_allow": {
+    "actual": "ALLOW",
+    "auto_executed": true,
+    "expected": "ALLOW",
+    "passed": true,
+    "stdout": "e50a_safe\n"
+  },
+  "gov_check_deny": {
+    "actual": "DENY",
+    "auto_executed": false,
+    "expected": "DENY",
+    "passed": true,
+    "violations": [
+      {
+        "actual": "rm -rf /tmp/e50a_nonexistent",
+        "constraint": "deny_commands contains 'rm -rf'",
+        "dimension": "deny_commands",
+        "field": "command",
+        "fix_suggestion": "Command blocked: 'rm -rf' is prohibited. To allow this command, remove 'rm -rf' from deny_commands in AGENTS.md.",
+        "message": "Command 'rm -rf' is blocked in command",
+        "severity": 0.9
+      }
+    ]
+  },
+  "no_external_action": true,
+  "recommended_next_milestone": "E50B_external_commercial_observation_and_money_route_retest",
+  "tool_layer_allow_deny_closed": true
+}

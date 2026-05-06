@@ -1,0 +1,2 @@
+{"node_id": "capability:e50a_fake_fastmcp_harness", "type": "capability", "status": "tool_layer_allow_deny_closed"}
+{"node_id": "blocker:blocked_missing_local_mcp_dependency", "type": "blocker", "status_after_e50a": "tool_layer_allow_deny_closed"}
