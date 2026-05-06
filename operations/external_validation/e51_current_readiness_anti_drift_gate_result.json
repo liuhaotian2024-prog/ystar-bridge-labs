@@ -2,6 +2,11 @@
   "artifact_id": "e51_current_readiness_anti_drift_gate_result",
   "gate_passed": true,
   "checks": {
+    "capability_centerline_binding_gate_passed": true,
+    "no_active_cognitive_capability_outside_brain": true,
+    "no_behavior_capability_bypassing_action_runtime": true,
+    "no_current_state_evidence_without_readback": true,
+    "no_reference_only_artifact_consumed_as_current": true,
     "e50b_selected_route_read_back": true,
     "e50b_nearest_alternative_read_back": true,
     "e50b_next_milestone_read_back": true,
@@ -27,6 +32,12 @@
     "passed": true,
     "allow_status": "ALLOW",
     "deny_status": "DENY"
+  },
+  "capability_centerline_binding_summary": {
+    "passed": true,
+    "record_count": 22,
+    "y_star_gov_status": "capability_binding_gate_passed",
+    "gov_mcp_allow_status": "ALLOW"
   },
   "recommended_next_milestone": "E52_package_governed_agent_action_proof_packet_for_first_user_review",
   "no_external_action": true

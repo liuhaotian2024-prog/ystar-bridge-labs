@@ -8,6 +8,7 @@ from typing import Any
 from .e51_gov_mcp_runtime_linkage_tool_harness import run_gov_mcp_runtime_linkage_tool_harness
 from .e51_labs_runtime_linkage_manifest import CURRENT, build_labs_runtime_linkage_manifest
 from .e51_y_star_gov_linkage_validation_runner import validate_labs_manifest_through_y_star_gov
+from .e51_capability_centerline_binding_repair import build_capability_centerline_binding_repair_result
 
 BRIDGE_ROOT = Path(os.environ.get('YSTAR_BRIDGE_LABS_ROOT', Path(__file__).resolve().parents[2]))
 
@@ -16,7 +17,14 @@ def evaluate_current_readiness_anti_drift_gate() -> dict[str, Any]:
     manifest = build_labs_runtime_linkage_manifest()
     validation = validate_labs_manifest_through_y_star_gov(manifest)
     harness = run_gov_mcp_runtime_linkage_tool_harness()
+    binding = build_capability_centerline_binding_repair_result()
+    binding_checks = binding['checks']
     checks = {
+        'capability_centerline_binding_gate_passed': binding_checks['capability_centerline_binding_gate_passed'],
+        'no_active_cognitive_capability_outside_brain': binding_checks['no_active_cognitive_capability_outside_brain'],
+        'no_behavior_capability_bypassing_action_runtime': binding_checks['no_behavior_capability_bypassing_action_runtime'],
+        'no_current_state_evidence_without_readback': binding_checks['no_current_state_evidence_without_readback'],
+        'no_reference_only_artifact_consumed_as_current': binding_checks['no_reference_only_artifact_consumed_as_current'],
         'e50b_selected_route_read_back': manifest['current_state']['selected_route'] == CURRENT['selected_route'],
         'e50b_nearest_alternative_read_back': manifest['current_state']['nearest_alternative'] == CURRENT['nearest_alternative'],
         'e50b_next_milestone_read_back': manifest['current_state']['next_milestone'] == CURRENT['next_milestone'],
@@ -40,6 +48,7 @@ def evaluate_current_readiness_anti_drift_gate() -> dict[str, Any]:
         'checks': checks,
         'y_star_gov_validation_summary': {'passed': validation['passed'], 'status': validation['anti_drift_gate']['status'], 'p0_failure_count': validation['anti_drift_gate']['p0_failure_count']},
         'gov_mcp_tool_summary': {'passed': harness['passed'], 'allow_status': harness['allow_proof']['status'], 'deny_status': harness['deny_proof']['status']},
+        'capability_centerline_binding_summary': {'passed': binding['passed'], 'record_count': binding['audit_record_count'], 'y_star_gov_status': binding['y_star_gov_gate']['status'], 'gov_mcp_allow_status': binding['gov_mcp_allow_proof']['status']},
         'recommended_next_milestone': 'E52_package_governed_agent_action_proof_packet_for_first_user_review' if gate_passed else 'E51_R2_runtime_linkage_repair',
         'no_external_action': True,
     }

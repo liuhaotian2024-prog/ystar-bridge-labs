@@ -1,0 +1,543 @@
+{
+  "artifact_id": "e51_capability_centerline_binding_audit",
+  "generated_at": "2026-05-06T00:00:00Z",
+  "record_count": 22,
+  "functional_class_counts": {
+    "cognitive_capability": 7,
+    "behavior_control_capability": 5,
+    "evidence_closure_capability": 5,
+    "boundary_capability": 3,
+    "reference_only_artifact": 2
+  },
+  "binding_status_counts": {
+    "correctly_bound": 20,
+    "reference_only_ok": 2
+  },
+  "records": [
+    {
+      "capability_id": "wisdom_search",
+      "path": "scripts/wisdom_search.py",
+      "repo": "bridge-labs",
+      "functional_class": "cognitive_capability",
+      "required_centerline": [
+        "CEO_brain"
+      ],
+      "actual_binding": [
+        "CEO_brain"
+      ],
+      "binding_status": "correctly_bound",
+      "required_reader": "e46b_ceo_brain_adapter.load_ceo_brain_context",
+      "actual_reader": "e46b_ceo_brain_adapter.load_ceo_brain_context",
+      "required_gate": "",
+      "actual_gate": "",
+      "remediation": "no_action",
+      "severity": "P1",
+      "affects_current_state": false,
+      "agent_facing": false,
+      "consumed_as_current": false,
+      "evidence_basis": "Wisdom search is called by CEO brain adapter."
+    },
+    {
+      "capability_id": "ceo_wisdom_memory",
+      "path": "knowledge/ceo/wisdom/meta/autonomous_loop_algorithm.md",
+      "repo": "bridge-labs",
+      "functional_class": "cognitive_capability",
+      "required_centerline": [
+        "CEO_brain"
+      ],
+      "actual_binding": [
+        "CEO_brain"
+      ],
+      "binding_status": "correctly_bound",
+      "required_reader": "e46b_ceo_brain_adapter.load_ceo_brain_context",
+      "actual_reader": "e46b_ceo_brain_adapter.load_ceo_brain_context",
+      "required_gate": "",
+      "actual_gate": "",
+      "remediation": "no_action",
+      "severity": "P1",
+      "affects_current_state": false,
+      "agent_facing": false,
+      "consumed_as_current": false,
+      "evidence_basis": "E51 capability centerline audit"
+    },
+    {
+      "capability_id": "e44a_cognition_cascade",
+      "path": "office/mission_command/e44a_full_history_preflight_v2.py",
+      "repo": "bridge-labs",
+      "functional_class": "cognitive_capability",
+      "required_centerline": [
+        "CEO_brain"
+      ],
+      "actual_binding": [
+        "CEO_brain"
+      ],
+      "binding_status": "correctly_bound",
+      "required_reader": "canonical CEO runtime cognition stage",
+      "actual_reader": "E47/E49/E51 runtime context",
+      "required_gate": "",
+      "actual_gate": "",
+      "remediation": "no_action",
+      "severity": "P1",
+      "affects_current_state": false,
+      "agent_facing": false,
+      "consumed_as_current": false,
+      "evidence_basis": "E51 capability centerline audit"
+    },
+    {
+      "capability_id": "e46b_ceo_brain_adapter",
+      "path": "office/mission_command/e46b_ceo_brain_adapter.py",
+      "repo": "bridge-labs",
+      "functional_class": "cognitive_capability",
+      "required_centerline": [
+        "CEO_brain"
+      ],
+      "actual_binding": [
+        "CEO_brain"
+      ],
+      "binding_status": "correctly_bound",
+      "required_reader": "canonical CEO runtime",
+      "actual_reader": "e46b/e47/e49/e50c/e51 runtime smoke",
+      "required_gate": "",
+      "actual_gate": "",
+      "remediation": "no_action",
+      "severity": "P0",
+      "affects_current_state": false,
+      "agent_facing": false,
+      "consumed_as_current": false,
+      "evidence_basis": "E51 capability centerline audit"
+    },
+    {
+      "capability_id": "e49_deep_semantic_runtime",
+      "path": "office/mission_command/e49_deep_semantic_operating_runtime.py",
+      "repo": "bridge-labs",
+      "functional_class": "cognitive_capability",
+      "required_centerline": [
+        "CEO_brain"
+      ],
+      "actual_binding": [
+        "CEO_brain"
+      ],
+      "binding_status": "correctly_bound",
+      "required_reader": "CEO brain/canonical semantic runtime",
+      "actual_reader": "E49/E51 tests and route scorer",
+      "required_gate": "",
+      "actual_gate": "",
+      "remediation": "no_action",
+      "severity": "P1",
+      "affects_current_state": false,
+      "agent_facing": false,
+      "consumed_as_current": false,
+      "evidence_basis": "E51 capability centerline audit"
+    },
+    {
+      "capability_id": "e50b_counterfactual_runtime",
+      "path": "office/mission_command/e50b_counterfactual_runtime_adapter.py",
+      "repo": "bridge-labs",
+      "functional_class": "cognitive_capability",
+      "required_centerline": [
+        "CEO_brain"
+      ],
+      "actual_binding": [
+        "CEO_brain"
+      ],
+      "binding_status": "correctly_bound",
+      "required_reader": "CEO brain/current route decision context",
+      "actual_reader": "E50B decision packet and E50C brain readback",
+      "required_gate": "",
+      "actual_gate": "",
+      "remediation": "no_action",
+      "severity": "P0",
+      "affects_current_state": false,
+      "agent_facing": false,
+      "consumed_as_current": false,
+      "evidence_basis": "E51 capability centerline audit"
+    },
+    {
+      "capability_id": "e50b_current_commercial_decision",
+      "path": "operations/external_validation/e50b_ceo_commercial_decision_packet.json",
+      "repo": "bridge-labs",
+      "functional_class": "cognitive_capability",
+      "required_centerline": [
+        "CEO_brain"
+      ],
+      "actual_binding": [
+        "CEO_brain"
+      ],
+      "binding_status": "correctly_bound",
+      "required_reader": "e46b_ceo_brain_adapter.load_ceo_brain_context",
+      "actual_reader": "e46b_ceo_brain_adapter.load_ceo_brain_context",
+      "required_gate": "",
+      "actual_gate": "",
+      "remediation": "no_action",
+      "severity": "P0",
+      "affects_current_state": true,
+      "agent_facing": false,
+      "consumed_as_current": false,
+      "evidence_basis": "E51 capability centerline audit"
+    },
+    {
+      "capability_id": "canonical_ceo_runtime_v1_1",
+      "path": "office/mission_command/e46b_canonical_ceo_operating_runtime.py",
+      "repo": "bridge-labs",
+      "functional_class": "behavior_control_capability",
+      "required_centerline": [
+        "canonical_action_runtime",
+        "Y_star_gov_boundary"
+      ],
+      "actual_binding": [
+        "canonical_action_runtime",
+        "Y_star_gov_boundary"
+      ],
+      "binding_status": "correctly_bound",
+      "required_reader": "E51 anti-drift gate",
+      "actual_reader": "E51 anti-drift gate",
+      "required_gate": "Y-star-gov/gov-mcp anti-drift gate",
+      "actual_gate": "E51 current readiness gate",
+      "remediation": "no_action",
+      "severity": "P0",
+      "affects_current_state": false,
+      "agent_facing": false,
+      "consumed_as_current": false,
+      "evidence_basis": "E51 capability centerline audit"
+    },
+    {
+      "capability_id": "canonical_ceo_runtime_v2",
+      "path": "office/mission_command/e47_canonical_ceo_runtime_v2.py",
+      "repo": "bridge-labs",
+      "functional_class": "behavior_control_capability",
+      "required_centerline": [
+        "canonical_action_runtime",
+        "Y_star_gov_boundary"
+      ],
+      "actual_binding": [
+        "canonical_action_runtime",
+        "Y_star_gov_boundary"
+      ],
+      "binding_status": "correctly_bound",
+      "required_reader": "E51 anti-drift gate",
+      "actual_reader": "E51 anti-drift gate",
+      "required_gate": "Y-star-gov/gov-mcp anti-drift gate",
+      "actual_gate": "E51 current readiness gate",
+      "remediation": "no_action",
+      "severity": "P0",
+      "affects_current_state": false,
+      "agent_facing": false,
+      "consumed_as_current": false,
+      "evidence_basis": "E51 capability centerline audit"
+    },
+    {
+      "capability_id": "e45_local_demo_runner",
+      "path": "office/mission_command/e45_real_local_first_value_demo_runner.py",
+      "repo": "bridge-labs",
+      "functional_class": "behavior_control_capability",
+      "required_centerline": [
+        "canonical_action_runtime",
+        "Y_star_gov_boundary"
+      ],
+      "actual_binding": [
+        "canonical_action_runtime",
+        "Y_star_gov_boundary"
+      ],
+      "binding_status": "correctly_bound",
+      "required_reader": "canonical CEO runtime",
+      "actual_reader": "E47/E48/E51 context",
+      "required_gate": "Y-star-gov/governance boundary",
+      "actual_gate": "local dry-run/no external action gate",
+      "remediation": "no_action",
+      "severity": "P1",
+      "affects_current_state": false,
+      "agent_facing": false,
+      "consumed_as_current": false,
+      "evidence_basis": "E51 capability centerline audit"
+    },
+    {
+      "capability_id": "e50a_gov_mcp_tool_layer_harness",
+      "path": "office/mission_command/e50a_fake_fastmcp_harness.py",
+      "repo": "bridge-labs",
+      "functional_class": "behavior_control_capability",
+      "required_centerline": [
+        "canonical_action_runtime",
+        "Y_star_gov_boundary"
+      ],
+      "actual_binding": [
+        "canonical_action_runtime",
+        "Y_star_gov_boundary",
+        "gov_mcp_boundary"
+      ],
+      "binding_status": "correctly_bound",
+      "required_reader": "E50B/E50C/E51 runtime state",
+      "actual_reader": "E50B/E50C/E51 runtime state",
+      "required_gate": "gov-mcp fake harness/no real client mutation gate",
+      "actual_gate": "E50A/E51 tests",
+      "remediation": "no_action",
+      "severity": "P0",
+      "affects_current_state": false,
+      "agent_facing": false,
+      "consumed_as_current": false,
+      "evidence_basis": "E51 capability centerline audit"
+    },
+    {
+      "capability_id": "e50b_public_observation_adapter",
+      "path": "office/mission_command/e50b_public_observation.py",
+      "repo": "bridge-labs",
+      "functional_class": "behavior_control_capability",
+      "required_centerline": [
+        "canonical_action_runtime",
+        "Y_star_gov_boundary"
+      ],
+      "actual_binding": [
+        "canonical_action_runtime",
+        "Y_star_gov_boundary"
+      ],
+      "binding_status": "correctly_bound",
+      "required_reader": "canonical CEO runtime",
+      "actual_reader": "E50B route retest and E51 evidence packet",
+      "required_gate": "public-read-only/no contact boundary",
+      "actual_gate": "E50B observation boundary tests",
+      "remediation": "no_action",
+      "severity": "P1",
+      "affects_current_state": false,
+      "agent_facing": false,
+      "consumed_as_current": false,
+      "evidence_basis": "E51 capability centerline audit"
+    },
+    {
+      "capability_id": "e50b_kg_read_model_update",
+      "path": "operations/knowledge_graph/e50b_ceo_kg_read_model_update.json",
+      "repo": "bridge-labs",
+      "functional_class": "evidence_closure_capability",
+      "required_centerline": [
+        "KG_CZL_CIEU_K9_evidence"
+      ],
+      "actual_binding": [
+        "KG_CZL_CIEU_K9_evidence"
+      ],
+      "binding_status": "correctly_bound",
+      "required_reader": "CEO brain readback",
+      "actual_reader": "e46b CEO brain adapter current state",
+      "required_gate": "",
+      "actual_gate": "",
+      "remediation": "no_action",
+      "severity": "P0",
+      "affects_current_state": true,
+      "agent_facing": false,
+      "consumed_as_current": false,
+      "evidence_basis": "E51 capability centerline audit"
+    },
+    {
+      "capability_id": "e50b_czl_closure",
+      "path": "operations/external_validation/e50b_czl_closure.json",
+      "repo": "bridge-labs",
+      "functional_class": "evidence_closure_capability",
+      "required_centerline": [
+        "KG_CZL_CIEU_K9_evidence"
+      ],
+      "actual_binding": [
+        "KG_CZL_CIEU_K9_evidence"
+      ],
+      "binding_status": "correctly_bound",
+      "required_reader": "CEO brain readback",
+      "actual_reader": "e46b CEO brain adapter current state",
+      "required_gate": "",
+      "actual_gate": "",
+      "remediation": "no_action",
+      "severity": "P0",
+      "affects_current_state": true,
+      "agent_facing": false,
+      "consumed_as_current": false,
+      "evidence_basis": "E51 capability centerline audit"
+    },
+    {
+      "capability_id": "e50b_cieu_residual_summary",
+      "path": "operations/external_validation/e50b_cieu_residual_summary.json",
+      "repo": "bridge-labs",
+      "functional_class": "evidence_closure_capability",
+      "required_centerline": [
+        "KG_CZL_CIEU_K9_evidence"
+      ],
+      "actual_binding": [
+        "KG_CZL_CIEU_K9_evidence"
+      ],
+      "binding_status": "correctly_bound",
+      "required_reader": "CEO brain readback",
+      "actual_reader": "e46b CEO brain adapter current state",
+      "required_gate": "",
+      "actual_gate": "",
+      "remediation": "no_action",
+      "severity": "P0",
+      "affects_current_state": true,
+      "agent_facing": false,
+      "consumed_as_current": false,
+      "evidence_basis": "E51 capability centerline audit"
+    },
+    {
+      "capability_id": "e50b_public_source_receipts",
+      "path": "operations/external_validation/e50b_public_source_receipts.jsonl",
+      "repo": "bridge-labs",
+      "functional_class": "evidence_closure_capability",
+      "required_centerline": [
+        "KG_CZL_CIEU_K9_evidence"
+      ],
+      "actual_binding": [
+        "KG_CZL_CIEU_K9_evidence"
+      ],
+      "binding_status": "correctly_bound",
+      "required_reader": "commercial decision packet evidence summary",
+      "actual_reader": "E50B/E51 evidence packet",
+      "required_gate": "",
+      "actual_gate": "",
+      "remediation": "no_action",
+      "severity": "P2",
+      "affects_current_state": false,
+      "agent_facing": false,
+      "consumed_as_current": false,
+      "evidence_basis": "E51 capability centerline audit"
+    },
+    {
+      "capability_id": "k9audit_read_only_context",
+      "path": "README.md",
+      "repo": "K9Audit",
+      "functional_class": "evidence_closure_capability",
+      "required_centerline": [
+        "KG_CZL_CIEU_K9_evidence"
+      ],
+      "actual_binding": [
+        "KG_CZL_CIEU_K9_evidence"
+      ],
+      "binding_status": "correctly_bound",
+      "required_reader": "E51 audit context",
+      "actual_reader": "E51 runtime archaeology/evidence packet",
+      "required_gate": "",
+      "actual_gate": "",
+      "remediation": "no_action",
+      "severity": "P2",
+      "affects_current_state": false,
+      "agent_facing": false,
+      "consumed_as_current": false,
+      "evidence_basis": "E51 capability centerline audit"
+    },
+    {
+      "capability_id": "e50c_no_go_boundary_policy",
+      "path": "operations/external_validation/e50c_ceo_brain_centerline_policy.json",
+      "repo": "bridge-labs",
+      "functional_class": "boundary_capability",
+      "required_centerline": [
+        "Y_star_gov_boundary",
+        "gov_mcp_boundary"
+      ],
+      "actual_binding": [
+        "Y_star_gov_boundary",
+        "gov_mcp_boundary",
+        "CEO_brain"
+      ],
+      "binding_status": "correctly_bound",
+      "required_reader": "CEO brain and anti-drift gate",
+      "actual_reader": "E50C/E51 gates",
+      "required_gate": "Y-star-gov/gov-mcp anti-drift gate",
+      "actual_gate": "E51 capability binding gate",
+      "remediation": "no_action",
+      "severity": "P0",
+      "affects_current_state": false,
+      "agent_facing": true,
+      "consumed_as_current": false,
+      "evidence_basis": "E51 capability centerline audit"
+    },
+    {
+      "capability_id": "y_star_gov_capability_binding_validator",
+      "path": "ystar/governance/capability_centerline_binding.py",
+      "repo": "Y-star-gov",
+      "functional_class": "boundary_capability",
+      "required_centerline": [
+        "Y_star_gov_boundary"
+      ],
+      "actual_binding": [
+        "Y_star_gov_boundary"
+      ],
+      "binding_status": "correctly_bound",
+      "required_reader": "Bridge Labs validator runner",
+      "actual_reader": "E51 binding repair runner",
+      "required_gate": "Y-star-gov invariant",
+      "actual_gate": "Y-star-gov targeted tests",
+      "remediation": "no_action",
+      "severity": "P0",
+      "affects_current_state": false,
+      "agent_facing": false,
+      "consumed_as_current": false,
+      "evidence_basis": "E51 capability centerline audit"
+    },
+    {
+      "capability_id": "gov_mcp_capability_binding_tools",
+      "path": "gov_mcp/runtime_linkage_tools.py",
+      "repo": "gov-mcp",
+      "functional_class": "boundary_capability",
+      "required_centerline": [
+        "Y_star_gov_boundary",
+        "gov_mcp_boundary"
+      ],
+      "actual_binding": [
+        "Y_star_gov_boundary",
+        "gov_mcp_boundary"
+      ],
+      "binding_status": "correctly_bound",
+      "required_reader": "E51 binding repair harness",
+      "actual_reader": "E51 binding repair harness",
+      "required_gate": "gov-mcp tool gate",
+      "actual_gate": "FakeMCP ALLOW/DENY tests",
+      "remediation": "no_action",
+      "severity": "P0",
+      "affects_current_state": false,
+      "agent_facing": true,
+      "consumed_as_current": false,
+      "evidence_basis": "E51 capability centerline audit"
+    },
+    {
+      "capability_id": "e43_original_first_value_route",
+      "path": "operations/external_validation/e43_selected_first_value_path.json",
+      "repo": "bridge-labs",
+      "functional_class": "reference_only_artifact",
+      "required_centerline": [
+        "reference_only"
+      ],
+      "actual_binding": [
+        "reference_only"
+      ],
+      "binding_status": "reference_only_ok",
+      "required_reader": "",
+      "actual_reader": "",
+      "required_gate": "",
+      "actual_gate": "",
+      "remediation": "mark_reference_only",
+      "severity": "P2",
+      "affects_current_state": false,
+      "agent_facing": false,
+      "consumed_as_current": false,
+      "evidence_basis": "Superseded by E50B/E50C current route state."
+    },
+    {
+      "capability_id": "e49_money_route_decision",
+      "path": "operations/external_validation/e49_selected_money_route_semantic_decision.json",
+      "repo": "bridge-labs",
+      "functional_class": "reference_only_artifact",
+      "required_centerline": [
+        "reference_only"
+      ],
+      "actual_binding": [
+        "reference_only"
+      ],
+      "binding_status": "reference_only_ok",
+      "required_reader": "",
+      "actual_reader": "",
+      "required_gate": "",
+      "actual_gate": "",
+      "remediation": "mark_reference_only",
+      "severity": "P2",
+      "affects_current_state": false,
+      "agent_facing": false,
+      "consumed_as_current": false,
+      "evidence_basis": "Superseded by E50B counterfactual commercial decision."
+    }
+  ],
+  "p0_gaps_before_repair": [],
+  "all_required_functional_classes_represented": true,
+  "no_external_action": true
+}

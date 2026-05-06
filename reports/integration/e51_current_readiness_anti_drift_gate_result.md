@@ -4,6 +4,11 @@ Gate passed: `True`
 Recommended next milestone: `E52_package_governed_agent_action_proof_packet_for_first_user_review`
 
 ## Checks
+- capability_centerline_binding_gate_passed: True
+- no_active_cognitive_capability_outside_brain: True
+- no_behavior_capability_bypassing_action_runtime: True
+- no_current_state_evidence_without_readback: True
+- no_reference_only_artifact_consumed_as_current: True
 - e50b_selected_route_read_back: True
 - e50b_nearest_alternative_read_back: True
 - e50b_next_milestone_read_back: True
