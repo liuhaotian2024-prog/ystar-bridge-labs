@@ -321,6 +321,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e60_market_readiness_state = {'market_readiness_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
     try:
+        from office.mission_command.e61_ceo_brain_readback_smoke import load_e61_state_for_brain
+        e61_live_public_read_state = load_e61_state_for_brain()
+    except Exception as exc:
+        e61_live_public_read_state = {'live_public_read_final_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -404,6 +409,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_market_readiness_live_public_read_status": e60_market_readiness_state.get("live_public_read_status"),
         "current_market_readiness_fixture_only_evidence_treated_as_live_market_freshness": e60_market_readiness_state.get("fixture_only_evidence_treated_as_live_market_freshness"),
         "current_market_readiness_external_action_allowed": e60_market_readiness_state.get("external_action_allowed"),
+        "latest_live_public_read_state": e61_live_public_read_state,
+        "current_live_public_read_final_status": e61_live_public_read_state.get("live_public_read_final_status"),
+        "current_live_public_read_smoke_probe_passed": e61_live_public_read_state.get("controlled_public_read_smoke_probe_passed"),
+        "current_live_public_read_recommended_next_milestone": e61_live_public_read_state.get("recommended_next_milestone"),
+        "current_live_public_read_external_action_allowed": e61_live_public_read_state.get("external_action_allowed"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

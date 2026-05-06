@@ -1,0 +1,8 @@
+{
+  "artifact_id": "e61_czl_closure",
+  "closure_status": "closed",
+  "decision_state_changed": true,
+  "final_status": "live_public_read_code_repaired_but_host_network_unavailable",
+  "recommended_next_milestone": "E62_host_network_refresh_or_delivery_bridge_network_probe",
+  "no_external_human_action": true
+}

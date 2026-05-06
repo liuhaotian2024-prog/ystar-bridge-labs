@@ -1,0 +1,55 @@
+{
+  "artifact_id": "e61_live_public_read_smoke_probe_result",
+  "smoke_probe_status": "adapter_works_but_host_network_unavailable",
+  "controlled_public_read_smoke_probe_passed": false,
+  "final_status": "live_public_read_code_repaired_but_host_network_unavailable",
+  "recommended_next_milestone": "E62_host_network_refresh_or_delivery_bridge_network_probe",
+  "allowlisted_urls": [
+    "https://example.com/",
+    "https://www.iana.org/domains/reserved"
+  ],
+  "receipt_count": 2,
+  "live_receipt_count": 0,
+  "receipts": [
+    {
+      "receipt_id": "e61_live_read_receipt_001",
+      "source_url": "https://example.com/",
+      "retrieval_status": "fetch_failed",
+      "failure_classification": "DNS_unavailable",
+      "error_type": "URLError",
+      "error_summary": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "safety_errors": [],
+      "no_contact_info_extracted": true,
+      "no_login": true,
+      "no_form_submission": true,
+      "no_external_human_action": true
+    },
+    {
+      "receipt_id": "e61_live_read_receipt_002",
+      "source_url": "https://www.iana.org/domains/reserved",
+      "retrieval_status": "fetch_failed",
+      "failure_classification": "DNS_unavailable",
+      "error_type": "URLError",
+      "error_summary": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "safety_errors": [],
+      "no_contact_info_extracted": true,
+      "no_login": true,
+      "no_form_submission": true,
+      "no_external_human_action": true
+    }
+  ],
+  "failure_classes": [
+    "DNS_unavailable"
+  ],
+  "timeout_seconds": 4,
+  "max_bytes": 80000,
+  "no_contact_info_extracted": true,
+  "no_login": true,
+  "no_form_submission": true,
+  "no_crawl": true,
+  "no_private_provider_api": true,
+  "no_external_human_action": true,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false,
+  "expert_feedback_claimed": false
+}

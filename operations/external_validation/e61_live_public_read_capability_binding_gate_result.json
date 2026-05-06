@@ -1,0 +1,186 @@
+{
+  "artifact_id": "e61_live_public_read_capability_binding_gate_result",
+  "payload": {
+    "gate_id": "e61_live_public_read_capability_binding_gate",
+    "capability_centerline_contract": {
+      "contract_id": "e61_capability_centerline_contract",
+      "class_rules": {
+        "cognitive_capability": {
+          "required_centerline": [
+            "CEO_brain"
+          ]
+        },
+        "behavior_control_capability": {
+          "required_centerline": [
+            "canonical_action_runtime",
+            "Y_star_gov_boundary"
+          ]
+        },
+        "evidence_closure_capability": {
+          "required_centerline": [
+            "KG_CZL_CIEU_K9_evidence"
+          ]
+        },
+        "boundary_capability": {
+          "required_centerline": [
+            "Y_star_gov_boundary"
+          ]
+        },
+        "reference_only_artifact": {
+          "required_centerline": [
+            "reference_only"
+          ]
+        }
+      },
+      "no_external_human_action": true,
+      "no_external_action": true
+    },
+    "capability_bindings": [
+      {
+        "capability_id": "e61_inventory",
+        "path": "office/mission_command/e61_live_public_read_capability_inventory.py",
+        "repo": "bridge-labs",
+        "functional_class": "cognitive_capability",
+        "required_centerline": [
+          "CEO_brain"
+        ],
+        "actual_binding": [
+          "CEO_brain"
+        ],
+        "binding_status": "correctly_bound",
+        "required_reader": "CEO brain / E62 runtime / evidence centerline",
+        "actual_reader": "e61_ceo_brain_readback_smoke",
+        "required_gate": "E61 capability binding gate",
+        "actual_gate": "passed",
+        "remediation": "no_action",
+        "severity": "P0",
+        "affects_current_state": true,
+        "agent_facing": false,
+        "consumed_as_current": false,
+        "evidence_basis": "E61 capability binding"
+      },
+      {
+        "capability_id": "e61_smoke_probe",
+        "path": "office/mission_command/e61_controlled_public_read_smoke_probe.py",
+        "repo": "bridge-labs",
+        "functional_class": "behavior_control_capability",
+        "required_centerline": [
+          "canonical_action_runtime",
+          "Y_star_gov_boundary"
+        ],
+        "actual_binding": [
+          "canonical_action_runtime",
+          "Y_star_gov_boundary"
+        ],
+        "binding_status": "correctly_bound",
+        "required_reader": "CEO brain / E62 runtime / evidence centerline",
+        "actual_reader": "e61_ceo_brain_readback_smoke",
+        "required_gate": "E61 capability binding gate",
+        "actual_gate": "passed",
+        "remediation": "no_action",
+        "severity": "P0",
+        "affects_current_state": true,
+        "agent_facing": false,
+        "consumed_as_current": false,
+        "evidence_basis": "E61 capability binding"
+      },
+      {
+        "capability_id": "e61_receipts",
+        "path": "operations/external_validation/e61_public_read_receipts.json",
+        "repo": "bridge-labs",
+        "functional_class": "evidence_closure_capability",
+        "required_centerline": [
+          "KG_CZL_CIEU_K9_evidence"
+        ],
+        "actual_binding": [
+          "KG_CZL_CIEU_K9_evidence"
+        ],
+        "binding_status": "correctly_bound",
+        "required_reader": "CEO brain / E62 runtime / evidence centerline",
+        "actual_reader": "e61_ceo_brain_readback_smoke",
+        "required_gate": "E61 capability binding gate",
+        "actual_gate": "passed",
+        "remediation": "no_action",
+        "severity": "P1",
+        "affects_current_state": true,
+        "agent_facing": false,
+        "consumed_as_current": false,
+        "evidence_basis": "E61 capability binding"
+      },
+      {
+        "capability_id": "e61_readiness_delta",
+        "path": "office/mission_command/e61_external_intelligence_readiness_delta.py",
+        "repo": "bridge-labs",
+        "functional_class": "cognitive_capability",
+        "required_centerline": [
+          "CEO_brain"
+        ],
+        "actual_binding": [
+          "CEO_brain"
+        ],
+        "binding_status": "correctly_bound",
+        "required_reader": "CEO brain / E62 runtime / evidence centerline",
+        "actual_reader": "e61_ceo_brain_readback_smoke",
+        "required_gate": "E61 capability binding gate",
+        "actual_gate": "passed",
+        "remediation": "no_action",
+        "severity": "P0",
+        "affects_current_state": true,
+        "agent_facing": false,
+        "consumed_as_current": false,
+        "evidence_basis": "E61 capability binding"
+      },
+      {
+        "capability_id": "e61_no_contact_policy",
+        "path": "office/mission_command/e61_controlled_public_read_smoke_probe.py",
+        "repo": "bridge-labs",
+        "functional_class": "boundary_capability",
+        "required_centerline": [
+          "Y_star_gov_boundary",
+          "gov_mcp_boundary"
+        ],
+        "actual_binding": [
+          "Y_star_gov_boundary",
+          "gov_mcp_boundary"
+        ],
+        "binding_status": "correctly_bound",
+        "required_reader": "CEO brain / E62 runtime / evidence centerline",
+        "actual_reader": "e61_ceo_brain_readback_smoke",
+        "required_gate": "E61 capability binding gate",
+        "actual_gate": "passed",
+        "remediation": "no_action",
+        "severity": "P0",
+        "affects_current_state": true,
+        "agent_facing": true,
+        "consumed_as_current": false,
+        "evidence_basis": "E61 capability binding"
+      }
+    ],
+    "external_action_allowed": false,
+    "no_external_human_action": true
+  },
+  "gate": {
+    "gate_id": "e61_live_public_read_capability_binding_gate",
+    "status": "capability_binding_gate_passed",
+    "allowed": true,
+    "record_count": 5,
+    "wrong_centerline_count": 0,
+    "missing_binding_count": 0,
+    "stale_current_state_count": 0,
+    "p0_failure_count": 0,
+    "p1_failure_count": 0,
+    "failures": [],
+    "warnings": [],
+    "no_external_action": true
+  },
+  "checks": {
+    "inventory_bound_to_ceo_brain": true,
+    "smoke_probe_bound_to_behavior_center_and_governance": true,
+    "receipts_bound_to_evidence_centerline": true,
+    "no_contact_policy_bound_to_boundary": true,
+    "external_action_blocked": true
+  },
+  "passed": true,
+  "external_action_allowed": false,
+  "no_external_human_action": true
+}

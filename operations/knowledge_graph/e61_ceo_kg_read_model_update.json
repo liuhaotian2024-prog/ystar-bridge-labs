@@ -1,0 +1,9 @@
+{
+  "artifact_id": "e61_ceo_kg_read_model_update",
+  "live_public_read_final_status": "live_public_read_code_repaired_but_host_network_unavailable",
+  "controlled_public_read_smoke_probe_passed": false,
+  "live_receipt_count": 0,
+  "recommended_next_milestone": "E62_host_network_refresh_or_delivery_bridge_network_probe",
+  "fixture_only_evidence_treated_as_live_market_freshness": false,
+  "external_action_allowed": false
+}

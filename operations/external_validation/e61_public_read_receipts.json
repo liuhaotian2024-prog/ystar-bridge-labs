@@ -1,0 +1,39 @@
+{
+  "artifact_id": "e61_public_read_receipts",
+  "receipt_mode": "blocker_receipts",
+  "receipts": [
+    {
+      "receipt_id": "e61_live_read_receipt_001",
+      "source_url": "https://example.com/",
+      "retrieval_status": "fetch_failed",
+      "failure_classification": "DNS_unavailable",
+      "error_type": "URLError",
+      "error_summary": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "safety_errors": [],
+      "no_contact_info_extracted": true,
+      "no_login": true,
+      "no_form_submission": true,
+      "no_external_human_action": true
+    },
+    {
+      "receipt_id": "e61_live_read_receipt_002",
+      "source_url": "https://www.iana.org/domains/reserved",
+      "retrieval_status": "fetch_failed",
+      "failure_classification": "DNS_unavailable",
+      "error_type": "URLError",
+      "error_summary": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "safety_errors": [],
+      "no_contact_info_extracted": true,
+      "no_login": true,
+      "no_form_submission": true,
+      "no_external_human_action": true
+    }
+  ],
+  "receipt_count": 2,
+  "live_receipt_count": 0,
+  "blocker_receipt_count": 2,
+  "not_customer_validation": true,
+  "not_paid_signal": true,
+  "not_expert_feedback": true,
+  "no_external_human_action": true
+}

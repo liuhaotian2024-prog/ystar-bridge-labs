@@ -1,0 +1,15 @@
+{
+  "artifact_id": "e61_ceo_brain_public_read_update",
+  "live_public_read_final_status": "live_public_read_code_repaired_but_host_network_unavailable",
+  "controlled_public_read_smoke_probe_passed": false,
+  "smoke_probe_status": "adapter_works_but_host_network_unavailable",
+  "live_receipt_count": 0,
+  "failure_classes": [
+    "DNS_unavailable"
+  ],
+  "fixture_only_evidence_treated_as_live_market_freshness": false,
+  "recommended_next_milestone": "E62_host_network_refresh_or_delivery_bridge_network_probe",
+  "owner_decision_status": "pending_owner_decision",
+  "external_action_allowed": false,
+  "no_external_human_action": true
+}

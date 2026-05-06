@@ -1,0 +1,36 @@
+{
+  "artifact_id": "e61_cross_repo_evidence_packet",
+  "modified_repos_expected": [
+    "bridge-labs"
+  ],
+  "read_only_repos": [
+    "Y-star-gov",
+    "gov-mcp",
+    "K9Audit"
+  ],
+  "probe_result": "operations/external_validation/e61_live_public_read_smoke_probe_result.json",
+  "readiness_delta": {
+    "artifact_id": "e61_external_intelligence_readiness_delta",
+    "previous_status": "external_world_intelligence_L5_ready_with_live_read_unavailable_nonfatal",
+    "previous_market_readiness_level": "L3_external_intelligence_structurally_ready",
+    "adapter_repair_delta": "E61 reconnected a repo-local safe public reader path through a deterministic controlled smoke probe.",
+    "inventory_failure_appears_to_be": [
+      "adapter_disconnected",
+      "fixture_mode_only",
+      "host_network_unavailable"
+    ],
+    "smoke_probe_status": "adapter_works_but_host_network_unavailable",
+    "final_status": "live_public_read_code_repaired_but_host_network_unavailable",
+    "readiness_delta": "code_path_repaired_but_live_network_blocker_remains",
+    "market_entry_readiness_level_after_E61": "L3_external_intelligence_structurally_ready",
+    "fixture_only_evidence_treated_as_live_market_freshness": false,
+    "customer_validation_claimed": false,
+    "paid_signal_claimed": false,
+    "expert_feedback_claimed": false,
+    "owner_decision_status": "pending_owner_decision",
+    "external_action_allowed": false,
+    "recommended_next_milestone": "E62_host_network_refresh_or_delivery_bridge_network_probe",
+    "no_external_human_action": true
+  },
+  "no_cross_repo_mutation": true
+}

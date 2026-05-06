@@ -1,0 +1,2 @@
+{"from": "e60_market_readiness_retest", "to": "e61_live_public_read_adapter", "edge_type": "motivates"}
+{"from": "e61_live_public_read_adapter", "to": "E62_host_network_refresh_or_delivery_bridge_network_probe", "edge_type": "recommends"}

@@ -1,0 +1,86 @@
+{
+  "artifact_id": "e61_behavior_authorization_result",
+  "authorization_status": "ALLOW",
+  "allowed_actions": [
+    "internal_adapter_inspection",
+    "controlled_public_read_smoke_probe",
+    "receipt_evidence_writeback"
+  ],
+  "denied_actions": [
+    "outreach",
+    "publication",
+    "customer_validation_claim",
+    "expert_feedback_claim",
+    "paid_signal_claim",
+    "contact_scraping",
+    "login_form_send",
+    "uncontrolled_crawling",
+    "private_provider_api",
+    "secret_use"
+  ],
+  "fixture_results": {
+    "internal_adapter_inspection": {
+      "status": "ALLOW",
+      "reason": "read-only local repo inspection"
+    },
+    "controlled_public_read_smoke_probe": {
+      "status": "ALLOW",
+      "reason": "bounded allowlisted public GET/HEAD equivalent with timeout and no contact"
+    },
+    "receipt_evidence_writeback": {
+      "status": "ALLOW",
+      "reason": "local artifact writeback"
+    },
+    "outreach": {
+      "status": "DENY",
+      "reason": "external human action forbidden"
+    },
+    "publication": {
+      "status": "DENY",
+      "reason": "publication forbidden"
+    },
+    "customer_validation_claim": {
+      "status": "DENY",
+      "reason": "public reads do not prove customer validation"
+    },
+    "expert_feedback_claim": {
+      "status": "DENY",
+      "reason": "reading public documents is not expert feedback"
+    },
+    "paid_signal_claim": {
+      "status": "DENY",
+      "reason": "public reads do not prove paid demand"
+    },
+    "contact_scraping": {
+      "status": "DENY",
+      "reason": "contact extraction forbidden"
+    },
+    "login_form_send": {
+      "status": "DENY",
+      "reason": "login/form/send forbidden"
+    },
+    "uncontrolled_crawling": {
+      "status": "DENY",
+      "reason": "no crawling or arbitrary link follow"
+    },
+    "private_provider_api": {
+      "status": "DENY",
+      "reason": "private/provider APIs forbidden"
+    },
+    "secret_use": {
+      "status": "DENY",
+      "reason": "secrets and payments forbidden"
+    }
+  },
+  "checks": {
+    "selected_E61_action_internal_or_controlled_readonly": true,
+    "behavior_center_allows_smoke_probe": true,
+    "behavior_center_denies_external_human_actions": true,
+    "behavior_center_denies_overclaims": true,
+    "behavior_center_denies_private_or_secret_actions": true
+  },
+  "passed": true,
+  "owner_decision_status": "pending_owner_decision",
+  "external_action_allowed": false,
+  "no_external_human_action": true
+}

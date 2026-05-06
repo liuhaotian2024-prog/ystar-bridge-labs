@@ -1,0 +1,493 @@
+{
+  "artifact_id": "e61_live_public_read_anti_drift_gate_result",
+  "manifest": {
+    "artifact_id": "e61_live_public_read_runtime_linkage_manifest",
+    "artifacts": [
+      {
+        "artifact_id": "e61_inventory",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e61_live_public_read_capability_inventory.json",
+        "artifact_type": "decision_packet",
+        "milestone_origin": "E61",
+        "writer": "E61 live public-read repair/diagnostic",
+        "readers": [
+          "e61_smoke_probe",
+          "e61_gate"
+        ],
+        "next_runtime_readers": [
+          "E62_runtime"
+        ],
+        "tests": [
+          "tests/office/test_e61_live_public_read_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E61 public-read runtime linkage"
+      },
+      {
+        "artifact_id": "e61_smoke_probe",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e61_live_public_read_smoke_probe_result.json",
+        "artifact_type": "gate_result",
+        "milestone_origin": "E61",
+        "writer": "E61 live public-read repair/diagnostic",
+        "readers": [
+          "e61_receipts",
+          "e61_readback"
+        ],
+        "next_runtime_readers": [
+          "E62_runtime"
+        ],
+        "tests": [
+          "tests/office/test_e61_live_public_read_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E61 public-read runtime linkage"
+      },
+      {
+        "artifact_id": "e61_public_read_receipts",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e61_public_read_receipts.json",
+        "artifact_type": "evidence_receipt",
+        "milestone_origin": "E61",
+        "writer": "E61 live public-read repair/diagnostic",
+        "readers": [
+          "e61_delta",
+          "e61_readback"
+        ],
+        "next_runtime_readers": [
+          "E62_runtime"
+        ],
+        "tests": [
+          "tests/office/test_e61_live_public_read_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E61 public-read runtime linkage"
+      },
+      {
+        "artifact_id": "e61_readiness_delta",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e61_external_intelligence_readiness_delta.json",
+        "artifact_type": "selected_route",
+        "milestone_origin": "E61",
+        "writer": "E61 live public-read repair/diagnostic",
+        "readers": [
+          "e61_gate",
+          "e61_readback"
+        ],
+        "next_runtime_readers": [
+          "E62_runtime"
+        ],
+        "tests": [
+          "tests/office/test_e61_live_public_read_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E61 public-read runtime linkage"
+      },
+      {
+        "artifact_id": "e61_behavior_authorization",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e61_behavior_authorization_result.json",
+        "artifact_type": "gate_result",
+        "milestone_origin": "E61",
+        "writer": "E61 live public-read repair/diagnostic",
+        "readers": [
+          "e61_gate"
+        ],
+        "next_runtime_readers": [
+          "E62_runtime"
+        ],
+        "tests": [
+          "tests/office/test_e61_live_public_read_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E61 public-read runtime linkage"
+      },
+      {
+        "artifact_id": "e61_brain_update",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e61_ceo_brain_public_read_update.json",
+        "artifact_type": "brain_update",
+        "milestone_origin": "E61",
+        "writer": "E61 live public-read repair/diagnostic",
+        "readers": [
+          "e46b_ceo_brain_adapter",
+          "e61_readback"
+        ],
+        "next_runtime_readers": [
+          "E62_runtime"
+        ],
+        "tests": [
+          "tests/office/test_e61_live_public_read_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E61 public-read runtime linkage"
+      },
+      {
+        "artifact_id": "e61_kg_update",
+        "repo": "bridge-labs",
+        "path": "operations/knowledge_graph/e61_ceo_kg_read_model_update.json",
+        "artifact_type": "kg_update",
+        "milestone_origin": "E61",
+        "writer": "E61 live public-read repair/diagnostic",
+        "readers": [
+          "e61_readback"
+        ],
+        "next_runtime_readers": [
+          "E62_runtime"
+        ],
+        "tests": [
+          "tests/office/test_e61_live_public_read_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P1",
+        "evidence_basis": "E61 public-read runtime linkage"
+      },
+      {
+        "artifact_id": "e61_czl_closure",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e61_czl_closure.json",
+        "artifact_type": "czl_closure",
+        "milestone_origin": "E61",
+        "writer": "E61 live public-read repair/diagnostic",
+        "readers": [
+          "e61_gate"
+        ],
+        "next_runtime_readers": [
+          "E62_runtime"
+        ],
+        "tests": [
+          "tests/office/test_e61_live_public_read_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P1",
+        "evidence_basis": "E61 public-read runtime linkage"
+      },
+      {
+        "artifact_id": "e61_cieu_residual",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e61_cieu_residual_summary.json",
+        "artifact_type": "cieu_residual",
+        "milestone_origin": "E61",
+        "writer": "E61 live public-read repair/diagnostic",
+        "readers": [
+          "e61_gate"
+        ],
+        "next_runtime_readers": [
+          "E62_runtime"
+        ],
+        "tests": [
+          "tests/office/test_e61_live_public_read_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P1",
+        "evidence_basis": "E61 public-read runtime linkage"
+      },
+      {
+        "artifact_id": "e61_next_milestone",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e61_completion_gate_result.json",
+        "artifact_type": "next_milestone",
+        "milestone_origin": "E61",
+        "writer": "E61 live public-read repair/diagnostic",
+        "readers": [
+          "E62_runtime"
+        ],
+        "next_runtime_readers": [
+          "E62_runtime"
+        ],
+        "tests": [
+          "tests/office/test_e61_live_public_read_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E61 public-read runtime linkage"
+      },
+      {
+        "artifact_id": "e61_no_go_boundary",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e61_behavior_authorization_result.json",
+        "artifact_type": "no_go_boundary",
+        "milestone_origin": "E61",
+        "writer": "E61 live public-read repair/diagnostic",
+        "readers": [
+          "e61_gate"
+        ],
+        "next_runtime_readers": [
+          "E62_runtime"
+        ],
+        "tests": [
+          "tests/office/test_e61_live_public_read_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E61 public-read runtime linkage"
+      },
+      {
+        "artifact_id": "e61_blocker_state",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e61_live_public_read_smoke_probe_result.json",
+        "artifact_type": "blocker_state",
+        "milestone_origin": "E61",
+        "writer": "E61 live public-read repair/diagnostic",
+        "readers": [
+          "e61_gate"
+        ],
+        "next_runtime_readers": [
+          "E62_runtime"
+        ],
+        "tests": [
+          "tests/office/test_e61_live_public_read_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E61 public-read runtime linkage"
+      }
+    ],
+    "runtime_linkage_graph": {
+      "graph_id": "e61_live_public_read_runtime_linkage_graph",
+      "nodes": [
+        {
+          "node_id": "e61_inventory",
+          "node_type": "decision_packet"
+        },
+        {
+          "node_id": "e61_smoke_probe",
+          "node_type": "gate_result"
+        },
+        {
+          "node_id": "e61_public_read_receipts",
+          "node_type": "evidence_receipt"
+        },
+        {
+          "node_id": "e61_readiness_delta",
+          "node_type": "selected_route"
+        },
+        {
+          "node_id": "e61_behavior_authorization",
+          "node_type": "gate_result"
+        },
+        {
+          "node_id": "e61_brain_update",
+          "node_type": "brain_update"
+        },
+        {
+          "node_id": "e61_kg_update",
+          "node_type": "kg_update"
+        },
+        {
+          "node_id": "e61_czl_closure",
+          "node_type": "czl_closure"
+        },
+        {
+          "node_id": "e61_cieu_residual",
+          "node_type": "cieu_residual"
+        },
+        {
+          "node_id": "e61_next_milestone",
+          "node_type": "next_milestone"
+        },
+        {
+          "node_id": "e61_no_go_boundary",
+          "node_type": "no_go_boundary"
+        },
+        {
+          "node_id": "e61_blocker_state",
+          "node_type": "blocker_state"
+        }
+      ],
+      "edges": [
+        {
+          "from": "e60_market_readiness_retest",
+          "to": "e61_inventory",
+          "edge_type": "consumed_by"
+        },
+        {
+          "from": "e61_inventory",
+          "to": "e61_smoke_probe",
+          "edge_type": "gates"
+        },
+        {
+          "from": "e61_smoke_probe",
+          "to": "e61_public_read_receipts",
+          "edge_type": "writes"
+        },
+        {
+          "from": "e61_public_read_receipts",
+          "to": "e61_readiness_delta",
+          "edge_type": "updates"
+        },
+        {
+          "from": "e61_readiness_delta",
+          "to": "E62_host_network_refresh_or_delivery_bridge_network_probe",
+          "edge_type": "consumes_next"
+        },
+        {
+          "from": "e61_brain_update",
+          "to": "e46b_ceo_brain_adapter",
+          "edge_type": "reads"
+        }
+      ],
+      "generated_at": "2026-05-06T00:00:00Z",
+      "subject_system": "E61 live public-read adapter repair/diagnostic"
+    },
+    "centerline_contract": {
+      "contract_id": "e61_live_public_read_centerline_contract",
+      "stages": [
+        {
+          "stage_id": "inventory",
+          "required_input": "E59/E60 artifacts",
+          "required_output": "capability inventory",
+          "required_writer": "e61_inventory",
+          "required_reader": "e61_smoke_probe",
+          "required_test": "test_e61_live_public_read_capability_inventory",
+          "failure_class_if_missing": "P0",
+          "no_go_if_missing": true
+        },
+        {
+          "stage_id": "smoke_probe",
+          "required_input": "allowlisted public URLs",
+          "required_output": "receipts or blocker receipts",
+          "required_writer": "e61_smoke_probe",
+          "required_reader": "e61_readiness_delta",
+          "required_test": "test_e61_controlled_public_read_smoke_probe",
+          "failure_class_if_missing": "P0",
+          "no_go_if_missing": true
+        },
+        {
+          "stage_id": "readback",
+          "required_input": "brain update",
+          "required_output": "CEO brain readback",
+          "required_writer": "e61_writeback",
+          "required_reader": "CEO brain",
+          "required_test": "test_e61_ceo_brain_readback_smoke",
+          "failure_class_if_missing": "P0",
+          "no_go_if_missing": true
+        }
+      ],
+      "owner_approval_boundaries": [
+        "human contact",
+        "publication",
+        "forms",
+        "payment"
+      ],
+      "governance_boundaries": [
+        "Y-star-gov",
+        "gov-mcp",
+        "behavior control center"
+      ],
+      "audit_boundaries": [
+        "KG",
+        "CZL",
+        "CIEU"
+      ],
+      "runtime_roles": {
+        "CEO brain": "public-read readiness state reader",
+        "behavior control center": "public-read smoke authorization boundary",
+        "evidence centerline": "receipts, KG, CZL, and CIEU closure",
+        "future E62 runtime": "selected next milestone consumer"
+      }
+    },
+    "readback_proof": {
+      "proof_id": "e61_live_public_read_readback_proof",
+      "written_artifacts": [
+        "e61_inventory",
+        "e61_smoke_probe",
+        "e61_public_read_receipts",
+        "e61_readiness_delta",
+        "e61_behavior_authorization",
+        "e61_brain_update",
+        "e61_kg_update",
+        "e61_czl_closure",
+        "e61_cieu_residual",
+        "e61_next_milestone",
+        "e61_no_go_boundary",
+        "e61_blocker_state"
+      ],
+      "readback_observations": [
+        {
+          "reader": "e61_ceo_brain_readback_smoke",
+          "artifact_id": "e61_brain_update"
+        }
+      ],
+      "expected_current_state": {
+        "selected_next_milestone": "E62_host_network_refresh_or_delivery_bridge_network_probe",
+        "external_action_allowed": false
+      },
+      "observed_current_state": {
+        "selected_next_milestone": "E62_host_network_refresh_or_delivery_bridge_network_probe",
+        "external_action_allowed": false
+      },
+      "missing_reads": [],
+      "stale_reads": [],
+      "passed": true
+    },
+    "governance_boundary": {
+      "preserved": true
+    },
+    "no_external_human_action": true
+  },
+  "validation": {
+    "runtime_linkage_graph": {
+      "valid": true,
+      "graph_id": "e61_live_public_read_runtime_linkage_graph",
+      "node_count": 12,
+      "edge_count": 6,
+      "failures": []
+    },
+    "centerline_contract": {
+      "valid": true,
+      "contract_id": "e61_live_public_read_centerline_contract",
+      "stage_count": 3,
+      "failures": []
+    },
+    "readback_proof": {
+      "valid": true,
+      "proof_id": "e61_live_public_read_readback_proof",
+      "failures": []
+    },
+    "anti_drift_gate": {
+      "gate_id": "e61_live_public_read_anti_drift_gate",
+      "centerline_contract_loaded": true,
+      "runtime_linkage_graph_valid": true,
+      "selected_route_has_writer": true,
+      "selected_route_has_reader": true,
+      "selected_route_has_readback_test": true,
+      "next_milestone_has_writer": true,
+      "next_milestone_has_reader": true,
+      "blocker_state_has_writer": true,
+      "blocker_state_has_reader": true,
+      "brain_current_state_loaded": true,
+      "kg_update_linked": true,
+      "czl_closure_linked": true,
+      "cieu_residual_linked": true,
+      "no_report_only_p0_closure": true,
+      "no_stale_next_milestone": true,
+      "no_go_boundaries_loaded": true,
+      "governance_boundary_preserved": true,
+      "status": "anti_drift_gate_passed",
+      "failures": [],
+      "warnings": [],
+      "validated_artifact_count": 12,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "allowed": true,
+      "no_external_action": true
+    }
+  },
+  "checks": {
+    "inventory_has_reader": true,
+    "smoke_probe_has_reader": true,
+    "receipts_have_reader": true,
+    "readiness_delta_has_next_runtime_reader": true,
+    "no_report_only_P0_closure": true
+  },
+  "passed": true,
+  "external_action_allowed": false,
+  "no_external_human_action": true
+}

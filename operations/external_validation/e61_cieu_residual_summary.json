@@ -1,0 +1,11 @@
+{
+  "artifact_id": "e61_cieu_residual_summary",
+  "previous_residual": "live_public_read_unavailable_nonfatal",
+  "intervention": "reconnect repo-local safe reader path and run controlled public-read smoke probe",
+  "remaining_residual": [
+    "host/DNS/TLS/network availability still blocks live public-read receipts"
+  ],
+  "final_status": "live_public_read_code_repaired_but_host_network_unavailable",
+  "recommended_next_milestone": "E62_host_network_refresh_or_delivery_bridge_network_probe",
+  "no_external_human_action": true
+}

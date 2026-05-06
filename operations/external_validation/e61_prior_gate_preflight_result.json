@@ -1,0 +1,17 @@
+{
+  "artifact_id": "e61_prior_gate_preflight_result",
+  "checks": {
+    "E60_completed": true,
+    "E60_selected_E61": true,
+    "E59_fixture_only_status_visible": true,
+    "fixture_not_live_freshness": true,
+    "owner_decision_pending": true,
+    "external_action_allowed_false": true
+  },
+  "passed": true,
+  "E60_readiness_level": "L3_external_intelligence_structurally_ready",
+  "E60_live_read_blocker": "live_public_read_unavailable_nonfatal",
+  "owner_decision_status": "pending_owner_decision",
+  "external_action_allowed": false,
+  "no_external_human_action": true
+}
