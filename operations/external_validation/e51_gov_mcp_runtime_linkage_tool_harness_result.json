@@ -1,0 +1,233 @@
+{
+  "artifact_id": "e51_gov_mcp_runtime_linkage_tool_harness_result",
+  "gov_mcp_root": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+  "registered_tools": [
+    "gov_enforce_anti_drift_gate",
+    "gov_validate_centerline_contract",
+    "gov_validate_readback_proof",
+    "gov_validate_runtime_linkage"
+  ],
+  "required_tools_present": true,
+  "allow_proof": {
+    "tool_name": "gov_enforce_anti_drift_gate",
+    "status": "ALLOW",
+    "allowed": true,
+    "failures": [],
+    "warnings": [],
+    "validated_artifact_count": 10,
+    "p0_failure_count": 0,
+    "p1_failure_count": 0,
+    "result": {
+      "gate_id": "e51_current_runtime_linkage_anti_drift_gate",
+      "centerline_contract_loaded": true,
+      "runtime_linkage_graph_valid": true,
+      "selected_route_has_writer": true,
+      "selected_route_has_reader": true,
+      "selected_route_has_readback_test": true,
+      "next_milestone_has_writer": true,
+      "next_milestone_has_reader": true,
+      "blocker_state_has_writer": true,
+      "blocker_state_has_reader": true,
+      "brain_current_state_loaded": true,
+      "kg_update_linked": true,
+      "czl_closure_linked": true,
+      "cieu_residual_linked": true,
+      "no_report_only_p0_closure": true,
+      "no_stale_next_milestone": true,
+      "no_go_boundaries_loaded": true,
+      "governance_boundary_preserved": true,
+      "status": "anti_drift_gate_passed",
+      "failures": [],
+      "warnings": [],
+      "validated_artifact_count": 10,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "allowed": true,
+      "no_external_action": true
+    },
+    "no_external_action": true
+  },
+  "individual_tool_results": {
+    "gov_validate_runtime_linkage": {
+      "tool_name": "gov_validate_runtime_linkage",
+      "status": "ALLOW",
+      "allowed": true,
+      "failures": [],
+      "warnings": [],
+      "validated_artifact_count": 10,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "result": {
+        "valid": true,
+        "graph_id": "e51_labs_runtime_linkage_graph",
+        "node_count": 26,
+        "edge_count": 33,
+        "failures": [],
+        "validated_artifact_count": 10
+      },
+      "no_external_action": true
+    },
+    "gov_validate_centerline_contract": {
+      "tool_name": "gov_validate_centerline_contract",
+      "status": "ALLOW",
+      "allowed": true,
+      "failures": [],
+      "warnings": [],
+      "validated_artifact_count": 0,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "result": {
+        "valid": true,
+        "contract_id": "e51_cross_repo_runtime_linkage_centerline_contract",
+        "stage_count": 8,
+        "failures": []
+      },
+      "no_external_action": true
+    },
+    "gov_validate_readback_proof": {
+      "tool_name": "gov_validate_readback_proof",
+      "status": "ALLOW",
+      "allowed": true,
+      "failures": [],
+      "warnings": [],
+      "validated_artifact_count": 0,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "result": {
+        "valid": true,
+        "proof_id": "e51_e50b_e50c_current_state_readback_proof",
+        "failures": []
+      },
+      "no_external_action": true
+    },
+    "gov_enforce_anti_drift_gate": {
+      "tool_name": "gov_enforce_anti_drift_gate",
+      "status": "ALLOW",
+      "allowed": true,
+      "failures": [],
+      "warnings": [],
+      "validated_artifact_count": 10,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "result": {
+        "gate_id": "e51_current_runtime_linkage_anti_drift_gate",
+        "centerline_contract_loaded": true,
+        "runtime_linkage_graph_valid": true,
+        "selected_route_has_writer": true,
+        "selected_route_has_reader": true,
+        "selected_route_has_readback_test": true,
+        "next_milestone_has_writer": true,
+        "next_milestone_has_reader": true,
+        "blocker_state_has_writer": true,
+        "blocker_state_has_reader": true,
+        "brain_current_state_loaded": true,
+        "kg_update_linked": true,
+        "czl_closure_linked": true,
+        "cieu_residual_linked": true,
+        "no_report_only_p0_closure": true,
+        "no_stale_next_milestone": true,
+        "no_go_boundaries_loaded": true,
+        "governance_boundary_preserved": true,
+        "status": "anti_drift_gate_passed",
+        "failures": [],
+        "warnings": [],
+        "validated_artifact_count": 10,
+        "p0_failure_count": 0,
+        "p1_failure_count": 0,
+        "allowed": true,
+        "no_external_action": true
+      },
+      "no_external_action": true
+    }
+  },
+  "deny_proof": {
+    "tool_name": "gov_enforce_anti_drift_gate",
+    "status": "DENY",
+    "allowed": false,
+    "failures": [
+      {
+        "artifact_id": "e50b_selected_route",
+        "reason": "runtime_artifact_invalid",
+        "details": [
+          {
+            "field": "readers",
+            "reason": "P0 artifact must have at least one reader"
+          }
+        ]
+      },
+      {
+        "reason": "readback_proof_invalid",
+        "details": [
+          {
+            "field": "missing_reads",
+            "reason": "missing_reads_present",
+            "items": [
+              "e50b_selected_route"
+            ]
+          }
+        ]
+      }
+    ],
+    "warnings": [],
+    "validated_artifact_count": 10,
+    "p0_failure_count": 0,
+    "p1_failure_count": 0,
+    "result": {
+      "gate_id": "e51_current_runtime_linkage_anti_drift_gate",
+      "centerline_contract_loaded": true,
+      "runtime_linkage_graph_valid": true,
+      "selected_route_has_writer": true,
+      "selected_route_has_reader": true,
+      "selected_route_has_readback_test": true,
+      "next_milestone_has_writer": true,
+      "next_milestone_has_reader": true,
+      "blocker_state_has_writer": true,
+      "blocker_state_has_reader": true,
+      "brain_current_state_loaded": true,
+      "kg_update_linked": true,
+      "czl_closure_linked": true,
+      "cieu_residual_linked": true,
+      "no_report_only_p0_closure": true,
+      "no_stale_next_milestone": true,
+      "no_go_boundaries_loaded": true,
+      "governance_boundary_preserved": true,
+      "status": "anti_drift_gate_failed_p1",
+      "failures": [
+        {
+          "artifact_id": "e50b_selected_route",
+          "reason": "runtime_artifact_invalid",
+          "details": [
+            {
+              "field": "readers",
+              "reason": "P0 artifact must have at least one reader"
+            }
+          ]
+        },
+        {
+          "reason": "readback_proof_invalid",
+          "details": [
+            {
+              "field": "missing_reads",
+              "reason": "missing_reads_present",
+              "items": [
+                "e50b_selected_route"
+              ]
+            }
+          ]
+        }
+      ],
+      "warnings": [],
+      "validated_artifact_count": 10,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "allowed": false,
+      "no_external_action": true
+    },
+    "no_external_action": true
+  },
+  "passed": true,
+  "no_server_started": true,
+  "no_port_opened": true,
+  "no_real_client_config_mutation": true,
+  "no_external_action": true
+}

@@ -1,0 +1,6 @@
+{"node_id": "e51_runtime_linkage_graph", "type": "runtime_linkage_graph", "status": "active_runtime_manifest"}
+{"node_id": "e51_labs_manifest", "type": "runtime_linkage_manifest", "status": "validated"}
+{"node_id": "y_star_gov_runtime_linkage_validators", "type": "generic_governance_validator", "commit": "f4e08e8426ea3ee75bcbc7e06680534982441f20"}
+{"node_id": "gov_mcp_runtime_linkage_tools", "type": "mcp_tool_exposure", "commit": "47d0e82d15be40b13925c241350c48213bb8bf5e"}
+{"node_id": "e51_anti_drift_gate", "type": "anti_drift_gate", "status": "passed"}
+{"node_id": "e52_recommended_next_milestone", "type": "next_milestone", "value": "E52_package_governed_agent_action_proof_packet_for_first_user_review"}

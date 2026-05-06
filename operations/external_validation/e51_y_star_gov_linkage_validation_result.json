@@ -1,0 +1,57 @@
+{
+  "artifact_id": "e51_y_star_gov_linkage_validation_result",
+  "y_star_gov_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+  "runtime_graph": {
+    "valid": true,
+    "graph_id": "e51_labs_runtime_linkage_graph",
+    "node_count": 26,
+    "edge_count": 33,
+    "failures": []
+  },
+  "centerline_contract": {
+    "valid": true,
+    "contract_id": "e51_cross_repo_runtime_linkage_centerline_contract",
+    "stage_count": 8,
+    "failures": []
+  },
+  "readback_proof": {
+    "valid": true,
+    "proof_id": "e51_e50b_e50c_current_state_readback_proof",
+    "failures": []
+  },
+  "anti_drift_gate": {
+    "gate_id": "e51_current_runtime_linkage_anti_drift_gate",
+    "centerline_contract_loaded": true,
+    "runtime_linkage_graph_valid": true,
+    "selected_route_has_writer": true,
+    "selected_route_has_reader": true,
+    "selected_route_has_readback_test": true,
+    "next_milestone_has_writer": true,
+    "next_milestone_has_reader": true,
+    "blocker_state_has_writer": true,
+    "blocker_state_has_reader": true,
+    "brain_current_state_loaded": true,
+    "kg_update_linked": true,
+    "czl_closure_linked": true,
+    "cieu_residual_linked": true,
+    "no_report_only_p0_closure": true,
+    "no_stale_next_milestone": true,
+    "no_go_boundaries_loaded": true,
+    "governance_boundary_preserved": true,
+    "status": "anti_drift_gate_passed",
+    "failures": [],
+    "warnings": [],
+    "validated_artifact_count": 10,
+    "p0_failure_count": 0,
+    "p1_failure_count": 0,
+    "allowed": true,
+    "no_external_action": true
+  },
+  "future_milestone_closure_policy": {
+    "valid": true,
+    "failures": [],
+    "no_external_action": true
+  },
+  "passed": true,
+  "no_external_action": true
+}

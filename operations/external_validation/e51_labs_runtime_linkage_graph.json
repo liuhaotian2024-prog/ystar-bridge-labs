@@ -1,0 +1,473 @@
+{
+  "graph_id": "e51_labs_runtime_linkage_graph",
+  "nodes": [
+    {
+      "node_id": "owner_task",
+      "node_type": "owner_task"
+    },
+    {
+      "node_id": "board_directive",
+      "node_type": "board_directive"
+    },
+    {
+      "node_id": "semantic_interpreter",
+      "node_type": "semantic_interpreter"
+    },
+    {
+      "node_id": "CEO_brain",
+      "node_type": "CEO_brain"
+    },
+    {
+      "node_id": "wisdom_memory",
+      "node_type": "wisdom_memory"
+    },
+    {
+      "node_id": "working_memory",
+      "node_type": "working_memory"
+    },
+    {
+      "node_id": "field_projection",
+      "node_type": "field_projection"
+    },
+    {
+      "node_id": "capability_router",
+      "node_type": "capability_router"
+    },
+    {
+      "node_id": "cognition_cascade",
+      "node_type": "cognition_cascade"
+    },
+    {
+      "node_id": "counterfactual_runtime",
+      "node_type": "counterfactual_runtime"
+    },
+    {
+      "node_id": "semantic_route_scorer",
+      "node_type": "semantic_route_scorer"
+    },
+    {
+      "node_id": "commercial_decision_packet",
+      "node_type": "commercial_decision_packet"
+    },
+    {
+      "node_id": "selected_route",
+      "node_type": "selected_route",
+      "value": "package_governed_agent_action_proof_packet",
+      "written_at": "operations/external_validation/e50b_ceo_commercial_decision_packet.json",
+      "read_by_next": "office/mission_command/e46b_ceo_brain_adapter.py"
+    },
+    {
+      "node_id": "nearest_alternative",
+      "node_type": "nearest_alternative",
+      "value": "external_commercial_observation_now"
+    },
+    {
+      "node_id": "external_observation",
+      "node_type": "external_observation"
+    },
+    {
+      "node_id": "evidence_receipt",
+      "node_type": "evidence_receipt"
+    },
+    {
+      "node_id": "gov_mcp_boundary",
+      "node_type": "gov_mcp_boundary"
+    },
+    {
+      "node_id": "Y_star_gov_boundary",
+      "node_type": "Y_star_gov_boundary"
+    },
+    {
+      "node_id": "K9Audit_context",
+      "node_type": "K9Audit_context"
+    },
+    {
+      "node_id": "execution_or_packaging_path",
+      "node_type": "execution_or_packaging_path"
+    },
+    {
+      "node_id": "KG_update",
+      "node_type": "KG_update"
+    },
+    {
+      "node_id": "CZL_closure",
+      "node_type": "CZL_closure"
+    },
+    {
+      "node_id": "CIEU_residual",
+      "node_type": "CIEU_residual"
+    },
+    {
+      "node_id": "next_milestone_state",
+      "node_type": "next_milestone_state",
+      "value": "E51_package_governed_agent_action_proof_packet_for_first_user_review"
+    },
+    {
+      "node_id": "test_gate",
+      "node_type": "test_gate",
+      "value": "E51 anti-drift validates valid manifest and denies broken P0 manifest"
+    },
+    {
+      "node_id": "future_closure_policy",
+      "node_type": "future_closure_policy"
+    }
+  ],
+  "edges": [
+    {
+      "from": "owner_task",
+      "to": "semantic_interpreter",
+      "edge_type": "calls"
+    },
+    {
+      "from": "board_directive",
+      "to": "CEO_brain",
+      "edge_type": "reads"
+    },
+    {
+      "from": "wisdom_memory",
+      "to": "CEO_brain",
+      "edge_type": "reads"
+    },
+    {
+      "from": "working_memory",
+      "to": "CEO_brain",
+      "edge_type": "reads"
+    },
+    {
+      "from": "CEO_brain",
+      "to": "field_projection",
+      "edge_type": "calls"
+    },
+    {
+      "from": "field_projection",
+      "to": "capability_router",
+      "edge_type": "calls"
+    },
+    {
+      "from": "capability_router",
+      "to": "cognition_cascade",
+      "edge_type": "calls"
+    },
+    {
+      "from": "cognition_cascade",
+      "to": "counterfactual_runtime",
+      "edge_type": "calls"
+    },
+    {
+      "from": "counterfactual_runtime",
+      "to": "semantic_route_scorer",
+      "edge_type": "calls"
+    },
+    {
+      "from": "semantic_route_scorer",
+      "to": "commercial_decision_packet",
+      "edge_type": "writes"
+    },
+    {
+      "from": "commercial_decision_packet",
+      "to": "selected_route",
+      "edge_type": "selects"
+    },
+    {
+      "from": "commercial_decision_packet",
+      "to": "nearest_alternative",
+      "edge_type": "rejects"
+    },
+    {
+      "from": "selected_route",
+      "to": "CEO_brain",
+      "edge_type": "reads"
+    },
+    {
+      "from": "nearest_alternative",
+      "to": "CEO_brain",
+      "edge_type": "reads"
+    },
+    {
+      "from": "CEO_brain",
+      "to": "selected_route",
+      "edge_type": "consumes_next"
+    },
+    {
+      "from": "CEO_brain",
+      "to": "next_milestone_state",
+      "edge_type": "consumes_next"
+    },
+    {
+      "from": "selected_route",
+      "to": "execution_or_packaging_path",
+      "edge_type": "gates"
+    },
+    {
+      "from": "gov_mcp_boundary",
+      "to": "execution_or_packaging_path",
+      "edge_type": "gates"
+    },
+    {
+      "from": "Y_star_gov_boundary",
+      "to": "execution_or_packaging_path",
+      "edge_type": "gates"
+    },
+    {
+      "from": "K9Audit_context",
+      "to": "CIEU_residual",
+      "edge_type": "audits"
+    },
+    {
+      "from": "commercial_decision_packet",
+      "to": "KG_update",
+      "edge_type": "writes"
+    },
+    {
+      "from": "commercial_decision_packet",
+      "to": "CZL_closure",
+      "edge_type": "writes"
+    },
+    {
+      "from": "commercial_decision_packet",
+      "to": "CIEU_residual",
+      "edge_type": "writes"
+    },
+    {
+      "from": "KG_update",
+      "to": "CEO_brain",
+      "edge_type": "updates"
+    },
+    {
+      "from": "CZL_closure",
+      "to": "CEO_brain",
+      "edge_type": "updates"
+    },
+    {
+      "from": "CIEU_residual",
+      "to": "CEO_brain",
+      "edge_type": "updates"
+    },
+    {
+      "from": "test_gate",
+      "to": "selected_route",
+      "edge_type": "tests"
+    },
+    {
+      "from": "test_gate",
+      "to": "next_milestone_state",
+      "edge_type": "tests"
+    },
+    {
+      "from": "test_gate",
+      "to": "CEO_brain",
+      "edge_type": "tests"
+    },
+    {
+      "from": "future_closure_policy",
+      "to": "test_gate",
+      "edge_type": "gates"
+    },
+    {
+      "from": "Y_star_gov_boundary",
+      "to": "test_gate",
+      "edge_type": "validated_by_y_star_gov"
+    },
+    {
+      "from": "gov_mcp_boundary",
+      "to": "test_gate",
+      "edge_type": "exposed_by_gov_mcp"
+    },
+    {
+      "from": "K9Audit_context",
+      "to": "test_gate",
+      "edge_type": "evidenced_by_K9_CIEU"
+    }
+  ],
+  "generated_at": "2026-05-06T00:00:00Z",
+  "subject_system": "Y*Bridge Labs runtime centerline",
+  "validation_context": {
+    "current_selected_route": {
+      "value": "package_governed_agent_action_proof_packet",
+      "written_in": [
+        "operations/external_validation/e50b_ceo_commercial_decision_packet.json",
+        "operations/external_validation/e50b_counterfactual_money_route_retest.json"
+      ],
+      "read_next_by": [
+        "office/mission_command/e46b_ceo_brain_adapter.py",
+        "office/mission_command/e50c_ceo_brain_centerline_smoke.py",
+        "office/mission_command/e51_labs_runtime_linkage_manifest.py"
+      ]
+    },
+    "current_nearest_alternative": {
+      "value": "external_commercial_observation_now",
+      "written_in": [
+        "operations/external_validation/e50b_ceo_commercial_decision_packet.json"
+      ],
+      "read_next_by": [
+        "office/mission_command/e46b_ceo_brain_adapter.py",
+        "office/mission_command/e51_labs_runtime_linkage_manifest.py"
+      ]
+    },
+    "current_next_milestone": {
+      "value": "E51_package_governed_agent_action_proof_packet_for_first_user_review",
+      "written_in": [
+        "operations/external_validation/e50b_ceo_commercial_decision_packet.json",
+        "operations/external_validation/e50c_e51_readiness_gate.json"
+      ],
+      "read_next_by": [
+        "office/mission_command/e46b_ceo_brain_adapter.py",
+        "office/mission_command/e51_current_readiness_anti_drift_gate.py"
+      ]
+    },
+    "current_blockers": {
+      "value": [
+        "real_mcp_transport_not_closed_but_E50A_tool_layer_allow_deny_closed"
+      ],
+      "written_in": [
+        "operations/external_validation/e50a_mcp_client_blocker_update.json",
+        "operations/external_validation/e50b_ceo_commercial_decision_packet.json",
+        "operations/external_validation/e50c_cieu_residual_summary.json"
+      ],
+      "read_next_by": [
+        "office/mission_command/e46b_ceo_brain_adapter.py",
+        "office/mission_command/e51_current_readiness_anti_drift_gate.py"
+      ]
+    },
+    "current_no_go_boundaries": {
+      "value": [
+        "no outreach",
+        "no publication",
+        "no customer validation claim",
+        "no paid signal claim",
+        "owner approval required before external action",
+        "brain may not bypass governance"
+      ],
+      "written_in": [
+        "operations/external_validation/e50c_ceo_brain_centerline_policy.json"
+      ],
+      "read_next_by": [
+        "office/mission_command/e46b_ceo_brain_adapter.py",
+        "office/mission_command/e51_labs_runtime_linkage_manifest.py"
+      ]
+    },
+    "written_but_not_read": [],
+    "stale_runtime_modules": [
+      {
+        "module": "e46b_canonical_ceo_operating_runtime",
+        "stale_reference": "route decision still names E47 in legacy field",
+        "severity": "P1",
+        "current_state_reader": "CEO brain context overrides package route for E51"
+      }
+    ],
+    "readback_tests": [
+      "tests/office/test_e50c_ceo_brain_loader_update.py",
+      "tests/office/test_e50c_ceo_brain_centerline_smoke.py",
+      "tests/office/test_e51_labs_runtime_linkage_manifest.py",
+      "tests/office/test_e51_current_readiness_anti_drift_gate.py"
+    ],
+    "promote_to_y_star_gov": [
+      "RuntimeArtifact schema",
+      "RuntimeLinkageGraph validation",
+      "CenterlineContract validation",
+      "ReadbackProof validation",
+      "AntiDriftGate invariants"
+    ],
+    "expose_through_gov_mcp": [
+      "gov_validate_runtime_linkage",
+      "gov_validate_centerline_contract",
+      "gov_validate_readback_proof",
+      "gov_enforce_anti_drift_gate"
+    ]
+  },
+  "answers": {
+    "current_selected_route": {
+      "value": "package_governed_agent_action_proof_packet",
+      "written_in": [
+        "operations/external_validation/e50b_ceo_commercial_decision_packet.json",
+        "operations/external_validation/e50b_counterfactual_money_route_retest.json"
+      ],
+      "read_next_by": [
+        "office/mission_command/e46b_ceo_brain_adapter.py",
+        "office/mission_command/e50c_ceo_brain_centerline_smoke.py",
+        "office/mission_command/e51_labs_runtime_linkage_manifest.py"
+      ]
+    },
+    "current_nearest_alternative": {
+      "value": "external_commercial_observation_now",
+      "written_in": [
+        "operations/external_validation/e50b_ceo_commercial_decision_packet.json"
+      ],
+      "read_next_by": [
+        "office/mission_command/e46b_ceo_brain_adapter.py",
+        "office/mission_command/e51_labs_runtime_linkage_manifest.py"
+      ]
+    },
+    "current_next_milestone": {
+      "value": "E51_package_governed_agent_action_proof_packet_for_first_user_review",
+      "written_in": [
+        "operations/external_validation/e50b_ceo_commercial_decision_packet.json",
+        "operations/external_validation/e50c_e51_readiness_gate.json"
+      ],
+      "read_next_by": [
+        "office/mission_command/e46b_ceo_brain_adapter.py",
+        "office/mission_command/e51_current_readiness_anti_drift_gate.py"
+      ]
+    },
+    "current_blockers": {
+      "value": [
+        "real_mcp_transport_not_closed_but_E50A_tool_layer_allow_deny_closed"
+      ],
+      "written_in": [
+        "operations/external_validation/e50a_mcp_client_blocker_update.json",
+        "operations/external_validation/e50b_ceo_commercial_decision_packet.json",
+        "operations/external_validation/e50c_cieu_residual_summary.json"
+      ],
+      "read_next_by": [
+        "office/mission_command/e46b_ceo_brain_adapter.py",
+        "office/mission_command/e51_current_readiness_anti_drift_gate.py"
+      ]
+    },
+    "current_no_go_boundaries": {
+      "value": [
+        "no outreach",
+        "no publication",
+        "no customer validation claim",
+        "no paid signal claim",
+        "owner approval required before external action",
+        "brain may not bypass governance"
+      ],
+      "written_in": [
+        "operations/external_validation/e50c_ceo_brain_centerline_policy.json"
+      ],
+      "read_next_by": [
+        "office/mission_command/e46b_ceo_brain_adapter.py",
+        "office/mission_command/e51_labs_runtime_linkage_manifest.py"
+      ]
+    },
+    "written_but_not_read": [],
+    "stale_runtime_modules": [
+      {
+        "module": "e46b_canonical_ceo_operating_runtime",
+        "stale_reference": "route decision still names E47 in legacy field",
+        "severity": "P1",
+        "current_state_reader": "CEO brain context overrides package route for E51"
+      }
+    ],
+    "readback_tests": [
+      "tests/office/test_e50c_ceo_brain_loader_update.py",
+      "tests/office/test_e50c_ceo_brain_centerline_smoke.py",
+      "tests/office/test_e51_labs_runtime_linkage_manifest.py",
+      "tests/office/test_e51_current_readiness_anti_drift_gate.py"
+    ],
+    "promote_to_y_star_gov": [
+      "RuntimeArtifact schema",
+      "RuntimeLinkageGraph validation",
+      "CenterlineContract validation",
+      "ReadbackProof validation",
+      "AntiDriftGate invariants"
+    ],
+    "expose_through_gov_mcp": [
+      "gov_validate_runtime_linkage",
+      "gov_validate_centerline_contract",
+      "gov_validate_readback_proof",
+      "gov_enforce_anti_drift_gate"
+    ]
+  },
+  "no_external_action": true
+}

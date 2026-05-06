@@ -1,0 +1,34 @@
+{
+  "artifact_id": "e51_future_milestone_closure_policy",
+  "required_fields": [
+    "created_artifacts_manifest",
+    "runtime_linkage_delta",
+    "writer_reader_map",
+    "readback_proof",
+    "selected_route_inheritance_check",
+    "ceo_brain_current_state_update",
+    "kg_czl_cieu_closure",
+    "y_star_gov_validation_result",
+    "gov_mcp_anti_drift_gate_result",
+    "no_go_boundary_confirmation",
+    "no_report_only_p0_guarantee",
+    "next_milestone_inheritance_field"
+  ],
+  "blocking_failures": [
+    "decision packet has no runtime reader",
+    "brain update not consumed by brain loader",
+    "KG update not reflected in read model",
+    "route update not inherited by next milestone",
+    "closure lacks CIEU/CZL linkage",
+    "proof only checks file existence",
+    "strategy/route/blocker changed without CEO brain current-state update",
+    "Y-star-gov/gov-mcp validation bypassed",
+    "P0 orphan artifacts remain"
+  ],
+  "completion_rule": "A milestone is not complete until writer/reader/readback/gate evidence exists for every decision-state artifact.",
+  "y_star_gov_required": true,
+  "gov_mcp_required": true,
+  "no_report_only_p0": true,
+  "owner_approval_required_for_external_action": true,
+  "no_external_action": true
+}

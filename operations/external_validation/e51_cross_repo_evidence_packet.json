@@ -1,0 +1,10 @@
+{
+  "artifact_id": "e51_cross_repo_evidence_packet",
+  "labs_manifest_validated": true,
+  "gov_mcp_allow_proof": "ALLOW",
+  "gov_mcp_deny_proof": "DENY",
+  "y_star_gov_commit": "f4e08e8426ea3ee75bcbc7e06680534982441f20",
+  "gov_mcp_commit": "47d0e82d15be40b13925c241350c48213bb8bf5e",
+  "k9audit_read_only_context": true,
+  "no_external_action": true
+}

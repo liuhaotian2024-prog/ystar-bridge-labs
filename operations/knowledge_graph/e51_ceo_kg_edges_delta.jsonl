@@ -1,0 +1,4 @@
+{"from": "e51_labs_manifest", "to": "y_star_gov_runtime_linkage_validators", "type": "validated_by"}
+{"from": "e51_labs_manifest", "to": "gov_mcp_runtime_linkage_tools", "type": "exposed_by"}
+{"from": "gov_mcp_runtime_linkage_tools", "to": "e51_anti_drift_gate", "type": "allows_valid_denies_broken"}
+{"from": "e51_anti_drift_gate", "to": "e52_recommended_next_milestone", "type": "recommends"}

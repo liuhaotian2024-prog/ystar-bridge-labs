@@ -1,0 +1,70 @@
+{
+  "artifact_id": "e51_cross_repo_base_state_manifest",
+  "generated_at": "2026-05-06T12:55:35.478456+00:00",
+  "bridge_labs": {
+    "path": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+    "exists": true,
+    "branch": "backflow/aiden-ceo-meeting-room",
+    "head": "5253b66d32d14cb0065d1ad8ebe8643483719096",
+    "remote_head": "5253b66d32d14cb0065d1ad8ebe8643483719096",
+    "status_short": "",
+    "read_only": false
+  },
+  "Y_star_gov": {
+    "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+    "exists": true,
+    "branch": "backflow/company-runtime-domain-pack",
+    "head": "f4e08e8426ea3ee75bcbc7e06680534982441f20",
+    "remote_head": "f4e08e8426ea3ee75bcbc7e06680534982441f20",
+    "status_short": "",
+    "read_only": false
+  },
+  "gov_mcp": {
+    "path": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+    "exists": true,
+    "branch": "backflow/company-runtime-tools",
+    "head": "47d0e82d15be40b13925c241350c48213bb8bf5e",
+    "remote_head": "47d0e82d15be40b13925c241350c48213bb8bf5e",
+    "status_short": "",
+    "read_only": false
+  },
+  "K9Audit": {
+    "path": "/Users/haotianliu/.openclaw/workspace/K9Audit",
+    "exists": true,
+    "branch": "main",
+    "head": "37911e18ce4425470e3f745b30d155c43d76ff55",
+    "remote_head": "37911e18ce4425470e3f745b30d155c43d76ff55",
+    "status_short": "",
+    "read_only": true
+  },
+  "ystar_company": {
+    "path": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+    "exists": true,
+    "branch": "main",
+    "head": "dd9cb6b247a9cf06d953d9319ba1ebd5c38dcbf6",
+    "remote_head": "c380474c7fd351335b9857d26c8b180d43fbf247",
+    "status_short": "D .k9_subscriber_state.json\n D .ystar_cieu.db-shm\n D .ystar_cieu.db-wal\n D .ystar_cieu_omission.db-shm\n D .ystar_cieu_omission.db-wal\n M .ystar_session.json\n M .ystar_warning_queue_archive.json\n M BOARD_PENDING.md\n M aiden_brain.db\n D aiden_brain.db-shm\n D aiden_brain.db-wal\n M governance/enforce_status_dashboard.md\n M l10_delegated_live_meta_development_runtime/l10_summary.json\n M l10_delegated_live_meta_development_runtime/runtime_packets/cockpit_snapshots/l10_mission_cockpit_latest.json\n M l10_delegated_live_meta_development_runtime/runtime_packets/manifests/l10_delegated_live_meta_development_manifest.json\n M l10_delegated_live_meta_development_runtime/runtime_packets/manifests/l10_no_action_receipt.json\n M l10_delegated_live_meta_development_runtime/runtime_packets/manifests/permission_tier_registry.json\n M l10_delegated_live_meta_development_runtime/runtime_packets/missions/mission_research_and_formulate_the_next_30-day_meta-development_plan_for_y_bridge_labs.json\n M l10_delegated_live_meta_development_runtime/runtime_packets/research_budget_receipts/research_budget_mission_research_and_formulate_the_next_30-day_meta-development_plan_for_y_bridge_labs.json\n M l7_labs_whiteboard_collaboration_runtime/demo_scenarios/demo_first_cash_path_team_discussion.json\n M l7_labs_whiteboard_collaboration_runtime/l7_5_summary.json\n M l7_labs_whiteboard_collaboration_runtime/l7_5_summary.md\n M l7_labs_whiteboard_collaboration_runtime/whiteboard_runtime_state.json\n M l7_real_labs_office_web_ui/office_runtime_state.json\n M l7_real_labs_office_web_ui/runtime_packets/timeline_events.json\n M l7_real_labs_office_web_ui/web_ui_summary.json\n M l7_real_labs_office_web_ui/web_ui_summary.md\n M l8_first_cash_path_operating_loop/l8_no_action_receipt.json\n M l8_first_cash_path_operating_loop/runtime_packets/cockpit_snapshots/l8_cockpit_latest.json\n M l8_first_cash_path_operating_loop/runtime_packets/commercial_action_queue/commercial_action_direct_founder_outreach.json\n M l8_first_cash_path_operating_loop/runtime_packets/commercial_action_queue/commercial_action_founder_operator_diagnostic_offer.json\n M l8_first_cash_path_operating_loop/runtime_packets/commercial_action_queue/commercial_action_warm_intro_request.json\n M l9_meta_development_opportunity_runtime/l9_summary.json\n M l9_meta_development_opportunity_runtime/l9_summary.md\n M l9_meta_development_opportunity_runtime/runtime_packets/cockpit_snapshots/l9_meta_cockpit_latest.json\n M l9_meta_development_opportunity_runtime/runtime_packets/evidence_basis/evidence_opp_agent_workflow_bottleneck_diagnosis.json\n M l9_meta_development_opportunity_runtime/runtime_packets/evidence_basis/evidence_opp_ai_company_cockpit_setup.json\n M l9_meta_development_opportunity_runtime/runtime_packets/evidence_basis/evidence_opp_coding_agent_governance_audit.json\n M l9_meta_development_opportunity_runtime/runtime_packets/evidence_basis/evidence_opp_founder_ai_workflow_audit.json\n M l9_meta_development_opportunity_runtime/runtime_packets/evidence_basis/evidence_opp_governance_template_paid_support.json\n M l9_meta_development_opportunity_runtime/runtime_packets/evidence_basis/evidence_opp_internal_ai_operations_audit.json\n M l9_meta_development_opportunity_runtime/runtime_packets/evidence_basis/evidence_opp_open_source_paid_support_package.json\n M l9_meta_development_opportunity_runtime/runtime_packets/evidence_basis/evidence_opp_runtime_setup_advisory.json\n M l9_meta_development_opportunity_runtime/runtime_packets/internal_asset_inventory/internal_asset_inventory_latest.json\n M l9_meta_development_opportunity_runtime/runtime_packets/manifests/l9_meta_development_manifest.json\n M l9_meta_development_opportunity_runtime/runtime_packets/manifests/l9_no_action_receipt.json\n M l9_meta_development_opportunity_runtime/runtime_packets/money_path_candidates/money_path_agent_workflow_bottleneck_diagnosis.json\n M l9_meta_development_opportunity_runtime/runtime_packets/money_path_candidates/money_path_ai_company_cockpit_setup.json\n ",
+    "read_only": true
+  },
+  "expected_bridge_base": "5253b66d32d14cb0065d1ad8ebe8643483719096",
+  "y_star_gov_validator_commit": "f4e08e8426ea3ee75bcbc7e06680534982441f20",
+  "gov_mcp_tool_commit": "47d0e82d15be40b13925c241350c48213bb8bf5e",
+  "ports_7920_7930_check": {
+    "command": [
+      "lsof",
+      "-nP",
+      "-iTCP:7920-7930",
+      "-sTCP:LISTEN"
+    ],
+    "cwd": "/tmp",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "",
+    "timed_out": false
+  },
+  "ps_check": {
+    "status": "not_run_in_payload_generation",
+    "note": "process/port cleanup is verified by targeted tests and final git/status checks where allowed"
+  },
+  "no_external_action": true
+}
