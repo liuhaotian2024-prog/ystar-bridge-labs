@@ -1,0 +1,6 @@
+{
+  "artifact_id": "e48_ceo_kg_codegrounded_demo_feedback",
+  "selected_route": "governed_agent_action_proof_packet",
+  "proof_status": "blocked_by_local_env_missing_mcp_dependency_or_client_path",
+  "next_blocker": "missing_mcp_dependency_blocks_server_import_no_internet_install_allowed"
+}

@@ -1,0 +1,26 @@
+{
+  "artifact_id": "e48_owner_decision_packet",
+  "recommended_next_milestone": "E49_build_minimal_gov_mcp_local_test_client",
+  "why_this_one": "The proof packet has a real local Y-star-gov ALLOW/DENY kernel proof, but first external attempt should wait until gov-mcp has a deterministic local client/server proof that does not require internet install or real client config mutation.",
+  "what_happens_next": "Build or identify a minimal local gov-mcp test client path, run gov_demo/gov_check through it in a scratch HOME/state sandbox, and rerun E48 transcript.",
+  "what_does_not_happen": [
+    "no outreach",
+    "no publishing",
+    "no real client config mutation",
+    "no internet install",
+    "no paid signal claim"
+  ],
+  "success_metrics": [
+    "gov-mcp server imports without missing dependency in local test environment",
+    "gov_demo returns PASS via local MCP client or in-process FastMCP test helper",
+    "gov_check ALLOW and DENY return expected decisions via client path",
+    "cleanup leaves no process or port"
+  ],
+  "stop_conditions": [
+    "server dependency cannot be satisfied locally without internet install",
+    "client path would mutate real user config",
+    "server process cannot be cleaned up",
+    "doctor reveals product-path blocker"
+  ],
+  "no_external_action": true
+}

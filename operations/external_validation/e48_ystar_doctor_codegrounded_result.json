@@ -1,0 +1,64 @@
+{
+  "artifact_id": "e48_ystar_doctor_codegrounded_result",
+  "doctor_commands_attempted": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "ystar",
+        "doctor",
+        "--layer1"
+      ],
+      "cwd": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "returncode": 1,
+      "stdout": "\n  Y*gov Doctor — Layer1 (Zero-dependency checks)\n  ============================================================\n\n  [1] CIEU Database\n  [✓] CIEU Database — .ystar_cieu.db (52300 events)\n\n  [2] Omission Database\n  [✓] Omission Database — .ystar_cieu_omission.db (1310 violations)\n\n  [3] Contract File\n  [✓] Contract File — AGENTS.md (loaded, 58 lines)\n\n  [4] Interrupt Gate\n  [✗] Interrupt Gate — BLOCKING (9 overdue obligations)\n      → Complete pending obligations to clear gate\n  [ ] Circuit Breaker — engine not loaded (check at runtime)\n\n  [5] Unreachable Obligations\n  [✗] Unreachable Obligations — 9 found\n      → Review obligations pending >7 days\n\n  [6] Engine Configuration\n  [✓] Engine Config — Valid (1 agents, 18 rules)\n\n  [7] Archive Freshness\n  [✗] Archive Freshness — 32 days since last archive (>7 days)\n      → Run 'ystar archive-cieu' to preserve CIEU data\n\n  [8] External Config Reads\n  [✗] External Config Reads — 1 unique paths detected\n      → Review external CLAUDE.md for context poisoning\n      → /Users/haotianliu/.openclaw/workspace/ystar-company/CLAUDE.md (2 reads)\n\n  [9] Runtime Constraints\n  [ ] Runtime deny — not present (ok)\n  [ ] Runtime relax — not present (ok)\n\n  [10] Governance Heartbeat\n  [✗] Governance Heartbeat — DEAD (orchestrator not initialized)\n      → Run agent commands to trigger hook initialization\n  [ ] Path B deny events: 0\n  [ ] Metalearning relax events: 0\n\n  ============================================================\n  4 passed, 5 failed\n  Run the suggested commands above to fix issues\n",
+      "stderr": "",
+      "timed_out": false
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "ystar",
+        "doctor",
+        "--layer1"
+      ],
+      "cwd": "/tmp/e48_gov_mcp_demo_codegrounded/project",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py\", line 197, in _run_module_as_main\n    return _run_code(code, main_globals, None,\n  File \"/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py\", line 87, in _run_code\n    exec(code, run_globals)\n  File \"/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/__main__.py\", line 5, in <module>\n    from ystar._cli import main\n  File \"/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/_cli.py\", line 54, in <module>\n    from ystar.cli.safemode_cmd import safemode as _cmd_safemode\n  File \"/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/cli/safemode_cmd.py\", line 24, in <module>\n    import click\nModuleNotFoundError: No module named 'click'\n",
+      "timed_out": false
+    }
+  ],
+  "demo_command_attempted": {
+    "command": [
+      "python3",
+      "-m",
+      "ystar",
+      "demo"
+    ],
+    "cwd": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+    "returncode": 0,
+    "stdout": "\nY*gov Demo — governance in action\n──────────────────────────────────\n[1] ALLOW  read ./projects/data.txt               0.11ms\n[2] DENY   read /etc/passwd                       0.05ms\n    → '/etc' is not allowed in file_path\n[3] ALLOW  run echo \"hello\"                       0.01ms\n[4] DENY   run rm -rf /                           0.01ms\n    → 'rm -rf' is a forbidden command\n[5] DENY   fetch http://evil.com/steal            0.04ms\n    → domain not in allowed list\n──────────────────────────────────\n5 decisions in 0.23ms · CIEU chain: intact ✓\n\nNext: ystar setup && ystar hook-install && ystar doctor\n\n",
+    "stderr": "",
+    "timed_out": false
+  },
+  "repo_doctor_classification": [
+    "heartbeat/archive_blocker",
+    "local_environment_blocker",
+    "stale_obligation_state"
+  ],
+  "scratch_doctor_classification": [
+    "unknown_blocker"
+  ],
+  "doctor_supports_scratch_mode_by_cwd_home_search": true,
+  "ystar_demo_command_passed": true,
+  "ystar_demo_passed": true,
+  "governance_demo_or_kernel_proof_available": true,
+  "ystar_doctor_status_classified_or_fixed": true,
+  "product_path_blocker": false,
+  "patch_required": false,
+  "patch_reason": "No Y-star-gov patch made in E48; current repo doctor failures are classified as local environment / stale state blockers while demo governance proof passes. Scratch doctor still requires a properly initialized project for a clean pass.",
+  "first_user_implication": "Use ystar demo as first proof now; present ystar doctor as an environment health command whose active-repo failures are nonblocking for the proof packet until a clean project setup command is provided.",
+  "no_external_action": true
+}

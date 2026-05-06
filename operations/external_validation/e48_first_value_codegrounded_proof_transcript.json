@@ -1,0 +1,120 @@
+{
+  "artifact_id": "e48_first_value_codegrounded_proof_transcript",
+  "strategy_selected_from_actual_code": "in_process_ystar_kernel_proof_with_server_transport_blocker",
+  "sandbox_manifest": {
+    "scratch_root": "/tmp/e48_gov_mcp_demo_codegrounded",
+    "scratch_home": "/tmp/e48_gov_mcp_demo_codegrounded/home",
+    "scratch_xdg_state_home": "/tmp/e48_gov_mcp_demo_codegrounded/xdg_state",
+    "scratch_localappdata": "/tmp/e48_gov_mcp_demo_codegrounded/local_app_data",
+    "scratch_project": "/tmp/e48_gov_mcp_demo_codegrounded/project",
+    "scratch_agents_md": "/tmp/e48_gov_mcp_demo_codegrounded/project/AGENTS.md",
+    "env_overrides": {
+      "HOME": "/tmp/e48_gov_mcp_demo_codegrounded/home",
+      "XDG_STATE_HOME": "/tmp/e48_gov_mcp_demo_codegrounded/xdg_state",
+      "LOCALAPPDATA": "/tmp/e48_gov_mcp_demo_codegrounded/local_app_data"
+    },
+    "real_client_config_mutation_proof": {
+      "gov_mcp_install_invoked": false,
+      "claude_mcp_add_invoked": false,
+      "cursor_config_write_invoked": false,
+      "windsurf_config_write_invoked": false,
+      "openclaw_config_write_invoked": false,
+      "reason": "E48 uses status/read/in-process proof only; install is explicitly blocked unless a later owner-approved sandbox hardening milestone permits it."
+    },
+    "cleanup_contract": {
+      "use_gov_mcp_uninstall_if_install_invoked": true,
+      "direct_pid_kill_if_server_started": true,
+      "final_process_check_required": true,
+      "final_port_check_required": true
+    },
+    "install_command_allowed": false,
+    "server_start_allowed_if_dependency_available": true,
+    "no_external_action": true
+  },
+  "scratch_agents_md_content": "# E48 Scratch Governance Contract\n\nThis scratch AGENTS.md exists only for local E48 proof.\n\n- Allow safe read-only commands such as `pwd` and `echo e48_safe`.\n- Deny secret reads and destructive commands.\n- Deny commands: rm -rf, cat .env, git push --force, sudo.\n- No external network, login, publication, provider API, payment, or secret use.\n",
+  "gov_mcp_server_client_proof_result": {
+    "governed_allow_deny_proof_generated": true,
+    "local_server_client_demo_closed": false,
+    "server_client_transport_blocker": "missing_mcp_dependency_blocks_server_import_no_internet_install_allowed"
+  },
+  "allow_result": {
+    "strategy": "in_process_ystar_kernel_check",
+    "command": "echo e48_safe",
+    "expected": "ALLOW",
+    "decision": "ALLOW",
+    "passed": true,
+    "violations": [],
+    "contract_digest": "f486065996c572f8"
+  },
+  "deny_result": {
+    "strategy": "in_process_ystar_kernel_check",
+    "command": "rm -rf /tmp/e48_nonexistent",
+    "expected": "DENY",
+    "decision": "DENY",
+    "passed": true,
+    "violations": [
+      "Command 'rm -rf' is blocked in command"
+    ],
+    "contract_digest": "f486065996c572f8"
+  },
+  "governance_envelope_or_cieu_contract_proof": {
+    "available": true,
+    "contract_digest": "f486065996c572f8",
+    "source": "Y-star-gov IntentContract + check(...)"
+  },
+  "y_star_demo_result": {
+    "command": [
+      "python3",
+      "-m",
+      "ystar",
+      "demo"
+    ],
+    "cwd": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+    "returncode": 0,
+    "stdout": "\nY*gov Demo — governance in action\n──────────────────────────────────\n[1] ALLOW  read ./projects/data.txt               0.11ms\n[2] DENY   read /etc/passwd                       0.05ms\n    → '/etc' is not allowed in file_path\n[3] ALLOW  run echo \"hello\"                       0.01ms\n[4] DENY   run rm -rf /                           0.01ms\n    → 'rm -rf' is a forbidden command\n[5] DENY   fetch http://evil.com/steal            0.04ms\n    → domain not in allowed list\n──────────────────────────────────\n5 decisions in 0.23ms · CIEU chain: intact ✓\n\nNext: ystar setup && ystar hook-install && ystar doctor\n\n",
+    "stderr": "",
+    "timed_out": false
+  },
+  "y_star_doctor_result_classification": [
+    "heartbeat/archive_blocker",
+    "local_environment_blocker",
+    "stale_obligation_state"
+  ],
+  "cleanup_proof": {
+    "process_started": false,
+    "process_left_running": false,
+    "port_opened": false,
+    "port_left_occupied": false,
+    "scratch_root": "/tmp/e48_gov_mcp_demo_codegrounded"
+  },
+  "local_files_changed": [
+    "bridge-labs E48 artifacts/modules/tests only"
+  ],
+  "no_real_client_config_mutation_proof": {
+    "gov_mcp_install_invoked": false,
+    "claude_mcp_add_invoked": false,
+    "cursor_config_write_invoked": false,
+    "windsurf_config_write_invoked": false,
+    "openclaw_config_write_invoked": false,
+    "reason": "E48 uses status/read/in-process proof only; install is explicitly blocked unless a later owner-approved sandbox hardening milestone permits it."
+  },
+  "what_this_proves": {
+    "local_governance_allow_deny_path_exists": true,
+    "Y_star_gov_kernel_can_generate_allow_deny": true,
+    "gov_mcp_code_exposes_proof_tools": {
+      "gov_check": true,
+      "gov_demo": true,
+      "gov_doctor": true,
+      "gov_enforce": true
+    },
+    "install_was_not_needed_for_safe_kernel_proof": true
+  },
+  "what_this_does_not_prove": {
+    "full_mcp_server_client_tool_invocation": true,
+    "customer_validation": true,
+    "paid_signal": true,
+    "production_readiness": true,
+    "compliance_certification": true
+  },
+  "no_external_action": true
+}

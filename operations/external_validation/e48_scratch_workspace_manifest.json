@@ -1,0 +1,30 @@
+{
+  "scratch_root": "/tmp/e48_gov_mcp_demo_codegrounded",
+  "scratch_home": "/tmp/e48_gov_mcp_demo_codegrounded/home",
+  "scratch_xdg_state_home": "/tmp/e48_gov_mcp_demo_codegrounded/xdg_state",
+  "scratch_localappdata": "/tmp/e48_gov_mcp_demo_codegrounded/local_app_data",
+  "scratch_project": "/tmp/e48_gov_mcp_demo_codegrounded/project",
+  "scratch_agents_md": "/tmp/e48_gov_mcp_demo_codegrounded/project/AGENTS.md",
+  "env_overrides": {
+    "HOME": "/tmp/e48_gov_mcp_demo_codegrounded/home",
+    "XDG_STATE_HOME": "/tmp/e48_gov_mcp_demo_codegrounded/xdg_state",
+    "LOCALAPPDATA": "/tmp/e48_gov_mcp_demo_codegrounded/local_app_data"
+  },
+  "real_client_config_mutation_proof": {
+    "gov_mcp_install_invoked": false,
+    "claude_mcp_add_invoked": false,
+    "cursor_config_write_invoked": false,
+    "windsurf_config_write_invoked": false,
+    "openclaw_config_write_invoked": false,
+    "reason": "E48 uses status/read/in-process proof only; install is explicitly blocked unless a later owner-approved sandbox hardening milestone permits it."
+  },
+  "cleanup_contract": {
+    "use_gov_mcp_uninstall_if_install_invoked": true,
+    "direct_pid_kill_if_server_started": true,
+    "final_process_check_required": true,
+    "final_port_check_required": true
+  },
+  "install_command_allowed": false,
+  "server_start_allowed_if_dependency_available": true,
+  "no_external_action": true
+}

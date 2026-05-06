@@ -1,0 +1,16 @@
+{
+  "artifact_id": "e48_cross_repo_alignment",
+  "bridge_labs_owns": "codegrounded CEO proof transcript, owner decision packet, and runtime rerun artifacts",
+  "gov_mcp_owns": "MCP execution boundary and future minimal local client/server proof path",
+  "y_star_gov_owns": "governance kernel and ystar demo/doctor behavior",
+  "k9audit_owns": "future audit layer add-on; not modified in E48",
+  "gov_mcp_modified": false,
+  "y_star_gov_modified": false,
+  "patch_required_status": "no cross-repo patch created; next milestone should build/verify safe local gov-mcp client path",
+  "duplicate_governance_kernel_created": false,
+  "duplicate_mcp_execution_layer_created": false,
+  "duplicate_audit_layer_created": false,
+  "second_ceo_brain_created": false,
+  "second_ceo_kg_created": false,
+  "no_external_action": true
+}

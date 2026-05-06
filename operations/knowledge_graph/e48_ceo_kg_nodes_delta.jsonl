@@ -1,0 +1,3 @@
+{"id": "e48_codegrounded_proof", "type": "milestone_result", "label": "E48 code-grounded first value proof"}
+{"id": "governed_allow_deny_proof", "type": "proof", "label": "Y-star-gov ALLOW/DENY proof"}
+{"id": "gov_mcp_transport_blocker", "type": "blocker", "label": "missing_mcp_dependency_blocks_server_import_no_internet_install_allowed"}

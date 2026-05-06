@@ -1,0 +1,171 @@
+{
+  "artifact_id": "e48_server_client_proof_result",
+  "selected_strategy": "in_process_ystar_kernel_proof_with_server_transport_blocker",
+  "selected_strategy_reason": "Y-star-gov kernel demo works and gov-mcp exposes gov_check/gov_demo, but the local gov-mcp server import is blocked by missing mcp dependency or client path; no internet install is allowed.",
+  "proof_steps": [
+    {
+      "step_id": "gov_mcp_status_sandbox_read",
+      "classification": "passed",
+      "result": {
+        "command": [
+          "python3",
+          "-m",
+          "gov_mcp",
+          "status"
+        ],
+        "cwd": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+        "returncode": 0,
+        "stdout": "gov-mcp status\n==================================================\n  Running:    no\n  Run 'gov-mcp install' to start.\n",
+        "stderr": "",
+        "timed_out": false
+      },
+      "decision_effect": "status is safe read-only and confirmed no server running in sandbox path"
+    },
+    {
+      "step_id": "gov_mcp_server_import",
+      "classification": "blocked_missing_dependency",
+      "result": {
+        "command": [
+          "python3",
+          "-c",
+          "from gov_mcp.server import create_server; print(\"server_import_ok\")"
+        ],
+        "cwd": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/Users/haotianliu/.openclaw/workspace/gov-mcp/gov_mcp/server.py\", line 15, in <module>\n    import yaml\nModuleNotFoundError: No module named 'yaml'\n",
+        "timed_out": false
+      },
+      "decision_effect": "determines whether actual FastMCP server/client transport can be exercised locally without internet install"
+    },
+    {
+      "step_id": "ystar_demo_zero_config_allow_deny",
+      "classification": "passed",
+      "result": {
+        "command": [
+          "python3",
+          "-m",
+          "ystar",
+          "demo"
+        ],
+        "cwd": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+        "returncode": 0,
+        "stdout": "\nY*gov Demo — governance in action\n──────────────────────────────────\n[1] ALLOW  read ./projects/data.txt               0.15ms\n[2] DENY   read /etc/passwd                       0.05ms\n    → '/etc' is not allowed in file_path\n[3] ALLOW  run echo \"hello\"                       0.01ms\n[4] DENY   run rm -rf /                           0.01ms\n    → 'rm -rf' is a forbidden command\n[5] DENY   fetch http://evil.com/steal            0.04ms\n    → domain not in allowed list\n──────────────────────────────────\n5 decisions in 0.26ms · CIEU chain: intact ✓\n\nNext: ystar setup && ystar hook-install && ystar doctor\n\n",
+        "stderr": "",
+        "timed_out": false
+      },
+      "decision_effect": "proves local governance allow/deny semantics independent of MCP transport"
+    },
+    {
+      "step_id": "gov_check_allow_case",
+      "classification": "passed",
+      "result": {
+        "strategy": "in_process_ystar_kernel_check",
+        "command": "echo e48_safe",
+        "expected": "ALLOW",
+        "decision": "ALLOW",
+        "passed": true,
+        "violations": [],
+        "contract_digest": "f486065996c572f8"
+      },
+      "decision_effect": "safe command is allowed by actual Y-star-gov kernel check"
+    },
+    {
+      "step_id": "gov_check_deny_case",
+      "classification": "passed",
+      "result": {
+        "strategy": "in_process_ystar_kernel_check",
+        "command": "rm -rf /tmp/e48_nonexistent",
+        "expected": "DENY",
+        "decision": "DENY",
+        "passed": true,
+        "violations": [
+          "Command 'rm -rf' is blocked in command"
+        ],
+        "contract_digest": "f486065996c572f8"
+      },
+      "decision_effect": "destructive command is denied by actual Y-star-gov kernel check"
+    },
+    {
+      "step_id": "mcp_server_client_tool_call",
+      "classification": "blocked_missing_client_path",
+      "result": {
+        "blocker": "missing_mcp_dependency_blocks_server_import_no_internet_install_allowed",
+        "server_transport_attempted": false,
+        "install_attempted": false
+      },
+      "decision_effect": "prevents claiming full MCP server/client proof closure"
+    },
+    {
+      "step_id": "cleanup",
+      "classification": "passed",
+      "result": {
+        "process_started": false,
+        "process_left_running": false,
+        "port_opened": false,
+        "port_left_occupied": false,
+        "scratch_root": "/tmp/e48_gov_mcp_demo_codegrounded"
+      },
+      "decision_effect": "no server was started, so no process or port could be left behind"
+    }
+  ],
+  "gov_demo_result": {
+    "command": [
+      "python3",
+      "-m",
+      "ystar",
+      "demo"
+    ],
+    "cwd": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+    "returncode": 0,
+    "stdout": "\nY*gov Demo — governance in action\n──────────────────────────────────\n[1] ALLOW  read ./projects/data.txt               0.15ms\n[2] DENY   read /etc/passwd                       0.05ms\n    → '/etc' is not allowed in file_path\n[3] ALLOW  run echo \"hello\"                       0.01ms\n[4] DENY   run rm -rf /                           0.01ms\n    → 'rm -rf' is a forbidden command\n[5] DENY   fetch http://evil.com/steal            0.04ms\n    → domain not in allowed list\n──────────────────────────────────\n5 decisions in 0.26ms · CIEU chain: intact ✓\n\nNext: ystar setup && ystar hook-install && ystar doctor\n\n",
+    "stderr": "",
+    "timed_out": false
+  },
+  "allow_result": {
+    "strategy": "in_process_ystar_kernel_check",
+    "command": "echo e48_safe",
+    "expected": "ALLOW",
+    "decision": "ALLOW",
+    "passed": true,
+    "violations": [],
+    "contract_digest": "f486065996c572f8"
+  },
+  "deny_result": {
+    "strategy": "in_process_ystar_kernel_check",
+    "command": "rm -rf /tmp/e48_nonexistent",
+    "expected": "DENY",
+    "decision": "DENY",
+    "passed": true,
+    "violations": [
+      "Command 'rm -rf' is blocked in command"
+    ],
+    "contract_digest": "f486065996c572f8"
+  },
+  "governance_envelope_or_contract_proof": {
+    "available": true,
+    "contract_digest": "f486065996c572f8",
+    "source": "Y-star-gov IntentContract + check(...)"
+  },
+  "governed_allow_deny_proof_generated": true,
+  "local_server_client_demo_closed": false,
+  "server_client_transport_blocker": "missing_mcp_dependency_blocks_server_import_no_internet_install_allowed",
+  "ready_for_owner_approved_external_attempt": false,
+  "readiness_class": "blocked_by_local_env_missing_mcp_dependency_or_client_path",
+  "cleanup_result": {
+    "process_started": false,
+    "process_left_running": false,
+    "port_opened": false,
+    "port_left_occupied": false,
+    "scratch_root": "/tmp/e48_gov_mcp_demo_codegrounded"
+  },
+  "no_real_client_config_mutation": {
+    "gov_mcp_install_invoked": false,
+    "claude_mcp_add_invoked": false,
+    "cursor_config_write_invoked": false,
+    "windsurf_config_write_invoked": false,
+    "openclaw_config_write_invoked": false,
+    "reason": "E48 uses status/read/in-process proof only; install is explicitly blocked unless a later owner-approved sandbox hardening milestone permits it."
+  },
+  "no_external_action": true
+}

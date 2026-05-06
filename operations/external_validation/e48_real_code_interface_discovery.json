@@ -1,0 +1,131 @@
+{
+  "artifact_id": "e48_real_code_interface_discovery",
+  "bridge_head": "",
+  "gov_mcp_head": "998e62c0fa2dd28797d853f6e054210a1823891f",
+  "y_star_gov_head": "5f031f4be151b81ef1a1b1908a5c83c5420e8ce1",
+  "gov_mcp": {
+    "cli_subcommands": [
+      "install",
+      "uninstall",
+      "status",
+      "restart"
+    ],
+    "entrypoint_script": "gov-mcp = gov_mcp.cli:cli_main",
+    "server_entrypoint": "python -m gov_mcp --agents-md <path> --transport sse --host 127.0.0.1 --port <port>",
+    "transport_support": [
+      "stdio",
+      "sse"
+    ],
+    "install_side_effects": {
+      "detects_local_mcp_ecosystems": true,
+      "starts_background_server": true,
+      "writes_pid_log_port_agents_state": false,
+      "may_call_claude_mcp_add": true,
+      "may_bind_localhost_port": true
+    },
+    "uninstall_cleanup_behavior": {
+      "stop_server": true,
+      "remove_claude_config": true,
+      "state_dir_cleanup": true
+    },
+    "status_is_safe_read": true,
+    "available_mcp_tools": [
+      "gov_acknowledge",
+      "gov_archive",
+      "gov_audit",
+      "gov_baseline",
+      "gov_benchmark",
+      "gov_chain_reset",
+      "gov_check",
+      "gov_check_impact",
+      "gov_contract_activate",
+      "gov_contract_conflicts",
+      "gov_contract_load",
+      "gov_contract_validate",
+      "gov_counterfactual",
+      "gov_coverage",
+      "gov_delegate",
+      "gov_delta",
+      "gov_demo",
+      "gov_dispatch",
+      "gov_doctor",
+      "gov_domain_describe",
+      "gov_domain_init",
+      "gov_domain_list",
+      "gov_enforce",
+      "gov_escalate",
+      "gov_exec",
+      "gov_forget",
+      "gov_health",
+      "gov_health_retrospective",
+      "gov_impact",
+      "gov_init",
+      "gov_memory_decay",
+      "gov_memory_reinforce",
+      "gov_memory_summary",
+      "gov_obligations",
+      "gov_policy_builder",
+      "gov_precheck",
+      "gov_pretrain",
+      "gov_quality",
+      "gov_recall",
+      "gov_recall_v2",
+      "gov_remember",
+      "gov_report",
+      "gov_reset_breaker",
+      "gov_risk_classify",
+      "gov_route",
+      "gov_safemode",
+      "gov_seal",
+      "gov_session_info",
+      "gov_simulate",
+      "gov_trend",
+      "gov_verify",
+      "gov_version"
+    ],
+    "proof_tools_present": {
+      "gov_check": true,
+      "gov_demo": true,
+      "gov_doctor": true,
+      "gov_enforce": true
+    },
+    "server_import_check": {
+      "command": [
+        "python3",
+        "-c",
+        "from gov_mcp.server import create_server; print(\"ok\")"
+      ],
+      "cwd": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/Users/haotianliu/.openclaw/workspace/gov-mcp/gov_mcp/server.py\", line 17, in <module>\n    from mcp.server.fastmcp import FastMCP\nModuleNotFoundError: No module named 'mcp'\n",
+      "timed_out": false
+    },
+    "mcp_dependency_available": false,
+    "fastmcp_test_client_discovered": false
+  },
+  "y_star_gov": {
+    "doctor_module": "ystar/cli/doctor_cmd.py",
+    "demo_module": "ystar/cli/demo_cmd.py",
+    "doctor_supports_explicit_path_or_db_override": false,
+    "doctor_searches_cwd_and_home_session_config": false,
+    "demo_zero_config_local": true,
+    "demo_smoke": {
+      "command": [
+        "python3",
+        "-m",
+        "ystar",
+        "demo"
+      ],
+      "cwd": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "returncode": 0,
+      "stdout": "\nY*gov Demo — governance in action\n──────────────────────────────────\n[1] ALLOW  read ./projects/data.txt               0.07ms\n[2] DENY   read /etc/passwd                       0.04ms\n    → '/etc' is not allowed in file_path\n[3] ALLOW  run echo \"hello\"                       0.01ms\n[4] DENY   run rm -rf /                           0.01ms\n    → 'rm -rf' is a forbidden command\n[5] DENY   fetch http://evil.com/steal            0.03ms\n    → domain not in allowed list\n──────────────────────────────────\n5 decisions in 0.16ms · CIEU chain: intact ✓\n\nNext: ystar setup && ystar hook-install && ystar doctor\n\n",
+      "stderr": "",
+      "timed_out": false
+    }
+  },
+  "selected_demo_strategy": "in_process_ystar_kernel_proof_with_server_transport_blocker",
+  "selected_demo_strategy_reason": "Y-star-gov kernel demo works and gov-mcp exposes gov_check/gov_demo, but the local gov-mcp server import is blocked by missing mcp dependency or client path; no internet install is allowed.",
+  "blocked_external_requirement": true,
+  "no_external_action": true
+}
