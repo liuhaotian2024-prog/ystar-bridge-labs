@@ -1,0 +1,84 @@
+{
+  "artifact_id": "e52_source_artifact_manifest",
+  "items": [
+    {
+      "path": "products/governed_agent_action_proof_packet/README.md",
+      "sha256": "aaae17d735c7a6b5e4937bfa0bc57f7ad9580e8e01d6f9d9ace408b8376ffffa",
+      "claim_mapping": "owner-review proof packet content",
+      "no_external_action": true
+    },
+    {
+      "path": "products/governed_agent_action_proof_packet/demo_script.md",
+      "sha256": "aab7e5f106685d6cc60556e2f50d617ce57bf09192ff37ff244f50b7fe52591c",
+      "claim_mapping": "owner-review proof packet content",
+      "no_external_action": true
+    },
+    {
+      "path": "products/governed_agent_action_proof_packet/evidence_chain.md",
+      "sha256": "99ec64c67e53b84834e312d8007afe8f480eb85ce4d516d9bb26b5b8ec9baba9",
+      "claim_mapping": "owner-review proof packet content",
+      "no_external_action": true
+    },
+    {
+      "path": "products/governed_agent_action_proof_packet/executive_brief.md",
+      "sha256": "b51514895337a3cade2571d34e3b0f7f6a4e6f28005779b5ab763ec381231884",
+      "claim_mapping": "owner-review proof packet content",
+      "no_external_action": true
+    },
+    {
+      "path": "products/governed_agent_action_proof_packet/first_user_review_guide.md",
+      "sha256": "3536330868f2d20457aa94bddb55944951ad7f8f94904c161e485307a76ad179",
+      "claim_mapping": "owner-review proof packet content",
+      "no_external_action": true
+    },
+    {
+      "path": "products/governed_agent_action_proof_packet/first_user_review_packet.json",
+      "sha256": "d40f964117b7f9287e06abda0dfad2f0e5efeb37e372068edde632b27d65db06",
+      "claim_mapping": "owner-review proof packet content",
+      "no_external_action": true
+    },
+    {
+      "path": "products/governed_agent_action_proof_packet/first_user_review_packet.md",
+      "sha256": "468476569bcd1918333decd93ae2d257c7ecabb342dce71b1af834e10bbce3f6",
+      "claim_mapping": "owner-review proof packet content",
+      "no_external_action": true
+    },
+    {
+      "path": "products/governed_agent_action_proof_packet/limitations_and_no_overclaim.md",
+      "sha256": "85581be482d6d233046d5cb9cb75cf6d7004c60e2715992537790e09ab2807de",
+      "claim_mapping": "owner-review proof packet content",
+      "no_external_action": true
+    },
+    {
+      "path": "products/governed_agent_action_proof_packet/next_step_options.md",
+      "sha256": "b82e65674bbb98b3b3724eb620956da057034b4936aa52e7c756734d007ca5a8",
+      "claim_mapping": "owner-review proof packet content",
+      "no_external_action": true
+    },
+    {
+      "path": "products/governed_agent_action_proof_packet/no_go_boundary_manifest.json",
+      "sha256": "5f430eae123ea27e6c9f724ff75f7b5e0b48a6633550b81caa1886dcd231b757",
+      "claim_mapping": "owner-review proof packet content",
+      "no_external_action": true
+    },
+    {
+      "path": "products/governed_agent_action_proof_packet/owner_approval_checklist.md",
+      "sha256": "5a78e516de8a68d475b45e7c3ca610d7080bf67ee16e6aacdd11faf9a25e9a33",
+      "claim_mapping": "owner-review proof packet content",
+      "no_external_action": true
+    },
+    {
+      "path": "products/governed_agent_action_proof_packet/proof_packet.json",
+      "sha256": "8713de673eac2828184a62548f3917aec120bd2c7b867ab50f44a1290ec14eca",
+      "claim_mapping": "owner-review proof packet content",
+      "no_external_action": true
+    },
+    {
+      "path": "products/governed_agent_action_proof_packet/technical_proof.md",
+      "sha256": "ecfad2c90dc5dfb851f6299da8cb17f0f082841ca37d89ec62db8a026f022739",
+      "claim_mapping": "owner-review proof packet content",
+      "no_external_action": true
+    }
+  ],
+  "no_external_action": true
+}

@@ -1,0 +1,3 @@
+{"node_id": "e52_proof_packet", "type": "product_packet", "status": "owner_reviewable_only"}
+{"node_id": "e52_no_overclaim_gate", "type": "boundary_gate", "status": "passed"}
+{"node_id": "e52_completion_gate", "type": "completion_gate", "status": "pending_generated"}

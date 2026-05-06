@@ -1,0 +1,8 @@
+{
+  "artifact_id": "e52_cross_repo_evidence_packet",
+  "Y_star_gov_read_only_head": "b0d9aa8b1badd1180127a2f79f73ceed48e16451",
+  "gov_mcp_read_only_head": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+  "K9Audit_read_only_head": "37911e18ce4425470e3f745b30d155c43d76ff55",
+  "packet_packaged": true,
+  "no_external_action": true
+}

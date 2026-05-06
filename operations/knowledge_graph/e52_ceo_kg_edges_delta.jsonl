@@ -1,0 +1,2 @@
+{"from": "e52_proof_packet", "to": "e52_no_overclaim_gate", "type": "validated_by"}
+{"from": "e52_proof_packet", "to": "e52_completion_gate", "type": "gated_by"}

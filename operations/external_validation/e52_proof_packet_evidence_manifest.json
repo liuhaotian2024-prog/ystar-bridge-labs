@@ -1,0 +1,573 @@
+{
+  "artifact_id": "e52_proof_packet_evidence_manifest",
+  "packet_product": "Governed Agent Action Proof Packet",
+  "evidence_count": 20,
+  "included_count": 20,
+  "missing_evidence": [],
+  "evidence_items": [
+    {
+      "evidence_id": "e50a_blocker_update",
+      "source_path": "operations/external_validation/e50a_mcp_client_blocker_update.json",
+      "source_milestone": "E50A",
+      "claim_supported": "gov-mcp tool-layer blocker closed",
+      "proof_type": "tool_layer_proof",
+      "limitations": [
+        "local/internal artifact",
+        "not customer validation",
+        "not paid signal",
+        "not real MCP transport closure"
+      ],
+      "freshness": "current_E50_E51_line",
+      "sha256": "457cd322883890d8eb2af8cf1a2fc0b18c346c3b9e1bac3e2f7bafa9887f5ef6",
+      "readback_status": "read_back_or_registered",
+      "included_in_packet": true,
+      "overclaim_risk": "low",
+      "allowed_language": [
+        "supports local owner-review proof packet only"
+      ],
+      "forbidden_language": [
+        "customer validation claim",
+        "paid demand claim",
+        "closed transport claim",
+        "production readiness claim"
+      ],
+      "exists": true
+    },
+    {
+      "evidence_id": "e50a_local_tool_layer_proof",
+      "source_path": "operations/external_validation/e50a_local_tool_layer_proof_result.json",
+      "source_milestone": "E50A",
+      "claim_supported": "ALLOW/DENY proved through local tool-layer harness",
+      "proof_type": "tool_layer_proof",
+      "limitations": [
+        "local/internal artifact",
+        "not customer validation",
+        "not paid signal",
+        "not real MCP transport closure"
+      ],
+      "freshness": "current_E50_E51_line",
+      "sha256": "f1081dbaa32e5c9e3f7144c150b1ec3eef1daa5a52abf100cd6f06e51dc3589b",
+      "readback_status": "read_back_or_registered",
+      "included_in_packet": true,
+      "overclaim_risk": "low",
+      "allowed_language": [
+        "supports local owner-review proof packet only"
+      ],
+      "forbidden_language": [
+        "customer validation claim",
+        "paid demand claim",
+        "closed transport claim",
+        "production readiness claim"
+      ],
+      "exists": true
+    },
+    {
+      "evidence_id": "e50a_fake_fastmcp_harness",
+      "source_path": "operations/external_validation/e50a_fake_fastmcp_harness_result.json",
+      "source_milestone": "E50A",
+      "claim_supported": "Fake FastMCP captured gov-mcp tools without real client mutation",
+      "proof_type": "tool_registration_proof",
+      "limitations": [
+        "local/internal artifact",
+        "not customer validation",
+        "not paid signal",
+        "not real MCP transport closure"
+      ],
+      "freshness": "current_E50_E51_line",
+      "sha256": "c9e489bab08f93f4472de12808323a37844f197815c762ec1efbb6c453ab8d59",
+      "readback_status": "read_back_or_registered",
+      "included_in_packet": true,
+      "overclaim_risk": "low",
+      "allowed_language": [
+        "supports local owner-review proof packet only"
+      ],
+      "forbidden_language": [
+        "customer validation claim",
+        "paid demand claim",
+        "closed transport claim",
+        "production readiness claim"
+      ],
+      "exists": true
+    },
+    {
+      "evidence_id": "e50b_commercial_decision",
+      "source_path": "operations/external_validation/e50b_ceo_commercial_decision_packet.json",
+      "source_milestone": "E50B",
+      "claim_supported": "selected route is package_governed_agent_action_proof_packet",
+      "proof_type": "commercial_decision",
+      "limitations": [
+        "local/internal artifact",
+        "not customer validation",
+        "not paid signal",
+        "not real MCP transport closure"
+      ],
+      "freshness": "current_E50_E51_line",
+      "sha256": "0f4a3815baa115754c97c326ada16cc8e9f9eb19c3420c5b54911108476ed847",
+      "readback_status": "read_back_or_registered",
+      "included_in_packet": true,
+      "overclaim_risk": "low",
+      "allowed_language": [
+        "supports local owner-review proof packet only"
+      ],
+      "forbidden_language": [
+        "customer validation claim",
+        "paid demand claim",
+        "closed transport claim",
+        "production readiness claim"
+      ],
+      "exists": true
+    },
+    {
+      "evidence_id": "e50b_counterfactual_matrix",
+      "source_path": "operations/external_validation/e50b_counterfactual_money_route_matrix.json",
+      "source_milestone": "E50B",
+      "claim_supported": "counterfactual route comparison selected proof packet packaging",
+      "proof_type": "counterfactual_matrix",
+      "limitations": [
+        "local/internal artifact",
+        "not customer validation",
+        "not paid signal",
+        "not real MCP transport closure"
+      ],
+      "freshness": "current_E50_E51_line",
+      "sha256": "3e2dde317ec2d9c3076b67f6b43488c4168aeb5e816a82f10c89383409944543",
+      "readback_status": "read_back_or_registered",
+      "included_in_packet": true,
+      "overclaim_risk": "low",
+      "allowed_language": [
+        "supports local owner-review proof packet only"
+      ],
+      "forbidden_language": [
+        "customer validation claim",
+        "paid demand claim",
+        "closed transport claim",
+        "production readiness claim"
+      ],
+      "exists": true
+    },
+    {
+      "evidence_id": "e50b_public_receipts",
+      "source_path": "operations/external_validation/e50b_public_source_receipts.jsonl",
+      "source_milestone": "E50B",
+      "claim_supported": "public-read-only evidence receipts, not customer validation",
+      "proof_type": "public_readonly_evidence",
+      "limitations": [
+        "local/internal artifact",
+        "not customer validation",
+        "not paid signal",
+        "not real MCP transport closure"
+      ],
+      "freshness": "current_E50_E51_line",
+      "sha256": "e7c9a5a4d96c982a049c5b4aa880109bfa104fa5396432a6fc3c442238da0141",
+      "readback_status": "read_back_or_registered",
+      "included_in_packet": true,
+      "overclaim_risk": "medium",
+      "allowed_language": [
+        "supports local owner-review proof packet only"
+      ],
+      "forbidden_language": [
+        "customer validation claim",
+        "paid demand claim",
+        "closed transport claim",
+        "production readiness claim"
+      ],
+      "exists": true
+    },
+    {
+      "evidence_id": "e50b_evidence_atoms",
+      "source_path": "operations/external_validation/e50b_commercial_evidence_atoms.jsonl",
+      "source_milestone": "E50B",
+      "claim_supported": "commercial evidence atoms, not paid signal",
+      "proof_type": "public_readonly_evidence",
+      "limitations": [
+        "local/internal artifact",
+        "not customer validation",
+        "not paid signal",
+        "not real MCP transport closure"
+      ],
+      "freshness": "current_E50_E51_line",
+      "sha256": "9629c4e0bbc20df9bf3cf9336d92a7066e855ae24f175411300aeb64f181be20",
+      "readback_status": "read_back_or_registered",
+      "included_in_packet": true,
+      "overclaim_risk": "medium",
+      "allowed_language": [
+        "supports local owner-review proof packet only"
+      ],
+      "forbidden_language": [
+        "customer validation claim",
+        "paid demand claim",
+        "closed transport claim",
+        "production readiness claim"
+      ],
+      "exists": true
+    },
+    {
+      "evidence_id": "e50c_brain_smoke",
+      "source_path": "operations/external_validation/e50c_ceo_brain_centerline_smoke_result.json",
+      "source_milestone": "E50C",
+      "claim_supported": "CEO brain reads current decision state",
+      "proof_type": "readback_proof",
+      "limitations": [
+        "local/internal artifact",
+        "not customer validation",
+        "not paid signal",
+        "not real MCP transport closure"
+      ],
+      "freshness": "current_E50_E51_line",
+      "sha256": "0af2b1881004ecaac52fc13020b1d871e0b93d48660b2a8b9eb3b6ec01734fbf",
+      "readback_status": "read_back_or_registered",
+      "included_in_packet": true,
+      "overclaim_risk": "low",
+      "allowed_language": [
+        "supports local owner-review proof packet only"
+      ],
+      "forbidden_language": [
+        "customer validation claim",
+        "paid demand claim",
+        "closed transport claim",
+        "production readiness claim"
+      ],
+      "exists": true
+    },
+    {
+      "evidence_id": "e50c_e51_readiness_gate",
+      "source_path": "operations/external_validation/e50c_e51_readiness_gate.json",
+      "source_milestone": "E50C",
+      "claim_supported": "E51 readiness gate passed before anti-drift closure",
+      "proof_type": "readiness_gate",
+      "limitations": [
+        "local/internal artifact",
+        "not customer validation",
+        "not paid signal",
+        "not real MCP transport closure"
+      ],
+      "freshness": "current_E50_E51_line",
+      "sha256": "55d6723b279b1fd3ef10a99e6bb62b5e98be64190f7054cfd20cc7bb73cc7829",
+      "readback_status": "read_back_or_registered",
+      "included_in_packet": true,
+      "overclaim_risk": "low",
+      "allowed_language": [
+        "supports local owner-review proof packet only"
+      ],
+      "forbidden_language": [
+        "customer validation claim",
+        "paid demand claim",
+        "closed transport claim",
+        "production readiness claim"
+      ],
+      "exists": true
+    },
+    {
+      "evidence_id": "e51_runtime_manifest",
+      "source_path": "operations/external_validation/e51_labs_runtime_linkage_manifest.json",
+      "source_milestone": "E51",
+      "claim_supported": "runtime linkage manifest has writer/reader/readback map",
+      "proof_type": "anti_drift_manifest",
+      "limitations": [
+        "local/internal artifact",
+        "not customer validation",
+        "not paid signal",
+        "not real MCP transport closure"
+      ],
+      "freshness": "current_E50_E51_line",
+      "sha256": "27745e90c63a4eae6bcc653b64d78cb00e9b13311563af9b9b5cf170865a9f4c",
+      "readback_status": "read_back_or_registered",
+      "included_in_packet": true,
+      "overclaim_risk": "low",
+      "allowed_language": [
+        "supports local owner-review proof packet only"
+      ],
+      "forbidden_language": [
+        "customer validation claim",
+        "paid demand claim",
+        "closed transport claim",
+        "production readiness claim"
+      ],
+      "exists": true
+    },
+    {
+      "evidence_id": "e51_y_star_validation",
+      "source_path": "operations/external_validation/e51_y_star_gov_linkage_validation_result.json",
+      "source_milestone": "E51",
+      "claim_supported": "Y-star-gov validation passed",
+      "proof_type": "validator_proof",
+      "limitations": [
+        "local/internal artifact",
+        "not customer validation",
+        "not paid signal",
+        "not real MCP transport closure"
+      ],
+      "freshness": "current_E50_E51_line",
+      "sha256": "6fc7b50ae1248cce1a22afe2bc11de26381f05bbcd500c813d16280e52678efa",
+      "readback_status": "read_back_or_registered",
+      "included_in_packet": true,
+      "overclaim_risk": "low",
+      "allowed_language": [
+        "supports local owner-review proof packet only"
+      ],
+      "forbidden_language": [
+        "customer validation claim",
+        "paid demand claim",
+        "closed transport claim",
+        "production readiness claim"
+      ],
+      "exists": true
+    },
+    {
+      "evidence_id": "e51_gov_mcp_harness",
+      "source_path": "operations/external_validation/e51_gov_mcp_runtime_linkage_tool_harness_result.json",
+      "source_milestone": "E51",
+      "claim_supported": "gov-mcp ALLOW/DENY anti-drift proof",
+      "proof_type": "mcp_tool_proof",
+      "limitations": [
+        "local/internal artifact",
+        "not customer validation",
+        "not paid signal",
+        "not real MCP transport closure"
+      ],
+      "freshness": "current_E50_E51_line",
+      "sha256": "e7e995265ea4f35c4e63711ac2e7c0d905bc5e9c5107fa911935f79019cac21d",
+      "readback_status": "read_back_or_registered",
+      "included_in_packet": true,
+      "overclaim_risk": "low",
+      "allowed_language": [
+        "supports local owner-review proof packet only"
+      ],
+      "forbidden_language": [
+        "customer validation claim",
+        "paid demand claim",
+        "closed transport claim",
+        "production readiness claim"
+      ],
+      "exists": true
+    },
+    {
+      "evidence_id": "e51_current_gate",
+      "source_path": "operations/external_validation/e51_current_readiness_anti_drift_gate_result.json",
+      "source_milestone": "E51",
+      "claim_supported": "current readiness anti-drift gate passed",
+      "proof_type": "anti_drift_gate",
+      "limitations": [
+        "local/internal artifact",
+        "not customer validation",
+        "not paid signal",
+        "not real MCP transport closure"
+      ],
+      "freshness": "current_E50_E51_line",
+      "sha256": "4541d1df750d91fae687354c5a6408a3a0558f0e6e11fe98c6c6beb8f34c05a1",
+      "readback_status": "read_back_or_registered",
+      "included_in_packet": true,
+      "overclaim_risk": "low",
+      "allowed_language": [
+        "supports local owner-review proof packet only"
+      ],
+      "forbidden_language": [
+        "customer validation claim",
+        "paid demand claim",
+        "closed transport claim",
+        "production readiness claim"
+      ],
+      "exists": true
+    },
+    {
+      "evidence_id": "e51_capability_binding_audit",
+      "source_path": "operations/external_validation/e51_capability_centerline_binding_audit.json",
+      "source_milestone": "E51 Phase 2.5",
+      "claim_supported": "capabilities classified by centerline",
+      "proof_type": "capability_binding",
+      "limitations": [
+        "local/internal artifact",
+        "not customer validation",
+        "not paid signal",
+        "not real MCP transport closure"
+      ],
+      "freshness": "current_E50_E51_line",
+      "sha256": "c1f2350cc2727af23580cc50a86aca5ed818e14f6836398a15a2b5471b4e85fe",
+      "readback_status": "read_back_or_registered",
+      "included_in_packet": true,
+      "overclaim_risk": "low",
+      "allowed_language": [
+        "supports local owner-review proof packet only"
+      ],
+      "forbidden_language": [
+        "customer validation claim",
+        "paid demand claim",
+        "closed transport claim",
+        "production readiness claim"
+      ],
+      "exists": true
+    },
+    {
+      "evidence_id": "e51_capability_binding_repair",
+      "source_path": "operations/external_validation/e51_capability_centerline_binding_repair_result.json",
+      "source_milestone": "E51 Phase 2.5",
+      "claim_supported": "capability binding gate passed and broken cases denied",
+      "proof_type": "capability_binding_gate",
+      "limitations": [
+        "local/internal artifact",
+        "not customer validation",
+        "not paid signal",
+        "not real MCP transport closure"
+      ],
+      "freshness": "current_E50_E51_line",
+      "sha256": "aade798f149a848157f8c9b64d76ce95e7311270104e0ab06969cfb365c0bb95",
+      "readback_status": "read_back_or_registered",
+      "included_in_packet": true,
+      "overclaim_risk": "low",
+      "allowed_language": [
+        "supports local owner-review proof packet only"
+      ],
+      "forbidden_language": [
+        "customer validation claim",
+        "paid demand claim",
+        "closed transport claim",
+        "production readiness claim"
+      ],
+      "exists": true
+    },
+    {
+      "evidence_id": "e50a_report",
+      "source_path": "/tmp/ystar_delivery_bridge/completed/e50a_minimal_gov_mcp_local_test_client_r2_20260506T000001Z.report.json",
+      "source_milestone": "E50A",
+      "claim_supported": "completed report",
+      "proof_type": "delivery_report",
+      "limitations": [
+        "local/internal artifact",
+        "not customer validation",
+        "not paid signal",
+        "not real MCP transport closure"
+      ],
+      "freshness": "current_E50_E51_line",
+      "sha256": "65869349f8786cbbe198641363bda958abcf9aa107f4735b6be98b2b4c9ae4b3",
+      "readback_status": "read_back_or_registered",
+      "included_in_packet": true,
+      "overclaim_risk": "medium",
+      "allowed_language": [
+        "supports local owner-review proof packet only"
+      ],
+      "forbidden_language": [
+        "customer validation claim",
+        "paid demand claim",
+        "closed transport claim",
+        "production readiness claim"
+      ],
+      "exists": true
+    },
+    {
+      "evidence_id": "e50b_report",
+      "source_path": "/tmp/ystar_delivery_bridge/completed/e50b_counterfactual_commercial_retest_20260506T000001Z.report.json",
+      "source_milestone": "E50B",
+      "claim_supported": "completed report",
+      "proof_type": "delivery_report",
+      "limitations": [
+        "local/internal artifact",
+        "not customer validation",
+        "not paid signal",
+        "not real MCP transport closure"
+      ],
+      "freshness": "current_E50_E51_line",
+      "sha256": "296d6c877cc4410a2e2ec4dc4a1d3892f141078ebd92fcf940adb59340e4b9e5",
+      "readback_status": "read_back_or_registered",
+      "included_in_packet": true,
+      "overclaim_risk": "medium",
+      "allowed_language": [
+        "supports local owner-review proof packet only"
+      ],
+      "forbidden_language": [
+        "customer validation claim",
+        "paid demand claim",
+        "closed transport claim",
+        "production readiness claim"
+      ],
+      "exists": true
+    },
+    {
+      "evidence_id": "e50c_report",
+      "source_path": "/tmp/ystar_delivery_bridge/completed/e50c_ceo_brain_centerline_reconnection_20260506T000001Z.report.json",
+      "source_milestone": "E50C",
+      "claim_supported": "completed report",
+      "proof_type": "delivery_report",
+      "limitations": [
+        "local/internal artifact",
+        "not customer validation",
+        "not paid signal",
+        "not real MCP transport closure"
+      ],
+      "freshness": "current_E50_E51_line",
+      "sha256": "ffef16bf8cb7dbc54a92c46fd77abb7b2fdd25f424daa7a9186bfed568414f27",
+      "readback_status": "read_back_or_registered",
+      "included_in_packet": true,
+      "overclaim_risk": "medium",
+      "allowed_language": [
+        "supports local owner-review proof packet only"
+      ],
+      "forbidden_language": [
+        "customer validation claim",
+        "paid demand claim",
+        "closed transport claim",
+        "production readiness claim"
+      ],
+      "exists": true
+    },
+    {
+      "evidence_id": "e51_report",
+      "source_path": "/tmp/ystar_delivery_bridge/completed/e51_cross_repo_runtime_linkage_anti_drift_closure_20260506T000001Z.report.json",
+      "source_milestone": "E51",
+      "claim_supported": "completed report",
+      "proof_type": "delivery_report",
+      "limitations": [
+        "local/internal artifact",
+        "not customer validation",
+        "not paid signal",
+        "not real MCP transport closure"
+      ],
+      "freshness": "current_E50_E51_line",
+      "sha256": "c3d28b299c0322d9874fe0874ce804c0bdff8c5efac680b81c938ce609e401c3",
+      "readback_status": "read_back_or_registered",
+      "included_in_packet": true,
+      "overclaim_risk": "medium",
+      "allowed_language": [
+        "supports local owner-review proof packet only"
+      ],
+      "forbidden_language": [
+        "customer validation claim",
+        "paid demand claim",
+        "closed transport claim",
+        "production readiness claim"
+      ],
+      "exists": true
+    },
+    {
+      "evidence_id": "e51_binding_report",
+      "source_path": "/tmp/ystar_delivery_bridge/completed/e51_capability_centerline_binding_addendum_20260506T000001Z.report.json",
+      "source_milestone": "E51 Phase 2.5",
+      "claim_supported": "completed report",
+      "proof_type": "delivery_report",
+      "limitations": [
+        "local/internal artifact",
+        "not customer validation",
+        "not paid signal",
+        "not real MCP transport closure"
+      ],
+      "freshness": "current_E50_E51_line",
+      "sha256": "3af6cd41a02576fc6e933908169009fbb83dee9a29229f28373a26c0e02b8987",
+      "readback_status": "read_back_or_registered",
+      "included_in_packet": true,
+      "overclaim_risk": "medium",
+      "allowed_language": [
+        "supports local owner-review proof packet only"
+      ],
+      "forbidden_language": [
+        "customer validation claim",
+        "paid demand claim",
+        "closed transport claim",
+        "production readiness claim"
+      ],
+      "exists": true
+    }
+  ],
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false,
+  "real_mcp_transport_claimed": false,
+  "no_external_action": true
+}

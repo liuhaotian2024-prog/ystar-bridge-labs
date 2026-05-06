@@ -1,0 +1,8 @@
+{
+  "no_outreach": true,
+  "no_publication": true,
+  "no_customer_validation_claim": true,
+  "no_paid_signal_claim": true,
+  "no_real_mcp_transport_claim": true,
+  "owner_approval_required_before_external_contact_or_publication": true
+}

@@ -1,0 +1,301 @@
+{
+  "artifact_id": "e52_y_star_gov_validation_result",
+  "runtime_linkage_delta": {
+    "artifact_id": "e52_packet_anti_drift_gate_result",
+    "validation": {
+      "runtime_linkage_graph": {
+        "valid": true,
+        "graph_id": "e52_runtime_linkage_delta_graph",
+        "node_count": 24,
+        "edge_count": 3,
+        "failures": []
+      },
+      "centerline_contract": {
+        "valid": true,
+        "contract_id": "e52_centerline_contract",
+        "stage_count": 2,
+        "failures": []
+      },
+      "readback_proof": {
+        "valid": true,
+        "proof_id": "e52_proof_packet_readback_proof",
+        "failures": []
+      },
+      "anti_drift_gate": {
+        "gate_id": "e52_packet_anti_drift_gate",
+        "centerline_contract_loaded": true,
+        "runtime_linkage_graph_valid": true,
+        "selected_route_has_writer": true,
+        "selected_route_has_reader": true,
+        "selected_route_has_readback_test": true,
+        "next_milestone_has_writer": true,
+        "next_milestone_has_reader": true,
+        "blocker_state_has_writer": true,
+        "blocker_state_has_reader": true,
+        "brain_current_state_loaded": true,
+        "kg_update_linked": true,
+        "czl_closure_linked": true,
+        "cieu_residual_linked": true,
+        "no_report_only_p0_closure": true,
+        "no_stale_next_milestone": true,
+        "no_go_boundaries_loaded": true,
+        "governance_boundary_preserved": true,
+        "status": "anti_drift_gate_passed",
+        "failures": [],
+        "warnings": [],
+        "validated_artifact_count": 24,
+        "p0_failure_count": 0,
+        "p1_failure_count": 0,
+        "allowed": true,
+        "no_external_action": true
+      }
+    },
+    "checks": {
+      "no_p0_written_not_read_artifact": true,
+      "e52_proof_packet_registered": true,
+      "e52_proof_packet_has_readback_path": true,
+      "e52_does_not_bypass_owner_approval": true
+    },
+    "passed": true,
+    "no_external_action": true
+  },
+  "capability_binding_gate": {
+    "artifact_id": "e52_capability_binding_gate_result",
+    "payload": {
+      "gate_id": "e52_capability_binding_gate",
+      "capability_centerline_contract": {
+        "contract_id": "e52_capability_centerline_contract",
+        "class_rules": {
+          "cognitive_capability": {
+            "required_centerline": [
+              "CEO_brain"
+            ]
+          },
+          "behavior_control_capability": {
+            "required_centerline": [
+              "canonical_action_runtime",
+              "Y_star_gov_boundary"
+            ]
+          },
+          "evidence_closure_capability": {
+            "required_centerline": [
+              "KG_CZL_CIEU_K9_evidence"
+            ]
+          },
+          "boundary_capability": {
+            "required_centerline": [
+              "Y_star_gov_boundary"
+            ]
+          },
+          "reference_only_artifact": {
+            "required_centerline": [
+              "reference_only"
+            ]
+          }
+        },
+        "no_external_action": true
+      },
+      "capability_bindings": [
+        {
+          "capability_id": "e52_proof_packet_content",
+          "path": "products/governed_agent_action_proof_packet/proof_packet.json",
+          "repo": "bridge-labs",
+          "functional_class": "evidence_closure_capability",
+          "required_centerline": [
+            "KG_CZL_CIEU_K9_evidence"
+          ],
+          "actual_binding": [
+            "KG_CZL_CIEU_K9_evidence"
+          ],
+          "binding_status": "correctly_bound",
+          "required_reader": "CEO brain/E53 runtime",
+          "actual_reader": "e52_ceo_brain_readback_smoke",
+          "required_gate": "",
+          "actual_gate": "",
+          "remediation": "no_action",
+          "severity": "P0",
+          "consumed_as_current": false,
+          "affects_current_state": true,
+          "agent_facing": false,
+          "evidence_basis": "E52 packet capability binding"
+        },
+        {
+          "capability_id": "e52_first_user_review_guide",
+          "path": "products/governed_agent_action_proof_packet/first_user_review_guide.md",
+          "repo": "bridge-labs",
+          "functional_class": "behavior_control_capability",
+          "required_centerline": [
+            "canonical_action_runtime",
+            "Y_star_gov_boundary"
+          ],
+          "actual_binding": [
+            "canonical_action_runtime",
+            "Y_star_gov_boundary"
+          ],
+          "binding_status": "correctly_bound",
+          "required_reader": "E52 completion gate",
+          "actual_reader": "E52 completion gate",
+          "required_gate": "owner approval gate",
+          "actual_gate": "owner approval gate",
+          "remediation": "no_action",
+          "severity": "P0",
+          "consumed_as_current": false,
+          "affects_current_state": false,
+          "agent_facing": false,
+          "evidence_basis": "E52 packet capability binding"
+        },
+        {
+          "capability_id": "e52_no_overclaim_validator",
+          "path": "office/mission_command/e52_no_overclaim_validator.py",
+          "repo": "bridge-labs",
+          "functional_class": "boundary_capability",
+          "required_centerline": [
+            "Y_star_gov_boundary",
+            "gov_mcp_boundary"
+          ],
+          "actual_binding": [
+            "Y_star_gov_boundary",
+            "gov_mcp_boundary"
+          ],
+          "binding_status": "correctly_bound",
+          "required_reader": "E52 completion gate",
+          "actual_reader": "E52 completion gate",
+          "required_gate": "no-overclaim gate",
+          "actual_gate": "E52 no-overclaim validation",
+          "remediation": "no_action",
+          "severity": "P0",
+          "consumed_as_current": false,
+          "affects_current_state": false,
+          "agent_facing": true,
+          "evidence_basis": "E52 packet capability binding"
+        },
+        {
+          "capability_id": "e52_packet_validation",
+          "path": "products/governed_agent_action_proof_packet/packet_validation_result.json",
+          "repo": "bridge-labs",
+          "functional_class": "evidence_closure_capability",
+          "required_centerline": [
+            "KG_CZL_CIEU_K9_evidence"
+          ],
+          "actual_binding": [
+            "KG_CZL_CIEU_K9_evidence"
+          ],
+          "binding_status": "correctly_bound",
+          "required_reader": "E52 completion gate",
+          "actual_reader": "E52 completion gate",
+          "required_gate": "",
+          "actual_gate": "",
+          "remediation": "no_action",
+          "severity": "P0",
+          "consumed_as_current": false,
+          "affects_current_state": true,
+          "agent_facing": false,
+          "evidence_basis": "E52 packet capability binding"
+        },
+        {
+          "capability_id": "e52_owner_checklist",
+          "path": "products/governed_agent_action_proof_packet/owner_approval_checklist.md",
+          "repo": "bridge-labs",
+          "functional_class": "boundary_capability",
+          "required_centerline": [
+            "Y_star_gov_boundary",
+            "gov_mcp_boundary"
+          ],
+          "actual_binding": [
+            "Y_star_gov_boundary",
+            "gov_mcp_boundary"
+          ],
+          "binding_status": "correctly_bound",
+          "required_reader": "E52 completion gate",
+          "actual_reader": "E52 completion gate",
+          "required_gate": "owner approval gate",
+          "actual_gate": "owner approval gate",
+          "remediation": "no_action",
+          "severity": "P0",
+          "consumed_as_current": false,
+          "affects_current_state": false,
+          "agent_facing": true,
+          "evidence_basis": "E52 packet capability binding"
+        },
+        {
+          "capability_id": "e52_executive_brief",
+          "path": "products/governed_agent_action_proof_packet/executive_brief.md",
+          "repo": "bridge-labs",
+          "functional_class": "cognitive_capability",
+          "required_centerline": [
+            "CEO_brain"
+          ],
+          "actual_binding": [
+            "CEO_brain"
+          ],
+          "binding_status": "correctly_bound",
+          "required_reader": "owner/CEO brain readback",
+          "actual_reader": "e52_ceo_brain_readback_smoke",
+          "required_gate": "",
+          "actual_gate": "",
+          "remediation": "no_action",
+          "severity": "P1",
+          "consumed_as_current": false,
+          "affects_current_state": false,
+          "agent_facing": false,
+          "evidence_basis": "E52 packet capability binding"
+        },
+        {
+          "capability_id": "e52_demo_script",
+          "path": "products/governed_agent_action_proof_packet/demo_script.md",
+          "repo": "bridge-labs",
+          "functional_class": "behavior_control_capability",
+          "required_centerline": [
+            "canonical_action_runtime",
+            "Y_star_gov_boundary"
+          ],
+          "actual_binding": [
+            "canonical_action_runtime",
+            "Y_star_gov_boundary"
+          ],
+          "binding_status": "correctly_bound",
+          "required_reader": "E52 completion gate",
+          "actual_reader": "E52 completion gate",
+          "required_gate": "local-only owner approval gate",
+          "actual_gate": "no execution in E52",
+          "remediation": "no_action",
+          "severity": "P0",
+          "consumed_as_current": false,
+          "affects_current_state": false,
+          "agent_facing": false,
+          "evidence_basis": "E52 packet capability binding"
+        }
+      ],
+      "no_external_action": true
+    },
+    "gate": {
+      "gate_id": "e52_capability_binding_gate",
+      "status": "capability_binding_gate_passed",
+      "allowed": true,
+      "record_count": 7,
+      "wrong_centerline_count": 0,
+      "missing_binding_count": 0,
+      "stale_current_state_count": 0,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "failures": [],
+      "warnings": [],
+      "no_external_action": true
+    },
+    "checks": {
+      "no_active_cognitive_capability_outside_brain": true,
+      "no_behavior_capability_bypassing_action_runtime": true,
+      "no_current_state_evidence_without_readback": true,
+      "no_reference_only_artifact_consumed_as_current": true
+    },
+    "passed": true,
+    "no_external_action": true
+  },
+  "future_milestone_closure_packet": {
+    "valid": true,
+    "failures": [],
+    "no_external_action": true
+  },
+  "passed": true,
+  "no_external_action": true
+}

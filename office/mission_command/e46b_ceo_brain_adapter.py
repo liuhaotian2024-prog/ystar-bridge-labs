@@ -151,7 +151,7 @@ def _load_e50b_current_state() -> dict[str, Any]:
         selected_route == "package_governed_agent_action_proof_packet",
         nearest_alternative == "external_commercial_observation_now",
         current_next == "E51_package_governed_agent_action_proof_packet_for_first_user_review",
-        "real_mcp_transport_not_closed" in blocker_state,
+        "real_mcp_transport_not_closed" in str(blocker_state or ""),
         e50a.get("new_status") == "tool_layer_allow_deny_closed",
     ])
     return {
@@ -172,6 +172,48 @@ def _load_e50b_current_state() -> dict[str, Any]:
         "e50b_artifacts_loaded": {name: item["available"] for name, item in artifacts.items()},
     }
 
+
+
+E52_PROOF_PACKET_CURRENT_STATE_PATHS = {
+    "proof_packet": "products/governed_agent_action_proof_packet/proof_packet.json",
+    "packet_validation": "products/governed_agent_action_proof_packet/packet_validation_result.json",
+    "owner_checklist": "products/governed_agent_action_proof_packet/owner_approval_checklist.md",
+    "no_go_boundary_manifest": "products/governed_agent_action_proof_packet/no_go_boundary_manifest.json",
+    "completion_gate": "operations/external_validation/e52_completion_gate_result.json",
+    "czl_closure": "operations/external_validation/e52_czl_closure.json",
+    "cieu_residual_summary": "operations/external_validation/e52_cieu_residual_summary.json",
+    "kg_read_model_update": "operations/knowledge_graph/e52_ceo_kg_read_model_update.json",
+}
+
+
+def _load_latest_proof_packet_current_state() -> dict[str, Any]:
+    artifacts = {name: _artifact_or_unavailable(rel) for name, rel in E52_PROOF_PACKET_CURRENT_STATE_PATHS.items()}
+    packet = artifacts["proof_packet"].get("data") or {}
+    validation = artifacts["packet_validation"].get("data") or {}
+    completion = artifacts["completion_gate"].get("data") or {}
+    no_go = artifacts["no_go_boundary_manifest"].get("data") or {}
+    kg = artifacts["kg_read_model_update"].get("data") or {}
+    packet_exists = artifacts["proof_packet"]["available"]
+    next_milestone = packet.get("next_recommended_milestone") or completion.get("recommended_next_milestone") or kg.get("next_recommended_milestone") or "unavailable_nonfatal"
+    return {
+        "proof_packet_available": packet_exists,
+        "packet_id": packet.get("packet_id") or "unavailable_nonfatal",
+        "packet_status": "owner_reviewable_only" if packet_exists else "unavailable_nonfatal",
+        "selected_route": packet.get("selected_route") or "unavailable_nonfatal",
+        "proof_level": packet.get("proof_level") or "unavailable_nonfatal",
+        "real_mcp_transport_claimed": bool(packet.get("real_mcp_transport_claimed", False)),
+        "customer_validation_claimed": bool(packet.get("customer_validation_claimed", False)),
+        "paid_signal_claimed": bool(packet.get("paid_signal_claimed", False)),
+        "outreach_status": packet.get("outreach_status") or "not_contacted",
+        "publication_status": packet.get("publication_status") or "not_published",
+        "owner_approval_required_before": packet.get("owner_approval_required_before") or ["external contact", "publication"],
+        "no_go_boundaries": no_go or packet.get("no_go_boundaries", {}),
+        "packet_validation_passed": validation.get("passed") if isinstance(validation, dict) else None,
+        "completion_gate_passed": completion.get("gate_passed") if isinstance(completion, dict) else None,
+        "next_recommended_milestone": next_milestone,
+        "artifacts_loaded": {name: item["available"] for name, item in artifacts.items()},
+        "read_model_role": "latest owner-review proof packet state; never authorizes outreach or publication",
+    }
 
 def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     query = f"{task.get('task_title', '')} {task.get('task_description', '')} M Triangle value production"
@@ -195,6 +237,7 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "operations/external_validation/e50a_mcp_client_blocker_update.json",
     ])
     e50b_current_state = _load_e50b_current_state()
+    proof_packet_state = _load_latest_proof_packet_current_state()
     try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
@@ -227,6 +270,9 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_kg_read_model_update": e50b_current_state["current_kg_read_model_update"],
         "brain_centerline_status": e50b_current_state["brain_centerline_status"],
         "e50b_artifacts_loaded": e50b_current_state["e50b_artifacts_loaded"],
+        "latest_proof_packet_state": proof_packet_state,
+        "current_proof_packet_status": proof_packet_state.get("packet_status"),
+        "current_proof_packet_next_milestone": proof_packet_state.get("next_recommended_milestone"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

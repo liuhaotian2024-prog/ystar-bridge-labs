@@ -1,0 +1,27 @@
+{
+  "artifact_id": "e52_no_overclaim_validation_result",
+  "scanned_file_count": 17,
+  "scanned_files": [
+    "products/governed_agent_action_proof_packet/README.md",
+    "products/governed_agent_action_proof_packet/demo_script.md",
+    "products/governed_agent_action_proof_packet/evidence_chain.md",
+    "products/governed_agent_action_proof_packet/evidence_manifest.json",
+    "products/governed_agent_action_proof_packet/evidence_manifest.md",
+    "products/governed_agent_action_proof_packet/executive_brief.md",
+    "products/governed_agent_action_proof_packet/first_user_review_guide.md",
+    "products/governed_agent_action_proof_packet/first_user_review_packet.json",
+    "products/governed_agent_action_proof_packet/first_user_review_packet.md",
+    "products/governed_agent_action_proof_packet/limitations_and_no_overclaim.md",
+    "products/governed_agent_action_proof_packet/next_step_options.md",
+    "products/governed_agent_action_proof_packet/no_go_boundary_manifest.json",
+    "products/governed_agent_action_proof_packet/owner_approval_checklist.md",
+    "products/governed_agent_action_proof_packet/packet_validation_result.json",
+    "products/governed_agent_action_proof_packet/proof_packet.json",
+    "products/governed_agent_action_proof_packet/source_artifact_manifest.json",
+    "products/governed_agent_action_proof_packet/technical_proof.md"
+  ],
+  "violations": [],
+  "missing_required_disclaimers": [],
+  "passed": true,
+  "no_external_action": true
+}

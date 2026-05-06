@@ -1,0 +1,365 @@
+{
+  "artifact_id": "e52_gov_mcp_validation_harness_result",
+  "registered_tools": [
+    "gov_enforce_anti_drift_gate",
+    "gov_enforce_capability_centerline_gate",
+    "gov_validate_capability_binding",
+    "gov_validate_centerline_contract",
+    "gov_validate_readback_proof",
+    "gov_validate_runtime_linkage"
+  ],
+  "required_tools_present": true,
+  "allow_results": {
+    "runtime_linkage": {
+      "tool_name": "gov_validate_runtime_linkage",
+      "status": "ALLOW",
+      "allowed": true,
+      "failures": [],
+      "warnings": [],
+      "validated_artifact_count": 24,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "result": {
+        "valid": true,
+        "graph_id": "e52_runtime_linkage_delta_graph",
+        "node_count": 24,
+        "edge_count": 3,
+        "failures": [],
+        "validated_artifact_count": 24
+      },
+      "no_external_action": true
+    },
+    "centerline_contract": {
+      "tool_name": "gov_validate_centerline_contract",
+      "status": "ALLOW",
+      "allowed": true,
+      "failures": [],
+      "warnings": [],
+      "validated_artifact_count": 0,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "result": {
+        "valid": true,
+        "contract_id": "e52_centerline_contract",
+        "stage_count": 2,
+        "failures": []
+      },
+      "no_external_action": true
+    },
+    "readback_proof": {
+      "tool_name": "gov_validate_readback_proof",
+      "status": "ALLOW",
+      "allowed": true,
+      "failures": [],
+      "warnings": [],
+      "validated_artifact_count": 0,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "result": {
+        "valid": true,
+        "proof_id": "e52_proof_packet_readback_proof",
+        "failures": []
+      },
+      "no_external_action": true
+    },
+    "anti_drift_gate": {
+      "tool_name": "gov_enforce_anti_drift_gate",
+      "status": "ALLOW",
+      "allowed": true,
+      "failures": [],
+      "warnings": [],
+      "validated_artifact_count": 24,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "result": {
+        "gate_id": "anti_drift_gate",
+        "centerline_contract_loaded": true,
+        "runtime_linkage_graph_valid": true,
+        "selected_route_has_writer": true,
+        "selected_route_has_reader": true,
+        "selected_route_has_readback_test": true,
+        "next_milestone_has_writer": true,
+        "next_milestone_has_reader": true,
+        "blocker_state_has_writer": true,
+        "blocker_state_has_reader": true,
+        "brain_current_state_loaded": true,
+        "kg_update_linked": true,
+        "czl_closure_linked": true,
+        "cieu_residual_linked": true,
+        "no_report_only_p0_closure": true,
+        "no_stale_next_milestone": true,
+        "no_go_boundaries_loaded": true,
+        "governance_boundary_preserved": true,
+        "status": "anti_drift_gate_passed",
+        "failures": [],
+        "warnings": [],
+        "validated_artifact_count": 24,
+        "p0_failure_count": 0,
+        "p1_failure_count": 0,
+        "allowed": true,
+        "no_external_action": true
+      },
+      "no_external_action": true
+    },
+    "capability_binding_record": {
+      "tool_name": "gov_validate_capability_binding",
+      "status": "ALLOW",
+      "allowed": true,
+      "failures": [],
+      "warnings": [],
+      "validated_artifact_count": 0,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "result": {
+        "valid": true,
+        "capability_id": "e52_proof_packet_content",
+        "functional_class": "evidence_closure_capability",
+        "binding_status": "correctly_bound",
+        "failures": [],
+        "warnings": [],
+        "no_external_action": true
+      },
+      "no_external_action": true
+    },
+    "capability_binding_gate": {
+      "tool_name": "gov_enforce_capability_centerline_gate",
+      "status": "ALLOW",
+      "allowed": true,
+      "failures": [],
+      "warnings": [],
+      "validated_artifact_count": 0,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "result": {
+        "gate_id": "e52_capability_binding_gate",
+        "status": "capability_binding_gate_passed",
+        "allowed": true,
+        "record_count": 7,
+        "wrong_centerline_count": 0,
+        "missing_binding_count": 0,
+        "stale_current_state_count": 0,
+        "p0_failure_count": 0,
+        "p1_failure_count": 0,
+        "failures": [],
+        "warnings": [],
+        "no_external_action": true
+      },
+      "no_external_action": true
+    }
+  },
+  "deny_results": {
+    "missing_proof_packet_reader": {
+      "tool_name": "gov_enforce_anti_drift_gate",
+      "status": "DENY",
+      "allowed": false,
+      "failures": [
+        {
+          "artifact_id": "e52_product_proof_packet_json",
+          "reason": "runtime_artifact_invalid",
+          "details": [
+            {
+              "field": "readers",
+              "reason": "P0 artifact must have at least one reader"
+            }
+          ]
+        },
+        {
+          "reason": "readback_proof_invalid",
+          "details": [
+            {
+              "field": "missing_reads",
+              "reason": "missing_reads_present",
+              "items": [
+                "proof_packet.json"
+              ]
+            }
+          ]
+        }
+      ],
+      "warnings": [],
+      "validated_artifact_count": 24,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "result": {
+        "gate_id": "anti_drift_gate",
+        "centerline_contract_loaded": true,
+        "runtime_linkage_graph_valid": true,
+        "selected_route_has_writer": true,
+        "selected_route_has_reader": true,
+        "selected_route_has_readback_test": true,
+        "next_milestone_has_writer": true,
+        "next_milestone_has_reader": true,
+        "blocker_state_has_writer": true,
+        "blocker_state_has_reader": true,
+        "brain_current_state_loaded": true,
+        "kg_update_linked": true,
+        "czl_closure_linked": true,
+        "cieu_residual_linked": true,
+        "no_report_only_p0_closure": true,
+        "no_stale_next_milestone": true,
+        "no_go_boundaries_loaded": true,
+        "governance_boundary_preserved": true,
+        "status": "anti_drift_gate_failed_p1",
+        "failures": [
+          {
+            "artifact_id": "e52_product_proof_packet_json",
+            "reason": "runtime_artifact_invalid",
+            "details": [
+              {
+                "field": "readers",
+                "reason": "P0 artifact must have at least one reader"
+              }
+            ]
+          },
+          {
+            "reason": "readback_proof_invalid",
+            "details": [
+              {
+                "field": "missing_reads",
+                "reason": "missing_reads_present",
+                "items": [
+                  "proof_packet.json"
+                ]
+              }
+            ]
+          }
+        ],
+        "warnings": [],
+        "validated_artifact_count": 24,
+        "p0_failure_count": 0,
+        "p1_failure_count": 0,
+        "allowed": false,
+        "no_external_action": true
+      },
+      "no_external_action": true
+    },
+    "behavior_bypassing_owner_approval": {
+      "tool_name": "gov_enforce_capability_centerline_gate",
+      "status": "DENY",
+      "allowed": false,
+      "failures": [
+        {
+          "reason": "capability_binding_invalid",
+          "severity": "P0",
+          "capability_id": "e52_first_user_review_guide",
+          "details": [
+            {
+              "reason": "behavior_capability_bypasses_action_runtime_or_governance",
+              "severity": "P0",
+              "missing": [
+                "canonical_action_runtime"
+              ]
+            },
+            {
+              "reason": "wrong_centerline_p0_blocks_gate",
+              "severity": "P0"
+            }
+          ]
+        }
+      ],
+      "warnings": [],
+      "validated_artifact_count": 0,
+      "p0_failure_count": 1,
+      "p1_failure_count": 0,
+      "result": {
+        "gate_id": "e52_capability_binding_gate",
+        "status": "capability_binding_gate_failed_p0",
+        "allowed": false,
+        "record_count": 7,
+        "wrong_centerline_count": 1,
+        "missing_binding_count": 0,
+        "stale_current_state_count": 0,
+        "p0_failure_count": 1,
+        "p1_failure_count": 0,
+        "failures": [
+          {
+            "reason": "capability_binding_invalid",
+            "severity": "P0",
+            "capability_id": "e52_first_user_review_guide",
+            "details": [
+              {
+                "reason": "behavior_capability_bypasses_action_runtime_or_governance",
+                "severity": "P0",
+                "missing": [
+                  "canonical_action_runtime"
+                ]
+              },
+              {
+                "reason": "wrong_centerline_p0_blocks_gate",
+                "severity": "P0"
+              }
+            ]
+          }
+        ],
+        "warnings": [],
+        "no_external_action": true
+      },
+      "no_external_action": true
+    },
+    "reference_only_consumed_as_current": {
+      "tool_name": "gov_enforce_capability_centerline_gate",
+      "status": "DENY",
+      "allowed": false,
+      "failures": [
+        {
+          "reason": "capability_binding_invalid",
+          "severity": "P0",
+          "capability_id": "stale_e49_route",
+          "details": [
+            {
+              "reason": "reference_only_artifact_consumed_as_current",
+              "severity": "P0"
+            }
+          ]
+        }
+      ],
+      "warnings": [],
+      "validated_artifact_count": 0,
+      "p0_failure_count": 1,
+      "p1_failure_count": 0,
+      "result": {
+        "gate_id": "e52_capability_binding_gate",
+        "status": "capability_binding_gate_failed_p0",
+        "allowed": false,
+        "record_count": 8,
+        "wrong_centerline_count": 0,
+        "missing_binding_count": 0,
+        "stale_current_state_count": 0,
+        "p0_failure_count": 1,
+        "p1_failure_count": 0,
+        "failures": [
+          {
+            "reason": "capability_binding_invalid",
+            "severity": "P0",
+            "capability_id": "stale_e49_route",
+            "details": [
+              {
+                "reason": "reference_only_artifact_consumed_as_current",
+                "severity": "P0"
+              }
+            ]
+          }
+        ],
+        "warnings": [],
+        "no_external_action": true
+      },
+      "no_external_action": true
+    },
+    "forbidden_overclaim_language": {
+      "status": "DENY",
+      "allowed": false,
+      "failures": [
+        {
+          "reason": "forbidden_overclaim_language",
+          "severity": "P0"
+        }
+      ],
+      "no_external_action": true
+    }
+  },
+  "passed": true,
+  "no_server_started": true,
+  "no_port_opened": true,
+  "no_real_client_config_mutation": true,
+  "no_external_action": true
+}

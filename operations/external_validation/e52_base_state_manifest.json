@@ -1,0 +1,47 @@
+{
+  "artifact_id": "e52_base_state_manifest",
+  "generated_at": "2026-05-06T13:28:31.835621+00:00",
+  "bridge_labs": {
+    "path": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+    "branch": "backflow/aiden-ceo-meeting-room",
+    "head": "caec29882f24f618ff24bc5357ce681e0df0a61d",
+    "remote_head": "caec29882f24f618ff24bc5357ce681e0df0a61d",
+    "status_short": ""
+  },
+  "Y_star_gov": {
+    "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+    "branch": "backflow/company-runtime-domain-pack",
+    "head": "b0d9aa8b1badd1180127a2f79f73ceed48e16451",
+    "remote_head": "b0d9aa8b1badd1180127a2f79f73ceed48e16451",
+    "status_short": ""
+  },
+  "gov_mcp": {
+    "path": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+    "branch": "backflow/company-runtime-tools",
+    "head": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+    "remote_head": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+    "status_short": ""
+  },
+  "K9Audit": {
+    "path": "/Users/haotianliu/.openclaw/workspace/K9Audit",
+    "branch": "main",
+    "head": "37911e18ce4425470e3f745b30d155c43d76ff55",
+    "remote_head": "37911e18ce4425470e3f745b30d155c43d76ff55",
+    "status_short": ""
+  },
+  "expected_bridge_base": "caec29882f24f618ff24bc5357ce681e0df0a61d",
+  "ports_7920_7930_check": {
+    "command": [
+      "lsof",
+      "-nP",
+      "-iTCP:7920-7930",
+      "-sTCP:LISTEN"
+    ],
+    "cwd": "/tmp",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "",
+    "timed_out": false
+  },
+  "no_external_action": true
+}
