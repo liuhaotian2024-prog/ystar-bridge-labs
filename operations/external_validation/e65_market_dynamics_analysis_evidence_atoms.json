@@ -1,0 +1,477 @@
+{
+  "artifact_id": "e65_market_dynamics_analysis_evidence_atoms",
+  "evidence_atom_count": 26,
+  "atoms": [
+    {
+      "evidence_id": "e65_market_dynamics_atom_001",
+      "source_milestone": "E64",
+      "source_evidence_id": "e64_dual_axis_atom_001",
+      "route_relevance": "supports open-world first-cash reasoning",
+      "observed_signal": "operators need simpler business execution packages with clear outcomes",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    },
+    {
+      "evidence_id": "e65_market_dynamics_atom_002",
+      "source_milestone": "E64",
+      "source_evidence_id": "e64_dual_axis_atom_002",
+      "route_relevance": "supports open-world first-cash reasoning",
+      "observed_signal": "operators want workflow automation that reduces manual handoffs",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    },
+    {
+      "evidence_id": "e65_market_dynamics_atom_003",
+      "source_milestone": "E64",
+      "source_evidence_id": "e64_dual_axis_atom_003",
+      "route_relevance": "supports open-world first-cash reasoning",
+      "observed_signal": "operators want workflow automation that reduces manual handoffs",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    },
+    {
+      "evidence_id": "e65_market_dynamics_atom_004",
+      "source_milestone": "E64",
+      "source_evidence_id": "e64_dual_axis_atom_010",
+      "route_relevance": "supports open-world first-cash reasoning",
+      "observed_signal": "operators need simpler business execution packages with clear outcomes",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    },
+    {
+      "evidence_id": "e65_market_dynamics_atom_005",
+      "source_milestone": "E64",
+      "source_evidence_id": "e64_dual_axis_atom_013",
+      "route_relevance": "supports Y*Bridge-specific runtime/governance reasoning",
+      "observed_signal": "tool execution and integrations need governed execution surfaces",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    },
+    {
+      "evidence_id": "e65_market_dynamics_atom_006",
+      "source_milestone": "E64",
+      "source_evidence_id": "e64_dual_axis_atom_014",
+      "route_relevance": "supports Y*Bridge-specific runtime/governance reasoning",
+      "observed_signal": "AI actions need policy, guardrails, and approval boundaries",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    },
+    {
+      "evidence_id": "e65_market_dynamics_atom_007",
+      "source_milestone": "E64",
+      "source_evidence_id": "e64_dual_axis_atom_015",
+      "route_relevance": "supports Y*Bridge-specific runtime/governance reasoning",
+      "observed_signal": "agent workflows need durable operating structure",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    },
+    {
+      "evidence_id": "e65_market_dynamics_atom_008",
+      "source_milestone": "E64",
+      "source_evidence_id": "e64_dual_axis_atom_016",
+      "route_relevance": "supports Y*Bridge-specific runtime/governance reasoning",
+      "observed_signal": "agent workflows need durable operating structure",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    },
+    {
+      "evidence_id": "e65_market_dynamics_atom_009",
+      "source_milestone": "E64",
+      "source_evidence_id": "e64_dual_axis_atom_017",
+      "route_relevance": "supports Y*Bridge-specific runtime/governance reasoning",
+      "observed_signal": "AI actions need policy, guardrails, and approval boundaries",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    },
+    {
+      "evidence_id": "e65_market_dynamics_atom_010",
+      "source_milestone": "E64",
+      "source_evidence_id": "e64_dual_axis_atom_018",
+      "route_relevance": "supports Y*Bridge-specific runtime/governance reasoning",
+      "observed_signal": "agent workflows need durable operating structure",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    },
+    {
+      "evidence_id": "e65_market_dynamics_atom_011",
+      "source_milestone": "E64",
+      "source_evidence_id": "e64_dual_axis_atom_020",
+      "route_relevance": "supports Y*Bridge-specific runtime/governance reasoning",
+      "observed_signal": "AI workflows need traceability, evaluation, and reliability evidence",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    },
+    {
+      "evidence_id": "e65_market_dynamics_atom_012",
+      "source_milestone": "E64",
+      "source_evidence_id": "e64_dual_axis_atom_021",
+      "route_relevance": "supports Y*Bridge-specific runtime/governance reasoning",
+      "observed_signal": "agent workflows need durable operating structure",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    },
+    {
+      "evidence_id": "e65_market_dynamics_atom_013",
+      "source_milestone": "E64",
+      "source_evidence_id": "e64_dual_axis_atom_022",
+      "route_relevance": "supports Y*Bridge-specific runtime/governance reasoning",
+      "observed_signal": "agent workflows need durable operating structure",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    },
+    {
+      "evidence_id": "e65_market_dynamics_atom_014",
+      "source_milestone": "E64",
+      "source_evidence_id": "e64_dual_axis_atom_023",
+      "route_relevance": "supports Y*Bridge-specific runtime/governance reasoning",
+      "observed_signal": "agent workflows need durable operating structure",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    },
+    {
+      "evidence_id": "e65_market_dynamics_atom_015",
+      "source_milestone": "E63",
+      "source_evidence_id": "e63_revenue_opportunity_atom_001",
+      "route_relevance": "strengthens selected path",
+      "observed_signal": "tool execution needs governed integration and approval surfaces",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    },
+    {
+      "evidence_id": "e65_market_dynamics_atom_016",
+      "source_milestone": "E63",
+      "source_evidence_id": "e63_revenue_opportunity_atom_002",
+      "route_relevance": "strengthens selected path",
+      "observed_signal": "agent actions need policy and safety boundaries before execution",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    },
+    {
+      "evidence_id": "e65_market_dynamics_atom_017",
+      "source_milestone": "E63",
+      "source_evidence_id": "e63_revenue_opportunity_atom_003",
+      "route_relevance": "strengthens selected path",
+      "observed_signal": "AI adoption needs practical operating structure rather than demos",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    },
+    {
+      "evidence_id": "e65_market_dynamics_atom_018",
+      "source_milestone": "E63",
+      "source_evidence_id": "e63_revenue_opportunity_atom_004",
+      "route_relevance": "strengthens selected path",
+      "observed_signal": "AI adoption needs practical operating structure rather than demos",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    },
+    {
+      "evidence_id": "e65_market_dynamics_atom_019",
+      "source_milestone": "E63",
+      "source_evidence_id": "e63_revenue_opportunity_atom_005",
+      "route_relevance": "strengthens selected path",
+      "observed_signal": "AI adoption needs practical operating structure rather than demos",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    },
+    {
+      "evidence_id": "e65_market_dynamics_atom_020",
+      "source_milestone": "E63",
+      "source_evidence_id": "e63_revenue_opportunity_atom_006",
+      "route_relevance": "strengthens selected path",
+      "observed_signal": "agent workflows need durable operating structure and coordination",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    },
+    {
+      "evidence_id": "e65_market_dynamics_atom_021",
+      "source_milestone": "E63",
+      "source_evidence_id": "e63_revenue_opportunity_atom_007",
+      "route_relevance": "strengthens selected path and nearest audit/repair alternative",
+      "observed_signal": "AI adoption needs practical operating structure rather than demos",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    },
+    {
+      "evidence_id": "e65_market_dynamics_atom_022",
+      "source_milestone": "E63",
+      "source_evidence_id": "e63_revenue_opportunity_atom_009",
+      "route_relevance": "strengthens selected path",
+      "observed_signal": "agent actions need policy and safety boundaries before execution",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    },
+    {
+      "evidence_id": "e65_market_dynamics_atom_023",
+      "source_milestone": "E63",
+      "source_evidence_id": "e63_revenue_opportunity_atom_010",
+      "route_relevance": "strengthens selected path and nearest audit/repair alternative",
+      "observed_signal": "agent behavior needs tracing, debugging, and reliability visibility",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    },
+    {
+      "evidence_id": "e65_market_dynamics_atom_024",
+      "source_milestone": "E63",
+      "source_evidence_id": "e63_revenue_opportunity_atom_011",
+      "route_relevance": "strengthens selected path",
+      "observed_signal": "agent workflows need durable operating structure and coordination",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    },
+    {
+      "evidence_id": "e65_market_dynamics_atom_025",
+      "source_milestone": "E63",
+      "source_evidence_id": "e63_revenue_opportunity_atom_012",
+      "route_relevance": "strengthens selected path",
+      "observed_signal": "agent workflows need durable operating structure and coordination",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    },
+    {
+      "evidence_id": "e65_market_dynamics_atom_026",
+      "source_milestone": "E63",
+      "source_evidence_id": "e63_revenue_opportunity_atom_013",
+      "route_relevance": "strengthens selected path",
+      "observed_signal": "AI adoption needs practical operating structure rather than demos",
+      "signal_types": [
+        "buyer_pain_signal",
+        "delivery_feasibility_signal",
+        "missing_evidence_signal"
+      ],
+      "evidence_quality_tier": "T2",
+      "confidence": "medium",
+      "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+      "no_customer_validation_claimed": true,
+      "no_paid_signal_claimed": true,
+      "no_expert_feedback_claimed": true
+    }
+  ],
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false,
+  "expert_feedback_claimed": false
+}

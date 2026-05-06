@@ -1,0 +1,4 @@
+{"from": "e64_dual_axis_revenue_retest", "to": "e65_market_dynamics_model_v1", "edge_type": "generalizes"}
+{"from": "e65_market_dynamics_model_v1", "to": "governed_business_operations_blueprint_for_agent_teams", "edge_type": "recommends_primary"}
+{"from": "e65_market_dynamics_model_v1", "to": "founder_operator_decision_brief_service", "edge_type": "keeps_fallback"}
+{"from": "e65_market_dynamics_model_v1", "to": "E66_selected_route_offer_blueprint_using_market_dynamics_model_no_execution", "edge_type": "recommends"}

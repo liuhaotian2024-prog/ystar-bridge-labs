@@ -1,0 +1,3284 @@
+{
+  "artifact_id": "e65_market_adjacency_graph",
+  "nodes": [
+    {
+      "node_id": "governed_business_operations_blueprint_for_agent_teams",
+      "market_name": "Governed Business Operations Blueprint",
+      "classification": "hybrid"
+    },
+    {
+      "node_id": "founder_operator_decision_brief_service",
+      "market_name": "Founder/Operator Decision Brief",
+      "classification": "AI-enabled non-AI product"
+    },
+    {
+      "node_id": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "market_name": "AI Agent Company Runtime Harness Blueprint",
+      "classification": "AI"
+    },
+    {
+      "node_id": "agent_runtime_audit_and_repair_package",
+      "market_name": "Agent Runtime Audit and Repair",
+      "classification": "AI"
+    },
+    {
+      "node_id": "small_business_operations_automation_service",
+      "market_name": "Small Business Operations Automation",
+      "classification": "AI-enabled non-AI product"
+    },
+    {
+      "node_id": "public_read_market_intelligence_product",
+      "market_name": "Public-Read Market Intelligence Product",
+      "classification": "hybrid"
+    },
+    {
+      "node_id": "documentation_SOP_compliance_preparation_service",
+      "market_name": "Documentation SOP Compliance Prep",
+      "classification": "non-AI"
+    },
+    {
+      "node_id": "workflow_template_automation_template_product",
+      "market_name": "Workflow Template Pack",
+      "classification": "AI-enabled non-AI product"
+    },
+    {
+      "node_id": "public_read_sourcing_supplier_intelligence",
+      "market_name": "Public-Read Sourcing Intelligence",
+      "classification": "non-AI"
+    },
+    {
+      "node_id": "competitive_intelligence_buying_guide_product",
+      "market_name": "Competitive Intelligence Buying Guide",
+      "classification": "AI-enabled non-AI product"
+    },
+    {
+      "node_id": "local_business_digital_operations_support",
+      "market_name": "Local Business Digital Ops Support",
+      "classification": "non-AI"
+    },
+    {
+      "node_id": "AI_assisted_business_operations_outsourcing",
+      "market_name": "AI-Assisted Ops Outsourcing",
+      "classification": "AI-enabled non-AI product"
+    },
+    {
+      "node_id": "content_product_paid_knowledge_product",
+      "market_name": "Paid Knowledge Product",
+      "classification": "non-AI"
+    },
+    {
+      "node_id": "governed_agent_action_control_layer",
+      "market_name": "Governed Agent Action Control Layer",
+      "classification": "AI"
+    },
+    {
+      "node_id": "KG_CZL_CIEU_evidence_closure_package",
+      "market_name": "Evidence Closure Package",
+      "classification": "AI"
+    },
+    {
+      "node_id": "no_overclaim_action_boundary_operating_system",
+      "market_name": "No-Overclaim Boundary OS",
+      "classification": "AI"
+    },
+    {
+      "node_id": "gov_mcp_Y_star_gov_governance_integration_package",
+      "market_name": "gov-mcp/Y-star-gov Integration",
+      "classification": "AI"
+    },
+    {
+      "node_id": "self_operating_AI_company_prototype_operating_room_package",
+      "market_name": "Self-Operating AI Company Operating Room",
+      "classification": "AI"
+    },
+    {
+      "node_id": "regulatory_policy_tracking_brief",
+      "market_name": "Regulatory/Policy Tracking Brief",
+      "classification": "AI-enabled non-AI product"
+    },
+    {
+      "node_id": "procurement_vendor_comparison_brief",
+      "market_name": "Procurement Vendor Comparison Brief",
+      "classification": "non-AI"
+    },
+    {
+      "node_id": "education_training_playbook_product",
+      "market_name": "Education/Training Playbook",
+      "classification": "non-AI"
+    },
+    {
+      "node_id": "niche_community_paid_brief_product",
+      "market_name": "Niche Paid Brief",
+      "classification": "non-AI"
+    },
+    {
+      "node_id": "data_cleaning_documentation_service",
+      "market_name": "Data Cleaning Documentation Service",
+      "classification": "AI-enabled non-AI product"
+    },
+    {
+      "node_id": "internal_tooling_blueprint_service",
+      "market_name": "Internal Tooling Blueprint",
+      "classification": "AI-enabled non-AI product"
+    },
+    {
+      "node_id": "business_process_redesign_service",
+      "market_name": "Business Process Redesign",
+      "classification": "non-AI"
+    },
+    {
+      "node_id": "vertical_AI_ops_readiness_assessment",
+      "market_name": "Vertical AI Ops Readiness Assessment",
+      "classification": "hybrid"
+    },
+    {
+      "node_id": "customer_support_workflow_blueprint",
+      "market_name": "Customer Support Workflow Blueprint",
+      "classification": "AI-enabled non-AI product"
+    },
+    {
+      "node_id": "sales_ops_research_packet",
+      "market_name": "Sales Ops Research Packet",
+      "classification": "AI-enabled non-AI product"
+    },
+    {
+      "node_id": "risk_register_and_action_policy_service",
+      "market_name": "Risk Register and Action Policy",
+      "classification": "hybrid"
+    },
+    {
+      "node_id": "AI_workflow_reliability_scorecard",
+      "market_name": "AI Workflow Reliability Scorecard",
+      "classification": "AI"
+    },
+    {
+      "node_id": "market_entry_readiness_brief",
+      "market_name": "Market Entry Readiness Brief",
+      "classification": "AI-enabled non-AI product"
+    },
+    {
+      "node_id": "supplier_compliance_documentation_pack",
+      "market_name": "Supplier Compliance Documentation Pack",
+      "classification": "non-AI"
+    }
+  ],
+  "edges": [
+    {
+      "from": "governed_business_operations_blueprint_for_agent_teams",
+      "to": "small_business_operations_automation_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "governed_business_operations_blueprint_for_agent_teams",
+      "to": "public_read_market_intelligence_product",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "governed_business_operations_blueprint_for_agent_teams",
+      "to": "workflow_template_automation_template_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "governed_business_operations_blueprint_for_agent_teams",
+      "to": "local_business_digital_operations_support",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "governed_business_operations_blueprint_for_agent_teams",
+      "to": "no_overclaim_action_boundary_operating_system",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "governed_business_operations_blueprint_for_agent_teams",
+      "to": "self_operating_AI_company_prototype_operating_room_package",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "governed_business_operations_blueprint_for_agent_teams",
+      "to": "procurement_vendor_comparison_brief",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "governed_business_operations_blueprint_for_agent_teams",
+      "to": "internal_tooling_blueprint_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "governed_business_operations_blueprint_for_agent_teams",
+      "to": "vertical_AI_ops_readiness_assessment",
+      "adjacency_types": [
+        "classification_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "governed_business_operations_blueprint_for_agent_teams",
+      "to": "sales_ops_research_packet",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "governed_business_operations_blueprint_for_agent_teams",
+      "to": "risk_register_and_action_policy_service",
+      "adjacency_types": [
+        "classification_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "founder_operator_decision_brief_service",
+      "to": "small_business_operations_automation_service",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "founder_operator_decision_brief_service",
+      "to": "workflow_template_automation_template_product",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "founder_operator_decision_brief_service",
+      "to": "regulatory_policy_tracking_brief",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "founder_operator_decision_brief_service",
+      "to": "procurement_vendor_comparison_brief",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "founder_operator_decision_brief_service",
+      "to": "niche_community_paid_brief_product",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "founder_operator_decision_brief_service",
+      "to": "internal_tooling_blueprint_service",
+      "adjacency_types": [
+        "buyer_overlap",
+        "classification_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "founder_operator_decision_brief_service",
+      "to": "sales_ops_research_packet",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "founder_operator_decision_brief_service",
+      "to": "market_entry_readiness_brief",
+      "adjacency_types": [
+        "buyer_overlap",
+        "classification_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "founder_operator_decision_brief_service",
+      "to": "supplier_compliance_documentation_pack",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "to": "governed_business_operations_blueprint_for_agent_teams",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "to": "agent_runtime_audit_and_repair_package",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "to": "public_read_market_intelligence_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "to": "documentation_SOP_compliance_preparation_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "to": "public_read_sourcing_supplier_intelligence",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "to": "AI_assisted_business_operations_outsourcing",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "to": "content_product_paid_knowledge_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "to": "governed_agent_action_control_layer",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "to": "KG_CZL_CIEU_evidence_closure_package",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "to": "no_overclaim_action_boundary_operating_system",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "to": "gov_mcp_Y_star_gov_governance_integration_package",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "to": "self_operating_AI_company_prototype_operating_room_package",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "to": "regulatory_policy_tracking_brief",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "to": "education_training_playbook_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "to": "niche_community_paid_brief_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "to": "data_cleaning_documentation_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "to": "internal_tooling_blueprint_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "to": "business_process_redesign_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "to": "vertical_AI_ops_readiness_assessment",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "to": "customer_support_workflow_blueprint",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "to": "sales_ops_research_packet",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "to": "risk_register_and_action_policy_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "to": "AI_workflow_reliability_scorecard",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "to": "market_entry_readiness_brief",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "to": "supplier_compliance_documentation_pack",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "agent_runtime_audit_and_repair_package",
+      "to": "governed_business_operations_blueprint_for_agent_teams",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "agent_runtime_audit_and_repair_package",
+      "to": "public_read_market_intelligence_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "agent_runtime_audit_and_repair_package",
+      "to": "documentation_SOP_compliance_preparation_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "agent_runtime_audit_and_repair_package",
+      "to": "workflow_template_automation_template_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "agent_runtime_audit_and_repair_package",
+      "to": "public_read_sourcing_supplier_intelligence",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "agent_runtime_audit_and_repair_package",
+      "to": "competitive_intelligence_buying_guide_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "agent_runtime_audit_and_repair_package",
+      "to": "local_business_digital_operations_support",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "agent_runtime_audit_and_repair_package",
+      "to": "content_product_paid_knowledge_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "agent_runtime_audit_and_repair_package",
+      "to": "governed_agent_action_control_layer",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "agent_runtime_audit_and_repair_package",
+      "to": "no_overclaim_action_boundary_operating_system",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "agent_runtime_audit_and_repair_package",
+      "to": "gov_mcp_Y_star_gov_governance_integration_package",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "agent_runtime_audit_and_repair_package",
+      "to": "self_operating_AI_company_prototype_operating_room_package",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "agent_runtime_audit_and_repair_package",
+      "to": "regulatory_policy_tracking_brief",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "agent_runtime_audit_and_repair_package",
+      "to": "procurement_vendor_comparison_brief",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "agent_runtime_audit_and_repair_package",
+      "to": "education_training_playbook_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "agent_runtime_audit_and_repair_package",
+      "to": "data_cleaning_documentation_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "agent_runtime_audit_and_repair_package",
+      "to": "internal_tooling_blueprint_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "agent_runtime_audit_and_repair_package",
+      "to": "business_process_redesign_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "agent_runtime_audit_and_repair_package",
+      "to": "vertical_AI_ops_readiness_assessment",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "agent_runtime_audit_and_repair_package",
+      "to": "customer_support_workflow_blueprint",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "agent_runtime_audit_and_repair_package",
+      "to": "sales_ops_research_packet",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "agent_runtime_audit_and_repair_package",
+      "to": "risk_register_and_action_policy_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "agent_runtime_audit_and_repair_package",
+      "to": "market_entry_readiness_brief",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "small_business_operations_automation_service",
+      "to": "workflow_template_automation_template_product",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "public_read_market_intelligence_product",
+      "to": "workflow_template_automation_template_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "public_read_market_intelligence_product",
+      "to": "public_read_sourcing_supplier_intelligence",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "public_read_market_intelligence_product",
+      "to": "vertical_AI_ops_readiness_assessment",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "public_read_market_intelligence_product",
+      "to": "sales_ops_research_packet",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "public_read_market_intelligence_product",
+      "to": "risk_register_and_action_policy_service",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "documentation_SOP_compliance_preparation_service",
+      "to": "governed_business_operations_blueprint_for_agent_teams",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "documentation_SOP_compliance_preparation_service",
+      "to": "founder_operator_decision_brief_service",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "documentation_SOP_compliance_preparation_service",
+      "to": "public_read_market_intelligence_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "documentation_SOP_compliance_preparation_service",
+      "to": "workflow_template_automation_template_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "documentation_SOP_compliance_preparation_service",
+      "to": "public_read_sourcing_supplier_intelligence",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "documentation_SOP_compliance_preparation_service",
+      "to": "local_business_digital_operations_support",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "documentation_SOP_compliance_preparation_service",
+      "to": "no_overclaim_action_boundary_operating_system",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "documentation_SOP_compliance_preparation_service",
+      "to": "regulatory_policy_tracking_brief",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "documentation_SOP_compliance_preparation_service",
+      "to": "procurement_vendor_comparison_brief",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "documentation_SOP_compliance_preparation_service",
+      "to": "education_training_playbook_product",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "documentation_SOP_compliance_preparation_service",
+      "to": "niche_community_paid_brief_product",
+      "adjacency_types": [
+        "classification_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "documentation_SOP_compliance_preparation_service",
+      "to": "internal_tooling_blueprint_service",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "documentation_SOP_compliance_preparation_service",
+      "to": "vertical_AI_ops_readiness_assessment",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "documentation_SOP_compliance_preparation_service",
+      "to": "sales_ops_research_packet",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "documentation_SOP_compliance_preparation_service",
+      "to": "risk_register_and_action_policy_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "documentation_SOP_compliance_preparation_service",
+      "to": "market_entry_readiness_brief",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "documentation_SOP_compliance_preparation_service",
+      "to": "supplier_compliance_documentation_pack",
+      "adjacency_types": [
+        "classification_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "public_read_sourcing_supplier_intelligence",
+      "to": "workflow_template_automation_template_product",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "public_read_sourcing_supplier_intelligence",
+      "to": "regulatory_policy_tracking_brief",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "public_read_sourcing_supplier_intelligence",
+      "to": "vertical_AI_ops_readiness_assessment",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "public_read_sourcing_supplier_intelligence",
+      "to": "sales_ops_research_packet",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "public_read_sourcing_supplier_intelligence",
+      "to": "risk_register_and_action_policy_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "public_read_sourcing_supplier_intelligence",
+      "to": "supplier_compliance_documentation_pack",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "competitive_intelligence_buying_guide_product",
+      "to": "governed_business_operations_blueprint_for_agent_teams",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "competitive_intelligence_buying_guide_product",
+      "to": "founder_operator_decision_brief_service",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "competitive_intelligence_buying_guide_product",
+      "to": "small_business_operations_automation_service",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "competitive_intelligence_buying_guide_product",
+      "to": "public_read_market_intelligence_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "competitive_intelligence_buying_guide_product",
+      "to": "documentation_SOP_compliance_preparation_service",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "competitive_intelligence_buying_guide_product",
+      "to": "workflow_template_automation_template_product",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "competitive_intelligence_buying_guide_product",
+      "to": "local_business_digital_operations_support",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "competitive_intelligence_buying_guide_product",
+      "to": "content_product_paid_knowledge_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "competitive_intelligence_buying_guide_product",
+      "to": "no_overclaim_action_boundary_operating_system",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "competitive_intelligence_buying_guide_product",
+      "to": "regulatory_policy_tracking_brief",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "competitive_intelligence_buying_guide_product",
+      "to": "procurement_vendor_comparison_brief",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "competitive_intelligence_buying_guide_product",
+      "to": "education_training_playbook_product",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "competitive_intelligence_buying_guide_product",
+      "to": "data_cleaning_documentation_service",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "competitive_intelligence_buying_guide_product",
+      "to": "internal_tooling_blueprint_service",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "competitive_intelligence_buying_guide_product",
+      "to": "customer_support_workflow_blueprint",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "competitive_intelligence_buying_guide_product",
+      "to": "sales_ops_research_packet",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "competitive_intelligence_buying_guide_product",
+      "to": "risk_register_and_action_policy_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "competitive_intelligence_buying_guide_product",
+      "to": "market_entry_readiness_brief",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "local_business_digital_operations_support",
+      "to": "small_business_operations_automation_service",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "local_business_digital_operations_support",
+      "to": "public_read_market_intelligence_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "local_business_digital_operations_support",
+      "to": "workflow_template_automation_template_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "local_business_digital_operations_support",
+      "to": "public_read_sourcing_supplier_intelligence",
+      "adjacency_types": [
+        "classification_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "local_business_digital_operations_support",
+      "to": "no_overclaim_action_boundary_operating_system",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "local_business_digital_operations_support",
+      "to": "procurement_vendor_comparison_brief",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "local_business_digital_operations_support",
+      "to": "niche_community_paid_brief_product",
+      "adjacency_types": [
+        "classification_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "local_business_digital_operations_support",
+      "to": "sales_ops_research_packet",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "local_business_digital_operations_support",
+      "to": "risk_register_and_action_policy_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "local_business_digital_operations_support",
+      "to": "market_entry_readiness_brief",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "local_business_digital_operations_support",
+      "to": "supplier_compliance_documentation_pack",
+      "adjacency_types": [
+        "classification_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "governed_business_operations_blueprint_for_agent_teams",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "founder_operator_decision_brief_service",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "agent_runtime_audit_and_repair_package",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "small_business_operations_automation_service",
+      "adjacency_types": [
+        "classification_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "public_read_market_intelligence_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "documentation_SOP_compliance_preparation_service",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "workflow_template_automation_template_product",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "public_read_sourcing_supplier_intelligence",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "competitive_intelligence_buying_guide_product",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "local_business_digital_operations_support",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "content_product_paid_knowledge_product",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "governed_agent_action_control_layer",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "no_overclaim_action_boundary_operating_system",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "regulatory_policy_tracking_brief",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "procurement_vendor_comparison_brief",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "education_training_playbook_product",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "niche_community_paid_brief_product",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "data_cleaning_documentation_service",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "internal_tooling_blueprint_service",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "business_process_redesign_service",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "vertical_AI_ops_readiness_assessment",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "customer_support_workflow_blueprint",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "sales_ops_research_packet",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "risk_register_and_action_policy_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "AI_workflow_reliability_scorecard",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "market_entry_readiness_brief",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "AI_assisted_business_operations_outsourcing",
+      "to": "supplier_compliance_documentation_pack",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "content_product_paid_knowledge_product",
+      "to": "public_read_market_intelligence_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "content_product_paid_knowledge_product",
+      "to": "documentation_SOP_compliance_preparation_service",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "content_product_paid_knowledge_product",
+      "to": "workflow_template_automation_template_product",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "content_product_paid_knowledge_product",
+      "to": "public_read_sourcing_supplier_intelligence",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "content_product_paid_knowledge_product",
+      "to": "local_business_digital_operations_support",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "content_product_paid_knowledge_product",
+      "to": "governed_agent_action_control_layer",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "content_product_paid_knowledge_product",
+      "to": "no_overclaim_action_boundary_operating_system",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "content_product_paid_knowledge_product",
+      "to": "regulatory_policy_tracking_brief",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "content_product_paid_knowledge_product",
+      "to": "procurement_vendor_comparison_brief",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "content_product_paid_knowledge_product",
+      "to": "education_training_playbook_product",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "content_product_paid_knowledge_product",
+      "to": "niche_community_paid_brief_product",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "content_product_paid_knowledge_product",
+      "to": "data_cleaning_documentation_service",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "content_product_paid_knowledge_product",
+      "to": "internal_tooling_blueprint_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "content_product_paid_knowledge_product",
+      "to": "vertical_AI_ops_readiness_assessment",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "content_product_paid_knowledge_product",
+      "to": "customer_support_workflow_blueprint",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "content_product_paid_knowledge_product",
+      "to": "sales_ops_research_packet",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "content_product_paid_knowledge_product",
+      "to": "risk_register_and_action_policy_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "content_product_paid_knowledge_product",
+      "to": "market_entry_readiness_brief",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "content_product_paid_knowledge_product",
+      "to": "supplier_compliance_documentation_pack",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "governed_agent_action_control_layer",
+      "to": "governed_business_operations_blueprint_for_agent_teams",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "governed_agent_action_control_layer",
+      "to": "public_read_sourcing_supplier_intelligence",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "governed_agent_action_control_layer",
+      "to": "no_overclaim_action_boundary_operating_system",
+      "adjacency_types": [
+        "buyer_overlap",
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 100
+    },
+    {
+      "from": "governed_agent_action_control_layer",
+      "to": "self_operating_AI_company_prototype_operating_room_package",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "governed_agent_action_control_layer",
+      "to": "regulatory_policy_tracking_brief",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "governed_agent_action_control_layer",
+      "to": "niche_community_paid_brief_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "governed_agent_action_control_layer",
+      "to": "vertical_AI_ops_readiness_assessment",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "governed_agent_action_control_layer",
+      "to": "risk_register_and_action_policy_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "governed_agent_action_control_layer",
+      "to": "market_entry_readiness_brief",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "governed_agent_action_control_layer",
+      "to": "supplier_compliance_documentation_pack",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "KG_CZL_CIEU_evidence_closure_package",
+      "to": "governed_business_operations_blueprint_for_agent_teams",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "KG_CZL_CIEU_evidence_closure_package",
+      "to": "agent_runtime_audit_and_repair_package",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "KG_CZL_CIEU_evidence_closure_package",
+      "to": "governed_agent_action_control_layer",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "KG_CZL_CIEU_evidence_closure_package",
+      "to": "no_overclaim_action_boundary_operating_system",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "KG_CZL_CIEU_evidence_closure_package",
+      "to": "gov_mcp_Y_star_gov_governance_integration_package",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "KG_CZL_CIEU_evidence_closure_package",
+      "to": "self_operating_AI_company_prototype_operating_room_package",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "KG_CZL_CIEU_evidence_closure_package",
+      "to": "regulatory_policy_tracking_brief",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "KG_CZL_CIEU_evidence_closure_package",
+      "to": "niche_community_paid_brief_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "KG_CZL_CIEU_evidence_closure_package",
+      "to": "supplier_compliance_documentation_pack",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "no_overclaim_action_boundary_operating_system",
+      "to": "public_read_market_intelligence_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "no_overclaim_action_boundary_operating_system",
+      "to": "public_read_sourcing_supplier_intelligence",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "no_overclaim_action_boundary_operating_system",
+      "to": "self_operating_AI_company_prototype_operating_room_package",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "no_overclaim_action_boundary_operating_system",
+      "to": "regulatory_policy_tracking_brief",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "no_overclaim_action_boundary_operating_system",
+      "to": "procurement_vendor_comparison_brief",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "no_overclaim_action_boundary_operating_system",
+      "to": "vertical_AI_ops_readiness_assessment",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "no_overclaim_action_boundary_operating_system",
+      "to": "sales_ops_research_packet",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "no_overclaim_action_boundary_operating_system",
+      "to": "risk_register_and_action_policy_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "no_overclaim_action_boundary_operating_system",
+      "to": "supplier_compliance_documentation_pack",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "gov_mcp_Y_star_gov_governance_integration_package",
+      "to": "governed_business_operations_blueprint_for_agent_teams",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "gov_mcp_Y_star_gov_governance_integration_package",
+      "to": "governed_agent_action_control_layer",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "gov_mcp_Y_star_gov_governance_integration_package",
+      "to": "no_overclaim_action_boundary_operating_system",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "gov_mcp_Y_star_gov_governance_integration_package",
+      "to": "self_operating_AI_company_prototype_operating_room_package",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "regulatory_policy_tracking_brief",
+      "to": "small_business_operations_automation_service",
+      "adjacency_types": [
+        "classification_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "regulatory_policy_tracking_brief",
+      "to": "workflow_template_automation_template_product",
+      "adjacency_types": [
+        "classification_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "regulatory_policy_tracking_brief",
+      "to": "vertical_AI_ops_readiness_assessment",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "regulatory_policy_tracking_brief",
+      "to": "sales_ops_research_packet",
+      "adjacency_types": [
+        "classification_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "regulatory_policy_tracking_brief",
+      "to": "risk_register_and_action_policy_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "regulatory_policy_tracking_brief",
+      "to": "supplier_compliance_documentation_pack",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "procurement_vendor_comparison_brief",
+      "to": "small_business_operations_automation_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "procurement_vendor_comparison_brief",
+      "to": "public_read_market_intelligence_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "procurement_vendor_comparison_brief",
+      "to": "workflow_template_automation_template_product",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "procurement_vendor_comparison_brief",
+      "to": "public_read_sourcing_supplier_intelligence",
+      "adjacency_types": [
+        "classification_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "procurement_vendor_comparison_brief",
+      "to": "regulatory_policy_tracking_brief",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "procurement_vendor_comparison_brief",
+      "to": "sales_ops_research_packet",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "procurement_vendor_comparison_brief",
+      "to": "risk_register_and_action_policy_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "procurement_vendor_comparison_brief",
+      "to": "supplier_compliance_documentation_pack",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "education_training_playbook_product",
+      "to": "founder_operator_decision_brief_service",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "education_training_playbook_product",
+      "to": "public_read_market_intelligence_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "education_training_playbook_product",
+      "to": "workflow_template_automation_template_product",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "education_training_playbook_product",
+      "to": "public_read_sourcing_supplier_intelligence",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "education_training_playbook_product",
+      "to": "local_business_digital_operations_support",
+      "adjacency_types": [
+        "classification_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "education_training_playbook_product",
+      "to": "governed_agent_action_control_layer",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "education_training_playbook_product",
+      "to": "no_overclaim_action_boundary_operating_system",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "education_training_playbook_product",
+      "to": "regulatory_policy_tracking_brief",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "education_training_playbook_product",
+      "to": "procurement_vendor_comparison_brief",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "education_training_playbook_product",
+      "to": "niche_community_paid_brief_product",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "education_training_playbook_product",
+      "to": "internal_tooling_blueprint_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "education_training_playbook_product",
+      "to": "vertical_AI_ops_readiness_assessment",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "education_training_playbook_product",
+      "to": "sales_ops_research_packet",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "education_training_playbook_product",
+      "to": "risk_register_and_action_policy_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "education_training_playbook_product",
+      "to": "market_entry_readiness_brief",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "education_training_playbook_product",
+      "to": "supplier_compliance_documentation_pack",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "niche_community_paid_brief_product",
+      "to": "workflow_template_automation_template_product",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "niche_community_paid_brief_product",
+      "to": "public_read_sourcing_supplier_intelligence",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "niche_community_paid_brief_product",
+      "to": "regulatory_policy_tracking_brief",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "niche_community_paid_brief_product",
+      "to": "procurement_vendor_comparison_brief",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "niche_community_paid_brief_product",
+      "to": "vertical_AI_ops_readiness_assessment",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "niche_community_paid_brief_product",
+      "to": "sales_ops_research_packet",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "niche_community_paid_brief_product",
+      "to": "supplier_compliance_documentation_pack",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "data_cleaning_documentation_service",
+      "to": "governed_business_operations_blueprint_for_agent_teams",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "data_cleaning_documentation_service",
+      "to": "founder_operator_decision_brief_service",
+      "adjacency_types": [
+        "classification_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "data_cleaning_documentation_service",
+      "to": "small_business_operations_automation_service",
+      "adjacency_types": [
+        "classification_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "data_cleaning_documentation_service",
+      "to": "public_read_market_intelligence_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "data_cleaning_documentation_service",
+      "to": "documentation_SOP_compliance_preparation_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "data_cleaning_documentation_service",
+      "to": "workflow_template_automation_template_product",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "data_cleaning_documentation_service",
+      "to": "public_read_sourcing_supplier_intelligence",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "data_cleaning_documentation_service",
+      "to": "local_business_digital_operations_support",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "data_cleaning_documentation_service",
+      "to": "governed_agent_action_control_layer",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "data_cleaning_documentation_service",
+      "to": "no_overclaim_action_boundary_operating_system",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "data_cleaning_documentation_service",
+      "to": "regulatory_policy_tracking_brief",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "data_cleaning_documentation_service",
+      "to": "procurement_vendor_comparison_brief",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "data_cleaning_documentation_service",
+      "to": "education_training_playbook_product",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "data_cleaning_documentation_service",
+      "to": "niche_community_paid_brief_product",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "data_cleaning_documentation_service",
+      "to": "internal_tooling_blueprint_service",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "data_cleaning_documentation_service",
+      "to": "vertical_AI_ops_readiness_assessment",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "data_cleaning_documentation_service",
+      "to": "sales_ops_research_packet",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "data_cleaning_documentation_service",
+      "to": "risk_register_and_action_policy_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "data_cleaning_documentation_service",
+      "to": "market_entry_readiness_brief",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "data_cleaning_documentation_service",
+      "to": "supplier_compliance_documentation_pack",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "internal_tooling_blueprint_service",
+      "to": "small_business_operations_automation_service",
+      "adjacency_types": [
+        "classification_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "internal_tooling_blueprint_service",
+      "to": "public_read_market_intelligence_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "internal_tooling_blueprint_service",
+      "to": "workflow_template_automation_template_product",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "internal_tooling_blueprint_service",
+      "to": "public_read_sourcing_supplier_intelligence",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "internal_tooling_blueprint_service",
+      "to": "local_business_digital_operations_support",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "internal_tooling_blueprint_service",
+      "to": "no_overclaim_action_boundary_operating_system",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "internal_tooling_blueprint_service",
+      "to": "regulatory_policy_tracking_brief",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "internal_tooling_blueprint_service",
+      "to": "procurement_vendor_comparison_brief",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "internal_tooling_blueprint_service",
+      "to": "vertical_AI_ops_readiness_assessment",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "internal_tooling_blueprint_service",
+      "to": "sales_ops_research_packet",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "internal_tooling_blueprint_service",
+      "to": "risk_register_and_action_policy_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "internal_tooling_blueprint_service",
+      "to": "market_entry_readiness_brief",
+      "adjacency_types": [
+        "buyer_overlap",
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 100
+    },
+    {
+      "from": "business_process_redesign_service",
+      "to": "founder_operator_decision_brief_service",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "business_process_redesign_service",
+      "to": "public_read_market_intelligence_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "business_process_redesign_service",
+      "to": "documentation_SOP_compliance_preparation_service",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "business_process_redesign_service",
+      "to": "workflow_template_automation_template_product",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "business_process_redesign_service",
+      "to": "public_read_sourcing_supplier_intelligence",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "business_process_redesign_service",
+      "to": "competitive_intelligence_buying_guide_product",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "business_process_redesign_service",
+      "to": "local_business_digital_operations_support",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "business_process_redesign_service",
+      "to": "content_product_paid_knowledge_product",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "business_process_redesign_service",
+      "to": "governed_agent_action_control_layer",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "business_process_redesign_service",
+      "to": "no_overclaim_action_boundary_operating_system",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "business_process_redesign_service",
+      "to": "regulatory_policy_tracking_brief",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "business_process_redesign_service",
+      "to": "procurement_vendor_comparison_brief",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "business_process_redesign_service",
+      "to": "education_training_playbook_product",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "business_process_redesign_service",
+      "to": "niche_community_paid_brief_product",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "business_process_redesign_service",
+      "to": "data_cleaning_documentation_service",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "business_process_redesign_service",
+      "to": "internal_tooling_blueprint_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "business_process_redesign_service",
+      "to": "vertical_AI_ops_readiness_assessment",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "business_process_redesign_service",
+      "to": "customer_support_workflow_blueprint",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "business_process_redesign_service",
+      "to": "sales_ops_research_packet",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "business_process_redesign_service",
+      "to": "risk_register_and_action_policy_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "business_process_redesign_service",
+      "to": "market_entry_readiness_brief",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "business_process_redesign_service",
+      "to": "supplier_compliance_documentation_pack",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "customer_support_workflow_blueprint",
+      "to": "governed_business_operations_blueprint_for_agent_teams",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "customer_support_workflow_blueprint",
+      "to": "founder_operator_decision_brief_service",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "customer_support_workflow_blueprint",
+      "to": "small_business_operations_automation_service",
+      "adjacency_types": [
+        "classification_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "customer_support_workflow_blueprint",
+      "to": "public_read_market_intelligence_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "customer_support_workflow_blueprint",
+      "to": "documentation_SOP_compliance_preparation_service",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "customer_support_workflow_blueprint",
+      "to": "workflow_template_automation_template_product",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "customer_support_workflow_blueprint",
+      "to": "public_read_sourcing_supplier_intelligence",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "customer_support_workflow_blueprint",
+      "to": "local_business_digital_operations_support",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "customer_support_workflow_blueprint",
+      "to": "governed_agent_action_control_layer",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "customer_support_workflow_blueprint",
+      "to": "no_overclaim_action_boundary_operating_system",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "customer_support_workflow_blueprint",
+      "to": "regulatory_policy_tracking_brief",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "customer_support_workflow_blueprint",
+      "to": "procurement_vendor_comparison_brief",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "customer_support_workflow_blueprint",
+      "to": "education_training_playbook_product",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "customer_support_workflow_blueprint",
+      "to": "niche_community_paid_brief_product",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "customer_support_workflow_blueprint",
+      "to": "data_cleaning_documentation_service",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "customer_support_workflow_blueprint",
+      "to": "internal_tooling_blueprint_service",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "customer_support_workflow_blueprint",
+      "to": "vertical_AI_ops_readiness_assessment",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "customer_support_workflow_blueprint",
+      "to": "sales_ops_research_packet",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "customer_support_workflow_blueprint",
+      "to": "risk_register_and_action_policy_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "customer_support_workflow_blueprint",
+      "to": "market_entry_readiness_brief",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "customer_support_workflow_blueprint",
+      "to": "supplier_compliance_documentation_pack",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "sales_ops_research_packet",
+      "to": "small_business_operations_automation_service",
+      "adjacency_types": [
+        "classification_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "sales_ops_research_packet",
+      "to": "workflow_template_automation_template_product",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "sales_ops_research_packet",
+      "to": "vertical_AI_ops_readiness_assessment",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "sales_ops_research_packet",
+      "to": "supplier_compliance_documentation_pack",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "risk_register_and_action_policy_service",
+      "to": "vertical_AI_ops_readiness_assessment",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "risk_register_and_action_policy_service",
+      "to": "sales_ops_research_packet",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "risk_register_and_action_policy_service",
+      "to": "supplier_compliance_documentation_pack",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_workflow_reliability_scorecard",
+      "to": "governed_business_operations_blueprint_for_agent_teams",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_workflow_reliability_scorecard",
+      "to": "agent_runtime_audit_and_repair_package",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "AI_workflow_reliability_scorecard",
+      "to": "public_read_market_intelligence_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_workflow_reliability_scorecard",
+      "to": "documentation_SOP_compliance_preparation_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_workflow_reliability_scorecard",
+      "to": "public_read_sourcing_supplier_intelligence",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_workflow_reliability_scorecard",
+      "to": "content_product_paid_knowledge_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_workflow_reliability_scorecard",
+      "to": "governed_agent_action_control_layer",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "AI_workflow_reliability_scorecard",
+      "to": "KG_CZL_CIEU_evidence_closure_package",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "AI_workflow_reliability_scorecard",
+      "to": "no_overclaim_action_boundary_operating_system",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "AI_workflow_reliability_scorecard",
+      "to": "gov_mcp_Y_star_gov_governance_integration_package",
+      "adjacency_types": [
+        "classification_overlap",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "AI_workflow_reliability_scorecard",
+      "to": "self_operating_AI_company_prototype_operating_room_package",
+      "adjacency_types": [
+        "classification_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_workflow_reliability_scorecard",
+      "to": "regulatory_policy_tracking_brief",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_workflow_reliability_scorecard",
+      "to": "education_training_playbook_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_workflow_reliability_scorecard",
+      "to": "niche_community_paid_brief_product",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_workflow_reliability_scorecard",
+      "to": "data_cleaning_documentation_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_workflow_reliability_scorecard",
+      "to": "internal_tooling_blueprint_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_workflow_reliability_scorecard",
+      "to": "business_process_redesign_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_workflow_reliability_scorecard",
+      "to": "vertical_AI_ops_readiness_assessment",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_workflow_reliability_scorecard",
+      "to": "customer_support_workflow_blueprint",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_workflow_reliability_scorecard",
+      "to": "sales_ops_research_packet",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_workflow_reliability_scorecard",
+      "to": "risk_register_and_action_policy_service",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "AI_workflow_reliability_scorecard",
+      "to": "market_entry_readiness_brief",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "AI_workflow_reliability_scorecard",
+      "to": "supplier_compliance_documentation_pack",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "market_entry_readiness_brief",
+      "to": "small_business_operations_automation_service",
+      "adjacency_types": [
+        "classification_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "market_entry_readiness_brief",
+      "to": "public_read_market_intelligence_product",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "market_entry_readiness_brief",
+      "to": "workflow_template_automation_template_product",
+      "adjacency_types": [
+        "classification_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "market_entry_readiness_brief",
+      "to": "public_read_sourcing_supplier_intelligence",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "market_entry_readiness_brief",
+      "to": "no_overclaim_action_boundary_operating_system",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "market_entry_readiness_brief",
+      "to": "regulatory_policy_tracking_brief",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 80
+    },
+    {
+      "from": "market_entry_readiness_brief",
+      "to": "procurement_vendor_comparison_brief",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "market_entry_readiness_brief",
+      "to": "vertical_AI_ops_readiness_assessment",
+      "adjacency_types": [
+        "cash_path_similarity",
+        "uniqueness_overlap"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "market_entry_readiness_brief",
+      "to": "sales_ops_research_packet",
+      "adjacency_types": [
+        "classification_overlap",
+        "cash_path_similarity"
+      ],
+      "strength": 60
+    },
+    {
+      "from": "market_entry_readiness_brief",
+      "to": "risk_register_and_action_policy_service",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "market_entry_readiness_brief",
+      "to": "supplier_compliance_documentation_pack",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "supplier_compliance_documentation_pack",
+      "to": "workflow_template_automation_template_product",
+      "adjacency_types": [
+        "uniqueness_overlap"
+      ],
+      "strength": 40
+    },
+    {
+      "from": "supplier_compliance_documentation_pack",
+      "to": "vertical_AI_ops_readiness_assessment",
+      "adjacency_types": [
+        "cash_path_similarity"
+      ],
+      "strength": 40
+    }
+  ],
+  "edge_count": 359,
+  "clusters": {
+    "fast_cash_commodity_cluster": [
+      "founder_operator_decision_brief_service",
+      "small_business_operations_automation_service",
+      "workflow_template_automation_template_product",
+      "competitive_intelligence_buying_guide_product",
+      "local_business_digital_operations_support",
+      "procurement_vendor_comparison_brief",
+      "sales_ops_research_packet"
+    ],
+    "YBridge_unique_strategic_cluster": [
+      "governed_business_operations_blueprint_for_agent_teams",
+      "AI_agent_company_runtime_harness_deployment_blueprint",
+      "agent_runtime_audit_and_repair_package",
+      "governed_agent_action_control_layer",
+      "KG_CZL_CIEU_evidence_closure_package",
+      "no_overclaim_action_boundary_operating_system",
+      "gov_mcp_Y_star_gov_governance_integration_package",
+      "self_operating_AI_company_prototype_operating_room_package",
+      "AI_workflow_reliability_scorecard"
+    ],
+    "hybrid_wedge_cluster": [
+      "governed_business_operations_blueprint_for_agent_teams",
+      "AI_agent_company_runtime_harness_deployment_blueprint",
+      "agent_runtime_audit_and_repair_package",
+      "public_read_market_intelligence_product",
+      "no_overclaim_action_boundary_operating_system",
+      "vertical_AI_ops_readiness_assessment",
+      "risk_register_and_action_policy_service",
+      "AI_workflow_reliability_scorecard",
+      "market_entry_readiness_brief"
+    ],
+    "long_term_compounding_cluster": [
+      "governed_business_operations_blueprint_for_agent_teams",
+      "AI_agent_company_runtime_harness_deployment_blueprint",
+      "agent_runtime_audit_and_repair_package",
+      "governed_agent_action_control_layer",
+      "KG_CZL_CIEU_evidence_closure_package",
+      "no_overclaim_action_boundary_operating_system",
+      "gov_mcp_Y_star_gov_governance_integration_package",
+      "self_operating_AI_company_prototype_operating_room_package",
+      "risk_register_and_action_policy_service",
+      "AI_workflow_reliability_scorecard"
+    ],
+    "rejected_high_risk_cluster": [],
+    "evidence_insufficient_cluster": []
+  },
+  "escalation_paths": [
+    {
+      "from": "founder_operator_decision_brief_service",
+      "through": "governed_business_operations_blueprint_for_agent_teams",
+      "to": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "meaning": "fast decision-brief cash wedge can mature into governed operations blueprint and then runtime harness deployment"
+    },
+    {
+      "from": "documentation_SOP_compliance_preparation_service",
+      "through": "risk_register_and_action_policy_service",
+      "to": "governed_business_operations_blueprint_for_agent_teams",
+      "meaning": "simple operations documentation can escalate into governed business operations for agent teams"
+    }
+  ],
+  "external_action_allowed": false
+}

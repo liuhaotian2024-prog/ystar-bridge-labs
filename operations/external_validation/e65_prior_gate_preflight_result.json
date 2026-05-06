@@ -1,0 +1,17 @@
+{
+  "artifact_id": "e65_prior_gate_preflight_result",
+  "checks": {
+    "E64_completion_gate_passed": true,
+    "E64_market_optimal_path_loaded": true,
+    "E64_YBridge_unique_path_loaded": true,
+    "E64_selected_path_loaded": true,
+    "E64_no_validation_or_revenue_claim": true,
+    "owner_decision_pending": true,
+    "external_action_blocked": true
+  },
+  "passed": true,
+  "consumed_E64_final_status": "e64_dual_axis_retest_completed_runtime_harness_survived",
+  "consumed_E64_selected_path": "governed_business_operations_blueprint_for_agent_teams",
+  "owner_decision_status": "pending_owner_decision",
+  "external_action_allowed": false
+}

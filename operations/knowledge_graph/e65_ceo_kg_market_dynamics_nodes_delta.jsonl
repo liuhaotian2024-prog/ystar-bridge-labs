@@ -1,0 +1,5 @@
+{"node_id": "e65_market_dynamics_model_v1", "node_type": "market_model", "status": "integrated"}
+{"node_id": "governed_business_operations_blueprint_for_agent_teams", "node_type": "primary_route"}
+{"node_id": "founder_operator_decision_brief_service", "node_type": "fallback_route"}
+{"node_id": "public_read_market_intelligence_product", "node_type": "learning_route"}
+{"node_id": "E66_selected_route_offer_blueprint_using_market_dynamics_model_no_execution", "node_type": "recommended_next_milestone"}

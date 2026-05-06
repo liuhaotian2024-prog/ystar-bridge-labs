@@ -1,0 +1,95 @@
+{
+  "artifact_id": "e65_multi_axis_market_scoring_engine",
+  "axes": [
+    "market_optimal",
+    "YBridge_unique",
+    "shortest_cash",
+    "buyer_understandability",
+    "delivery_feasibility",
+    "low_risk",
+    "evidence_quality",
+    "strategic_compounding",
+    "defensibility",
+    "commodity_risk_inverse",
+    "operational_burden_inverse",
+    "learning_value",
+    "optionality",
+    "confidence"
+  ],
+  "axis_count": 14,
+  "weight_profiles": {
+    "fastest_cash_profile": {
+      "shortest_cash": 0.25,
+      "buyer_understandability": 0.15,
+      "delivery_feasibility": 0.15,
+      "low_risk": 0.12,
+      "market_optimal": 0.12,
+      "evidence_quality": 0.08,
+      "confidence": 0.08,
+      "optionality": 0.05
+    },
+    "strategic_defensibility_profile": {
+      "YBridge_unique": 0.22,
+      "defensibility": 0.18,
+      "strategic_compounding": 0.18,
+      "evidence_quality": 0.1,
+      "buyer_understandability": 0.1,
+      "optionality": 0.1,
+      "confidence": 0.07,
+      "market_optimal": 0.05
+    },
+    "low_risk_profile": {
+      "low_risk": 0.25,
+      "delivery_feasibility": 0.18,
+      "evidence_quality": 0.15,
+      "operational_burden_inverse": 0.12,
+      "confidence": 0.12,
+      "buyer_understandability": 0.1,
+      "shortest_cash": 0.08
+    },
+    "learning_maximization_profile": {
+      "learning_value": 0.24,
+      "optionality": 0.18,
+      "evidence_quality": 0.14,
+      "market_optimal": 0.12,
+      "YBridge_unique": 0.12,
+      "strategic_compounding": 0.1,
+      "confidence": 0.1
+    },
+    "balanced_CEO_profile": {
+      "market_optimal": 0.12,
+      "YBridge_unique": 0.14,
+      "shortest_cash": 0.12,
+      "buyer_understandability": 0.1,
+      "delivery_feasibility": 0.09,
+      "low_risk": 0.08,
+      "evidence_quality": 0.08,
+      "strategic_compounding": 0.08,
+      "defensibility": 0.08,
+      "commodity_risk_inverse": 0.05,
+      "optionality": 0.04,
+      "confidence": 0.02
+    },
+    "owner_preference_override_profile": {
+      "owner_preference": 1.0
+    }
+  },
+  "allowed_weight_profiles": [
+    "fastest_cash_profile",
+    "strategic_defensibility_profile",
+    "low_risk_profile",
+    "learning_maximization_profile",
+    "balanced_CEO_profile",
+    "owner_preference_override_profile"
+  ],
+  "sensitivity_analysis_hooks": [
+    "weight_multiplier",
+    "evidence_quality_downgrade",
+    "owner_approval_constraint",
+    "selected_path_failure"
+  ],
+  "route_ranking_logic": "weighted sum over normalized route axis scores, with no-overclaim and owner-gate constraints retained outside the numeric score",
+  "cross_axis_conflict_handling": "prefer bridge wedge when market-optimal and YBridge-unique diverge; maintain fallback portfolio",
+  "portfolio_recommendation_logic": "primary route + first-cash wedge + fallback route + learning route + strategic compounding route",
+  "external_action_allowed": false
+}

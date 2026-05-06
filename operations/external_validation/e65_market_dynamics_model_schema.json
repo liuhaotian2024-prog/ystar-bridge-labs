@@ -1,0 +1,83 @@
+{
+  "artifact_id": "e65_market_dynamics_model_schema",
+  "model_name": "CEO Market Dynamics Intelligence Model v1",
+  "model_purpose": "toward full-dimensional CEO market dynamics intelligence for ongoing business reasoning",
+  "schema_sections": {
+    "market_domain": [
+      "domain_id",
+      "market_name",
+      "route_family",
+      "AI_non_AI_hybrid_classification",
+      "buyer_category",
+      "buyer_job_to_be_done",
+      "buyer_pain",
+      "urgency",
+      "budget_owner_category",
+      "purchase_trigger"
+    ],
+    "value_chain": [
+      "who_creates_value",
+      "who_captures_value",
+      "who_pays",
+      "who_blocks_adoption",
+      "existing_substitutes",
+      "channel_structure"
+    ],
+    "competitive_landscape": [
+      "adjacent_solution_categories",
+      "incumbent_categories",
+      "commodity_risk",
+      "differentiation_surface",
+      "defensibility"
+    ],
+    "business_model": [
+      "service_product_subscription_report_blueprint_implementation_retainer",
+      "pricing_analog",
+      "margin_hypothesis",
+      "delivery_complexity",
+      "repeatability",
+      "time_to_first_offer",
+      "time_to_first_cash_hypothesis"
+    ],
+    "YBridge_fit": [
+      "generic_AI_company_fit",
+      "YBridge_unique_fit",
+      "runtime_capability_used",
+      "governance_capability_used",
+      "evidence_capability_used",
+      "public_read_intelligence_fit",
+      "CEO_brain_behavior_center_KG_CZL_CIEU_fit",
+      "uniqueness_and_moat"
+    ],
+    "evidence_state": [
+      "public_read_evidence",
+      "internal_proof",
+      "contradiction",
+      "missing_evidence",
+      "confidence",
+      "evidence_quality_tier"
+    ],
+    "risk_and_constraints": [
+      "legal_regulatory_risk",
+      "reputational_risk",
+      "operational_risk",
+      "owner_approval_need",
+      "external_action_need",
+      "forbidden_action_risk",
+      "no_overclaim_boundary"
+    ],
+    "dynamic_update_triggers": [
+      "new_public_evidence",
+      "buyer_conversation",
+      "customer_validation",
+      "paid_signal",
+      "competitor_movement",
+      "regulation_change",
+      "capability_change",
+      "cost_delivery_discovery",
+      "owner_strategic_preference_change"
+    ]
+  },
+  "no_overclaim_boundary": "The model ranks and challenges routes; it does not prove global optimality, validation, paid signal, or revenue.",
+  "external_action_allowed": false
+}

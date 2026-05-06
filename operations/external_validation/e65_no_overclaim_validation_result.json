@@ -1,0 +1,15 @@
+{
+  "artifact_id": "e65_no_overclaim_validation_result",
+  "paths_scanned": [
+    "operations/external_validation/e65_ceo_brain_market_dynamics_update.json",
+    "operations/external_validation/e65_market_dynamics_analysis_run.json",
+    "operations/external_validation/e65_ceo_market_dynamics_readback_smoke_result.json"
+  ],
+  "violations": [],
+  "passed": true,
+  "required_language": "CEO Market Dynamics Intelligence Model v1; toward full-dimensional CEO market dynamics intelligence",
+  "forbidden_language": [
+    "perfect model completed",
+    "global best path proven"
+  ]
+}

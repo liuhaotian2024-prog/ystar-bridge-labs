@@ -1,0 +1,86 @@
+{
+  "artifact_id": "e65_ceo_market_dynamics_readback_smoke_result",
+  "observed_state": {
+    "artifact_id": "e65_ceo_brain_market_dynamics_update",
+    "market_model_status": "CEO Market Dynamics Intelligence Model v1 integrated",
+    "model_schema_created": true,
+    "broad_market_universe_domain_count": 32,
+    "adjacency_graph_edge_count": 359,
+    "signal_taxonomy_signal_count": 20,
+    "scoring_engine_axis_count": 14,
+    "sensitivity_status": "completed",
+    "recommended_portfolio": {
+      "primary_route": "governed_business_operations_blueprint_for_agent_teams",
+      "first_cash_wedge": "governed_business_operations_blueprint_for_agent_teams",
+      "fallback_route": "founder_operator_decision_brief_service",
+      "learning_route": "public_read_market_intelligence_product",
+      "strategic_compounding_route": "AI_agent_company_runtime_harness_deployment_blueprint"
+    },
+    "primary_route": "governed_business_operations_blueprint_for_agent_teams",
+    "first_cash_wedge": "governed_business_operations_blueprint_for_agent_teams",
+    "fallback_route": "founder_operator_decision_brief_service",
+    "learning_route": "public_read_market_intelligence_product",
+    "strategic_compounding_route": "AI_agent_company_runtime_harness_deployment_blueprint",
+    "decision_stability": {
+      "decision_stability_score": 60.0,
+      "fragile_assumptions": [
+        "buyer understands governed business operations",
+        "public-read evidence remains directionally relevant",
+        "owner eventually approves controlled external review"
+      ],
+      "fallback_portfolio": [
+        "founder_operator_decision_brief_service",
+        "public_read_market_intelligence_product",
+        "agent_runtime_audit_and_repair_package"
+      ]
+    },
+    "evidence_quality_limits": {
+      "public_read_evidence_atoms": 26,
+      "current_highest_tier_in_E65": "T2 public-read evidence",
+      "customer_validation_absent": true,
+      "paid_signal_absent": true
+    },
+    "update_triggers": [
+      "new_public_evidence",
+      "buyer_conversation_after_owner_approval",
+      "customer_validation",
+      "paid_signal",
+      "competitor_movement",
+      "regulation_change",
+      "capability_change",
+      "cost_delivery_discovery",
+      "owner_strategic_preference_change",
+      "selected_path_external_failure"
+    ],
+    "next_recommended_milestone": "E66_selected_route_offer_blueprint_using_market_dynamics_model_no_execution",
+    "no_external_action": true,
+    "external_action_allowed": false,
+    "customer_validation_claimed": false,
+    "paid_signal_claimed": false,
+    "expert_feedback_claimed": false,
+    "production_readiness_claimed": false,
+    "autonomous_revenue_achieved": false,
+    "real_client_delivery_claimed": false,
+    "owner_approval_fabricated": false,
+    "pricing_validation_claimed": false,
+    "global_optimality_proven": false,
+    "perfect_model_claimed": false,
+    "real_mcp_transport_claimed": false,
+    "owner_decision_status": "pending_owner_decision"
+  },
+  "checks": {
+    "CEO_sees_market_model_status": true,
+    "CEO_sees_primary_route": true,
+    "CEO_sees_first_cash_wedge": true,
+    "CEO_sees_fallback_route": true,
+    "CEO_sees_decision_stability": true,
+    "CEO_sees_evidence_quality": true,
+    "CEO_sees_update_triggers": true,
+    "CEO_sees_next_milestone": true,
+    "CEO_sees_external_action_blocked": true,
+    "CEO_sees_no_overclaim": true
+  },
+  "passes": true,
+  "external_action_allowed": false,
+  "owner_decision_status": "pending_owner_decision"
+}

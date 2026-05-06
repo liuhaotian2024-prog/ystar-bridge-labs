@@ -1,0 +1,107 @@
+{
+  "artifact_id": "e65_market_evidence_quality_model",
+  "tiers": [
+    {
+      "tier": "T0",
+      "name": "internal assumption",
+      "confidence_update_score": 10,
+      "cannot_prove": "cannot prove market reality",
+      "overclaim_risk": "high",
+      "CEO_downgrade_rule": "downgrade certainty when evidence is stale, contradictory, single-source, or not owner-approved",
+      "blocked_uncertain_needs_test_rule": "mark route uncertain if missing evidence includes customer validation, paid signal, delivery feasibility, or owner approval",
+      "contradiction_representation": "route-level contradiction array with evidence ids and severity",
+      "stale_evidence_handling": "label stale and reduce confidence until refreshed"
+    },
+    {
+      "tier": "T1",
+      "name": "repo-internal proof",
+      "confidence_update_score": 25,
+      "cannot_prove": "cannot prove external demand",
+      "overclaim_risk": "high",
+      "CEO_downgrade_rule": "downgrade certainty when evidence is stale, contradictory, single-source, or not owner-approved",
+      "blocked_uncertain_needs_test_rule": "mark route uncertain if missing evidence includes customer validation, paid signal, delivery feasibility, or owner approval",
+      "contradiction_representation": "route-level contradiction array with evidence ids and severity",
+      "stale_evidence_handling": "label stale and reduce confidence until refreshed"
+    },
+    {
+      "tier": "T2",
+      "name": "public-read evidence",
+      "confidence_update_score": 40,
+      "cannot_prove": "cannot prove buyer intent or willingness to pay",
+      "overclaim_risk": "high",
+      "CEO_downgrade_rule": "downgrade certainty when evidence is stale, contradictory, single-source, or not owner-approved",
+      "blocked_uncertain_needs_test_rule": "mark route uncertain if missing evidence includes customer validation, paid signal, delivery feasibility, or owner approval",
+      "contradiction_representation": "route-level contradiction array with evidence ids and severity",
+      "stale_evidence_handling": "label stale and reduce confidence until refreshed"
+    },
+    {
+      "tier": "T3",
+      "name": "multiple independent public sources",
+      "confidence_update_score": 55,
+      "cannot_prove": "still not validation",
+      "overclaim_risk": "medium",
+      "CEO_downgrade_rule": "downgrade certainty when evidence is stale, contradictory, single-source, or not owner-approved",
+      "blocked_uncertain_needs_test_rule": "mark route uncertain if missing evidence includes customer validation, paid signal, delivery feasibility, or owner approval",
+      "contradiction_representation": "route-level contradiction array with evidence ids and severity",
+      "stale_evidence_handling": "label stale and reduce confidence until refreshed"
+    },
+    {
+      "tier": "T4",
+      "name": "direct owner-approved external review",
+      "confidence_update_score": 70,
+      "cannot_prove": "not customer validation unless review evidence supports it",
+      "overclaim_risk": "medium",
+      "CEO_downgrade_rule": "downgrade certainty when evidence is stale, contradictory, single-source, or not owner-approved",
+      "blocked_uncertain_needs_test_rule": "mark route uncertain if missing evidence includes customer validation, paid signal, delivery feasibility, or owner approval",
+      "contradiction_representation": "route-level contradiction array with evidence ids and severity",
+      "stale_evidence_handling": "label stale and reduce confidence until refreshed"
+    },
+    {
+      "tier": "T5",
+      "name": "customer conversation",
+      "confidence_update_score": 80,
+      "cannot_prove": "not paid signal",
+      "overclaim_risk": "medium",
+      "CEO_downgrade_rule": "downgrade certainty when evidence is stale, contradictory, single-source, or not owner-approved",
+      "blocked_uncertain_needs_test_rule": "mark route uncertain if missing evidence includes customer validation, paid signal, delivery feasibility, or owner approval",
+      "contradiction_representation": "route-level contradiction array with evidence ids and severity",
+      "stale_evidence_handling": "label stale and reduce confidence until refreshed"
+    },
+    {
+      "tier": "T6",
+      "name": "paid signal",
+      "confidence_update_score": 90,
+      "cannot_prove": "not repeatable revenue",
+      "overclaim_risk": "medium",
+      "CEO_downgrade_rule": "downgrade certainty when evidence is stale, contradictory, single-source, or not owner-approved",
+      "blocked_uncertain_needs_test_rule": "mark route uncertain if missing evidence includes customer validation, paid signal, delivery feasibility, or owner approval",
+      "contradiction_representation": "route-level contradiction array with evidence ids and severity",
+      "stale_evidence_handling": "label stale and reduce confidence until refreshed"
+    },
+    {
+      "tier": "T7",
+      "name": "repeatable revenue",
+      "confidence_update_score": 96,
+      "cannot_prove": "not durable forever",
+      "overclaim_risk": "medium",
+      "CEO_downgrade_rule": "downgrade certainty when evidence is stale, contradictory, single-source, or not owner-approved",
+      "blocked_uncertain_needs_test_rule": "mark route uncertain if missing evidence includes customer validation, paid signal, delivery feasibility, or owner approval",
+      "contradiction_representation": "route-level contradiction array with evidence ids and severity",
+      "stale_evidence_handling": "label stale and reduce confidence until refreshed"
+    },
+    {
+      "tier": "T8",
+      "name": "durable repeated market learning",
+      "confidence_update_score": 100,
+      "cannot_prove": "still subject to drift",
+      "overclaim_risk": "medium",
+      "CEO_downgrade_rule": "downgrade certainty when evidence is stale, contradictory, single-source, or not owner-approved",
+      "blocked_uncertain_needs_test_rule": "mark route uncertain if missing evidence includes customer validation, paid signal, delivery feasibility, or owner approval",
+      "contradiction_representation": "route-level contradiction array with evidence ids and severity",
+      "stale_evidence_handling": "label stale and reduce confidence until refreshed"
+    }
+  ],
+  "customer_validation_absent_in_E65": true,
+  "paid_signal_absent_in_E65": true,
+  "external_action_allowed": false
+}

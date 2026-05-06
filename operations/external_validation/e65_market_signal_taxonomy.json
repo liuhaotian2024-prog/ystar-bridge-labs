@@ -1,0 +1,268 @@
+{
+  "artifact_id": "e65_market_signal_taxonomy",
+  "signal_type_count": 20,
+  "signals": [
+    {
+      "signal_type": "buyer_pain_signal",
+      "definition": "buyer pain signal observed from public-read, repo-internal, or owner-approved future evidence",
+      "source_surfaces": [
+        "public docs/product/pricing/blog/category pages",
+        "repo-internal artifacts",
+        "owner-approved future external evidence"
+      ],
+      "confidence_rules": "T0/T1 internal evidence is weaker than T2+ public evidence; direct owner-approved external evidence is stronger but absent in E65.",
+      "update_rules": "append new evidence atom, update route confidence, rerun scoring profile and sensitivity model",
+      "scoring_effect": "positive, negative, or uncertainty adjustment depending on route and evidence tier",
+      "no_overclaim_boundary": "never upgrade public-read or internal evidence into customer validation, paid signal, expert feedback, or global optimality"
+    },
+    {
+      "signal_type": "budget_signal",
+      "definition": "budget signal observed from public-read, repo-internal, or owner-approved future evidence",
+      "source_surfaces": [
+        "public docs/product/pricing/blog/category pages",
+        "repo-internal artifacts",
+        "owner-approved future external evidence"
+      ],
+      "confidence_rules": "T0/T1 internal evidence is weaker than T2+ public evidence; direct owner-approved external evidence is stronger but absent in E65.",
+      "update_rules": "append new evidence atom, update route confidence, rerun scoring profile and sensitivity model",
+      "scoring_effect": "positive, negative, or uncertainty adjustment depending on route and evidence tier",
+      "no_overclaim_boundary": "never upgrade public-read or internal evidence into customer validation, paid signal, expert feedback, or global optimality"
+    },
+    {
+      "signal_type": "urgent_trigger_signal",
+      "definition": "urgent trigger signal observed from public-read, repo-internal, or owner-approved future evidence",
+      "source_surfaces": [
+        "public docs/product/pricing/blog/category pages",
+        "repo-internal artifacts",
+        "owner-approved future external evidence"
+      ],
+      "confidence_rules": "T0/T1 internal evidence is weaker than T2+ public evidence; direct owner-approved external evidence is stronger but absent in E65.",
+      "update_rules": "append new evidence atom, update route confidence, rerun scoring profile and sensitivity model",
+      "scoring_effect": "positive, negative, or uncertainty adjustment depending on route and evidence tier",
+      "no_overclaim_boundary": "never upgrade public-read or internal evidence into customer validation, paid signal, expert feedback, or global optimality"
+    },
+    {
+      "signal_type": "pricing_signal",
+      "definition": "pricing signal observed from public-read, repo-internal, or owner-approved future evidence",
+      "source_surfaces": [
+        "public docs/product/pricing/blog/category pages",
+        "repo-internal artifacts",
+        "owner-approved future external evidence"
+      ],
+      "confidence_rules": "T0/T1 internal evidence is weaker than T2+ public evidence; direct owner-approved external evidence is stronger but absent in E65.",
+      "update_rules": "append new evidence atom, update route confidence, rerun scoring profile and sensitivity model",
+      "scoring_effect": "positive, negative, or uncertainty adjustment depending on route and evidence tier",
+      "no_overclaim_boundary": "never upgrade public-read or internal evidence into customer validation, paid signal, expert feedback, or global optimality"
+    },
+    {
+      "signal_type": "competitor_movement_signal",
+      "definition": "competitor movement signal observed from public-read, repo-internal, or owner-approved future evidence",
+      "source_surfaces": [
+        "public docs/product/pricing/blog/category pages",
+        "repo-internal artifacts",
+        "owner-approved future external evidence"
+      ],
+      "confidence_rules": "T0/T1 internal evidence is weaker than T2+ public evidence; direct owner-approved external evidence is stronger but absent in E65.",
+      "update_rules": "append new evidence atom, update route confidence, rerun scoring profile and sensitivity model",
+      "scoring_effect": "positive, negative, or uncertainty adjustment depending on route and evidence tier",
+      "no_overclaim_boundary": "never upgrade public-read or internal evidence into customer validation, paid signal, expert feedback, or global optimality"
+    },
+    {
+      "signal_type": "technology_shift_signal",
+      "definition": "technology shift signal observed from public-read, repo-internal, or owner-approved future evidence",
+      "source_surfaces": [
+        "public docs/product/pricing/blog/category pages",
+        "repo-internal artifacts",
+        "owner-approved future external evidence"
+      ],
+      "confidence_rules": "T0/T1 internal evidence is weaker than T2+ public evidence; direct owner-approved external evidence is stronger but absent in E65.",
+      "update_rules": "append new evidence atom, update route confidence, rerun scoring profile and sensitivity model",
+      "scoring_effect": "positive, negative, or uncertainty adjustment depending on route and evidence tier",
+      "no_overclaim_boundary": "never upgrade public-read or internal evidence into customer validation, paid signal, expert feedback, or global optimality"
+    },
+    {
+      "signal_type": "regulatory_policy_signal",
+      "definition": "regulatory policy signal observed from public-read, repo-internal, or owner-approved future evidence",
+      "source_surfaces": [
+        "public docs/product/pricing/blog/category pages",
+        "repo-internal artifacts",
+        "owner-approved future external evidence"
+      ],
+      "confidence_rules": "T0/T1 internal evidence is weaker than T2+ public evidence; direct owner-approved external evidence is stronger but absent in E65.",
+      "update_rules": "append new evidence atom, update route confidence, rerun scoring profile and sensitivity model",
+      "scoring_effect": "positive, negative, or uncertainty adjustment depending on route and evidence tier",
+      "no_overclaim_boundary": "never upgrade public-read or internal evidence into customer validation, paid signal, expert feedback, or global optimality"
+    },
+    {
+      "signal_type": "platform_ecosystem_change_signal",
+      "definition": "platform ecosystem change signal observed from public-read, repo-internal, or owner-approved future evidence",
+      "source_surfaces": [
+        "public docs/product/pricing/blog/category pages",
+        "repo-internal artifacts",
+        "owner-approved future external evidence"
+      ],
+      "confidence_rules": "T0/T1 internal evidence is weaker than T2+ public evidence; direct owner-approved external evidence is stronger but absent in E65.",
+      "update_rules": "append new evidence atom, update route confidence, rerun scoring profile and sensitivity model",
+      "scoring_effect": "positive, negative, or uncertainty adjustment depending on route and evidence tier",
+      "no_overclaim_boundary": "never upgrade public-read or internal evidence into customer validation, paid signal, expert feedback, or global optimality"
+    },
+    {
+      "signal_type": "distribution_channel_signal",
+      "definition": "distribution channel signal observed from public-read, repo-internal, or owner-approved future evidence",
+      "source_surfaces": [
+        "public docs/product/pricing/blog/category pages",
+        "repo-internal artifacts",
+        "owner-approved future external evidence"
+      ],
+      "confidence_rules": "T0/T1 internal evidence is weaker than T2+ public evidence; direct owner-approved external evidence is stronger but absent in E65.",
+      "update_rules": "append new evidence atom, update route confidence, rerun scoring profile and sensitivity model",
+      "scoring_effect": "positive, negative, or uncertainty adjustment depending on route and evidence tier",
+      "no_overclaim_boundary": "never upgrade public-read or internal evidence into customer validation, paid signal, expert feedback, or global optimality"
+    },
+    {
+      "signal_type": "commodity_risk_signal",
+      "definition": "commodity risk signal observed from public-read, repo-internal, or owner-approved future evidence",
+      "source_surfaces": [
+        "public docs/product/pricing/blog/category pages",
+        "repo-internal artifacts",
+        "owner-approved future external evidence"
+      ],
+      "confidence_rules": "T0/T1 internal evidence is weaker than T2+ public evidence; direct owner-approved external evidence is stronger but absent in E65.",
+      "update_rules": "append new evidence atom, update route confidence, rerun scoring profile and sensitivity model",
+      "scoring_effect": "positive, negative, or uncertainty adjustment depending on route and evidence tier",
+      "no_overclaim_boundary": "never upgrade public-read or internal evidence into customer validation, paid signal, expert feedback, or global optimality"
+    },
+    {
+      "signal_type": "defensibility_signal",
+      "definition": "defensibility signal observed from public-read, repo-internal, or owner-approved future evidence",
+      "source_surfaces": [
+        "public docs/product/pricing/blog/category pages",
+        "repo-internal artifacts",
+        "owner-approved future external evidence"
+      ],
+      "confidence_rules": "T0/T1 internal evidence is weaker than T2+ public evidence; direct owner-approved external evidence is stronger but absent in E65.",
+      "update_rules": "append new evidence atom, update route confidence, rerun scoring profile and sensitivity model",
+      "scoring_effect": "positive, negative, or uncertainty adjustment depending on route and evidence tier",
+      "no_overclaim_boundary": "never upgrade public-read or internal evidence into customer validation, paid signal, expert feedback, or global optimality"
+    },
+    {
+      "signal_type": "delivery_feasibility_signal",
+      "definition": "delivery feasibility signal observed from public-read, repo-internal, or owner-approved future evidence",
+      "source_surfaces": [
+        "public docs/product/pricing/blog/category pages",
+        "repo-internal artifacts",
+        "owner-approved future external evidence"
+      ],
+      "confidence_rules": "T0/T1 internal evidence is weaker than T2+ public evidence; direct owner-approved external evidence is stronger but absent in E65.",
+      "update_rules": "append new evidence atom, update route confidence, rerun scoring profile and sensitivity model",
+      "scoring_effect": "positive, negative, or uncertainty adjustment depending on route and evidence tier",
+      "no_overclaim_boundary": "never upgrade public-read or internal evidence into customer validation, paid signal, expert feedback, or global optimality"
+    },
+    {
+      "signal_type": "repeatability_signal",
+      "definition": "repeatability signal observed from public-read, repo-internal, or owner-approved future evidence",
+      "source_surfaces": [
+        "public docs/product/pricing/blog/category pages",
+        "repo-internal artifacts",
+        "owner-approved future external evidence"
+      ],
+      "confidence_rules": "T0/T1 internal evidence is weaker than T2+ public evidence; direct owner-approved external evidence is stronger but absent in E65.",
+      "update_rules": "append new evidence atom, update route confidence, rerun scoring profile and sensitivity model",
+      "scoring_effect": "positive, negative, or uncertainty adjustment depending on route and evidence tier",
+      "no_overclaim_boundary": "never upgrade public-read or internal evidence into customer validation, paid signal, expert feedback, or global optimality"
+    },
+    {
+      "signal_type": "margin_signal",
+      "definition": "margin signal observed from public-read, repo-internal, or owner-approved future evidence",
+      "source_surfaces": [
+        "public docs/product/pricing/blog/category pages",
+        "repo-internal artifacts",
+        "owner-approved future external evidence"
+      ],
+      "confidence_rules": "T0/T1 internal evidence is weaker than T2+ public evidence; direct owner-approved external evidence is stronger but absent in E65.",
+      "update_rules": "append new evidence atom, update route confidence, rerun scoring profile and sensitivity model",
+      "scoring_effect": "positive, negative, or uncertainty adjustment depending on route and evidence tier",
+      "no_overclaim_boundary": "never upgrade public-read or internal evidence into customer validation, paid signal, expert feedback, or global optimality"
+    },
+    {
+      "signal_type": "contradiction_signal",
+      "definition": "contradiction signal observed from public-read, repo-internal, or owner-approved future evidence",
+      "source_surfaces": [
+        "public docs/product/pricing/blog/category pages",
+        "repo-internal artifacts",
+        "owner-approved future external evidence"
+      ],
+      "confidence_rules": "T0/T1 internal evidence is weaker than T2+ public evidence; direct owner-approved external evidence is stronger but absent in E65.",
+      "update_rules": "append new evidence atom, update route confidence, rerun scoring profile and sensitivity model",
+      "scoring_effect": "positive, negative, or uncertainty adjustment depending on route and evidence tier",
+      "no_overclaim_boundary": "never upgrade public-read or internal evidence into customer validation, paid signal, expert feedback, or global optimality"
+    },
+    {
+      "signal_type": "missing_evidence_signal",
+      "definition": "missing evidence signal observed from public-read, repo-internal, or owner-approved future evidence",
+      "source_surfaces": [
+        "public docs/product/pricing/blog/category pages",
+        "repo-internal artifacts",
+        "owner-approved future external evidence"
+      ],
+      "confidence_rules": "T0/T1 internal evidence is weaker than T2+ public evidence; direct owner-approved external evidence is stronger but absent in E65.",
+      "update_rules": "append new evidence atom, update route confidence, rerun scoring profile and sensitivity model",
+      "scoring_effect": "positive, negative, or uncertainty adjustment depending on route and evidence tier",
+      "no_overclaim_boundary": "never upgrade public-read or internal evidence into customer validation, paid signal, expert feedback, or global optimality"
+    },
+    {
+      "signal_type": "owner_approval_blocker_signal",
+      "definition": "owner approval blocker signal observed from public-read, repo-internal, or owner-approved future evidence",
+      "source_surfaces": [
+        "public docs/product/pricing/blog/category pages",
+        "repo-internal artifacts",
+        "owner-approved future external evidence"
+      ],
+      "confidence_rules": "T0/T1 internal evidence is weaker than T2+ public evidence; direct owner-approved external evidence is stronger but absent in E65.",
+      "update_rules": "append new evidence atom, update route confidence, rerun scoring profile and sensitivity model",
+      "scoring_effect": "positive, negative, or uncertainty adjustment depending on route and evidence tier",
+      "no_overclaim_boundary": "never upgrade public-read or internal evidence into customer validation, paid signal, expert feedback, or global optimality"
+    },
+    {
+      "signal_type": "first_cash_readiness_signal",
+      "definition": "first cash readiness signal observed from public-read, repo-internal, or owner-approved future evidence",
+      "source_surfaces": [
+        "public docs/product/pricing/blog/category pages",
+        "repo-internal artifacts",
+        "owner-approved future external evidence"
+      ],
+      "confidence_rules": "T0/T1 internal evidence is weaker than T2+ public evidence; direct owner-approved external evidence is stronger but absent in E65.",
+      "update_rules": "append new evidence atom, update route confidence, rerun scoring profile and sensitivity model",
+      "scoring_effect": "positive, negative, or uncertainty adjustment depending on route and evidence tier",
+      "no_overclaim_boundary": "never upgrade public-read or internal evidence into customer validation, paid signal, expert feedback, or global optimality"
+    },
+    {
+      "signal_type": "YBridge_uniqueness_signal",
+      "definition": "YBridge uniqueness signal observed from public-read, repo-internal, or owner-approved future evidence",
+      "source_surfaces": [
+        "public docs/product/pricing/blog/category pages",
+        "repo-internal artifacts",
+        "owner-approved future external evidence"
+      ],
+      "confidence_rules": "T0/T1 internal evidence is weaker than T2+ public evidence; direct owner-approved external evidence is stronger but absent in E65.",
+      "update_rules": "append new evidence atom, update route confidence, rerun scoring profile and sensitivity model",
+      "scoring_effect": "positive, negative, or uncertainty adjustment depending on route and evidence tier",
+      "no_overclaim_boundary": "never upgrade public-read or internal evidence into customer validation, paid signal, expert feedback, or global optimality"
+    },
+    {
+      "signal_type": "strategic_compounding_signal",
+      "definition": "strategic compounding signal observed from public-read, repo-internal, or owner-approved future evidence",
+      "source_surfaces": [
+        "public docs/product/pricing/blog/category pages",
+        "repo-internal artifacts",
+        "owner-approved future external evidence"
+      ],
+      "confidence_rules": "T0/T1 internal evidence is weaker than T2+ public evidence; direct owner-approved external evidence is stronger but absent in E65.",
+      "update_rules": "append new evidence atom, update route confidence, rerun scoring profile and sensitivity model",
+      "scoring_effect": "positive, negative, or uncertainty adjustment depending on route and evidence tier",
+      "no_overclaim_boundary": "never upgrade public-read or internal evidence into customer validation, paid signal, expert feedback, or global optimality"
+    }
+  ],
+  "dynamic_update_ready": true,
+  "external_action_allowed": false
+}

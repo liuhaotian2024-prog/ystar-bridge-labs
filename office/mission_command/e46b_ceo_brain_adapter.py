@@ -341,6 +341,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e64_dual_axis_revenue_state = {'dual_axis_retest_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
     try:
+        from office.mission_command.e65_ceo_market_dynamics_readback import load_e65_market_dynamics_state_for_brain
+        e65_market_dynamics_state = load_e65_market_dynamics_state_for_brain()
+    except Exception as exc:
+        e65_market_dynamics_state = {'market_model_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -452,6 +457,15 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_dual_axis_top3_offers": e64_dual_axis_revenue_state.get("top3_offer_names"),
         "current_dual_axis_next_milestone": e64_dual_axis_revenue_state.get("recommended_next_milestone"),
         "current_dual_axis_external_action_allowed": e64_dual_axis_revenue_state.get("external_action_allowed"),
+        "latest_market_dynamics_model_state": e65_market_dynamics_state,
+        "current_market_dynamics_primary_route": e65_market_dynamics_state.get("primary_route"),
+        "current_market_dynamics_first_cash_wedge": e65_market_dynamics_state.get("first_cash_wedge"),
+        "current_market_dynamics_fallback_route": e65_market_dynamics_state.get("fallback_route"),
+        "current_market_dynamics_decision_stability": e65_market_dynamics_state.get("decision_stability"),
+        "current_market_dynamics_evidence_quality": e65_market_dynamics_state.get("evidence_quality_limits"),
+        "current_market_dynamics_update_triggers": e65_market_dynamics_state.get("update_triggers"),
+        "current_market_dynamics_next_milestone": e65_market_dynamics_state.get("next_recommended_milestone"),
+        "current_market_dynamics_external_action_allowed": e65_market_dynamics_state.get("external_action_allowed"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,
