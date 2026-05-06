@@ -1,0 +1,2 @@
+{"source": "e47_runtime_v2", "target": "e47_full_capability_coverage_gate", "type": "requires"}
+{"source": "e47_runtime_v2", "target": "e47_money_route_selected_path", "type": "selected_route"}

@@ -1,0 +1,19 @@
+{
+  "buyer": "AI engineer / agent team",
+  "credibility_risk": "medium",
+  "current_assets": "E45 bundle + docs + demos",
+  "dependency_on_unresolved_local_blockers": "depends on local blockers",
+  "evidence_burden": "medium",
+  "execution_complexity": "low-medium",
+  "local_proof_status": "ready_for_owner_review",
+  "missing_assets": "server/client closure and owner-approved trial script",
+  "overclaim_risk": "low",
+  "owner_burden": "low",
+  "pain_solved": "make allow/deny governance legible",
+  "recommended_action": "harden_first",
+  "revenue_potential": "medium",
+  "route_id": "governed_agent_action_proof_packet",
+  "time_to_first_user": "days",
+  "time_to_paid_signal": "days-weeks after approval",
+  "value_object": "Governed Agent Action Proof Packet"
+}

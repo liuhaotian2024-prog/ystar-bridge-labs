@@ -1,0 +1,6 @@
+# E47 CZL Closure
+
+- job_id: e47_full_capability_mainline_integration_money_route_retest_20260505T000001Z
+- runtime_v2_invokes_all_mandatory_adapters: True
+- selected_route: governed_agent_action_proof_packet
+- recommended_next_milestone: E48_gov_mcp_server_client_demo_closure

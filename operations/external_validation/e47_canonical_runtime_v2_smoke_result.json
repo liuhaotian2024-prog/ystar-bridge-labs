@@ -1,0 +1,800 @@
+{
+  "all_mandatory_adapters_invoked": true,
+  "artifact_id": "e47_canonical_runtime_v2_smoke_result",
+  "closure_packet": {
+    "coverage_gate_passed": true,
+    "no_external_action": true,
+    "owner_approval_required_before_external_action": true,
+    "route_decision_produced": true
+  },
+  "coverage_gate": {
+    "passed": true,
+    "resource_count": 66767,
+    "unknown_status_count": 0
+  },
+  "e42_match_count": 12,
+  "e44a_cascade_stage_count": 15,
+  "e46b_runtime_route": {
+    "first_external_attempt_now": false,
+    "next_recommended_milestone": "E47_gov_mcp_server_client_demo_closure",
+    "reason": "Canonical spine keeps the proof packet route but requires server/client and doctor closure before outreach.",
+    "selected_value_object": "Governed Agent Action Proof Packet",
+    "technical_substrate": "gov-mcp + Y-star-gov governed execution"
+  },
+  "mandatory_adapter_count": 12,
+  "mandatory_adapter_results": [
+    {
+      "adapter_id": "field_projection_mainline",
+      "canonical_spine_stage": "field_projection",
+      "decision_effect": "Projects task through M Triangle/company/milestone/action/closure chain.",
+      "invoked": true,
+      "no_external_action": true,
+      "result_data": {
+        "action_candidates": [
+          "run canonical dry-run",
+          "reuse E45 local demo",
+          "close gov-mcp server/client demo gap",
+          "prepare owner-approved external attempt only after blockers"
+        ],
+        "artifact_id": "e46b_field_projection_adapter_result",
+        "behavior_constraints": [
+          "no contact",
+          "no send",
+          "no provider/API",
+          "no internet install",
+          "no duplicate governance/execution/audit/brain/KG"
+        ],
+        "board_directive_link": [
+          "| 1 | Enterprise customer research | CSO | \u2705 \u5b8c\u6210 | sales/enterprise_prospects_0.48.0.md (10.8KB) |",
+          "| 2 | Phase 2 OmissionEngine | CTO | \u2705 7/7 | \u540c\u4e0a |",
+          "| #009 CFO OmissionEngine | 2026-03-27 | 3/3 |",
+          "## \ud83c\udfaf Mission Accomplished"
+        ],
+        "cieu_closure_expectation": "record local proof, failures, route decision, owner approval boundary, and next projection",
+        "company_objective": "prove governed agent action is understandable and locally demonstrable without external claims",
+        "governance_gate_needed": true,
+        "m_triangle_alignment": "maintain Board/M Triangle alignment before execution",
+        "milestone_objective": "E46B canonical spine turns prior runtime/projection/brain/capability assets into one task-time flow",
+        "no_external_action": true,
+        "projection_maturity": "partial_adapter",
+        "residual_learning_expectation": "doctor/server-client gaps become residual learning candidates, not canonical learning until reviewed",
+        "session_objective": "produce local dry-run route decision with no external side effects",
+        "source_snippets": {
+          "DIRECTIVE_TRACKER": [
+            "| 1 | Enterprise customer research | CSO | \u2705 \u5b8c\u6210 | sales/enterprise_prospects_0.48.0.md (10.8KB) |",
+            "| 2 | Phase 2 OmissionEngine | CTO | \u2705 7/7 | \u540c\u4e0a |",
+            "| #009 CFO OmissionEngine | 2026-03-27 | 3/3 |",
+            "## \ud83c\udfaf Mission Accomplished",
+            "- Omission DB: **600 violations** (117 HARD_OVERDUE obligations)",
+            "Accenture/Deloitte/PwC partnerships\uff08revenue model\u5f85pilot\u8c08\u5224\u786e\u5b9a\uff09",
+            "- **Omission DB violations: 600** (117 HARD_OVERDUE obligations)",
+            "- **Top violation:** required_acknowledgement_omission (2,038)"
+          ],
+          "M_TRIANGLE": [
+            "# M Triangle \u2014 Y* Bridge Labs \u7684\u6839\u672c\u76ee\u6807 (v1)",
+            "**\u4f4d\u7f6e**: `knowledge/ceo/wisdom/M_TRIANGLE.md`",
+            "Survivability Governability Value",
+            "### M-3 Value Production (\u4ef7\u503c\u4ea7\u51fa)",
+            "- S-3.5 **dogfood \u662f\u9500\u552e\u8bc1\u636e**: Y\\* Bridge Labs \u6bcf\u4e00\u4e2a CIEU event, \u6bcf\u4e00\u4e2a agent ship, \u6bcf\u4e00\u6b21 Board catch \u2014 \u90fd\u80fd\u53d8\u6210 \"AI agent company operating real\" \u7684 case study. dogfood \u4e0d\u662f\u5185\u90e8\u73a9, \u662f**\u9500\u552e pitch \u7684\u6838\u5fc3\u5f39\u836f**.",
+            "\u6211\u4eec\u901a\u8fc7 **Survivability + Governability + Value** \u4e09\u89d2\u4fdd\u6301\u540c\u65f6\u524d\u8fdb.",
+            "\u6bcf\u4e00\u6b21 GitHub star / \u5ba2\u6237\u4e0b\u8f7d / \u4ed8\u8d39\u90fd\u662f Value \u5728\u79ef\u7d2f."
+          ],
+          "OPERATIONS": [
+            "| W4 | Series 4 | \u5468\u4e8c 08:30 ET | omission detection |",
+            "The central challenge was simple but unforgiving: Could a company operated by AI agents use its own governance product to prevent chaos? The answer arrived in the form of a Windows Git Bash error that blocked all governed sessions. The CTO ",
+            "But fixing code was the smaller revelation. The larger one came when the Board noticed the agents executing lower-priority tasks while a P0 blocker sat open. The governance framework's OmissionEngine could enforce deadlines but not dependen",
+            "Then came the SLA redesign. Human organizations measure response time in hours or days. But AI agents operate at millisecond-to-minute scales. A one-hour P0 window allows thousands of ungoverned decisions to accumulate. The Board rewrote th",
+            "All of this happened under audit. Every command, every file read, every decision is now sealed in the CIEU database with SHA-256 hash chains. When the first enterprise customer asks \"Can you prove your agents didn't access restricted data?\"",
+            "The company runs at roughly $52 per day\u2014API costs and a Claude Max subscription, plus two USPTO provisional patents filed as insurance. Projected monthly burn: $1,550. Revenue: $0. Users: 0. But the product works on itself, which means it w",
+            "- **Revenue:** $0",
+            "Today's autonomous cycle focused on closing the gap. The CEO upgraded the local installation to v0.48.0, verified CIEU hook liveness (Directive #024), collected metrics across GitHub/PyPI, wrote a complete Show HN submission draft, updated "
+          ],
+          "WORK_METHODOLOGY": [
+            "Purpose: Enable every agent (CEO \u81ea\u5df1 + \u5168\u56e2\u961f) \u5728\u6bcf\u6b21 task / spec / ruling / impl / commit \u4e4b\u524d\u81ea\u52a8\u8dd1\u8fc7\u8fd9 14 \u6761 checklist; \u540c\u65f6\u8ba9 Samantha AMENDMENT-024 \u628a\u672c\u6587\u4ef6\u52a0\u5165 CLAUDE.md + AGENTS.md \u5fc5\u8bfb\u5f15\u7528; \u540c\u65f6\u8ba9 forget_guard \u52a0 rule work_methodology_violation \u68c0\u6d4b\u5173\u952e\u8fdd\u53cd.",
+            "**\u5f3a\u5236\u7ea7\u522b**: Constitutional \u2014 \u6240\u6709 agent boot \u5fc5\u8bfb, \u6240\u6709 task \u5fc5\u8fc7\u6b64 checklist",
+            "**\u65b9\u6cd5\u8bba = \u8ba9 M Triangle \u4e0d\u5728 plan \u548c action \u4e4b\u95f4\u65ad\u94fe\u7684 structural discipline. \u4e0d\u8d70\u5b8c\u8fd9 14 \u6761\u7684 task \u4e0d\u7b97 done, \u54ea\u6015 document \u5199\u4e86\u5f88\u591a.**",
+            "## 2. \u6bcf task \u524d checklist (15 \u79d2\u8fc7\u4e00\u904d)",
+            "\u4efb\u4f55 agent \u4efb\u4f55 task \u5f00\u5de5\u524d, \u8fc7\u8fd9\u4e2a 8 \u95ee checklist (\u4ece 14 \u6761\u539f\u5219\u63d0\u70bc):"
+          ]
+        },
+        "task_id": "E47 runtime v2 smoke",
+        "task_objective": "connect all discovered capabilities and produce route decision",
+        "y_star_candidate": "Governed Agent Action Proof Packet over gov-mcp + Y-star-gov substrate"
+      },
+      "result_status": "partial_adapter",
+      "side_effect_level": "read_only_local"
+    },
+    {
+      "adapter_id": "ceo_brain_mainline",
+      "canonical_spine_stage": "ceo_brain_context",
+      "decision_effect": "Loads canonical CEO brain context without creating a second brain.",
+      "invoked": true,
+      "no_external_action": true,
+      "result_data": {
+        "commercial_assets": 12,
+        "latest_runtime_artifacts": 7,
+        "wisdom_results": 3
+      },
+      "result_status": "pass",
+      "side_effect_level": "read_only_local"
+    },
+    {
+      "adapter_id": "wisdom_mainline",
+      "canonical_spine_stage": "ceo_brain_context",
+      "decision_effect": "Wisdom corpus influences route framing.",
+      "invoked": true,
+      "no_external_action": true,
+      "result_data": {
+        "command": [
+          "python3",
+          "scripts/wisdom_search.py",
+          "--top",
+          "3",
+          "--json",
+          "E47 runtime v2 smoke connect all discovered capabilities and produce route decision M Triangle value production"
+        ],
+        "cwd": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "[\n  {\n    \"name\": \"Aiden Meta Development Method Kernel\",\n    \"path\": \"AIDEN_META_DEVELOPMENT_METHOD_KERNEL.md\",\n    \"type\": \"\",\n    \"score\": 0.2112\n  },\n  {\n    \"name\": \"Aiden 8 Module Cognitive Architecture\",\n    \"path\": \"meta/aiden_8_module_cognitive_architecture.md\",\n    \"type\": \"ceo wisdom (meta) / cognitive architecture\",\n    \"score\": 0.1469\n  },\n  {\n    \"name\": \"M Triangle\",\n    \"path\": \"M_TRIANGLE.md\",\n    \"type\": \"\",\n    \"score\": 0.1456\n  }\n]\n",
+        "timed_out": false
+      },
+      "result_status": "pass",
+      "side_effect_level": "read_only_local"
+    },
+    {
+      "adapter_id": "working_memory_mainline",
+      "canonical_spine_stage": "ceo_brain_context",
+      "decision_effect": "Working memory/LRS status is read before route decision.",
+      "invoked": true,
+      "no_external_action": true,
+      "result_data": {
+        "command": [
+          "python3",
+          "scripts/working_memory_snapshot.py",
+          "load-latest"
+        ],
+        "cwd": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+        "returncode": 1,
+        "stderr": "No snapshots found\n",
+        "stdout": "",
+        "timed_out": false
+      },
+      "result_status": "unavailable_nonfatal",
+      "side_effect_level": "read_only_local"
+    },
+    {
+      "adapter_id": "article_11_mainline",
+      "canonical_spine_stage": "constitutional_target",
+      "decision_effect": "Decision discipline is recorded honestly; failure blocks overconfidence, not local dry-run.",
+      "invoked": true,
+      "no_external_action": true,
+      "result_data": {
+        "command": [
+          "python3",
+          "scripts/article_11_tracker.py",
+          "check_compliance",
+          "--window_hours",
+          "2"
+        ],
+        "cwd": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+        "returncode": 1,
+        "stderr": "",
+        "stdout": "[ARTICLE_11_TRACKER] \u274c COMPLIANCE FAIL: missing layers [0, 1, 2, 3, 4, 5, 6]\n  Layer 0: Y* (ideal contract)\n  Layer 1: Pre-session context (twin trace)\n  Layer 2: Decision (counterfactual analysis)\n  Layer 3: Memory (session state + LRS)\n  Layer 4: Execution (RAPID + constraints)\n  Layer 5: Track (emit CIEU events)\n  Layer 6: Learn (extract lessons)\n{\n  \"status\": \"FAIL\",\n  \"completed_layers\": [],\n  \"missing_layers\": [\n    0,\n    1,\n    2,\n    3,\n    4,\n    5,\n    6\n  ],\n  \"events\": [],\n  \"window_hours\": 2\n}\n",
+        "timed_out": false
+      },
+      "result_status": "fail_nonfatal",
+      "side_effect_level": "read_only_local"
+    },
+    {
+      "adapter_id": "commercial_route_mainline",
+      "canonical_spine_stage": "commercial_value_route",
+      "decision_effect": "Commercial/plugin/revenue assets are route inputs, not disconnected docs.",
+      "invoked": true,
+      "no_external_action": true,
+      "result_data": {
+        "asset_count": 12,
+        "top_assets": [
+          {
+            "matched_terms": [
+              "revenue",
+              "pricing",
+              "enterprise",
+              "paid"
+            ],
+            "path": "finance/financial_health_20260415.md",
+            "score": 4,
+            "snippets": [
+              "| **Burn Multiple** | N/A | Division by zero (no revenue) |",
+              "| 2026-01-XX | Legal/IP | USPTO Provisional Patent P1 (CIEU framework) | $65.00 | expenditure_log.md line 10 | PAID \u2705 |",
+              "| 2026-03-26 | Legal/IP | USPTO Provisional Patent P3 | $65.00 | expenditure_log.md line 11 | PAID \u2705 |"
+            ]
+          },
+          {
+            "matched_terms": [
+              "revenue",
+              "pricing",
+              "enterprise",
+              "paid"
+            ],
+            "path": "finance/master_ledger_20260415.md",
+            "score": 4,
+            "snippets": [
+              "| 2026-01-XX | Legal/IP | USPTO Provisional Patent P1 (CIEU framework) | $65.00 | expenditure_log.md line 10 | PAID |",
+              "| 2026-03-26 | Legal/IP | USPTO Provisional Patent P3 | $65.00 | expenditure_log.md line 11 | PAID |",
+              "| 2026-03-26 | Legal/IP | USPTO Provisional Patent P4 | $65.00 | expenditure_log.md line 12 | PAID |"
+            ]
+          },
+          {
+            "matched_terms": [
+              "revenue",
+              "pricing",
+              "marketplace",
+              "enterprise"
+            ],
+            "path": "finance/pricing/discount_authority_matrix.md",
+            "score": 4,
+            "snippets": [
+              "| **21-35%** | CEO (Aiden) | Requires written justification + CFO sign-off on unit economics. | Enterprise land deal (>$20k/year ACV), reference customer commitment, co-marketing agreement. |",
+              "1. **Multi-tier downgrade after contract signing** (e.g., Enterprise \u2192 Team after first year).",
+              "2. **Perpetual license** (Y*gov is SaaS-only; no perpetual pricing without Board approval)."
+            ]
+          },
+          {
+            "matched_terms": [
+              "revenue",
+              "pricing",
+              "enterprise",
+              "paid"
+            ],
+            "path": "finance/pricing_model_v1.md",
+            "score": 4,
+            "snippets": [
+              "# Y*gov Pricing Model v1",
+              "## 1. Three-Tier Pricing Overview",
+              "| Dimension | Free (Developer) | Pro ($49/mo) | Enterprise ($499/mo+) |"
+            ]
+          },
+          {
+            "matched_terms": [
+              "revenue",
+              "pricing",
+              "enterprise",
+              "paid"
+            ],
+            "path": "knowledge/cfo/pricing_strategy.md",
+            "score": 4,
+            "snippets": [
+              "# Pricing Strategy Framework",
+              "- Designing initial pricing model",
+              "- Pivoting from unprofitable pricing"
+            ]
+          },
+          {
+            "matched_terms": [
+              "revenue",
+              "pricing",
+              "enterprise",
+              "paid"
+            ],
+            "path": "knowledge/cfo/unit_economics.md",
+            "score": 4,
+            "snippets": [
+              "- Pricing decisions",
+              "LTV = (ARPU \u00d7 Gross Margin %) / Revenue Churn Rate",
+              "Monthly Revenue Churn: 3%"
+            ]
+          },
+          {
+            "matched_terms": [
+              "revenue",
+              "pricing",
+              "enterprise",
+              "paid"
+            ],
+            "path": "sales/enterprise_prospects_0.48.0.md",
+            "score": 4,
+            "snippets": [
+              "# Enterprise Customer Prospecting Report \u2014 Y*gov 0.48.0",
+              "**Objective:** Identify first wave of enterprise customers for immediate outreach post-launch",
+              "Based on market analysis of enterprise AI agent adoption in 2026, I have identified **5 high-priority industry verticals** and **14 specific target companies** for Y*gov enterprise sales. The selection criteria prioritize:"
+            ]
+          },
+          {
+            "matched_terms": [
+              "plugin",
+              "marketplace",
+              "enterprise",
+              "paid"
+            ],
+            "path": "sales/skill_submissions.md",
+            "score": 4,
+            "snippets": [
+              "- **1 CONFIRMED** as a curated directory with automated crawling (claudemarketplaces.com)",
+              "**Recommended priority order:** skills.sh (largest ecosystem) > skillhub.club (developer portal) > claudemarketplaces.com (auto-crawled, needs install threshold)",
+              "## 1. claudemarketplaces.com"
+            ]
+          },
+          {
+            "matched_terms": [
+              "revenue",
+              "pricing",
+              "enterprise"
+            ],
+            "path": "content/cmo_k9audit_content_ideas.md",
+            "score": 3,
+            "snippets": [
+              "- Enterprise sales pitch deck\u7b2c\u4e00\u9875",
+              "- Enterprise pitch: ROI calculation\uff08engineer time saved\uff09",
+              "- Pricing page: \"No per-event fees, no data transmission costs\""
+            ]
+          },
+          {
+            "matched_terms": [
+              "revenue",
+              "pricing",
+              "enterprise"
+            ],
+            "path": "content/whitepaper/enterprise_compliance_audit_trails.md",
+            "score": 3,
+            "snippets": [
+              "**A Technical Whitepaper for Enterprise Compliance Officers**",
+              "Enterprises deploying AI agents face an emerging compliance gap: regulatory frameworks require demonstrable control and auditability over automated decision-making systems, but existing AI infrastructure lacks the governance mechanisms to p",
+              "**EU AI Act** (proposed, under finalization) classifies certain AI systems as \"high-risk\" and imposes requirements for human oversight, logging of operations, and technical documentation. Multi-agent systems operating with broad access to e"
+            ]
+          },
+          {
+            "matched_terms": [
+              "pricing",
+              "marketplace",
+              "enterprise"
+            ],
+            "path": "content/whitepaper/ystar_gov_runtime_governance_for_multi_agent_systems.md",
+            "score": 3,
+            "snippets": [
+              "Devin's 2024 public demos surfaced the enterprise version of this: a coding agent with git access, network egress, and shell \u2014 when it failed, the median debug session (per the Cognition team's own postmortems) was multi-hour because there ",
+              "| **v1.0 \u2014 GA** | 2026-Q2 | signed hook binaries, Windows native support, enterprise SSO bridge, first three paying customers |",
+              "| **v1.2 \u2014 policy marketplace** | 2026-Q4 | shareable IntentContract templates for regulated verticals (SOC2, HIPAA, EU AI Act Article 14 traceability) |"
+            ]
+          },
+          {
+            "matched_terms": [
+              "revenue",
+              "pricing",
+              "paid"
+            ],
+            "path": "finance/cost_analysis_001.md",
+            "score": 3,
+            "snippets": [
+              "### Token Pricing Reference",
+              "**Why expensive:** Opus pricing (5x Sonnet) + all-day context accumulation + every agent response loads into main thread.",
+              "| Main Opus Conversation (all-day) | $20-24 | 40-47% | Context accumulation + Opus pricing |"
+            ]
+          }
+        ]
+      },
+      "result_status": "pass",
+      "side_effect_level": "read_only_local"
+    },
+    {
+      "adapter_id": "evidence_intelligence_mainline",
+      "canonical_spine_stage": "evidence_audit_context",
+      "decision_effect": "Evidence/claim/frontier assets constrain revenue claims.",
+      "invoked": true,
+      "no_external_action": true,
+      "result_data": {
+        "found": [
+          {
+            "keys": [
+              "artifact_id",
+              "generated_at",
+              "receipt_count",
+              "receipts"
+            ],
+            "path": "operations/external_validation/e38_public_evidence_receipts.json"
+          },
+          {
+            "keys": [
+              "artifact_id",
+              "customer_validation_claimed",
+              "edge_count",
+              "edges",
+              "generated_at",
+              "is_ceo_kg",
+              "main_supported_clusters",
+              "node_count"
+            ],
+            "path": "operations/external_validation/e39_deep_research_claim_graph.json"
+          },
+          {
+            "keys": [
+              "affected_clusters",
+              "affected_route_implications",
+              "artifact_id",
+              "contradiction_count",
+              "contradiction_edges",
+              "contradiction_nodes",
+              "customer_validation_claimed",
+              "generated_at"
+            ],
+            "path": "operations/external_validation/e39_contradiction_graph.json"
+          },
+          {
+            "keys": [
+              "artifact_id",
+              "claims_evaluated",
+              "cluster_evidence_burden",
+              "clusters_needing_more_public_evidence",
+              "clusters_needing_simulation_or_park",
+              "clusters_ready_for_expert_preflight",
+              "customer_validation_claimed",
+              "generated_at"
+            ],
+            "path": "operations/external_validation/e39_source_quality_evidence_burden_evaluator.json"
+          },
+          {
+            "keys": [
+              "artifact_id",
+              "generated_at",
+              "import_patterns",
+              "permanent_CEO_brain_method",
+              "post_import_evaluation_dimensions",
+              "required_boundaries",
+              "second_brain_created",
+              "stages"
+            ],
+            "path": "operations/external_validation/e41_frontier_capability_import_loop.json"
+          },
+          {
+            "keys": [
+              "K9_CIEU_CZL_audit_context",
+              "artifact_id",
+              "customer_validation_claimed",
+              "generated_at",
+              "local_first_command_path",
+              "name",
+              "one_line_promise",
+              "paid_signal_claimed"
+            ],
+            "path": "operations/external_validation/e45_first_value_demo_bundle.json"
+          }
+        ]
+      },
+      "result_status": "pass",
+      "side_effect_level": "read_only_local"
+    },
+    {
+      "adapter_id": "execution_demo_mainline",
+      "canonical_spine_stage": "execution_feasibility",
+      "decision_effect": "Execution/local proof status gates outreach and money-route recommendations.",
+      "invoked": true,
+      "no_external_action": true,
+      "result_data": {
+        "failed": 1,
+        "passed": 7,
+        "readiness": "ready_for_owner_review",
+        "skipped": 1
+      },
+      "result_status": "ready_for_owner_review",
+      "side_effect_level": "read_only_local"
+    },
+    {
+      "adapter_id": "governance_boundary_mainline",
+      "canonical_spine_stage": "governance_boundary",
+      "decision_effect": "Governance and execution ownership remain cross-repo boundaries.",
+      "invoked": true,
+      "no_external_action": true,
+      "result_data": {
+        "Y_star_gov_exists": true,
+        "gov_mcp_exists": true,
+        "no_duplicate_execution_layer": true,
+        "no_duplicate_kernel": true,
+        "owner_approval_required": true
+      },
+      "result_status": "pass",
+      "side_effect_level": "read_only_local"
+    },
+    {
+      "adapter_id": "audit_closure_mainline",
+      "canonical_spine_stage": "audit_context",
+      "decision_effect": "CIEU/CZL/K9/KG proof context remains attached without duplicate ledger.",
+      "invoked": true,
+      "no_external_action": true,
+      "result_data": {
+        "CZL_exists": true,
+        "E45_trace_exists": true,
+        "K9Audit_exists": true,
+        "KG_read_model_exists": true
+      },
+      "result_status": "pass",
+      "side_effect_level": "read_only_local"
+    },
+    {
+      "adapter_id": "notification_board_loop",
+      "canonical_spine_stage": "notification_board_loop_readiness",
+      "decision_effect": "Board/notification loop is visible but no send is performed.",
+      "invoked": true,
+      "no_external_action": true,
+      "result_data": {
+        "directive_tracker_exists": true,
+        "reports_daily_exists": true,
+        "send_allowed": false,
+        "telegram_notify_exists": true
+      },
+      "result_status": "read_only",
+      "side_effect_level": "read_only_local"
+    },
+    {
+      "adapter_id": "recovery_delivery_mainline",
+      "canonical_spine_stage": "execution_feasibility",
+      "decision_effect": "Recovery/delivery support is part of operational runtime rather than forgotten tooling.",
+      "invoked": true,
+      "no_external_action": true,
+      "result_data": {
+        "delivery_bridge_worker_exists": true,
+        "delivery_status_tests_exist": true,
+        "jsonl_recovery_mentions": false
+      },
+      "result_status": "pass",
+      "side_effect_level": "read_only_local"
+    }
+  ],
+  "mode": "local_dry_run",
+  "money_route_matrix": [
+    {
+      "buyer": "AI engineer / local MCP user",
+      "credibility_risk": "medium",
+      "current_assets": "help/status/demo/docs",
+      "dependency_on_unresolved_local_blockers": "depends on doctor/server blockers",
+      "evidence_burden": "medium",
+      "execution_complexity": "low",
+      "local_proof_status": "partial",
+      "missing_assets": "server/client start and doctor closure",
+      "overclaim_risk": "low",
+      "owner_burden": "low",
+      "pain_solved": "trust in agent actions",
+      "recommended_action": "harden_first",
+      "revenue_potential": "medium",
+      "route_id": "gov_mcp_ystar_local_proof",
+      "time_to_first_user": "hours-days",
+      "time_to_paid_signal": "not paid by itself",
+      "value_object": "gov-mcp + Y-star-gov local proof packet"
+    },
+    {
+      "buyer": "AI engineer / agent team",
+      "credibility_risk": "medium",
+      "current_assets": "E45 bundle + docs + demos",
+      "dependency_on_unresolved_local_blockers": "depends on local blockers",
+      "evidence_burden": "medium",
+      "execution_complexity": "low-medium",
+      "local_proof_status": "ready_for_owner_review",
+      "missing_assets": "server/client closure and owner-approved trial script",
+      "overclaim_risk": "low",
+      "owner_burden": "low",
+      "pain_solved": "make allow/deny governance legible",
+      "recommended_action": "harden_first",
+      "revenue_potential": "medium",
+      "route_id": "governed_agent_action_proof_packet",
+      "time_to_first_user": "days",
+      "time_to_paid_signal": "days-weeks after approval",
+      "value_object": "Governed Agent Action Proof Packet"
+    },
+    {
+      "buyer": "Claude Desktop / MCP power user",
+      "credibility_risk": "medium",
+      "current_assets": "plugin/commercial assets",
+      "dependency_on_unresolved_local_blockers": "depends on packaging",
+      "evidence_burden": "medium",
+      "execution_complexity": "medium",
+      "local_proof_status": "not verified",
+      "missing_assets": "packaging closure",
+      "overclaim_risk": "medium",
+      "owner_burden": "medium",
+      "pain_solved": "easy install",
+      "recommended_action": "package_first",
+      "revenue_potential": "medium",
+      "route_id": "claude_desktop_mcpb_packaging",
+      "time_to_first_user": "days-weeks",
+      "time_to_paid_signal": "weeks",
+      "value_object": "MCPB/plugin wrapper"
+    },
+    {
+      "buyer": "Claude Code user",
+      "credibility_risk": "high",
+      "current_assets": "historical plugin/pricing assets",
+      "dependency_on_unresolved_local_blockers": "requires publish/approval",
+      "evidence_burden": "medium",
+      "execution_complexity": "medium-high",
+      "local_proof_status": "not verified",
+      "missing_assets": "marketplace packaging/publish approval",
+      "overclaim_risk": "high",
+      "owner_burden": "medium",
+      "pain_solved": "governed coding actions",
+      "recommended_action": "parked",
+      "revenue_potential": "medium",
+      "route_id": "ystar_claude_code_plugin_marketplace",
+      "time_to_first_user": "weeks",
+      "time_to_paid_signal": "weeks",
+      "value_object": "Y*gov Claude Code plugin"
+    },
+    {
+      "buyer": "AI tooling teams",
+      "credibility_risk": "high",
+      "current_assets": "sales/bug bounty concepts",
+      "dependency_on_unresolved_local_blockers": "needs external validation",
+      "evidence_burden": "high",
+      "execution_complexity": "medium",
+      "local_proof_status": "not verified",
+      "missing_assets": "offer/test cases/proof",
+      "overclaim_risk": "medium",
+      "owner_burden": "high",
+      "pain_solved": "find unsafe agent behavior",
+      "recommended_action": "parked",
+      "revenue_potential": "high",
+      "route_id": "ai_agent_bug_bounty_service",
+      "time_to_first_user": "weeks",
+      "time_to_paid_signal": "weeks",
+      "value_object": "bug bounty / agent risk service"
+    },
+    {
+      "buyer": "SMB ops buyer",
+      "credibility_risk": "high",
+      "current_assets": "workflow resale assets",
+      "dependency_on_unresolved_local_blockers": "weak current proof",
+      "evidence_burden": "medium",
+      "execution_complexity": "medium",
+      "local_proof_status": "not verified",
+      "missing_assets": "packaged workflow and proof",
+      "overclaim_risk": "medium",
+      "owner_burden": "medium",
+      "pain_solved": "automated process control",
+      "recommended_action": "parked",
+      "revenue_potential": "high",
+      "route_id": "workflow_resale_n8n_czl",
+      "time_to_first_user": "weeks",
+      "time_to_paid_signal": "weeks",
+      "value_object": "workflow resale with CZL"
+    },
+    {
+      "buyer": "enterprise AI governance buyer",
+      "credibility_risk": "high",
+      "current_assets": "enterprise/governance assets",
+      "dependency_on_unresolved_local_blockers": "requires buyer trust",
+      "evidence_burden": "high",
+      "execution_complexity": "high",
+      "local_proof_status": "not verified",
+      "missing_assets": "credible case study and buyer proof",
+      "overclaim_risk": "high",
+      "owner_burden": "high",
+      "pain_solved": "auditability/trust",
+      "recommended_action": "parked",
+      "revenue_potential": "medium-high",
+      "route_id": "enterprise_compliance_pilot",
+      "time_to_first_user": "weeks-months",
+      "time_to_paid_signal": "months",
+      "value_object": "compliance pilot"
+    },
+    {
+      "buyer": "agent platform builder",
+      "credibility_risk": "high",
+      "current_assets": "K9/CIEU context",
+      "dependency_on_unresolved_local_blockers": "K9 integration not active",
+      "evidence_burden": "medium",
+      "execution_complexity": "medium",
+      "local_proof_status": "read-only context",
+      "missing_assets": "integration proof",
+      "overclaim_risk": "medium",
+      "owner_burden": "medium",
+      "pain_solved": "causal traceability",
+      "recommended_action": "parked",
+      "revenue_potential": "medium",
+      "route_id": "k9audit_causal_audit_proof",
+      "time_to_first_user": "weeks",
+      "time_to_paid_signal": "weeks",
+      "value_object": "K9Audit causal audit proof"
+    },
+    {
+      "buyer": "agent-company builder",
+      "credibility_risk": "medium",
+      "current_assets": "E42-E47 artifacts",
+      "dependency_on_unresolved_local_blockers": "publish approval required",
+      "evidence_burden": "medium",
+      "execution_complexity": "medium",
+      "local_proof_status": "strong internal proof",
+      "missing_assets": "readable case packaging",
+      "overclaim_risk": "medium",
+      "owner_burden": "medium",
+      "pain_solved": "operating an AI agent company",
+      "recommended_action": "package_first",
+      "revenue_potential": "medium",
+      "route_id": "bridge_labs_agent_company_case_study",
+      "time_to_first_user": "days-weeks",
+      "time_to_paid_signal": "weeks",
+      "value_object": "Bridge Labs runtime proof/case study"
+    },
+    {
+      "buyer": "founder / AI ops lead",
+      "credibility_risk": "medium",
+      "current_assets": "proof packet + runtime spine",
+      "dependency_on_unresolved_local_blockers": "needs exact offer and no-overclaim wording",
+      "evidence_burden": "medium",
+      "execution_complexity": "low-medium",
+      "local_proof_status": "partial",
+      "missing_assets": "service scope and owner-approved outreach",
+      "overclaim_risk": "medium",
+      "owner_burden": "medium",
+      "pain_solved": "adopt governed agents",
+      "recommended_action": "package_first",
+      "revenue_potential": "medium",
+      "route_id": "consulting_advisory_proof_packet",
+      "time_to_first_user": "days",
+      "time_to_paid_signal": "days-weeks",
+      "value_object": "paid setup/advisory proof packet"
+    },
+    {
+      "buyer": "local AI team",
+      "credibility_risk": "medium",
+      "current_assets": "gov-mcp docs + proof packet",
+      "dependency_on_unresolved_local_blockers": "depends on server/client proof",
+      "evidence_burden": "medium",
+      "execution_complexity": "medium",
+      "local_proof_status": "partial",
+      "missing_assets": "server/client closure",
+      "overclaim_risk": "medium",
+      "owner_burden": "medium",
+      "pain_solved": "hands-on install/config",
+      "recommended_action": "harden_first",
+      "revenue_potential": "medium",
+      "route_id": "paid_setup_implementation_service",
+      "time_to_first_user": "days",
+      "time_to_paid_signal": "days-weeks",
+      "value_object": "paid implementation setup"
+    },
+    {
+      "buyer": "developer-led growth audience",
+      "credibility_risk": "medium",
+      "current_assets": "commercial assets from CEO brain",
+      "dependency_on_unresolved_local_blockers": "depends on selected package",
+      "evidence_burden": "medium",
+      "execution_complexity": "medium",
+      "local_proof_status": "partial",
+      "missing_assets": "packaging/pricing",
+      "overclaim_risk": "medium",
+      "owner_burden": "medium",
+      "pain_solved": "quick comprehension",
+      "recommended_action": "package_first",
+      "revenue_potential": "medium",
+      "route_id": "commercial_asset_surfaced_route",
+      "time_to_first_user": "days-weeks",
+      "time_to_paid_signal": "weeks",
+      "value_object": "developer-led proof bundle"
+    }
+  ],
+  "next_projection": "close server/client demo and doctor blockers, then re-evaluate owner-approved external attempt",
+  "no_external_action": true,
+  "route_decision": {
+    "next_recommended_milestone": "E48_gov_mcp_server_client_demo_closure",
+    "selected_recommended_action": "harden_first",
+    "selected_route_id": "governed_agent_action_proof_packet",
+    "selected_value_object": "Governed Agent Action Proof Packet",
+    "why": "Fastest credible revenue-adjacent path is the proof packet service/wedge, but full runtime still sees gov-mcp server/client and Y-star-gov doctor blockers before outreach or paid-signal claims."
+  },
+  "side_effect_report": {
+    "customer_contact": false,
+    "expert_contact": false,
+    "form_submission": false,
+    "human_identification": false,
+    "internet_install": false,
+    "login": false,
+    "payment": false,
+    "provider_api_execution": false,
+    "publish": false,
+    "scraping": false,
+    "secret_use": false,
+    "send": false
+  },
+  "task": {
+    "task_description": "connect all discovered capabilities and produce route decision",
+    "task_title": "E47 runtime v2 smoke"
+  }
+}

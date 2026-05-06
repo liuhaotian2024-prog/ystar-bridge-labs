@@ -1,0 +1,7 @@
+{
+  "artifact_id": "e47_ceo_kg_runtime_v2_money_route_feedback",
+  "edges": 2,
+  "nodes": 3,
+  "recommended_next_milestone": "E48_gov_mcp_server_client_demo_closure",
+  "selected_route": "governed_agent_action_proof_packet"
+}

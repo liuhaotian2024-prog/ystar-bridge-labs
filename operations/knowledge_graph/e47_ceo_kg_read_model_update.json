@@ -1,0 +1,5 @@
+{
+  "active_runtime": "e47_canonical_ceo_runtime_v2.run_canonical_ceo_runtime_v2",
+  "artifact_id": "e47_ceo_kg_read_model_update",
+  "updated_bottleneck": "CEO runtime v2 now manages all discovered capability families through active/adapter/read-model/parked/quarantined statuses and has rerun the money route test; next step is the selected execution milestone."
+}

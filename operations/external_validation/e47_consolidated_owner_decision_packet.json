@@ -1,0 +1,10 @@
+{
+  "artifact_id": "e47_consolidated_owner_decision_packet",
+  "exact_next_action": "Close gov-mcp server/client proof and Y-star-gov doctor/environment blockers, then rerun runtime v2 before owner-approved external attempt.",
+  "money_route_selected": "governed_agent_action_proof_packet",
+  "no_external_action": true,
+  "recommended_next_milestone": "E48_gov_mcp_server_client_demo_closure",
+  "runtime_v2_complete_enough": true,
+  "what_got_fully_integrated": "All E46B-discovered resources received final runtime status; 12 mandatory adapter families feed runtime v2.",
+  "why_other_routes_parked_or_rejected": "Routes needing publish, marketplace, enterprise trust, K9 integration, or paid claims are parked until local server/client and doctor blockers close."
+}

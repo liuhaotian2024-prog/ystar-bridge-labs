@@ -1,0 +1,51 @@
+{
+  "all_spine_layers_represented": true,
+  "artifact_id": "e47_full_capability_coverage_gate",
+  "coverage_gate_passed": true,
+  "expert_route_quarantined": true,
+  "final_status_counts": {
+    "active_audit_context": 18039,
+    "active_commercial_route_input": 36485,
+    "active_context_input": 197,
+    "active_evidence_input": 32,
+    "active_execution_boundary": 704,
+    "active_governance_boundary": 9521,
+    "active_read_model_input": 1231,
+    "active_runtime_adapter": 510,
+    "duplicate_merged": 12,
+    "quarantined_with_reason": 36
+  },
+  "get_artifact_only_not_active_runtime": true,
+  "no_external_action": true,
+  "remaining_from_E46B_reference": {
+    "summary_by_resolution": {
+      "bridge": 1165,
+      "cross_repo_proposal": 36261,
+      "keep": 1261,
+      "park": 15
+    },
+    "total_remaining": 38702
+  },
+  "resource_count": 66767,
+  "source_artifacts": [
+    "e46b_full_system_runtime_spine_archaeology",
+    "e46b_remaining_disconnected_capabilities",
+    "e46b_ceo_brain_canonical_model",
+    "e46b_field_functional_projection_recovery",
+    "e44a_full_history_runtime_capability_map",
+    "e45_full_history_actual_invocation_trace"
+  ],
+  "spine_layer_counts": {
+    "capability_activation_layer": 77,
+    "ceo_brain_layer": 128,
+    "closure_learning_layer": 43,
+    "commercial_value_layer": 458,
+    "constitutional_target_layer": 252,
+    "evidence_audit_layer": 42807,
+    "execution_boundary_layer": 1129,
+    "field_functional_projection_layer": 1007,
+    "governance_kernel_layer": 20817,
+    "notification_board_loop_layer": 49
+  },
+  "unknown_status_count": 0
+}

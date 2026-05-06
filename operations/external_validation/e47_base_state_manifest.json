@@ -1,0 +1,17 @@
+{
+  "E42_E43_artifacts_exist": true,
+  "E44A_full_history_artifacts_exist": true,
+  "E45_local_demo_artifacts_exist": true,
+  "E46B_canonical_runtime_exists": true,
+  "E46B_ceo_brain_adapter_exists": true,
+  "E46B_field_projection_adapter_exists": true,
+  "E46B_report_exists": true,
+  "artifact_id": "e47_base_state_manifest",
+  "bridge_labs_branch": "backflow/aiden-ceo-meeting-room",
+  "bridge_labs_expected_base": "9b03eae8276fab8f64837953da876db78afc55f8",
+  "bridge_labs_local_head": "9b03eae8276fab8f64837953da876db78afc55f8",
+  "bridge_labs_remote_head": "9b03eae8276fab8f64837953da876db78afc55f8",
+  "bridge_labs_worktree_clean": true,
+  "can_proceed": true,
+  "generated_at": "2026-05-05T00:00:01Z"
+}
