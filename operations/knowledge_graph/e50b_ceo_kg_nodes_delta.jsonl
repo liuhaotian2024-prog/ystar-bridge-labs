@@ -1,0 +1,5 @@
+{"id": "e50a_tool_layer_allow_deny_closed", "type": "TechnicalProof", "label": "E50A gov-mcp tool-layer ALLOW/DENY closed", "source_paths": ["operations/external_validation/e50a_mcp_client_blocker_update.json"], "truth_status": "internal_local_proof"}
+{"id": "e50b_counterfactual_governance_protocol", "type": "GovernanceProtocol", "label": "GOV-005 counterfactual proposal discipline", "source_paths": ["agents/CEO.md", "governance/WORKING_STYLE.md"]}
+{"id": "e50b_counterfactual_runtime_adapter", "type": "RuntimeAdapter", "label": "E50B counterfactual runtime adapter", "source_paths": ["office/mission_command/e50b_counterfactual_runtime_adapter.py"]}
+{"id": "e50b_selected_route_package_proof_packet", "type": "CommercialRouteDecision", "label": "Package Governed Agent Action Proof Packet", "source_paths": ["operations/external_validation/e50b_counterfactual_money_route_matrix.json"]}
+{"id": "e50b_nearest_alternative_full_stack_proof", "type": "CounterfactualAlternative", "label": "Full governed execution + causal audit + proof packet wedge"}

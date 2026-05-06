@@ -1,0 +1,90 @@
+{
+  "artifact_id": "e50b_public_observation_plan",
+  "observation_mode": "bounded_public_read_only",
+  "domains": [
+    {
+      "domain_id": "domain_01",
+      "domain": "AI agent governance / guardrails buyer pain",
+      "max_sources": 4,
+      "no_contact_boundary": true
+    },
+    {
+      "domain_id": "domain_02",
+      "domain": "MCP adoption / MCP server tooling pain",
+      "max_sources": 4,
+      "no_contact_boundary": true
+    },
+    {
+      "domain_id": "domain_03",
+      "domain": "agentic workflow safety and approval gates",
+      "max_sources": 4,
+      "no_contact_boundary": true
+    },
+    {
+      "domain_id": "domain_04",
+      "domain": "AI audit / causal logging / compliance evidence",
+      "max_sources": 4,
+      "no_contact_boundary": true
+    },
+    {
+      "domain_id": "domain_05",
+      "domain": "enterprise AI governance procurement signals",
+      "max_sources": 4,
+      "no_contact_boundary": true
+    },
+    {
+      "domain_id": "domain_06",
+      "domain": "developer tool integration pain around local agent execution",
+      "max_sources": 4,
+      "no_contact_boundary": true
+    },
+    {
+      "domain_id": "domain_07",
+      "domain": "startup / SMB demand for governed agent execution",
+      "max_sources": 4,
+      "no_contact_boundary": true
+    },
+    {
+      "domain_id": "domain_08",
+      "domain": "security review / red-team / policy enforcement pain",
+      "max_sources": 4,
+      "no_contact_boundary": true
+    },
+    {
+      "domain_id": "domain_09",
+      "domain": "existing alternatives and competitors",
+      "max_sources": 4,
+      "no_contact_boundary": true
+    },
+    {
+      "domain_id": "domain_10",
+      "domain": "pricing / packaging signals",
+      "max_sources": 4,
+      "no_contact_boundary": true
+    },
+    {
+      "domain_id": "domain_11",
+      "domain": "first-user reachable segments without outreach",
+      "max_sources": 4,
+      "no_contact_boundary": true
+    },
+    {
+      "domain_id": "domain_12",
+      "domain": "urgency triggers around regulation, rollout, incidents, or MCP ecosystem growth",
+      "max_sources": 4,
+      "no_contact_boundary": true
+    }
+  ],
+  "hard_cap_public_pages": 40,
+  "source_quality_criteria": [
+    "official docs/product/pricing pages preferred",
+    "public pages only",
+    "no login/payment/private API",
+    "no personal contact data"
+  ],
+  "claims_policy": {
+    "not_customer_validation": true,
+    "not_paid_signal": true,
+    "claims_require_receipts": true
+  }
+}

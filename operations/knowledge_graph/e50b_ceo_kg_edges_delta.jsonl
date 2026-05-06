@@ -1,0 +1,4 @@
+{"from": "e50a_tool_layer_allow_deny_closed", "to": "e50b_selected_route_package_proof_packet", "type": "supports"}
+{"from": "e50b_counterfactual_governance_protocol", "to": "e50b_counterfactual_runtime_adapter", "type": "implemented_by_adapter"}
+{"from": "e50b_counterfactual_runtime_adapter", "to": "e50b_selected_route_package_proof_packet", "type": "selects"}
+{"from": "e50b_nearest_alternative_full_stack_proof", "to": "e50b_selected_route_package_proof_packet", "type": "nearest_counterfactual_alternative_to"}

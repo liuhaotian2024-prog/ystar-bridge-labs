@@ -1,0 +1,28 @@
+{
+  "artifact_id": "e50b_public_readonly_commercial_observation_run",
+  "status": "public_readonly_observation_executed",
+  "provider": "Codex web public search/open",
+  "source_receipt_count": 18,
+  "domains_covered": [
+    "agent_governance",
+    "agent_observability",
+    "agent_ops",
+    "audit_compliance",
+    "enterprise_governance",
+    "mcp_tooling",
+    "pricing",
+    "security_redteam",
+    "workflow_automation"
+  ],
+  "page_read_cap": 40,
+  "contacts_identified": false,
+  "personal_contact_data_collected": false,
+  "login_used": false,
+  "forms_submitted": false,
+  "messages_sent": false,
+  "published": false,
+  "provider_private_api_used": false,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false,
+  "no_external_action": true
+}

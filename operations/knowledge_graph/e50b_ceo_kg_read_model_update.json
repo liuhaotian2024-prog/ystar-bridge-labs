@@ -1,0 +1,8 @@
+{
+  "artifact_id": "e50b_ceo_kg_read_model_update",
+  "selected_route": "package_governed_agent_action_proof_packet",
+  "nearest_counterfactual_alternative": "external_commercial_observation_now",
+  "counterfactual_runtime_reconnected": true,
+  "external_observation_receipts": 18,
+  "no_external_action": true
+}

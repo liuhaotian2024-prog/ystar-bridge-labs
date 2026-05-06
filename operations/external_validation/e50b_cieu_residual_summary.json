@@ -1,0 +1,16 @@
+{
+  "artifact_id": "e50b_cieu_residual_summary",
+  "blocker_transition": [
+    "blocked_missing_local_mcp_dependency",
+    "tool_layer_allow_deny_closed",
+    "real_mcp_transport_not_closed",
+    "counterfactual_runtime_reconnected",
+    "counterfactual_runtime_reconnected_external_observation_closed_money_route_selected"
+  ],
+  "residuals": [
+    "real MCP transport/client package remains unclaimed",
+    "owner approval required before outreach/publication",
+    "no customer validation or paid signal exists"
+  ],
+  "no_external_action": true
+}

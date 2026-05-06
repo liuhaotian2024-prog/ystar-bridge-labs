@@ -1,0 +1,26 @@
+{
+  "artifact_id": "e50b_base_state_manifest",
+  "created_at": "2026-05-06T11:49:56.249205+00:00",
+  "bridge_job_id": "e50b_counterfactual_commercial_retest_20260506T000001Z",
+  "repo": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+  "branch": "backflow/aiden-ceo-meeting-room",
+  "expected_base_head": "ba6386c6dca426721ff29bdd8ef13dfd6ed85be7",
+  "local_head": "ba6386c6dca426721ff29bdd8ef13dfd6ed85be7",
+  "remote_head_local_tracking": "ba6386c6dca426721ff29bdd8ef13dfd6ed85be7",
+  "bridge_status_short": "",
+  "gov_mcp_head": "998e62c0fa2dd28797d853f6e054210a1823891f",
+  "gov_mcp_status_short": "",
+  "y_star_gov_head": "5f031f4be151b81ef1a1b1908a5c83c5420e8ce1",
+  "y_star_gov_status_short": "",
+  "k9audit_status_short": "",
+  "no_e50b_leftovers_before_delivery": true,
+  "ports_7920_7930_clear": true,
+  "process_check_limitation": "pgrep/sysmond unavailable in sandbox during preflight; no gov-mcp process was started by E50B payload.",
+  "required_inputs": {
+    "e50a_report_exists": true,
+    "e50a_blocker_update_exists": true,
+    "e49_semantic_route_score_exists": true
+  },
+  "base_verified": true,
+  "no_external_action": true
+}

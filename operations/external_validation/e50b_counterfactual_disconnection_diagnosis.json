@@ -1,0 +1,156 @@
+{
+  "artifact_id": "e50b_counterfactual_disconnection_diagnosis",
+  "final_status": "counterfactual_assets_present_but_runtime_disconnected",
+  "questions": [
+    {
+      "question_id": "e49_consumes_gov005_counterfactual_format",
+      "answer": false,
+      "evidence": {
+        "path": "office/mission_command/e49_semantic_route_scorer.py",
+        "terms_checked": [
+          "GOV-005",
+          "Xt",
+          "Y*",
+          "counterfactual"
+        ],
+        "present": {
+          "GOV-005": false,
+          "Xt": true,
+          "Y*": false,
+          "counterfactual": false
+        },
+        "excerpt": "from __future__ import annotations import json import os from pathlib import Path from typing import Any from .e49_minimal_mcp_client_path_maturity import inspect_minimal_mcp_client_path from .e49_semantic_object_model import build_semantic_route_decision BRIDGE_ROOT = Path(os.environ.get('YSTAR_BRIDGE_LABS_ROOT', Path(__file__).resolve().parents[2])) ROUTE_IDS = [ 'governed_agent_action_proof_packet', 'gov_mcp_ystar_local_proof', 'paid_setup_implementation_service', 'claude_desktop_mcpb_packaging', 'ystar_claude_code_plugin_marketplace', 'ai_agent_bug_bounty_service', 'workflow_resale"
+      },
+      "impact": "Route scores omit the existing proposal discipline that forces explicit current state, target and intervention."
+    },
+    {
+      "question_id": "e49_consumes_autonomous_loop_counterfactual_logic",
+      "answer": false,
+      "evidence": {
+        "path": "office/mission_command/e49_semantic_route_scorer.py",
+        "terms_checked": [
+          "autonomous_loop",
+          "counterfactual",
+          "Rt+1"
+        ],
+        "present": {
+          "autonomous_loop": false,
+          "counterfactual": false,
+          "Rt+1": false
+        },
+        "excerpt": "from __future__ import annotations import json import os from pathlib import Path from typing import Any from .e49_minimal_mcp_client_path_maturity import inspect_minimal_mcp_client_path from .e49_semantic_object_model import build_semantic_route_decision BRIDGE_ROOT = Path(os.environ.get('YSTAR_BRIDGE_LABS_ROOT', Path(__file__).resolve().parents[2])) ROUTE_IDS = [ 'governed_agent_action_proof_packet', 'gov_mcp_ystar_local_proof', 'paid_setup_implementation_service', 'claude_desktop_mcpb_packaging', 'ystar_claude_code_plugin_marketplace', 'ai_agent_bug_bounty_service', 'workflow_resale"
+      },
+      "impact": "Autonomous-loop wisdom remains outside the commercial decision engine."
+    },
+    {
+      "question_id": "e49_route_has_xt_y_star_u_predicted_y_rt",
+      "answer": false,
+      "evidence": {
+        "path": "office/mission_command/e49_semantic_route_scorer.py",
+        "terms_checked": [
+          "Xt_current_state",
+          "Y_star_target",
+          "U_intervention",
+          "predicted_Yt_plus_1",
+          "predicted_Rt_plus_1"
+        ],
+        "present": {
+          "Xt_current_state": false,
+          "Y_star_target": false,
+          "U_intervention": false,
+          "predicted_Yt_plus_1": false,
+          "predicted_Rt_plus_1": false
+        },
+        "excerpt": "from __future__ import annotations import json import os from pathlib import Path from typing import Any from .e49_minimal_mcp_client_path_maturity import inspect_minimal_mcp_client_path from .e49_semantic_object_model import build_semantic_route_decision BRIDGE_ROOT = Path(os.environ.get('YSTAR_BRIDGE_LABS_ROOT', Path(__file__).resolve().parents[2])) ROUTE_IDS = [ 'governed_agent_action_proof_packet', 'gov_mcp_ystar_local_proof', 'paid_setup_implementation_service', 'claude_desktop_mcpb_packaging', 'ystar_claude_code_plugin_marketplace', 'ai_agent_bug_bounty_service', 'workflow_resale"
+      },
+      "impact": "Routes are typed semantically but not counterfactually."
+    },
+    {
+      "question_id": "e49_distinguishes_counterfactual_route_classes",
+      "answer": false,
+      "evidence": {
+        "path": "office/mission_command/e49_semantic_route_scorer.py",
+        "terms_checked": [
+          "nearest_rejected",
+          "deferred",
+          "quarantined",
+          "denied"
+        ],
+        "present": {
+          "nearest_rejected": false,
+          "deferred": false,
+          "quarantined": false,
+          "denied": false
+        },
+        "excerpt": "from __future__ import annotations import json import os from pathlib import Path from typing import Any from .e49_minimal_mcp_client_path_maturity import inspect_minimal_mcp_client_path from .e49_semantic_object_model import build_semantic_route_decision BRIDGE_ROOT = Path(os.environ.get('YSTAR_BRIDGE_LABS_ROOT', Path(__file__).resolve().parents[2])) ROUTE_IDS = [ 'governed_agent_action_proof_packet', 'gov_mcp_ystar_local_proof', 'paid_setup_implementation_service', 'claude_desktop_mcpb_packaging', 'ystar_claude_code_plugin_marketplace', 'ai_agent_bug_bounty_service', 'workflow_resale"
+      },
+      "impact": "Selection does not preserve the nearest rejected/deferred alternative as a learning object."
+    },
+    {
+      "question_id": "ceo_brain_loads_counterfactual_structured_field",
+      "answer": false,
+      "evidence": {
+        "path": "office/mission_command/e46b_ceo_brain_adapter.py",
+        "terms_checked": [
+          "counterfactual",
+          "structured",
+          "wisdom_search"
+        ],
+        "present": {
+          "counterfactual": false,
+          "structured": false,
+          "wisdom_search": true
+        },
+        "excerpt": "from __future__ import annotations import json import os import re import subprocess from collections import Counter from pathlib import Path from typing import Any BRIDGE_ROOT = Path(os.environ.get(\"YSTAR_BRIDGE_LABS_ROOT\", Path(__file__).resolve().parents[2])) Y_GOV_ROOT = Path(os.environ.get(\"YSTAR_GOV_ROOT\", \"/Users/haotianliu/.openclaw/workspace/Y-star-gov\")) GOV_MCP_ROOT = Path(os.environ.get(\"GOV_MCP_ROOT\", \"/Users/haotianliu/.openclaw/workspace/gov-mcp\")) K9_ROOT = Path(os.environ.get(\"K9AUDIT_ROOT\", \"/Users/haotianliu/.openclaw/workspace/K9Audit\")) COMPANY_ROOT = Path(os.environ.get"
+      },
+      "impact": "Counterfactual wisdom can be context, but it is not loaded as an active decision field."
+    },
+    {
+      "question_id": "canonical_runtime_v2_calls_counterfactual_adapter",
+      "answer": false,
+      "evidence": {
+        "path": "office/mission_command/e47_canonical_ceo_runtime_v2.py",
+        "terms_checked": [
+          "counterfactual",
+          "adapter"
+        ],
+        "present": {
+          "counterfactual": false,
+          "adapter": true
+        },
+        "excerpt": "from __future__ import annotations import json import os import subprocess from collections import Counter from pathlib import Path from typing import Any BRIDGE_ROOT = Path(os.environ.get(\"YSTAR_BRIDGE_LABS_ROOT\", Path(__file__).resolve().parents[2])) Y_GOV_ROOT = Path(os.environ.get(\"YSTAR_GOV_ROOT\", \"/Users/haotianliu/.openclaw/workspace/Y-star-gov\")) GOV_MCP_ROOT = Path(os.environ.get(\"GOV_MCP_ROOT\", \"/Users/haotianliu/.openclaw/workspace/gov-mcp\")) K9_ROOT = Path(os.environ.get(\"K9AUDIT_ROOT\", \"/Users/haotianliu/.openclaw/workspace/K9Audit\")) COMPANY_ROOT = Path(os.environ.get(\"YSTAR_CO"
+      },
+      "impact": "The v2 mainline can pass coverage while skipping counterfactual comparison."
+    },
+    {
+      "question_id": "previous_sandbox_learnings_used_in_current_commercial_decision",
+      "answer": false,
+      "evidence": {
+        "path": "office/mission_command/e49_semantic_route_scorer.py",
+        "terms_checked": [
+          "sandbox",
+          "retrospective"
+        ],
+        "present": {
+          "sandbox": false,
+          "retrospective": false
+        },
+        "excerpt": "from __future__ import annotations import json import os from pathlib import Path from typing import Any from .e49_minimal_mcp_client_path_maturity import inspect_minimal_mcp_client_path from .e49_semantic_object_model import build_semantic_route_decision BRIDGE_ROOT = Path(os.environ.get('YSTAR_BRIDGE_LABS_ROOT', Path(__file__).resolve().parents[2])) ROUTE_IDS = [ 'governed_agent_action_proof_packet', 'gov_mcp_ystar_local_proof', 'paid_setup_implementation_service', 'claude_desktop_mcpb_packaging', 'ystar_claude_code_plugin_marketplace', 'ai_agent_bug_bounty_service', 'workflow_resale"
+      },
+      "impact": "Sandbox replay assets are not active in current commercial route choice."
+    },
+    {
+      "question_id": "machine_readable_counterfactual_route_matrix_exists_before_e50b",
+      "answer": false,
+      "evidence": {
+        "path": "operations/external_validation/e50b_counterfactual_money_route_matrix.json"
+      },
+      "impact": "E50B must create this artifact if it is absent."
+    }
+  ],
+  "asset_count": 2099,
+  "counterfactual_router_present": true,
+  "fix_required": true,
+  "fix_implemented_in_e50b": "Add bridge-labs runtime adapter that translates existing GOV-005/CEO wisdom assets into a machine-readable counterfactual route matrix.",
+  "no_external_action": true
+}
