@@ -1,0 +1,43 @@
+{
+  "artifact_id": "e66_reuse_first_growth_audit",
+  "bridge_job_id": "e66_selected_route_offer_blueprint_using_market_dynamics_model_no_execution_20260506T000001Z",
+  "reused_assets": [
+    "office/mission_command/e65_market_dynamics_model.py",
+    "office/mission_command/e65_ceo_market_dynamics_readback.py",
+    "operations/external_validation/e65_market_dynamics_route_rankings.json",
+    "operations/external_validation/e65_market_dynamics_analysis_run.json",
+    "operations/external_validation/e64_dual_axis_first_cash_path_selection.json",
+    "operations/external_validation/e63_offer_package_hypothesis.json",
+    "office/mission_command/e46b_ceo_brain_adapter.py"
+  ],
+  "reconnected_assets": [
+    "CEO brain adapter extended to read E66 model-driven offer state"
+  ],
+  "thin_wrappers_added": [
+    "office/mission_command/e66_ceo_brain_readback_smoke.py"
+  ],
+  "genuinely_new_assets_added": [
+    "office/mission_command/e66_model_driven_offer_core.py",
+    "products/governed_business_operations_blueprint_for_agent_teams"
+  ],
+  "duplicate_capability_risks_checked": {
+    "E65_market_model_rebuilt": false,
+    "route_scoring_engine_rebuilt": false,
+    "public_read_adapter_rebuilt": false,
+    "evidence_atomizer_rebuilt": false,
+    "behavior_gate_rebuilt": false,
+    "CEO_readback_rebuilt": false
+  },
+  "avoided_rebuilds": [
+    "E66 calls E65 profile ranking APIs rather than recomputing rankings independently",
+    "E66 reads E65 portfolio/evidence/stability instead of copying E65 conclusions",
+    "E66 creates only the selected route offer layer and sample packet"
+  ],
+  "justification_for_every_new_module": {
+    "e66_model_driven_offer_core.py": "No existing file produced an E66-specific model invocation proof plus selected route offer blueprint from E65 API outputs.",
+    "e66_ceo_brain_readback_smoke.py": "Thin reader wrapper follows E61-E64 conventions and exposes E66 state to CEO brain.",
+    "products/governed_business_operations_blueprint_for_agent_teams": "No selected-route product directory existed for governed business operations blueprint; this is draft-only internal offer packaging, not a new market model."
+  },
+  "connected_to_E54_E65_runtime_assets": true,
+  "passed": true
+}

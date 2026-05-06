@@ -1,0 +1,34 @@
+{
+  "artifact_id": "e66_sample_delivery_packet",
+  "status": "draft_only_internal_sample",
+  "fictional_generic_buyer_category": "small AI platform team with existing agent workflows",
+  "no_named_real_customer": true,
+  "no_contact_info": true,
+  "not_real_delivery": true,
+  "not_market_validation": true,
+  "sections": {
+    "business_objective_map": "Map agent activity to owner-visible business outcomes and decision rights.",
+    "action_risk_tier_matrix": {
+      "T0_internal_only": "internal reasoning and drafts",
+      "T1_public_read_only": "safe public observation only",
+      "T2_draft_only_external_material": "draft external materials with no send/publish",
+      "T3_owner_approved_external_contact": "explicit owner approval required",
+      "T4_owner_approved_commercial_transaction": "explicit owner approval required for payment/client delivery"
+    },
+    "behavior_authorization_plan": "Define ALLOW/DENY gates before actions can move beyond internal-only operation.",
+    "evidence_closure_map": "Specify receipts, evidence atoms, KG nodes, CZL closure, and CEO readback.",
+    "first_internal_value_loop": "Create one governed internal business loop before external execution.",
+    "implementation_backlog": [
+      "adapter/readback wiring",
+      "policy fixtures",
+      "owner decision packet",
+      "controlled review plan"
+    ]
+  },
+  "source_offer_blueprint_id": "governed_business_operations_blueprint_for_agent_teams",
+  "external_action_allowed": false,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false,
+  "expert_feedback_claimed": false,
+  "pricing_validation_claimed": false
+}

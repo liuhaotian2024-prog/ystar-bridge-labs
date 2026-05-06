@@ -1,0 +1,63 @@
+{
+  "artifact_id": "e66_model_driven_revenue_analysis",
+  "bridge_job_id": "e66_selected_route_offer_blueprint_using_market_dynamics_model_no_execution_20260506T000001Z",
+  "analysis_status": "completed",
+  "top_route_under_fastest_cash_profile": "founder_operator_decision_brief_service",
+  "top_route_under_strategic_defensibility_profile": "governed_business_operations_blueprint_for_agent_teams",
+  "top_route_under_low_risk_profile": "founder_operator_decision_brief_service",
+  "top_route_under_learning_maximization_profile": "governed_business_operations_blueprint_for_agent_teams",
+  "top_route_under_balanced_CEO_profile": "governed_business_operations_blueprint_for_agent_teams",
+  "most_stable_route_across_profiles": "governed_business_operations_blueprint_for_agent_teams",
+  "stable_route_profile_count": 3,
+  "fastest_but_commodity_risky_route": "founder_operator_decision_brief_service",
+  "most_unique_but_slower_to_cash_route": "AI_agent_company_runtime_harness_deployment_blueprint",
+  "best_primary_route": "governed_business_operations_blueprint_for_agent_teams",
+  "best_first_cash_wedge": "governed_business_operations_blueprint_for_agent_teams",
+  "best_fallback_route": "founder_operator_decision_brief_service",
+  "best_learning_route": "public_read_market_intelligence_product",
+  "best_strategic_compounding_route": "AI_agent_company_runtime_harness_deployment_blueprint",
+  "E65_portfolio_remained_stable": true,
+  "update_trigger_required_route_revision": false,
+  "update_triggers_observed": [
+    "new_public_evidence",
+    "buyer_conversation_after_owner_approval",
+    "customer_validation",
+    "paid_signal",
+    "competitor_movement",
+    "regulation_change",
+    "capability_change",
+    "cost_delivery_discovery",
+    "owner_strategic_preference_change",
+    "selected_path_external_failure"
+  ],
+  "evidence_quality_changed": false,
+  "current_evidence_quality_tier": "T2 public-read evidence",
+  "comparison_against_E64": {
+    "E64_selected_path": "governed_business_operations_blueprint_for_agent_teams",
+    "E64_best_market_optimal_path": "founder_operator_decision_brief_service",
+    "E64_best_YBridge_unique_path": "governed_business_operations_blueprint_for_agent_teams",
+    "what_E66_can_answer_now": [
+      "profile-specific top route",
+      "decision stability",
+      "route evidence lookup",
+      "portfolio roles",
+      "update triggers"
+    ],
+    "E65_created_strategy_capability_leap": true,
+    "selected_route_more_justified_than_before": true,
+    "still_depends_only_on_T2_public_read_evidence": true
+  },
+  "remaining_uncertainties": [
+    "customer validation absent",
+    "paid signal absent",
+    "pricing validation absent",
+    "owner-approved external review absent",
+    "delivery complexity still internally modeled"
+  ],
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false,
+  "expert_feedback_claimed": false,
+  "pricing_validation_claimed": false,
+  "global_optimality_proven": false,
+  "external_action_allowed": false
+}

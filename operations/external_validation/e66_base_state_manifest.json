@@ -1,0 +1,49 @@
+{
+  "artifact_id": "e66_base_state_manifest",
+  "bridge_job_id": "e66_selected_route_offer_blueprint_using_market_dynamics_model_no_execution_20260506T000001Z",
+  "bridge_labs": {
+    "path": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+    "branch": "backflow/aiden-ceo-meeting-room",
+    "head": "1c64befd2148740d07ad9de500b8d4d53bbd8fe2",
+    "expected_head": "1c64befd2148740d07ad9de500b8d4d53bbd8fe2",
+    "head_matches_expected": true,
+    "clean": false,
+    "status_short": "M office/mission_command/e46b_ceo_brain_adapter.py\n?? office/mission_command/__pycache__/\n?? office/mission_command/e66_ceo_brain_readback_smoke.py\n?? office/mission_command/e66_model_driven_offer_core.py\n?? operations/external_validation/e66_base_state_manifest.json\n?? operations/external_validation/e66_behavior_authorization_result.json\n?? operations/external_validation/e66_ceo_brain_model_driven_offer_update.json\n?? operations/external_validation/e66_ceo_brain_readback_smoke_result.json\n?? operations/external_validation/e66_cieu_residual_summary.json\n?? operations/external_validation/e66_completion_gate_result.json\n?? operations/external_validation/e66_czl_closure.json\n?? operations/external_validation/e66_e65_model_invocation_proof.json\n?? operations/external_validation/e66_model_driven_pricing_package_hypothesis.json\n?? operations/external_validation/e66_model_driven_revenue_analysis.json\n?? operations/external_validation/e66_model_driven_selected_route_decision.json\n?? operations/external_validation/e66_no_overclaim_validation_result.json\n?? operations/external_validation/e66_owner_gated_business_action_plan_no_execution.json\n?? operations/external_validation/e66_repository_archaeology_inventory.json\n?? operations/external_validation/e66_reuse_first_growth_audit.json\n?? operations/external_validation/e66_revenue_strategy_capability_leap_assessment.json\n?? operations/external_validation/e66_selected_route_offer_blueprint.json\n?? operations/knowledge_graph/e66_ceo_kg_model_driven_offer_edges_delta.jsonl\n?? operations/knowledge_graph/e66_ceo_kg_model_driven_offer_nodes_delta.jsonl\n?? operations/knowledge_graph/e66_ceo_kg_model_driven_offer_read_model_update.json\n?? products/governed_business_operations_blueprint_for_agent_teams/\n?? reports/integration/e66_completion_gate_result.md\n?? reports/integration/e66_e65_model_invocation_proof.md\n?? reports/integration/e66_model_driven_pricing_package_hypothesis.md\n?? reports/integration/e66_model_driven_revenue_analysis.md\n?? reports/integration/e66_model_driven_selected_route_decision.md\n?? reports/integration/e66_operator_handoff.md\n?? reports/integration/e66_owner_gated_business_action_plan_no_execution.md\n?? reports/integration/e66_repository_archaeology_inventory.md\n?? reports/integration/e66_reuse_first_growth_audit.md\n?? reports/integration/e66_revenue_strategy_capability_leap_assessment.md\n?? reports/integration/e66_selected_route_offer_blueprint.md\n?? tests/office/test_e66_00_artifact_generation.py\n?? tests/office/test_e66_behavior_authorization.py\n?? tests/office/test_e66_ceo_brain_readback.py\n?? tests/office/test_e66_completion_gate.py\n?? tests/office/test_e66_e65_model_invocation_proof.py\n?? tests/office/test_e66_json_artifacts.py\n?? tests/office/test_e66_model_driven_revenue_analysis.py\n?? tests/office/test_e66_model_driven_selected_route_decision.py\n?? tests/office/test_e66_no_overclaim.py\n?? tests/office/test_e66_owner_gated_business_action_plan.py\n?? tests/office/test_e66_pricing_package_hypothesis.py\n?? tests/office/test_e66_product_directory.py\n?? tests/office/test_e66_repository_archaeology_inventory.py\n?? tests/office/test_e66_reuse_first_growth_audit.py\n?? tests/office/test_e66_revenue_strategy_capability_leap_assessment.py\n?? tests/office/test_e66_selected_route_offer_blueprint.py"
+  },
+  "expected_branch": "backflow/aiden-ceo-meeting-room",
+  "base_verified": true,
+  "bridge_labs_worktree_clean_or_e66_scoped": false,
+  "read_only_repos": {
+    "Y-star-gov": {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "branch": "backflow/company-runtime-domain-pack",
+      "head": "b0d9aa8b1badd1180127a2f79f73ceed48e16451",
+      "expected_head": "b0d9aa8b1badd1180127a2f79f73ceed48e16451",
+      "head_matches_expected": true,
+      "clean": true,
+      "status_short": ""
+    },
+    "gov-mcp": {
+      "path": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+      "branch": "backflow/company-runtime-tools",
+      "head": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+      "expected_head": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+      "head_matches_expected": true,
+      "clean": true,
+      "status_short": ""
+    },
+    "K9Audit": {
+      "path": "/Users/haotianliu/.openclaw/workspace/K9Audit",
+      "branch": "main",
+      "head": "37911e18ce4425470e3f745b30d155c43d76ff55",
+      "expected_head": "37911e18ce4425470e3f745b30d155c43d76ff55",
+      "head_matches_expected": true,
+      "clean": true,
+      "status_short": ""
+    }
+  },
+  "read_only_repos_clean": true,
+  "e65_completed_report_present": true,
+  "owner_decision_status": "pending_owner_decision",
+  "external_action_allowed": false
+}

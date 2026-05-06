@@ -1,0 +1,219 @@
+{
+  "artifact_id": "e66_repository_archaeology_inventory",
+  "bridge_job_id": "e66_selected_route_offer_blueprint_using_market_dynamics_model_no_execution_20260506T000001Z",
+  "asset_count": 20,
+  "discovered_assets": [
+    {
+      "path": "office/mission_command/e65_market_dynamics_model.py",
+      "exists": true,
+      "capability_type": "E65_market_model_API_or_artifact",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e65_ceo_market_dynamics_readback.py",
+      "exists": true,
+      "capability_type": "E65_market_model_API_or_artifact",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e65_market_dynamics_model_schema.json",
+      "exists": true,
+      "capability_type": "E65_market_model_API_or_artifact",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e65_broad_market_universe.json",
+      "exists": true,
+      "capability_type": "E65_market_model_API_or_artifact",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e65_market_adjacency_graph.json",
+      "exists": true,
+      "capability_type": "E65_market_model_API_or_artifact",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e65_market_signal_taxonomy.json",
+      "exists": true,
+      "capability_type": "E65_market_model_API_or_artifact",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e65_market_evidence_quality_model.json",
+      "exists": true,
+      "capability_type": "E65_market_model_API_or_artifact",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e65_multi_axis_market_scoring_engine.json",
+      "exists": true,
+      "capability_type": "E65_market_model_API_or_artifact",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e65_sensitivity_and_counterfactual_challenge_model.json",
+      "exists": true,
+      "capability_type": "E65_market_model_API_or_artifact",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e65_market_dynamics_analysis_run.json",
+      "exists": true,
+      "capability_type": "E65_market_model_API_or_artifact",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e65_market_dynamics_route_rankings.json",
+      "exists": true,
+      "capability_type": "E65_market_model_API_or_artifact",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e65_ceo_brain_market_dynamics_update.json",
+      "exists": true,
+      "capability_type": "E65_market_model_API_or_artifact",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e65_ceo_market_dynamics_readback_smoke_result.json",
+      "exists": true,
+      "capability_type": "E65_market_model_API_or_artifact",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e64_dual_axis_first_cash_path_selection.json",
+      "exists": true,
+      "capability_type": "E64_dual_axis_route_context",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": false
+    },
+    {
+      "path": "operations/external_validation/e64_top3_dual_axis_offer_hypotheses.json",
+      "exists": true,
+      "capability_type": "E64_dual_axis_route_context",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": false
+    },
+    {
+      "path": "operations/external_validation/e63_revenue_opportunity_map.json",
+      "exists": true,
+      "capability_type": "E63_opportunity_and_offer_context",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": false
+    },
+    {
+      "path": "operations/external_validation/e63_offer_package_hypothesis.json",
+      "exists": true,
+      "capability_type": "E63_opportunity_and_offer_context",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": false
+    },
+    {
+      "path": "operations/external_validation/e62_autonomous_revenue_runtime_centerline.json",
+      "exists": true,
+      "capability_type": "E62_revenue_runtime_context",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": false
+    },
+    {
+      "path": "operations/external_validation/e62_revenue_path_candidate_matrix.json",
+      "exists": true,
+      "capability_type": "E62_revenue_runtime_context",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": false
+    },
+    {
+      "path": "office/mission_command/e46b_ceo_brain_adapter.py",
+      "exists": true,
+      "capability_type": "CEO_brain_adapter",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    }
+  ],
+  "E65_model_API_assets_reused": [
+    "office/mission_command/e65_market_dynamics_model.py",
+    "office/mission_command/e65_ceo_market_dynamics_readback.py",
+    "operations/external_validation/e65_market_dynamics_model_schema.json",
+    "operations/external_validation/e65_broad_market_universe.json",
+    "operations/external_validation/e65_market_adjacency_graph.json",
+    "operations/external_validation/e65_market_signal_taxonomy.json",
+    "operations/external_validation/e65_market_evidence_quality_model.json",
+    "operations/external_validation/e65_multi_axis_market_scoring_engine.json",
+    "operations/external_validation/e65_sensitivity_and_counterfactual_challenge_model.json",
+    "operations/external_validation/e65_market_dynamics_analysis_run.json",
+    "operations/external_validation/e65_market_dynamics_route_rankings.json",
+    "operations/external_validation/e65_ceo_brain_market_dynamics_update.json",
+    "operations/external_validation/e65_ceo_market_dynamics_readback_smoke_result.json"
+  ],
+  "E64_dual_axis_assets_reused": [
+    "operations/external_validation/e64_dual_axis_first_cash_path_selection.json",
+    "operations/external_validation/e64_top3_dual_axis_offer_hypotheses.json"
+  ],
+  "E63_E62_revenue_assets_reused": [
+    "operations/external_validation/e63_revenue_opportunity_map.json",
+    "operations/external_validation/e63_offer_package_hypothesis.json",
+    "operations/external_validation/e62_autonomous_revenue_runtime_centerline.json",
+    "operations/external_validation/e62_revenue_path_candidate_matrix.json"
+  ],
+  "reusable_offer_pricing_business_assets": [
+    "operations/external_validation/e64_top3_dual_axis_offer_hypotheses.json",
+    "operations/external_validation/e63_offer_package_hypothesis.json",
+    "products/ai_agent_company_runtime_harness_deployment_blueprint/deployment_blueprint.json"
+  ],
+  "disconnected_assets": [],
+  "what_must_not_be_rebuilt": [
+    "E65 market dynamics model",
+    "E65 profile ranking functions",
+    "E65 route evidence and explanation APIs",
+    "public-read adapters",
+    "source receipt builders",
+    "evidence atomizers",
+    "behavior authorization gates",
+    "KG/CZL/CIEU conventions",
+    "CEO brain readback smoke conventions"
+  ],
+  "E66_thin_layer_needed": "model invocation proof, fresh model-driven revenue analysis, selected route offer blueprint, product sample packet, pricing hypothesis, and CEO readback",
+  "capability_counts": {
+    "E65_market_model_API_or_artifact": 13,
+    "E64_dual_axis_route_context": 2,
+    "E63_opportunity_and_offer_context": 2,
+    "E62_revenue_runtime_context": 2,
+    "CEO_brain_adapter": 1
+  },
+  "archaeology_completed_before_blueprint": true,
+  "external_action_allowed": false
+}

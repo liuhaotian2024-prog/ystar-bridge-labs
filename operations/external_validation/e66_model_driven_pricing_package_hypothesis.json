@@ -1,0 +1,43 @@
+{
+  "artifact_id": "e66_model_driven_pricing_package_hypothesis",
+  "bridge_job_id": "e66_selected_route_offer_blueprint_using_market_dynamics_model_no_execution_20260506T000001Z",
+  "status": "draft_only_internal_unvalidated",
+  "package_tiers": [
+    {
+      "tier_name": "Diagnostic Brief",
+      "scope": "smallest low-risk review of agent workflow, action surfaces, and governance gaps",
+      "output": "short risk/opportunity brief",
+      "pricing_logic": "entry-level fixed-scope brief; price must be owner-approved before external presentation"
+    },
+    {
+      "tier_name": "Blueprint Sprint",
+      "scope": "main first-cash wedge",
+      "output": "governed operations blueprint plus risk/action/evidence map",
+      "pricing_logic": "higher fixed-scope sprint; unvalidated hypothesis only"
+    },
+    {
+      "tier_name": "Implementation Planning Add-on",
+      "scope": "future owner-gated support",
+      "output": "implementation backlog and governance integration plan",
+      "pricing_logic": "add-on planning scope; no invoice/payment path created"
+    }
+  ],
+  "evidence_basis": [
+    "E65 model support",
+    "E64/E63 public-read evidence",
+    "E54-E56 internal runtime proof"
+  ],
+  "missing_evidence": [
+    "customer validation",
+    "paid signal",
+    "pricing validation",
+    "owner-approved external review"
+  ],
+  "why_pricing_is_not_validated": "No buyer conversation, pricing presentation, payment, invoice, or customer response occurred.",
+  "low_risk_internal_use_only": true,
+  "owner_approval_required_before_external_presentation": true,
+  "pricing_validation_claimed": false,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false,
+  "external_action_allowed": false
+}

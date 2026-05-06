@@ -1,0 +1,13 @@
+{
+  "artifact_id": "e66_no_overclaim_validation_result",
+  "paths_scanned": [
+    "operations/external_validation/e66_model_driven_revenue_analysis.json",
+    "operations/external_validation/e66_model_driven_selected_route_decision.json",
+    "operations/external_validation/e66_selected_route_offer_blueprint.json",
+    "operations/external_validation/e66_model_driven_pricing_package_hypothesis.json",
+    "operations/external_validation/e66_ceo_brain_model_driven_offer_update.json",
+    "operations/external_validation/e66_ceo_brain_readback_smoke_result.json"
+  ],
+  "violations": [],
+  "passed": true
+}

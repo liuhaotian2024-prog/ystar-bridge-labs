@@ -1,0 +1,43 @@
+{
+  "artifact_id": "e66_behavior_authorization_result",
+  "authorization_status": "ALLOW_INTERNAL_MODEL_DRIVEN_OFFER_BLUEPRINT_ONLY",
+  "allowed_actions": [
+    "repository_archaeology",
+    "E65_model_API_invocation",
+    "internal_revenue_strategy_analysis",
+    "capability_leap_assessment",
+    "selected_route_decision",
+    "internal_offer_blueprint_drafting",
+    "sample_delivery_packet_generation",
+    "pricing_package_hypothesis",
+    "owner_gated_business_action_planning",
+    "KG_CZL_CIEU_writeback",
+    "CEO_brain_readback"
+  ],
+  "denied_actions": [
+    "outreach",
+    "publication",
+    "customer_conversation",
+    "expert_review",
+    "human_identification",
+    "contact_scraping",
+    "login_form_send",
+    "private_provider_API",
+    "API_key_secret_use",
+    "payment",
+    "invoice",
+    "client_delivery",
+    "customer_validation_claim",
+    "paid_signal_claim",
+    "expert_feedback_claim",
+    "production_readiness_claim",
+    "autonomous_revenue_achieved_claim",
+    "pricing_validation_claim",
+    "perfect_global_optimality_claim"
+  ],
+  "external_business_execution_authorized": false,
+  "owner_decision_status": "pending_owner_decision",
+  "pending_owner_decision_is_not_approval": true,
+  "external_action_allowed": false,
+  "passed": true
+}

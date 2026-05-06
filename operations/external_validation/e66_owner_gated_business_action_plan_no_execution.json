@@ -1,0 +1,30 @@
+{
+  "artifact_id": "e66_owner_gated_business_action_plan_no_execution",
+  "bridge_job_id": "e66_selected_route_offer_blueprint_using_market_dynamics_model_no_execution_20260506T000001Z",
+  "allowed_now": [
+    "internal blueprint hardening",
+    "internal sample delivery packet refinement",
+    "model-driven pricing/package refinement",
+    "additional public-read evidence refresh",
+    "owner decision packet generation"
+  ],
+  "requires_owner_approval": [
+    "external review",
+    "publication",
+    "outreach",
+    "customer conversation",
+    "pricing presentation",
+    "payment/invoice",
+    "client delivery"
+  ],
+  "still_prohibited": [
+    "contact scraping",
+    "human identification",
+    "unauthorized outreach",
+    "fabricated validation",
+    "private/provider API use",
+    "payment/secret use"
+  ],
+  "external_action_allowed": false,
+  "owner_decision_status": "pending_owner_decision"
+}

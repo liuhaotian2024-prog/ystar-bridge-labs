@@ -1,0 +1,140 @@
+{
+  "artifact_id": "e66_model_driven_selected_route_decision",
+  "bridge_job_id": "e66_selected_route_offer_blueprint_using_market_dynamics_model_no_execution_20260506T000001Z",
+  "E65_primary_route_before_E66": "governed_business_operations_blueprint_for_agent_teams",
+  "E66_confirmed_primary_route": "governed_business_operations_blueprint_for_agent_teams",
+  "first_cash_wedge": "governed_business_operations_blueprint_for_agent_teams",
+  "fallback_route": "founder_operator_decision_brief_service",
+  "learning_route": "public_read_market_intelligence_product",
+  "strategic_compounding_route": "AI_agent_company_runtime_harness_deployment_blueprint",
+  "selected_route_changed": false,
+  "decision": "confirm_E65_route",
+  "why_it_changed_or_stayed": "E65 model APIs ranked the selected route first under strategic defensibility, learning maximization, and balanced CEO reasoning while keeping founder/operator decision brief as fastest-cash fallback.",
+  "route_evidence": {
+    "route_id": "governed_business_operations_blueprint_for_agent_teams",
+    "evidence_atoms": [
+      {
+        "evidence_id": "e65_market_dynamics_atom_001",
+        "source_milestone": "E64",
+        "source_evidence_id": "e64_dual_axis_atom_001",
+        "route_relevance": "supports open-world first-cash reasoning",
+        "observed_signal": "operators need simpler business execution packages with clear outcomes",
+        "signal_types": [
+          "buyer_pain_signal",
+          "delivery_feasibility_signal",
+          "missing_evidence_signal"
+        ],
+        "evidence_quality_tier": "T2",
+        "confidence": "medium",
+        "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+        "no_customer_validation_claimed": true,
+        "no_paid_signal_claimed": true,
+        "no_expert_feedback_claimed": true
+      },
+      {
+        "evidence_id": "e65_market_dynamics_atom_002",
+        "source_milestone": "E64",
+        "source_evidence_id": "e64_dual_axis_atom_002",
+        "route_relevance": "supports open-world first-cash reasoning",
+        "observed_signal": "operators want workflow automation that reduces manual handoffs",
+        "signal_types": [
+          "buyer_pain_signal",
+          "delivery_feasibility_signal",
+          "missing_evidence_signal"
+        ],
+        "evidence_quality_tier": "T2",
+        "confidence": "medium",
+        "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+        "no_customer_validation_claimed": true,
+        "no_paid_signal_claimed": true,
+        "no_expert_feedback_claimed": true
+      },
+      {
+        "evidence_id": "e65_market_dynamics_atom_003",
+        "source_milestone": "E64",
+        "source_evidence_id": "e64_dual_axis_atom_003",
+        "route_relevance": "supports open-world first-cash reasoning",
+        "observed_signal": "operators want workflow automation that reduces manual handoffs",
+        "signal_types": [
+          "buyer_pain_signal",
+          "delivery_feasibility_signal",
+          "missing_evidence_signal"
+        ],
+        "evidence_quality_tier": "T2",
+        "confidence": "medium",
+        "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+        "no_customer_validation_claimed": true,
+        "no_paid_signal_claimed": true,
+        "no_expert_feedback_claimed": true
+      },
+      {
+        "evidence_id": "e65_market_dynamics_atom_004",
+        "source_milestone": "E64",
+        "source_evidence_id": "e64_dual_axis_atom_010",
+        "route_relevance": "supports open-world first-cash reasoning",
+        "observed_signal": "operators need simpler business execution packages with clear outcomes",
+        "signal_types": [
+          "buyer_pain_signal",
+          "delivery_feasibility_signal",
+          "missing_evidence_signal"
+        ],
+        "evidence_quality_tier": "T2",
+        "confidence": "medium",
+        "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+        "no_customer_validation_claimed": true,
+        "no_paid_signal_claimed": true,
+        "no_expert_feedback_claimed": true
+      },
+      {
+        "evidence_id": "e65_market_dynamics_atom_005",
+        "source_milestone": "E64",
+        "source_evidence_id": "e64_dual_axis_atom_013",
+        "route_relevance": "supports Y*Bridge-specific runtime/governance reasoning",
+        "observed_signal": "tool execution and integrations need governed execution surfaces",
+        "signal_types": [
+          "buyer_pain_signal",
+          "delivery_feasibility_signal",
+          "missing_evidence_signal"
+        ],
+        "evidence_quality_tier": "T2",
+        "confidence": "medium",
+        "limitation": "public-read evidence; not customer validation, paid signal, expert feedback, or global optimality proof",
+        "no_customer_validation_claimed": true,
+        "no_paid_signal_claimed": true,
+        "no_expert_feedback_claimed": true
+      }
+    ],
+    "evidence_count": 5
+  },
+  "evidence_quality_tier": "T2 public-read evidence",
+  "decision_stability_score": 60.0,
+  "fragile_assumptions": [
+    "buyer understands governed business operations",
+    "public-read evidence remains directionally relevant",
+    "owner eventually approves controlled external review"
+  ],
+  "owner_gated_blockers": [
+    "external review",
+    "publication",
+    "outreach",
+    "pricing presentation",
+    "payment or invoice",
+    "client delivery"
+  ],
+  "no_overclaim_limitations": [
+    "not customer validated",
+    "not paid validated",
+    "not pricing validated",
+    "not production ready",
+    "not globally optimality proven"
+  ],
+  "selected_route_for_blueprint": "governed_business_operations_blueprint_for_agent_teams",
+  "recommended_next_milestone": "E67_owner_decision_packet_for_controlled_external_review_no_execution",
+  "external_action_allowed": false,
+  "owner_decision_status": "pending_owner_decision",
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false,
+  "expert_feedback_claimed": false,
+  "pricing_validation_claimed": false,
+  "global_optimality_proven": false
+}

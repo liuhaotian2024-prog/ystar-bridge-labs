@@ -346,6 +346,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e65_market_dynamics_state = {'market_model_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
     try:
+        from office.mission_command.e66_ceo_brain_readback_smoke import load_e66_state_for_brain
+        e66_model_driven_offer_state = load_e66_state_for_brain()
+    except Exception as exc:
+        e66_model_driven_offer_state = {'model_driven_offer_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -466,6 +471,14 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_market_dynamics_update_triggers": e65_market_dynamics_state.get("update_triggers"),
         "current_market_dynamics_next_milestone": e65_market_dynamics_state.get("next_recommended_milestone"),
         "current_market_dynamics_external_action_allowed": e65_market_dynamics_state.get("external_action_allowed"),
+        "latest_model_driven_offer_state": e66_model_driven_offer_state,
+        "current_model_driven_offer_status": e66_model_driven_offer_state.get("model_driven_offer_status"),
+        "current_model_driven_offer_selected_route": e66_model_driven_offer_state.get("selected_route"),
+        "current_model_driven_offer_name": e66_model_driven_offer_state.get("offer_name"),
+        "current_model_driven_offer_decision_stability": e66_model_driven_offer_state.get("decision_stability_score"),
+        "current_model_driven_offer_evidence_quality": e66_model_driven_offer_state.get("evidence_quality_tier"),
+        "current_model_driven_offer_next_milestone": e66_model_driven_offer_state.get("next_recommended_milestone"),
+        "current_model_driven_offer_external_action_allowed": e66_model_driven_offer_state.get("external_action_allowed"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,
