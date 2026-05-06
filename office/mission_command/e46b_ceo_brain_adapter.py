@@ -316,6 +316,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e59_external_intelligence_state = {'external_intelligence_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
     try:
+        from office.mission_command.e60_ceo_brain_readback_smoke import load_e60_state_for_brain
+        e60_market_readiness_state = load_e60_state_for_brain()
+    except Exception as exc:
+        e60_market_readiness_state = {'market_readiness_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -391,6 +396,14 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_external_intelligence_live_public_read_status": e59_external_intelligence_state.get("live_public_read_status"),
         "current_external_intelligence_external_action_allowed": e59_external_intelligence_state.get("external_action_allowed"),
         "current_external_intelligence_next_milestone": e59_external_intelligence_state.get("next_recommended_milestone"),
+        "latest_market_readiness_state": e60_market_readiness_state,
+        "current_market_readiness_status": e60_market_readiness_state.get("market_readiness_status"),
+        "current_market_entry_readiness_level": e60_market_readiness_state.get("current_readiness_level"),
+        "current_market_readiness_selected_next_milestone": e60_market_readiness_state.get("selected_next_milestone"),
+        "current_market_readiness_nearest_alternative": e60_market_readiness_state.get("nearest_alternative"),
+        "current_market_readiness_live_public_read_status": e60_market_readiness_state.get("live_public_read_status"),
+        "current_market_readiness_fixture_only_evidence_treated_as_live_market_freshness": e60_market_readiness_state.get("fixture_only_evidence_treated_as_live_market_freshness"),
+        "current_market_readiness_external_action_allowed": e60_market_readiness_state.get("external_action_allowed"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

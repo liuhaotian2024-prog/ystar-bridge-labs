@@ -1,0 +1,79 @@
+{
+  "artifact_id": "e60_market_entry_readiness_criteria",
+  "readiness_levels": [
+    {
+      "level": "L0_not_ready",
+      "criteria": [
+        "no internal proof",
+        "no behavior governance",
+        "no case study",
+        "no evidence"
+      ]
+    },
+    {
+      "level": "L1_internal_proof_ready",
+      "criteria": [
+        "internal runtime proof exists",
+        "no external intelligence"
+      ]
+    },
+    {
+      "level": "L2_case_study_owner_review_ready",
+      "criteria": [
+        "case study packaged",
+        "no live external intelligence",
+        "no owner approval"
+      ]
+    },
+    {
+      "level": "L3_external_intelligence_structurally_ready",
+      "criteria": [
+        "E59 L5 pipeline exists",
+        "live read may be unavailable_nonfatal",
+        "no real external contact"
+      ]
+    },
+    {
+      "level": "L4_controlled_review_plan_ready",
+      "criteria": [
+        "owner approval explicit",
+        "live public-read evidence or accepted non-live limitation documented",
+        "review plan prepared",
+        "no send/execution yet"
+      ]
+    },
+    {
+      "level": "L5_controlled_external_review_execution_ready",
+      "criteria": [
+        "owner explicit approval",
+        "reviewer identity approved by owner",
+        "no-overclaim package approved",
+        "behavior authorization allows exactly one controlled review",
+        "evidence capture plan ready"
+      ]
+    }
+  ],
+  "current_readiness_level": "L3_external_intelligence_structurally_ready",
+  "current_readiness_rank": 3,
+  "classification_rationale": [
+    "Internal runtime L5 is complete.",
+    "E58 case study is packaged for owner review.",
+    "E59 external intelligence pipeline is structurally L5 but live public reads are unavailable/nonfatal.",
+    "Owner decision remains pending and no external action is allowed."
+  ],
+  "not_L4_because": [
+    "no explicit owner approval",
+    "no controlled review plan approval",
+    "live market freshness limitation still active"
+  ],
+  "not_L5_because": [
+    "no reviewer identity approved by owner",
+    "no behavior authorization for external execution",
+    "no customer validation evidence yet"
+  ],
+  "market_entry_execution_ready": false,
+  "controlled_review_execution_ready": false,
+  "external_action_allowed": false,
+  "owner_decision_status": "pending_owner_decision",
+  "no_external_action": true
+}

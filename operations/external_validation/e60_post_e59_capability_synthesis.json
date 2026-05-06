@@ -1,0 +1,120 @@
+{
+  "artifact_id": "e60_post_e59_capability_synthesis",
+  "capabilities": [
+    {
+      "capability": "CEO brain L5",
+      "status": "ready",
+      "evidence_path": "operations/external_validation/e54_ceo_brain_l5_readiness_gate_result.json",
+      "capability_effect": "L5 cognition and current-state readback",
+      "commercial_route_effect": "supports higher-trust internal decisions",
+      "market_entry_effect": "required internal foundation",
+      "blocker_or_limitation": "none for internal use"
+    },
+    {
+      "capability": "behavior control center L5",
+      "status": "ready",
+      "evidence_path": "operations/external_validation/e55_behavior_center_l5_readiness_gate_result.json",
+      "capability_effect": "deterministic proposal/authorization boundary",
+      "commercial_route_effect": "safe internal next actions are gateable",
+      "market_entry_effect": "blocks direct execution",
+      "blocker_or_limitation": "none for internal use"
+    },
+    {
+      "capability": "internal company loop L5",
+      "status": "ready",
+      "evidence_path": "operations/external_validation/e56_internal_company_loop_l5_readiness_gate_result.json",
+      "capability_effect": "closed internal cycle proof",
+      "commercial_route_effect": "company can run governed internal dry-run loops",
+      "market_entry_effect": "strong owner-review evidence",
+      "blocker_or_limitation": "none for internal use"
+    },
+    {
+      "capability": "runtime harness case study packaged",
+      "status": "owner_reviewable",
+      "evidence_path": "products/ai_agent_company_runtime_harness_case_study/case_study.json",
+      "capability_effect": "case study narrative and source manifest",
+      "commercial_route_effect": "stronger than proof-packet-only route",
+      "market_entry_effect": "ready for owner review but not publication",
+      "blocker_or_limitation": "not market validated"
+    },
+    {
+      "capability": "external intelligence L5 structure",
+      "status": "external_world_intelligence_L5_ready_with_live_read_unavailable_nonfatal",
+      "evidence_path": "operations/external_validation/e59_external_world_intelligence_l5_readiness_gate_result.json",
+      "capability_effect": "methodology/policy/receipt/atom/comparison/route-impact loop",
+      "commercial_route_effect": "improves route hypotheses",
+      "market_entry_effect": "structural readiness only",
+      "blocker_or_limitation": "live reads unavailable"
+    },
+    {
+      "capability": "live public-read evidence availability",
+      "status": "live_public_read_unavailable_nonfatal",
+      "evidence_path": "operations/external_validation/e59_controlled_public_page_read_adapter_result.json",
+      "capability_effect": "fixture-safe adapter exists",
+      "commercial_route_effect": "does not prove current market freshness",
+      "market_entry_effect": "blocks market freshness claim",
+      "blocker_or_limitation": "fixture_only_network_unavailable"
+    },
+    {
+      "capability": "real MCP transport",
+      "status": "not_claimed",
+      "evidence_path": "operations/external_validation/e59_cieu_residual_summary.json",
+      "capability_effect": "tool-layer/fake harness proof only",
+      "commercial_route_effect": "blocks transport-dependent route claims",
+      "market_entry_effect": "not required for live-read repair",
+      "blocker_or_limitation": "real MCP transport remains open"
+    },
+    {
+      "capability": "K9Audit write integration",
+      "status": "future_work",
+      "evidence_path": "operations/external_validation/e59_cieu_residual_summary.json",
+      "capability_effect": "K9 context read-only",
+      "commercial_route_effect": "limits full causal audit stack route",
+      "market_entry_effect": "not required for selected live-read repair",
+      "blocker_or_limitation": "write integration not closed"
+    },
+    {
+      "capability": "owner approval",
+      "status": "pending_owner_decision",
+      "evidence_path": "operations/external_validation/e53_owner_approval_validation_result.json",
+      "capability_effect": "approval is not inferred",
+      "commercial_route_effect": "blocks external review/contact",
+      "market_entry_effect": "external action not allowed",
+      "blocker_or_limitation": "owner decision pending"
+    },
+    {
+      "capability": "customer validation",
+      "status": "absent",
+      "evidence_path": "operations/external_validation/e59_external_world_intelligence_l5_readiness_gate_result.json",
+      "capability_effect": "no customer evidence",
+      "commercial_route_effect": "commercial proof still unvalidated",
+      "market_entry_effect": "cannot claim validation",
+      "blocker_or_limitation": "missing"
+    },
+    {
+      "capability": "paid signal",
+      "status": "absent",
+      "evidence_path": "operations/external_validation/e59_external_world_intelligence_l5_readiness_gate_result.json",
+      "capability_effect": "no revenue/payment evidence",
+      "commercial_route_effect": "revenue immediacy remains hypothetical",
+      "market_entry_effect": "cannot claim paid demand",
+      "blocker_or_limitation": "missing"
+    },
+    {
+      "capability": "expert feedback",
+      "status": "absent",
+      "evidence_path": "operations/external_validation/e59_external_world_intelligence_l5_readiness_gate_result.json",
+      "capability_effect": "public knowledge observation only",
+      "commercial_route_effect": "does not equal expert review",
+      "market_entry_effect": "cannot claim expert validation",
+      "blocker_or_limitation": "missing"
+    }
+  ],
+  "fixture_based_external_intelligence_useful_for_architecture_and_pipeline_proof": true,
+  "fixture_based_evidence_is_live_market_freshness": false,
+  "no_customer_expert_paid_validation_exists": true,
+  "external_action_allowed": false,
+  "owner_decision_status": "pending_owner_decision",
+  "live_public_read_status": "live_public_read_unavailable_nonfatal",
+  "no_external_action": true
+}

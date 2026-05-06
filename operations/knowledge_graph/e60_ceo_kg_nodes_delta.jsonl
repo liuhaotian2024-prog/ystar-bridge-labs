@@ -1,0 +1,4 @@
+{"node_id": "e60_market_readiness_retest", "node_type": "decision", "status": "post_external_intelligence_market_readiness_retest_closed"}
+{"node_id": "L3_external_intelligence_structurally_ready", "node_type": "readiness_level"}
+{"node_id": "E61_live_public_read_adapter_repair_or_host_network_refresh", "node_type": "recommended_next_milestone"}
+{"node_id": "e60_live_read_limitation", "node_type": "blocker", "status": "live_public_read_unavailable_nonfatal"}

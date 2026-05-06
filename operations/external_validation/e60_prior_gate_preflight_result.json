@@ -1,0 +1,25 @@
+{
+  "artifact_id": "e60_prior_gate_preflight_result",
+  "bridge_job_id": "e60_post_external_intelligence_market_readiness_retest_20260506T000001Z",
+  "checks": {
+    "E54_brain_L5_passed": true,
+    "E55_behavior_center_L5_passed": true,
+    "E56_internal_company_loop_L5_passed": true,
+    "E57_money_route_retest_closed": true,
+    "E58_case_study_packaged": true,
+    "E59_external_intelligence_status_accepted": true,
+    "E59_live_read_limitation_visible": true,
+    "E59_readback_passed": true,
+    "fixture_not_live_market_freshness": true,
+    "owner_decision_pending": true,
+    "external_action_allowed_false": true
+  },
+  "passed": true,
+  "E59_final_status": "external_world_intelligence_L5_ready_with_live_read_unavailable_nonfatal",
+  "E59_page_read_adapter_status": "fixture_only_network_unavailable",
+  "E59_live_public_read_status": "live_public_read_unavailable_nonfatal",
+  "live_read_limitation_handling": "treated_as_readiness_limitation_not_live_market_evidence",
+  "owner_decision_status": "pending_owner_decision",
+  "external_action_allowed": false,
+  "no_external_action": true
+}

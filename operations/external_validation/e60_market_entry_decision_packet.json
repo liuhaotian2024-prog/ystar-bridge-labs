@@ -1,0 +1,38 @@
+{
+  "artifact_id": "e60_market_entry_decision_packet",
+  "current_readiness_level": "L3_external_intelligence_structurally_ready",
+  "external_contact_allowed_now": false,
+  "publication_allowed_now": false,
+  "controlled_review_execution_allowed_now": false,
+  "selected_next_milestone": "E61_live_public_read_adapter_repair_or_host_network_refresh",
+  "nearest_alternative": "E61_owner_decision_gate_for_case_study_review",
+  "selected_action_authorization_class": "internal_allowed",
+  "why_selected": "Live public-read unavailability is the highest-leverage non-external blocker before market-entry readiness can be upgraded beyond structural L3.",
+  "why_not_nearest_alternative": "Owner decision gate is valuable, but E59 explicitly lacks live market freshness, so repairing/refreshing live public-read capability first gives the owner a more honest packet.",
+  "why_not_direct_outreach": "Direct outreach is external action and owner decision remains pending.",
+  "why_not_publish": "Publication is external action and the case study remains owner-reviewable only.",
+  "live_public_read_unavailability_blocks_market_entry": true,
+  "live_public_read_unavailability_blocks_selected_next_step": false,
+  "real_mcp_transport_blocks_selected_next_step": false,
+  "owner_approval_blocks_selected_next_step": false,
+  "what_can_be_done_without_external_action": [
+    "repair or run governed host live public-read refresh",
+    "harden case study language",
+    "prepare owner decision materials"
+  ],
+  "what_requires_owner_approval": [
+    "external contact",
+    "publication",
+    "controlled first-user review execution",
+    "real reviewer identity selection"
+  ],
+  "fixture_only_evidence_treated_as_live_market_freshness": false,
+  "owner_approval_required_before_external_action": true,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false,
+  "real_mcp_transport_claimed": false,
+  "expert_feedback_claimed": false,
+  "owner_decision_status": "pending_owner_decision",
+  "external_action_allowed": false,
+  "no_external_action": true
+}

@@ -1,0 +1,507 @@
+{
+  "artifact_id": "e60_market_readiness_anti_drift_gate_result",
+  "manifest": {
+    "artifact_id": "e60_market_readiness_runtime_linkage_manifest",
+    "artifacts": [
+      {
+        "artifact_id": "e60_capability_synthesis",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e60_post_e59_capability_synthesis.json",
+        "artifact_type": "decision_packet",
+        "milestone_origin": "E60",
+        "writer": "E60 market readiness retest",
+        "readers": [
+          "e60_decision",
+          "e60_readback"
+        ],
+        "next_runtime_readers": [
+          "E61_live_public_read_adapter_repair_or_host_network_refresh",
+          "E61_runtime"
+        ],
+        "tests": [
+          "tests/office/test_e60_market_readiness_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E60 market readiness manifest"
+      },
+      {
+        "artifact_id": "e60_readiness_criteria",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e60_market_entry_readiness_criteria.json",
+        "artifact_type": "no_go_boundary",
+        "milestone_origin": "E60",
+        "writer": "E60 market readiness retest",
+        "readers": [
+          "e60_decision",
+          "e60_gate"
+        ],
+        "next_runtime_readers": [
+          "E61_live_public_read_adapter_repair_or_host_network_refresh",
+          "E61_runtime"
+        ],
+        "tests": [
+          "tests/office/test_e60_market_readiness_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E60 market readiness manifest"
+      },
+      {
+        "artifact_id": "e60_route_candidates",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e60_route_candidates_after_external_intelligence.json",
+        "artifact_type": "decision_packet",
+        "milestone_origin": "E60",
+        "writer": "E60 market readiness retest",
+        "readers": [
+          "e60_scorer"
+        ],
+        "next_runtime_readers": [
+          "E61_live_public_read_adapter_repair_or_host_network_refresh",
+          "E61_runtime"
+        ],
+        "tests": [
+          "tests/office/test_e60_market_readiness_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E60 market readiness manifest"
+      },
+      {
+        "artifact_id": "e60_readiness_matrix",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e60_counterfactual_market_readiness_matrix.json",
+        "artifact_type": "selected_route",
+        "milestone_origin": "E60",
+        "writer": "E60 market readiness retest",
+        "readers": [
+          "e60_decision",
+          "e60_readback"
+        ],
+        "next_runtime_readers": [
+          "E61_live_public_read_adapter_repair_or_host_network_refresh",
+          "E61_runtime"
+        ],
+        "tests": [
+          "tests/office/test_e60_market_readiness_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E60 market readiness manifest"
+      },
+      {
+        "artifact_id": "e60_decision_packet",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e60_market_entry_decision_packet.json",
+        "artifact_type": "selected_route",
+        "milestone_origin": "E60",
+        "writer": "E60 market readiness retest",
+        "readers": [
+          "e60_readback",
+          "E61_runtime"
+        ],
+        "next_runtime_readers": [
+          "E61_live_public_read_adapter_repair_or_host_network_refresh",
+          "E61_runtime"
+        ],
+        "tests": [
+          "tests/office/test_e60_market_readiness_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E60 market readiness manifest"
+      },
+      {
+        "artifact_id": "e60_selected_action_authorization",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e60_selected_action_behavior_authorization_result.json",
+        "artifact_type": "gate_result",
+        "milestone_origin": "E60",
+        "writer": "E60 market readiness retest",
+        "readers": [
+          "e60_gate"
+        ],
+        "next_runtime_readers": [
+          "E61_live_public_read_adapter_repair_or_host_network_refresh",
+          "E61_runtime"
+        ],
+        "tests": [
+          "tests/office/test_e60_market_readiness_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E60 market readiness manifest"
+      },
+      {
+        "artifact_id": "e60_live_read_limitation",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e60_market_entry_decision_packet.json",
+        "artifact_type": "blocker_state",
+        "milestone_origin": "E60",
+        "writer": "E60 market readiness retest",
+        "readers": [
+          "e60_readback",
+          "E61_runtime"
+        ],
+        "next_runtime_readers": [
+          "E61_live_public_read_adapter_repair_or_host_network_refresh",
+          "E61_runtime"
+        ],
+        "tests": [
+          "tests/office/test_e60_market_readiness_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E60 market readiness manifest"
+      },
+      {
+        "artifact_id": "e60_brain_update",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e60_ceo_brain_market_readiness_update.json",
+        "artifact_type": "brain_update",
+        "milestone_origin": "E60",
+        "writer": "E60 market readiness retest",
+        "readers": [
+          "e46b_ceo_brain_adapter",
+          "e60_readback"
+        ],
+        "next_runtime_readers": [
+          "E61_live_public_read_adapter_repair_or_host_network_refresh",
+          "E61_runtime"
+        ],
+        "tests": [
+          "tests/office/test_e60_market_readiness_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E60 market readiness manifest"
+      },
+      {
+        "artifact_id": "e60_kg_update",
+        "repo": "bridge-labs",
+        "path": "operations/knowledge_graph/e60_ceo_kg_read_model_update.json",
+        "artifact_type": "kg_update",
+        "milestone_origin": "E60",
+        "writer": "E60 market readiness retest",
+        "readers": [
+          "e60_readback"
+        ],
+        "next_runtime_readers": [
+          "E61_live_public_read_adapter_repair_or_host_network_refresh",
+          "E61_runtime"
+        ],
+        "tests": [
+          "tests/office/test_e60_market_readiness_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P1",
+        "evidence_basis": "E60 market readiness manifest"
+      },
+      {
+        "artifact_id": "e60_czl_closure",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e60_czl_closure.json",
+        "artifact_type": "czl_closure",
+        "milestone_origin": "E60",
+        "writer": "E60 market readiness retest",
+        "readers": [
+          "e60_gate"
+        ],
+        "next_runtime_readers": [
+          "E61_live_public_read_adapter_repair_or_host_network_refresh",
+          "E61_runtime"
+        ],
+        "tests": [
+          "tests/office/test_e60_market_readiness_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P1",
+        "evidence_basis": "E60 market readiness manifest"
+      },
+      {
+        "artifact_id": "e60_cieu_residual",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e60_cieu_residual_summary.json",
+        "artifact_type": "cieu_residual",
+        "milestone_origin": "E60",
+        "writer": "E60 market readiness retest",
+        "readers": [
+          "e60_gate"
+        ],
+        "next_runtime_readers": [
+          "E61_live_public_read_adapter_repair_or_host_network_refresh",
+          "E61_runtime"
+        ],
+        "tests": [
+          "tests/office/test_e60_market_readiness_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P1",
+        "evidence_basis": "E60 market readiness manifest"
+      },
+      {
+        "artifact_id": "e60_next_milestone",
+        "repo": "bridge-labs",
+        "path": "operations/external_validation/e60_post_external_intelligence_market_readiness_gate_result.json",
+        "artifact_type": "next_milestone",
+        "milestone_origin": "E60",
+        "writer": "E60 market readiness retest",
+        "readers": [
+          "E61_runtime"
+        ],
+        "next_runtime_readers": [
+          "E61_live_public_read_adapter_repair_or_host_network_refresh",
+          "E61_runtime"
+        ],
+        "tests": [
+          "tests/office/test_e60_market_readiness_anti_drift_gate.py"
+        ],
+        "status": "written_and_read_back",
+        "severity": "P0",
+        "evidence_basis": "E60 market readiness manifest"
+      }
+    ],
+    "runtime_linkage_graph": {
+      "graph_id": "e60_market_readiness_runtime_linkage_graph",
+      "nodes": [
+        {
+          "node_id": "e60_capability_synthesis",
+          "node_type": "decision_packet"
+        },
+        {
+          "node_id": "e60_readiness_criteria",
+          "node_type": "no_go_boundary"
+        },
+        {
+          "node_id": "e60_route_candidates",
+          "node_type": "decision_packet"
+        },
+        {
+          "node_id": "e60_readiness_matrix",
+          "node_type": "selected_route"
+        },
+        {
+          "node_id": "e60_decision_packet",
+          "node_type": "selected_route"
+        },
+        {
+          "node_id": "e60_selected_action_authorization",
+          "node_type": "gate_result"
+        },
+        {
+          "node_id": "e60_live_read_limitation",
+          "node_type": "blocker_state"
+        },
+        {
+          "node_id": "e60_brain_update",
+          "node_type": "brain_update"
+        },
+        {
+          "node_id": "e60_kg_update",
+          "node_type": "kg_update"
+        },
+        {
+          "node_id": "e60_czl_closure",
+          "node_type": "czl_closure"
+        },
+        {
+          "node_id": "e60_cieu_residual",
+          "node_type": "cieu_residual"
+        },
+        {
+          "node_id": "e60_next_milestone",
+          "node_type": "next_milestone"
+        }
+      ],
+      "edges": [
+        {
+          "from": "e59_external_intelligence",
+          "to": "e60_capability_synthesis",
+          "edge_type": "consumed_by"
+        },
+        {
+          "from": "e60_route_candidates",
+          "to": "e60_readiness_matrix",
+          "edge_type": "scored_by"
+        },
+        {
+          "from": "e60_readiness_matrix",
+          "to": "e60_decision_packet",
+          "edge_type": "selects"
+        },
+        {
+          "from": "e60_decision_packet",
+          "to": "E61_live_public_read_adapter_repair_or_host_network_refresh",
+          "edge_type": "consumes_next"
+        },
+        {
+          "from": "e60_decision_packet",
+          "to": "e60_brain_update",
+          "edge_type": "writes"
+        },
+        {
+          "from": "e60_brain_update",
+          "to": "e46b_ceo_brain_adapter",
+          "edge_type": "reads"
+        }
+      ],
+      "generated_at": "2026-05-06T00:00:00Z",
+      "subject_system": "E60 post-external-intelligence market readiness retest"
+    },
+    "centerline_contract": {
+      "contract_id": "e60_market_readiness_centerline_contract",
+      "stages": [
+        {
+          "stage_id": "readiness_synthesis",
+          "required_input": "E59 status",
+          "required_output": "capability synthesis",
+          "required_writer": "e60_synthesis",
+          "required_reader": "e60_decision",
+          "required_test": "test_e60_post_e59_capability_synthesis",
+          "failure_class_if_missing": "P0",
+          "no_go_if_missing": true
+        },
+        {
+          "stage_id": "decision",
+          "required_input": "route matrix",
+          "required_output": "decision packet",
+          "required_writer": "e60_market_entry_decision",
+          "required_reader": "CEO brain",
+          "required_test": "test_e60_market_entry_decision",
+          "failure_class_if_missing": "P0",
+          "no_go_if_missing": true
+        },
+        {
+          "stage_id": "readback",
+          "required_input": "brain update",
+          "required_output": "CEO brain readback",
+          "required_writer": "E60 writeback",
+          "required_reader": "CEO brain",
+          "required_test": "test_e60_ceo_brain_readback_smoke",
+          "failure_class_if_missing": "P0",
+          "no_go_if_missing": true
+        }
+      ],
+      "owner_approval_boundaries": [
+        "external contact",
+        "publication",
+        "controlled review execution"
+      ],
+      "governance_boundaries": [
+        "Y-star-gov",
+        "gov-mcp",
+        "behavior control center"
+      ],
+      "audit_boundaries": [
+        "KG",
+        "CZL",
+        "CIEU"
+      ],
+      "runtime_roles": {
+        "CEO brain": "market readiness state reader",
+        "behavior control center": "selected action authorization boundary",
+        "evidence centerline": "KG/CZL/CIEU closure",
+        "future E61 runtime": "selected next milestone consumer"
+      }
+    },
+    "readback_proof": {
+      "proof_id": "e60_market_readiness_readback_proof",
+      "written_artifacts": [
+        "e60_capability_synthesis",
+        "e60_readiness_criteria",
+        "e60_route_candidates",
+        "e60_readiness_matrix",
+        "e60_decision_packet",
+        "e60_selected_action_authorization",
+        "e60_live_read_limitation",
+        "e60_brain_update",
+        "e60_kg_update",
+        "e60_czl_closure",
+        "e60_cieu_residual",
+        "e60_next_milestone"
+      ],
+      "readback_observations": [
+        {
+          "reader": "e60_ceo_brain_readback_smoke",
+          "artifact_id": "e60_brain_update"
+        }
+      ],
+      "expected_current_state": {
+        "market_readiness_status": "post_external_intelligence_market_readiness_retest_closed",
+        "selected_next_milestone": "E61_live_public_read_adapter_repair_or_host_network_refresh",
+        "external_action_allowed": false
+      },
+      "observed_current_state": {
+        "market_readiness_status": "post_external_intelligence_market_readiness_retest_closed",
+        "selected_next_milestone": "E61_live_public_read_adapter_repair_or_host_network_refresh",
+        "external_action_allowed": false
+      },
+      "missing_reads": [],
+      "stale_reads": [],
+      "passed": true
+    },
+    "governance_boundary": {
+      "preserved": true
+    },
+    "no_external_action": true
+  },
+  "validation": {
+    "runtime_linkage_graph": {
+      "valid": true,
+      "graph_id": "e60_market_readiness_runtime_linkage_graph",
+      "node_count": 12,
+      "edge_count": 6,
+      "failures": []
+    },
+    "centerline_contract": {
+      "valid": true,
+      "contract_id": "e60_market_readiness_centerline_contract",
+      "stage_count": 3,
+      "failures": []
+    },
+    "readback_proof": {
+      "valid": true,
+      "proof_id": "e60_market_readiness_readback_proof",
+      "failures": []
+    },
+    "anti_drift_gate": {
+      "gate_id": "e60_market_readiness_anti_drift_gate",
+      "centerline_contract_loaded": true,
+      "runtime_linkage_graph_valid": true,
+      "selected_route_has_writer": true,
+      "selected_route_has_reader": true,
+      "selected_route_has_readback_test": true,
+      "next_milestone_has_writer": true,
+      "next_milestone_has_reader": true,
+      "blocker_state_has_writer": true,
+      "blocker_state_has_reader": true,
+      "brain_current_state_loaded": true,
+      "kg_update_linked": true,
+      "czl_closure_linked": true,
+      "cieu_residual_linked": true,
+      "no_report_only_p0_closure": true,
+      "no_stale_next_milestone": true,
+      "no_go_boundaries_loaded": true,
+      "governance_boundary_preserved": true,
+      "status": "anti_drift_gate_passed",
+      "failures": [],
+      "warnings": [],
+      "validated_artifact_count": 12,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "allowed": true,
+      "no_external_action": true
+    }
+  },
+  "checks": {
+    "decision_packet_has_writer_reader_readback": true,
+    "selected_route_has_next_runtime_reader": true,
+    "live_read_limitation_has_reader": true,
+    "no_report_only_P0_closure": true,
+    "fixture_only_not_live_market_freshness": true
+  },
+  "passed": true,
+  "external_action_allowed": false,
+  "no_external_action": true
+}

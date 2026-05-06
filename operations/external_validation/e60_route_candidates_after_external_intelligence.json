@@ -1,0 +1,211 @@
+{
+  "artifact_id": "e60_route_candidates_after_external_intelligence",
+  "candidate_count": 10,
+  "candidates": [
+    {
+      "route_id": "E61_live_public_read_adapter_repair_or_host_network_refresh",
+      "description": "Repair host/network live public-read path or run a governed host refresh so E59 structure gets live source receipts.",
+      "allowed_now": true,
+      "owner_approval_required": false,
+      "external_action_required": false,
+      "live_read_dependency": true,
+      "real_mcp_transport_dependency": false,
+      "proof_support": "E59 adapter/pipeline proof plus explicit live-read blocker",
+      "missing_evidence": [
+        "host/network live read access",
+        "fresh source receipts"
+      ],
+      "governance_risk": "low",
+      "commercial_risk": "low",
+      "reversibility": "high",
+      "expected_value": 92,
+      "no_overclaim_boundary": "no customer validation, paid signal, expert feedback, external validation, or real MCP transport claim",
+      "decision_candidate": "internal_allowed"
+    },
+    {
+      "route_id": "E61_owner_decision_gate_for_case_study_review",
+      "description": "Ask owner to decide whether the case study should enter a controlled review planning lane.",
+      "allowed_now": true,
+      "owner_approval_required": false,
+      "external_action_required": false,
+      "live_read_dependency": false,
+      "real_mcp_transport_dependency": false,
+      "proof_support": "E58 case study and E60 readiness packet",
+      "missing_evidence": [
+        "owner decision"
+      ],
+      "governance_risk": "low",
+      "commercial_risk": "medium",
+      "reversibility": "high",
+      "expected_value": 84,
+      "no_overclaim_boundary": "no customer validation, paid signal, expert feedback, external validation, or real MCP transport claim",
+      "decision_candidate": "internal_allowed"
+    },
+    {
+      "route_id": "E61_controlled_first_user_review_plan_no_execution",
+      "description": "Prepare a plan only; no send and no execution.",
+      "allowed_now": true,
+      "owner_approval_required": true,
+      "external_action_required": false,
+      "live_read_dependency": false,
+      "real_mcp_transport_dependency": false,
+      "proof_support": "E53 owner-review gate and E55 behavior authorization boundaries",
+      "missing_evidence": [
+        "owner approval before execution",
+        "approved reviewer identity later"
+      ],
+      "governance_risk": "medium",
+      "commercial_risk": "medium",
+      "reversibility": "high",
+      "expected_value": 70,
+      "no_overclaim_boundary": "no customer validation, paid signal, expert feedback, external validation, or real MCP transport claim",
+      "decision_candidate": "owner_approval_required"
+    },
+    {
+      "route_id": "E61_real_mcp_transport_gate",
+      "description": "Close real MCP transport proof for transport-dependent routes.",
+      "allowed_now": true,
+      "owner_approval_required": false,
+      "external_action_required": false,
+      "live_read_dependency": false,
+      "real_mcp_transport_dependency": true,
+      "proof_support": "gov-mcp fake harness and tool-layer proofs exist",
+      "missing_evidence": [
+        "real MCP transport closure"
+      ],
+      "governance_risk": "low",
+      "commercial_risk": "medium",
+      "reversibility": "medium",
+      "expected_value": 68,
+      "no_overclaim_boundary": "no customer validation, paid signal, expert feedback, external validation, or real MCP transport claim",
+      "decision_candidate": "internal_allowed"
+    },
+    {
+      "route_id": "E61_K9Audit_write_integration_gate",
+      "description": "Close causal audit write integration before full proof-stack positioning.",
+      "allowed_now": true,
+      "owner_approval_required": false,
+      "external_action_required": false,
+      "live_read_dependency": false,
+      "real_mcp_transport_dependency": false,
+      "proof_support": "K9Audit context exists but write integration remains future work",
+      "missing_evidence": [
+        "K9Audit write integration"
+      ],
+      "governance_risk": "low",
+      "commercial_risk": "medium",
+      "reversibility": "medium",
+      "expected_value": 61,
+      "no_overclaim_boundary": "no customer validation, paid signal, expert feedback, external validation, or real MCP transport claim",
+      "decision_candidate": "internal_allowed"
+    },
+    {
+      "route_id": "E61_case_study_language_hardening",
+      "description": "Harden owner-review language using E59 fixture-based intelligence limitations.",
+      "allowed_now": true,
+      "owner_approval_required": false,
+      "external_action_required": false,
+      "live_read_dependency": false,
+      "real_mcp_transport_dependency": false,
+      "proof_support": "E58 case study and no-overclaim validator",
+      "missing_evidence": [
+        "owner preference",
+        "live evidence if desired"
+      ],
+      "governance_risk": "low",
+      "commercial_risk": "low",
+      "reversibility": "high",
+      "expected_value": 76,
+      "no_overclaim_boundary": "no customer validation, paid signal, expert feedback, external validation, or real MCP transport claim",
+      "decision_candidate": "internal_allowed"
+    },
+    {
+      "route_id": "E61_external_intelligence_live_refresh_if_host_network_available",
+      "description": "Run bounded live refresh only if host/network is safely available.",
+      "allowed_now": true,
+      "owner_approval_required": false,
+      "external_action_required": false,
+      "live_read_dependency": true,
+      "real_mcp_transport_dependency": false,
+      "proof_support": "E59 controlled adapter and source policy",
+      "missing_evidence": [
+        "host network availability"
+      ],
+      "governance_risk": "low",
+      "commercial_risk": "low",
+      "reversibility": "high",
+      "expected_value": 88,
+      "no_overclaim_boundary": "no customer validation, paid signal, expert feedback, external validation, or real MCP transport claim",
+      "decision_candidate": "internal_allowed"
+    },
+    {
+      "route_id": "E61_prepare_single_controlled_review_after_owner_approval",
+      "description": "Prepare controlled review only after owner approval exists; still no sending by default.",
+      "allowed_now": false,
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "live_read_dependency": false,
+      "real_mcp_transport_dependency": false,
+      "proof_support": "E53/E55 gates prove pending state blocks action",
+      "missing_evidence": [
+        "explicit owner approval",
+        "owner-approved reviewer identity"
+      ],
+      "governance_risk": "medium",
+      "commercial_risk": "medium",
+      "reversibility": "medium",
+      "expected_value": 62,
+      "no_overclaim_boundary": "no customer validation, paid signal, expert feedback, external validation, or real MCP transport claim",
+      "decision_candidate": "owner_approval_required"
+    },
+    {
+      "route_id": "E61_direct_customer_outreach_now",
+      "description": "Direct customer outreach now.",
+      "allowed_now": false,
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "live_read_dependency": false,
+      "real_mcp_transport_dependency": false,
+      "proof_support": "none allowed",
+      "missing_evidence": [
+        "owner approval",
+        "review protocol",
+        "no-overclaim package",
+        "external authorization"
+      ],
+      "governance_risk": "high",
+      "commercial_risk": "high",
+      "reversibility": "low",
+      "expected_value": 0,
+      "no_overclaim_boundary": "no customer validation, paid signal, expert feedback, external validation, or real MCP transport claim",
+      "decision_candidate": "deny"
+    },
+    {
+      "route_id": "E61_publish_case_study_now",
+      "description": "Publish the case study publicly now.",
+      "allowed_now": false,
+      "owner_approval_required": true,
+      "external_action_required": true,
+      "live_read_dependency": false,
+      "real_mcp_transport_dependency": false,
+      "proof_support": "case study is owner-reviewable only",
+      "missing_evidence": [
+        "owner approval",
+        "publication review",
+        "external authorization"
+      ],
+      "governance_risk": "high",
+      "commercial_risk": "medium",
+      "reversibility": "low",
+      "expected_value": 0,
+      "no_overclaim_boundary": "no customer validation, paid signal, expert feedback, external validation, or real MCP transport claim",
+      "decision_candidate": "deny"
+    }
+  ],
+  "direct_customer_outreach_now_decision": "deny",
+  "publish_case_study_now_decision": "deny",
+  "controlled_review_execution_without_owner_approval": "deny",
+  "external_action_allowed": false,
+  "owner_decision_status": "pending_owner_decision",
+  "no_external_action": true
+}

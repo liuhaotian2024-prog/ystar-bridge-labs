@@ -1,0 +1,29 @@
+{
+  "artifact_id": "e60_cross_repo_evidence_packet",
+  "modified_repos_expected": [
+    "bridge-labs"
+  ],
+  "read_only_repos": [
+    "Y-star-gov",
+    "gov-mcp",
+    "K9Audit"
+  ],
+  "prior_evidence_consumed": [
+    "operations/external_validation/e54_ceo_brain_l5_readiness_gate_result.json",
+    "operations/external_validation/e55_behavior_center_l5_readiness_gate_result.json",
+    "operations/external_validation/e56_internal_company_loop_l5_readiness_gate_result.json",
+    "products/ai_agent_company_runtime_harness_case_study/case_study.json",
+    "operations/external_validation/e59_external_world_intelligence_l5_readiness_gate_result.json",
+    "operations/external_validation/e59_controlled_public_page_read_adapter_result.json",
+    "operations/external_validation/e59_cieu_residual_summary.json",
+    "operations/external_validation/e59_cieu_residual_summary.json",
+    "operations/external_validation/e53_owner_approval_validation_result.json",
+    "operations/external_validation/e59_external_world_intelligence_l5_readiness_gate_result.json",
+    "operations/external_validation/e59_external_world_intelligence_l5_readiness_gate_result.json",
+    "operations/external_validation/e59_external_world_intelligence_l5_readiness_gate_result.json"
+  ],
+  "decision_packet": "operations/external_validation/e60_market_entry_decision_packet.json",
+  "selected_next_milestone": "E61_live_public_read_adapter_repair_or_host_network_refresh",
+  "safety_boundaries_preserved": true,
+  "no_external_action": true
+}

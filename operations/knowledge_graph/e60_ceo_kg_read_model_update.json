@@ -1,0 +1,11 @@
+{
+  "artifact_id": "e60_ceo_kg_read_model_update",
+  "market_readiness_status": "post_external_intelligence_market_readiness_retest_closed",
+  "current_readiness_level": "L3_external_intelligence_structurally_ready",
+  "selected_next_milestone": "E61_live_public_read_adapter_repair_or_host_network_refresh",
+  "nearest_alternative": "E61_owner_decision_gate_for_case_study_review",
+  "live_public_read_status": "live_public_read_unavailable_nonfatal",
+  "fixture_only_evidence_treated_as_live_market_freshness": false,
+  "external_action_allowed": false,
+  "next_runtime_reader": "E61"
+}
