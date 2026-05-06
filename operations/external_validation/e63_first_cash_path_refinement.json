@@ -1,0 +1,24 @@
+{
+  "artifact_id": "e63_first_cash_path_refinement",
+  "starting_selected_path_from_E62": "AI_agent_company_runtime_harness_deployment_service",
+  "starting_nearest_alternative_from_E62": "agent_runtime_audit_and_repair_package",
+  "does_live_public_read_evidence_strengthen_selected_path": true,
+  "narrowed_buyer_category": "founder/operator or AI platform teams building agent workflows that need governed business operations",
+  "sharper_entry_wedge": "runtime harness deployment blueprint for governed agent action, evidence closure, and operational reliability",
+  "nearest_alternative_more_practical": false,
+  "smallest_useful_deliverable_before_external_contact": "internal draft deployment blueprint plus offer hypothesis, using public-read evidence language and existing L5 proof artifacts",
+  "offer_package_to_draft_next": "AI Agent Company Runtime Harness Deployment Blueprint",
+  "what_remains_owner_gated": [
+    "outreach",
+    "publication",
+    "controlled review execution",
+    "payment",
+    "client delivery"
+  ],
+  "refined_selected_first_cash_path": "AI_agent_company_runtime_harness_deployment_service",
+  "recommended_next_milestone": "E64_draft_runtime_harness_deployment_offer_and_delivery_blueprint_no_execution",
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false,
+  "expert_feedback_claimed": false,
+  "external_action_allowed": false
+}

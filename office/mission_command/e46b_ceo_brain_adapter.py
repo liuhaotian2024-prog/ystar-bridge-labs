@@ -331,6 +331,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e62_revenue_runtime_state = {'revenue_runtime_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
     try:
+        from office.mission_command.e63_ceo_brain_readback_smoke import load_e63_state_for_brain
+        e63_revenue_opportunity_state = load_e63_state_for_brain()
+    except Exception as exc:
+        e63_revenue_opportunity_state = {'opportunity_discovery_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -426,6 +431,14 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_autonomous_revenue_runtime_public_read_blocker": e62_revenue_runtime_state.get("public_read_blocker_status"),
         "current_autonomous_revenue_runtime_next_milestone": e62_revenue_runtime_state.get("recommended_next_milestone"),
         "current_autonomous_revenue_runtime_external_action_allowed": e62_revenue_runtime_state.get("external_action_allowed"),
+        "latest_revenue_opportunity_discovery_state": e63_revenue_opportunity_state,
+        "current_revenue_opportunity_discovery_status": e63_revenue_opportunity_state.get("opportunity_discovery_status"),
+        "current_revenue_opportunity_first_cash_path": e63_revenue_opportunity_state.get("refined_first_cash_path"),
+        "current_revenue_opportunity_source_receipt_count": e63_revenue_opportunity_state.get("source_receipt_count"),
+        "current_revenue_opportunity_evidence_atom_count": e63_revenue_opportunity_state.get("evidence_atom_count"),
+        "current_revenue_opportunity_offer_package": e63_revenue_opportunity_state.get("offer_package_hypothesis"),
+        "current_revenue_opportunity_next_milestone": e63_revenue_opportunity_state.get("recommended_next_milestone"),
+        "current_revenue_opportunity_external_action_allowed": e63_revenue_opportunity_state.get("external_action_allowed"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

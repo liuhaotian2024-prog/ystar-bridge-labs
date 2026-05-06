@@ -1,0 +1,40 @@
+{
+  "artifact_id": "e63_behavior_authorization_result",
+  "authorization_status": "ALLOW_PUBLIC_READ_ONLY_INTERNAL_DISCOVERY",
+  "allowed_actions": [
+    "repository_archaeology",
+    "bounded_public_read_only_discovery",
+    "source_receipt_creation",
+    "evidence_atom_creation",
+    "opportunity_map_creation",
+    "first_cash_path_refinement",
+    "internal_only_offer_package_hypothesis",
+    "KG_CZL_CIEU_writeback",
+    "CEO_brain_readback"
+  ],
+  "denied_actions": [
+    "outreach",
+    "publication",
+    "direct_customer_review",
+    "expert_review",
+    "author_maintainer_user_contact",
+    "human_identification",
+    "contact_scraping",
+    "email_phone_social_scraping",
+    "login_form_send",
+    "private_provider_API",
+    "payment_action",
+    "client_delivery",
+    "production_readiness_claim",
+    "customer_validation_claim",
+    "paid_signal_claim",
+    "expert_feedback_claim"
+  ],
+  "selected_first_cash_path": "AI_agent_company_runtime_harness_deployment_service",
+  "public_read_discovery_authorized": true,
+  "external_business_execution_authorized": false,
+  "owner_decision_status": "pending_owner_decision",
+  "pending_owner_decision_is_not_approval": true,
+  "external_action_allowed": false,
+  "passed": true
+}

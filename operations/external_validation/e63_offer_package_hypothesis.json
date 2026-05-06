@@ -1,0 +1,42 @@
+{
+  "artifact_id": "e63_offer_package_hypothesis",
+  "offer_status": "draft_only_internal",
+  "offer_name": "AI Agent Company Runtime Harness Deployment Blueprint",
+  "target_buyer_category": "founder/operator or AI platform teams building agent workflows that need governed business operations",
+  "pain_point": "agent workflows need governed action control, observability/evidence closure, and business-operation structure before they can safely create value",
+  "promised_outcome": "a repo-grounded deployment blueprint for turning agent activity into governed internal business operations",
+  "delivery_object": "internal blueprint, runtime centerline map, risk-tiered action plan, evidence closure checklist, and owner-gated next-action plan",
+  "likely_delivery_steps": [
+    "inspect existing agent/company runtime assets",
+    "map action risks and owner gates",
+    "draft behavior authorization and evidence closure plan",
+    "identify first safe internal value creation loop",
+    "prepare no-overclaim owner-review packet"
+  ],
+  "proof_evidence_available": [
+    "CEO brain L5",
+    "behavior control center L5",
+    "internal operating loop L5",
+    "E62 revenue runtime recenter",
+    "E63 public-read opportunity map"
+  ],
+  "proof_evidence_missing": [
+    "customer validation",
+    "paid signal",
+    "expert feedback",
+    "production deployment",
+    "owner-approved external review"
+  ],
+  "estimated_complexity": "medium",
+  "risk_tier": "T2_draft_only_external_material",
+  "required_owner_approval_before_external_use": true,
+  "no_overclaim_language": [
+    "draft-only internal offer hypothesis",
+    "public-read opportunity evidence only",
+    "not customer validated",
+    "not paid validated",
+    "not expert reviewed",
+    "not production ready"
+  ],
+  "external_action_allowed": false
+}

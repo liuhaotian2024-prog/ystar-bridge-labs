@@ -1,0 +1,165 @@
+{
+  "artifact_id": "e63_revenue_opportunity_map",
+  "selected_first_cash_path": "AI_agent_company_runtime_harness_deployment_service",
+  "nearest_alternative": "agent_runtime_audit_and_repair_package",
+  "evidence_atom_count": 12,
+  "opportunity_clusters": [
+    {
+      "cluster_id": "runtime_governance_for_agent_workflows",
+      "buyer_category_clusters": [
+        [
+          "teams needing governed agent action approval",
+          4
+        ],
+        [
+          "founder/operator teams building agentic systems",
+          4
+        ],
+        [
+          "operator teams automating business workflows",
+          2
+        ],
+        [
+          "AI platform / engineering teams responsible for reliability",
+          2
+        ]
+      ],
+      "pain_point_clusters": [
+        [
+          "AI adoption needs practical operating structure rather than demos",
+          5
+        ],
+        [
+          "agent workflows need durable operating structure and coordination",
+          3
+        ],
+        [
+          "agent actions need policy and safety boundaries before execution",
+          2
+        ],
+        [
+          "tool execution needs governed integration and approval surfaces",
+          1
+        ],
+        [
+          "agent behavior needs tracing, debugging, and reliability visibility",
+          1
+        ]
+      ],
+      "urgency_signals_from_public_language": [
+        "safe execution",
+        "debuggability",
+        "workflow reliability",
+        "tool integration control"
+      ],
+      "competing_or_adjacent_solution_clusters": [
+        [
+          "agent runtime operations",
+          6
+        ],
+        [
+          "AI governance / guardrails / policy enforcement",
+          2
+        ],
+        [
+          "agent workflow orchestration",
+          2
+        ],
+        [
+          "MCP / tool integration",
+          1
+        ],
+        [
+          "AI observability / tracing / evaluation",
+          1
+        ]
+      ],
+      "packaging_pricing_analogs": [
+        "deployment service",
+        "audit/repair package",
+        "governance layer",
+        "observability/evals add-on"
+      ],
+      "internal_capability_fit": "high",
+      "missing_capability": [
+        "owner-approved external review",
+        "specific delivery blueprint",
+        "customer validation",
+        "paid signal"
+      ],
+      "risk_tier": "T2_draft_only_external_material",
+      "external_action_required": true,
+      "owner_approval_required": true,
+      "supports_selected_first_cash_path": true,
+      "nearest_alternative_should_be_reconsidered": false
+    }
+  ],
+  "opportunity_cluster_count": 1,
+  "buyer_category_clusters": [
+    [
+      "teams needing governed agent action approval",
+      4
+    ],
+    [
+      "founder/operator teams building agentic systems",
+      4
+    ],
+    [
+      "operator teams automating business workflows",
+      2
+    ],
+    [
+      "AI platform / engineering teams responsible for reliability",
+      2
+    ]
+  ],
+  "pain_point_clusters": [
+    [
+      "AI adoption needs practical operating structure rather than demos",
+      5
+    ],
+    [
+      "agent workflows need durable operating structure and coordination",
+      3
+    ],
+    [
+      "agent actions need policy and safety boundaries before execution",
+      2
+    ],
+    [
+      "tool execution needs governed integration and approval surfaces",
+      1
+    ],
+    [
+      "agent behavior needs tracing, debugging, and reliability visibility",
+      1
+    ]
+  ],
+  "solution_clusters": [
+    [
+      "agent runtime operations",
+      6
+    ],
+    [
+      "AI governance / guardrails / policy enforcement",
+      2
+    ],
+    [
+      "agent workflow orchestration",
+      2
+    ],
+    [
+      "MCP / tool integration",
+      1
+    ],
+    [
+      "AI observability / tracing / evaluation",
+      1
+    ]
+  ],
+  "selected_path_strengthened": true,
+  "nearest_alternative_more_practical": false,
+  "no_customer_validation_claimed": true,
+  "no_paid_signal_claimed": true,
+  "no_expert_feedback_claimed": true
+}

@@ -1,0 +1,21 @@
+{
+  "artifact_id": "e63_prior_gate_preflight_result",
+  "bridge_job_id": "e63_autonomous_revenue_opportunity_discovery_public_read_only_20260506T000001Z",
+  "checks": {
+    "E62_completion_gate_passed": true,
+    "E62_host_public_read_available": true,
+    "E62_selected_runtime_harness_path": true,
+    "E62_nearest_alternative_loaded": true,
+    "E62_external_action_blocked": true,
+    "E62_owner_decision_pending": true,
+    "E62_no_validation_or_revenue_claim": true
+  },
+  "passed": true,
+  "consumed_E62_final_status": "e62_host_public_read_available_revenue_runtime_recentered",
+  "consumed_E62_public_read_blocker_status": "host_public_read_available",
+  "selected_first_cash_path": "AI_agent_company_runtime_harness_deployment_service",
+  "nearest_alternative": "agent_runtime_audit_and_repair_package",
+  "owner_decision_status": "pending_owner_decision",
+  "external_action_allowed": false,
+  "no_external_action": true
+}
