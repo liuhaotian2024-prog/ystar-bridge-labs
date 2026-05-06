@@ -1,0 +1,48 @@
+{
+  "artifact_id": "e54_ceo_capability_growth_metrics",
+  "estimate_class": "artifact_supported_estimate",
+  "board_correction_count_estimate": 7,
+  "self_catch_count_estimate": 5,
+  "self_catch_rate": 0.4166666666666667,
+  "repeated_failure_classes": [
+    "written_not_read_back",
+    "artifact_pile_without_runtime",
+    "owner_approval_boundary_risk"
+  ],
+  "correction_sources": [
+    "Board explicit corrections",
+    "owner concern messages recorded in milestone summaries",
+    "anti-drift gate failures",
+    "capability binding failures",
+    "stale/readback failures",
+    "E53 pending-owner correction/guardrail events"
+  ],
+  "capability_growth_evidence": [
+    "E50B counterfactual disconnection found and repaired",
+    "E50C brain written-not-read repaired",
+    "E51 anti-drift and binding gates",
+    "E52 proof packet no-overclaim/readback",
+    "E53 owner-review gate pending external action"
+  ],
+  "remaining_weakness": [
+    "autonomous action loop not yet L5",
+    "real external feedback absent",
+    "behavior center not L5",
+    "K9 write integration not closed",
+    "real MCP transport not closed"
+  ],
+  "future_metric_plan": {
+    "structured_board_correction_event_required": true,
+    "structured_ceo_self_catch_event_required": true,
+    "formula": "self_catch / (self_catch + Board_corrections)",
+    "L5_threshold": "self_catch_rate >= 0.8 over recent major tasks and repeated P0 correction classes = 0"
+  },
+  "self_catch_metrics": {
+    "self_catch_count_estimate": 5,
+    "self_catch_rate": 0.4166666666666667
+  },
+  "board_correction_metrics": {
+    "board_correction_count_estimate": 7
+  },
+  "no_external_action": true
+}

@@ -286,6 +286,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     proof_packet_state = _load_latest_proof_packet_current_state()
     owner_review_state = _load_latest_owner_review_current_state()
     try:
+        from office.mission_command.e54_ceo_brain_current_state_registry import resolve_current_state
+        e54_current_state_registry_resolution = resolve_current_state()
+    except Exception as exc:
+        e54_current_state_registry_resolution = {'registry_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_approval_status': 'pending_owner_decision'}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -325,6 +330,10 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_owner_approval_status": owner_review_state.get("owner_decision_status"),
         "current_external_action_allowed": owner_review_state.get("external_action_allowed"),
         "current_owner_review_next_milestone": owner_review_state.get("next_recommended_milestone"),
+        "latest_current_state_registry_resolution": e54_current_state_registry_resolution,
+        "current_state_registry_status": e54_current_state_registry_resolution.get("registry_status"),
+        "current_l5_brain_next_action": e54_current_state_registry_resolution.get("next_milestone"),
+        "current_l5_external_action_allowed": e54_current_state_registry_resolution.get("external_action_allowed"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

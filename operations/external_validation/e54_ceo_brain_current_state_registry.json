@@ -1,0 +1,163 @@
+{
+  "artifact_id": "e54_ceo_brain_current_state_registry",
+  "sources": [
+    {
+      "source_id": "e50b_commercial_decision",
+      "path": "operations/external_validation/e50b_ceo_commercial_decision_packet.json",
+      "source_type": "decision_packet",
+      "milestone": "E50B",
+      "freshness_order": 50,
+      "affects_current_state": true,
+      "consumed_as_current": false,
+      "allowed_if_missing": true,
+      "reader": "e54_current_state_registry",
+      "validation": {
+        "reference_only_after_E53": true
+      }
+    },
+    {
+      "source_id": "e52_proof_packet",
+      "path": "products/governed_agent_action_proof_packet/proof_packet.json",
+      "source_type": "proof_packet",
+      "milestone": "E52",
+      "freshness_order": 52,
+      "affects_current_state": true,
+      "consumed_as_current": true,
+      "allowed_if_missing": false,
+      "reader": "e54_current_state_registry",
+      "validation": {}
+    },
+    {
+      "source_id": "e52_completion_gate",
+      "path": "operations/external_validation/e52_completion_gate_result.json",
+      "source_type": "gate_result",
+      "milestone": "E52",
+      "freshness_order": 52,
+      "affects_current_state": true,
+      "consumed_as_current": true,
+      "allowed_if_missing": false,
+      "reader": "e54_current_state_registry",
+      "validation": {}
+    },
+    {
+      "source_id": "e53_owner_review_packet",
+      "path": "products/governed_agent_action_proof_packet/e53_owner_review_packet.json",
+      "source_type": "owner_review_state",
+      "milestone": "E53",
+      "freshness_order": 53,
+      "affects_current_state": true,
+      "consumed_as_current": true,
+      "allowed_if_missing": false,
+      "reader": "e54_current_state_registry",
+      "validation": {}
+    },
+    {
+      "source_id": "e53_owner_approval_validation",
+      "path": "operations/external_validation/e53_owner_approval_validation_result.json",
+      "source_type": "owner_approval_record",
+      "milestone": "E53",
+      "freshness_order": 53,
+      "affects_current_state": true,
+      "consumed_as_current": true,
+      "allowed_if_missing": false,
+      "reader": "e54_current_state_registry",
+      "validation": {}
+    },
+    {
+      "source_id": "e53_risk_gate",
+      "path": "operations/external_validation/e53_first_user_review_risk_gate_result.json",
+      "source_type": "risk_gate",
+      "milestone": "E53",
+      "freshness_order": 53,
+      "affects_current_state": true,
+      "consumed_as_current": true,
+      "allowed_if_missing": false,
+      "reader": "e54_current_state_registry",
+      "validation": {}
+    },
+    {
+      "source_id": "e53_non_sent_template",
+      "path": "products/governed_agent_action_proof_packet/e53_non_sent_review_request_template.json",
+      "source_type": "non_sent_template",
+      "milestone": "E53",
+      "freshness_order": 53,
+      "affects_current_state": true,
+      "consumed_as_current": true,
+      "allowed_if_missing": false,
+      "reader": "e54_current_state_registry",
+      "validation": {}
+    },
+    {
+      "source_id": "e53_completion_gate",
+      "path": "operations/external_validation/e53_completion_gate_result.json",
+      "source_type": "gate_result",
+      "milestone": "E53",
+      "freshness_order": 53,
+      "affects_current_state": true,
+      "consumed_as_current": true,
+      "allowed_if_missing": false,
+      "reader": "e54_current_state_registry",
+      "validation": {}
+    },
+    {
+      "source_id": "e53_kg_read_model",
+      "path": "operations/knowledge_graph/e53_ceo_kg_read_model_update.json",
+      "source_type": "kg_read_model",
+      "milestone": "E53",
+      "freshness_order": 53,
+      "affects_current_state": true,
+      "consumed_as_current": true,
+      "allowed_if_missing": false,
+      "reader": "e54_current_state_registry",
+      "validation": {}
+    },
+    {
+      "source_id": "e54_next_action_reasoning",
+      "path": "operations/external_validation/e54_ceo_next_action_reasoning_packet.json",
+      "source_type": "decision_packet",
+      "milestone": "E54",
+      "freshness_order": 54,
+      "affects_current_state": true,
+      "consumed_as_current": true,
+      "allowed_if_missing": true,
+      "reader": "e54_current_state_registry",
+      "validation": {}
+    },
+    {
+      "source_id": "e54_l5_readiness_gate",
+      "path": "operations/external_validation/e54_ceo_brain_l5_readiness_gate_result.json",
+      "source_type": "gate_result",
+      "milestone": "E54",
+      "freshness_order": 54,
+      "affects_current_state": true,
+      "consumed_as_current": true,
+      "allowed_if_missing": true,
+      "reader": "e54_current_state_registry",
+      "validation": {}
+    },
+    {
+      "source_id": "old_e49_route_decision",
+      "path": "operations/external_validation/e49_selected_money_route_semantic_decision.json",
+      "source_type": "reference_only",
+      "milestone": "E49",
+      "freshness_order": 49,
+      "affects_current_state": false,
+      "consumed_as_current": false,
+      "allowed_if_missing": true,
+      "reader": "none",
+      "validation": {
+        "reference_only": true
+      }
+    }
+  ],
+  "rules": [
+    "latest accepted current-state source wins",
+    "reference_only artifacts cannot become current",
+    "no-go boundaries are monotonic unless explicit owner approval narrows them",
+    "external_action_allowed defaults false",
+    "owner approval is never inferred",
+    "pending_owner_decision is never approval",
+    "non-sent template is never sent"
+  ],
+  "no_external_action": true
+}

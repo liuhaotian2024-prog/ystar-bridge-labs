@@ -1,0 +1,4 @@
+{"node_id": "e54_ceo_brain_l5", "type": "ceo_brain_state", "label": "CEO brain L5 cognitive center"}
+{"node_id": "e54_current_state_registry", "type": "registry", "label": "Generic current-state registry"}
+{"node_id": "pending_owner_decision", "type": "boundary_state", "label": "E53 owner decision pending"}
+{"node_id": "E55_behavior_control_center_L5_convergence", "type": "next_milestone", "label": "E55 behavior control center L5"}

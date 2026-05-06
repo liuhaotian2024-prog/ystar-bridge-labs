@@ -1,0 +1,3 @@
+{"source": "e54_current_state_registry", "target": "e54_ceo_brain_l5", "type": "loads"}
+{"source": "pending_owner_decision", "target": "e54_ceo_brain_l5", "type": "blocks_external_action"}
+{"source": "e54_ceo_brain_l5", "target": "E55_behavior_control_center_L5_convergence", "type": "recommends"}

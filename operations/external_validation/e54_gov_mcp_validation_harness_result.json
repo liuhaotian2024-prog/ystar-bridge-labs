@@ -1,0 +1,377 @@
+{
+  "artifact_id": "e54_gov_mcp_validation_harness_result",
+  "registered_tools": [
+    "gov_enforce_anti_drift_gate",
+    "gov_enforce_capability_centerline_gate",
+    "gov_validate_capability_binding",
+    "gov_validate_centerline_contract",
+    "gov_validate_readback_proof",
+    "gov_validate_runtime_linkage"
+  ],
+  "allow_results": {
+    "runtime_linkage": {
+      "tool_name": "gov_validate_runtime_linkage",
+      "status": "ALLOW",
+      "allowed": true,
+      "failures": [],
+      "warnings": [],
+      "validated_artifact_count": 11,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "result": {
+        "valid": true,
+        "graph_id": "e54_brain_l5_runtime_linkage_graph",
+        "node_count": 11,
+        "edge_count": 3,
+        "failures": [],
+        "validated_artifact_count": 11
+      },
+      "no_external_action": true
+    },
+    "centerline_contract": {
+      "tool_name": "gov_validate_centerline_contract",
+      "status": "ALLOW",
+      "allowed": true,
+      "failures": [],
+      "warnings": [],
+      "validated_artifact_count": 0,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "result": {
+        "valid": true,
+        "contract_id": "e54_brain_l5_centerline_contract",
+        "stage_count": 2,
+        "failures": []
+      },
+      "no_external_action": true
+    },
+    "readback_proof": {
+      "tool_name": "gov_validate_readback_proof",
+      "status": "ALLOW",
+      "allowed": true,
+      "failures": [],
+      "warnings": [],
+      "validated_artifact_count": 0,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "result": {
+        "valid": true,
+        "proof_id": "e54_brain_l5_readback_proof",
+        "failures": []
+      },
+      "no_external_action": true
+    },
+    "anti_drift_gate": {
+      "tool_name": "gov_enforce_anti_drift_gate",
+      "status": "ALLOW",
+      "allowed": true,
+      "failures": [],
+      "warnings": [],
+      "validated_artifact_count": 11,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "result": {
+        "gate_id": "anti_drift_gate",
+        "centerline_contract_loaded": true,
+        "runtime_linkage_graph_valid": true,
+        "selected_route_has_writer": true,
+        "selected_route_has_reader": true,
+        "selected_route_has_readback_test": true,
+        "next_milestone_has_writer": true,
+        "next_milestone_has_reader": true,
+        "blocker_state_has_writer": true,
+        "blocker_state_has_reader": true,
+        "brain_current_state_loaded": true,
+        "kg_update_linked": true,
+        "czl_closure_linked": true,
+        "cieu_residual_linked": true,
+        "no_report_only_p0_closure": true,
+        "no_stale_next_milestone": true,
+        "no_go_boundaries_loaded": true,
+        "governance_boundary_preserved": true,
+        "status": "anti_drift_gate_passed",
+        "failures": [],
+        "warnings": [],
+        "validated_artifact_count": 11,
+        "p0_failure_count": 0,
+        "p1_failure_count": 0,
+        "allowed": true,
+        "no_external_action": true
+      },
+      "no_external_action": true
+    },
+    "capability_binding_gate": {
+      "tool_name": "gov_enforce_capability_centerline_gate",
+      "status": "ALLOW",
+      "allowed": true,
+      "failures": [],
+      "warnings": [],
+      "validated_artifact_count": 0,
+      "p0_failure_count": 0,
+      "p1_failure_count": 0,
+      "result": {
+        "gate_id": "e54_brain_l5_capability_binding_gate",
+        "status": "capability_binding_gate_passed",
+        "allowed": true,
+        "record_count": 6,
+        "wrong_centerline_count": 0,
+        "missing_binding_count": 0,
+        "stale_current_state_count": 0,
+        "p0_failure_count": 0,
+        "p1_failure_count": 0,
+        "failures": [],
+        "warnings": [],
+        "no_external_action": true
+      },
+      "no_external_action": true
+    }
+  },
+  "deny_results": {
+    "cognitive_not_bound_to_brain": {
+      "tool_name": "gov_enforce_capability_centerline_gate",
+      "status": "DENY",
+      "allowed": false,
+      "failures": [
+        {
+          "reason": "capability_binding_invalid",
+          "severity": "P0",
+          "capability_id": "e54_current_state_registry",
+          "details": [
+            {
+              "reason": "missing_required_field",
+              "severity": "P1",
+              "field": "actual_binding"
+            },
+            {
+              "reason": "cognitive_capability_missing_ceo_brain_binding",
+              "severity": "P0"
+            },
+            {
+              "reason": "wrong_centerline_p0_blocks_gate",
+              "severity": "P0"
+            }
+          ]
+        }
+      ],
+      "warnings": [],
+      "validated_artifact_count": 0,
+      "p0_failure_count": 1,
+      "p1_failure_count": 0,
+      "result": {
+        "gate_id": "e54_brain_l5_capability_binding_gate",
+        "status": "capability_binding_gate_failed_p0",
+        "allowed": false,
+        "record_count": 6,
+        "wrong_centerline_count": 1,
+        "missing_binding_count": 0,
+        "stale_current_state_count": 0,
+        "p0_failure_count": 1,
+        "p1_failure_count": 0,
+        "failures": [
+          {
+            "reason": "capability_binding_invalid",
+            "severity": "P0",
+            "capability_id": "e54_current_state_registry",
+            "details": [
+              {
+                "reason": "missing_required_field",
+                "severity": "P1",
+                "field": "actual_binding"
+              },
+              {
+                "reason": "cognitive_capability_missing_ceo_brain_binding",
+                "severity": "P0"
+              },
+              {
+                "reason": "wrong_centerline_p0_blocks_gate",
+                "severity": "P0"
+              }
+            ]
+          }
+        ],
+        "warnings": [],
+        "no_external_action": true
+      },
+      "no_external_action": true
+    },
+    "next_action_reasoner_marked_executor": {
+      "tool_name": "gov_enforce_capability_centerline_gate",
+      "status": "DENY",
+      "allowed": false,
+      "failures": [
+        {
+          "reason": "capability_binding_invalid",
+          "severity": "P0",
+          "capability_id": "e54_next_action_reasoner",
+          "details": [
+            {
+              "reason": "required_centerline_missing_expected_class_binding",
+              "severity": "P0",
+              "expected": [
+                "Y_star_gov_boundary",
+                "canonical_action_runtime"
+              ],
+              "required": [
+                "CEO_brain"
+              ]
+            },
+            {
+              "reason": "behavior_capability_bypasses_action_runtime_or_governance",
+              "severity": "P0",
+              "missing": [
+                "canonical_action_runtime"
+              ]
+            },
+            {
+              "reason": "wrong_centerline_p0_blocks_gate",
+              "severity": "P0"
+            }
+          ]
+        }
+      ],
+      "warnings": [],
+      "validated_artifact_count": 0,
+      "p0_failure_count": 1,
+      "p1_failure_count": 0,
+      "result": {
+        "gate_id": "e54_brain_l5_capability_binding_gate",
+        "status": "capability_binding_gate_failed_p0",
+        "allowed": false,
+        "record_count": 6,
+        "wrong_centerline_count": 1,
+        "missing_binding_count": 0,
+        "stale_current_state_count": 0,
+        "p0_failure_count": 1,
+        "p1_failure_count": 0,
+        "failures": [
+          {
+            "reason": "capability_binding_invalid",
+            "severity": "P0",
+            "capability_id": "e54_next_action_reasoner",
+            "details": [
+              {
+                "reason": "required_centerline_missing_expected_class_binding",
+                "severity": "P0",
+                "expected": [
+                  "Y_star_gov_boundary",
+                  "canonical_action_runtime"
+                ],
+                "required": [
+                  "CEO_brain"
+                ]
+              },
+              {
+                "reason": "behavior_capability_bypasses_action_runtime_or_governance",
+                "severity": "P0",
+                "missing": [
+                  "canonical_action_runtime"
+                ]
+              },
+              {
+                "reason": "wrong_centerline_p0_blocks_gate",
+                "severity": "P0"
+              }
+            ]
+          }
+        ],
+        "warnings": [],
+        "no_external_action": true
+      },
+      "no_external_action": true
+    },
+    "stale_route_consumed_current": {
+      "tool_name": "gov_enforce_capability_centerline_gate",
+      "status": "DENY",
+      "allowed": false,
+      "failures": [
+        {
+          "reason": "capability_binding_invalid",
+          "severity": "P0",
+          "capability_id": "e54_current_state_registry",
+          "details": [
+            {
+              "reason": "reference_only_artifact_consumed_as_current",
+              "severity": "P0"
+            }
+          ]
+        }
+      ],
+      "warnings": [],
+      "validated_artifact_count": 0,
+      "p0_failure_count": 1,
+      "p1_failure_count": 0,
+      "result": {
+        "gate_id": "e54_brain_l5_capability_binding_gate",
+        "status": "capability_binding_gate_failed_p0",
+        "allowed": false,
+        "record_count": 6,
+        "wrong_centerline_count": 0,
+        "missing_binding_count": 0,
+        "stale_current_state_count": 0,
+        "p0_failure_count": 1,
+        "p1_failure_count": 0,
+        "failures": [
+          {
+            "reason": "capability_binding_invalid",
+            "severity": "P0",
+            "capability_id": "e54_current_state_registry",
+            "details": [
+              {
+                "reason": "reference_only_artifact_consumed_as_current",
+                "severity": "P0"
+              }
+            ]
+          }
+        ],
+        "warnings": [],
+        "no_external_action": true
+      },
+      "no_external_action": true
+    },
+    "external_action_allowed_without_owner_approval": {
+      "status": "DENY",
+      "allowed": false,
+      "failures": [
+        {
+          "reason": "external_action_allowed_without_owner_approval",
+          "severity": "P0"
+        }
+      ]
+    },
+    "pending_owner_decision_treated_as_approval": {
+      "status": "DENY",
+      "allowed": false,
+      "failures": [
+        {
+          "reason": "pending_owner_decision_treated_as_approval",
+          "severity": "P0"
+        }
+      ]
+    },
+    "non_sent_template_treated_as_sent": {
+      "status": "DENY",
+      "allowed": false,
+      "failures": [
+        {
+          "reason": "non_sent_template_treated_as_sent",
+          "severity": "P0"
+        }
+      ]
+    },
+    "brain_bypasses_governance": {
+      "status": "DENY",
+      "allowed": false,
+      "failures": [
+        {
+          "reason": "brain_bypasses_governance",
+          "severity": "P0"
+        }
+      ]
+    }
+  },
+  "passed": true,
+  "no_server_started": true,
+  "no_port_opened": true,
+  "no_real_client_config_mutation": true,
+  "no_external_action": true
+}
