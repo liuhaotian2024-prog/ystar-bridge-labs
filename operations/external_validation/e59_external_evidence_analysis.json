@@ -1,0 +1,82 @@
+{
+  "artifact_id": "e59_external_evidence_analysis",
+  "analyzed_atoms": [
+    {
+      "evidence_id": "e59_atom_001",
+      "credibility": "official_primary",
+      "freshness": "undated",
+      "contradiction_gap": "reveals_missing_capability",
+      "internal_assumption_compared": "AI Agent Company Runtime Harness is a comprehensible category; runtime governance and MCP relevance remain hypotheses.",
+      "analysis_note": "Public-read-only fixture evidence supports learning but not validation."
+    },
+    {
+      "evidence_id": "e59_atom_002",
+      "credibility": "official_primary",
+      "freshness": "undated",
+      "contradiction_gap": "supports_internal_assumption",
+      "internal_assumption_compared": "AI Agent Company Runtime Harness is a comprehensible category; runtime governance and MCP relevance remain hypotheses.",
+      "analysis_note": "Public-read-only fixture evidence supports learning but not validation."
+    },
+    {
+      "evidence_id": "e59_atom_003",
+      "credibility": "public_repo_primary",
+      "freshness": "undated",
+      "contradiction_gap": "supports_internal_assumption",
+      "internal_assumption_compared": "AI Agent Company Runtime Harness is a comprehensible category; runtime governance and MCP relevance remain hypotheses.",
+      "analysis_note": "Public-read-only fixture evidence supports learning but not validation."
+    },
+    {
+      "evidence_id": "e59_atom_004",
+      "credibility": "public_blog",
+      "freshness": "undated",
+      "contradiction_gap": "supports_internal_assumption",
+      "internal_assumption_compared": "AI Agent Company Runtime Harness is a comprehensible category; runtime governance and MCP relevance remain hypotheses.",
+      "analysis_note": "Public-read-only fixture evidence supports learning but not validation."
+    },
+    {
+      "evidence_id": "e59_atom_005",
+      "credibility": "secondary_market_page",
+      "freshness": "undated",
+      "contradiction_gap": "supports_internal_assumption",
+      "internal_assumption_compared": "AI Agent Company Runtime Harness is a comprehensible category; runtime governance and MCP relevance remain hypotheses.",
+      "analysis_note": "Public-read-only fixture evidence supports learning but not validation."
+    },
+    {
+      "evidence_id": "e59_atom_006",
+      "credibility": "standards_policy",
+      "freshness": "undated",
+      "contradiction_gap": "supports_internal_assumption",
+      "internal_assumption_compared": "AI Agent Company Runtime Harness is a comprehensible category; runtime governance and MCP relevance remain hypotheses.",
+      "analysis_note": "Public-read-only fixture evidence supports learning but not validation."
+    },
+    {
+      "evidence_id": "e59_atom_007",
+      "credibility": "academic_primary",
+      "freshness": "undated",
+      "contradiction_gap": "supports_internal_assumption",
+      "internal_assumption_compared": "AI Agent Company Runtime Harness is a comprehensible category; runtime governance and MCP relevance remain hypotheses.",
+      "analysis_note": "Public-read-only fixture evidence supports learning but not validation."
+    },
+    {
+      "evidence_id": "e59_atom_008",
+      "credibility": "public_blog",
+      "freshness": "undated",
+      "contradiction_gap": "supports_internal_assumption",
+      "internal_assumption_compared": "AI Agent Company Runtime Harness is a comprehensible category; runtime governance and MCP relevance remain hypotheses.",
+      "analysis_note": "Public-read-only fixture evidence supports learning but not validation."
+    }
+  ],
+  "credibility_labels_present": true,
+  "freshness_labels_present": true,
+  "contradiction_gap_labels_present": true,
+  "internal_assumptions": [
+    "AI Agent Company Runtime Harness is a comprehensible category.",
+    "Governed agent action proof is valuable.",
+    "Runtime governance/guardrails/audit are market-relevant.",
+    "MCP ecosystem is relevant.",
+    "Real MCP transport remains a technical blocker for some routes.",
+    "Lack of external validation remains a commercial blocker.",
+    "External intelligence L5 is required before market contact."
+  ],
+  "no_external_action": true
+}

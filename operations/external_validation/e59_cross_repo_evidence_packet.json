@@ -1,0 +1,15 @@
+{
+  "artifact_id": "e59_cross_repo_evidence_packet",
+  "modified_repo": "bridge-labs",
+  "read_only_repos": [
+    "Y-star-gov",
+    "gov-mcp",
+    "K9Audit"
+  ],
+  "source_receipts": "operations/external_validation/e59_source_receipts.jsonl",
+  "evidence_atoms": "operations/external_validation/e59_evidence_atoms.jsonl",
+  "KG": "operations/knowledge_graph/e59_ceo_kg_read_model_update.json",
+  "CZL": "operations/external_validation/e59_czl_closure.json",
+  "CIEU": "operations/external_validation/e59_cieu_residual_summary.json",
+  "no_external_action": true
+}

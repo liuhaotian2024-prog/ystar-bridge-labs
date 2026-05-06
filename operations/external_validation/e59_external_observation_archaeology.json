@@ -1,0 +1,3206 @@
+{
+  "artifact_id": "e59_external_observation_archaeology",
+  "mandatory_first_phase_completed": true,
+  "asset_count": 120,
+  "assets": [
+    {
+      "asset_id": "asset_001",
+      "path": "office/aiden_meeting_room/governance_burden_analyzer.py",
+      "milestone_origin": "unknown",
+      "capability_type": "frontier_technology_capture",
+      "current_status": "reusable",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "risk boundary",
+        "paper"
+      ]
+    },
+    {
+      "asset_id": "asset_002",
+      "path": "office/aiden_meeting_room/repo_evidence_index.py",
+      "milestone_origin": "unknown",
+      "capability_type": "governance_boundary",
+      "current_status": "reusable",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_003",
+      "path": "office/mission_command/action_authorization_router.py",
+      "milestone_origin": "unknown",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_004",
+      "path": "office/mission_command/b2r_capability_domains.py",
+      "milestone_origin": "unknown",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "fetch"
+      ]
+    },
+    {
+      "asset_id": "asset_005",
+      "path": "office/mission_command/b2r_progressive_unlock.py",
+      "milestone_origin": "unknown",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "source receipt",
+        "AI transparency"
+      ]
+    },
+    {
+      "asset_id": "asset_006",
+      "path": "office/mission_command/c1_action_intent_packet.py",
+      "milestone_origin": "unknown",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "external validation"
+      ]
+    },
+    {
+      "asset_id": "asset_007",
+      "path": "office/mission_command/c2_action_queue.py",
+      "milestone_origin": "unknown",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "external validation"
+      ]
+    },
+    {
+      "asset_id": "asset_008",
+      "path": "office/mission_command/c3_validation_batch_selector.py",
+      "milestone_origin": "unknown",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "external validation"
+      ]
+    },
+    {
+      "asset_id": "asset_009",
+      "path": "office/mission_command/competitive_intelligence_engine.py",
+      "milestone_origin": "unknown",
+      "capability_type": "market_comparison",
+      "current_status": "reusable",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "competitor"
+      ]
+    },
+    {
+      "asset_id": "asset_010",
+      "path": "office/mission_command/counterfactual_reasoning.py",
+      "milestone_origin": "unknown",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "external validation"
+      ]
+    },
+    {
+      "asset_id": "asset_011",
+      "path": "office/mission_command/e10_autonomous_target_discovery.py",
+      "milestone_origin": "E10",
+      "capability_type": "claim_extractor",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider",
+        "web"
+      ]
+    },
+    {
+      "asset_id": "asset_012",
+      "path": "office/mission_command/e10_buyer_signal_taxonomy.py",
+      "milestone_origin": "E10",
+      "capability_type": "market_comparison",
+      "current_status": "reusable",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "competitor"
+      ]
+    },
+    {
+      "asset_id": "asset_013",
+      "path": "office/mission_command/e10_cross_repo_backflow_assessment.py",
+      "milestone_origin": "E10",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_014",
+      "path": "office/mission_command/e10_cycle.py",
+      "milestone_origin": "E10",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider",
+        "external validation"
+      ]
+    },
+    {
+      "asset_id": "asset_015",
+      "path": "office/mission_command/e10_owner_decision_packet.py",
+      "milestone_origin": "E10",
+      "capability_type": "governance_boundary",
+      "current_status": "reusable",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_016",
+      "path": "office/mission_command/e11_cycle.py",
+      "milestone_origin": "E11",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider",
+        "external validation"
+      ]
+    },
+    {
+      "asset_id": "asset_017",
+      "path": "office/mission_command/e12_action_packet.py",
+      "milestone_origin": "E12",
+      "capability_type": "governance_boundary",
+      "current_status": "reusable",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_018",
+      "path": "office/mission_command/e12_cycle.py",
+      "milestone_origin": "E12",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_019",
+      "path": "office/mission_command/e12_execution_gate.py",
+      "milestone_origin": "E12",
+      "capability_type": "governance_boundary",
+      "current_status": "reusable",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_020",
+      "path": "office/mission_command/e12_validation_approval.py",
+      "milestone_origin": "E12",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_021",
+      "path": "office/mission_command/e13_evidence_records.py",
+      "milestone_origin": "E13",
+      "capability_type": "freshness_tracker",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "competitor"
+      ]
+    },
+    {
+      "asset_id": "asset_022",
+      "path": "office/mission_command/e13_paid_signal_readiness.py",
+      "milestone_origin": "E13",
+      "capability_type": "market_comparison",
+      "current_status": "reusable",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider",
+        "competitor"
+      ]
+    },
+    {
+      "asset_id": "asset_023",
+      "path": "office/mission_command/e13_tier1_evidence_mission.py",
+      "milestone_origin": "E13",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider",
+        "web"
+      ]
+    },
+    {
+      "asset_id": "asset_024",
+      "path": "office/mission_command/e13r_buyer_pain_evidence.py",
+      "milestone_origin": "E13R",
+      "capability_type": "market_comparison",
+      "current_status": "reusable",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider",
+        "source seed",
+        "competitor"
+      ]
+    },
+    {
+      "asset_id": "asset_025",
+      "path": "office/mission_command/e13r_offer_revision.py",
+      "milestone_origin": "E13R",
+      "capability_type": "claim_extractor",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "risk boundary"
+      ]
+    },
+    {
+      "asset_id": "asset_026",
+      "path": "office/mission_command/e15a_owner_execution_console.py",
+      "milestone_origin": "E15A",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "external validation"
+      ]
+    },
+    {
+      "asset_id": "asset_027",
+      "path": "office/mission_command/e15d_outbound_authorization_envelope.py",
+      "milestone_origin": "E15D",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "external validation"
+      ]
+    },
+    {
+      "asset_id": "asset_028",
+      "path": "office/mission_command/e17_owner_activation_console.py",
+      "milestone_origin": "E17",
+      "capability_type": "governance_boundary",
+      "current_status": "reusable",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider",
+        "risk boundary",
+        "AI transparency"
+      ]
+    },
+    {
+      "asset_id": "asset_029",
+      "path": "office/mission_command/e17_paid_signal_runtime.py",
+      "milestone_origin": "E17",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider",
+        "web"
+      ]
+    },
+    {
+      "asset_id": "asset_030",
+      "path": "office/mission_command/e17_route_decision.py",
+      "milestone_origin": "E17",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_031",
+      "path": "office/mission_command/e18_batch_owner_console.py",
+      "milestone_origin": "E18",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_032",
+      "path": "office/mission_command/e18_batch_target_selection.py",
+      "milestone_origin": "E18",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "external validation"
+      ]
+    },
+    {
+      "asset_id": "asset_033",
+      "path": "office/mission_command/e18_route_decision.py",
+      "milestone_origin": "E18",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_034",
+      "path": "office/mission_command/e19_commercial_route_decision.py",
+      "milestone_origin": "E19",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_035",
+      "path": "office/mission_command/e19_cross_repo_impact_matrix.py",
+      "milestone_origin": "E19",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_036",
+      "path": "office/mission_command/e19_ecosystem_alignment_scanner.py",
+      "milestone_origin": "E19",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_037",
+      "path": "office/mission_command/e19_ecosystem_drift_register.py",
+      "milestone_origin": "E19",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_038",
+      "path": "office/mission_command/e19_future_alignment_gate.py",
+      "milestone_origin": "E19",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_039",
+      "path": "office/mission_command/e19_owner_action_model.py",
+      "milestone_origin": "E19",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_040",
+      "path": "office/mission_command/e19_repo_modification_decision.py",
+      "milestone_origin": "E19",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_041",
+      "path": "office/mission_command/e19_revenue_validation_control_room.py",
+      "milestone_origin": "E19",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_042",
+      "path": "office/mission_command/e20_autonomous_control_room.py",
+      "milestone_origin": "E20",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_043",
+      "path": "office/mission_command/e20_autonomous_execution_eligibility.py",
+      "milestone_origin": "E20",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_044",
+      "path": "office/mission_command/e20_autonomous_outbound_envelope.py",
+      "milestone_origin": "E20",
+      "capability_type": "governance_boundary",
+      "current_status": "reusable",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider",
+        "AI transparency"
+      ]
+    },
+    {
+      "asset_id": "asset_045",
+      "path": "office/mission_command/e20_batch_autonomous_reclassification.py",
+      "milestone_origin": "E20",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_046",
+      "path": "office/mission_command/e20_ecosystem_alignment_gate.py",
+      "milestone_origin": "E20",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_047",
+      "path": "office/mission_command/e20_future_outbound_policy.py",
+      "milestone_origin": "E20",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_048",
+      "path": "office/mission_command/e20_human_intervention_boundary.py",
+      "milestone_origin": "E20",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_049",
+      "path": "office/mission_command/e20_provider_capability_detector.py",
+      "milestone_origin": "E20",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_050",
+      "path": "office/mission_command/e20_risk_tier_taxonomy.py",
+      "milestone_origin": "E20",
+      "capability_type": "governance_boundary",
+      "current_status": "reusable",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider",
+        "AI transparency"
+      ]
+    },
+    {
+      "asset_id": "asset_051",
+      "path": "office/mission_command/e20_route_decision.py",
+      "milestone_origin": "E20",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_052",
+      "path": "office/mission_command/e21_autonomous_provider_control_room.py",
+      "milestone_origin": "E21",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_053",
+      "path": "office/mission_command/e21_batch_provider_reclassification.py",
+      "milestone_origin": "E21",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_054",
+      "path": "office/mission_command/e21_ecosystem_alignment_gate.py",
+      "milestone_origin": "E21",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_055",
+      "path": "office/mission_command/e21_future_provider_policy.py",
+      "milestone_origin": "E21",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_056",
+      "path": "office/mission_command/e21_provider_capability_sync.py",
+      "milestone_origin": "E21",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_057",
+      "path": "office/mission_command/e21_provider_promotion_gate.py",
+      "milestone_origin": "E21",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_058",
+      "path": "office/mission_command/e21_route_decision.py",
+      "milestone_origin": "E21",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_059",
+      "path": "office/mission_command/e22_autonomous_dry_run_control_room.py",
+      "milestone_origin": "E22",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_060",
+      "path": "office/mission_command/e22_dry_run_batch_selector.py",
+      "milestone_origin": "E22",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_061",
+      "path": "office/mission_command/e22_dry_run_receipt_ledger.py",
+      "milestone_origin": "E22",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_062",
+      "path": "office/mission_command/e22_ecosystem_alignment_gate.py",
+      "milestone_origin": "E22",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_063",
+      "path": "office/mission_command/e22_future_dry_run_live_policy.py",
+      "milestone_origin": "E22",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_064",
+      "path": "office/mission_command/e22_gov_mcp_dry_run_integration.py",
+      "milestone_origin": "E22",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_065",
+      "path": "office/mission_command/e22_guard_stack_replay.py",
+      "milestone_origin": "E22",
+      "capability_type": "governance_boundary",
+      "current_status": "reusable",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_066",
+      "path": "office/mission_command/e22_live_promotion_blockers.py",
+      "milestone_origin": "E22",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_067",
+      "path": "office/mission_command/e22_outbound_envelope_builder.py",
+      "milestone_origin": "E22",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_068",
+      "path": "office/mission_command/e22_route_decision.py",
+      "milestone_origin": "E22",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_069",
+      "path": "office/mission_command/e23_batch_reclassification.py",
+      "milestone_origin": "E23",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_070",
+      "path": "office/mission_command/e23_compliance_registry.py",
+      "milestone_origin": "E23",
+      "capability_type": "governance_boundary",
+      "current_status": "reusable",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider",
+        "AI transparency"
+      ]
+    },
+    {
+      "asset_id": "asset_071",
+      "path": "office/mission_command/e23_ecosystem_alignment_gate.py",
+      "milestone_origin": "E23",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_072",
+      "path": "office/mission_command/e23_future_live_readiness_policy.py",
+      "milestone_origin": "E23",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_073",
+      "path": "office/mission_command/e23_live_provider_enablement_plan.py",
+      "milestone_origin": "E23",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_074",
+      "path": "office/mission_command/e23_live_readiness_control_room.py",
+      "milestone_origin": "E23",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_075",
+      "path": "office/mission_command/e23_promotion_readiness_gate.py",
+      "milestone_origin": "E23",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_076",
+      "path": "office/mission_command/e23_route_decision.py",
+      "milestone_origin": "E23",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_077",
+      "path": "office/mission_command/e24_ecosystem_archaeology.py",
+      "milestone_origin": "E24",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider",
+        "commercial evidence"
+      ]
+    },
+    {
+      "asset_id": "asset_078",
+      "path": "office/mission_command/e25_ceo_kg_sandbox_route_selector.py",
+      "milestone_origin": "E25",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_079",
+      "path": "office/mission_command/e25_provider_sandbox_capability_sync.py",
+      "milestone_origin": "E25",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_080",
+      "path": "office/mission_command/e26_existing_live_readiness_wheel_inventory.py",
+      "milestone_origin": "E26",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_081",
+      "path": "office/mission_command/e26_live_provider_readiness_validator.py",
+      "milestone_origin": "E26",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_082",
+      "path": "office/mission_command/e27_existing_live_test_wheel_inventory.py",
+      "milestone_origin": "E27",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_083",
+      "path": "office/mission_command/e28_existing_production_live_wheel_inventory.py",
+      "milestone_origin": "E28",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider",
+        "web"
+      ]
+    },
+    {
+      "asset_id": "asset_084",
+      "path": "office/mission_command/e28_provider_category_comparison.py",
+      "milestone_origin": "E28",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_085",
+      "path": "office/mission_command/e28r_existing_revenue_mode_wheel_inventory.py",
+      "milestone_origin": "E28R",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_086",
+      "path": "office/mission_command/e29_existing_revenue_branch_wheel_inventory.py",
+      "milestone_origin": "E29",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_087",
+      "path": "office/mission_command/e2_cycle.py",
+      "milestone_origin": "E2",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "external validation"
+      ]
+    },
+    {
+      "asset_id": "asset_088",
+      "path": "office/mission_command/e30_existing_method_wheel_inventory.py",
+      "milestone_origin": "E30",
+      "capability_type": "claim_extractor",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_089",
+      "path": "office/mission_command/e31_existing_real_world_observation_wheel_inventory.py",
+      "milestone_origin": "E31",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "page_read",
+        "provider",
+        "source seed",
+        "web",
+        "competitor"
+      ]
+    },
+    {
+      "asset_id": "asset_090",
+      "path": "office/mission_command/e32_base_reconciliation.py",
+      "milestone_origin": "E32",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "page_read",
+        "provider",
+        "external validation"
+      ]
+    },
+    {
+      "asset_id": "asset_091",
+      "path": "office/mission_command/e32_existing_learning_strategy_wheel_inventory.py",
+      "milestone_origin": "E32",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "external observation",
+        "source receipt",
+        "page_read",
+        "provider",
+        "source seed",
+        "web",
+        "external validation",
+        "competitor"
+      ]
+    },
+    {
+      "asset_id": "asset_092",
+      "path": "office/mission_command/e3_cycle.py",
+      "milestone_origin": "E3",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "external validation"
+      ]
+    },
+    {
+      "asset_id": "asset_093",
+      "path": "office/mission_command/e3_market_aware_evaluator.py",
+      "milestone_origin": "E3",
+      "capability_type": "market_comparison",
+      "current_status": "reusable",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "competitor"
+      ]
+    },
+    {
+      "asset_id": "asset_094",
+      "path": "office/mission_command/e40_owner_approval_packet_for_e41.py",
+      "milestone_origin": "E40",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": []
+    },
+    {
+      "asset_id": "asset_095",
+      "path": "office/mission_command/e41_canonical_ceo_runtime_map.py",
+      "milestone_origin": "E41",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_096",
+      "path": "office/mission_command/e41_ceo_brain_frontier_import_reconciliation_update.py",
+      "milestone_origin": "E41",
+      "capability_type": "frontier_technology_capture",
+      "current_status": "reusable",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_097",
+      "path": "office/mission_command/e41_ceo_decision_eval_enhancement.py",
+      "milestone_origin": "E41",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_098",
+      "path": "office/mission_command/e41_ceo_kg_frontier_import_reconciliation_feedback.py",
+      "milestone_origin": "E41",
+      "capability_type": "frontier_technology_capture",
+      "current_status": "reusable",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_099",
+      "path": "office/mission_command/e41_contradiction_topology_enhancement.py",
+      "milestone_origin": "E41",
+      "capability_type": "claim_extractor",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_100",
+      "path": "office/mission_command/e41_cross_repo_alignment_after_frontier_import.py",
+      "milestone_origin": "E41",
+      "capability_type": "frontier_technology_capture",
+      "current_status": "reusable",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_101",
+      "path": "office/mission_command/e41_deep_research_method_enhancement.py",
+      "milestone_origin": "E41",
+      "capability_type": "source_receipt_builder",
+      "current_status": "reusable",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_102",
+      "path": "office/mission_command/e41_frontier_capability_import_loop.py",
+      "milestone_origin": "E41",
+      "capability_type": "frontier_technology_capture",
+      "current_status": "reusable",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_103",
+      "path": "office/mission_command/e41_frontier_capability_import_scope.py",
+      "milestone_origin": "E41",
+      "capability_type": "frontier_technology_capture",
+      "current_status": "reusable",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_104",
+      "path": "office/mission_command/e41_operating_memory_reconciliation.py",
+      "milestone_origin": "E41",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_105",
+      "path": "office/mission_command/e41_recent_line_runtime_connection_audit.py",
+      "milestone_origin": "E41",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_106",
+      "path": "office/mission_command/e41_route_drift_correction_guard.py",
+      "milestone_origin": "E41",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_107",
+      "path": "office/mission_command/e41_synthetic_reviewer_simulation_protocol.py",
+      "milestone_origin": "E41",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_108",
+      "path": "office/mission_command/e41_whole_bridge_labs_runtime_archaeology.py",
+      "milestone_origin": "E41",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_109",
+      "path": "office/mission_command/e42_internal_resource_inventory.py",
+      "milestone_origin": "E42",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "claim graph"
+      ]
+    },
+    {
+      "asset_id": "asset_110",
+      "path": "office/mission_command/e42_reuse_first_no_rebuild_gate.py",
+      "milestone_origin": "E42",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_111",
+      "path": "office/mission_command/e42_task_capability_matcher.py",
+      "milestone_origin": "E42",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider",
+        "frontier capability"
+      ]
+    },
+    {
+      "asset_id": "asset_112",
+      "path": "office/mission_command/e43_first_value_loop_runner.py",
+      "milestone_origin": "E43",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_113",
+      "path": "office/mission_command/e44a_ceo_capability_activation_registry.py",
+      "milestone_origin": "E44A",
+      "capability_type": "claim_extractor",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "claim graph",
+        "frontier capability"
+      ]
+    },
+    {
+      "asset_id": "asset_114",
+      "path": "office/mission_command/e46b_canonical_ceo_operating_runtime.py",
+      "milestone_origin": "E46B",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_115",
+      "path": "office/mission_command/e46b_ceo_brain_adapter.py",
+      "milestone_origin": "E46B",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_116",
+      "path": "office/mission_command/e46b_field_projection_adapter.py",
+      "milestone_origin": "E46B",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_117",
+      "path": "office/mission_command/e47_canonical_ceo_runtime_v2.py",
+      "milestone_origin": "E47",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider",
+        "external validation"
+      ]
+    },
+    {
+      "asset_id": "asset_118",
+      "path": "office/mission_command/e48_gov_mcp_sandbox.py",
+      "milestone_origin": "E48",
+      "capability_type": "unknown",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reference_only",
+      "do_not_rebuild_if_reusable": false,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_119",
+      "path": "office/mission_command/e49_deep_semantic_operating_runtime.py",
+      "milestone_origin": "E49",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "provider"
+      ]
+    },
+    {
+      "asset_id": "asset_120",
+      "path": "office/mission_command/e49_semantic_graph_builder.py",
+      "milestone_origin": "E49",
+      "capability_type": "page_read_adapter",
+      "current_status": "report_only",
+      "inputs": [
+        "public source metadata",
+        "source seed",
+        "internal strategic question"
+      ],
+      "outputs": [
+        "receipts",
+        "evidence atoms",
+        "reports"
+      ],
+      "side_effect_boundary": "public-read-only / no external human action",
+      "no_contact_boundary": true,
+      "no_login_boundary": true,
+      "tests": [],
+      "recommended_reuse_path": "reuse_or_extend",
+      "do_not_rebuild_if_reusable": true,
+      "matched_terms": [
+        "claim graph"
+      ]
+    }
+  ],
+  "safe_external_page_read_adapter_already_exists_before_E59": false,
+  "E57_blocker": "external_page_read_adapter_unavailable",
+  "E57_blocker_diagnosis": "Existing E50B/E57 assets contain public-read-only receipts, commercial evidence atoms, and preflight policy, but no active controlled page-read runtime adapter was wired for E57.",
+  "blocker_classification": "missing_or_disconnected_controlled_public_page_read_adapter",
+  "assets_to_reuse": [
+    "office/aiden_meeting_room/governance_burden_analyzer.py",
+    "office/aiden_meeting_room/repo_evidence_index.py",
+    "office/mission_command/b2r_capability_domains.py",
+    "office/mission_command/b2r_progressive_unlock.py",
+    "office/mission_command/c1_action_intent_packet.py",
+    "office/mission_command/c2_action_queue.py",
+    "office/mission_command/competitive_intelligence_engine.py",
+    "office/mission_command/e10_autonomous_target_discovery.py",
+    "office/mission_command/e10_buyer_signal_taxonomy.py",
+    "office/mission_command/e10_cross_repo_backflow_assessment.py",
+    "office/mission_command/e10_owner_decision_packet.py",
+    "office/mission_command/e11_cycle.py",
+    "office/mission_command/e12_action_packet.py",
+    "office/mission_command/e12_execution_gate.py",
+    "office/mission_command/e13_evidence_records.py",
+    "office/mission_command/e13_paid_signal_readiness.py",
+    "office/mission_command/e13r_buyer_pain_evidence.py",
+    "office/mission_command/e13r_offer_revision.py",
+    "office/mission_command/e15d_outbound_authorization_envelope.py",
+    "office/mission_command/e17_owner_activation_console.py",
+    "office/mission_command/e17_paid_signal_runtime.py",
+    "office/mission_command/e17_route_decision.py",
+    "office/mission_command/e19_commercial_route_decision.py",
+    "office/mission_command/e19_cross_repo_impact_matrix.py",
+    "office/mission_command/e19_ecosystem_alignment_scanner.py",
+    "office/mission_command/e19_ecosystem_drift_register.py",
+    "office/mission_command/e19_owner_action_model.py",
+    "office/mission_command/e19_repo_modification_decision.py",
+    "office/mission_command/e19_revenue_validation_control_room.py",
+    "office/mission_command/e20_autonomous_control_room.py"
+  ],
+  "frontier_capability_assets_to_reuse": [],
+  "must_repair": [
+    "controlled public page read adapter runtime wiring",
+    "network-unavailable classification path"
+  ],
+  "must_create_as_thin_adapter_only_if_missing": [
+    "e59_controlled_public_page_read_adapter.py"
+  ],
+  "seed_domains_not_exhaustive": true,
+  "open_ended_method_required": true,
+  "external_knowledge_observation_not_human_contact": true,
+  "no_external_action": true
+}

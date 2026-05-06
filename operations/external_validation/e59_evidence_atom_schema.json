@@ -1,0 +1,22 @@
+{
+  "artifact_id": "e59_evidence_atom_schema",
+  "evidence_atom_count": 8,
+  "schema": {
+    "fields": [
+      "evidence_id",
+      "receipt_id",
+      "domain",
+      "observed_claim",
+      "claim_type",
+      "relevance_to_YBridge",
+      "confidence_basis",
+      "route_implication",
+      "not_customer_validation",
+      "not_paid_signal",
+      "not_expert_feedback"
+    ]
+  },
+  "no_customer_validation_claimed": true,
+  "no_paid_signal_claimed": true,
+  "no_expert_feedback_claimed": true
+}

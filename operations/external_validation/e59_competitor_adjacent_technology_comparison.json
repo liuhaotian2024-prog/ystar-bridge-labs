@@ -1,0 +1,207 @@
+{
+  "artifact_id": "e59_competitor_adjacent_technology_comparison",
+  "comparison_count": 11,
+  "comparisons": [
+    {
+      "category": "OpenAI Agents / guardrails",
+      "representative_sources": [
+        "e59_atom_001",
+        "e59_atom_002",
+        "e59_atom_003"
+      ],
+      "claimed_capabilities": [
+        "agent platform governance and tool safety"
+      ],
+      "what_they_solve": "agent platform governance and tool safety",
+      "what_they_do_not_solve": "uncertain; do not overclaim absence without source evidence",
+      "overlap_with_YBridge": "governance, runtime control, evidence, or agent operations",
+      "differentiation_opportunity": "company-level CEO brain + behavior center + KG/CZL/CIEU closure narrative",
+      "threat_level": "medium",
+      "route_implication": "E60 should compare packaging and technical blockers before market entry",
+      "uncertain_claims_marked_unverified": true
+    },
+    {
+      "category": "AWS Bedrock Guardrails",
+      "representative_sources": [
+        "e59_atom_001",
+        "e59_atom_002",
+        "e59_atom_003"
+      ],
+      "claimed_capabilities": [
+        "managed guardrail/policy layer"
+      ],
+      "what_they_solve": "managed guardrail/policy layer",
+      "what_they_do_not_solve": "uncertain; do not overclaim absence without source evidence",
+      "overlap_with_YBridge": "governance, runtime control, evidence, or agent operations",
+      "differentiation_opportunity": "company-level CEO brain + behavior center + KG/CZL/CIEU closure narrative",
+      "threat_level": "medium",
+      "route_implication": "E60 should compare packaging and technical blockers before market entry",
+      "uncertain_claims_marked_unverified": true
+    },
+    {
+      "category": "LangChain / LangGraph",
+      "representative_sources": [
+        "e59_atom_001",
+        "e59_atom_002",
+        "e59_atom_003"
+      ],
+      "claimed_capabilities": [
+        "graph/stateful agent orchestration"
+      ],
+      "what_they_solve": "graph/stateful agent orchestration",
+      "what_they_do_not_solve": "uncertain; do not overclaim absence without source evidence",
+      "overlap_with_YBridge": "governance, runtime control, evidence, or agent operations",
+      "differentiation_opportunity": "company-level CEO brain + behavior center + KG/CZL/CIEU closure narrative",
+      "threat_level": "medium",
+      "route_implication": "E60 should compare packaging and technical blockers before market entry",
+      "uncertain_claims_marked_unverified": true
+    },
+    {
+      "category": "CrewAI",
+      "representative_sources": [
+        "e59_atom_001",
+        "e59_atom_002",
+        "e59_atom_003"
+      ],
+      "claimed_capabilities": [
+        "multi-agent workflow framework"
+      ],
+      "what_they_solve": "multi-agent workflow framework",
+      "what_they_do_not_solve": "uncertain; do not overclaim absence without source evidence",
+      "overlap_with_YBridge": "governance, runtime control, evidence, or agent operations",
+      "differentiation_opportunity": "company-level CEO brain + behavior center + KG/CZL/CIEU closure narrative",
+      "threat_level": "medium",
+      "route_implication": "E60 should compare packaging and technical blockers before market entry",
+      "uncertain_claims_marked_unverified": true
+    },
+    {
+      "category": "AutoGen / multi-agent frameworks",
+      "representative_sources": [
+        "e59_atom_001",
+        "e59_atom_002",
+        "e59_atom_003"
+      ],
+      "claimed_capabilities": [
+        "conversation and role-based agents"
+      ],
+      "what_they_solve": "conversation and role-based agents",
+      "what_they_do_not_solve": "uncertain; do not overclaim absence without source evidence",
+      "overlap_with_YBridge": "governance, runtime control, evidence, or agent operations",
+      "differentiation_opportunity": "company-level CEO brain + behavior center + KG/CZL/CIEU closure narrative",
+      "threat_level": "medium",
+      "route_implication": "E60 should compare packaging and technical blockers before market entry",
+      "uncertain_claims_marked_unverified": true
+    },
+    {
+      "category": "MCP ecosystem / Claude Desktop extensions",
+      "representative_sources": [
+        "e59_atom_001",
+        "e59_atom_002",
+        "e59_atom_003"
+      ],
+      "claimed_capabilities": [
+        "tool/server integration standard"
+      ],
+      "what_they_solve": "tool/server integration standard",
+      "what_they_do_not_solve": "uncertain; do not overclaim absence without source evidence",
+      "overlap_with_YBridge": "governance, runtime control, evidence, or agent operations",
+      "differentiation_opportunity": "company-level CEO brain + behavior center + KG/CZL/CIEU closure narrative",
+      "threat_level": "medium",
+      "route_implication": "E60 should compare packaging and technical blockers before market entry",
+      "uncertain_claims_marked_unverified": true
+    },
+    {
+      "category": "AI observability / evaluation / audit tools",
+      "representative_sources": [
+        "e59_atom_001",
+        "e59_atom_002",
+        "e59_atom_003"
+      ],
+      "claimed_capabilities": [
+        "traces, evals, debugging, audit evidence"
+      ],
+      "what_they_solve": "traces, evals, debugging, audit evidence",
+      "what_they_do_not_solve": "uncertain; do not overclaim absence without source evidence",
+      "overlap_with_YBridge": "governance, runtime control, evidence, or agent operations",
+      "differentiation_opportunity": "company-level CEO brain + behavior center + KG/CZL/CIEU closure narrative",
+      "threat_level": "medium",
+      "route_implication": "E60 should compare packaging and technical blockers before market entry",
+      "uncertain_claims_marked_unverified": true
+    },
+    {
+      "category": "workflow automation platforms such as n8n",
+      "representative_sources": [
+        "e59_atom_001",
+        "e59_atom_002",
+        "e59_atom_003"
+      ],
+      "claimed_capabilities": [
+        "automation and integration operations"
+      ],
+      "what_they_solve": "automation and integration operations",
+      "what_they_do_not_solve": "uncertain; do not overclaim absence without source evidence",
+      "overlap_with_YBridge": "governance, runtime control, evidence, or agent operations",
+      "differentiation_opportunity": "company-level CEO brain + behavior center + KG/CZL/CIEU closure narrative",
+      "threat_level": "unknown",
+      "route_implication": "E60 should compare packaging and technical blockers before market entry",
+      "uncertain_claims_marked_unverified": true
+    },
+    {
+      "category": "policy/guardrail frameworks",
+      "representative_sources": [
+        "e59_atom_001",
+        "e59_atom_002",
+        "e59_atom_003"
+      ],
+      "claimed_capabilities": [
+        "runtime policy enforcement"
+      ],
+      "what_they_solve": "runtime policy enforcement",
+      "what_they_do_not_solve": "uncertain; do not overclaim absence without source evidence",
+      "overlap_with_YBridge": "governance, runtime control, evidence, or agent operations",
+      "differentiation_opportunity": "company-level CEO brain + behavior center + KG/CZL/CIEU closure narrative",
+      "threat_level": "unknown",
+      "route_implication": "E60 should compare packaging and technical blockers before market entry",
+      "uncertain_claims_marked_unverified": true
+    },
+    {
+      "category": "runtime governance / agent OS narratives",
+      "representative_sources": [
+        "e59_atom_001",
+        "e59_atom_002",
+        "e59_atom_003"
+      ],
+      "claimed_capabilities": [
+        "agentic operations and runtime control"
+      ],
+      "what_they_solve": "agentic operations and runtime control",
+      "what_they_do_not_solve": "uncertain; do not overclaim absence without source evidence",
+      "overlap_with_YBridge": "governance, runtime control, evidence, or agent operations",
+      "differentiation_opportunity": "company-level CEO brain + behavior center + KG/CZL/CIEU closure narrative",
+      "threat_level": "unknown",
+      "route_implication": "E60 should compare packaging and technical blockers before market entry",
+      "uncertain_claims_marked_unverified": true
+    },
+    {
+      "category": "academic/open-source agent runtime projects",
+      "representative_sources": [
+        "e59_atom_001",
+        "e59_atom_002",
+        "e59_atom_003"
+      ],
+      "claimed_capabilities": [
+        "frontier architecture patterns"
+      ],
+      "what_they_solve": "frontier architecture patterns",
+      "what_they_do_not_solve": "uncertain; do not overclaim absence without source evidence",
+      "overlap_with_YBridge": "governance, runtime control, evidence, or agent operations",
+      "differentiation_opportunity": "company-level CEO brain + behavior center + KG/CZL/CIEU closure narrative",
+      "threat_level": "unknown",
+      "route_implication": "E60 should compare packaging and technical blockers before market entry",
+      "uncertain_claims_marked_unverified": true
+    }
+  ],
+  "no_superiority_overclaim": true,
+  "no_customer_validation_claim": true,
+  "no_external_action": true
+}

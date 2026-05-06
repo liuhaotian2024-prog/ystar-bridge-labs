@@ -311,6 +311,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e58_case_study_state = {'case_study_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
     try:
+        from office.mission_command.e59_ceo_brain_readback_smoke import load_e59_state_for_brain
+        e59_external_intelligence_state = load_e59_state_for_brain()
+    except Exception as exc:
+        e59_external_intelligence_state = {'external_intelligence_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -379,6 +384,13 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_case_study_external_intelligence_gap": e58_case_study_state.get("external_intelligence_gap_declared"),
         "current_case_study_external_action_allowed": e58_case_study_state.get("external_action_allowed"),
         "current_case_study_next_milestone": e58_case_study_state.get("next_recommended_milestone"),
+        "latest_external_intelligence_state": e59_external_intelligence_state,
+        "current_external_intelligence_status": e59_external_intelligence_state.get("external_intelligence_status"),
+        "current_external_intelligence_receipt_count": e59_external_intelligence_state.get("source_receipt_count"),
+        "current_external_intelligence_evidence_atom_count": e59_external_intelligence_state.get("evidence_atom_count"),
+        "current_external_intelligence_live_public_read_status": e59_external_intelligence_state.get("live_public_read_status"),
+        "current_external_intelligence_external_action_allowed": e59_external_intelligence_state.get("external_action_allowed"),
+        "current_external_intelligence_next_milestone": e59_external_intelligence_state.get("next_recommended_milestone"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

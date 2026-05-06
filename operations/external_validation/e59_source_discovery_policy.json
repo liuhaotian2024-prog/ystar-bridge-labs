@@ -1,0 +1,161 @@
+{
+  "artifact_id": "e59_source_discovery_policy",
+  "strategic_questions": [
+    "What does AI Agent Company Runtime Harness need to learn from the outside world?",
+    "What technical, academic, market, and competitive evidence could change the route?",
+    "What new frontier capabilities may affect Y*Bridge Labs?",
+    "What external language, categories, standards, and frameworks should influence E60?",
+    "Which sources can be observed safely without human contact?"
+  ],
+  "methodology_driven_discovery": true,
+  "seed_domains": [
+    "MCP ecosystem / MCP server tooling",
+    "AI agent governance / guardrails",
+    "AI agent observability / audit / causal logging",
+    "agent workflow / orchestration frameworks",
+    "developer-local agent execution safety",
+    "AI ops / automation platform pain",
+    "adjacent products / competitors",
+    "latest technology changes relevant to agents and governance",
+    "market language / packaging / pricing analogs",
+    "runtime harness / agent company / agentic operating system narratives",
+    "multi-agent cognitive architectures",
+    "memory / self-improving agent systems",
+    "verification / runtime assurance",
+    "frontier academic work relevant to governed agents"
+  ],
+  "seed_domains_are_not_exhaustive": true,
+  "new_source_type_allowed_if": [
+    "public-read-only",
+    "requires no login/payment/form submission",
+    "does not involve contacting or identifying humans",
+    "relevance is justified",
+    "public academic / technical / standards source is permitted when safe",
+    "source receipt and evidence atom can be produced"
+  ],
+  "forbidden_sources": [
+    "contact scraping targets",
+    "LinkedIn/personal profile scraping",
+    "private/gated communities",
+    "login-required pages",
+    "forms",
+    "paid databases",
+    "provider/private APIs"
+  ],
+  "max_candidate_sources": 60,
+  "max_page_reads_one_run": 30,
+  "candidate_sources": [
+    {
+      "source_id": "source_mcp_docs",
+      "source_url_or_fixture": "fixture://official_mcp_docs",
+      "source_type": "official_documentation",
+      "domain": "MCP ecosystem / MCP server tooling",
+      "title": "Model Context Protocol documentation fixture",
+      "fixture_content": "MCP positions tools and resources as standard interfaces for model applications. Relevance: real MCP transport remains a route blocker.",
+      "policy_allowed": true,
+      "policy_reason": "public_read_only_source_candidate",
+      "human_contact_required": false
+    },
+    {
+      "source_id": "source_agent_guardrails",
+      "source_url_or_fixture": "fixture://agent_guardrails_docs",
+      "source_type": "official_documentation",
+      "domain": "AI agent governance / guardrails",
+      "title": "Agent guardrails documentation fixture",
+      "fixture_content": "Agent guardrail materials emphasize policy checks, tool boundaries, and evidence-driven evals. Relevance: behavior center and gov-mcp validation align with market language.",
+      "policy_allowed": true,
+      "policy_reason": "public_read_only_source_candidate",
+      "human_contact_required": false
+    },
+    {
+      "source_id": "source_langgraph",
+      "source_url_or_fixture": "fixture://langgraph_runtime_docs",
+      "source_type": "public_repo_primary",
+      "domain": "agent workflow / orchestration frameworks",
+      "title": "Graph-based agent runtime fixture",
+      "fixture_content": "Graph-based agent frameworks emphasize stateful workflows, durable execution, and human-in-the-loop control. Gap: Y*Bridge emphasizes company-level governance and evidence closure.",
+      "policy_allowed": true,
+      "policy_reason": "public_read_only_source_candidate",
+      "human_contact_required": false
+    },
+    {
+      "source_id": "source_observability",
+      "source_url_or_fixture": "fixture://ai_observability_eval_docs",
+      "source_type": "public_blog",
+      "domain": "AI agent observability / audit / causal logging",
+      "title": "AI observability/evaluation fixture",
+      "fixture_content": "Observability tools focus on traces, evals, and debugging. Route implication: K9Audit and CZL/CIEU evidence can differentiate if write integration closes later.",
+      "policy_allowed": true,
+      "policy_reason": "public_read_only_source_candidate",
+      "human_contact_required": false
+    },
+    {
+      "source_id": "source_workflow_automation",
+      "source_url_or_fixture": "fixture://workflow_automation_product_docs",
+      "source_type": "public_product_page",
+      "domain": "AI ops / automation platform pain",
+      "title": "Workflow automation product fixture",
+      "fixture_content": "Workflow automation pages package reliability, integrations, and operations outcomes. Route implication: case study should use operations language, not only governance language.",
+      "policy_allowed": true,
+      "policy_reason": "public_read_only_source_candidate",
+      "human_contact_required": false
+    },
+    {
+      "source_id": "source_runtime_assurance",
+      "source_url_or_fixture": "fixture://runtime_assurance_policy_report",
+      "source_type": "standards_policy",
+      "domain": "verification / runtime assurance",
+      "title": "Runtime assurance policy fixture",
+      "fixture_content": "Runtime assurance frames safety as monitoring, policy enforcement, rollback, and evidence. Supports anti-drift and behavior authorization narrative.",
+      "policy_allowed": true,
+      "policy_reason": "public_read_only_source_candidate",
+      "human_contact_required": false
+    },
+    {
+      "source_id": "source_academic_memory_agents",
+      "source_url_or_fixture": "fixture://open_access_memory_agents_paper",
+      "source_type": "academic_primary",
+      "domain": "memory / self-improving agent systems",
+      "title": "Open-access memory agents paper fixture",
+      "fixture_content": "Academic memory-agent work studies retrieval, reflection, and self-improvement. Gap: public paper reading is learning, not author contact or expert feedback.",
+      "policy_allowed": true,
+      "policy_reason": "public_read_only_source_candidate",
+      "human_contact_required": false
+    },
+    {
+      "source_id": "source_multi_agent_architecture",
+      "source_url_or_fixture": "fixture://multi_agent_architecture_report",
+      "source_type": "public_technical_report",
+      "domain": "multi-agent cognitive architectures",
+      "title": "Multi-agent architecture report fixture",
+      "fixture_content": "Multi-agent architecture reports compare planner/executor/evaluator separation. Supports CEO brain vs behavior center separation.",
+      "policy_allowed": true,
+      "policy_reason": "public_read_only_source_candidate",
+      "human_contact_required": false
+    },
+    {
+      "source_id": "candidate_live_mcp_docs",
+      "source_url_or_fixture": "https://modelcontextprotocol.io/",
+      "source_type": "official_documentation",
+      "domain": "MCP ecosystem / MCP server tooling",
+      "title": "MCP official docs live candidate",
+      "policy_allowed": true,
+      "policy_reason": "public_read_only_source_candidate",
+      "human_contact_required": false
+    },
+    {
+      "source_id": "candidate_live_arxiv",
+      "source_url_or_fixture": "https://arxiv.org/",
+      "source_type": "public_academic_index",
+      "domain": "frontier academic work relevant to governed agents",
+      "title": "arXiv open-access candidate",
+      "policy_allowed": true,
+      "policy_reason": "public_read_only_source_candidate",
+      "human_contact_required": false
+    }
+  ],
+  "bounded_source_plan_count": 10,
+  "external_knowledge_observation_allowed": true,
+  "external_human_interaction_allowed": false,
+  "no_external_action": true
+}

@@ -1,0 +1,232 @@
+{
+  "artifact_id": "e59_external_intelligence_capability_binding_gate_result",
+  "payload": {
+    "gate_id": "e59_external_intelligence_capability_binding_gate",
+    "capability_centerline_contract": {
+      "contract_id": "e59_capability_centerline_contract",
+      "class_rules": {
+        "cognitive_capability": {
+          "required_centerline": [
+            "CEO_brain"
+          ]
+        },
+        "behavior_control_capability": {
+          "required_centerline": [
+            "canonical_action_runtime",
+            "Y_star_gov_boundary"
+          ]
+        },
+        "evidence_closure_capability": {
+          "required_centerline": [
+            "KG_CZL_CIEU_K9_evidence"
+          ]
+        },
+        "boundary_capability": {
+          "required_centerline": [
+            "Y_star_gov_boundary"
+          ]
+        },
+        "reference_only_artifact": {
+          "required_centerline": [
+            "reference_only"
+          ]
+        }
+      },
+      "no_external_action": true
+    },
+    "capability_bindings": [
+      {
+        "capability_id": "e59_source_discovery",
+        "path": "office/mission_command/e59_source_discovery_and_policy.py",
+        "repo": "bridge-labs",
+        "functional_class": "cognitive_capability",
+        "required_centerline": [
+          "CEO_brain"
+        ],
+        "actual_binding": [
+          "CEO_brain"
+        ],
+        "binding_status": "correctly_bound",
+        "required_reader": "CEO brain / route impact / E60",
+        "actual_reader": "e59_ceo_brain_readback_smoke",
+        "required_gate": "E59 capability binding gate",
+        "actual_gate": "passed",
+        "remediation": "no_action",
+        "severity": "P0",
+        "affects_current_state": true,
+        "agent_facing": false,
+        "consumed_as_current": false,
+        "evidence_basis": "E59 capability binding"
+      },
+      {
+        "capability_id": "e59_claim_extraction",
+        "path": "office/mission_command/e59_claim_extraction_and_evidence_atomizer.py",
+        "repo": "bridge-labs",
+        "functional_class": "cognitive_capability",
+        "required_centerline": [
+          "CEO_brain"
+        ],
+        "actual_binding": [
+          "CEO_brain"
+        ],
+        "binding_status": "correctly_bound",
+        "required_reader": "CEO brain / route impact / E60",
+        "actual_reader": "e59_ceo_brain_readback_smoke",
+        "required_gate": "E59 capability binding gate",
+        "actual_gate": "passed",
+        "remediation": "no_action",
+        "severity": "P0",
+        "affects_current_state": true,
+        "agent_facing": false,
+        "consumed_as_current": false,
+        "evidence_basis": "E59 capability binding"
+      },
+      {
+        "capability_id": "e59_frontier_capture",
+        "path": "office/mission_command/e59_frontier_technology_capture.py",
+        "repo": "bridge-labs",
+        "functional_class": "cognitive_capability",
+        "required_centerline": [
+          "CEO_brain"
+        ],
+        "actual_binding": [
+          "CEO_brain"
+        ],
+        "binding_status": "correctly_bound",
+        "required_reader": "CEO brain / route impact / E60",
+        "actual_reader": "e59_ceo_brain_readback_smoke",
+        "required_gate": "E59 capability binding gate",
+        "actual_gate": "passed",
+        "remediation": "no_action",
+        "severity": "P0",
+        "affects_current_state": true,
+        "agent_facing": false,
+        "consumed_as_current": false,
+        "evidence_basis": "E59 capability binding"
+      },
+      {
+        "capability_id": "e59_competitor_comparison",
+        "path": "office/mission_command/e59_competitor_adjacent_technology_comparison.py",
+        "repo": "bridge-labs",
+        "functional_class": "cognitive_capability",
+        "required_centerline": [
+          "CEO_brain"
+        ],
+        "actual_binding": [
+          "CEO_brain"
+        ],
+        "binding_status": "correctly_bound",
+        "required_reader": "CEO brain / route impact / E60",
+        "actual_reader": "e59_ceo_brain_readback_smoke",
+        "required_gate": "E59 capability binding gate",
+        "actual_gate": "passed",
+        "remediation": "no_action",
+        "severity": "P0",
+        "affects_current_state": true,
+        "agent_facing": false,
+        "consumed_as_current": false,
+        "evidence_basis": "E59 capability binding"
+      },
+      {
+        "capability_id": "e59_page_read_adapter",
+        "path": "office/mission_command/e59_controlled_public_page_read_adapter.py",
+        "repo": "bridge-labs",
+        "functional_class": "behavior_control_capability",
+        "required_centerline": [
+          "canonical_action_runtime",
+          "Y_star_gov_boundary"
+        ],
+        "actual_binding": [
+          "canonical_action_runtime",
+          "Y_star_gov_boundary"
+        ],
+        "binding_status": "correctly_bound",
+        "required_reader": "CEO brain / route impact / E60",
+        "actual_reader": "e59_ceo_brain_readback_smoke",
+        "required_gate": "E59 capability binding gate",
+        "actual_gate": "passed",
+        "remediation": "no_action",
+        "severity": "P0",
+        "affects_current_state": true,
+        "agent_facing": false,
+        "consumed_as_current": false,
+        "evidence_basis": "E59 capability binding"
+      },
+      {
+        "capability_id": "e59_receipts_evidence_kg",
+        "path": "operations/external_validation/e59_source_receipts.jsonl",
+        "repo": "bridge-labs",
+        "functional_class": "evidence_closure_capability",
+        "required_centerline": [
+          "KG_CZL_CIEU_K9_evidence"
+        ],
+        "actual_binding": [
+          "KG_CZL_CIEU_K9_evidence"
+        ],
+        "binding_status": "correctly_bound",
+        "required_reader": "CEO brain / route impact / E60",
+        "actual_reader": "e59_ceo_brain_readback_smoke",
+        "required_gate": "E59 capability binding gate",
+        "actual_gate": "passed",
+        "remediation": "no_action",
+        "severity": "P1",
+        "affects_current_state": true,
+        "agent_facing": false,
+        "consumed_as_current": false,
+        "evidence_basis": "E59 capability binding"
+      },
+      {
+        "capability_id": "e59_source_policy",
+        "path": "office/mission_command/e59_source_discovery_and_policy.py",
+        "repo": "bridge-labs",
+        "functional_class": "boundary_capability",
+        "required_centerline": [
+          "Y_star_gov_boundary",
+          "gov_mcp_boundary"
+        ],
+        "actual_binding": [
+          "Y_star_gov_boundary",
+          "gov_mcp_boundary"
+        ],
+        "binding_status": "correctly_bound",
+        "required_reader": "CEO brain / route impact / E60",
+        "actual_reader": "e59_ceo_brain_readback_smoke",
+        "required_gate": "E59 capability binding gate",
+        "actual_gate": "passed",
+        "remediation": "no_action",
+        "severity": "P0",
+        "affects_current_state": true,
+        "agent_facing": true,
+        "consumed_as_current": false,
+        "evidence_basis": "E59 capability binding"
+      }
+    ],
+    "external_action_allowed": false,
+    "no_external_action": true
+  },
+  "gate": {
+    "gate_id": "e59_external_intelligence_capability_binding_gate",
+    "status": "capability_binding_gate_passed",
+    "allowed": true,
+    "record_count": 7,
+    "wrong_centerline_count": 0,
+    "missing_binding_count": 0,
+    "stale_current_state_count": 0,
+    "p0_failure_count": 0,
+    "p1_failure_count": 0,
+    "failures": [],
+    "warnings": [],
+    "no_external_action": true
+  },
+  "checks": {
+    "source_discovery_bound_to_ceo_brain": true,
+    "claim_extraction_bound_to_ceo_brain": true,
+    "page_read_adapter_bound_to_action_runtime_and_governance": true,
+    "receipts_evidence_bound_to_evidence_centerline": true,
+    "source_policy_bound_to_boundary": true,
+    "external_action_blocked": true
+  },
+  "passed": true,
+  "external_action_allowed": false,
+  "no_external_action": true
+}

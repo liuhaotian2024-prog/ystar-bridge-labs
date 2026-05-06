@@ -1,0 +1,24 @@
+{
+  "artifact_id": "e59_source_receipt_schema",
+  "receipt_count": 8,
+  "schema": {
+    "fields": [
+      "receipt_id",
+      "source_url_or_fixture",
+      "source_type",
+      "domain",
+      "retrieved_at",
+      "retrieval_status",
+      "title",
+      "snippet",
+      "content_hash",
+      "freshness_date_if_available",
+      "no_contact_info_extracted",
+      "no_login",
+      "no_form_submission",
+      "no_external_action",
+      "limitation"
+    ]
+  },
+  "no_external_action": true
+}

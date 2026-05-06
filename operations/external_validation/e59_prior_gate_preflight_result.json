@@ -1,0 +1,56 @@
+{
+  "artifact_id": "e59_prior_gate_preflight_result",
+  "bridge_job_id": "e59_external_world_intelligence_l5_convergence_20260506T000001Z",
+  "bridge_labs": {
+    "path": "/private/tmp/e59_bridge_labs_validation_1778093888",
+    "head": "8cd2a7e38e979ea762aec2dcaeea34f10e26085f",
+    "expected_head": "8cd2a7e38e979ea762aec2dcaeea34f10e26085f",
+    "head_matches_expected": true,
+    "clean": false,
+    "status_short": "M office/mission_command/e46b_ceo_brain_adapter.py\n?? office/mission_command/e59_ceo_brain_readback_smoke.py\n?? office/mission_command/e59_claim_extraction_and_evidence_atomizer.py\n?? office/mission_command/e59_competitor_adjacent_technology_comparison.py\n?? office/mission_command/e59_controlled_public_page_read_adapter.py\n?? office/mission_command/e59_external_evidence_analysis.py\n?? office/mission_command/e59_external_intelligence_anti_drift_gate.py\n?? office/mission_command/e59_external_intelligence_architecture.py\n?? office/mission_command/e59_external_intelligence_capability_binding_gate.py\n?? office/mission_command/e59_external_intelligence_core.py\n?? office/mission_command/e59_external_intelligence_maturity_diagnosis.py\n?? office/mission_command/e59_external_intelligence_route_impact.py\n?? office/mission_command/e59_external_intelligence_writeback.py\n?? office/mission_command/e59_external_observation_archaeology.py\n?? office/mission_command/e59_external_world_intelligence_l5_readiness_gate.py\n?? office/mission_command/e59_frontier_technology_capture.py\n?? office/mission_command/e59_gov_mcp_validation_harness.py\n?? office/mission_command/e59_handoff.py\n?? office/mission_command/e59_prior_gate_preflight.py\n?? office/mission_command/e59_source_discovery_and_policy.py\n?? office/mission_command/e59_source_receipt_builder.py\n?? office/mission_command/e59_y_star_gov_validation_runner.py"
+  },
+  "read_only_repos": {
+    "Y-star-gov": {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "head": "b0d9aa8b1badd1180127a2f79f73ceed48e16451",
+      "expected_head": "b0d9aa8b1badd1180127a2f79f73ceed48e16451",
+      "head_matches_expected": true,
+      "clean": true,
+      "status_short": ""
+    },
+    "gov-mcp": {
+      "path": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+      "head": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+      "expected_head": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+      "head_matches_expected": true,
+      "clean": true,
+      "status_short": ""
+    },
+    "K9Audit": {
+      "path": "/Users/haotianliu/.openclaw/workspace/K9Audit",
+      "head": "37911e18ce4425470e3f745b30d155c43d76ff55",
+      "expected_head": "37911e18ce4425470e3f745b30d155c43d76ff55",
+      "head_matches_expected": true,
+      "clean": true,
+      "status_short": ""
+    }
+  },
+  "checks": {
+    "bridge_labs_expected_base": true,
+    "bridge_labs_no_unrelated_dirty": true,
+    "read_only_repos_clean": true,
+    "E54_brain_L5_passed": true,
+    "E55_behavior_L5_passed": true,
+    "E56_internal_loop_L5_passed": true,
+    "E57_retest_closed": true,
+    "E58_case_study_packaged": true,
+    "E59_declared_required_before_market_contact": true,
+    "owner_decision_pending": true,
+    "external_action_allowed_false": true,
+    "external_intelligence_L5_not_yet_complete": true
+  },
+  "passed": true,
+  "owner_decision_status": "pending_owner_decision",
+  "external_action_allowed": false,
+  "no_external_action": true
+}
