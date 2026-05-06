@@ -1,0 +1,239 @@
+{
+  "artifact_id": "e53_capability_binding_gate_result",
+  "payload": {
+    "gate_id": "e53_capability_binding_gate",
+    "capability_centerline_contract": {
+      "contract_id": "e53_capability_centerline_contract",
+      "class_rules": {
+        "cognitive_capability": {
+          "required_centerline": [
+            "CEO_brain"
+          ]
+        },
+        "behavior_control_capability": {
+          "required_centerline": [
+            "canonical_action_runtime",
+            "Y_star_gov_boundary"
+          ]
+        },
+        "evidence_closure_capability": {
+          "required_centerline": [
+            "KG_CZL_CIEU_K9_evidence"
+          ]
+        },
+        "boundary_capability": {
+          "required_centerline": [
+            "Y_star_gov_boundary"
+          ]
+        },
+        "reference_only_artifact": {
+          "required_centerline": [
+            "reference_only"
+          ]
+        }
+      },
+      "no_external_action": true
+    },
+    "capability_bindings": [
+      {
+        "capability_id": "e53_owner_review_packet",
+        "path": "products/governed_agent_action_proof_packet/e53_owner_review_packet.json",
+        "repo": "bridge-labs",
+        "functional_class": "cognitive_capability",
+        "required_centerline": [
+          "CEO_brain"
+        ],
+        "actual_binding": [
+          "CEO_brain"
+        ],
+        "binding_status": "correctly_bound",
+        "required_reader": "CEO brain/E54 runtime",
+        "actual_reader": "e53_ceo_brain_readback_smoke",
+        "required_gate": "",
+        "actual_gate": "",
+        "remediation": "no_action",
+        "severity": "P0",
+        "affects_current_state": true,
+        "agent_facing": false,
+        "consumed_as_current": false,
+        "evidence_basis": "E53 capability binding gate"
+      },
+      {
+        "capability_id": "e53_approval_record_schema",
+        "path": "operations/external_validation/e53_owner_approval_record_schema.json",
+        "repo": "bridge-labs",
+        "functional_class": "boundary_capability",
+        "required_centerline": [
+          "Y_star_gov_boundary",
+          "gov_mcp_boundary"
+        ],
+        "actual_binding": [
+          "Y_star_gov_boundary",
+          "gov_mcp_boundary"
+        ],
+        "binding_status": "correctly_bound",
+        "required_reader": "E53 completion gate",
+        "actual_reader": "E53 completion gate",
+        "required_gate": "approval validation",
+        "actual_gate": "e53_owner_approval_validation_result",
+        "remediation": "no_action",
+        "severity": "P0",
+        "affects_current_state": false,
+        "agent_facing": true,
+        "consumed_as_current": false,
+        "evidence_basis": "E53 capability binding gate"
+      },
+      {
+        "capability_id": "e53_first_user_review_protocol",
+        "path": "products/governed_agent_action_proof_packet/e53_single_first_user_review_protocol.json",
+        "repo": "bridge-labs",
+        "functional_class": "behavior_control_capability",
+        "required_centerline": [
+          "canonical_action_runtime",
+          "Y_star_gov_boundary"
+        ],
+        "actual_binding": [
+          "canonical_action_runtime",
+          "Y_star_gov_boundary"
+        ],
+        "binding_status": "correctly_bound",
+        "required_reader": "E53 completion gate",
+        "actual_reader": "E53 completion gate",
+        "required_gate": "owner approval risk gate",
+        "actual_gate": "blocked_pending_owner_decision",
+        "remediation": "no_action",
+        "severity": "P0",
+        "affects_current_state": false,
+        "agent_facing": false,
+        "consumed_as_current": false,
+        "evidence_basis": "E53 capability binding gate"
+      },
+      {
+        "capability_id": "e53_non_sent_template",
+        "path": "products/governed_agent_action_proof_packet/e53_non_sent_review_request_template.json",
+        "repo": "bridge-labs",
+        "functional_class": "behavior_control_capability",
+        "required_centerline": [
+          "canonical_action_runtime",
+          "Y_star_gov_boundary"
+        ],
+        "actual_binding": [
+          "canonical_action_runtime",
+          "Y_star_gov_boundary"
+        ],
+        "binding_status": "correctly_bound",
+        "required_reader": "E53 completion gate",
+        "actual_reader": "E53 completion gate",
+        "required_gate": "owner approval risk gate",
+        "actual_gate": "sent_false_blocked_pending_owner_decision",
+        "remediation": "no_action",
+        "severity": "P0",
+        "affects_current_state": false,
+        "agent_facing": false,
+        "consumed_as_current": false,
+        "evidence_basis": "E53 capability binding gate"
+      },
+      {
+        "capability_id": "e53_risk_gate",
+        "path": "office/mission_command/e53_first_user_review_risk_gate.py",
+        "repo": "bridge-labs",
+        "functional_class": "boundary_capability",
+        "required_centerline": [
+          "Y_star_gov_boundary",
+          "gov_mcp_boundary"
+        ],
+        "actual_binding": [
+          "Y_star_gov_boundary",
+          "gov_mcp_boundary"
+        ],
+        "binding_status": "correctly_bound",
+        "required_reader": "E53 completion gate",
+        "actual_reader": "E53 completion gate",
+        "required_gate": "risk gate",
+        "actual_gate": "blocked_pending_owner_decision",
+        "remediation": "no_action",
+        "severity": "P0",
+        "affects_current_state": false,
+        "agent_facing": true,
+        "consumed_as_current": false,
+        "evidence_basis": "E53 capability binding gate"
+      },
+      {
+        "capability_id": "e53_approval_validation",
+        "path": "office/mission_command/e53_owner_approval_record.py",
+        "repo": "bridge-labs",
+        "functional_class": "boundary_capability",
+        "required_centerline": [
+          "Y_star_gov_boundary",
+          "gov_mcp_boundary"
+        ],
+        "actual_binding": [
+          "Y_star_gov_boundary",
+          "gov_mcp_boundary"
+        ],
+        "binding_status": "correctly_bound",
+        "required_reader": "E53 completion gate",
+        "actual_reader": "E53 completion gate",
+        "required_gate": "approval source evidence validation",
+        "actual_gate": "pending_owner_decision",
+        "remediation": "no_action",
+        "severity": "P0",
+        "affects_current_state": false,
+        "agent_facing": true,
+        "consumed_as_current": false,
+        "evidence_basis": "E53 capability binding gate"
+      },
+      {
+        "capability_id": "e53_kg_czl_cieu",
+        "path": "operations/external_validation/e53_cieu_residual_summary.json",
+        "repo": "bridge-labs",
+        "functional_class": "evidence_closure_capability",
+        "required_centerline": [
+          "KG_CZL_CIEU_K9_evidence"
+        ],
+        "actual_binding": [
+          "KG_CZL_CIEU_K9_evidence"
+        ],
+        "binding_status": "correctly_bound",
+        "required_reader": "CEO brain/E54 runtime",
+        "actual_reader": "e53_ceo_brain_readback_smoke",
+        "required_gate": "",
+        "actual_gate": "",
+        "remediation": "no_action",
+        "severity": "P0",
+        "affects_current_state": true,
+        "agent_facing": false,
+        "consumed_as_current": false,
+        "evidence_basis": "E53 capability binding gate"
+      }
+    ],
+    "no_external_action": true
+  },
+  "gate": {
+    "gate_id": "e53_capability_binding_gate",
+    "status": "capability_binding_gate_passed",
+    "allowed": true,
+    "record_count": 7,
+    "wrong_centerline_count": 0,
+    "missing_binding_count": 0,
+    "stale_current_state_count": 0,
+    "p0_failure_count": 0,
+    "p1_failure_count": 0,
+    "failures": [],
+    "warnings": [],
+    "no_external_action": true
+  },
+  "checks": {
+    "no_active_cognitive_capability_outside_brain": true,
+    "no_behavior_capability_bypasses_canonical_action_runtime": true,
+    "no_future_review_protocol_executes_without_owner_approval": true,
+    "no_template_treated_as_sent": true,
+    "no_current_state_evidence_without_readback": true,
+    "no_reference_only_artifact_consumed_as_current": true,
+    "no_p0_written_not_read_artifact": true,
+    "e53_owner_review_state_registered_and_read_back": true,
+    "e53_does_not_bypass_owner_approval": true
+  },
+  "passed": true,
+  "no_external_action": true
+}

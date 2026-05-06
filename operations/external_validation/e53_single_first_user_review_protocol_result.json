@@ -1,0 +1,9 @@
+{
+  "artifact_id": "e53_single_first_user_review_protocol_result",
+  "protocol_path": "products/governed_agent_action_proof_packet/e53_single_first_user_review_protocol.md",
+  "status": "future_only_blocked_without_owner_approval",
+  "contains_real_contacts": false,
+  "sent": false,
+  "owner_approval_required": true,
+  "no_external_action": true
+}

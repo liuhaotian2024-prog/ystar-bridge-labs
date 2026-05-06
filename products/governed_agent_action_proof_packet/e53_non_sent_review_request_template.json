@@ -1,0 +1,28 @@
+{
+  "template_id": "e53_non_sent_review_request_template",
+  "status": "template_only_not_sent",
+  "short_intro": "I am preparing a local proof packet for governed agent actions and would like feedback only if the owner approves a future review step.",
+  "why_review_is_requested": "to test clarity, credibility, proof gaps, and language risk",
+  "what_the_packet_is": "a local tool-layer proof packet with evidence and no-overclaim boundaries",
+  "what_the_packet_is_not": [
+    "not customer validated",
+    "no paid signal",
+    "real MCP transport not claimed",
+    "not production readiness evidence"
+  ],
+  "review_questions": [
+    "Is the packet understandable?",
+    "Which proof is missing?",
+    "Which language feels too strong?",
+    "What local demo would help?"
+  ],
+  "explicit_no_overclaim_language": "This is a local proof packet, not a customer-validated product, with no sales ask and no paid ask.",
+  "request_type": "feedback only",
+  "sales_ask": false,
+  "paid_ask": false,
+  "sent": false,
+  "contact_identified": false,
+  "contact_info_collected": false,
+  "owner_approval_required_before_send": true,
+  "no_external_action": true
+}

@@ -1,0 +1,53 @@
+{
+  "artifact_id": "e53_ceo_brain_readback_smoke_result",
+  "owner_review_state": {
+    "owner_review_packet_available": true,
+    "owner_review_packet_id": "e53_owner_review_packet_for_governed_agent_action_proof_packet",
+    "owner_decision_status": "pending_owner_decision",
+    "approval_validation_status": "pending_owner_decision",
+    "external_action_allowed": false,
+    "risk_gate_status": "blocked_pending_owner_decision",
+    "non_sent_template_sent": false,
+    "real_reviewer_identified": false,
+    "contact_info_collected": false,
+    "customer_validation_claimed": false,
+    "paid_signal_claimed": false,
+    "real_mcp_transport_claimed": false,
+    "no_go_boundaries": {
+      "no_outreach": true,
+      "no_publication": true,
+      "no_real_reviewer_identity": true,
+      "no_contact_info_collection": true,
+      "no_customer_validation_claim": true,
+      "no_paid_signal_claim": true
+    },
+    "next_recommended_milestone": "E54_owner_decision_or_controlled_first_user_review_plan",
+    "artifacts_loaded": {
+      "owner_review_packet": true,
+      "approval_placeholder": true,
+      "approval_validation": true,
+      "risk_gate": true,
+      "non_sent_template": true,
+      "protocol": true,
+      "completion_gate": false,
+      "czl_closure": true,
+      "cieu_residual_summary": true,
+      "kg_read_model_update": true
+    },
+    "read_model_role": "latest owner-review approval gate state; blocks external action until explicit owner approval evidence exists"
+  },
+  "canonical_runtime_context_seen": true,
+  "checks": {
+    "ceo_brain_sees_e52_proof_packet_exists": true,
+    "ceo_brain_sees_e53_owner_review_packet_exists": true,
+    "ceo_brain_sees_owner_approval_pending": true,
+    "ceo_brain_sees_external_action_blocked": true,
+    "ceo_brain_sees_non_sent_template_not_sent": true,
+    "ceo_brain_sees_no_real_reviewer_identified": true,
+    "ceo_brain_sees_no_customer_validation_or_paid_signal": true,
+    "ceo_brain_sees_next_milestone_recommendation": true,
+    "canonical_runtime_can_see_e53_owner_review_state": true
+  },
+  "passes": true,
+  "no_external_action": true
+}

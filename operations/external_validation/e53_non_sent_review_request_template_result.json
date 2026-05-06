@@ -1,0 +1,8 @@
+{
+  "artifact_id": "e53_non_sent_review_request_template_result",
+  "sent": false,
+  "contact_identified": false,
+  "contact_info_collected": false,
+  "owner_approval_required_before_send": true,
+  "no_external_action": true
+}

@@ -215,6 +215,52 @@ def _load_latest_proof_packet_current_state() -> dict[str, Any]:
         "read_model_role": "latest owner-review proof packet state; never authorizes outreach or publication",
     }
 
+
+E53_OWNER_REVIEW_CURRENT_STATE_PATHS = {
+    "owner_review_packet": "products/governed_agent_action_proof_packet/e53_owner_review_packet.json",
+    "approval_placeholder": "operations/external_validation/e53_owner_approval_record_placeholder.json",
+    "approval_validation": "operations/external_validation/e53_owner_approval_validation_result.json",
+    "risk_gate": "operations/external_validation/e53_first_user_review_risk_gate_result.json",
+    "non_sent_template": "products/governed_agent_action_proof_packet/e53_non_sent_review_request_template.json",
+    "protocol": "products/governed_agent_action_proof_packet/e53_single_first_user_review_protocol.json",
+    "completion_gate": "operations/external_validation/e53_completion_gate_result.json",
+    "czl_closure": "operations/external_validation/e53_czl_closure.json",
+    "cieu_residual_summary": "operations/external_validation/e53_cieu_residual_summary.json",
+    "kg_read_model_update": "operations/knowledge_graph/e53_ceo_kg_read_model_update.json",
+}
+
+
+def _load_latest_owner_review_current_state() -> dict[str, Any]:
+    artifacts = {name: _artifact_or_unavailable(rel) for name, rel in E53_OWNER_REVIEW_CURRENT_STATE_PATHS.items()}
+    packet = artifacts["owner_review_packet"].get("data") or {}
+    placeholder = artifacts["approval_placeholder"].get("data") or {}
+    validation = artifacts["approval_validation"].get("data") or {}
+    risk = artifacts["risk_gate"].get("data") or {}
+    template = artifacts["non_sent_template"].get("data") or {}
+    completion = artifacts["completion_gate"].get("data") or {}
+    kg = artifacts["kg_read_model_update"].get("data") or {}
+    owner_status = validation.get("owner_decision_status") or placeholder.get("owner_decision_status") or packet.get("owner_decision_status") or "pending_owner_decision"
+    next_milestone = completion.get("recommended_next_milestone") or risk.get("recommended_next_milestone") or packet.get("next_recommended_milestone") or kg.get("next_recommended_milestone") or "E54_owner_decision_or_controlled_first_user_review_plan"
+    return {
+        "owner_review_packet_available": artifacts["owner_review_packet"]["available"],
+        "owner_review_packet_id": packet.get("review_packet_id") or "unavailable_nonfatal",
+        "owner_decision_status": owner_status,
+        "approval_validation_status": validation.get("status") or owner_status,
+        "external_action_allowed": bool(risk.get("external_action_allowed", False)),
+        "risk_gate_status": risk.get("gate_status") or "blocked_pending_owner_decision",
+        "non_sent_template_sent": bool(template.get("sent", False)),
+        "real_reviewer_identified": bool(packet.get("real_reviewer_identified", False) or template.get("contact_identified", False)),
+        "contact_info_collected": bool(template.get("contact_info_collected", False)),
+        "customer_validation_claimed": bool(packet.get("customer_validation_claimed", False)),
+        "paid_signal_claimed": bool(packet.get("paid_signal_claimed", False)),
+        "real_mcp_transport_claimed": bool(packet.get("real_mcp_transport_claimed", False)),
+        "no_go_boundaries": packet.get("no_go_boundaries") or risk.get("no_go_boundaries") or {},
+        "next_recommended_milestone": next_milestone,
+        "artifacts_loaded": {name: item["available"] for name, item in artifacts.items()},
+        "read_model_role": "latest owner-review approval gate state; blocks external action until explicit owner approval evidence exists",
+    }
+
+
 def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     query = f"{task.get('task_title', '')} {task.get('task_description', '')} M Triangle value production"
     wisdom = _run(["python3", "scripts/wisdom_search.py", "--top", "3", "--json", query])
@@ -238,6 +284,7 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     ])
     e50b_current_state = _load_e50b_current_state()
     proof_packet_state = _load_latest_proof_packet_current_state()
+    owner_review_state = _load_latest_owner_review_current_state()
     try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
@@ -273,6 +320,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "latest_proof_packet_state": proof_packet_state,
         "current_proof_packet_status": proof_packet_state.get("packet_status"),
         "current_proof_packet_next_milestone": proof_packet_state.get("next_recommended_milestone"),
+        "latest_owner_review_state": owner_review_state,
+        "current_owner_review_status": "owner_review_gate_ready" if owner_review_state.get("owner_review_packet_available") else "unavailable_nonfatal",
+        "current_owner_approval_status": owner_review_state.get("owner_decision_status"),
+        "current_external_action_allowed": owner_review_state.get("external_action_allowed"),
+        "current_owner_review_next_milestone": owner_review_state.get("next_recommended_milestone"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

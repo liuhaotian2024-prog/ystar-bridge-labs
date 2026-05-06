@@ -1,0 +1,36 @@
+{
+  "artifact_id": "e53_owner_approval_record_schema",
+  "required_fields": [
+    "approval_id",
+    "packet_id",
+    "owner_decision",
+    "approved_scope",
+    "prohibited_scope",
+    "approval_conditions",
+    "approval_timestamp",
+    "approval_source",
+    "source_evidence",
+    "expires_at",
+    "revocable",
+    "requires_revalidation_before_external_action",
+    "no_external_action_executed"
+  ],
+  "allowed_preparation_scopes": [
+    "prepare_non_sent_outreach_draft",
+    "prepare_review_material_only",
+    "prepare_reviewer_category_criteria",
+    "prepare_single_controlled_first_user_review_plan"
+  ],
+  "external_action_scopes_require_later_explicit_approval": [
+    "collect_contact_info",
+    "identify_real_reviewer",
+    "publish_packet",
+    "send_outreach",
+    "submit_form"
+  ],
+  "never_valid_claim_scopes": [
+    "claim_customer_validation",
+    "claim_paid_signal"
+  ],
+  "no_external_action": true
+}

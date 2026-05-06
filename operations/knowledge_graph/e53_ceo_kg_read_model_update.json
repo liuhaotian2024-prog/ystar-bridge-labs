@@ -1,0 +1,14 @@
+{
+  "artifact_id": "e53_ceo_kg_read_model_update",
+  "owner_decision_status": "pending_owner_decision",
+  "selected_route": "package_governed_agent_action_proof_packet",
+  "proof_packet_id": "governed_agent_action_proof_packet_e52",
+  "external_action_allowed": false,
+  "non_sent_template_sent": false,
+  "real_reviewer_identified": false,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false,
+  "real_mcp_transport_claimed": false,
+  "next_recommended_milestone": "E54_owner_decision_or_controlled_first_user_review_plan",
+  "no_external_action": true
+}\n

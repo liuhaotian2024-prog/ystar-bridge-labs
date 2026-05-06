@@ -1,0 +1,9 @@
+{
+  "artifact_id": "e53_owner_approval_validation_result",
+  "status": "pending_owner_decision",
+  "valid": false,
+  "owner_decision_status": "pending_owner_decision",
+  "external_action_allowed": false,
+  "failures": [],
+  "no_external_action": true
+}

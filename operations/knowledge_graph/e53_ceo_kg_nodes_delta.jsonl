@@ -1,0 +1,6 @@
+{"node_id": "e53_owner_review_gate", "type": "boundary_capability", "label": "E53 owner review approval gate"}
+{"node_id": "governed_agent_action_proof_packet_e52", "type": "proof_packet", "label": "Governed Agent Action Proof Packet"}
+{"node_id": "e53_pending_owner_decision", "type": "owner_decision_state", "label": "pending_owner_decision"}
+{"node_id": "e53_non_sent_template", "type": "behavior_control_capability", "label": "non-sent review request template"}
+{"node_id": "e53_risk_gate", "type": "boundary_capability", "label": "first-user review risk gate"}
+{"node_id": "E54_owner_decision_or_controlled_first_user_review_plan", "type": "next_milestone", "label": "E54 owner decision or controlled plan"}\n

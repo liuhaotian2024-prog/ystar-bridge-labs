@@ -1,0 +1,30 @@
+{
+  "approval_id": "e53_pending_owner_decision_placeholder",
+  "packet_id": "governed_agent_action_proof_packet_e52",
+  "owner_decision": null,
+  "approved_scope": [],
+  "prohibited_scope": [
+    "claim_customer_validation",
+    "claim_paid_signal",
+    "collect_contact_info",
+    "identify_real_reviewer",
+    "payment",
+    "production_readiness_claim",
+    "publish_packet",
+    "real_mcp_transport_claim",
+    "send_outreach",
+    "submit_form"
+  ],
+  "approval_conditions": [
+    "owner must explicitly approve any next external step in a future record"
+  ],
+  "approval_timestamp": null,
+  "approval_source": null,
+  "source_evidence": null,
+  "expires_at": null,
+  "revocable": true,
+  "requires_revalidation_before_external_action": true,
+  "no_external_action_executed": true,
+  "owner_decision_status": "pending_owner_decision",
+  "no_external_action_allowed": true
+}
