@@ -1,0 +1,3 @@
+{"from": "e71_legacy_asset_registry", "to": "e72_k9_cieu_hash_chain_context", "edge_type": "consumed_top_cluster"}
+{"from": "e72_k9_cieu_hash_chain_context", "to": "e72_cieu_audit_module_product_binding", "edge_type": "binds_context_to_product_module"}
+{"from": "e72_cieu_audit_module_product_binding", "to": "E73_CIEU_hash_chain_structural_verifier_bridge_labs_adapter", "edge_type": "residual_generates_next_proposal"}

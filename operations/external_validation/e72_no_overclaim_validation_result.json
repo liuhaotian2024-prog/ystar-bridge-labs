@@ -1,0 +1,13 @@
+{
+  "artifact_id": "e72_no_overclaim_validation_result",
+  "paths_scanned": [
+    "operations/external_validation/e72_cieu_hash_chain_context_state.json",
+    "operations/external_validation/e72_cieu_audit_module_product_binding.json",
+    "operations/external_validation/e72_generated_codex_job_proposal.json",
+    "products/governed_business_operations_blueprint_for_agent_teams/cieu_audit_module.json",
+    "products/governed_business_operations_blueprint_for_agent_teams/updated_offer_blueprint_with_cieu_module.json"
+  ],
+  "violations": [],
+  "passed": true,
+  "external_action_allowed": false
+}

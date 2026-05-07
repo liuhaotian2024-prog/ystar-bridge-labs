@@ -1,26 +1,35 @@
 {
-  "artifact_id": "e72_product_cieu_audit_module",
-  "source_artifact": "operations/external_validation/e72_cieu_audit_module_product_binding.json",
-  "module_name": "CIEU Audit Module",
-  "status": "internal_only_hash_chain_context_bound",
-  "CIEU_five_tuple_fields": {
-    "X_t": "context at decision/action time",
-    "U_t": "action actually executed or proposed",
-    "Y_star_t": "declared intent contract or expected normative target",
-    "Y_t_plus_1": "observed or expected outcome after action",
-    "R_t_plus_1": "measured deviation, residual, violation, or governance gap"
-  },
-  "hash_chain_context": {
-    "sequence": "monotonic record order",
-    "previous_hash": "hash link to previous CIEU record",
-    "current_hash": "hash over canonical payload plus previous hash",
-    "canonical_payload": "deterministic serialized record excluding integrity/hash fields",
-    "deterministic_serialization_boundary": "JSON with sorted keys and compact separators, represented here as context only",
-    "tamper_evident_chain_semantics": "record changes, deletion, or reordering should break a structural chain check",
-    "audit_receipt_semantics": "append-only JSONL-style evidence receipt boundary"
-  },
-  "structural_verification_scope": "schema/context/field-boundary verification only; no live ledger chain is verified",
-  "sample_internal_record": {
+  "artifact_id": "e72_cieu_audit_module_product_binding",
+  "bridge_job_id": "e72_integrate_K9_CIEU_hash_chain_context_into_CIEU_audit_module_20260506T000001Z",
+  "selected_product": "governed_business_operations_blueprint_for_agent_teams",
+  "selected_product_name": "Governed Business Operations Blueprint for Agent Teams",
+  "module": "CIEU Audit Module",
+  "binding_status": "internal_structural_context_bound_no_execution",
+  "source_legacy_cluster_consumed": "k9_cieu_hash_chain_spec_cluster",
+  "internal_value": [
+    "deterministic causal audit context",
+    "hash-chain readiness",
+    "action-intent-outcome residual semantics",
+    "tamper-evident evidence model context",
+    "audit receipt semantics for future internal demo packet"
+  ],
+  "CIEU_fields_preserved": [
+    "X_t",
+    "U_t",
+    "Y_star_t",
+    "Y_t_plus_1",
+    "R_t_plus_1"
+  ],
+  "hash_chain_context_fields": [
+    "sequence",
+    "previous_hash",
+    "current_hash",
+    "canonical_payload",
+    "deterministic_serialization_boundary",
+    "tamper_evident_chain_semantics",
+    "audit_receipt_semantics"
+  ],
+  "module_sample_record": {
     "record_status": "internal_example_no_execution",
     "X_t": {
       "context": "agent-team governed operations review",
@@ -58,7 +67,14 @@
       "verification_status": "structural_context_only"
     }
   },
-  "does_not_claim": [
+  "what_it_can_currently_claim": [
+    "internal structural integration",
+    "no-execution audit module blueprint",
+    "promoted legacy asset binding",
+    "hash-chain context imported",
+    "structural verification scope declared"
+  ],
+  "what_it_cannot_claim": [
     "compliance certification",
     "customer validation",
     "paid signal",
@@ -73,5 +89,6 @@
     "EV5 experiment before market claims",
     "implementation review before production ledger claims"
   ],
-  "external_action_allowed": false
+  "external_action_allowed": false,
+  "owner_decision_status": "pending_owner_decision"
 }

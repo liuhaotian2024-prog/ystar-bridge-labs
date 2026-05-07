@@ -376,6 +376,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e71_legacy_asset_resurrection_state = {'legacy_asset_resurrection_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
     try:
+        from office.mission_command.e72_cieu_audit_module_readback import load_e72_cieu_audit_module_state_for_brain
+        e72_cieu_audit_module_state = load_e72_cieu_audit_module_state_for_brain()
+    except Exception as exc:
+        e72_cieu_audit_module_state = {'cieu_audit_module_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -549,6 +554,16 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_legacy_asset_provider_promotion_inputs": e71_legacy_asset_resurrection_state.get("provider_promotion_inputs"),
         "current_legacy_asset_next_recommended_milestone": e71_legacy_asset_resurrection_state.get("next_recommended_milestone"),
         "current_legacy_asset_external_action_allowed": e71_legacy_asset_resurrection_state.get("external_action_allowed"),
+        "latest_cieu_audit_module_hash_chain_state": e72_cieu_audit_module_state,
+        "current_cieu_audit_module_status": e72_cieu_audit_module_state.get("cieu_audit_module_status"),
+        "current_cieu_audit_module_k9_context_bound": e72_cieu_audit_module_state.get("K9_CIEU_hash_chain_context_bound"),
+        "current_cieu_audit_module_e71_assets_consumed": e72_cieu_audit_module_state.get("E71_promoted_assets_consumed"),
+        "current_cieu_audit_module_product_binding_status": e72_cieu_audit_module_state.get("CIEU_Audit_Module_integrated_into_governed_business_operations_blueprint"),
+        "current_cieu_audit_module_production_ready": e72_cieu_audit_module_state.get("production_ready"),
+        "current_cieu_audit_module_forbidden_claims": e72_cieu_audit_module_state.get("forbidden_claims"),
+        "current_cieu_audit_module_residual_gaps": e72_cieu_audit_module_state.get("residual_gaps"),
+        "current_cieu_audit_module_next_milestone": e72_cieu_audit_module_state.get("next_recommended_milestone"),
+        "current_cieu_audit_module_external_action_allowed": e72_cieu_audit_module_state.get("external_action_allowed"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

@@ -1,21 +1,28 @@
 {
-  "artifact_id": "e69_updated_offer_blueprint_with_cieu_module",
+  "artifact_id": "e72_updated_offer_blueprint_with_cieu_hash_chain_context",
   "source_offer_blueprint": "operations/external_validation/e66_selected_route_offer_blueprint.json",
   "offer_name": "Governed Business Operations Blueprint for Agent Teams",
   "added_module": "CIEU Audit Module",
-  "status": "draft_only_internal",
+  "status": "draft_only_internal_no_publication",
+  "E72_binding_status": "internal_structural_context_bound_no_execution",
   "module_deliverables": [
-    "CIEU field map",
+    "CIEU five-tuple field map",
     "causal action evidence plan",
+    "hash-chain-ready audit context appendix",
+    "structural verification scope",
     "residual review table",
     "no-overclaim notice",
     "owner-gated validation path"
   ],
+  "hash_chain_context_imported": true,
+  "production_hash_chain_enabled": false,
+  "live_audit_ledger_enabled": false,
   "owner_approval_required_before_external_use": true,
   "customer_validation_claimed": false,
   "paid_signal_claimed": false,
   "expert_feedback_claimed": false,
   "legal_compliance_claimed": false,
   "EU_AI_Act_compliance_claimed": false,
+  "production_deployment_claimed": false,
   "external_action_allowed": false
 }

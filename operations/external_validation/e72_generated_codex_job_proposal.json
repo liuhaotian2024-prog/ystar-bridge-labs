@@ -1,0 +1,101 @@
+{
+  "artifact_id": "e72_generated_codex_job_proposal",
+  "bridge_job_id": "e72_integrate_K9_CIEU_hash_chain_context_into_CIEU_audit_module_20260506T000001Z",
+  "proposed_milestone_id": "E73_CIEU_hash_chain_structural_verifier_bridge_labs_adapter",
+  "proposed_title": "Build bridge-labs structural verifier adapter for CIEU hash-chain context",
+  "generated_from_E72_residuals": true,
+  "selection_basis": "highest score on E72 residual coverage, internal-only feasibility, product-module readiness, and no-overclaim safety",
+  "candidate_scores": [
+    {
+      "candidate_id": "E73_CIEU_hash_chain_structural_verifier_bridge_labs_adapter",
+      "residual_addressed": "full audit verification over real event stream",
+      "scores": {
+        "addresses_highest_E72_residual": 96,
+        "internal_only_feasibility": 94,
+        "product_module_readiness_value": 90,
+        "no_overclaim_safety": 96,
+        "dependency_on_owner_external_approval_inverse": 95
+      },
+      "total_score": 94.2,
+      "external_action_allowed": false
+    },
+    {
+      "candidate_id": "E73_build_internal_CIEU_audit_module_demo_packet_no_external_action",
+      "residual_addressed": "demo packet not yet created",
+      "scores": {
+        "addresses_highest_E72_residual": 82,
+        "internal_only_feasibility": 92,
+        "product_module_readiness_value": 94,
+        "no_overclaim_safety": 90,
+        "dependency_on_owner_external_approval_inverse": 95
+      },
+      "total_score": 90.6,
+      "external_action_allowed": false
+    },
+    {
+      "candidate_id": "E73_bind_CIEU_audit_module_to_governed_business_operations_offer_no_publication",
+      "residual_addressed": "product binding hardening",
+      "scores": {
+        "addresses_highest_E72_residual": 76,
+        "internal_only_feasibility": 92,
+        "product_module_readiness_value": 88,
+        "no_overclaim_safety": 92,
+        "dependency_on_owner_external_approval_inverse": 95
+      },
+      "total_score": 88.6,
+      "external_action_allowed": false
+    },
+    {
+      "candidate_id": "E73_prepare_EV5_owner_gated_external_review_packet_no_execution",
+      "residual_addressed": "customer/external review absent",
+      "scores": {
+        "addresses_highest_E72_residual": 70,
+        "internal_only_feasibility": 88,
+        "product_module_readiness_value": 80,
+        "no_overclaim_safety": 86,
+        "dependency_on_owner_external_approval_inverse": 55
+      },
+      "total_score": 75.8,
+      "external_action_allowed": false
+    },
+    {
+      "candidate_id": "E73_provider_promotion_gate_owner_decision_packet_no_execution",
+      "residual_addressed": "provider live execution boundary owner review",
+      "scores": {
+        "addresses_highest_E72_residual": 55,
+        "internal_only_feasibility": 78,
+        "product_module_readiness_value": 72,
+        "no_overclaim_safety": 82,
+        "dependency_on_owner_external_approval_inverse": 45
+      },
+      "total_score": 66.4,
+      "external_action_allowed": false
+    }
+  ],
+  "source_goal": "turn imported K9 CIEU/hash-chain context into a tested bridge-labs structural verifier adapter without live ledger claims",
+  "capability_gap_addressed": "full audit verification over real event stream",
+  "expected_base": "E72 completion commit",
+  "repo_scope": "bridge-labs only; K9Audit/Y-star-gov/gov-mcp/ystar-company read-only",
+  "implementation_plan": [
+    "load E72 CIEU hash-chain context",
+    "define structural record checks for five-tuple and integrity fields",
+    "verify internal sample records only",
+    "update product/readback residuals",
+    "add no-overclaim tests"
+  ],
+  "safety_boundary": [
+    "no external action",
+    "no read-only repo mutation",
+    "no production ledger claim",
+    "no compliance/legal claim",
+    "no customer validation or paid signal claim"
+  ],
+  "tests": [
+    "structural verifier positive/negative sample tests",
+    "CEO readback test",
+    "product binding no-overclaim test",
+    "completion gate test"
+  ],
+  "owner_approval_status": "pending_owner_decision",
+  "external_action_allowed": false
+}

@@ -1,5 +1,9 @@
 # Updated Offer Blueprint With CIEU Module
 
-Status: internal-only draft.
-The current governed business operations blueprint now has a planned CIEU Audit Module.
-The module is an internal plan only and remains owner-gated before any external use.
+Offer: Governed Business Operations Blueprint for Agent Teams.
+
+E72 internal update: the CIEU Audit Module now includes promoted K9 CIEU/hash-chain context as an internal product module layer.
+
+What changed: the module can now explain causal audit fields plus hash-chain-ready evidence semantics for future internal demo/verifier work.
+
+What remains blocked: external review, publication, compliance claims, production ledger claims, customer validation, paid signal, and pricing validation.
