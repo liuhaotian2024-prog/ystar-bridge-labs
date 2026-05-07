@@ -1,0 +1,127 @@
+{
+  "artifact_id": "e87r_stable_vocabulary_and_owner_map",
+  "guardrails": [
+    "gov-mcp is not the sole behavior center; code evidence places it at provider/tool execution boundary.",
+    "Do not call Y-star-gov a business strategy brain; it is the governance reflex center.",
+    "Do not call Y-star-gov CIEUStore writes K9Audit ledger writes.",
+    "Do not claim complete L5 revenue/customer/payment loop from runtime-foundation evidence."
+  ],
+  "terms": [
+    {
+      "canonical_owner": "bridge-labs",
+      "definition": "Business/company-facing CEO behavior, mission command, readback, owner decisions, strategy artifacts, and external validation planning.",
+      "evidence_files": [
+        "office/aiden_meeting_room/",
+        "office/mission_command/",
+        "operations/external_validation/"
+      ],
+      "not_owner": [
+        "gov-mcp is not the sole behavior center; it is an execution boundary."
+      ],
+      "term": "CEO behavior center"
+    },
+    {
+      "canonical_owner": "bridge-labs",
+      "definition": "Readback/adapters/history/context used by CEO-facing company runtime; currently partly artifact/readback driven.",
+      "evidence_files": [
+        "office/mission_command/e46b_ceo_brain_adapter.py",
+        "office/aiden_meeting_room/"
+      ],
+      "term": "CEO brain"
+    },
+    {
+      "canonical_owner": "bridge-labs with Y-star-gov gates",
+      "definition": "Repo/history recall, candidate route generation, counterfactuals, commercial sharpness, adversarial critique, what-not-to-do, pre-action prediction, and learning update before major action.",
+      "evidence_files": [
+        "operations/external_validation/e80_*",
+        "office/mission_command/e85_ceo_cognitive_os_runtime_bridge.py"
+      ],
+      "term": "CEO intelligence loop"
+    },
+    {
+      "canonical_owner": "cross-repo",
+      "definition": "bridge-labs CEO packet -> Y-star-gov runtime hook -> formal CIEUStore write if invoked -> gov-mcp dry-run boundary where provider/tool action is involved -> post-action residual.",
+      "evidence_files": [
+        "office/mission_command/e85_ceo_cognitive_os_runtime_bridge.py",
+        "ystar/governance/ceo_cognitive_os_runtime_hook.py",
+        "gov_mcp/outbound/dry_run_adapter.py"
+      ],
+      "term": "CEO runtime nervous system"
+    },
+    {
+      "canonical_owner": "Y-star-gov",
+      "definition": "Deterministic validation, check/enforce/hook contracts, omission/delegation/intervention, CEO Cognitive OS runtime hook, and CIEUStore.",
+      "evidence_files": [
+        "ystar/governance/",
+        "ystar/kernel/",
+        "ystar/adapters/"
+      ],
+      "term": "governance reflex center"
+    },
+    {
+      "canonical_owner": "gov-mcp",
+      "definition": "MCP/provider/tool envelope and guard layer. Current evidence supports dry-run/no-send receipts, not live provider execution.",
+      "evidence_files": [
+        "gov_mcp/server.py",
+        "gov_mcp/company_runtime_tools.py",
+        "gov_mcp/outbound/"
+      ],
+      "term": "execution boundary"
+    },
+    {
+      "canonical_owner": "gov-mcp",
+      "definition": "Outbound dry-run adapter, provider guard stack, receipts, and future provider promotion boundary.",
+      "evidence_files": [
+        "gov_mcp/outbound/dry_run_adapter.py",
+        "gov_mcp/outbound/provider_guard_stack.py"
+      ],
+      "term": "provider/tool motor interface"
+    },
+    {
+      "canonical_owner": "Y-star-gov",
+      "definition": "SQLite CIEUStore records, query, stats, seal, verify. E86 added explicit CEO Cognitive OS writer.",
+      "evidence_files": [
+        "ystar/governance/cieu_store.py",
+        "ystar/governance/ceo_cognitive_os_cieu_log.py"
+      ],
+      "term": "CIEU memory / audit store"
+    },
+    {
+      "canonical_owner": "K9Audit",
+      "definition": "Separate stronger hash-chain CIEU ledger/verifier. E87R did not find/claim a write integration from CEO Cognitive OS into K9Audit.",
+      "evidence_files": [
+        "K9Audit:README.md",
+        "K9Audit:k9log/core.py",
+        "K9Audit:k9log/verifier.py"
+      ],
+      "term": "K9Audit evidence chain"
+    },
+    {
+      "canonical_owner": "bridge-labs produces, Y-star-gov escalates",
+      "definition": "Y-star-gov returns ESCALATE for complete but authority-bound actions; bridge-labs records owner decision packets and does not execute.",
+      "evidence_files": [
+        "ystar/governance/ceo_cognitive_os_contract.py",
+        "office/mission_command/e85_ceo_cognitive_os_runtime_bridge.py"
+      ],
+      "term": "owner decision path"
+    },
+    {
+      "canonical_owner": "bridge-labs under Y-star-gov/governed boundary",
+      "definition": "A future owner-approved external feedback pilot; current repo evidence shows planning and packets, not executed feedback.",
+      "evidence_files": [
+        "operations/external_validation/",
+        "office/mission_command/"
+      ],
+      "term": "L4 external feedback"
+    },
+    {
+      "canonical_owner": "bridge-labs business runtime, gated by Y-star-gov and gov-mcp",
+      "definition": "Future customer/revenue/payment/pricing learning loop. Current evidence is not complete and must not be claimed.",
+      "evidence_files": [
+        "operations/external_validation/",
+        "gov_mcp/outbound/"
+      ],
+      "term": "L5 revenue loop"
+    }
+  ]
+}

@@ -1,0 +1,6044 @@
+{
+  "actual_head": "738e8118fcf7ab87e08a942f265c17eb3386910d",
+  "all_file_count": 749,
+  "branch": "backflow/company-runtime-domain-pack",
+  "counts_by_category": {
+    "archive_deprecated": 1,
+    "config": 37,
+    "data": 1,
+    "docs": 64,
+    "generated_report": 60,
+    "runtime_state": 2,
+    "shell_script": 3,
+    "source_python": 260,
+    "test": 217,
+    "unknown": 6
+  },
+  "counts_by_extension": {
+    ".1776016253": 1,
+    ".html": 1,
+    ".json": 41,
+    ".jsonl": 1,
+    ".md": 114,
+    ".pid": 1,
+    ".py": 466,
+    ".sh": 5,
+    ".toml": 1,
+    ".txt": 3,
+    ".typed": 1,
+    ".yaml": 8,
+    ".yml": 5,
+    "[none]": 3
+  },
+  "counts_by_lifecycle": {
+    "active_or_source": 371,
+    "active_test_or_fixture": 213,
+    "deprecated_or_archive": 1,
+    "generated_or_report": 62,
+    "runtime_or_readback_artifact": 4
+  },
+  "counts_by_top_directory": {
+    ".claude": 2,
+    ".commit_msgs": 1,
+    ".coverage": 1,
+    ".github": 5,
+    ".gitignore": 1,
+    ".ystar_active_agent": 1,
+    ".ystar_coverage.json": 1,
+    ".ystar_warning_queue.json": 1,
+    ".ystar_warning_queue_archive.json": 1,
+    "AGENTS.md": 1,
+    "CLAUDE.md": 1,
+    "README.md": 1,
+    "baseline_failures.txt": 1,
+    "bench_cache.py": 1,
+    "benchmarks": 1,
+    "claude-code-integration": 5,
+    "config": 1,
+    "data": 2,
+    "docs": 54,
+    "examples": 11,
+    "governance": 4,
+    "patches": 2,
+    "products": 2,
+    "pyproject.toml": 1,
+    "reports": 62,
+    "run_full_simulation.py": 1,
+    "scripts": 26,
+    "skill": 8,
+    "test_agent_identity_inline.py": 1,
+    "test_identity_switch_e2e.py": 1,
+    "test_session.json": 1,
+    "tests": 211,
+    "tools": 5,
+    "ygov_health_check.py": 1,
+    "ystar": 232
+  },
+  "display_name": "Y-star-gov",
+  "expected_head": "738e8118fcf7ab87e08a942f265c17eb3386910d",
+  "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+  "repo": "Y_star_gov",
+  "tracked_file_count": 651,
+  "tracked_files": [
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": ".claude/settings.json",
+      "size_bytes": 130,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": ".claude/settings.local.json",
+      "size_bytes": 825,
+      "tracked": true
+    },
+    {
+      "extension": ".txt",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": ".commit_msgs/c_refactor_labs_names.txt",
+      "size_bytes": 153,
+      "tracked": true
+    },
+    {
+      "extension": "",
+      "file_type": "unknown",
+      "lifecycle": "active_or_source",
+      "likely_category": "unknown",
+      "path": ".coverage",
+      "size_bytes": 106496,
+      "tracked": true
+    },
+    {
+      "extension": ".yml",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "size_bytes": 3520,
+      "tracked": true
+    },
+    {
+      "extension": ".yml",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "size_bytes": 702,
+      "tracked": true
+    },
+    {
+      "extension": ".yml",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "size_bytes": 3775,
+      "tracked": true
+    },
+    {
+      "extension": ".yml",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": ".github/ISSUE_TEMPLATE/installation_help.yml",
+      "size_bytes": 4798,
+      "tracked": true
+    },
+    {
+      "extension": ".yml",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": ".github/workflows/test.yml",
+      "size_bytes": 418,
+      "tracked": true
+    },
+    {
+      "extension": "",
+      "file_type": "unknown",
+      "lifecycle": "active_or_source",
+      "likely_category": "unknown",
+      "path": ".gitignore",
+      "size_bytes": 543,
+      "tracked": true
+    },
+    {
+      "extension": "",
+      "file_type": "unknown",
+      "lifecycle": "active_or_source",
+      "likely_category": "unknown",
+      "path": ".ystar_active_agent",
+      "size_bytes": 9,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": ".ystar_coverage.json",
+      "size_bytes": 666,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": ".ystar_warning_queue.json",
+      "size_bytes": 2153,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": ".ystar_warning_queue_archive.json",
+      "size_bytes": 1380,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "AGENTS.md",
+      "size_bytes": 2527,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "CLAUDE.md",
+      "size_bytes": 10974,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "README.md",
+      "size_bytes": 32390,
+      "tracked": true
+    },
+    {
+      "extension": ".txt",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "baseline_failures.txt",
+      "size_bytes": 319,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "bench_cache.py",
+      "size_bytes": 1325,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "benchmarks/check_latency.py",
+      "size_bytes": 4089,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "claude-code-integration/.claude/agents/ystar-governance.md",
+      "size_bytes": 1785,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "claude-code-integration/.claude/hooks/pre_tool_use.py",
+      "size_bytes": 2416,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "claude-code-integration/.claude/settings.json",
+      "size_bytes": 709,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "claude-code-integration/AGENTS.md",
+      "size_bytes": 1505,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "claude-code-integration/README.md",
+      "size_bytes": 1759,
+      "tracked": true
+    },
+    {
+      "extension": ".yaml",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "config/avoidance_phrases_example.yaml",
+      "size_bytes": 295,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "data/cieu_archive/.archive_metadata.json",
+      "size_bytes": 153,
+      "tracked": true
+    },
+    {
+      "extension": ".jsonl",
+      "file_type": "data",
+      "lifecycle": "active_or_source",
+      "likely_category": "data",
+      "path": "data/cieu_archive/2026-04-03.jsonl",
+      "size_bytes": 4436437,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/AMENDMENT_014_DELIVERY_REPORT.md",
+      "size_bytes": 6013,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/ARCHITECTURE_ROLES.md",
+      "size_bytes": 4026,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/CHANGELOG.md",
+      "size_bytes": 5712,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/CZL-KERNEL-OVERRIDE-PRE-FALLBACK-PHASE2.md",
+      "size_bytes": 5876,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/FOUNDATION_API.md",
+      "size_bytes": 2730,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/PROVIDER_USAGE.md",
+      "size_bytes": 6325,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/arch/arch17_behavioral_governance_spec.md",
+      "size_bytes": 46700,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/arch/counterfactual_czl_asset_map.md",
+      "size_bytes": 10190,
+      "tracked": true
+    },
+    {
+      "extension": ".yaml",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "docs/arch/knowledge_action_registry.yaml",
+      "size_bytes": 3639,
+      "tracked": true
+    },
+    {
+      "extension": ".yaml",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "docs/arch/phase_lifecycle_manifest.yaml",
+      "size_bytes": 1119,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/capability_centerline_binding_governance.md",
+      "size_bytes": 923,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/ceo_cognitive_os_sync/e82_insertion_point_narrowing.md",
+      "size_bytes": 1517,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/ceo_cognitive_os_sync/e83_full_topology_audit.md",
+      "size_bytes": 2718,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/cieu_prediction_delta/schema_v0.md",
+      "size_bytes": 2549,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/development/ARCHITECTURE_FREEZE_v1.md",
+      "size_bytes": 9297,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/development/BRIDGE.md",
+      "size_bytes": 2437,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/development/BUGFIX_nl_to_contract.md",
+      "size_bytes": 8351,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/development/CONTRACT_LEGITIMACY_IMPLEMENTATION.md",
+      "size_bytes": 8189,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/development/CONTRIBUTING_ARCHITECTURE.md",
+      "size_bytes": 2426,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/development/CONVERGENCE_PRINCIPLES.md",
+      "size_bytes": 1678,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/development/FRAMEWORK_VALIDATION_REPORT_v1.md",
+      "size_bytes": 3941,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/development/GOVERNANCE_ACTION_SCHEMA.md",
+      "size_bytes": 4636,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/development/IMPLEMENTATION_SUMMARY.md",
+      "size_bytes": 9134,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/development/INTENT_COMPILATION.md",
+      "size_bytes": 3045,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/development/RELEASE_AUDIT_v043.md",
+      "size_bytes": 9173,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/development/SYSTEM_ARCHITECTURE.md",
+      "size_bytes": 4043,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "docs/examples/hook_cli_contract/input_allow_envelope.json",
+      "size_bytes": 1139,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "docs/examples/hook_cli_contract/input_deny_envelope.json",
+      "size_bytes": 1914,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "docs/examples/hook_cli_contract/input_escalate_envelope.json",
+      "size_bytes": 1119,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "docs/examples/hook_cli_contract/input_require_revision_envelope.json",
+      "size_bytes": 1062,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "docs/examples/hook_cli_contract/output_allow_decision.json",
+      "size_bytes": 763,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "docs/examples/hook_cli_contract/output_deny_decision.json",
+      "size_bytes": 762,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "docs/examples/hook_cli_contract/output_escalate_decision.json",
+      "size_bytes": 790,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "docs/examples/hook_cli_contract/output_require_revision_decision.json",
+      "size_bytes": 937,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/external_governance_adapter_sdk.md",
+      "size_bytes": 2357,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/gov_mcp_setup.md",
+      "size_bytes": 805,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/governance_contract_dry_run.md",
+      "size_bytes": 2412,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/governance_endpoint_acceptance.md",
+      "size_bytes": 1769,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/governance_local_checks.md",
+      "size_bytes": 3175,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/hook_cli_contract_compatibility.md",
+      "size_bytes": 3294,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/hook_contract_adapter_dry_run.md",
+      "size_bytes": 3261,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/hook_contract_adapter_fixture_matrix.md",
+      "size_bytes": 2684,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/hook_contract_cli_dry_run.md",
+      "size_bytes": 2658,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/pre_u_packet_validator/README.md",
+      "size_bytes": 1797,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/pre_u_packet_validator/cieu_contract.md",
+      "size_bytes": 933,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/pre_u_packet_validator/failure_actions.md",
+      "size_bytes": 2199,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/pre_u_packet_validator/hook_contract.md",
+      "size_bytes": 1484,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "docs/pre_u_packet_validator/interface_index.json",
+      "size_bytes": 2747,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/pre_u_packet_validator/non_goals.md",
+      "size_bytes": 509,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/pre_u_packet_validator/open_gaps.md",
+      "size_bytes": 622,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/pre_u_packet_validator/skeleton_v0.md",
+      "size_bytes": 1608,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/pre_u_packet_validator/validation_matrix.md",
+      "size_bytes": 3111,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/pre_u_packet_validator/validator_interface_spec.md",
+      "size_bytes": 3326,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/runtime_linkage_governance.md",
+      "size_bytes": 846,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "examples/AGENTS.md",
+      "size_bytes": 961,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "examples/external_adapter_sdk/README.md",
+      "size_bytes": 665,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "examples/external_adapter_sdk/adapter_contract.md",
+      "size_bytes": 889,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "examples/external_adapter_sdk/external_request_to_envelope.py",
+      "size_bytes": 2901,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "examples/external_adapter_sdk/open_gaps.md",
+      "size_bytes": 234,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "examples/external_adapter_sdk/run_sample_adapter.py",
+      "size_bytes": 2196,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "examples/external_adapter_sdk/sample_adapter_config.json",
+      "size_bytes": 361,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "examples/external_adapter_sdk/sample_external_request.json",
+      "size_bytes": 1077,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "examples/external_adapter_sdk/sample_normalized_envelope.json",
+      "size_bytes": 1393,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "examples/quickstart.py",
+      "size_bytes": 13828,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "examples/reproducible_code.md",
+      "size_bytes": 32546,
+      "tracked": true
+    },
+    {
+      "extension": ".yaml",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "governance/role_runtimes/auditor.yaml",
+      "size_bytes": 3270,
+      "tracked": true
+    },
+    {
+      "extension": ".yaml",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "governance/role_runtimes/ceo.yaml",
+      "size_bytes": 7481,
+      "tracked": true
+    },
+    {
+      "extension": ".yaml",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "governance/role_runtimes/secretary.yaml",
+      "size_bytes": 3422,
+      "tracked": true
+    },
+    {
+      "extension": ".yaml",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "governance/schemas/u_v2_schema_v0.1.yaml",
+      "size_bytes": 6457,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "patches/hook_wrapper_ppid_fix.py",
+      "size_bytes": 5131,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "patches/hook_wrapper_stale_cleanup.py",
+      "size_bytes": 1873,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "products/ystar-gov/INSTALL_TROUBLESHOOTING.md",
+      "size_bytes": 4811,
+      "tracked": true
+    },
+    {
+      "extension": ".sh",
+      "file_type": "test",
+      "lifecycle": "active_or_source",
+      "likely_category": "test",
+      "path": "products/ystar-gov/install_test.sh",
+      "size_bytes": 2221,
+      "tracked": true
+    },
+    {
+      "extension": ".toml",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "pyproject.toml",
+      "size_bytes": 2300,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/CZL-BRAIN-BIPARTITE-P1.md",
+      "size_bytes": 3456,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/EXP-005_execution_separation.md",
+      "size_bytes": 7030,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/EXP-005b_auto_routing.md",
+      "size_bytes": 6198,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/EXP-006_comprehensive_benchmark.md",
+      "size_bytes": 7652,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/EXP-006c_rule_engine_router.md",
+      "size_bytes": 5510,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/EXP-007_router_benchmark.md",
+      "size_bytes": 6123,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/EXP-008_final.md",
+      "size_bytes": 7898,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/EXP-008_final_clean.md",
+      "size_bytes": 11181,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/EXP-008_real_user_scenarios.md",
+      "size_bytes": 10183,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/ceo/exp3_b3/1776600425.json",
+      "size_bytes": 242,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/ceo/exp3_b3/1776600520.json",
+      "size_bytes": 224,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/ceo/exp3_b3/1776602897.json",
+      "size_bytes": 241,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/ceo/exp3_b4/1776602897.json",
+      "size_bytes": 454,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/ceo/exp3_b4/1776605742.json",
+      "size_bytes": 493,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/ceo/exp3_b5/1776602897.json",
+      "size_bytes": 393,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/ceo/exp3_b6/1776602898.json",
+      "size_bytes": 1595,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/ceo/exp3_b7/1776602898.json",
+      "size_bytes": 351,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/ceo/exp3_b8/1776602898.json",
+      "size_bytes": 2905,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/ceo/exp3_consolidated/exp3_full_matrix_1776602897.json",
+      "size_bytes": 7845,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/ceo/exp3_consolidated/exp3_full_matrix_1776602897.md",
+      "size_bytes": 2466,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/AIDEN-SELF-EDUCATION-SYSTEM-SPEC-20260420.md",
+      "size_bytes": 6850,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/BOARD-FRAMING-BEHAVIOR-VS-SILENCE-COMPLIANCE-20260420.md",
+      "size_bytes": 4909,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/BOARD-SHELL-ASSIST-WAVE2A-CLOSE-20260420.md",
+      "size_bytes": 8555,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/BRAIN-ERROR-CORRECTION-DEBIAS-SPEC-20260420.md",
+      "size_bytes": 5874,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "runtime_state",
+      "lifecycle": "generated_or_report",
+      "likely_category": "runtime_state",
+      "path": "reports/cto/CZL-AGENTS-ENGREG-GAP-receipt.md",
+      "size_bytes": 3757,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/CZL-AUTO-COMMIT-PUSH-ruling.md",
+      "size_bytes": 19792,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/CZL-BRAIN-3LOOP-FINAL-ruling.md",
+      "size_bytes": 13830,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/CZL-BRAIN-AUTO-INGEST-ruling.md",
+      "size_bytes": 16557,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/CZL-BRAIN-BIPARTITE-P2-ALGO-ruling.md",
+      "size_bytes": 26680,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/CZL-BRAIN-BIPARTITE-ruling.md",
+      "size_bytes": 18482,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/CZL-BRAIN-L2-WRITEBACK-PARTIAL-20260420.md",
+      "size_bytes": 2736,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/CZL-BRAIN-L3-GUARD-RAILS-ruling.md",
+      "size_bytes": 55253,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/CZL-DISPATCH-EXEC-ruling.md",
+      "size_bytes": 14778,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/CZL-FG-RETIRE-PHASE1-RULING.md",
+      "size_bytes": 5742,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/CZL-GOV-LIVE-EVAL-ruling.md",
+      "size_bytes": 16801,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/CZL-GOV-MCP-ACTIVATE-PHASE1A-ruling.md",
+      "size_bytes": 15388,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "runtime_state",
+      "lifecycle": "generated_or_report",
+      "likely_category": "runtime_state",
+      "path": "reports/cto/CZL-P2-resume-receipt.md",
+      "size_bytes": 11793,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/CZL-PHASE0-PEER-AUDIT-ETHAN-PART1.md",
+      "size_bytes": 10851,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/CZL-PHASE0-PEER-AUDIT-ETHAN-PART2.md",
+      "size_bytes": 11889,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/CZL-V04-ARCHITECTURE-AUDIT-ruling.md",
+      "size_bytes": 51566,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/CZL-YSTAR-DEHARDCODE-RULING.md",
+      "size_bytes": 13340,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/ECOSYSTEM-AUDIT-AND-BACKLOG-RECONCILE-20260420-NIGHT.md",
+      "size_bytes": 17663,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/FG-KEYWORD-BLACKLIST-RETIRE-PLAN-20260420.md",
+      "size_bytes": 3829,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/FG-MIGRATION-SCOPE-BOUNDARY-20260420.md",
+      "size_bytes": 4743,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/GOVERNANCE-DUAL-ASPECT-AND-INSIGHT-RULE-PIPELINE-20260420.md",
+      "size_bytes": 5876,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/L3-AUTO-TRIGGER-CEO-OWNERSHIP-20260420.md",
+      "size_bytes": 4297,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/WAVE1-FINAL-STATUS-20260420.md",
+      "size_bytes": 4855,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/WAVE3-DISPATCH-PLAN-20260420-NIGHT.md",
+      "size_bytes": 6068,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/dispatch_plan_20260420_whiteboard_drain.md",
+      "size_bytes": 26719,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/path_a_path_b_canonical_definition.md",
+      "size_bytes": 4731,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/cto/ruling_commission_unification_2026_04_22.md",
+      "size_bytes": 14514,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/delegation_chain_runtime_complete.md",
+      "size_bytes": 12168,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/governance_coverage_implementation.md",
+      "size_bytes": 10530,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/tech_debt_execution_summary.md",
+      "size_bytes": 14226,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/tech_debt_new_executive_summary.md",
+      "size_bytes": 6264,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/tech_debt_new_phase1_3_progress.md",
+      "size_bytes": 8199,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/tech_debt_p1_2_decision.md",
+      "size_bytes": 6064,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/tech_debt_p1_3_analysis.md",
+      "size_bytes": 7848,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/tech_debt_p1_4_decision.md",
+      "size_bytes": 7109,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/tech_debt_phase1_progress.md",
+      "size_bytes": 1934,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/tech_debt_phase2_progress.md",
+      "size_bytes": 3478,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/tech_debt_phase3_progress.md",
+      "size_bytes": 3663,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "run_full_simulation.py",
+      "size_bytes": 31780,
+      "tracked": true
+    },
+    {
+      "extension": ".pid",
+      "file_type": "unknown",
+      "lifecycle": "active_or_source",
+      "likely_category": "unknown",
+      "path": "scripts/.cieu_brain_daemon.pid",
+      "size_bytes": 4,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "scripts/agent_mode_manager.py",
+      "size_bytes": 16567,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "scripts/backfill_9type_obligations.py",
+      "size_bytes": 3916,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "scripts/boot_parent_session_register.py",
+      "size_bytes": 3694,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "scripts/cieu_brain_alignment_seed.py",
+      "size_bytes": 2411,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "scripts/cieu_brain_daemon.py",
+      "size_bytes": 6681,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "scripts/cieu_brain_learning_cycle.py",
+      "size_bytes": 2176,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "scripts/cieu_to_brain_batch.py",
+      "size_bytes": 16259,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "runtime_or_readback_artifact",
+      "likely_category": "source_python",
+      "path": "scripts/detect_subagent_boot_no_state_read.py",
+      "size_bytes": 4019,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "scripts/exp3/b4_omission_close.py",
+      "size_bytes": 2825,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "scripts/exp3/b5_dispatch_cycle.py",
+      "size_bytes": 3458,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "scripts/exp3/b6_cieu_growth.py",
+      "size_bytes": 3158,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "runtime_or_readback_artifact",
+      "likely_category": "source_python",
+      "path": "scripts/exp3/b7_receipt_truth.py",
+      "size_bytes": 3701,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "scripts/exp3/b8_policy_migration.py",
+      "size_bytes": 4605,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "scripts/exp3/exp3_launch_all.py",
+      "size_bytes": 8727,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "scripts/exp3/gen_axes.py",
+      "size_bytes": 18543,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "scripts/extract_avoidance_phrases.py",
+      "size_bytes": 1316,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "scripts/lesson_capture_trigger.py",
+      "size_bytes": 5478,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "scripts/migrate_9_obligation_fulfillers.py",
+      "size_bytes": 8053,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "scripts/omission_close_retro.py",
+      "size_bytes": 4272,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "scripts/omission_knowledge_action_scan.py",
+      "size_bytes": 3201,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "scripts/omission_recursive_illuminate.py",
+      "size_bytes": 7660,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "scripts/per_rule_detectors.py",
+      "size_bytes": 11563,
+      "tracked": true
+    },
+    {
+      "extension": ".sh",
+      "file_type": "shell_script",
+      "lifecycle": "active_or_source",
+      "likely_category": "shell_script",
+      "path": "scripts/pre_commit_cn_string_guard.sh",
+      "size_bytes": 1247,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "scripts/refactor_avoidance_config_driven.py",
+      "size_bytes": 6135,
+      "tracked": true
+    },
+    {
+      "extension": ".sh",
+      "file_type": "shell_script",
+      "lifecycle": "active_or_source",
+      "likely_category": "shell_script",
+      "path": "scripts/ystar_sync_setup.sh",
+      "size_bytes": 6640,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "skill/.claude-plugin/marketplace.json",
+      "size_bytes": 895,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "skill/.claude-plugin/plugin.json",
+      "size_bytes": 710,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "skill/README.md",
+      "size_bytes": 2243,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "skill/hooks/hooks.json",
+      "size_bytes": 660,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "skill/skills/ystar-govern/SKILL.md",
+      "size_bytes": 5112,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "skill/skills/ystar-govern/check.py",
+      "size_bytes": 5321,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "skill/skills/ystar-report/SKILL.md",
+      "size_bytes": 2088,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "skill/skills/ystar-setup/SKILL.md",
+      "size_bytes": 2806,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_or_source",
+      "likely_category": "test",
+      "path": "test_agent_identity_inline.py",
+      "size_bytes": 1820,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_or_source",
+      "likely_category": "test",
+      "path": "test_identity_switch_e2e.py",
+      "size_bytes": 4084,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "test",
+      "lifecycle": "active_or_source",
+      "likely_category": "test",
+      "path": "test_session.json",
+      "size_bytes": 1254,
+      "tracked": true
+    },
+    {
+      "extension": ".txt",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/.skip_w16_bulk.txt",
+      "size_bytes": 1311,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/__init__.py",
+      "size_bytes": 0,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/adapters/hooks/__init__.py",
+      "size_bytes": 35,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/adapters/hooks/test_auto_validate_receipt.py",
+      "size_bytes": 10399,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/adapters/hooks/test_coordinator_audit_hook.py",
+      "size_bytes": 7450,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/adapters/hooks/test_czl_gate_hook.py",
+      "size_bytes": 7605,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/adapters/hooks/test_stop_hook_warnings.py",
+      "size_bytes": 12341,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/adapters/test_arch11a_mandatory_invoke.py",
+      "size_bytes": 7985,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/adapters/test_avoidance_phrases_config_driven.py",
+      "size_bytes": 4677,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/adapters/test_boundary_enforcer_per_rule.py",
+      "size_bytes": 6664,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/adapters/test_dispatch_aliases.py",
+      "size_bytes": 7903,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/adapters/test_guidance_payload_schema.py",
+      "size_bytes": 1940,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/adapters/test_hook_immutable_override_ordering.py",
+      "size_bytes": 11241,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/adapters/test_hook_restricted_override_ordering.py",
+      "size_bytes": 19476,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/adapters/test_hook_v2_arch6.py",
+      "size_bytes": 12687,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/adapters/test_hook_v2_enforcement.py",
+      "size_bytes": 4273,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/adapters/test_hook_v2_marker_fallback.py",
+      "size_bytes": 7547,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/adapters/test_identity_arch1.py",
+      "size_bytes": 8909,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/adapters/test_identity_canonical_aliases.py",
+      "size_bytes": 3177,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/adapters/test_identity_detector_p1b.py",
+      "size_bytes": 7653,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/adapters/test_redirect_decision.py",
+      "size_bytes": 5067,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/break_glass/__init__.py",
+      "size_bytes": 0,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/break_glass/test_forget_guard_break_glass.py",
+      "size_bytes": 13171,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/break_glass/test_self_heal_write.py",
+      "size_bytes": 9131,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/conftest.py",
+      "size_bytes": 1697,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/d8_redirect_verify.py",
+      "size_bytes": 854,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/demo_rle_e2e.py",
+      "size_bytes": 6492,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/demo_rle_path_a_bridge.py",
+      "size_bytes": 5438,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/domains/company_runtime/test_admin_rationalization.py",
+      "size_bytes": 2428,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/domains/company_runtime/test_e1_1_mission_spine_policy.py",
+      "size_bytes": 2317,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/domains/company_runtime/test_escalation_contract.py",
+      "size_bytes": 1061,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/domains/company_runtime/test_mission_alignment.py",
+      "size_bytes": 1577,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/domains/company_runtime/test_mission_permission_check.py",
+      "size_bytes": 1521,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/domains/company_runtime/test_permission_tiers.py",
+      "size_bytes": 1328,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/domains/company_runtime/test_stale_directive_classification.py",
+      "size_bytes": 896,
+      "tracked": true
+    },
+    {
+      "extension": ".sh",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/e2e/test_clean_install_repro.sh",
+      "size_bytes": 3347,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/enforce_router/__init__.py",
+      "size_bytes": 0,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/enforce_router/test_drift_scenarios.py",
+      "size_bytes": 20425,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/exp008_cieu_query.py",
+      "size_bytes": 3136,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/exp008_comparison.py",
+      "size_bytes": 2585,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/exp008_daemon_bench.py",
+      "size_bytes": 3781,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/exp008_mode_c.py",
+      "size_bytes": 4450,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/exp008_s3_delegation.py",
+      "size_bytes": 3079,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/exp008_s4_obligation.py",
+      "size_bytes": 2124,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/exp008_token_analysis.py",
+      "size_bytes": 4448,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/exp008_v2_analysis.py",
+      "size_bytes": 4174,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/exp008_v2_timing.py",
+      "size_bytes": 2642,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/exp008_v3_final.py",
+      "size_bytes": 5292,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/fixtures/hook_contract_adapter/allow_valid_envelope.json",
+      "size_bytes": 1149,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/fixtures/hook_contract_adapter/deny_uncurated_writeback.json",
+      "size_bytes": 1880,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/fixtures/hook_contract_adapter/escalate_high_risk_envelope.json",
+      "size_bytes": 1153,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/fixtures/hook_contract_adapter/fixture_manifest.json",
+      "size_bytes": 2029,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/fixtures/hook_contract_adapter/require_revision_missing_y_star.json",
+      "size_bytes": 1046,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/fixtures/hook_contract_adapter/warn_valid_with_warning_envelope.json",
+      "size_bytes": 1959,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/fixtures/rt_events.json",
+      "size_bytes": 2086,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/__init__.py",
+      "size_bytes": 29,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/e51_runtime_linkage_fixtures.py",
+      "size_bytes": 4186,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_anti_drift_gate.py",
+      "size_bytes": 1289,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_arch11b_redirect_ignore.py",
+      "size_bytes": 5983,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_arch3_per_rule_detectors.py",
+      "size_bytes": 9563,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_audit_q2_q7.py",
+      "size_bytes": 8871,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_audit_q_batch.py",
+      "size_bytes": 4910,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_behavior_rules_cieu.py",
+      "size_bytes": 6834,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_bidirectional_predicate.py",
+      "size_bytes": 6310,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_brain_auto_ingest.py",
+      "size_bytes": 19803,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_brain_cieu_events_dream.py",
+      "size_bytes": 17553,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_capability_centerline_binding.py",
+      "size_bytes": 4304,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_centerline_contract.py",
+      "size_bytes": 437,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_ceo_cognitive_os_cieu_log.py",
+      "size_bytes": 11545,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_ceo_cognitive_os_contract.py",
+      "size_bytes": 13590,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_ceo_cognitive_os_runtime_hook.py",
+      "size_bytes": 12118,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_charter_drift.py",
+      "size_bytes": 12238,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_charter_flow_rule.py",
+      "size_bytes": 13892,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_cieu_brain_alignment.py",
+      "size_bytes": 10385,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_cieu_brain_bridge.py",
+      "size_bytes": 19157,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_cieu_brain_learning.py",
+      "size_bytes": 11513,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_cieu_brain_streamer.py",
+      "size_bytes": 11964,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_cieu_fail_closed.py",
+      "size_bytes": 3887,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_cieu_prediction_delta.py",
+      "size_bytes": 4254,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_claim_mismatch.py",
+      "size_bytes": 3531,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_contract_dry_run.py",
+      "size_bytes": 5185,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_coordinator_audit.py",
+      "size_bytes": 7830,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_czl_forget_guard.py",
+      "size_bytes": 10907,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_deferred_dispatch.py",
+      "size_bytes": 6946,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_enforcement_observer.py",
+      "size_bytes": 9582,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_external_adapter_sdk.py",
+      "size_bytes": 3375,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_governance_endpoint_acceptance.py",
+      "size_bytes": 1886,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_governance_protocol_rules.py",
+      "size_bytes": 25441,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_grant_chain.py",
+      "size_bytes": 7631,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_hardcoded_cadence.py",
+      "size_bytes": 4888,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_hook_adapter_fixtures.py",
+      "size_bytes": 2136,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_hook_cli_contract_compatibility.py",
+      "size_bytes": 2810,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_hook_contract_adapter.py",
+      "size_bytes": 4667,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_hook_contract_cli.py",
+      "size_bytes": 3144,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_k9_routing_chain_end_to_end.py",
+      "size_bytes": 16046,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_k9_rt_sentinel.py",
+      "size_bytes": 8362,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_knowledge_action_gap.py",
+      "size_bytes": 8511,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_obligation_closure.py",
+      "size_bytes": 4728,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_observation_stack.py",
+      "size_bytes": 4419,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_omission_engine_cieu_persistence.py",
+      "size_bytes": 4897,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_omission_recursive.py",
+      "size_bytes": 12915,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_p0_2_behavior_rules_cieu.py",
+      "size_bytes": 4373,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_parent_session_registered.py",
+      "size_bytes": 12001,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_post_ship_completeness.py",
+      "size_bytes": 8947,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_pre_u_packet_validator.py",
+      "size_bytes": 3890,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_predicate_merge.py",
+      "size_bytes": 6616,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_readback_proof.py",
+      "size_bytes": 551,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_reply_taxonomy.py",
+      "size_bytes": 7980,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_retired_rule_not_fire.py",
+      "size_bytes": 4828,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_router_registry.py",
+      "size_bytes": 15011,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_router_registry_loader.py",
+      "size_bytes": 8183,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_rule_lifecycle_observer.py",
+      "size_bytes": 6035,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_runtime_linkage.py",
+      "size_bytes": 873,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_stuck_claim_watchdog.py",
+      "size_bytes": 4098,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_subagent_boot_rule.py",
+      "size_bytes": 3424,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/governance/test_subagent_git_op_rule.py",
+      "size_bytes": 3529,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/hook/test_arch11c_reply_scan.py",
+      "size_bytes": 3722,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/kernel/test_czl_protocol.py",
+      "size_bytes": 10417,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/kernel/test_policy_bundle_cache.py",
+      "size_bytes": 1623,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/kernel/test_ppid_marker_write_side.py",
+      "size_bytes": 24345,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/kernel/test_rt_measurement.py",
+      "size_bytes": 9639,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/router/__init__.py",
+      "size_bytes": 0,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/rules/__init__.py",
+      "size_bytes": 0,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/rules/test_auto_rewrite.py",
+      "size_bytes": 6831,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/rules/test_next_action_inject.py",
+      "size_bytes": 6495,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/rules/test_next_action_wire.py",
+      "size_bytes": 992,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_agent_identity_governance.py",
+      "size_bytes": 6771,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_amendment_015_layer3.py",
+      "size_bytes": 7181,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_amendment_audit.py",
+      "size_bytes": 10523,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_amendment_lifecycle.py",
+      "size_bytes": 16104,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_architecture.py",
+      "size_bytes": 34022,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_archive_cieu.py",
+      "size_bytes": 5876,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_auto_fulfillment_9types.py",
+      "size_bytes": 13652,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_auto_rewrite.py",
+      "size_bytes": 8265,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_autonomy_driver.py",
+      "size_bytes": 7909,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_autonomy_driver_integration.py",
+      "size_bytes": 8186,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_behavior_rules.py",
+      "size_bytes": 63787,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_boundary_enforcer.py",
+      "size_bytes": 14680,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_boundary_enforcer_modes.py",
+      "size_bytes": 11136,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_cancel_obligation.py",
+      "size_bytes": 8208,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_causal_chain_analyzer.py",
+      "size_bytes": 5792,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_causal_discovery.py",
+      "size_bytes": 10881,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_ceo_mode_manager.py",
+      "size_bytes": 14322,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_cieu_store.py",
+      "size_bytes": 3885,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_cieu_to_memory_ingest.py",
+      "size_bytes": 8925,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_circuit_breaker.py",
+      "size_bytes": 14754,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_cli_docs.py",
+      "size_bytes": 2589,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_cli_hook_install.py",
+      "size_bytes": 8666,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_cli_setup.py",
+      "size_bytes": 6795,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_contract_legitimacy.py",
+      "size_bytes": 17587,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_contract_status.py",
+      "size_bytes": 4455,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_custom_timing_keys.py",
+      "size_bytes": 6147,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_czl159_rewrite_wire.py",
+      "size_bytes": 5334,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_delegation_chain.py",
+      "size_bytes": 10388,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_delegation_chain_runtime.py",
+      "size_bytes": 16842,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_deny_as_teaching.py",
+      "size_bytes": 15194,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_directive_evaluator.py",
+      "size_bytes": 25791,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_domain_cli.py",
+      "size_bytes": 6243,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_dotfile_strip_fix.py",
+      "size_bytes": 2823,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_experience_bridge_integration.py",
+      "size_bytes": 10370,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_forget_guard_none_safe.py",
+      "size_bytes": 7046,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_gov_mcp_delegation.py",
+      "size_bytes": 6494,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_governance_coverage.py",
+      "size_bytes": 10666,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_governance_pipeline_e2e.py",
+      "size_bytes": 15008,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_graceful_skip.py",
+      "size_bytes": 12676,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_hook.py",
+      "size_bytes": 9481,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_hook_bash_command_scan.py",
+      "size_bytes": 5821,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_hook_daemon_autonomy.py",
+      "size_bytes": 8230,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_hook_reload.py",
+      "size_bytes": 2775,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_hook_response.py",
+      "size_bytes": 5053,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_identity_detection.py",
+      "size_bytes": 5445,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_identity_detector.py",
+      "size_bytes": 3581,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_intent_compilation.py",
+      "size_bytes": 9795,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_liveness_audit.py",
+      "size_bytes": 5648,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_memory_store.py",
+      "size_bytes": 10432,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_merge_contracts.py",
+      "size_bytes": 25071,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_multi_agent_policy.py",
+      "size_bytes": 17167,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_narrative_coherence_drift.py",
+      "size_bytes": 2640,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_new_domain_packs.py",
+      "size_bytes": 6885,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_nl_to_contract.py",
+      "size_bytes": 8497,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_obligation_remediation.py",
+      "size_bytes": 8613,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_obligation_timing.py",
+      "size_bytes": 2656,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_obligation_triggers.py",
+      "size_bytes": 18870,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_omission_activity_gate.py",
+      "size_bytes": 8777,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_omission_engine.py",
+      "size_bytes": 23277,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_omission_intervention_e2e.py",
+      "size_bytes": 16968,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_openclaw.py",
+      "size_bytes": 17801,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_openclaw_extended.py",
+      "size_bytes": 17036,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_orchestrator.py",
+      "size_bytes": 8826,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_path_a.py",
+      "size_bytes": 52105,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_path_b.py",
+      "size_bytes": 30466,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_policy_swap.py",
+      "size_bytes": 13654,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_precheck.py",
+      "size_bytes": 7205,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_proactive_activation.py",
+      "size_bytes": 13653,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_prompt_gate_w7.py",
+      "size_bytes": 4205,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_provider_routing.py",
+      "size_bytes": 8778,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_residual_loop_engine.py",
+      "size_bytes": 8829,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_restoration.py",
+      "size_bytes": 16569,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_runtime_contracts.py",
+      "size_bytes": 9988,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_runtime_real.py",
+      "size_bytes": 18377,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_scan_pulse_chaos.py",
+      "size_bytes": 22211,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_scenarios.py",
+      "size_bytes": 21004,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_session_agent_stack.py",
+      "size_bytes": 6467,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_source_legitimacy.py",
+      "size_bytes": 2480,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_template_domain_pack_bridge.py",
+      "size_bytes": 5069,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_trend.py",
+      "size_bytes": 4677,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_trigger_activation.py",
+      "size_bytes": 10759,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_v041_features.py",
+      "size_bytes": 13787,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_w7_3_embedding_drift.py",
+      "size_bytes": 4217,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_workspace_config.py",
+      "size_bytes": 6917,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_y_star_schema_v2.py",
+      "size_bytes": 5317,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "tools/check_hook_cli_contract_compatibility.py",
+      "size_bytes": 3261,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "tools/run_governance_endpoint_acceptance.py",
+      "size_bytes": 5142,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "tools/run_governance_local_checks.py",
+      "size_bytes": 7453,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "tools/run_hook_adapter_fixture_matrix.py",
+      "size_bytes": 2904,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "tools/run_hook_contract_dry_run.py",
+      "size_bytes": 2808,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ygov_health_check.py",
+      "size_bytes": 15547,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/__init__.py",
+      "size_bytes": 19495,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/__main__.py",
+      "size_bytes": 127,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/_cli.py",
+      "size_bytes": 23577,
+      "tracked": true
+    },
+    {
+      "extension": ".sh",
+      "file_type": "shell_script",
+      "lifecycle": "active_or_source",
+      "likely_category": "shell_script",
+      "path": "ystar/_hook_client.sh",
+      "size_bytes": 998,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/_hook_daemon.py",
+      "size_bytes": 29790,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/_hook_entry.py",
+      "size_bytes": 3157,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/_hook_server.py",
+      "size_bytes": 3894,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/_whitelist_emit.py",
+      "size_bytes": 4503,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/adapters/__init__.py",
+      "size_bytes": 1937,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/adapters/activation_triggers.py",
+      "size_bytes": 11792,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/adapters/boundary_enforcer.py",
+      "size_bytes": 108008,
+      "tracked": true
+    },
+    {
+      "extension": ".1776016253",
+      "file_type": "archive_deprecated",
+      "lifecycle": "deprecated_or_archive",
+      "likely_category": "archive_deprecated",
+      "path": "ystar/adapters/boundary_enforcer.py.bak.1776016253",
+      "size_bytes": 82090,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/adapters/cieu_writer.py",
+      "size_bytes": 6584,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/adapters/claude_code_scanner.py",
+      "size_bytes": 11086,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/adapters/connector.py",
+      "size_bytes": 27973,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/adapters/hook.py",
+      "size_bytes": 103362,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/adapters/hook_response.py",
+      "size_bytes": 4273,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/adapters/hooks/__init__.py",
+      "size_bytes": 317,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/adapters/hooks/stop_hook.py",
+      "size_bytes": 37568,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/adapters/identity_detector.py",
+      "size_bytes": 17792,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/adapters/omission_adapter.py",
+      "size_bytes": 37645,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/adapters/orchestrator.py",
+      "size_bytes": 45986,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/adapters/report_delivery.py",
+      "size_bytes": 482,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/adapters/runtime_contracts.py",
+      "size_bytes": 7226,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/capabilities.py",
+      "size_bytes": 12429,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/check_service.py",
+      "size_bytes": 23003,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/cieu/schema.py",
+      "size_bytes": 2530,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/cli/__init__.py",
+      "size_bytes": 140,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/cli/archive_cmd.py",
+      "size_bytes": 15155,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/cli/demo_cmd.py",
+      "size_bytes": 3105,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/cli/doctor_cmd.py",
+      "size_bytes": 20862,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/cli/domain_cmd.py",
+      "size_bytes": 10497,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/cli/impact_cmd.py",
+      "size_bytes": 6367,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/cli/init_cmd.py",
+      "size_bytes": 14125,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/cli/quality_cmd.py",
+      "size_bytes": 17146,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/cli/report_cmd.py",
+      "size_bytes": 16907,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/cli/safemode_cmd.py",
+      "size_bytes": 7316,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/cli/setup_cmd.py",
+      "size_bytes": 11036,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/dev_cli.py",
+      "size_bytes": 51393,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/domains/__init__.py",
+      "size_bytes": 11780,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/domains/company_runtime/__init__.py",
+      "size_bytes": 1317,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/domains/company_runtime/admin_rationalization.py",
+      "size_bytes": 7262,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/domains/company_runtime/company_action_classifier.py",
+      "size_bytes": 3576,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/domains/company_runtime/company_runtime_policy.py",
+      "size_bytes": 3852,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/domains/company_runtime/delegated_mission_contract.py",
+      "size_bytes": 1174,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/domains/company_runtime/escalation_contract.py",
+      "size_bytes": 2223,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/domains/company_runtime/mission_alignment.py",
+      "size_bytes": 2627,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/domains/company_runtime/permission_tiers.py",
+      "size_bytes": 3118,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/domains/crypto/__init__.py",
+      "size_bytes": 11880,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/domains/devops/__init__.py",
+      "size_bytes": 10857,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/domains/finance/__init__.py",
+      "size_bytes": 22166,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/domains/finance/_source7.py",
+      "size_bytes": 21054,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/domains/finance/adapters.py",
+      "size_bytes": 20935,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/domains/finance/config.py",
+      "size_bytes": 7697,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/domains/finance/ontology.py",
+      "size_bytes": 23479,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/domains/healthcare/__init__.py",
+      "size_bytes": 14103,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/domains/legal/__init__.py",
+      "size_bytes": 12829,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/domains/omission_domain_packs.py",
+      "size_bytes": 42731,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/domains/openclaw/__init__.py",
+      "size_bytes": 22412,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/domains/openclaw/accountability_pack.py",
+      "size_bytes": 11912,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/domains/openclaw/adapter.py",
+      "size_bytes": 110067,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/domains/pharma/__init__.py",
+      "size_bytes": 1269,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/domains/ystar_dev/__init__.py",
+      "size_bytes": 29834,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/domains/ystar_dev/omission_pack.py",
+      "size_bytes": 11809,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/__init__.py",
+      "size_bytes": 8424,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/adaptive.py",
+      "size_bytes": 2725,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/amendment.py",
+      "size_bytes": 10134,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/anti_drift_gate.py",
+      "size_bytes": 366,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/auto_configure.py",
+      "size_bytes": 10383,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/autonomy_engine.py",
+      "size_bytes": 23419,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/backdoor_adjuster.py",
+      "size_bytes": 6204,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/boundary_enforcer.py",
+      "size_bytes": 7089,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/brain_auto_ingest.py",
+      "size_bytes": 21635,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/brain_dream_scheduler.py",
+      "size_bytes": 20121,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/capability_centerline_binding.py",
+      "size_bytes": 11288,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/causal_chain_analyzer.py",
+      "size_bytes": 10288,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/causal_discovery.py",
+      "size_bytes": 40216,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/causal_engine.py",
+      "size_bytes": 35727,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/causal_feedback.py",
+      "size_bytes": 4781,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/causal_graph.py",
+      "size_bytes": 10790,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/centerline_contract.py",
+      "size_bytes": 216,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/ceo_cognitive_os_cieu_log.py",
+      "size_bytes": 11238,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/ceo_cognitive_os_contract.py",
+      "size_bytes": 26692,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/ceo_cognitive_os_runtime_hook.py",
+      "size_bytes": 22483,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/charter_drift.py",
+      "size_bytes": 7951,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/cieu_brain_alignment.py",
+      "size_bytes": 8118,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/cieu_brain_bridge.py",
+      "size_bytes": 21555,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/cieu_brain_learning.py",
+      "size_bytes": 19730,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/cieu_brain_streamer.py",
+      "size_bytes": 8931,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/cieu_decision_normalizer.py",
+      "size_bytes": 7236,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/cieu_prediction_delta.py",
+      "size_bytes": 11993,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/cieu_store.py",
+      "size_bytes": 45966,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/claim_mismatch.py",
+      "size_bytes": 2415,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/constraints.py",
+      "size_bytes": 1080,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/contract_dry_run.py",
+      "size_bytes": 10107,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/contract_lifecycle.py",
+      "size_bytes": 12580,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/coordinator_audit.py",
+      "size_bytes": 22455,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/counterfactual_engine.py",
+      "size_bytes": 5516,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/delegation_policy.py",
+      "size_bytes": 5047,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/directive_evaluator.py",
+      "size_bytes": 28962,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/domain_context.py",
+      "size_bytes": 8323,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/dominance_monitor.py",
+      "size_bytes": 14186,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/enforcement_observer.py",
+      "size_bytes": 15451,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/experience_bridge.py",
+      "size_bytes": 22442,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/forget_guard.py",
+      "size_bytes": 21676,
+      "tracked": true
+    },
+    {
+      "extension": ".yaml",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "ystar/governance/forget_guard_rules.yaml",
+      "size_bytes": 9858,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/governance_loop.py",
+      "size_bytes": 53896,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/grant_chain.py",
+      "size_bytes": 13767,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/hook_contract_adapter.py",
+      "size_bytes": 9618,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/intervention_engine.py",
+      "size_bytes": 45029,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/intervention_models.py",
+      "size_bytes": 9586,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/k9_adapter/__init__.py",
+      "size_bytes": 803,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/k9_adapter/compliance_audit.py",
+      "size_bytes": 21093,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/k9_adapter/rules_6_10.py",
+      "size_bytes": 13779,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/k9_routing_subscriber.py",
+      "size_bytes": 18849,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/k9_rt_sentinel.py",
+      "size_bytes": 11178,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/liveness_audit.py",
+      "size_bytes": 7871,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/metalearning.py",
+      "size_bytes": 117600,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/metrics.py",
+      "size_bytes": 1389,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/migrations/001_add_decision_canonical.py",
+      "size_bytes": 9510,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/migrations/002_add_training_eligible.py",
+      "size_bytes": 9771,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/migrations/003_recanonicalize_route.py",
+      "size_bytes": 6393,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/migrations/004_add_dominance_log.py",
+      "size_bytes": 4594,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/migrations/__init__.py",
+      "size_bytes": 0,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/ml/__init__.py",
+      "size_bytes": 1497,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/ml/loop.py",
+      "size_bytes": 11439,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/ml/objectives.py",
+      "size_bytes": 53408,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/ml/records.py",
+      "size_bytes": 11877,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/ml/registry.py",
+      "size_bytes": 7173,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/ml_adaptive.py",
+      "size_bytes": 615,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/ml_core.py",
+      "size_bytes": 497,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/ml_discovery.py",
+      "size_bytes": 438,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/ml_loop.py",
+      "size_bytes": 434,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/ml_registry.py",
+      "size_bytes": 420,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/ml_semantic.py",
+      "size_bytes": 616,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/narrative_coherence_detector.py",
+      "size_bytes": 27798,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/obligation_remediation.py",
+      "size_bytes": 11566,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/obligation_triggers.py",
+      "size_bytes": 42197,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/observable_action_detector.py",
+      "size_bytes": 14539,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/observation_fusion.py",
+      "size_bytes": 4838,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/observation_stack.py",
+      "size_bytes": 11388,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/omission_engine.py",
+      "size_bytes": 110276,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/omission_models.py",
+      "size_bytes": 24517,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/omission_rules.py",
+      "size_bytes": 20089,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/omission_scanner.py",
+      "size_bytes": 10339,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/omission_scheduler.py",
+      "size_bytes": 3443,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/omission_store.py",
+      "size_bytes": 33869,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/omission_summary.py",
+      "size_bytes": 19543,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/parent_session_rules.py",
+      "size_bytes": 8983,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/pre_u_packet_validator.py",
+      "size_bytes": 14805,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/precheck.py",
+      "size_bytes": 5840,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "ystar/governance/precheck_schema.json",
+      "size_bytes": 2266,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/proposal_submission.py",
+      "size_bytes": 7625,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/proposals.py",
+      "size_bytes": 2518,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "runtime_or_readback_artifact",
+      "likely_category": "source_python",
+      "path": "ystar/governance/readback_proof.py",
+      "size_bytes": 160,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/reply_taxonomy.py",
+      "size_bytes": 11900,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/report_metrics.py",
+      "size_bytes": 12210,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/reporting.py",
+      "size_bytes": 48706,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "runtime_or_readback_artifact",
+      "likely_category": "source_python",
+      "path": "ystar/governance/residual_loop_engine.py",
+      "size_bytes": 17147,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/retro_store.py",
+      "size_bytes": 13563,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/router_registry.py",
+      "size_bytes": 22433,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/rule_advisor.py",
+      "size_bytes": 14648,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/rule_lifecycle_observer.py",
+      "size_bytes": 8591,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/rules/__init__.py",
+      "size_bytes": 391,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/rules/charter_amendment_flow.py",
+      "size_bytes": 8870,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/runtime_linkage.py",
+      "size_bytes": 13760,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/structural_equation.py",
+      "size_bytes": 7322,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/stuck_claim_watchdog.py",
+      "size_bytes": 5721,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/suggestion_policy.py",
+      "size_bytes": 8927,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "ystar/governance/tests/__init__.py",
+      "size_bytes": 0,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "ystar/governance/tests/test_cieu_decision_normalizer.py",
+      "size_bytes": 27316,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/u_v2_validator.py",
+      "size_bytes": 10053,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/violation_tracker.py",
+      "size_bytes": 5368,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/governance/y_star_field_validator.py",
+      "size_bytes": 22489,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/integrations/__init__.py",
+      "size_bytes": 2571,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/integrations/base.py",
+      "size_bytes": 8713,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/integrations/openclaw.py",
+      "size_bytes": 13329,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/integrations/runner.py",
+      "size_bytes": 8036,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/integrations/simulation.py",
+      "size_bytes": 6885,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/kernel/__init__.py",
+      "size_bytes": 864,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/kernel/_policy_bundle_cache.py",
+      "size_bytes": 2673,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/kernel/cieu.py",
+      "size_bytes": 3139,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/kernel/compiler.py",
+      "size_bytes": 8655,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/kernel/contract_provider.py",
+      "size_bytes": 9496,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/kernel/czl_protocol.py",
+      "size_bytes": 17408,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/kernel/dimensions.py",
+      "size_bytes": 110414,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/kernel/engine.py",
+      "size_bytes": 39323,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/kernel/history_scanner.py",
+      "size_bytes": 8349,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/kernel/merge.py",
+      "size_bytes": 15177,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/kernel/nl_to_contract.py",
+      "size_bytes": 35498,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/kernel/prefill.py",
+      "size_bytes": 72647,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/kernel/retroactive.py",
+      "size_bytes": 9817,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/kernel/rt_measurement.py",
+      "size_bytes": 5353,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/kernel/scope_encoding.py",
+      "size_bytes": 4570,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/memory/__init__.py",
+      "size_bytes": 469,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/memory/decay.py",
+      "size_bytes": 2174,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/memory/ingest.py",
+      "size_bytes": 8982,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/memory/models.py",
+      "size_bytes": 4003,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/memory/store.py",
+      "size_bytes": 19833,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/module_graph/__init__.py",
+      "size_bytes": 1188,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/module_graph/discovery.py",
+      "size_bytes": 18103,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/module_graph/graph.py",
+      "size_bytes": 7413,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/module_graph/planner.py",
+      "size_bytes": 9324,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/module_graph/registry.py",
+      "size_bytes": 13149,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "ystar/path_a/PATH_A_AGENTS.md",
+      "size_bytes": 2417,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/path_a/__init__.py",
+      "size_bytes": 130,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/path_a/meta_agent.py",
+      "size_bytes": 63935,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "ystar/path_b/PATH_B_AGENTS.md",
+      "size_bytes": 3170,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "ystar/path_b/PATH_B_DESIGN.md",
+      "size_bytes": 8060,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/path_b/__init__.py",
+      "size_bytes": 136,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/path_b/causal_adapter.py",
+      "size_bytes": 4437,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/path_b/external_governance_loop.py",
+      "size_bytes": 17291,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/path_b/path_b_agent.py",
+      "size_bytes": 52933,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/patterns/__init__.py",
+      "size_bytes": 2864,
+      "tracked": true
+    },
+    {
+      "extension": ".html",
+      "file_type": "unknown",
+      "lifecycle": "active_or_source",
+      "likely_category": "unknown",
+      "path": "ystar/policy-builder.html",
+      "size_bytes": 28098,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/pretrain/__init__.py",
+      "size_bytes": 780,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/pretrain/loader.py",
+      "size_bytes": 3281,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/pretrain/synthesize_obligations.py",
+      "size_bytes": 6035,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/products/__init__.py",
+      "size_bytes": 1564,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/products/omission_experiment.py",
+      "size_bytes": 20397,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/products/report_delivery.py",
+      "size_bytes": 27310,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/products/report_render.py",
+      "size_bytes": 4479,
+      "tracked": true
+    },
+    {
+      "extension": ".typed",
+      "file_type": "unknown",
+      "lifecycle": "active_or_source",
+      "likely_category": "unknown",
+      "path": "ystar/py.typed",
+      "size_bytes": 0,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/rules/__init__.py",
+      "size_bytes": 540,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/rules/auto_rewrite.py",
+      "size_bytes": 17097,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/rules/break_glass.py",
+      "size_bytes": 5241,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/rules/next_action_inject.py",
+      "size_bytes": 6361,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/rules/per_rule_detectors.py",
+      "size_bytes": 12560,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/session.py",
+      "size_bytes": 30221,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/template.py",
+      "size_bytes": 16212,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/templates/__init__.py",
+      "size_bytes": 13490,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "ystar/workspace_config.py",
+      "size_bytes": 3287,
+      "tracked": true
+    }
+  ],
+  "untracked_file_count": 98,
+  "untracked_files_sample": [
+    ".commit_msg_d.txt",
+    ".commit_msg_e.txt",
+    ".commit_msgs/c1_arch1.txt",
+    ".commit_msgs/c_arch11_14.txt",
+    ".commit_msgs/c_czl166.txt",
+    ".commit_msgs/c_generic_modules.txt",
+    ".ystar_cieu.db",
+    ".ystar_cieu.db-shm",
+    ".ystar_cieu.db-wal",
+    ".ystar_cieu_autonomy.db",
+    ".ystar_cieu_autonomy.db-shm",
+    ".ystar_cieu_autonomy.db-wal",
+    ".ystar_cieu_intervention.db",
+    ".ystar_cieu_intervention.db-shm",
+    ".ystar_cieu_intervention.db-wal",
+    ".ystar_cieu_omission.db",
+    ".ystar_cieu_omission.db-shm",
+    ".ystar_cieu_omission.db-wal",
+    ".ystar_memory.db",
+    ".ystar_memory.db-shm",
+    ".ystar_memory.db-wal",
+    ".ystar_omission.db",
+    ".ystar_omission.db-shm",
+    ".ystar_omission.db-wal",
+    ".ystar_session.json",
+    "aiden_brain.db",
+    "bench_out.tmp",
+    "bench_out2.tmp",
+    "bench_out3.tmp",
+    "frontend-v2/.next/dev/logs/next-development.log",
+    "scripts/.logs/continuous_mirror_v2.log",
+    "scripts/hook_observe.log",
+    "ystar.egg-info/PKG-INFO",
+    "ystar.egg-info/SOURCES.txt",
+    "ystar.egg-info/dependency_links.txt",
+    "ystar.egg-info/entry_points.txt",
+    "ystar.egg-info/top_level.txt",
+    "ystar/__pycache__/__init__.cpython-311.pyc",
+    "ystar/__pycache__/session.cpython-311.pyc",
+    "ystar/__pycache__/template.cpython-311.pyc",
+    "ystar/adapters/__pycache__/__init__.cpython-311.pyc",
+    "ystar/adapters/__pycache__/boundary_enforcer.cpython-311.pyc",
+    "ystar/adapters/__pycache__/cieu_writer.cpython-311.pyc",
+    "ystar/adapters/__pycache__/connector.cpython-311.pyc",
+    "ystar/adapters/__pycache__/hook.cpython-311.pyc",
+    "ystar/adapters/__pycache__/identity_detector.cpython-311.pyc",
+    "ystar/adapters/__pycache__/omission_adapter.cpython-311.pyc",
+    "ystar/adapters/__pycache__/report_delivery.cpython-311.pyc",
+    "ystar/domains/__pycache__/__init__.cpython-311.pyc",
+    "ystar/domains/__pycache__/omission_domain_packs.cpython-311.pyc",
+    "ystar/domains/openclaw/__pycache__/__init__.cpython-311.pyc",
+    "ystar/domains/openclaw/__pycache__/adapter.cpython-311.pyc",
+    "ystar/governance/__pycache__/__init__.cpython-311.pyc",
+    "ystar/governance/__pycache__/adaptive.cpython-311.pyc",
+    "ystar/governance/__pycache__/amendment.cpython-311.pyc",
+    "ystar/governance/__pycache__/auto_configure.cpython-311.pyc",
+    "ystar/governance/__pycache__/brain_auto_ingest.cpython-311.pyc",
+    "ystar/governance/__pycache__/capability_centerline_binding.cpython-311.pyc",
+    "ystar/governance/__pycache__/causal_feedback.cpython-311.pyc",
+    "ystar/governance/__pycache__/ceo_cognitive_os_cieu_log.cpython-311.pyc",
+    "ystar/governance/__pycache__/ceo_cognitive_os_contract.cpython-311.pyc",
+    "ystar/governance/__pycache__/ceo_cognitive_os_runtime_hook.cpython-311.pyc",
+    "ystar/governance/__pycache__/cieu_decision_normalizer.cpython-311.pyc",
+    "ystar/governance/__pycache__/cieu_prediction_delta.cpython-311.pyc",
+    "ystar/governance/__pycache__/cieu_store.cpython-311.pyc",
+    "ystar/governance/__pycache__/contract_dry_run.cpython-311.pyc",
+    "ystar/governance/__pycache__/contract_lifecycle.cpython-311.pyc",
+    "ystar/governance/__pycache__/domain_context.cpython-311.pyc",
+    "ystar/governance/__pycache__/forget_guard.cpython-311.pyc",
+    "ystar/governance/__pycache__/governance_loop.cpython-311.pyc",
+    "ystar/governance/__pycache__/hook_contract_adapter.cpython-311.pyc",
+    "ystar/governance/__pycache__/intervention_engine.cpython-311.pyc",
+    "ystar/governance/__pycache__/intervention_models.cpython-311.pyc",
+    "ystar/governance/__pycache__/metalearning.cpython-311.pyc",
+    "ystar/governance/__pycache__/observation_fusion.cpython-311.pyc",
+    "ystar/governance/__pycache__/omission_engine.cpython-311.pyc",
+    "ystar/governance/__pycache__/omission_models.cpython-311.pyc",
+    "ystar/governance/__pycache__/omission_rules.cpython-311.pyc",
+    "ystar/governance/__pycache__/omission_scanner.cpython-311.pyc",
+    "ystar/governance/__pycache__/omission_store.cpython-311.pyc",
+    "ystar/governance/__pycache__/omission_summary.cpython-311.pyc",
+    "ystar/governance/__pycache__/pre_u_packet_validator.cpython-311.pyc",
+    "ystar/governance/__pycache__/proposal_submission.cpython-311.pyc",
+    "ystar/governance/__pycache__/reporting.cpython-311.pyc",
+    "ystar/governance/__pycache__/runtime_linkage.cpython-311.pyc",
+    "ystar/governance/__pycache__/suggestion_policy.cpython-311.pyc",
+    "ystar/kernel/__pycache__/__init__.cpython-311.pyc",
+    "ystar/kernel/__pycache__/cieu.cpython-311.pyc",
+    "ystar/kernel/__pycache__/dimensions.cpython-311.pyc",
+    "ystar/kernel/__pycache__/engine.cpython-311.pyc",
+    "ystar/kernel/__pycache__/merge.cpython-311.pyc",
+    "ystar/kernel/__pycache__/prefill.cpython-311.pyc",
+    "ystar/kernel/__pycache__/scope_encoding.cpython-311.pyc",
+    "ystar/products/__pycache__/__init__.cpython-311.pyc",
+    "ystar/products/__pycache__/omission_experiment.cpython-311.pyc",
+    "ystar/products/__pycache__/report_delivery.cpython-311.pyc",
+    "ystar/products/__pycache__/report_render.cpython-311.pyc",
+    "ystar/templates/__pycache__/__init__.cpython-311.pyc"
+  ]
+}

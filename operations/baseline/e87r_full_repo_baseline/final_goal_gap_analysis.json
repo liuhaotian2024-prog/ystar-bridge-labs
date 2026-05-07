@@ -1,0 +1,109 @@
+{
+  "artifact_id": "e87r_final_goal_gap_analysis",
+  "capabilities": [
+    {
+      "capability": "discover opportunities",
+      "evidence_files": [
+        "bridge-labs:office/aiden_meeting_room/",
+        "bridge-labs:operations/external_validation/"
+      ],
+      "gap": "code/artifacts exist but normal CEO runtime does not always invoke it",
+      "status": "implemented_but_not_wired"
+    },
+    {
+      "capability": "recall internal and historical capabilities",
+      "evidence_files": [
+        "bridge-labs:operations/baseline/e87r_full_repo_baseline/code_index.json",
+        "bridge-labs:operations/external_validation/e80*"
+      ],
+      "gap": "code/artifacts exist but normal CEO runtime does not always invoke it",
+      "status": "implemented_but_not_wired"
+    },
+    {
+      "capability": "compare routes non-trivially",
+      "evidence_files": [
+        "bridge-labs:operations/external_validation/e80*",
+        "bridge-labs:operations/external_validation/e81*"
+      ],
+      "gap": "documented/generated but not active runtime behavior",
+      "status": "artifact_report_only"
+    },
+    {
+      "capability": "select shortest credible cash path",
+      "evidence_files": [
+        "bridge-labs:operations/external_validation/",
+        "bridge-labs:office/aiden_meeting_room/"
+      ],
+      "gap": "exists in pieces but not a full closed loop",
+      "status": "partial"
+    },
+    {
+      "capability": "generate governed action packets",
+      "evidence_files": [
+        "bridge-labs:office/mission_command/e85_ceo_cognitive_os_runtime_bridge.py"
+      ],
+      "gap": "needs end-to-end regression only",
+      "status": "implemented"
+    },
+    {
+      "capability": "pass deterministic runtime governance",
+      "evidence_files": [
+        "Y-star-gov:ystar/governance/ceo_cognitive_os_runtime_hook.py"
+      ],
+      "gap": "needs end-to-end regression only",
+      "status": "implemented"
+    },
+    {
+      "capability": "use CIEU records as memory/evidence",
+      "evidence_files": [
+        "Y-star-gov:ystar/governance/cieu_store.py",
+        "Y-star-gov:ystar/governance/ceo_cognitive_os_cieu_log.py"
+      ],
+      "gap": "exists in pieces but not a full closed loop",
+      "status": "partial"
+    },
+    {
+      "capability": "use gov-mcp to safely reach tool/provider boundaries",
+      "evidence_files": [
+        "gov-mcp:gov_mcp/outbound/dry_run_adapter.py"
+      ],
+      "gap": "safe dry-run exists; live execution remains unauthorized",
+      "status": "simulated_dry_run_only"
+    },
+    {
+      "capability": "collect real external feedback",
+      "evidence_files": [
+        "bridge-labs:operations/external_validation/"
+      ],
+      "gap": "no executed evidence found",
+      "status": "missing"
+    },
+    {
+      "capability": "convert feedback into residual learning",
+      "evidence_files": [
+        "bridge-labs:operations/external_validation/"
+      ],
+      "gap": "documented/generated but not active runtime behavior",
+      "status": "artifact_report_only"
+    },
+    {
+      "capability": "update strategy",
+      "evidence_files": [
+        "bridge-labs:office/aiden_meeting_room/",
+        "bridge-labs:operations/external_validation/"
+      ],
+      "gap": "exists in pieces but not a full closed loop",
+      "status": "partial"
+    },
+    {
+      "capability": "move toward revenue/customer/payment loop under owner-approved boundaries",
+      "evidence_files": [
+        "gov-mcp:gov_mcp/outbound/",
+        "bridge-labs:operations/external_validation/"
+      ],
+      "gap": "requires owner approval and stronger gates before live action",
+      "status": "unsafe_to_execute_yet"
+    }
+  ],
+  "final_goal": "high-intelligence CEO agent company runtime"
+}

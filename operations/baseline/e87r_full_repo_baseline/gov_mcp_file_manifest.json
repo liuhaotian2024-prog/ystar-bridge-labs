@@ -1,0 +1,1239 @@
+{
+  "actual_head": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+  "all_file_count": 137,
+  "branch": "backflow/company-runtime-tools",
+  "counts_by_category": {
+    "archive_deprecated": 2,
+    "config": 7,
+    "docs": 16,
+    "generated_report": 4,
+    "source_python": 38,
+    "test": 60,
+    "unknown": 3
+  },
+  "counts_by_extension": {
+    ".1776016253": 2,
+    ".json": 6,
+    ".md": 13,
+    ".py": 97,
+    ".toml": 1,
+    ".txt": 5,
+    ".yaml": 3,
+    "[none]": 3
+  },
+  "counts_by_lifecycle": {
+    "active_or_source": 63,
+    "active_test_or_fixture": 56,
+    "deprecated_or_archive": 2,
+    "generated_or_report": 5,
+    "runtime_or_readback_artifact": 4
+  },
+  "counts_by_top_directory": {
+    ".claude": 1,
+    ".gitignore": 1,
+    "AGENTS.md": 1,
+    "CLAUDE.md": 1,
+    "HISTORY.md": 1,
+    "LICENSE": 1,
+    "README.md": 1,
+    "README_PLUGIN.md": 1,
+    "SOUL.md": 1,
+    "docs": 5,
+    "gov_mcp": 44,
+    "gov_mcp.egg-info": 6,
+    "manifest.json": 1,
+    "plugin.json": 1,
+    "pyproject.toml": 1,
+    "reports": 5,
+    "scripts": 1,
+    "tests": 56,
+    "verify_dispatch.py": 1
+  },
+  "display_name": "gov-mcp",
+  "expected_head": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+  "path": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+  "repo": "gov_mcp",
+  "tracked_file_count": 130,
+  "tracked_files": [
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": ".claude/settings.json",
+      "size_bytes": 380,
+      "tracked": true
+    },
+    {
+      "extension": "",
+      "file_type": "unknown",
+      "lifecycle": "active_or_source",
+      "likely_category": "unknown",
+      "path": ".gitignore",
+      "size_bytes": 503,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "AGENTS.md",
+      "size_bytes": 356,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "CLAUDE.md",
+      "size_bytes": 134,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "HISTORY.md",
+      "size_bytes": 79,
+      "tracked": true
+    },
+    {
+      "extension": "",
+      "file_type": "unknown",
+      "lifecycle": "active_or_source",
+      "likely_category": "unknown",
+      "path": "LICENSE",
+      "size_bytes": 1076,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "README.md",
+      "size_bytes": 10220,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "README_PLUGIN.md",
+      "size_bytes": 1203,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "SOUL.md",
+      "size_bytes": 88,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/PROTOCOL.md",
+      "size_bytes": 15288,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/QUICKSTART_CREWAI.md",
+      "size_bytes": 16634,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/QUICKSTART_PYTHON.md",
+      "size_bytes": 12126,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/gov_health.md",
+      "size_bytes": 14455,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "docs/runtime_linkage_tools.md",
+      "size_bytes": 1348,
+      "tracked": true
+    },
+    {
+      "extension": "",
+      "file_type": "unknown",
+      "lifecycle": "active_or_source",
+      "likely_category": "unknown",
+      "path": "gov_mcp.egg-info/PKG-INFO",
+      "size_bytes": 8795,
+      "tracked": true
+    },
+    {
+      "extension": ".txt",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "gov_mcp.egg-info/SOURCES.txt",
+      "size_bytes": 1325,
+      "tracked": true
+    },
+    {
+      "extension": ".txt",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "gov_mcp.egg-info/dependency_links.txt",
+      "size_bytes": 1,
+      "tracked": true
+    },
+    {
+      "extension": ".txt",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "gov_mcp.egg-info/entry_points.txt",
+      "size_bytes": 49,
+      "tracked": true
+    },
+    {
+      "extension": ".txt",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "gov_mcp.egg-info/requires.txt",
+      "size_bytes": 37,
+      "tracked": true
+    },
+    {
+      "extension": ".txt",
+      "file_type": "docs",
+      "lifecycle": "active_or_source",
+      "likely_category": "docs",
+      "path": "gov_mcp.egg-info/top_level.txt",
+      "size_bytes": 8,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/__init__.py",
+      "size_bytes": 0,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/__main__.py",
+      "size_bytes": 4521,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/amendment_009_010_tools.py",
+      "size_bytes": 18156,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/benchmark.py",
+      "size_bytes": 8382,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/cli.py",
+      "size_bytes": 17292,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/company_runtime_tools.py",
+      "size_bytes": 10213,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/dispatch_logic.py",
+      "size_bytes": 9447,
+      "tracked": true
+    },
+    {
+      "extension": ".yaml",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "gov_mcp/exec_whitelist.yaml",
+      "size_bytes": 1328,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/health.py",
+      "size_bytes": 28948,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/outbound/__init__.py",
+      "size_bytes": 1038,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/outbound/adapter_contract.py",
+      "size_bytes": 4522,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/outbound/canary_prerequisites.py",
+      "size_bytes": 4177,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/outbound/dry_run_adapter.py",
+      "size_bytes": 2078,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/outbound/idempotency.py",
+      "size_bytes": 1797,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/outbound/live_canary.py",
+      "size_bytes": 3068,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/outbound/live_config.py",
+      "size_bytes": 3162,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/outbound/live_kill_switch.py",
+      "size_bytes": 2261,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/outbound/live_readiness.py",
+      "size_bytes": 2569,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "runtime_or_readback_artifact",
+      "likely_category": "source_python",
+      "path": "gov_mcp/outbound/live_receipts.py",
+      "size_bytes": 2616,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_or_source",
+      "likely_category": "test",
+      "path": "gov_mcp/outbound/live_test_config.py",
+      "size_bytes": 5567,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_or_source",
+      "likely_category": "test",
+      "path": "gov_mcp/outbound/live_test_gate.py",
+      "size_bytes": 4292,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "runtime_or_readback_artifact",
+      "likely_category": "test",
+      "path": "gov_mcp/outbound/live_test_receipts.py",
+      "size_bytes": 3290,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/outbound/models.py",
+      "size_bytes": 7440,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/outbound/persistent_idempotency.py",
+      "size_bytes": 5178,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/outbound/policy.py",
+      "size_bytes": 5268,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/outbound/provider_adapter.py",
+      "size_bytes": 6170,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/outbound/provider_capability.py",
+      "size_bytes": 4209,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/outbound/provider_guard_stack.py",
+      "size_bytes": 5014,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/outbound/provider_manifest.py",
+      "size_bytes": 5501,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/outbound/provider_promotion.py",
+      "size_bytes": 4227,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/outbound/provider_sandbox.py",
+      "size_bytes": 8591,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "runtime_or_readback_artifact",
+      "likely_category": "source_python",
+      "path": "gov_mcp/outbound/receipts.py",
+      "size_bytes": 2513,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/outbound/safety_guards.py",
+      "size_bytes": 4480,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/outbound/sandbox_manifest.py",
+      "size_bytes": 2147,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/outbound/sandbox_promotion.py",
+      "size_bytes": 3254,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "runtime_or_readback_artifact",
+      "likely_category": "source_python",
+      "path": "gov_mcp/outbound/sandbox_receipts.py",
+      "size_bytes": 3175,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/plugin_tools.py",
+      "size_bytes": 10057,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/router.py",
+      "size_bytes": 12476,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/runtime_linkage_tools.py",
+      "size_bytes": 6093,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "gov_mcp/server.py",
+      "size_bytes": 174750,
+      "tracked": true
+    },
+    {
+      "extension": ".1776016253",
+      "file_type": "archive_deprecated",
+      "lifecycle": "deprecated_or_archive",
+      "likely_category": "archive_deprecated",
+      "path": "gov_mcp/server.py.bak.1776016253",
+      "size_bytes": 159100,
+      "tracked": true
+    },
+    {
+      "extension": ".1776016253",
+      "file_type": "archive_deprecated",
+      "lifecycle": "deprecated_or_archive",
+      "likely_category": "archive_deprecated",
+      "path": "gov_mcp/server.py.bak.delegations.1776016253",
+      "size_bytes": 160013,
+      "tracked": true
+    },
+    {
+      "extension": ".yaml",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "gov_mcp/whitelist_unix.yaml",
+      "size_bytes": 2073,
+      "tracked": true
+    },
+    {
+      "extension": ".yaml",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "gov_mcp/whitelist_windows.yaml",
+      "size_bytes": 1761,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "manifest.json",
+      "size_bytes": 800,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "plugin.json",
+      "size_bytes": 1765,
+      "tracked": true
+    },
+    {
+      "extension": ".toml",
+      "file_type": "config",
+      "lifecycle": "active_or_source",
+      "likely_category": "config",
+      "path": "pyproject.toml",
+      "size_bytes": 583,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/SIM-001_scenario3_results.json",
+      "size_bytes": 2952,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/SIM-001_scenarios_1245_results.json",
+      "size_bytes": 1820,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/e16g_outbound_adapter_delivery.md",
+      "size_bytes": 796,
+      "tracked": true
+    },
+    {
+      "extension": ".json",
+      "file_type": "generated_report",
+      "lifecycle": "generated_or_report",
+      "likely_category": "generated_report",
+      "path": "reports/health_validation_report.json",
+      "size_bytes": 3082,
+      "tracked": true
+    },
+    {
+      "extension": ".md",
+      "file_type": "test",
+      "lifecycle": "generated_or_report",
+      "likely_category": "test",
+      "path": "reports/stress_test_results.md",
+      "size_bytes": 4297,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "scripts/validate_health_historical.py",
+      "size_bytes": 5419,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/conftest.py",
+      "size_bytes": 117,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_capability_centerline_tools.py",
+      "size_bytes": 4849,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_company_runtime_tools.py",
+      "size_bytes": 6841,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_concurrent_stress.py",
+      "size_bytes": 19179,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_contract_conflicts.py",
+      "size_bytes": 2526,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_e2e_flow.py",
+      "size_bytes": 3428,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_exploration.py",
+      "size_bytes": 12534,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_final_tools.py",
+      "size_bytes": 9407,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_gov_dispatch.py",
+      "size_bytes": 10142,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_gov_mcp_delegation.py",
+      "size_bytes": 16217,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_internal_mechanisms_live.py",
+      "size_bytes": 16034,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_layer1_bypass_vectors.py",
+      "size_bytes": 8662,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_layer2_cieu_chain.py",
+      "size_bytes": 9850,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_layer3_delegation.py",
+      "size_bytes": 10082,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_layer4_omission.py",
+      "size_bytes": 5706,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_layer5_metalearning.py",
+      "size_bytes": 6463,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_layer6_pearl_l3.py",
+      "size_bytes": 7606,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_layer7_8_health_install.py",
+      "size_bytes": 6447,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_market_experiments.py",
+      "size_bytes": 15656,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_market_secret_exposure.py",
+      "size_bytes": 6324,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_merged_stress.py",
+      "size_bytes": 12444,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_new_tools.py",
+      "size_bytes": 13919,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_adapter_contract.py",
+      "size_bytes": 934,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_canary_prerequisites.py",
+      "size_bytes": 1993,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_dry_run_adapter.py",
+      "size_bytes": 1906,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_idempotency.py",
+      "size_bytes": 1146,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_live_canary.py",
+      "size_bytes": 958,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_live_config.py",
+      "size_bytes": 918,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_live_kill_switch.py",
+      "size_bytes": 781,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_live_readiness.py",
+      "size_bytes": 1538,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_live_receipts.py",
+      "size_bytes": 1349,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_live_test_config.py",
+      "size_bytes": 1127,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_live_test_gate.py",
+      "size_bytes": 1888,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_live_test_receipts.py",
+      "size_bytes": 912,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_models.py",
+      "size_bytes": 1501,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_persistent_idempotency.py",
+      "size_bytes": 2087,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_policy.py",
+      "size_bytes": 2090,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_provider_adapter.py",
+      "size_bytes": 2098,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_provider_capability.py",
+      "size_bytes": 2010,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_provider_guard_stack.py",
+      "size_bytes": 3719,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_provider_manifest.py",
+      "size_bytes": 1922,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_provider_promotion.py",
+      "size_bytes": 3686,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_provider_sandbox.py",
+      "size_bytes": 3417,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_receipts.py",
+      "size_bytes": 1894,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_safety_guards.py",
+      "size_bytes": 2274,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_sandbox_manifest.py",
+      "size_bytes": 1903,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_sandbox_promotion.py",
+      "size_bytes": 2345,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_outbound_sandbox_receipts.py",
+      "size_bytes": 1658,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_p0_infra.py",
+      "size_bytes": 7937,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_p0_security.py",
+      "size_bytes": 6802,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_p1_fixes.py",
+      "size_bytes": 6386,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_p1_omission_fixes.py",
+      "size_bytes": 7018,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_plugin_tools.py",
+      "size_bytes": 7887,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_runtime_linkage_tools.py",
+      "size_bytes": 5902,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_sim001_remaining.py",
+      "size_bytes": 22179,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "test",
+      "lifecycle": "active_test_or_fixture",
+      "likely_category": "test",
+      "path": "tests/test_sim001_scenario3.py",
+      "size_bytes": 11812,
+      "tracked": true
+    },
+    {
+      "extension": ".py",
+      "file_type": "source_python",
+      "lifecycle": "active_or_source",
+      "likely_category": "source_python",
+      "path": "verify_dispatch.py",
+      "size_bytes": 6615,
+      "tracked": true
+    }
+  ],
+  "untracked_file_count": 7,
+  "untracked_files_sample": [
+    ".ystar_cieu.db",
+    ".ystar_cieu_omission.db",
+    "cieu.db",
+    "gov-mcp-0.1.0.mcpb",
+    "tests/test_gov_health.py",
+    "tests/test_health_mcp_integration.py",
+    "tests/test_health_omission_integration.py"
+  ]
+}

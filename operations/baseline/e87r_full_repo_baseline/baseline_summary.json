@@ -1,0 +1,63 @@
+{
+  "L5_truth_table_summary": {
+    "L5-A Runtime Foundation": "partial_to_complete_foundation",
+    "L5-B CEO Intelligence Loop": "partial",
+    "L5-C Controlled External Action": "partial_dry_run_only",
+    "L5-D Revenue/Customer/Payment Loop": "absent_or_not_executed"
+  },
+  "artifact_id": "e87r_full_repo_baseline_summary",
+  "biggest_previous_misconception_corrected": "gov-mcp is not the CEO behavior center; bridge-labs owns CEO/company behavior, Y-star-gov owns governance reflexes, and gov-mcp owns provider/tool execution boundary.",
+  "code_counts": {
+    "total_archived_deprecated_files": 193,
+    "total_classes": 1660,
+    "total_docs": 1220,
+    "total_functions": 11495,
+    "total_generated_reports": 28118,
+    "total_methods": 5798,
+    "total_python_files": 3085,
+    "total_runtime_artifacts": 360,
+    "total_tests": 1561,
+    "total_tracked_files": 34677
+  },
+  "job_id": "E87R_FULL_REPO_BASELINE_COGNITION_AND_NEXT_ENGINEERING_MAP_R1",
+  "real_architecture_baseline": {
+    "K9Audit_boundary": "separate stronger hash-chain evidence ledger; inspected read-only only; no integration write claimed.",
+    "Y_star_gov_role": "governance reflex center, deterministic contracts/hooks/checks, CIEUStore formal governance records.",
+    "bridge_labs_role": "CEO/company behavior center, mission command, business artifacts, owner decisions, external validation planning, delivery reports.",
+    "gov_mcp_role": "provider/tool execution boundary, dry-run/no-send envelope and receipts."
+  },
+  "reports": [
+    "bridge_labs_file_manifest.json",
+    "Y_star_gov_file_manifest.json",
+    "gov_mcp_file_manifest.json",
+    "code_index.json",
+    "architecture_evidence_map.json",
+    "stable_vocabulary_and_owner_map.json",
+    "l5_truth_table.json",
+    "final_goal_gap_analysis.json",
+    "next_engineering_roadmap.json"
+  ],
+  "repos": {
+    "Y_star_gov": {
+      "actual_head": "738e8118fcf7ab87e08a942f265c17eb3386910d",
+      "branch": "backflow/company-runtime-domain-pack",
+      "expected_head": "738e8118fcf7ab87e08a942f265c17eb3386910d",
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "tracked_file_count": 651
+    },
+    "bridge_labs": {
+      "actual_head": "4be40ebd78b13fc02fc8adf71d8f0d0ac3e74862",
+      "branch": "backflow/aiden-ceo-meeting-room",
+      "expected_head": "4be40ebd78b13fc02fc8adf71d8f0d0ac3e74862",
+      "path": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+      "tracked_file_count": 33896
+    },
+    "gov_mcp": {
+      "actual_head": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+      "branch": "backflow/company-runtime-tools",
+      "expected_head": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+      "path": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+      "tracked_file_count": 130
+    }
+  }
+}

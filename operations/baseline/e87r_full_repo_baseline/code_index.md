@@ -1,0 +1,142 @@
+# E87R Full Code Index
+
+## Counts
+- `total_tracked_files`: 34677
+- `total_python_files`: 3085
+- `total_functions`: 11495
+- `total_classes`: 1660
+- `total_methods`: 5798
+- `total_tests`: 1561
+- `total_docs`: 1220
+- `total_generated_reports`: 28118
+- `total_runtime_artifacts`: 360
+- `total_archived_deprecated_files`: 193
+
+## Counts By Repo
+- `bridge_labs`: python_files=2522, functions=9061, classes=860, methods=2789, parse_errors=2
+- `Y_star_gov`: python_files=466, functions=2048, classes=718, methods=2789, parse_errors=1
+- `gov_mcp`: python_files=97, functions=386, classes=82, methods=220, parse_errors=0
+
+## Entrypoints Sample
+- `bridge_labs:.claude/tasks/W16_ryan_hook_chaos_others.md` - hook_or_runtime_adapter
+- `bridge_labs:.claude/tasks/czl-165-hook-format-fix.md` - hook_or_runtime_adapter
+- `bridge_labs:.claude/tasks/jordan_v3_posttool_hook_and_rubric_reclassify.md` - hook_or_runtime_adapter
+- `bridge_labs:.github/ISSUE_TEMPLATE/bug_report.yml` - workflow_entrypoint
+- `bridge_labs:.github/ISSUE_TEMPLATE/config.yml` - workflow_entrypoint
+- `bridge_labs:.github/ISSUE_TEMPLATE/feature_request.yml` - workflow_entrypoint
+- `bridge_labs:.github/ISSUE_TEMPLATE/installation_help.yml` - workflow_entrypoint
+- `bridge_labs:claude-code-integration/.claude/hooks/pre_tool_use.py` - hook_or_runtime_adapter
+- `bridge_labs:content/offended_ai/v10/pipeline_run_r2.log` - package_or_config_entrypoint
+- `bridge_labs:frontend-v2/package.json` - package_or_config_entrypoint
+- `bridge_labs:gov_mcp/server.py` - server_or_mcp_registration
+- `bridge_labs:hook_runner.bat` - hook_or_runtime_adapter
+- `bridge_labs:knowledge/ceo/wisdom/paradigms/hook_output_format_lesson.md` - hook_or_runtime_adapter
+- `bridge_labs:office/aiden_meeting_room/meeting_cli.py` - cli_entrypoint
+- `bridge_labs:office/mission_command/c3_dry_run_execution_receipts.py` - package_or_config_entrypoint
+- `bridge_labs:office/mission_command/e22_autonomous_dry_run_control_room.py` - package_or_config_entrypoint
+- `bridge_labs:office/mission_command/e22_dry_run_batch_selector.py` - package_or_config_entrypoint
+- `bridge_labs:office/mission_command/e22_dry_run_receipt_ledger.py` - package_or_config_entrypoint
+- `bridge_labs:office/mission_command/e22_future_dry_run_live_policy.py` - package_or_config_entrypoint
+- `bridge_labs:office/mission_command/e22_gov_mcp_dry_run_integration.py` - package_or_config_entrypoint
+- `bridge_labs:office/mission_command/e22_kpi_dry_run_delta.py` - package_or_config_entrypoint
+- `bridge_labs:office/mission_command/e23_optional_dry_run_iteration.py` - package_or_config_entrypoint
+- `bridge_labs:office/mission_command/e48_server_client_proof_runner.py` - server_or_mcp_registration
+- `bridge_labs:office/mission_command/e49_minimal_mcp_client_path_maturity.py` - cli_entrypoint
+- `bridge_labs:office/mission_command/e55_dry_run_action_executor.py` - package_or_config_entrypoint
+- `bridge_labs:office/mission_command/e56_internal_loop_dry_run_executor.py` - package_or_config_entrypoint
+- `bridge_labs:office/mission_command/mission_cli.py` - cli_entrypoint
+- `bridge_labs:operations/external_validation/c3_dry_run_execution_receipts.json` - package_or_config_entrypoint
+- `bridge_labs:operations/external_validation/e16c0_gov_mcp_no_send_dry_run_receipt.json` - package_or_config_entrypoint
+- `bridge_labs:operations/external_validation/e22_autonomous_dry_run_control_room.json` - package_or_config_entrypoint
+- `bridge_labs:operations/external_validation/e22_autonomous_dry_run_control_room.md` - package_or_config_entrypoint
+- `bridge_labs:operations/external_validation/e22_dry_run_batch_selection.json` - package_or_config_entrypoint
+- `bridge_labs:operations/external_validation/e22_dry_run_receipt_ledger.json` - package_or_config_entrypoint
+- `bridge_labs:operations/external_validation/e22_future_dry_run_live_policy.json` - package_or_config_entrypoint
+- `bridge_labs:operations/external_validation/e22_gov_mcp_dry_run_results.json` - package_or_config_entrypoint
+- `bridge_labs:operations/external_validation/e22_kpi_dry_run_delta.json` - package_or_config_entrypoint
+- `bridge_labs:operations/external_validation/e23_optional_dry_run_iteration.json` - package_or_config_entrypoint
+- `bridge_labs:operations/external_validation/e43_first_value_loop_run_result.json` - package_or_config_entrypoint
+- `bridge_labs:operations/external_validation/e48_server_client_proof_result.json` - server_or_mcp_registration
+- `bridge_labs:operations/external_validation/e49_minimal_mcp_client_path_maturity.json` - cli_entrypoint
+- `bridge_labs:operations/external_validation/e50a_ceo_brain_mcp_client_update.json` - cli_entrypoint
+- `bridge_labs:operations/external_validation/e50a_mcp_client_blocker_update.json` - cli_entrypoint
+- `bridge_labs:operations/external_validation/e55_dry_run_action_executor_result.json` - package_or_config_entrypoint
+- `bridge_labs:operations/external_validation/e56_internal_loop_dry_run_result.json` - package_or_config_entrypoint
+- `bridge_labs:operations/external_validation/e78_l3_owner_approved_research_run_plan.json` - package_or_config_entrypoint
+- `bridge_labs:operations/external_validation/e78_l3_owner_approved_research_run_plan.md` - package_or_config_entrypoint
+- `bridge_labs:operations/external_validation/e78_l3_post_run_readiness_assessment.json` - package_or_config_entrypoint
+- `bridge_labs:operations/external_validation/e78_l3_post_run_readiness_assessment.md` - package_or_config_entrypoint
+- `bridge_labs:operations/knowledge_graph/e50a_ceo_kg_mcp_client_feedback.json` - cli_entrypoint
+- `bridge_labs:pyproject.toml` - package_or_config_entrypoint
+- `bridge_labs:reports/CLI_TEST_COVERAGE_README.md` - cli_entrypoint
+- `bridge_labs:reports/autonomous/2026-04-02-hook-rca.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/ceo/demonstrators/goal_1_hook_coverage_measure.py` - hook_or_runtime_adapter
+- `bridge_labs:reports/cli_test_coverage_2026-04-03.md` - cli_entrypoint
+- `bridge_labs:reports/cli_test_coverage_executive_summary.md` - cli_entrypoint
+- `bridge_labs:reports/cli_test_priority_matrix.md` - cli_entrypoint
+- `bridge_labs:reports/cli_test_samples_2026-04-03.py` - cli_entrypoint
+- `bridge_labs:reports/cli_test_week1_complete.md` - cli_entrypoint
+- `bridge_labs:reports/compliance_daily/20260415_after_hook_fix.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776349981.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776349982.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776349984.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776349987.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350001.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350006.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350007.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350018.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350030.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350044.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350045.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350046.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350051.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350065.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350066.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350070.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350071.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350072.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350073.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350074.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350075.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350076.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350077.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350078.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350079.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350080.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350081.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350082.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350083.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350084.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350085.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350086.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350087.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350088.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350089.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350090.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350091.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350092.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350093.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350094.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350095.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350096.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350097.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350098.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350099.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350100.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350101.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350102.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350103.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350104.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350105.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350106.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350107.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350108.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350109.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350110.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350111.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350112.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350113.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350114.md` - hook_or_runtime_adapter
+- `bridge_labs:reports/escalation/hook_health_1776350115.md` - hook_or_runtime_adapter
+
+Full Python symbol index is in the paired JSON file.

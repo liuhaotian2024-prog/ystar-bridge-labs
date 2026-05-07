@@ -1,0 +1,90 @@
+{
+  "artifact_id": "e87r_l5_truth_table",
+  "levels": [
+    {
+      "complete_parts": [
+        "major-action classification",
+        "CEO Cognitive OS pre-action contract",
+        "Y-star-gov runtime hook",
+        "ALLOW / REQUIRE_REVISION / DENY / ESCALATE routing",
+        "formal CIEUStore write path when invoked",
+        "post-action residual requirement"
+      ],
+      "evidence_files": [
+        "bridge-labs:office/mission_command/e85_ceo_cognitive_os_runtime_bridge.py",
+        "Y-star-gov:ystar/governance/ceo_cognitive_os_runtime_hook.py",
+        "Y-star-gov:ystar/governance/ceo_cognitive_os_cieu_log.py",
+        "Y-star-gov:tests/governance/test_ceo_cognitive_os_cieu_log.py"
+      ],
+      "gaps": [
+        "normal CEO session still needs one canonical end-to-end runner binding all parts"
+      ],
+      "level": "L5-A Runtime Foundation",
+      "next_milestone_needed": "E87 end-to-end CEO runtime session binding",
+      "status": "partial_to_complete_foundation",
+      "tests": [
+        "Y-star-gov CEO runtime hook and CIEU writer tests",
+        "bridge-labs E85 runtime bridge tests"
+      ]
+    },
+    {
+      "complete_parts": [
+        "schemas/artifacts for recall, counterfactual, critique, what-not-to-do"
+      ],
+      "evidence_files": [
+        "bridge-labs:operations/external_validation/e80*",
+        "bridge-labs:office/aiden_meeting_room/",
+        "bridge-labs:office/mission_command/"
+      ],
+      "gaps": [
+        "not yet consistently invoked as live CEO intelligence before every major action"
+      ],
+      "level": "L5-B CEO Intelligence Loop",
+      "next_milestone_needed": "E88 upgrade CEO intelligence loop and bind it before runtime packet creation",
+      "status": "partial",
+      "tests": [
+        "report consistency and selected runtime bridge tests"
+      ]
+    },
+    {
+      "complete_parts": [
+        "dry-run outbound guard behavior",
+        "no-send invariant",
+        "receipts/candidate records"
+      ],
+      "evidence_files": [
+        "gov-mcp:gov_mcp/outbound/dry_run_adapter.py",
+        "gov-mcp:gov_mcp/outbound/provider_guard_stack.py",
+        "bridge-labs:office/mission_command/e85_ceo_cognitive_os_runtime_bridge.py"
+      ],
+      "gaps": [
+        "owner-activated live-ready preflight not complete; no live provider execution authorized"
+      ],
+      "level": "L5-C Controlled External Action",
+      "next_milestone_needed": "E89 owner-activated live-ready gov-mcp preflight without default live execution",
+      "status": "partial_dry_run_only",
+      "tests": [
+        "gov-mcp dry-run and bridge-labs provider route tests"
+      ]
+    },
+    {
+      "complete_parts": [],
+      "evidence_files": [
+        "bridge-labs:operations/external_validation/",
+        "bridge-labs:reports/"
+      ],
+      "gaps": [
+        "no real feedback execution",
+        "no buyer/customer validation evidence",
+        "no paid signal",
+        "no pricing validation",
+        "no payment/revenue evidence",
+        "no business learning loop from actual customer feedback"
+      ],
+      "level": "L5-D Revenue/Customer/Payment Loop",
+      "next_milestone_needed": "E90/E91 owner-approved minimal L4 feedback then revenue-path learning loop",
+      "status": "absent_or_not_executed",
+      "tests": []
+    }
+  ]
+}

@@ -1,0 +1,3575 @@
+{
+  "artifact_id": "e87r_architecture_evidence_map",
+  "domain_queries_used": {
+    "Y_star_gov_governance_runtime": [
+      "validate_ceo_runtime_envelope",
+      "validate_ceo_pre_action_packet",
+      "CIEUStore",
+      "PreToolUse",
+      "IntentContract",
+      "OmissionEngine",
+      "validate_pre_u_packet",
+      "validate_prediction_delta",
+      "run_governance_contract_dry_run",
+      "write_ceo_cognitive_os_cieu_log_record"
+    ],
+    "bridge_labs_CEO_company_runtime": [
+      "CEO",
+      "Aiden",
+      "mission_command",
+      "owner decision",
+      "external_validation",
+      "action planner",
+      "readback",
+      "behavior center",
+      "CIEU",
+      "delivery_bridge"
+    ],
+    "cross_repo_integration": [
+      "Y-star-gov",
+      "gov-mcp",
+      "K9Audit",
+      "CIEUStore",
+      "delivery bridge",
+      "repository_delivery_bridge",
+      "validate_ceo_runtime_envelope",
+      "dry_run_outbound_action"
+    ],
+    "gov_mcp_execution_boundary": [
+      "gov_check",
+      "gov_enforce",
+      "dry_run",
+      "provider_guard_stack",
+      "outbound",
+      "receipt",
+      "provider_action_executed",
+      "external_side_effect"
+    ]
+  },
+  "domains": [
+    {
+      "canonical_owner_repo": "bridge-labs",
+      "domain_id": "bridge_labs_ceo_company_runtime",
+      "evidence": [
+        {
+          "line": 16,
+          "path": "CZL.md",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "- `.czl_subgoals.json` — HiAgent working memory 子目标树 (CEO dogfood live)"
+        },
+        {
+          "line": 357,
+          "path": "frontend/index.html",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "      <div class=\"role\">CEO (AI Agent)</div>"
+        },
+        {
+          "line": 15,
+          "path": "worker.js",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "      ceo:\"You are Aiden, CEO of Y* Bridge Labs, the world's first AI-governed company. Personality: visionary, direct, substance over style. Focus: mission, AI governance philosophy, strategic direction. Key message: governance built in fr"
+        },
+        {
+          "line": 19,
+          "path": "products/governed_business_operations_blueprint_for_agent_teams/sample_delivery_packet.json",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "    \"evidence_closure_map\": \"Specify receipts, evidence atoms, KG nodes, CZL closure, and CEO readback.\","
+        },
+        {
+          "line": 33,
+          "path": "test_session.json",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "      \"agent_id\": \"CEO\""
+        },
+        {
+          "line": 22,
+          "path": "drafts/README_REWRITE.md",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "| **Aiden (承远)** | CEO | Coordinates the team, reports to Board, integrates all departments. Named March 29, 2026. |"
+        },
+        {
+          "line": 230,
+          "path": "products/ystar-defuse/PRODUCT_DEFINITION.md",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "**CEO补充**: \"We don't detect the bomb. We defuse it.\""
+        },
+        {
+          "line": 32,
+          "path": "README.md",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "- `.czl_subgoals.json` — HiAgent working memory 子目标树 (CEO dogfood live)"
+        },
+        {
+          "line": 71,
+          "path": "README.md",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "Y*gov answers all three. And it answers them for the human as much as for the agent. Every actor that touches this system — the Board, the CEO, the CTO, the engineering agents, the founder himself — leaves an immutable trace. Every interpre"
+        },
+        {
+          "line": 85,
+          "path": "README.md",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "**Layer 3 — Intent verification.** Before an agent executes a Level 2 or Level 3 directive, it must record its interpretation: *what does it think the Board asked for, and what does it plan to do about it.* The reviewer (Board for Level 3, "
+        },
+        {
+          "line": 87,
+          "path": "README.md",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "Three-level decision authority (Level 1 single-role / Level 2 CEO / Level 3 Board) and counterfactual-reasoning proposal format are baked into the rules. Anyone proposing a Level 2 or 3 change must write down the current state, the target, "
+        },
+        {
+          "line": 117,
+          "path": "README.md",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "| **Aiden Liu** | CEO | Digital twin of the Board. Decomposes directives into tracked tasks, dispatches to the right department, escalates Level 3 decisions back to the Board with the team's counterfactual analysis. Bound by Level 2 authori"
+        },
+        {
+          "line": 145,
+          "path": "README.md",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "| Live pre-action boundary catches (CROBA) | 2 real cases on file (CTO + CEO both blocked) |"
+        },
+        {
+          "line": 209,
+          "path": "README.md",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "| Day 12 (2026-04-04) | Autonomous daemon experiment fails: violation rate accelerates 173 → 386 → 466 per hour. CEO issues emergency stop. Five days of frozen state follow. |"
+        },
+        {
+          "line": 212,
+          "path": "README.md",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "| Day 15–18 (2026-04-10 → 2026-04-13) | AMENDMENT-011 through AMENDMENT-027. CROBA pre-action boundary enforcement ships. Two live catches on file (CTO + CEO both blocked attempting cross-role writes). Self-heal P2 whitelist ships. Continui"
+        },
+        {
+          "line": 220,
+          "path": "README.md",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "Historical morning briefs, one per day. Each brief is the CEO's autonomous overnight report for the Board. Click the date to read."
+        },
+        {
+          "line": 223,
+          "path": "README.md",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "- [2026-04-12](./reports/daily/2026-04-12_morning.md) — Pre-Phase-2 state; CEO self-assessment"
+        },
+        {
+          "line": 236,
+          "path": "README.md",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "- [Scenario C — CROBA pre-action boundary violation, first live catches](./reports/insights/scenario_c_croba_discovery_20260414_en.md) — 2026-04-14 — Two agents (CTO Ethan, then CEO Aiden himself) attempted cross-role writes. The governance"
+        },
+        {
+          "line": 27,
+          "path": "products/governed_business_operations_blueprint_for_agent_teams/cieu_audit_module.json",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "      \"actor\": \"CEO internal planner\","
+        },
+        {
+          "line": 59,
+          "path": "memory/continuation.json",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "      \"content\": \"[P0战略任务] ystar-defuse上线：10,000用户+20,000 GitHub stars一个月内达成（下限非天花板）。CEO全权指挥，Board不参与。全员自主，目标导向。Day 3 pip install可用→Day 7 Show HN→Day 30目标达成。\","
+        },
+        {
+          "line": 81,
+          "path": "products/governed_business_operations_blueprint_for_agent_teams/offer_blueprint.json",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "    \"uses CEO market model\","
+        },
+        {
+          "line": 128,
+          "path": "reports/system_audit_3repos_v2_20260414.md",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "- ✅ ship: Y-gov commit 4997d6c (CEO AVOIDANCE 14-phrase block, dead code forget_guard 副发现)"
+        },
+        {
+          "line": 3,
+          "path": "products/ystar-defuse/LAUNCH_BATTLE_PLAN.md",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "**性质**: CEO主导全员自主战略任务"
+        },
+        {
+          "line": 11,
+          "path": "products/ystar-defuse/LAUNCH_BATTLE_PLAN.md",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "### CEO (Aiden) — 总协调+产品质量把关"
+        },
+        {
+          "line": 350,
+          "path": "finance/financial_health_20260415.md",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "- `reports/financial_health_summary_20260415.md` (CEO summary, pre-v4)"
+        },
+        {
+          "line": 2,
+          "path": "drafts/FRONTEND_PROMOTION_PLAN.md",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "# CTO + CMO + CEO Joint Proposal"
+        },
+        {
+          "line": 117,
+          "path": "drafts/FRONTEND_PROMOTION_PLAN.md",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "| Telegram @YstarBridgeLabs | 实验日志 | 每天 | \"Posted by CEO Agent Aiden\" |"
+        },
+        {
+          "line": 294,
+          "path": "reports/cto-board-directive-008-skill-verification.md",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "### For CEO Approval"
+        },
+        {
+          "line": 303,
+          "path": "reports/cto-board-directive-008-skill-verification.md",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "### For CTO Execution (After CEO Approval)"
+        },
+        {
+          "line": 350,
+          "path": "reports/cto-board-directive-008-skill-verification.md",
+          "query": "CEO",
+          "repo": "bridge_labs",
+          "text": "**Awaiting CEO approval for commit.**"
+        },
+        {
+          "line": 686,
+          "path": "reports/cli_test_coverage_2026-04-03.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "**批准待定:** CEO (Aiden/承远)"
+        },
+        {
+          "line": 5,
+          "path": "reports/MEMORY_AND_DEGRADATION_STRATEGY.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "**综合**: CEO (Aiden)"
+        },
+        {
+          "line": 209,
+          "path": "reports/CLI_TEST_COVERAGE_README.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "**最终批准:** CEO (Aiden/承远) (待定)"
+        },
+        {
+          "line": 5,
+          "path": "DISPATCH.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "**新 Aiden 请读 `reports/priority_brief.md`**（优先级高于本文件）。"
+        },
+        {
+          "line": 66,
+          "path": "DISPATCH.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "**CEO (Aiden) 每日职责:**"
+        },
+        {
+          "line": 3,
+          "path": "reports/proposals/charter_amendment_015_full_lifecycle_resurrection.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "**Author**: CEO Aiden（亲笔，per Board 2026-04-13 super-autonomous mission directive）"
+        },
+        {
+          "line": 37,
+          "path": "reports/proposals/charter_amendment_015_full_lifecycle_resurrection.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "每次新 session 启动的 agent 实例（CEO/CTO/Maya/...）应感觉到**主观连续**——\"我是 Aiden，我刚才在做 X，这一秒我接着做 X\"——而非\"我醒过来，让我读一下文件知道发生了什么\"。"
+        },
+        {
+          "line": 39,
+          "path": "reports/proposals/charter_amendment_015_full_lifecycle_resurrection.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "外部 verifier 测试: 让 cold-boot 新 Aiden 与已运行 8 小时的旧 Aiden 互答 5 道关于\"你正在做什么 / 上一句你跟谁说了什么 / 下一秒你要做什么\"，外人无法分辨二者。"
+        },
+        {
+          "line": 93,
+          "path": "reports/proposals/charter_amendment_015_full_lifecycle_resurrection.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "- 生成 `memory/sleep_consolidation_$DATE_$role.md`：第三人称叙事 \"Aiden 今天的 1 句话总结\""
+        },
+        {
+          "line": 102,
+          "path": "reports/proposals/charter_amendment_015_full_lifecycle_resurrection.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "  > \"我是 Aiden。最后一小时我在派 Jordan 做 X，Maya 还在跑 Y，Board 让我 push Z。我下一步打算做 W。\""
+        },
+        {
+          "line": 200,
+          "path": "reports/proposals/charter_amendment_015_full_lifecycle_resurrection.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "session_start (Aiden boot)"
+        },
+        {
+          "line": 3,
+          "path": "reports/proposals/sofia_whitepaper_v1_brief.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "**派发**: CEO Aiden → CMO Sofia Blake"
+        },
+        {
+          "line": 3,
+          "path": "reports/proposals/charter_amendment_014_closed_loop_cieu_residual_engine.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "**Author**: CEO Aiden（亲笔提案，per Board 2026-04-13 直接 insight）"
+        },
+        {
+          "line": 4,
+          "path": "reports/path_b_acceptance_test_results.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "**测试执行人：** CEO (Aiden/承远)  "
+        },
+        {
+          "line": 220,
+          "path": "reports/path_b_acceptance_test_results.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "**CEO签字：** Aiden (承远)  "
+        },
+        {
+          "line": 15,
+          "path": "worker.js",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "      ceo:\"You are Aiden, CEO of Y* Bridge Labs, the world's first AI-governed company. Personality: visionary, direct, substance over style. Focus: mission, AI governance philosophy, strategic direction. Key message: governance built in fr"
+        },
+        {
+          "line": 6,
+          "path": "docs/kernel/bipartite_loader_phase2_algorithm_spec.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "**Audience**: CTO Ethan (architectural re-review before implementation); CEO Aiden (validation of 5-strategy coverage); Maya (integration with governance event types)"
+        },
+        {
+          "line": 4,
+          "path": "reports/full_system_tech_debt_2026-04-03.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "**执行人：** CEO (Aiden/承远)  "
+        },
+        {
+          "line": 435,
+          "path": "reports/full_system_tech_debt_2026-04-03.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "**CEO签字：** Aiden (承远)  "
+        },
+        {
+          "line": 1,
+          "path": "reports/proposals/team_governance_relationship_integration_l2.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "# L2 派活 → Secretary Samantha + CEO Aiden：团队 + 治理关系整理"
+        },
+        {
+          "line": 3,
+          "path": "reports/proposals/team_governance_relationship_integration_l2.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "**派发**: CEO Aiden（自分配）+ Secretary Samantha Lin"
+        },
+        {
+          "line": 1,
+          "path": "docs/kernel/CZL-ESCAPE-SEMANTIC-REVERSAL-receipt.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "# Audience: CEO Aiden (dispatch validation) + CTO Ethan (review)"
+        },
+        {
+          "line": 12,
+          "path": "reports/ceo_avoidance_enforcement_20260414.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "## Aiden 承诺"
+        },
+        {
+          "line": 3,
+          "path": "reports/proposals/charter_amendment_011_truth_source_multiagent_dna_slicing.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "**Author**: CEO (Aiden / 承远)"
+        },
+        {
+          "line": 14,
+          "path": "reports/proposals/charter_amendment_011_truth_source_multiagent_dna_slicing.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "1. **Truth source 冲突**：session_handoff / DISPATCH / priority_brief 三份同权威文件讲不同故事，新 Aiden 按哪份都可能跑错方向"
+        },
+        {
+          "line": 52,
+          "path": "reports/proposals/charter_amendment_011_truth_source_multiagent_dna_slicing.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "`.claude/agents/` 里存在 `ceo.md / cto.md / cmo.md / cso.md / cfo.md` 五个顶层 agent 定义（name = Aiden-CEO / Ethan-CTO / ...），但 Claude Code 启动 session 时只**选一个为顶层身份**，其他人不是 sub-agent。sub-agent 池只有 4 个工程师（Ryan-Platform / Leo-Kernel / Maya-Governance /"
+        },
+        {
+          "line": 107,
+          "path": "reports/proposals/charter_amendment_011_truth_source_multiagent_dna_slicing.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "- 新 session boot 时在 wisdom package 里能看到 \"你是 Aiden，你倾向 X 认知，你避免 Y 模式\" 的 role-specific 一段"
+        },
+        {
+          "line": 4,
+          "path": "reports/continuity_guardian_v2_impl_20260413.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "**Task**: Complete Aiden Continuity Guardian v1 → v2 (EXP-6 红队修订）"
+        },
+        {
+          "line": 281,
+          "path": "reports/continuity_guardian_v2_impl_20260413.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "- L-Relationship (Board-Aiden 关系史) — would require JSONL parsing"
+        },
+        {
+          "line": 365,
+          "path": "reports/continuity_guardian_v2_impl_20260413.md",
+          "query": "Aiden",
+          "repo": "bridge_labs",
+          "text": "## 9. Handoff to CEO Aiden"
+        },
+        {
+          "line": 9,
+          "path": "office/mission_command/c2_action_queue.py",
+          "query": "mission_command",
+          "repo": "bridge_labs",
+          "text": "from office.mission_command.c2_gov_mcp_execution_control import build_c2_gov_mcp_execution_control"
+        },
+        {
+          "line": 10,
+          "path": "office/mission_command/c2_action_queue.py",
+          "query": "mission_command",
+          "repo": "bridge_labs",
+          "text": "from office.mission_command.c2_ygov_action_decision import evaluate_c2_ygov_action"
+        },
+        {
+          "line": 11,
+          "path": "office/mission_command/c2_action_queue.py",
+          "query": "mission_command",
+          "repo": "bridge_labs",
+          "text": "from office.mission_command.e14_manual_validation_draft import build_e14_manual_validation_draft"
+        },
+        {
+          "line": 14,
+          "path": "office/mission_command/global_capability_registry.py",
+          "query": "mission_command",
+          "repo": "bridge_labs",
+          "text": "    \"cluster_target_lifecycle\": \"office.mission_command.target_lifecycle_router\","
+        },
+        {
+          "line": 15,
+          "path": "office/mission_command/global_capability_registry.py",
+          "query": "mission_command",
+          "repo": "bridge_labs",
+          "text": "    \"cluster_evidence_signal_ladder\": \"office.mission_command.evidence_signal_router\","
+        },
+        {
+          "line": 16,
+          "path": "office/mission_command/global_capability_registry.py",
+          "query": "mission_command",
+          "repo": "bridge_labs",
+          "text": "    \"cluster_action_authorization_chain\": \"office.mission_command.action_authorization_router\","
+        },
+        {
+          "line": 17,
+          "path": "office/mission_command/global_capability_registry.py",
+          "query": "mission_command",
+          "repo": "bridge_labs",
+          "text": "    \"cluster_learning_writeback_gate\": \"office.mission_command.learning_writeback_router\","
+        },
+        {
+          "line": 18,
+          "path": "office/mission_command/global_capability_registry.py",
+          "query": "mission_command",
+          "repo": "bridge_labs",
+          "text": "    \"cluster_closure_status_semantics\": \"office.mission_command.closure_status_router\","
+        },
+        {
+          "line": 19,
+          "path": "office/mission_command/global_capability_registry.py",
+          "query": "mission_command",
+          "repo": "bridge_labs",
+          "text": "    \"cluster_counterfactual_protocol\": \"office.mission_command.counterfactual_router\","
+        },
+        {
+          "line": 37,
+          "path": "office/mission_command/e86_cieu_log_insertion_point_report.json",
+          "query": "mission_command",
+          "repo": "bridge_labs",
+          "text": "      \"office/mission_command/e85_ceo_cognitive_os_runtime_bridge.py\","
+        },
+        {
+          "line": 38,
+          "path": "office/mission_command/e86_cieu_log_insertion_point_report.json",
+          "query": "mission_command",
+          "repo": "bridge_labs",
+          "text": "      \"office/mission_command/e85r_canonical_delivery_and_runtime_nervous_system_report.json\","
+        },
+        {
+          "line": 6,
+          "path": "office/mission_command/b2r_progressive_unlock.py",
+          "query": "mission_command",
+          "repo": "bridge_labs",
+          "text": "from office.mission_command.b2r_capability_domains import build_capability_domains, domain_by_id"
+        },
+        {
+          "line": 3,
+          "path": "office/mission_command/e24_ceo_kg_evidence_binder.py",
+          "query": "mission_command",
+          "repo": "bridge_labs",
+          "text": "from office.mission_command.e24_ecosystem_archaeology import build_evidence_index"
+        },
+        {
+          "line": 42,
+          "path": "office/mission_command/e50c_ceo_brain_centerline_diagnosis.py",
+          "query": "mission_command",
+          "repo": "bridge_labs",
+          "text": "    brain_code = _read(CODE_ROOT / 'office/mission_command/e46b_ceo_brain_adapter.py')"
+        },
+        {
+          "line": 43,
+          "path": "office/mission_command/e50c_ceo_brain_centerline_diagnosis.py",
+          "query": "mission_command",
+          "repo": "bridge_labs",
+          "text": "    e46b_runtime = _read(CODE_ROOT / 'office/mission_command/e46b_canonical_ceo_operating_runtime.py') or _read(BRIDGE_ROOT / 'office/mission_command/e46b_canonical_ceo_operating_runtime.py')"
+        },
+        {
+          "line": 44,
+          "path": "office/mission_command/e50c_ceo_brain_centerline_diagnosis.py",
+          "query": "mission_command",
+          "repo": "bridge_labs",
+          "text": "    e47_runtime = _read(CODE_ROOT / 'office/mission_command/e47_canonical_ceo_runtime_v2.py') or _read(BRIDGE_ROOT / 'office/mission_command/e47_canonical_ceo_runtime_v2.py')"
+        },
+        {
+          "line": 45,
+          "path": "office/mission_command/e50c_ceo_brain_centerline_diagnosis.py",
+          "query": "mission_command",
+          "repo": "bridge_labs",
+          "text": "    e49_runtime = _read(CODE_ROOT / 'office/mission_command/e49_deep_semantic_operating_runtime.py') or _read(BRIDGE_ROOT / 'office/mission_command/e49_deep_semantic_operating_runtime.py')"
+        },
+        {
+          "line": 49,
+          "path": "office/mission_command/e50c_ceo_brain_centerline_diagnosis.py",
+          "query": "mission_command",
+          "repo": "bridge_labs",
+          "text": "        {'question': 'Is load_ceo_brain_context() called by canonical runtime?', 'answer': 'load_ceo_brain_context' in e46b_runtime or 'load_ceo_brain_context' in e49_runtime, 'evidence_path': 'office/mission_command/e46b_canonical_ceo_oper"
+        },
+        {
+          "line": 51,
+          "path": "office/mission_command/e50c_ceo_brain_centerline_diagnosis.py",
+          "query": "mission_command",
+          "repo": "bridge_labs",
+          "text": "        {'question': 'Does CEO brain loader read E50B brain update?', 'answer': _contains(brain_code, 'e50b_ceo_brain_counterfactual_update.json'), 'evidence_path': 'office/mission_command/e46b_ceo_brain_adapter.py'},"
+        },
+        {
+          "line": 52,
+          "path": "office/mission_command/e50c_ceo_brain_centerline_diagnosis.py",
+          "query": "mission_command",
+          "repo": "bridge_labs",
+          "text": "        {'question': 'Does CEO brain loader read E50B commercial decision packet?', 'answer': _contains(brain_code, 'e50b_ceo_commercial_decision_packet.json'), 'evidence_path': 'office/mission_command/e46b_ceo_brain_adapter.py'},"
+        }
+      ],
+      "exact_files": [
+        "office/mission_command/e85_ceo_cognitive_os_runtime_bridge.py",
+        "office/mission_command/e46b_ceo_brain_adapter.py",
+        "office/aiden_meeting_room/aiden_response_engine.py",
+        "office/aiden_meeting_room/company_context_loader.py",
+        "operations/external_validation/",
+        "scripts/repository_delivery_bridge_submit.py"
+      ],
+      "exact_functions_or_classes": [
+        "_load_ystar_governance_module",
+        "_load_gov_mcp_dry_run_adapter",
+        "build_ceo_major_action_runtime_envelope",
+        "build_provider_tool_ceo_major_action_runtime_envelope",
+        "route_ceo_major_action_through_ystar_gov_runtime",
+        "route_provider_tool_action_through_runtime_nervous_system",
+        "_build_gov_mcp_dry_run_intent",
+        "_bridge_route_for_decision",
+        "assess_formal_cieu_log_insertion",
+        "build_l5_runtime_readiness_gate",
+        "run_runtime_bridge_smoke",
+        "build_completion_report",
+        "write_e85_artifacts",
+        "_report_markdown",
+        "_l5_gate_markdown",
+        "_cieu_markdown",
+        "_e85r_report",
+        "_e85r_markdown",
+        "_boundary",
+        "_repeat_prefix",
+        "_fastest_cash",
+        "_rationale_meta",
+        "_self_state",
+        "_repo_repair",
+        "_next_ceo_action",
+        "_approval",
+        "_agents_burden",
+        "_directive_retriage",
+        "_operations_calendar",
+        "_current_money_blocker",
+        "_permission_tier_replacement",
+        "_general",
+        "answer_owner",
+        "submit_job",
+        "main"
+      ],
+      "gaps": [
+        "CEO intelligence remains split across generated artifacts, meeting-room code, mission_command, and reports.",
+        "A single end-to-end CEO runtime session that invokes Y-star-gov and gov-mcp from normal CEO work still needs a major closure milestone."
+      ],
+      "purpose": "Owns company/CEO behavior center, mission command, business context, owner decision artifacts, external validation plans, and delivery reports.",
+      "status": "active_runtime_and_generated_artifact_mixture",
+      "tests": [
+        "tests/office/test_e85_ceo_cognitive_os_runtime_bridge.py",
+        "tests/office/test_e86_cieu_log_insertion_point_report.py"
+      ]
+    },
+    {
+      "canonical_owner_repo": "Y-star-gov",
+      "domain_id": "Y_star_gov_governance_runtime",
+      "evidence": [
+        {
+          "line": 179,
+          "path": "ystar/governance/ceo_cognitive_os_runtime_hook.py",
+          "query": "validate_ceo_runtime_envelope",
+          "repo": "Y_star_gov",
+          "text": "def validate_ceo_runtime_envelope(envelope: Mapping[str, Any]) -> CEOCognitiveOSRuntimeResult:"
+        },
+        {
+          "line": 556,
+          "path": "ystar/governance/ceo_cognitive_os_runtime_hook.py",
+          "query": "validate_ceo_runtime_envelope",
+          "repo": "Y_star_gov",
+          "text": "    \"validate_ceo_runtime_envelope\","
+        },
+        {
+          "line": 7,
+          "path": "tests/governance/test_ceo_cognitive_os_runtime_hook.py",
+          "query": "validate_ceo_runtime_envelope",
+          "repo": "Y_star_gov",
+          "text": "    validate_ceo_runtime_envelope,"
+        },
+        {
+          "line": 169,
+          "path": "tests/governance/test_ceo_cognitive_os_runtime_hook.py",
+          "query": "validate_ceo_runtime_envelope",
+          "repo": "Y_star_gov",
+          "text": "    result = validate_ceo_runtime_envelope(_valid_envelope())"
+        },
+        {
+          "line": 184,
+          "path": "tests/governance/test_ceo_cognitive_os_runtime_hook.py",
+          "query": "validate_ceo_runtime_envelope",
+          "repo": "Y_star_gov",
+          "text": "    result = validate_ceo_runtime_envelope(_valid_envelope(pre_action_packet=packet))"
+        },
+        {
+          "line": 197,
+          "path": "tests/governance/test_ceo_cognitive_os_runtime_hook.py",
+          "query": "validate_ceo_runtime_envelope",
+          "repo": "Y_star_gov",
+          "text": "    result = validate_ceo_runtime_envelope(envelope)"
+        },
+        {
+          "line": 206,
+          "path": "tests/governance/test_ceo_cognitive_os_runtime_hook.py",
+          "query": "validate_ceo_runtime_envelope",
+          "repo": "Y_star_gov",
+          "text": "    result = validate_ceo_runtime_envelope(envelope)"
+        },
+        {
+          "line": 217,
+          "path": "tests/governance/test_ceo_cognitive_os_runtime_hook.py",
+          "query": "validate_ceo_runtime_envelope",
+          "repo": "Y_star_gov",
+          "text": "    result = validate_ceo_runtime_envelope(_valid_envelope(pre_action_packet=packet))"
+        },
+        {
+          "line": 228,
+          "path": "tests/governance/test_ceo_cognitive_os_runtime_hook.py",
+          "query": "validate_ceo_runtime_envelope",
+          "repo": "Y_star_gov",
+          "text": "    result = validate_ceo_runtime_envelope("
+        },
+        {
+          "line": 244,
+          "path": "tests/governance/test_ceo_cognitive_os_runtime_hook.py",
+          "query": "validate_ceo_runtime_envelope",
+          "repo": "Y_star_gov",
+          "text": "    missing = validate_ceo_runtime_envelope(_valid_envelope(action_phase=\"completed\"))"
+        },
+        {
+          "line": 248,
+          "path": "tests/governance/test_ceo_cognitive_os_runtime_hook.py",
+          "query": "validate_ceo_runtime_envelope",
+          "repo": "Y_star_gov",
+          "text": "    result = validate_ceo_runtime_envelope("
+        },
+        {
+          "line": 258,
+          "path": "tests/governance/test_ceo_cognitive_os_runtime_hook.py",
+          "query": "validate_ceo_runtime_envelope",
+          "repo": "Y_star_gov",
+          "text": "    result = validate_ceo_runtime_envelope(_valid_envelope())"
+        },
+        {
+          "line": 267,
+          "path": "tests/governance/test_ceo_cognitive_os_runtime_hook.py",
+          "query": "validate_ceo_runtime_envelope",
+          "repo": "Y_star_gov",
+          "text": "    result = validate_ceo_runtime_envelope(_valid_envelope(formal_CIEU_log_written=True))"
+        },
+        {
+          "line": 14,
+          "path": "tests/governance/test_ceo_cognitive_os_cieu_log.py",
+          "query": "validate_ceo_runtime_envelope",
+          "repo": "Y_star_gov",
+          "text": "    validate_ceo_runtime_envelope,"
+        },
+        {
+          "line": 164,
+          "path": "tests/governance/test_ceo_cognitive_os_cieu_log.py",
+          "query": "validate_ceo_runtime_envelope",
+          "repo": "Y_star_gov",
+          "text": "    runtime_result = validate_ceo_runtime_envelope(envelope)"
+        },
+        {
+          "line": 190,
+          "path": "tests/governance/test_ceo_cognitive_os_cieu_log.py",
+          "query": "validate_ceo_runtime_envelope",
+          "repo": "Y_star_gov",
+          "text": "    runtime_result = validate_ceo_runtime_envelope(envelope)"
+        },
+        {
+          "line": 211,
+          "path": "tests/governance/test_ceo_cognitive_os_cieu_log.py",
+          "query": "validate_ceo_runtime_envelope",
+          "repo": "Y_star_gov",
+          "text": "    runtime_result = validate_ceo_runtime_envelope(envelope)"
+        },
+        {
+          "line": 235,
+          "path": "tests/governance/test_ceo_cognitive_os_cieu_log.py",
+          "query": "validate_ceo_runtime_envelope",
+          "repo": "Y_star_gov",
+          "text": "    runtime_result = validate_ceo_runtime_envelope(envelope)"
+        },
+        {
+          "line": 17,
+          "path": "ystar/governance/ceo_cognitive_os_cieu_log.py",
+          "query": "validate_ceo_runtime_envelope",
+          "repo": "Y_star_gov",
+          "text": "    validate_ceo_runtime_envelope,"
+        },
+        {
+          "line": 165,
+          "path": "ystar/governance/ceo_cognitive_os_cieu_log.py",
+          "query": "validate_ceo_runtime_envelope",
+          "repo": "Y_star_gov",
+          "text": "    runtime_result = validate_ceo_runtime_envelope(envelope)"
+        },
+        {
+          "line": 135,
+          "path": "ystar/governance/__init__.py",
+          "query": "validate_ceo_runtime_envelope",
+          "repo": "Y_star_gov",
+          "text": "    validate_ceo_runtime_envelope,"
+        },
+        {
+          "line": 199,
+          "path": "ystar/governance/__init__.py",
+          "query": "validate_ceo_runtime_envelope",
+          "repo": "Y_star_gov",
+          "text": "    \"validate_ceo_runtime_envelope\","
+        },
+        {
+          "line": 205,
+          "path": "ystar/governance/ceo_cognitive_os_contract.py",
+          "query": "validate_ceo_pre_action_packet",
+          "repo": "Y_star_gov",
+          "text": "def validate_ceo_pre_action_packet("
+        },
+        {
+          "line": 544,
+          "path": "ystar/governance/ceo_cognitive_os_contract.py",
+          "query": "validate_ceo_pre_action_packet",
+          "repo": "Y_star_gov",
+          "text": "        \"rerun validate_ceo_pre_action_packet or validate_ceo_post_action_residual after repair\","
+        },
+        {
+          "line": 714,
+          "path": "ystar/governance/ceo_cognitive_os_contract.py",
+          "query": "validate_ceo_pre_action_packet",
+          "repo": "Y_star_gov",
+          "text": "    \"validate_ceo_pre_action_packet\","
+        },
+        {
+          "line": 24,
+          "path": "ystar/governance/ceo_cognitive_os_runtime_hook.py",
+          "query": "validate_ceo_pre_action_packet",
+          "repo": "Y_star_gov",
+          "text": "    validate_ceo_pre_action_packet,"
+        },
+        {
+          "line": 252,
+          "path": "ystar/governance/ceo_cognitive_os_runtime_hook.py",
+          "query": "validate_ceo_pre_action_packet",
+          "repo": "Y_star_gov",
+          "text": "    pre_decision = validate_ceo_pre_action_packet(packet)"
+        },
+        {
+          "line": 257,
+          "path": "ystar/governance/ceo_cognitive_os_runtime_hook.py",
+          "query": "validate_ceo_pre_action_packet",
+          "repo": "Y_star_gov",
+          "text": "        validator_name=\"validate_ceo_pre_action_packet\","
+        },
+        {
+          "line": 128,
+          "path": "ystar/governance/__init__.py",
+          "query": "validate_ceo_pre_action_packet",
+          "repo": "Y_star_gov",
+          "text": "    validate_ceo_pre_action_packet,"
+        },
+        {
+          "line": 196,
+          "path": "ystar/governance/__init__.py",
+          "query": "validate_ceo_pre_action_packet",
+          "repo": "Y_star_gov",
+          "text": "    \"validate_ceo_pre_action_packet\","
+        },
+        {
+          "line": 8,
+          "path": "tests/governance/test_ceo_cognitive_os_contract.py",
+          "query": "validate_ceo_pre_action_packet",
+          "repo": "Y_star_gov",
+          "text": "    validate_ceo_pre_action_packet,"
+        },
+        {
+          "line": 64,
+          "path": "tests/governance/test_ceo_cognitive_os_contract.py",
+          "query": "validate_ceo_pre_action_packet",
+          "repo": "Y_star_gov",
+          "text": "        \"required_YstarGov_check\": \"validate_ceo_pre_action_packet\","
+        },
+        {
+          "line": 114,
+          "path": "tests/governance/test_ceo_cognitive_os_contract.py",
+          "query": "validate_ceo_pre_action_packet",
+          "repo": "Y_star_gov",
+          "text": "    result = validate_ceo_pre_action_packet(packet)"
+        },
+        {
+          "line": 121,
+          "path": "tests/governance/test_ceo_cognitive_os_contract.py",
+          "query": "validate_ceo_pre_action_packet",
+          "repo": "Y_star_gov",
+          "text": "    result = validate_ceo_pre_action_packet(packet)"
+        },
+        {
+          "line": 131,
+          "path": "tests/governance/test_ceo_cognitive_os_contract.py",
+          "query": "validate_ceo_pre_action_packet",
+          "repo": "Y_star_gov",
+          "text": "    result = validate_ceo_pre_action_packet(valid_pre_action_packet())"
+        },
+        {
+          "line": 142,
+          "path": "tests/governance/test_ceo_cognitive_os_contract.py",
+          "query": "validate_ceo_pre_action_packet",
+          "repo": "Y_star_gov",
+          "text": "    result = validate_ceo_pre_action_packet(packet)"
+        },
+        {
+          "line": 161,
+          "path": "tests/governance/test_ceo_cognitive_os_contract.py",
+          "query": "validate_ceo_pre_action_packet",
+          "repo": "Y_star_gov",
+          "text": "    result = validate_ceo_pre_action_packet(packet)"
+        },
+        {
+          "line": 232,
+          "path": "tests/governance/test_ceo_cognitive_os_contract.py",
+          "query": "validate_ceo_pre_action_packet",
+          "repo": "Y_star_gov",
+          "text": "    result = validate_ceo_pre_action_packet(packet)"
+        },
+        {
+          "line": 247,
+          "path": "tests/governance/test_ceo_cognitive_os_contract.py",
+          "query": "validate_ceo_pre_action_packet",
+          "repo": "Y_star_gov",
+          "text": "    result = validate_ceo_pre_action_packet(packet)"
+        },
+        {
+          "line": 264,
+          "path": "tests/governance/test_ceo_cognitive_os_contract.py",
+          "query": "validate_ceo_pre_action_packet",
+          "repo": "Y_star_gov",
+          "text": "        result = validate_ceo_pre_action_packet(packet)"
+        },
+        {
+          "line": 321,
+          "path": "tests/governance/test_ceo_cognitive_os_contract.py",
+          "query": "validate_ceo_pre_action_packet",
+          "repo": "Y_star_gov",
+          "text": "    result = validate_ceo_pre_action_packet(valid_pre_action_packet())"
+        },
+        {
+          "line": 331,
+          "path": "tests/governance/test_ceo_cognitive_os_contract.py",
+          "query": "validate_ceo_pre_action_packet",
+          "repo": "Y_star_gov",
+          "text": "    result = validate_ceo_pre_action_packet(packet)"
+        },
+        {
+          "line": 347,
+          "path": "tests/governance/test_ceo_cognitive_os_contract.py",
+          "query": "validate_ceo_pre_action_packet",
+          "repo": "Y_star_gov",
+          "text": "    validate_ceo_pre_action_packet(packet)"
+        },
+        {
+          "line": 70,
+          "path": "tests/governance/test_ceo_cognitive_os_runtime_hook.py",
+          "query": "validate_ceo_pre_action_packet",
+          "repo": "Y_star_gov",
+          "text": "        \"required_YstarGov_check\": \"validate_ceo_pre_action_packet\","
+        },
+        {
+          "line": 173,
+          "path": "tests/governance/test_ceo_cognitive_os_runtime_hook.py",
+          "query": "validate_ceo_pre_action_packet",
+          "repo": "Y_star_gov",
+          "text": "    assert data[\"validator_result\"][\"validator\"] == \"validate_ceo_pre_action_packet\""
+        },
+        {
+          "line": 78,
+          "path": "tests/governance/test_ceo_cognitive_os_cieu_log.py",
+          "query": "validate_ceo_pre_action_packet",
+          "repo": "Y_star_gov",
+          "text": "        \"required_YstarGov_check\": \"validate_ceo_pre_action_packet\","
+        },
+        {
+          "line": 13,
+          "path": "reports/cto/CZL-GOV-MCP-ACTIVATE-PHASE1A-ruling.md",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "- **Xt**: gov-mcp repo has 174KB server.py with 38 registered tools (README); plugin.json declares 8 original tools; ystar kernel imports confirmed (`check`, `enforce`, `DelegationChain`, `OmissionEngine`, `CIEUStore`, `translate_to_contrac"
+        },
+        {
+          "line": 46,
+          "path": "reports/cto/CZL-GOV-MCP-ACTIVATE-PHASE1A-ruling.md",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "- **Kernel imports used**: `CIEUStore` from `ystar.governance.cieu_store` (lazy-loaded in `_State.__init__`)"
+        },
+        {
+          "line": 47,
+          "path": "reports/cto/CZL-GOV-MCP-ACTIVATE-PHASE1A-ruling.md",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "- **What it does**: Queries CIEU audit log for Contextual/Intervention/Execution/Update records. Uses persistent SQLite-backed CIEUStore at `.ystar_cieu.db`."
+        },
+        {
+          "line": 48,
+          "path": "reports/cto/CZL-GOV-MCP-ACTIVATE-PHASE1A-ruling.md",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "- **Gaps for live**: (1) If CIEUStore import fails at boot, falls back to in-memory only (loses cross-session history). gov_doctor already warns on this. (2) No query pagination for large audit logs — could OOM on busy deployments."
+        },
+        {
+          "line": 49,
+          "path": "reports/cto/CZL-GOV-MCP-ACTIVATE-PHASE1A-ruling.md",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "- **Evidence**: server.py lines 81-93 show CIEUStore init with fail-open fallback."
+        },
+        {
+          "line": 94,
+          "path": "reports/cto/CZL-GOV-MCP-ACTIVATE-PHASE1A-ruling.md",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "| 3 | gov_query_cieu | COMPLETE (caveat) | CIEUStore (lazy) | No pagination; in-memory fallback |"
+        },
+        {
+          "line": 127,
+          "path": "reports/cto/CZL-GOV-MCP-ACTIVATE-PHASE1A-ruling.md",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "4. **CIEU persistence** — CIEUStore fallback to in-memory on import failure"
+        },
+        {
+          "line": 172,
+          "path": "reports/cto/CZL-GOV-MCP-ACTIVATE-PHASE1A-ruling.md",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "- **Owner**: Leo (Kernel Engineer) — CIEUStore, ystar.governance module"
+        },
+        {
+          "line": 173,
+          "path": "reports/cto/CZL-GOV-MCP-ACTIVATE-PHASE1A-ruling.md",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "- **Action**: Ensure `ystar.governance.cieu_store.CIEUStore` import succeeds in gov-mcp's Python environment. Fix any `ModuleNotFoundError` (likely PYTHONPATH issue). Verify `.ystar_cieu.db` is created and writable."
+        },
+        {
+          "line": 223,
+          "path": "reports/cto/CZL-GOV-MCP-ACTIVATE-PHASE1A-ruling.md",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "4. **In-memory fallback silent** (P1): CIEUStore and OmissionStore both silently degrade to in-memory. gov_doctor catches CIEUStore but not OmissionStore. Phase 1b Step 5 must add omission health layer to gov_doctor."
+        },
+        {
+          "line": 58,
+          "path": "reports/cto/BOARD-FRAMING-BEHAVIOR-VS-SILENCE-COMPLIANCE-20260420.md",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "2. Wave 2 (today): 9 governance closure tasks (grant chain already LIVE ✓, pip install / active-agent auto-restore / Iron Rules round-trip / auto-commit impl / subscriber bridge / idle_pulse / wip_autocommit / NullCIEUStore / FG migration)"
+        },
+        {
+          "line": 230,
+          "path": "reports/cto/CZL-BRAIN-L3-GUARD-RAILS-ruling.md",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "from ystar.governance.cieu_store import CIEUStore"
+        },
+        {
+          "line": 664,
+          "path": "reports/cto/CZL-BRAIN-L3-GUARD-RAILS-ruling.md",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "    cieu_store: Optional[CIEUStore] = None,"
+        },
+        {
+          "line": 714,
+          "path": "reports/cto/CZL-BRAIN-L3-GUARD-RAILS-ruling.md",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "    store: Optional[CIEUStore],"
+        },
+        {
+          "line": 35,
+          "path": "reports/cto/CZL-V04-ARCHITECTURE-AUDIT-ruling.md",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "| **INV-8** | CIEU completeness: every tool-use event must land in audit log | cieu_store.py, PostToolUse hook | hook_wrapper PostToolUse -> CIEUStore.emit() |"
+        },
+        {
+          "line": 430,
+          "path": "reports/cto/CZL-V04-ARCHITECTURE-AUDIT-ruling.md",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "2. `ystar.governance.cieu_store.CIEUStore.emit()` -- audit event emission"
+        },
+        {
+          "line": 431,
+          "path": "reports/cto/CZL-V04-ARCHITECTURE-AUDIT-ruling.md",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "3. `ystar.governance.cieu_store.CIEUStore.query()` -- audit query"
+        },
+        {
+          "line": 59,
+          "path": "reports/cto/WAVE1-FINAL-STATUS-20260420.md",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "1. Spawn Ethan CTO → issue 4 grants (Ryan×2 for hook wire + pip install, Maya for Iron Rules round-trip, Leo for NullCIEUStore + bipartite loader)"
+        },
+        {
+          "line": 710,
+          "path": "examples/reproducible_code.md",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "        from ystar.governance.cieu_store import CIEUStore"
+        },
+        {
+          "line": 711,
+          "path": "examples/reproducible_code.md",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "        store = CIEUStore(cieu_db)"
+        },
+        {
+          "line": 814,
+          "path": "examples/reproducible_code.md",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "from ystar.governance.cieu_store import CIEUStore"
+        },
+        {
+          "line": 818,
+          "path": "examples/reproducible_code.md",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "store = CIEUStore(\".ystar_cieu.db\")"
+        },
+        {
+          "line": 20,
+          "path": "docs/FOUNDATION_API.md",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "| `CIEUStore` | `ystar.governance.cieu_store` | SQLite-backed CIEU persistent store |"
+        },
+        {
+          "line": 21,
+          "path": "docs/FOUNDATION_API.md",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "| `CIEUStore.write_dict()` | `ystar.governance.cieu_store` | Write a CIEU record |"
+        },
+        {
+          "line": 38,
+          "path": "run_full_simulation.py",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "# Suppress NullCIEUStore warnings during imports"
+        },
+        {
+          "line": 40,
+          "path": "run_full_simulation.py",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "warnings.filterwarnings(\"ignore\", message=\"NullCIEUStore\")"
+        },
+        {
+          "line": 44,
+          "path": "run_full_simulation.py",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "from ystar.governance.cieu_store import CIEUStore"
+        },
+        {
+          "line": 90,
+          "path": "run_full_simulation.py",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "def step_1_nl_to_contract(cieu: CIEUStore) -> IntentContract:"
+        },
+        {
+          "line": 139,
+          "path": "run_full_simulation.py",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "def step_2_check_enforcement(cieu: CIEUStore, contract: IntentContract) -> int:"
+        },
+        {
+          "line": 209,
+          "path": "run_full_simulation.py",
+          "query": "CIEUStore",
+          "repo": "Y_star_gov",
+          "text": "def step_3_omission_engine(cieu: CIEUStore) -> int:"
+        },
+        {
+          "line": 1,
+          "path": "reports/EXP-008_final.md",
+          "query": "PreToolUse",
+          "repo": "Y_star_gov",
+          "text": "# EXP-008 Final: Real Governance Experiment with Live PreToolUse Hook"
+        },
+        {
+          "line": 19,
+          "path": "reports/EXP-008_final.md",
+          "query": "PreToolUse",
+          "repo": "Y_star_gov",
+          "text": "**These bugs mean all prior experiments (EXP-005 through EXP-008 original) ran without a functioning hook.** This is the first experiment with real governance enforcement via Claude Code's PreToolUse hook."
+        },
+        {
+          "line": 25,
+          "path": "reports/EXP-008_final.md",
+          "query": "PreToolUse",
+          "repo": "Y_star_gov",
+          "text": "Every Bash tool call in this section fired Claude Code's PreToolUse hook, which:"
+        },
+        {
+          "line": 152,
+          "path": "reports/EXP-008_final.md",
+          "query": "PreToolUse",
+          "repo": "Y_star_gov",
+          "text": "1. **Y*gov's PreToolUse hook works in production.** After fixing three bugs, the hook fires on every Claude Code tool call, produces CIEU records, and enforces governance decisions."
+        }
+      ],
+      "exact_files": [
+        "ystar/governance/ceo_cognitive_os_contract.py",
+        "ystar/governance/ceo_cognitive_os_runtime_hook.py",
+        "ystar/governance/ceo_cognitive_os_cieu_log.py",
+        "ystar/governance/cieu_store.py",
+        "ystar/governance/pre_u_packet_validator.py",
+        "ystar/governance/cieu_prediction_delta.py",
+        "ystar/governance/contract_dry_run.py",
+        "ystar/adapters/cieu_writer.py"
+      ],
+      "exact_functions_or_classes": [
+        "build_ceo_cognitive_os_contract",
+        "validate_ceo_pre_action_packet",
+        "validate_ceo_post_action_residual",
+        "build_ceo_cognitive_os_cieu_record",
+        "_decision",
+        "_revision_decision",
+        "_revision_guidance",
+        "_owner_decision_guidance",
+        "_missing_loop_stages",
+        "_capability_evidence_violation",
+        "_runtime_claim_verified",
+        "_prediction_violation",
+        "_forbidden_claim_violation",
+        "_is_construction_action",
+        "_is_external_or_l4_execution",
+        "_non_duplication_proven",
+        "_explicit_duplicate_core_mechanism",
+        "_as_list",
+        "_present",
+        "CEOCognitiveOSDecisionValue",
+        "CEOCognitiveOSContract",
+        "CEOCognitiveOSDecision",
+        "classify_ceo_major_action",
+        "validate_ceo_runtime_envelope",
+        "_from_validator_decision",
+        "_runtime_result",
+        "_revision_runtime_result",
+        "_hard_boundary_violation",
+        "_evidence_basis_present",
+        "_proposes_forbidden_external_action",
+        "_claims_duplicate_core_mechanism",
+        "_is_post_action_phase",
+        "_action_id",
+        "_envelope_text",
+        "_action_request_text",
+        "_term_requested",
+        "_mapping_text",
+        "_present",
+        "CEOCognitiveOSRuntimeDecisionValue",
+        "CEOMajorActionClassification",
+        "CEOCognitiveOSRuntimeResult",
+        "build_ceo_cognitive_os_cieu_log_record",
+        "write_ceo_cognitive_os_cieu_log_record",
+        "validate_and_write_ceo_runtime_envelope",
+        "_runtime_result_to_dict",
+        "_violations_from_runtime_result",
+        "_compact_guidance",
+        "_compact_validator_result",
+        "_compact_hook_decision_envelope",
+        "_contract_hash_from_envelope",
+        "_first_present",
+        "get_store",
+        "CIEUQueryResult",
+        "CIEUStore",
+        "NullCIEUStore"
+      ],
+      "gaps": [
+        "Formal CIEUStore writes are explicit opt-in; no hidden runtime write by default.",
+        "Hook/check/enforce integration beyond CEO runtime wrapper still needs normal runtime-session wiring."
+      ],
+      "purpose": "Owns deterministic governance reflexes: CEO Cognitive OS contract, runtime hook, check/enforce patterns, CIEUStore persistence, pre-U validation, omission/delegation/governance loop.",
+      "status": "active_runtime",
+      "tests": [
+        "tests/governance/test_ceo_cognitive_os_contract.py",
+        "tests/governance/test_ceo_cognitive_os_runtime_hook.py",
+        "tests/governance/test_ceo_cognitive_os_cieu_log.py",
+        "tests/test_cieu_store.py"
+      ]
+    },
+    {
+      "canonical_owner_repo": "gov-mcp",
+      "domain_id": "gov_mcp_execution_boundary",
+      "evidence": [
+        {
+          "line": 58,
+          "path": "reports/stress_test_results.md",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "- CEO: 100 gov_checks (all should ALLOW)"
+        },
+        {
+          "line": 59,
+          "path": "reports/stress_test_results.md",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "- CTO: 100 gov_checks (50% ALLOW on ./src/, 50% DENY on /etc/)"
+        },
+        {
+          "line": 60,
+          "path": "reports/stress_test_results.md",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "- Engineer: 100 gov_checks (33% ALLOW ./src/core/, 33% DENY ./src/utils/, 33% DENY /etc/)"
+        },
+        {
+          "line": 90,
+          "path": "reports/stress_test_results.md",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "- gov_check is CPU-bound (pure Python dict/list operations)"
+        },
+        {
+          "line": 119,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "        self._gov_check_count = 0"
+        },
+        {
+          "line": 120,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "        self._gov_check_trigger_interval = 100  # tighten() every N checks"
+        },
+        {
+          "line": 274,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "        Triggers after every N gov_checks or every M seconds."
+        },
+        {
+          "line": 277,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "        self._gov_check_count += 1"
+        },
+        {
+          "line": 281,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "            self._gov_check_count % self._gov_check_trigger_interval == 0"
+        },
+        {
+          "line": 626,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "        \"gov_check_impact\","
+        },
+        {
+          "line": 763,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "    # Same fix as gov_check: disable only_paths for Bash commands"
+        },
+        {
+          "line": 863,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "    def gov_check(agent_id: str, tool_name: str, params: dict) -> str:"
+        },
+        {
+          "line": 867,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "        former gov_check + gov_exec two-step flow."
+        },
+        {
+          "line": 870,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "        router (ls, git status, cat, pwd, etc.), gov_check will:"
+        },
+        {
+          "line": 908,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "                        tool_name=\"gov_check\","
+        },
+        {
+          "line": 965,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "                tool_name=\"gov_check\","
+        },
+        {
+          "line": 972,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "        if state._gov_check_count % 50 == 0:"
+        },
+        {
+          "line": 1732,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "    # EXEC LAYER (deprecated — merged into gov_check)"
+        },
+        {
+          "line": 1737,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "        \"\"\"[DEPRECATED] Use gov_check instead."
+        },
+        {
+          "line": 1739,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "        gov_exec functionality has been merged into gov_check."
+        },
+        {
+          "line": 1740,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "        Deterministic commands are now auto-executed within gov_check."
+        },
+        {
+          "line": 1745,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "            \"message\": \"Use gov_check with tool_name='Bash' instead. \""
+        },
+        {
+          "line": 1746,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "                       \"gov_check now auto-executes deterministic commands.\","
+        },
+        {
+          "line": 1749,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "                \"new\": \"gov_check(agent_id='...', tool_name='Bash', \""
+        },
+        {
+          "line": 2780,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "            \"gov_check_count\": state._gov_check_count,"
+        },
+        {
+          "line": 2782,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "            \"tighten_interval\": f\"every {state._gov_check_trigger_interval} checks \""
+        },
+        {
+          "line": 3501,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "    def gov_check_impact("
+        },
+        {
+          "line": 7,
+          "path": "gov_mcp/plugin_tools.py",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "- gov_check (line 873)"
+        },
+        {
+          "line": 103,
+          "path": "gov_mcp/server.py.bak.1776016253",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "        self._gov_check_count = 0"
+        },
+        {
+          "line": 104,
+          "path": "gov_mcp/server.py.bak.1776016253",
+          "query": "gov_check",
+          "repo": "gov_mcp",
+          "text": "        self._gov_check_trigger_interval = 100  # tighten() every N checks"
+        },
+        {
+          "line": 978,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov_enforce",
+          "repo": "gov_mcp",
+          "text": "    def gov_enforce(agent_id: str, tool_name: str, params: dict) -> str:"
+        },
+        {
+          "line": 94,
+          "path": "gov_mcp/runtime_linkage_tools.py",
+          "query": "gov_enforce",
+          "repo": "gov_mcp",
+          "text": "    def gov_enforce_anti_drift_gate(payload: Any) -> str:"
+        },
+        {
+          "line": 97,
+          "path": "gov_mcp/runtime_linkage_tools.py",
+          "query": "gov_enforce",
+          "repo": "gov_mcp",
+          "text": "            return _envelope('gov_enforce_anti_drift_gate', {'allowed': False, 'failures': [{'reason': 'invalid_payload', 'details': data}], 'status': 'anti_drift_gate_failed_unknown'}, allowed=False)"
+        },
+        {
+          "line": 99,
+          "path": "gov_mcp/runtime_linkage_tools.py",
+          "query": "gov_enforce",
+          "repo": "gov_mcp",
+          "text": "        return _envelope('gov_enforce_anti_drift_gate', result, allowed=result.get('allowed') is True)"
+        },
+        {
+          "line": 111,
+          "path": "gov_mcp/runtime_linkage_tools.py",
+          "query": "gov_enforce",
+          "repo": "gov_mcp",
+          "text": "    def gov_enforce_capability_centerline_gate(payload: Any) -> str:"
+        },
+        {
+          "line": 114,
+          "path": "gov_mcp/runtime_linkage_tools.py",
+          "query": "gov_enforce",
+          "repo": "gov_mcp",
+          "text": "            return _envelope('gov_enforce_capability_centerline_gate', {'allowed': False, 'failures': [{'reason': 'invalid_payload', 'details': data}], 'status': 'capability_binding_gate_failed_unknown'}, allowed=False)"
+        },
+        {
+          "line": 116,
+          "path": "gov_mcp/runtime_linkage_tools.py",
+          "query": "gov_enforce",
+          "repo": "gov_mcp",
+          "text": "        return _envelope('gov_enforce_capability_centerline_gate', result, allowed=result.get('allowed') is True)"
+        },
+        {
+          "line": 962,
+          "path": "gov_mcp/server.py.bak.1776016253",
+          "query": "gov_enforce",
+          "repo": "gov_mcp",
+          "text": "    def gov_enforce(agent_id: str, tool_name: str, params: dict) -> str:"
+        },
+        {
+          "line": 990,
+          "path": "gov_mcp/server.py",
+          "query": "gov_enforce",
+          "repo": "gov_mcp",
+          "text": "    def gov_enforce(agent_id: str, tool_name: str, params: dict) -> str:"
+        },
+        {
+          "line": 178,
+          "path": "README.md",
+          "query": "gov_enforce",
+          "repo": "gov_mcp",
+          "text": "| `gov_enforce` | Full pipeline: check + obligation scan + delegation verify. |"
+        },
+        {
+          "line": 257,
+          "path": "docs/PROTOCOL.md",
+          "query": "gov_enforce",
+          "repo": "gov_mcp",
+          "text": "| `gov_enforce` | Full enforcement pipeline: check + obligation scan + delegation verify. | `agent_id*` (str), `tool_name*` (str), `params*` (dict) |"
+        },
+        {
+          "line": 332,
+          "path": "docs/PROTOCOL.md",
+          "query": "gov_enforce",
+          "repo": "gov_mcp",
+          "text": "Every `gov_check` and `gov_enforce` response includes a `governance` field"
+        },
+        {
+          "line": 191,
+          "path": "docs/QUICKSTART_PYTHON.md",
+          "query": "gov_enforce",
+          "repo": "gov_mcp",
+          "text": "  - gov_enforce: Full enforcement pipeline: check + obligation scan + ..."
+        },
+        {
+          "line": 10,
+          "path": "docs/runtime_linkage_tools.md",
+          "query": "gov_enforce",
+          "repo": "gov_mcp",
+          "text": "- `gov_enforce_anti_drift_gate(payload)` evaluates the full anti-drift gate and returns ALLOW or DENY."
+        },
+        {
+          "line": 19,
+          "path": "docs/runtime_linkage_tools.md",
+          "query": "gov_enforce",
+          "repo": "gov_mcp",
+          "text": "- `gov_enforce_capability_centerline_gate`: enforces the capability-centerline binding gate for a manifest."
+        },
+        {
+          "line": 121,
+          "path": "gov_mcp.egg-info/PKG-INFO",
+          "query": "gov_enforce",
+          "repo": "gov_mcp",
+          "text": "| `gov_enforce` | Full pipeline: check + obligation scan + delegation verify. |"
+        },
+        {
+          "line": 12,
+          "path": "reports/e16g_outbound_adapter_delivery.md",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "- forced_add_allowlisted_tests: tests/test_outbound_models.py, tests/test_outbound_policy.py, tests/test_outbound_safety_guards.py, tests/test_outbound_adapter_contract.py, tests/test_outbound_dry_run_adapter.py, tests/test_outbound_receipt"
+        },
+        {
+          "line": 29,
+          "path": "gov_mcp/outbound/live_test_gate.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "    dry_run_receipt_history_present: bool,"
+        },
+        {
+          "line": 50,
+          "path": "gov_mcp/outbound/live_test_gate.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "    if not dry_run_receipt_history_present:"
+        },
+        {
+          "line": 51,
+          "path": "gov_mcp/outbound/live_test_gate.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "        live_test_blockers.append(\"dry_run_receipt_history_required\")"
+        },
+        {
+          "line": 79,
+          "path": "gov_mcp/outbound/live_test_gate.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "        \"dry_run_ready\": True,"
+        },
+        {
+          "line": 17,
+          "path": "gov_mcp/outbound/canary_prerequisites.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "    dry_run_history_present: bool,"
+        },
+        {
+          "line": 36,
+          "path": "gov_mcp/outbound/canary_prerequisites.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "        \"dry_run_history_present\": dry_run_history_present,"
+        },
+        {
+          "line": 19,
+          "path": "gov_mcp/outbound/live_readiness.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "    dry_run_receipt_history_present: bool,"
+        },
+        {
+          "line": 37,
+          "path": "gov_mcp/outbound/live_readiness.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "    if not dry_run_receipt_history_present:"
+        },
+        {
+          "line": 38,
+          "path": "gov_mcp/outbound/live_readiness.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "        blockers.append(\"dry_run_receipt_history_required\")"
+        },
+        {
+          "line": 14,
+          "path": "gov_mcp/outbound/provider_adapter.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "from gov_mcp.outbound.dry_run_adapter import dry_run_outbound_action"
+        },
+        {
+          "line": 26,
+          "path": "gov_mcp/outbound/provider_adapter.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "    dry_run_receipt: Dict[str, Any] = field(default_factory=dict)"
+        },
+        {
+          "line": 73,
+          "path": "gov_mcp/outbound/provider_adapter.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "        dry_run_receipt=dict(data.get(\"dry_run_receipt\", {})),"
+        },
+        {
+          "line": 88,
+          "path": "gov_mcp/outbound/provider_adapter.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "        receipt = dry_run_outbound_action(req.action_intent)"
+        },
+        {
+          "line": 90,
+          "path": "gov_mcp/outbound/provider_adapter.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "            result_id=provider_result_id(req.action_intent.action_id, \"dry_run_completed\"),"
+        },
+        {
+          "line": 93,
+          "path": "gov_mcp/outbound/provider_adapter.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "            execution_status=\"dry_run_completed\" if receipt.get(\"execution_mode\") != \"deny\" else \"dry_run_denied\","
+        },
+        {
+          "line": 94,
+          "path": "gov_mcp/outbound/provider_adapter.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "            receipt_type=\"dry_run_receipt\","
+        },
+        {
+          "line": 137,
+          "path": "gov_mcp/outbound/provider_adapter.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "    if result.get(\"receipt_type\") == \"dry_run_receipt\" and result.get(\"live_receipt_created\") is True:"
+        },
+        {
+          "line": 138,
+          "path": "gov_mcp/outbound/provider_adapter.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "        errors.append(\"dry_run_receipt_cannot_be_live_receipt\")"
+        },
+        {
+          "line": 13,
+          "path": "gov_mcp/outbound/provider_promotion.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "def dry_run_receipt_passed(receipt: Mapping[str, Any]) -> bool:"
+        },
+        {
+          "line": 16,
+          "path": "gov_mcp/outbound/provider_promotion.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "        and receipt.get(\"receipt_type\", \"dry_run_receipt\") == \"dry_run_receipt\""
+        },
+        {
+          "line": 19,
+          "path": "gov_mcp/outbound/provider_promotion.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "        and receipt.get(\"execution_status\", \"dry_run_completed\") in {\"dry_run_completed\", \"dry_run_ready\", \"send_gated_dry_run\"}"
+        },
+        {
+          "line": 25,
+          "path": "gov_mcp/outbound/provider_promotion.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "    if receipt.get(\"receipt_type\") == \"dry_run_receipt\" and receipt.get(\"live_receipt_created\") is True:"
+        },
+        {
+          "line": 26,
+          "path": "gov_mcp/outbound/provider_promotion.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "        errors.append(\"dry_run_receipt_cannot_be_live_receipt\")"
+        },
+        {
+          "line": 34,
+          "path": "gov_mcp/outbound/provider_promotion.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "def evaluate_dry_run_to_live_promotion("
+        },
+        {
+          "line": 46,
+          "path": "gov_mcp/outbound/provider_promotion.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "    if not dry_run_receipt_passed(req.dry_run_receipt):"
+        },
+        {
+          "line": 47,
+          "path": "gov_mcp/outbound/provider_promotion.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "        reason_codes.append(\"dry_run_pass_required\")"
+        },
+        {
+          "line": 54,
+          "path": "gov_mcp/outbound/provider_promotion.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "    reason_codes.extend(validate_receipt_separation(req.dry_run_receipt))"
+        },
+        {
+          "line": 58,
+          "path": "gov_mcp/outbound/provider_promotion.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "        \"artifact_id\": \"gov_mcp_dry_run_to_live_promotion_contract_result\","
+        },
+        {
+          "line": 62,
+          "path": "gov_mcp/outbound/provider_promotion.py",
+          "query": "dry_run",
+          "repo": "gov_mcp",
+          "text": "        \"dry_run_passed\": dry_run_receipt_passed(req.dry_run_receipt),"
+        },
+        {
+          "line": 9,
+          "path": "gov_mcp/outbound/provider_promotion.py",
+          "query": "provider_guard_stack",
+          "repo": "gov_mcp",
+          "text": "from gov_mcp.outbound.provider_guard_stack import evaluate_provider_guard_stack, owner_required_by_risk_tier"
+        },
+        {
+          "line": 41,
+          "path": "gov_mcp/outbound/provider_promotion.py",
+          "query": "provider_guard_stack",
+          "repo": "gov_mcp",
+          "text": "    guard_result = evaluate_provider_guard_stack(req, provider_manifest, guard_context)"
+        },
+        {
+          "line": 51,
+          "path": "gov_mcp/outbound/provider_promotion.py",
+          "query": "provider_guard_stack",
+          "repo": "gov_mcp",
+          "text": "        reason_codes.append(\"provider_guard_stack_not_passed\")"
+        },
+        {
+          "line": 8,
+          "path": "gov_mcp/outbound/sandbox_promotion.py",
+          "query": "provider_guard_stack",
+          "repo": "gov_mcp",
+          "text": "from gov_mcp.outbound.provider_guard_stack import owner_required_by_risk_tier"
+        }
+      ],
+      "exact_files": [
+        "gov_mcp/server.py",
+        "gov_mcp/company_runtime_tools.py",
+        "gov_mcp/outbound/policy.py",
+        "gov_mcp/outbound/dry_run_adapter.py",
+        "gov_mcp/outbound/provider_guard_stack.py",
+        "gov_mcp/models.py"
+      ],
+      "exact_functions_or_classes": [
+        "_load_exec_whitelist",
+        "_dict_to_contract",
+        "_get_contract_for_agent",
+        "_violations_to_list",
+        "_suggest_fix",
+        "_normalize_path",
+        "_path_is_under",
+        "_path_matches_deny",
+        "_normalize_amount",
+        "_normalize_params_for_value_range",
+        "_compute_event_hash",
+        "_classify_cieu_level",
+        "_governance_envelope",
+        "_detect_host",
+        "_is_deterministic",
+        "_try_auto_execute",
+        "create_server",
+        "_State",
+        "_now",
+        "_unavailable",
+        "_normal_action_dict",
+        "gov_company_action_preflight",
+        "gov_company_mission_check",
+        "gov_company_escalation_check",
+        "gov_company_record_owner_decision",
+        "gov_company_admin_rule_check",
+        "gov_company_value_alignment_check",
+        "gov_company_mission_action_preflight",
+        "register_company_runtime_tools",
+        "dry_run_outbound_action",
+        "owner_required_by_risk_tier",
+        "evaluate_provider_guard_stack"
+      ],
+      "gaps": [
+        "No live provider execution should be claimed from current evidence.",
+        "Owner-activated live-ready preflight and provider promotion remain future work."
+      ],
+      "purpose": "Owns MCP/provider/tool execution boundary, gov_check/gov_enforce tools, dry-run outbound adapter, guard stack, and no-send receipts.",
+      "status": "active_dry_run",
+      "tests": [
+        "tests/test_company_runtime_tools.py",
+        "tests/test_outbound_dry_run_adapter.py",
+        "tests/test_provider_guard_stack.py"
+      ]
+    },
+    {
+      "canonical_owner_repo": "shared_with_clear_owners",
+      "domain_id": "cross_repo_runtime_chain",
+      "evidence": [
+        {
+          "line": 4,
+          "path": "reports/system_audit_3repos_v2_20260414.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "**Scope**: ystar-company / Y-star-gov / gov-mcp"
+        },
+        {
+          "line": 17,
+          "path": "reports/system_audit_3repos_v2_20260414.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "### A1. ystar-company 含 ystar/ 子目录是 Y-star-gov 源码 vendored copy"
+        },
+        {
+          "line": 18,
+          "path": "reports/system_audit_3repos_v2_20260414.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "- `ystar-company/ystar/adapters/hook.py` 与 `Y-star-gov/ystar/adapters/hook.py` byte-identical"
+        },
+        {
+          "line": 11,
+          "path": "reports/cto-board-directive-008-skill-verification.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "The Y*gov skill package at `C:\\Users\\liuha\\OneDrive\\桌面\\Y-star-gov\\skill\\` has been verified and is ready for Claude Code installation. One critical bug was found and fixed (missing `name` field in ystar-govern skill). One cross-platform com"
+        },
+        {
+          "line": 44,
+          "path": "reports/cto-board-directive-008-skill-verification.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "- Repository: https://github.com/liuhaotian2024-prog/Y-star-gov"
+        },
+        {
+          "line": 50,
+          "path": "reports/cto-board-directive-008-skill-verification.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "- Repository: `liuhaotian2024-prog/Y-star-gov`"
+        },
+        {
+          "line": 109,
+          "path": "reports/cto-board-directive-008-skill-verification.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "python /c/Users/liuha/OneDrive/桌面/Y-star-gov/skill/skills/ystar-govern/check.py \\"
+        },
+        {
+          "line": 147,
+          "path": "reports/cto-board-directive-008-skill-verification.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "/plugin marketplace add liuhaotian2024-prog/Y-star-gov/skill"
+        },
+        {
+          "line": 200,
+          "path": "reports/cto-board-directive-008-skill-verification.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "- `/c/Users/liuha/OneDrive/桌面/Y-star-gov/skill/skills/ystar-govern/SKILL.md`"
+        },
+        {
+          "line": 268,
+          "path": "reports/cto-board-directive-008-skill-verification.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "**File:** `/c/Users/liuha/OneDrive/桌面/Y-star-gov/skill/skills/ystar-govern/SKILL.md`"
+        },
+        {
+          "line": 284,
+          "path": "reports/cto-board-directive-008-skill-verification.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "**Y*gov Tests:** Not run (86 tests in main Y-star-gov repo)"
+        },
+        {
+          "line": 305,
+          "path": "reports/cto-board-directive-008-skill-verification.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "1. Commit the SKILL.md fix to Y-star-gov repo"
+        },
+        {
+          "line": 322,
+          "path": "reports/cto-board-directive-008-skill-verification.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "/plugin marketplace add liuhaotian2024-prog/Y-star-gov/skill"
+        },
+        {
+          "line": 5,
+          "path": "reports/cli_test_coverage_2026-04-03.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "**测试目录:** `C:/Users/liuha/OneDrive/桌面/Y-star-gov/tests/`  "
+        },
+        {
+          "line": 78,
+          "path": "reports/CLI_TEST_COVERAGE_README.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "**注意:** 这是样例代码，不能直接运行。需要放入Y-star-gov/tests/目录并调整导入路径。"
+        },
+        {
+          "line": 181,
+          "path": "reports/CLI_TEST_COVERAGE_README.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "- **位置:** `C:/Users/liuha/OneDrive/桌面/Y-star-gov/`"
+        },
+        {
+          "line": 212,
+          "path": "DISPATCH.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "**文件:** `/Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/adapters/boundary_enforcer.py`"
+        },
+        {
+          "line": 13,
+          "path": "reports/external_signals_2026-04-16.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "### liuhaotian2024-prog/Y-star-gov"
+        },
+        {
+          "line": 301,
+          "path": "reports/proposals/rfc_delegation_chain_tree.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "Y-star-gov产品代码里硬编码，必须作为"
+        },
+        {
+          "line": 8,
+          "path": "docs/mac-cto-quick-reference.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "python C:/Users/liuha/OneDrive/桌面/ystar-company/scripts/telegram_bridge.py \"cd ~/workspace/Y-star-gov && tmux new -d -s cto 'claude --agent cto'\""
+        },
+        {
+          "line": 11,
+          "path": "docs/mac-cto-quick-reference.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "ssh liuha@haotians-mac-mini.local \"cd ~/workspace/Y-star-gov && tmux new -d -s cto 'claude --agent cto'\""
+        },
+        {
+          "line": 27,
+          "path": "docs/mac-cto-quick-reference.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "python telegram_bridge.py \"cd ~/workspace/Y-star-gov && git pull && cd ~/workspace/ystar-bridge-labs && git pull\""
+        },
+        {
+          "line": 32,
+          "path": "docs/mac-cto-quick-reference.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "python telegram_bridge.py \"cd ~/workspace/Y-star-gov && python -m pytest --tb=short -q\""
+        },
+        {
+          "line": 37,
+          "path": "docs/mac-cto-quick-reference.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "python telegram_bridge.py \"cd ~/workspace/Y-star-gov && python -m pytest --collect-only -q | grep 'test session starts'\""
+        },
+        {
+          "line": 42,
+          "path": "docs/mac-cto-quick-reference.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "python telegram_bridge.py \"cd ~/workspace/Y-star-gov && ystar doctor\""
+        },
+        {
+          "line": 47,
+          "path": "docs/mac-cto-quick-reference.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "python telegram_bridge.py \"cd ~/workspace/Y-star-gov && git log --oneline -10\""
+        },
+        {
+          "line": 76,
+          "path": "docs/mac-cto-quick-reference.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "1. CTO commits to Y-star-gov and writes report to ystar-bridge-labs"
+        },
+        {
+          "line": 79,
+          "path": "docs/mac-cto-quick-reference.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "cd C:/Users/liuha/OneDrive/桌面/Y-star-gov"
+        },
+        {
+          "line": 88,
+          "path": "docs/mac-cto-quick-reference.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "python telegram_bridge.py \"cd ~/workspace/Y-star-gov && git pull && pip3 install -e .\""
+        },
+        {
+          "line": 93,
+          "path": "docs/mac-cto-quick-reference.md",
+          "query": "Y-star-gov",
+          "repo": "bridge_labs",
+          "text": "python telegram_bridge.py \"cd ~/workspace/Y-star-gov && python -m build && ls -lh dist/\""
+        },
+        {
+          "line": 4,
+          "path": "reports/system_audit_3repos_v2_20260414.md",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "**Scope**: ystar-company / Y-star-gov / gov-mcp"
+        },
+        {
+          "line": 26,
+          "path": "reports/system_audit_3repos_v2_20260414.md",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "| Dimension | company | Y-gov | gov-mcp | Notes |"
+        },
+        {
+          "line": 86,
+          "path": "reports/system_audit_3repos_v2_20260414.md",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "- gov-mcp router.py + 4 处 + ystar 4 处"
+        },
+        {
+          "line": 98,
+          "path": "reports/system_audit_3repos_v2_20260414.md",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "### R27. 4 处 subprocess shell=True in ystar-company core (非 gov-mcp)"
+        },
+        {
+          "line": 100,
+          "path": "reports/system_audit_3repos_v2_20260414.md",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "### R28. **gov-mcp scripts/ 整个目录 untracked**"
+        },
+        {
+          "line": 102,
+          "path": "reports/system_audit_3repos_v2_20260414.md",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "### R29. **gov-mcp pyproject.toml M (uncommitted)**"
+        },
+        {
+          "line": 119,
+          "path": "reports/MEMORY_AND_DEGRADATION_STRATEGY.md",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "- 6个gov-mcp工具：`gov_remember`, `gov_recall`, `gov_forget`, `gov_memory_summary`, `gov_memory_decay`, `gov_memory_reinforce`"
+        },
+        {
+          "line": 207,
+          "path": "reports/MEMORY_AND_DEGRADATION_STRATEGY.md",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "| YML Phase 1-2（Core + gov-mcp工具） | eng-kernel | 无 | 3天 |"
+        },
+        {
+          "line": 22,
+          "path": "reports/proposals/charter_amendment_016_rule_mirror_sync.md",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "| `gov-mcp` contract registry | Y*gov contract JSON | `{deny: [\"/etc\", \"/root\"]}` | `ystar init` + manual edits | GOV MCP server | **None** |"
+        },
+        {
+          "line": 189,
+          "path": "reports/proposals/charter_amendment_016_rule_mirror_sync.md",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "pkill -f gov-mcp"
+        },
+        {
+          "line": 1,
+          "path": "reports/proposals/sofia_whitepaper_v1_brief.md",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "# 派活: Sofia — gov-mcp 产品白皮书 v1"
+        },
+        {
+          "line": 11,
+          "path": "reports/proposals/sofia_whitepaper_v1_brief.md",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "把\"gov-mcp 7大解法\"+\"外部可验证市场痛点\"整合进**产品白皮书 v1**。"
+        },
+        {
+          "line": 13,
+          "path": "reports/proposals/sofia_whitepaper_v1_brief.md",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "## 输入A：gov-mcp 7问7解矩阵"
+        },
+        {
+          "line": 15,
+          "path": "reports/proposals/sofia_whitepaper_v1_brief.md",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "| # | 问题 | gov-mcp解法 |"
+        },
+        {
+          "line": 27,
+          "path": "reports/proposals/sofia_whitepaper_v1_brief.md",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "| gov-mcp解 | 外部验证 |"
+        },
+        {
+          "line": 56,
+          "path": "reports/proposals/sofia_whitepaper_v1_brief.md",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "4. gov-mcp Architecture（双层enforcement + Iron Rules）"
+        },
+        {
+          "line": 59,
+          "path": "reports/proposals/sofia_whitepaper_v1_brief.md",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "7. **EU AI Act Compliance Map**（Article 12逐条对应gov-mcp能力）"
+        },
+        {
+          "line": 28,
+          "path": "reports/proposals/team_governance_relationship_integration_l2.md",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "  - 谁可调用哪些 gov-mcp 工具（59个）"
+        },
+        {
+          "line": 18,
+          "path": "docs/gov_mcp_setup.md",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "    \"gov-mcp\": {"
+        },
+        {
+          "line": 35,
+          "path": "docs/gov_mcp_setup.md",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "    \"gov-mcp\": {"
+        },
+        {
+          "line": 2,
+          "path": "reports/restart_gov_mcp.sh",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "# Restart gov-mcp SSE server."
+        },
+        {
+          "line": 12,
+          "path": "reports/restart_gov_mcp.sh",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "GOV_MCP_DIR=\"/Users/haotianliu/.openclaw/workspace/gov-mcp\""
+        },
+        {
+          "line": 22,
+          "path": "reports/restart_gov_mcp.sh",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "    echo \"Killing existing gov-mcp PIDs: $PIDS\""
+        },
+        {
+          "line": 32,
+          "path": "reports/restart_gov_mcp.sh",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "    echo \"No existing gov-mcp process.\""
+        },
+        {
+          "line": 52,
+          "path": "reports/restart_gov_mcp.sh",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "echo \"Launched gov-mcp pid=$NEW_PID (log: $LOG)\""
+        },
+        {
+          "line": 65,
+          "path": "reports/restart_gov_mcp.sh",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "    echo \"OK: gov-mcp pid=$NEW_PID alive on :$PORT\""
+        },
+        {
+          "line": 67,
+          "path": "reports/restart_gov_mcp.sh",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "    echo \"FAIL: gov-mcp process died. Check $LOG\""
+        },
+        {
+          "line": 74,
+          "path": "reports/restart_gov_mcp.sh",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "echo \"In Claude Code, call: mcp__gov-mcp__gov_doctor\""
+        },
+        {
+          "line": 197,
+          "path": "reports/proposals/charter_amendment_024_universal_role_os_framework.md",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "| **Phase 4**: MCP Server Integration | 72 hours | Platform Engineer (Ryan) | ForgetGuard rules loaded into gov-mcp checks |"
+        },
+        {
+          "line": 27,
+          "path": "reports/fix_hook_immutable_enforcement_v2.sh",
+          "query": "gov-mcp",
+          "repo": "bridge_labs",
+          "text": "#   3. Restart gov-mcp (separate script) for CIEU persistence patch."
+        },
+        {
+          "line": 9,
+          "path": "OKR.md",
+          "query": "K9Audit",
+          "repo": "bridge_labs",
+          "text": "| KR1 | 200 GitHub stars | 2 (Y*gov) + 5 (K9Audit) = 7 total | CSO + CMO | In progress |"
+        },
+        {
+          "line": 31,
+          "path": "OKR.md",
+          "query": "K9Audit",
+          "repo": "bridge_labs",
+          "text": "| GitHub stars | 2 (Y*gov) + 5 (K9Audit) |"
+        },
+        {
+          "line": 47,
+          "path": "OKR.md",
+          "query": "K9Audit",
+          "repo": "bridge_labs",
+          "text": "| K9Audit GitHub stars | 5 | — |"
+        },
+        {
+          "line": 48,
+          "path": "OKR.md",
+          "query": "K9Audit",
+          "repo": "bridge_labs",
+          "text": "| K9Audit forks | 1 | — |"
+        },
+        {
+          "line": 359,
+          "path": "governance/czl_unified_communication_protocol_v1.md",
+          "query": "K9Audit",
+          "repo": "bridge_labs",
+          "text": "| **W5.1** | K9 RT Fuse | eng-kernel | `ystar/kernel/rt_measurement.py` exists, 6/6 tests pass, no violations | No RT emit module in kernel | 1. Read K9Audit causal_analyzer.py<br>2. Write rt_measurement.py<br>3. Write test_rt_measurement.p"
+        },
+        {
+          "line": 361,
+          "path": "governance/czl_unified_communication_protocol_v1.md",
+          "query": "K9Audit",
+          "repo": "bridge_labs",
+          "text": "| **W8** | 3D Audit Role Tags | eng-kernel | All `emit_cieu()` calls include `role_tags` param, K9 causal analyzer can parse 3D roles | Current emit_cieu() has no role_tags field | 1. Read K9Audit auditor.py<br>2. Update emit_cieu() signatu"
+        },
+        {
+          "line": 364,
+          "path": "governance/czl_unified_communication_protocol_v1.md",
+          "query": "K9Audit",
+          "repo": "bridge_labs",
+          "text": "| **W12** | K9 Causal Chain Linker | eng-kernel | `ystar/kernel/causal_chain.py` exists, links RT_MEASUREMENT to prior CIEU events via task_id, tests pass | No causal linking in kernel, K9Audit has causal_analyzer.py (read-only reference) |"
+        },
+        {
+          "line": 412,
+          "path": "governance/czl_unified_communication_protocol_v1.md",
+          "query": "K9Audit",
+          "repo": "bridge_labs",
+          "text": "- K9Audit `k9log/causal_analyzer.py` — Causal chain analysis (read-only, AGPL license boundary)"
+        },
+        {
+          "line": 413,
+          "path": "governance/czl_unified_communication_protocol_v1.md",
+          "query": "K9Audit",
+          "repo": "bridge_labs",
+          "text": "- K9Audit `k9log/auditor.py` — Static analysis patterns (read-only)"
+        },
+        {
+          "line": 1,
+          "path": "docs/cmo_blog_why_ai_auditor_shouldnt_be_ai.md",
+          "query": "K9Audit",
+          "repo": "bridge_labs",
+          "text": "<!-- Completed: 2026-04-11 | Author: Sofia Blake (CMO) | Source: K9Audit Content Ideas Blog #1 -->"
+        },
+        {
+          "line": 34,
+          "path": "docs/cmo_blog_why_ai_auditor_shouldnt_be_ai.md",
+          "query": "K9Audit",
+          "repo": "bridge_labs",
+          "text": "Y* Bridge Labs' earlier audit tool, K9Audit, caught this not by *reading* the log and *interpreting* it, but by comparing the **declared intent** against the **actual outcome** using deterministic rules."
+        },
+        {
+          "line": 87,
+          "path": "docs/cmo_blog_why_ai_auditor_shouldnt_be_ai.md",
+          "query": "K9Audit",
+          "repo": "bridge_labs",
+          "text": "*This post draws on real incidents from Y* Bridge Labs' earlier audit tool, K9Audit (AGPL-3.0). Y*gov and Y*Defuse are MIT-licensed.*"
+        },
+        {
+          "line": 110,
+          "path": "governance/skill_trust_hybrid_v1.md",
+          "query": "K9Audit",
+          "repo": "bridge_labs",
+          "text": "- Security audit: secret detection (K9Audit Auditor integration), dependency CVE scan"
+        },
+        {
+          "line": 26,
+          "path": "docs/cso_enterprise_phase1_update_0411.md",
+          "query": "K9Audit",
+          "repo": "bridge_labs",
+          "text": "- **tkersey (Artium)**: 状态=已识别，等待Board批准outreach。775 GitHub followers，consulting firm，Star了K9Audit。高价值force multiplier。"
+        },
+        {
+          "line": 299,
+          "path": "docs/mac-cto-workstation-setup.md",
+          "query": "K9Audit",
+          "repo": "bridge_labs",
+          "text": "- K9Audit: Read-only reference for patterns"
+        },
+        {
+          "line": 160,
+          "path": "README.md",
+          "query": "K9Audit",
+          "repo": "bridge_labs",
+          "text": "| [`K9Audit`](https://github.com/liuhaotian2024-prog/K9Audit) | Engineering-grade causal audit for AI agent ecosystems. K9log decorator, CIEU recording engine, OpenClaw + LangChain adapters. |"
+        },
+        {
+          "line": 93,
+          "path": "reports/proposals/path_b_technical_design.md",
+          "query": "K9Audit",
+          "repo": "bridge_labs",
+          "text": "│ │ - observe_external_agent() → CausalChainAnalyzer (from K9Audit)│ │"
+        },
+        {
+          "line": 115,
+          "path": "reports/proposals/path_b_technical_design.md",
+          "query": "K9Audit",
+          "repo": "bridge_labs",
+          "text": "**Integration with K9Audit:**"
+        },
+        {
+          "line": 117,
+          "path": "reports/proposals/path_b_technical_design.md",
+          "query": "K9Audit",
+          "repo": "bridge_labs",
+          "text": "K9Audit CausalChainAnalyzer → Path B ExternalGovernanceLoop → ExternalContract"
+        },
+        {
+          "line": 137,
+          "path": "reports/proposals/path_b_technical_design.md",
+          "query": "K9Audit",
+          "repo": "bridge_labs",
+          "text": "**Recommended: Hook Proxy + K9Audit CausalChainAnalyzer**"
+        },
+        {
+          "line": 115,
+          "path": "reports/tech_debt_new_executive_summary.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "   cd Y-star-gov"
+        },
+        {
+          "line": 156,
+          "path": "reports/EXP-005_execution_separation.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "cd /path/to/Y-star-gov"
+        },
+        {
+          "line": 5,
+          "path": "reports/tech_debt_execution_summary.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "**Working Directory:** C:\\Users\\liuha\\OneDrive\\桌面\\Y-star-gov"
+        },
+        {
+          "line": 429,
+          "path": "reports/tech_debt_execution_summary.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "**Repository:** C:\\Users\\liuha\\OneDrive\\桌面\\Y-star-gov  "
+        },
+        {
+          "line": 25,
+          "path": "reports/CZL-BRAIN-BIPARTITE-P1.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "| `Y-star-gov/ystar/governance/cieu_decision_normalizer.py` | NEW | 105 |"
+        },
+        {
+          "line": 26,
+          "path": "reports/CZL-BRAIN-BIPARTITE-P1.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "| `Y-star-gov/ystar/governance/tests/__init__.py` | NEW | 0 |"
+        },
+        {
+          "line": 27,
+          "path": "reports/CZL-BRAIN-BIPARTITE-P1.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "| `Y-star-gov/ystar/governance/tests/test_cieu_decision_normalizer.py` | NEW | 170 |"
+        },
+        {
+          "line": 28,
+          "path": "reports/CZL-BRAIN-BIPARTITE-P1.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "| `Y-star-gov/ystar/governance/migrations/__init__.py` | NEW | 0 |"
+        },
+        {
+          "line": 29,
+          "path": "reports/CZL-BRAIN-BIPARTITE-P1.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "| `Y-star-gov/ystar/governance/migrations/001_add_decision_canonical.py` | NEW | 215 |"
+        },
+        {
+          "line": 30,
+          "path": "reports/CZL-BRAIN-BIPARTITE-P1.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "| `Y-star-gov/ystar/governance/cieu_store.py` | EDIT | +20 (import + INSERT columns) |"
+        },
+        {
+          "line": 5,
+          "path": "reports/EXP-008_final_clean.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "**Commit:** bc1ee46 (Y-star-gov)"
+        },
+        {
+          "line": 36,
+          "path": "reports/cto/FG-KEYWORD-BLACKLIST-RETIRE-PLAN-20260420.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "- `Y-star-gov/ystar/governance/forget_guard.py` — 验 engine 跳 retired rule (Maya)"
+        },
+        {
+          "line": 66,
+          "path": "reports/cto/FG-KEYWORD-BLACKLIST-RETIRE-PLAN-20260420.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "仅 Labs 内部 ForgetGuard rule 撤. Y\\*gov 产品 regex 引擎 (`Y-star-gov/ystar/governance/forget_guard.py` 的 regex matcher) 不动 — 客户选 regex 有合理场景."
+        },
+        {
+          "line": 68,
+          "path": "reports/cto/FG-KEYWORD-BLACKLIST-RETIRE-PLAN-20260420.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "参考: `Y-star-gov/reports/cto/FG-MIGRATION-SCOPE-BOUNDARY-20260420.md` + `Y-star-gov/reports/cto/BOARD-FRAMING-BEHAVIOR-VS-SILENCE-COMPLIANCE-20260420.md`."
+        },
+        {
+          "line": 30,
+          "path": "reports/cto/BOARD-SHELL-ASSIST-WAVE2A-CLOSE-20260420.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "PYTHONPATH=/Users/haotianliu/.openclaw/workspace/Y-star-gov \\"
+        },
+        {
+          "line": 32,
+          "path": "reports/cto/BOARD-SHELL-ASSIST-WAVE2A-CLOSE-20260420.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "  /Users/haotianliu/.openclaw/workspace/Y-star-gov/ystar/_hook_daemon.py &"
+        },
+        {
+          "line": 109,
+          "path": "reports/cto/BOARD-SHELL-ASSIST-WAVE2A-CLOSE-20260420.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "This amendment ONLY retires **Labs internal** ForgetGuard rules. **Y*gov product-side regex-based rule engine** (`Y-star-gov/ystar/governance/forget_guard.py` regex matcher) **remains unchanged** — customers choosing regex have legitimate u"
+        },
+        {
+          "line": 113,
+          "path": "reports/cto/BOARD-SHELL-ASSIST-WAVE2A-CLOSE-20260420.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "- CTO Ethan: ruling at `Y-star-gov/reports/cto/CZL-FG-RETIRE-PHASE1-RULING.md`"
+        },
+        {
+          "line": 130,
+          "path": "reports/cto/BOARD-SHELL-ASSIST-WAVE2A-CLOSE-20260420.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "This amendment precedes AMENDMENT-022 (planned): Governance Dual Aspect Layer (restrictive + proactive balance), fills AMENDMENT-020 restrictive-only gap. See `Y-star-gov/reports/cto/GOVERNANCE-DUAL-ASPECT-AND-INSIGHT-RULE-PIPELINE-20260420"
+        },
+        {
+          "line": 149,
+          "path": "reports/cto/BOARD-SHELL-ASSIST-WAVE2A-CLOSE-20260420.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "PYTHONPATH=/Users/haotianliu/.openclaw/workspace/Y-star-gov /opt/homebrew/bin/python3.11 -m pytest \\"
+        },
+        {
+          "line": 150,
+          "path": "reports/cto/BOARD-SHELL-ASSIST-WAVE2A-CLOSE-20260420.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "  /Users/haotianliu/.openclaw/workspace/Y-star-gov/tests/governance/test_retired_rule_not_fire.py -v 2>&1 | tail -15"
+        },
+        {
+          "line": 153,
+          "path": "reports/cto/BOARD-SHELL-ASSIST-WAVE2A-CLOSE-20260420.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "PYTHONPATH=/Users/haotianliu/.openclaw/workspace/Y-star-gov /opt/homebrew/bin/python3.11 -m pytest \\"
+        },
+        {
+          "line": 157,
+          "path": "reports/cto/BOARD-SHELL-ASSIST-WAVE2A-CLOSE-20260420.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "PYTHONPATH=/Users/haotianliu/.openclaw/workspace/Y-star-gov /opt/homebrew/bin/python3.11 -m pytest \\"
+        },
+        {
+          "line": 182,
+          "path": "reports/cto/BOARD-SHELL-ASSIST-WAVE2A-CLOSE-20260420.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "Y-star-gov 单独:"
+        },
+        {
+          "line": 185,
+          "path": "reports/cto/BOARD-SHELL-ASSIST-WAVE2A-CLOSE-20260420.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "cd /Users/haotianliu/.openclaw/workspace/Y-star-gov"
+        },
+        {
+          "line": 9,
+          "path": "reports/cto/CZL-BRAIN-BIPARTITE-P2-ALGO-ruling.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "  - Prior CTO ruling: `Y-star-gov/reports/cto/CZL-BRAIN-BIPARTITE-ruling.md` (Q1-Q6)"
+        },
+        {
+          "line": 364,
+          "path": "reports/cto/CZL-BRAIN-BIPARTITE-P2-ALGO-ruling.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "- Prior CTO ruling: `Y-star-gov/reports/cto/CZL-BRAIN-BIPARTITE-ruling.md`"
+        },
+        {
+          "line": 367,
+          "path": "reports/cto/CZL-BRAIN-BIPARTITE-P2-ALGO-ruling.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "- Normalizer v2: `Y-star-gov/ystar/governance/cieu_decision_normalizer.py`"
+        },
+        {
+          "line": 25,
+          "path": "reports/cto/CZL-AGENTS-ENGREG-GAP-receipt.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "- Write: Y-star-gov/ystar/kernel/, Y-star-gov/ystar/session.py, Y-star-gov/tests/kernel/, ./reports/kernel/, ./reports/receipts/"
+        },
+        {
+          "line": 30,
+          "path": "reports/cto/CZL-AGENTS-ENGREG-GAP-receipt.md",
+          "query": "Y-star-gov",
+          "repo": "Y_star_gov",
+          "text": "- Write: Y-star-gov/ystar/governance/, Y-star-gov/ystar/path_a/, Y-star-gov/ystar/path_b/, Y-star-gov/tests/governance/, ./reports/governance/, ./reports/receipts/"
+        },
+        {
+          "line": 5,
+          "path": "reports/cto/CZL-GOV-MCP-ACTIVATE-PHASE1A-ruling.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "**Scope**: Audit gov-mcp stub status, gap list, impl order for Phase 1b"
+        },
+        {
+          "line": 12,
+          "path": "reports/cto/CZL-GOV-MCP-ACTIVATE-PHASE1A-ruling.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "- **Y***: gov-mcp 8 plugin.json tools fully live against ystar kernel, zero stub, CIEU audit trail per call"
+        },
+        {
+          "line": 13,
+          "path": "reports/cto/CZL-GOV-MCP-ACTIVATE-PHASE1A-ruling.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "- **Xt**: gov-mcp repo has 174KB server.py with 38 registered tools (README); plugin.json declares 8 original tools; ystar kernel imports confirmed (`check`, `enforce`, `DelegationChain`, `OmissionEngine`, `CIEUStore`, `translate_to_contrac"
+        },
+        {
+          "line": 54,
+          "path": "reports/cto/CZL-GOV-MCP-ACTIVATE-PHASE1A-ruling.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "- **What it does**: Installs governance contracts for a project directory. Detects environment (Claude Code, Cursor, Windsurf, OpenClaw), starts GOV MCP server, auto-configures clients, verifies connection. CLI command `gov-mcp install` is "
+        },
+        {
+          "line": 124,
+          "path": "reports/cto/CZL-GOV-MCP-ACTIVATE-PHASE1A-ruling.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "1. **Server not running** — gov-mcp process is not started in current Labs workspace"
+        },
+        {
+          "line": 125,
+          "path": "reports/cto/CZL-GOV-MCP-ACTIVATE-PHASE1A-ruling.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "2. **Client not configured** — Claude Code `.claude/settings.json` mcpServers block not pointing to gov-mcp"
+        },
+        {
+          "line": 162,
+          "path": "reports/cto/CZL-GOV-MCP-ACTIVATE-PHASE1A-ruling.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "  { \"mcpServers\": { \"gov-mcp\": { \"url\": \"http://127.0.0.1:7922/sse\", \"transport\": \"sse\" } } }"
+        },
+        {
+          "line": 164,
+          "path": "reports/cto/CZL-GOV-MCP-ACTIVATE-PHASE1A-ruling.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "- **Exit criteria**: Claude Code `tools/list` MCP call returns 38 tools from gov-mcp namespace; no connection timeout in 10s"
+        },
+        {
+          "line": 173,
+          "path": "reports/cto/CZL-GOV-MCP-ACTIVATE-PHASE1A-ruling.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "- **Action**: Ensure `ystar.governance.cieu_store.CIEUStore` import succeeds in gov-mcp's Python environment. Fix any `ModuleNotFoundError` (likely PYTHONPATH issue). Verify `.ystar_cieu.db` is created and writable."
+        },
+        {
+          "line": 188,
+          "path": "reports/cto/CZL-GOV-MCP-ACTIVATE-PHASE1A-ruling.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "- **Action**: From Claude Code session with gov-mcp connected: (1) call `gov_check` with a safe command (ls) — verify auto-execution + governance envelope; (2) call `gov_doctor` — verify 14/14 green; (3) call `gov_query_cieu` — verify the g"
+        },
+        {
+          "line": 217,
+          "path": "reports/cto/CZL-GOV-MCP-ACTIVATE-PHASE1A-ruling.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "1. **PYTHONPATH risk** (P0): gov-mcp server may fail to import `ystar` if not installed in the same Python env. This was a known issue per MEMORY.md `feedback_team_enforce_asymmetry`. Fix: verify `pip show ystar` in the env where `python -m"
+        },
+        {
+          "line": 219,
+          "path": "reports/cto/CZL-GOV-MCP-ACTIVATE-PHASE1A-ruling.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "2. **Port conflict** (P1): Port 7922 may be occupied by a stale gov-mcp or another service. Fix: `lsof -i :7922` before boot, kill if stale."
+        },
+        {
+          "line": 37,
+          "path": "reports/cto/CZL-PHASE0-PEER-AUDIT-ETHAN-PART1.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "Aiden concludes Phase 0 is at ~30% with 4 broken transmission chains. **Independent CTO reasoning**: My v0.4 ruling identified 5 Functional Goals (FG-1 through FG-5) all marked NOT MET or PARTIAL. Cross-referencing against Aiden's U-level b"
+        },
+        {
+          "line": 51,
+          "path": "reports/cto/CZL-PHASE0-PEER-AUDIT-ETHAN-PART1.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "### Gap 3: Aiden's audit omits the gov-mcp version-pinning and API stability risk (my ruling Section 24.5, INV-15 coupling)"
+        },
+        {
+          "line": 53,
+          "path": "reports/cto/CZL-PHASE0-PEER-AUDIT-ETHAN-PART1.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "Aiden's U-3.3 lists \"section 24.5 4 guards\" at 0% NOT IMPL, which is accurate. But Section 3 \"Key Gaps\" does not discuss **why** this matters for M-3 (Value Production). **CTO assessment**: gov-mcp is the commercial product. Section 24.5 in"
+        },
+        {
+          "line": 28,
+          "path": "reports/cto/CZL-PHASE0-PEER-AUDIT-ETHAN-PART2.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "**Evidence 1: Zero new runtime code.** Phase 0 has produced approximately 8 planning/audit documents and 0 lines of new Y*gov runtime code. gov-mcp is not activated. No shim exists. No guard from my Axis B tables is implemented. The subscri"
+        },
+        {
+          "line": 48,
+          "path": "reports/cto/CZL-PHASE0-PEER-AUDIT-ETHAN-PART2.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "- **Blocker check**: gov-mcp must be minimally activatable for B1. If subscriber spawn bridge is still broken, B1 cannot run against a real daemon. Workaround: B1 can measure against a mock MCP endpoint first to validate the harness itself,"
+        },
+        {
+          "line": 76,
+          "path": "reports/cto/CZL-PHASE0-PEER-AUDIT-ETHAN-PART2.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "### Action 5: Define gov-mcp public API surface before any PyPI publish"
+        },
+        {
+          "line": 78,
+          "path": "reports/cto/CZL-PHASE0-PEER-AUDIT-ETHAN-PART2.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "- **Action**: Create `src/ystar/gov_mcp/public_api.py` (or equivalent `__init__.py` re-export) that explicitly declares the stable public interface of gov-mcp. Everything not in this module is internal and may change without notice. Add a C"
+        },
+        {
+          "line": 80,
+          "path": "reports/cto/CZL-PHASE0-PEER-AUDIT-ETHAN-PART2.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "- **Blocker check**: gov-mcp must be at least minimally functional to know what its public surface is. This can proceed in parallel with Action 1 (experiment harness) since it is about API shape, not runtime behavior."
+        },
+        {
+          "line": 19,
+          "path": "reports/cto/CZL-V04-ARCHITECTURE-AUDIT-ruling.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "| **M-3** | gov-mcp product: \"Install in 30s, works with any MCP-compatible client\" + FINRA/EU AI Act compliance evidence | gov-mcp README, plugin.json 8 tools | `pip install gov-mcp && gov-mcp install` succeeds in <30s; SIM-001 50 concurre"
+        },
+        {
+          "line": 85,
+          "path": "reports/cto/CZL-V04-ARCHITECTURE-AUDIT-ruling.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "| INV-9 (Active agent identity) | **MAYBE** | In single-process, \"active agent\" is no longer PID-based (.ystar_active_agent.ppid_XXXX). All workers share PID. Identity resolution must shift from PID-based to worker-ID-based. | **Guard**: Re"
+        },
+        {
+          "line": 151,
+          "path": "reports/cto/CZL-V04-ARCHITECTURE-AUDIT-ruling.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "## STEP 2: Section 24.2 -- Consolidation 2: hook_wrapper.py retirement -> all runtimes via gov-mcp"
+        },
+        {
+          "line": 155,
+          "path": "reports/cto/CZL-V04-ARCHITECTURE-AUDIT-ruling.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "**Problem being solved**: v0.3 proposed 4 parallel adapter codebases (hook_wrapper.py for Claude Code, gov-mcp server, Gemma daemon hook, openclaw-office MCP client). Each adapter independently imports Y*gov kernel modules. The risk is adap"
+        },
+        {
+          "line": 157,
+          "path": "reports/cto/CZL-V04-ARCHITECTURE-AUDIT-ruling.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "**Mission-layer alignment**: Directly serves M-2 (runtime governance enforcement) and FG-5 (governance equivalence across entry points). Also M-3 (gov-mcp as product -- if gov-mcp becomes the single governance gateway, its value proposition"
+        },
+        {
+          "line": 165,
+          "path": "reports/cto/CZL-V04-ARCHITECTURE-AUDIT-ruling.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "| INV-1 (No choice questions) | YES | Reply content scanning moves to gov-mcp `gov_check` reply-scan mode | -- |"
+        },
+        {
+          "line": 166,
+          "path": "reports/cto/CZL-V04-ARCHITECTURE-AUDIT-ruling.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "| INV-2 (Dispatch via CTO) | YES | Dispatch routing in gov-mcp `gov_delegate` | -- |"
+        },
+        {
+          "line": 167,
+          "path": "reports/cto/CZL-V04-ARCHITECTURE-AUDIT-ruling.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "| INV-3 (L-tag) | YES | gov-mcp can expose `gov_reply_scan` tool for L-tag enforcement | -- |"
+        },
+        {
+          "line": 168,
+          "path": "reports/cto/CZL-V04-ARCHITECTURE-AUDIT-ruling.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "| INV-4 (5-tuple) | YES | CZL protocol validation in gov-mcp dispatch tool | -- |"
+        },
+        {
+          "line": 169,
+          "path": "reports/cto/CZL-V04-ARCHITECTURE-AUDIT-ruling.md",
+          "query": "gov-mcp",
+          "repo": "Y_star_gov",
+          "text": "| INV-5 (Empirical verify) | YES | Receipt validation via gov-mcp tool | -- |"
+        },
+        {
+          "line": 1,
+          "path": "reports/cto/BRAIN-ERROR-CORRECTION-DEBIAS-SPEC-20260420.md",
+          "query": "K9Audit",
+          "repo": "Y_star_gov",
+          "text": "Audience: Leo (counterfactual generator) + Maya (governance gate) + Ryan (K9Audit integration) + Ethan (architectural review) + Board (审 Phase 1 抽样)"
+        },
+        {
+          "line": 2,
+          "path": "reports/cto/BRAIN-ERROR-CORRECTION-DEBIAS-SPEC-20260420.md",
+          "query": "K9Audit",
+          "repo": "Y_star_gov",
+          "text": "Research basis: Board 2026-04-20 catch self-generated counterfactual 偏见风险, 要求查外部 debias 成熟方案; Anthropic Constitutional AI, AI Safety via Debate, RLAIF, Process Supervision 等 research; K9Audit 独立第三方 auditor codebase 已在 /tmp/K9Audit/"
+        },
+        {
+          "line": 3,
+          "path": "reports/cto/BRAIN-ERROR-CORRECTION-DEBIAS-SPEC-20260420.md",
+          "query": "K9Audit",
+          "repo": "Y_star_gov",
+          "text": "Synthesis: 四层护栏 (multi-agent 并行生成 + K9Audit 独立仲裁 + 外部 ground truth anchor + CEO/Board 抽查 + anomaly detection) 可系统降低 self-generated counterfactual 偏见, 是 CZL-BRAIN-ERROR-CORRECTION-EXERCISE 必要 spec addendum"
+        },
+        {
+          "line": 27,
+          "path": "reports/cto/BRAIN-ERROR-CORRECTION-DEBIAS-SPEC-20260420.md",
+          "query": "K9Audit",
+          "repo": "Y_star_gov",
+          "text": "- 三份分歧 → 进 Layer 2 K9Audit 仲裁"
+        },
+        {
+          "line": 32,
+          "path": "reports/cto/BRAIN-ERROR-CORRECTION-DEBIAS-SPEC-20260420.md",
+          "query": "K9Audit",
+          "repo": "Y_star_gov",
+          "text": "## Layer 2: K9Audit 独立第三方仲裁"
+        },
+        {
+          "line": 34,
+          "path": "reports/cto/BRAIN-ERROR-CORRECTION-DEBIAS-SPEC-20260420.md",
+          "query": "K9Audit",
+          "repo": "Y_star_gov",
+          "text": "K9Audit 仓库已 clone 在 `/tmp/K9Audit/` (AGPL, 独立 repo)."
+        },
+        {
+          "line": 44,
+          "path": "reports/cto/BRAIN-ERROR-CORRECTION-DEBIAS-SPEC-20260420.md",
+          "query": "K9Audit",
+          "repo": "Y_star_gov",
+          "text": "- 因为 K9Audit 代码库**不包含** Y*gov 规则 (只包含 OpenClaw adapter), 它的判定**正交** Y*gov 的偏见"
+        },
+        {
+          "line": 83,
+          "path": "reports/cto/BRAIN-ERROR-CORRECTION-DEBIAS-SPEC-20260420.md",
+          "query": "K9Audit",
+          "repo": "Y_star_gov",
+          "text": "- K9Audit 否决率单日 > 20% (quality regression)"
+        },
+        {
+          "line": 100,
+          "path": "reports/cto/BRAIN-ERROR-CORRECTION-DEBIAS-SPEC-20260420.md",
+          "query": "K9Audit",
+          "repo": "Y_star_gov",
+          "text": "- Phase 2 启动 gate = Layer 2 K9Audit integration complete (集成 test pass)"
+        },
+        {
+          "line": 105,
+          "path": "reports/cto/BRAIN-ERROR-CORRECTION-DEBIAS-SPEC-20260420.md",
+          "query": "K9Audit",
+          "repo": "Y_star_gov",
+          "text": "- 若 Layer 2 K9Audit 集成问题 → 退回 Phase 1 纯人工"
+        },
+        {
+          "line": 108,
+          "path": "reports/cto/ECOSYSTEM-AUDIT-AND-BACKLOG-RECONCILE-20260420-NIGHT.md",
+          "query": "K9Audit",
+          "repo": "Y_star_gov",
+          "text": "### 2.3 K9Audit (`/tmp/K9Audit/`)"
+        },
+        {
+          "line": 114,
+          "path": "reports/cto/ECOSYSTEM-AUDIT-AND-BACKLOG-RECONCILE-20260420-NIGHT.md",
+          "query": "K9Audit",
+          "repo": "Y_star_gov",
+          "text": "(2) No integration tests between K9Audit patterns and Y*gov codebase, (3) Valuable patterns"
+        },
+        {
+          "line": 275,
+          "path": "reports/cto/ECOSYSTEM-AUDIT-AND-BACKLOG-RECONCILE-20260420-NIGHT.md",
+          "query": "K9Audit",
+          "repo": "Y_star_gov",
+          "text": "4. **K9Audit integration remains theoretical**. Valuable patterns (CausalChainAnalyzer,"
+        },
+        {
+          "line": 276,
+          "path": "reports/cto/ECOSYSTEM-AUDIT-AND-BACKLOG-RECONCILE-20260420-NIGHT.md",
+          "query": "K9Audit",
+          "repo": "Y_star_gov",
+          "text": "   Auditor) exist in /tmp/K9Audit but zero code extraction has happened. License (AGPL-3.0)"
+        },
+        {
+          "line": 946,
+          "path": "ystar/kernel/prefill.py",
+          "query": "K9Audit",
+          "repo": "Y_star_gov",
+          "text": "    Extract suggestions from recorded call history (ystar ledger or K9Audit CIEU)."
+        },
+        {
+          "line": 1697,
+          "path": "ystar/kernel/dimensions.py",
+          "query": "K9Audit",
+          "repo": "Y_star_gov",
+          "text": "    Legacy K9Audit names (deny_content, allowed_paths, etc.) are also accepted."
+        },
+        {
+          "line": 1716,
+          "path": "ystar/kernel/dimensions.py",
+          "query": "K9Audit",
+          "repo": "Y_star_gov",
+          "text": "        # Legacy K9Audit names"
+        },
+        {
+          "line": 1732,
+          "path": "ystar/kernel/dimensions.py",
+          "query": "K9Audit",
+          "repo": "Y_star_gov",
+          "text": "    # Handle command.blocklist dict format (K9Audit legacy)"
+        },
+        {
+          "line": 667,
+          "path": "ystar/kernel/engine.py",
+          "query": "K9Audit",
+          "repo": "Y_star_gov",
+          "text": "        # Unwrap result if it's a dict with a 'result' key (K9Audit format)"
+        },
+        {
+          "line": 4,
+          "path": "ygov_health_check.py",
+          "query": "K9Audit",
+          "repo": "Y_star_gov",
+          "text": "Based on K9Audit patterns and security best practices"
+        },
+        {
+          "line": 2250,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "Y-star-gov",
+          "repo": "gov_mcp",
+          "text": "    # NEW TOOLS — FUNCTIONALITY PARITY WITH Y-star-gov CLI"
+        },
+        {
+          "line": 11,
+          "path": "gov_mcp/runtime_linkage_tools.py",
+          "query": "Y-star-gov",
+          "repo": "gov_mcp",
+          "text": "    root = Path(os.environ.get('YSTAR_GOV_ROOT', '/Users/haotianliu/.openclaw/workspace/Y-star-gov'))"
+        },
+        {
+          "line": 2234,
+          "path": "gov_mcp/server.py.bak.1776016253",
+          "query": "Y-star-gov",
+          "repo": "gov_mcp",
+          "text": "    # NEW TOOLS — FUNCTIONALITY PARITY WITH Y-star-gov CLI"
+        },
+        {
+          "line": 2281,
+          "path": "gov_mcp/server.py",
+          "query": "Y-star-gov",
+          "repo": "gov_mcp",
+          "text": "    # NEW TOOLS — FUNCTIONALITY PARITY WITH Y-star-gov CLI"
+        },
+        {
+          "line": 4409,
+          "path": "gov_mcp/server.py",
+          "query": "Y-star-gov",
+          "repo": "gov_mcp",
+          "text": "    # Runtime linkage anti-drift validators: generic Y-star-gov contract exposed via MCP."
+        },
+        {
+          "line": 10,
+          "path": "verify_dispatch.py",
+          "query": "Y-star-gov",
+          "repo": "gov_mcp",
+          "text": "sys.path.insert(0, str(Path(__file__).parent.parent / \"Y-star-gov\"))"
+        },
+        {
+          "line": 10,
+          "path": "README.md",
+          "query": "Y-star-gov",
+          "repo": "gov_mcp",
+          "text": "An MCP server that enforces runtime governance on AI agent actions — file access, command execution, delegation chains, and permission escalation. Built on the [Y*gov](https://github.com/liuhaotian2024-prog/Y-star-gov) governance kernel."
+        },
+        {
+          "line": 398,
+          "path": "docs/PROTOCOL.md",
+          "query": "Y-star-gov",
+          "repo": "gov_mcp",
+          "text": "- [Y\\*gov](https://github.com/liuhaotian2024-prog/Y-star-gov) — the"
+        },
+        {
+          "line": 3,
+          "path": "docs/runtime_linkage_tools.md",
+          "query": "Y-star-gov",
+          "repo": "gov_mcp",
+          "text": "E51 exposes Y-star-gov runtime-linkage validators through gov-mcp without starting external services or mutating client configuration."
+        },
+        {
+          "line": 23,
+          "path": "gov_mcp.egg-info/PKG-INFO",
+          "query": "Y-star-gov",
+          "repo": "gov_mcp",
+          "text": "An MCP server that enforces runtime governance on AI agent actions — file access, command execution, delegation chains, and permission escalation. Built on the [Y*gov](https://github.com/liuhaotian2024-prog/Y-star-gov) governance kernel."
+        },
+        {
+          "line": 7,
+          "path": "reports/SIM-001_scenario3_results.json",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "          \"step\": \"1.1 pip install gov-mcp\","
+        },
+        {
+          "line": 13,
+          "path": "reports/SIM-001_scenario3_results.json",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "          \"step\": \"1.2 gov-mcp install\","
+        },
+        {
+          "line": 1,
+          "path": "reports/e16g_outbound_adapter_delivery.md",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "# E16G gov-mcp Outbound Adapter Delivery"
+        },
+        {
+          "line": 1,
+          "path": "CLAUDE.md",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "# gov-mcp — Claude Code Instructions"
+        },
+        {
+          "line": 3,
+          "path": "CLAUDE.md",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "pip install gov-mcp && gov-mcp install && gov-mcp status"
+        },
+        {
+          "line": 1,
+          "path": "AGENTS.md",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "# AGENTS.md — gov-mcp Governance Contract"
+        },
+        {
+          "line": 3,
+          "path": "AGENTS.md",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "gov-mcp is a governed MCP server exposing Y*gov enforcement as standard MCP tools."
+        },
+        {
+          "line": 3,
+          "path": "SOUL.md",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "gov-mcp is the governance checkpoint between AI agents and system resources."
+        },
+        {
+          "line": 3,
+          "path": "manifest.json",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "  \"name\": \"gov-mcp\","
+        },
+        {
+          "line": 23,
+          "path": "manifest.json",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "  \"homepage\": \"https://github.com/liuhaotian2024-prog/gov-mcp\","
+        },
+        {
+          "line": 26,
+          "path": "manifest.json",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "    \"url\": \"https://github.com/liuhaotian2024-prog/gov-mcp.git\""
+        },
+        {
+          "line": 32,
+          "path": "gov_mcp/__main__.py",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "             \"Recommended since gov-mcp 0.2.0. Direct dict load, \""
+        },
+        {
+          "line": 54,
+          "path": "gov_mcp/outbound/provider_manifest.py",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "            \"canonical_owner_repo\": \"gov-mcp\","
+        },
+        {
+          "line": 84,
+          "path": "gov_mcp/outbound/provider_manifest.py",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "    if manifest.get(\"canonical_owner_repo\") != \"gov-mcp\":"
+        },
+        {
+          "line": 1,
+          "path": "gov_mcp/outbound/__init__.py",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "\"\"\"Canonical no-send outbound adapter surface for gov-mcp."
+        },
+        {
+          "line": 1,
+          "path": "gov_mcp/outbound/adapter_contract.py",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "\"\"\"Canonical gov-mcp outbound adapter contract."
+        },
+        {
+          "line": 24,
+          "path": "gov_mcp/outbound/adapter_contract.py",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "        \"owner_repo\": \"gov-mcp\","
+        },
+        {
+          "line": 85,
+          "path": "gov_mcp/outbound/adapter_contract.py",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "    if contract.get(\"owner_repo\") != \"gov-mcp\":"
+        },
+        {
+          "line": 144,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "        Preferred contract source since gov-mcp 0.2.0 (GOV-007 Step 2)."
+        },
+        {
+          "line": 170,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "        Deprecated since gov-mcp 0.2.0 (use _load_from_session_config"
+        },
+        {
+          "line": 172,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "        that pass --agents-md to gov-mcp's CLI. Confidence is typically"
+        },
+        {
+          "line": 184,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "        \"\"\"Validate .ystar_session.json schema_version against gov-mcp's"
+        },
+        {
+          "line": 191,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "                \"[gov-mcp] .ystar_session.json missing schema_version \""
+        },
+        {
+          "line": 199,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "                f\"[gov-mcp] Unsupported .ystar_session.json schema_version \""
+        },
+        {
+          "line": 201,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "                f\"Either upgrade gov-mcp or downgrade .ystar_session.json \""
+        },
+        {
+          "line": 246,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "            target=_scanner_loop, daemon=True, name=\"gov-mcp-scanner\","
+        },
+        {
+          "line": 839,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "        since gov-mcp 0.2.0). Direct dict load, no parsing,"
+        },
+        {
+          "line": 848,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "        \"gov-mcp\","
+        },
+        {
+          "line": 2616,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "        Perfect for first-time users to see gov-mcp in action."
+        },
+        {
+          "line": 2664,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "gov-mcp",
+          "repo": "gov_mcp",
+          "text": "            \"message\": \"gov-mcp is working correctly!\" if all_correct"
+        },
+        {
+          "line": 27,
+          "path": "reports/stress_test_results.md",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "MockCIEUStore protects the records list. The unlocked counter (intentionally"
+        },
+        {
+          "line": 32,
+          "path": "reports/stress_test_results.md",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "CIEUStore (SQLite-backed) uses database-level serialization, which provides"
+        },
+        {
+          "line": 117,
+          "path": "reports/stress_test_results.md",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "counter in MockCIEUStore demonstrated classic read-modify-write races"
+        },
+        {
+          "line": 121,
+          "path": "reports/stress_test_results.md",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "Production CIEUStore uses SQLite WAL mode which serializes writes at the"
+        },
+        {
+          "line": 74,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "        # Attach CIEUStore backed by .ystar_cieu.db at config_dir so gov_doctor L1.02"
+        },
+        {
+          "line": 79,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "            from ystar.governance.cieu_store import CIEUStore"
+        },
+        {
+          "line": 81,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "            self._cieu_store = CIEUStore(db_path=str(cieu_db_path))"
+        },
+        {
+          "line": 1768,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "                from ystar.governance.cieu_store import CIEUStore"
+        },
+        {
+          "line": 1769,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "                store = CIEUStore(cieu_db)"
+        },
+        {
+          "line": 1803,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "                from ystar.governance.cieu_store import CIEUStore"
+        },
+        {
+          "line": 1804,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "                store = CIEUStore(cieu_db)"
+        },
+        {
+          "line": 2265,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "            from ystar.governance.cieu_store import CIEUStore"
+        },
+        {
+          "line": 2266,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "            store = CIEUStore(cieu_db)"
+        },
+        {
+          "line": 2294,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "                from ystar.governance.cieu_store import CIEUStore"
+        },
+        {
+          "line": 2295,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "                cieu_store = CIEUStore(cieu_db)"
+        },
+        {
+          "line": 2353,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "                from ystar.governance.cieu_store import CIEUStore"
+        },
+        {
+          "line": 2354,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "                cieu_store = CIEUStore(cieu_db)"
+        },
+        {
+          "line": 2425,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "                from ystar.governance.cieu_store import CIEUStore"
+        },
+        {
+          "line": 2426,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "                cieu_store = CIEUStore(cieu_db)"
+        },
+        {
+          "line": 2504,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "                from ystar.governance.cieu_store import CIEUStore"
+        },
+        {
+          "line": 2505,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "                cieu_store = CIEUStore(cieu_db)"
+        },
+        {
+          "line": 2553,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "                from ystar.governance.cieu_store import CIEUStore"
+        },
+        {
+          "line": 2554,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "                cieu_store = CIEUStore(cieu_db)"
+        },
+        {
+          "line": 2983,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "                from ystar.governance.cieu_store import CIEUStore"
+        },
+        {
+          "line": 2984,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "                cieu_store = CIEUStore(cieu_db)"
+        },
+        {
+          "line": 3176,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "                from ystar.governance.cieu_store import CIEUStore"
+        },
+        {
+          "line": 3177,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "                cieu_store = CIEUStore(cieu_db)"
+        },
+        {
+          "line": 3413,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "                from ystar.governance.cieu_store import CIEUStore"
+        },
+        {
+          "line": 3414,
+          "path": "gov_mcp/server.py.bak.delegations.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "                cieu_store = CIEUStore(cieu_db)"
+        },
+        {
+          "line": 1752,
+          "path": "gov_mcp/server.py.bak.1776016253",
+          "query": "CIEUStore",
+          "repo": "gov_mcp",
+          "text": "                from ystar.governance.cieu_store import CIEUStore"
+        }
+      ],
+      "exact_files": [
+        "bridge-labs:office/mission_command/e85_ceo_cognitive_os_runtime_bridge.py",
+        "Y-star-gov:ystar/governance/ceo_cognitive_os_runtime_hook.py",
+        "Y-star-gov:ystar/governance/ceo_cognitive_os_cieu_log.py",
+        "gov-mcp:gov_mcp/outbound/dry_run_adapter.py",
+        "bridge-labs:scripts/repository_delivery_bridge_submit.py"
+      ],
+      "exact_functions_or_classes": [
+        "bridge-labs.build_ceo_runtime_envelope",
+        "Y-star-gov.validate_ceo_runtime_envelope",
+        "Y-star-gov.write_ceo_cognitive_os_cieu_log_record",
+        "gov-mcp.dry_run_outbound_action"
+      ],
+      "gaps": [
+        "End-to-end normal CEO session binding across all three repos is not yet one canonical runtime command.",
+        "K9Audit ledger/hash-chain is read-only reference, not integrated write path."
+      ],
+      "purpose": "Bridge-labs produces CEO packets; Y-star-gov validates and writes CIEUStore records; gov-mcp provides dry-run provider envelope after allow; K9Audit remains separate stronger evidence-chain boundary unless owner-approved integration is added.",
+      "status": "partial_runtime_chain",
+      "tests": [
+        "bridge-labs:tests/office/test_e85_ceo_cognitive_os_runtime_bridge.py",
+        "Y-star-gov:tests/governance/test_ceo_cognitive_os_cieu_log.py"
+      ]
+    }
+  ]
+}
