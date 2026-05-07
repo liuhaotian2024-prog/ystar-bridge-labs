@@ -1,0 +1,21 @@
+{
+  "E83_validator_output": "CIEU_validation_record_candidate",
+  "artifact_id": "e84_cieu_log_terminology_correction",
+  "corrections": [
+    "E83 validator creates a CIEU validation record candidate, not a formal CIEU log write.",
+    "Formal CIEU log writing must use existing Y-star-gov CIEUStore or hook/OpenClaw auto-persist path, or K9Audit if ledger integration is separately approved.",
+    "E84 may only claim CIEU log integration if actual code writes through that existing path.",
+    "E84 does not make that claim; validator output remains a CIEU validation record candidate."
+  ],
+  "forbidden_terms": [
+    "CIEU-style trace"
+  ],
+  "formal_CIEU_log_write_status": "CIEU_log_write_deferred",
+  "job_id": "E84_YStarGov_GovMCP_BridgeLabs_Runtime_Interface_Audit_and_CEO_CognitiveOS_Hook_Wiring_R1",
+  "required_terms": [
+    "CIEU log",
+    "CIEU record",
+    "CIEU validation record",
+    "CIEU log candidate"
+  ]
+}

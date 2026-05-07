@@ -1,0 +1,72 @@
+{
+  "artifact_id": "e84_runtime_wiring_design",
+  "flow": [
+    {
+      "description": "bridge-labs CEO proposes major action",
+      "existing_module": "CEO milestone/runtime artifacts",
+      "patch_required": false,
+      "step": 1
+    },
+    {
+      "description": "bridge-labs produces mandatory pre-action packet",
+      "existing_module": "E81 schema/artifacts",
+      "patch_required": false,
+      "step": 2
+    },
+    {
+      "description": "bridge-labs calls Y-star-gov validator",
+      "existing_module": "e84_ystar_gov_ceo_cognitive_os_call_adapter.validate_pre_action_with_ystar_gov",
+      "patch_required": true,
+      "patch_status": "implemented",
+      "step": 3
+    },
+    {
+      "description": "Y-star-gov returns ALLOW/REQUIRE_REVISION/DENY/ESCALATE",
+      "existing_module": "ystar.governance.validate_ceo_pre_action_packet",
+      "patch_required": false,
+      "step": 4
+    },
+    {
+      "description": "bridge-labs routes result",
+      "existing_module": "E84 call adapter route map",
+      "patch_required": true,
+      "patch_status": "implemented",
+      "step": 5
+    },
+    {
+      "description": "future provider/tool execution uses gov-mcp envelope after Y-star-gov allow/scope",
+      "existing_module": "gov-mcp outbound/dry_run/provider_guard_stack",
+      "patch_required": false,
+      "status": "planned_read_only",
+      "step": 6
+    },
+    {
+      "description": "bridge-labs produces post-action residual",
+      "existing_module": "E81 post-action schema",
+      "patch_required": false,
+      "step": 7
+    },
+    {
+      "description": "Y-star-gov validates post-action residual",
+      "existing_module": "e84 adapter + validate_ceo_post_action_residual",
+      "patch_required": true,
+      "patch_status": "implemented",
+      "step": 8
+    },
+    {
+      "description": "formal CIEU log write",
+      "existing_module": "Y-star-gov CIEUStore / hook cieu_writer",
+      "patch_required": true,
+      "patch_status": "deferred",
+      "step": 9
+    }
+  ],
+  "formal_CIEU_log_write_status": "CIEU_log_write_deferred",
+  "job_id": "E84_YStarGov_GovMCP_BridgeLabs_Runtime_Interface_Audit_and_CEO_CognitiveOS_Hook_Wiring_R1",
+  "routing": {
+    "ALLOW": "continue_to_approved_next_step_without_external_execution",
+    "DENY": "block_execution_and_record_residual",
+    "ESCALATE": "generate_owner_decision_packet_no_execution",
+    "REQUIRE_REVISION": "return_correct_path_guidance_to_CEO"
+  }
+}

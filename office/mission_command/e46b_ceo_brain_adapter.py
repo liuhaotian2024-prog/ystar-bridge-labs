@@ -431,6 +431,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e83_autoguidance_state = {'E83_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'L4_execution_authorized': False, 'L5_ready': False, 'Y_star_gov_validator_supports_correct_path_guidance': False}
     try:
+        from office.mission_command.e84_readback import load_e84_runtime_interface_state_for_brain
+        e84_runtime_interface_state = load_e84_runtime_interface_state_for_brain()
+    except Exception as exc:
+        e84_runtime_interface_state = {'E84_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'L4_execution_authorized': False, 'L5_ready': False, 'bridge_labs_call_adapter_active': False}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -754,6 +759,21 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_e83_external_action_allowed": e83_autoguidance_state.get("external_action_allowed"),
         "current_e83_L4_execution_authorized": e83_autoguidance_state.get("L4_execution_authorized"),
         "current_e83_L5_ready": e83_autoguidance_state.get("L5_ready"),
+        "latest_e84_runtime_interface_state": e84_runtime_interface_state,
+        "current_e84_status": e84_runtime_interface_state.get("E84_status"),
+        "current_e84_gov_mcp_available": e84_runtime_interface_state.get("gov_mcp_available"),
+        "current_e84_formal_CIEU_log_write_status": e84_runtime_interface_state.get("formal_CIEU_log_write_status"),
+        "current_e84_validator_output_status": e84_runtime_interface_state.get("validator_output_status"),
+        "current_e84_E83_correctness_decision": e84_runtime_interface_state.get("E83_correctness_decision"),
+        "current_e84_patch_type": e84_runtime_interface_state.get("patch_type"),
+        "current_e84_bridge_labs_call_adapter_active": e84_runtime_interface_state.get("bridge_labs_call_adapter_active"),
+        "current_e84_Y_star_gov_modified_in_E84": e84_runtime_interface_state.get("Y_star_gov_modified_in_E84"),
+        "current_e84_gov_mcp_modified_in_E84": e84_runtime_interface_state.get("gov_mcp_modified_in_E84"),
+        "current_e84_decision_routing": e84_runtime_interface_state.get("decision_routing"),
+        "current_e84_next_recommended_milestone": e84_runtime_interface_state.get("next_recommended_milestone"),
+        "current_e84_external_action_allowed": e84_runtime_interface_state.get("external_action_allowed"),
+        "current_e84_L4_execution_authorized": e84_runtime_interface_state.get("L4_execution_authorized"),
+        "current_e84_L5_ready": e84_runtime_interface_state.get("L5_ready"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

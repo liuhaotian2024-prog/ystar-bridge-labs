@@ -1,0 +1,189 @@
+{
+  "artifact_id": "e84_ystar_gov_runtime_topology_audit",
+  "job_id": "E84_YStarGov_GovMCP_BridgeLabs_Runtime_Interface_Audit_and_CEO_CognitiveOS_Hook_Wiring_R1",
+  "node_count": 7,
+  "nodes": [
+    {
+      "CEO_Cognitive_OS_should_integrate_here": "no, export surface only",
+      "builds_CIEU_validation_record_only": false,
+      "confidence": "high",
+      "decision_vocabulary": [
+        "passed",
+        "violations",
+        "enforcement modes"
+      ],
+      "docs_tests_artifact_only": false,
+      "downstream_callees": [
+        "ystar.kernel.engine",
+        "ystar.adapters.hook",
+        "ystar.governance"
+      ],
+      "evidence_path": "Y-star-gov:ystar/__init__.py",
+      "file_path": "ystar/__init__.py",
+      "layer": "public_api",
+      "node_id": "ystar_public_api",
+      "runtime_path": true,
+      "symbol": "check/enforce/IntentContract/CheckResult/EnforcementResult/check_hook exports",
+      "upstream_callers": [
+        "package users",
+        "gov-mcp"
+      ],
+      "writes_CIEU_log": false
+    },
+    {
+      "CEO_Cognitive_OS_should_integrate_here": "not directly; too low-level for CEO packet schema",
+      "builds_CIEU_validation_record_only": false,
+      "confidence": "high",
+      "decision_vocabulary": [
+        "ALLOW/DENY via passed",
+        "LOG_ONLY",
+        "HOLD_FOR_APPROVAL"
+      ],
+      "docs_tests_artifact_only": false,
+      "downstream_callees": [
+        "IntentContract dimension checks"
+      ],
+      "evidence_path": "Y-star-gov:ystar/kernel/engine.py",
+      "file_path": "ystar/kernel/engine.py",
+      "layer": "contract_check_enforce",
+      "node_id": "ystar_kernel_check_enforce",
+      "runtime_path": true,
+      "symbol": "check, enforce, CheckResult, EnforcementResult",
+      "upstream_callers": [
+        "gov-mcp gov_check/gov_enforce",
+        "OpenClaw adapter"
+      ],
+      "writes_CIEU_log": false
+    },
+    {
+      "CEO_Cognitive_OS_should_integrate_here": "later hook runtime wiring, not patched in E84",
+      "builds_CIEU_validation_record_only": false,
+      "confidence": "high",
+      "decision_vocabulary": [
+        "allow",
+        "deny",
+        "escalate",
+        "redirect",
+        "rewrite"
+      ],
+      "docs_tests_artifact_only": false,
+      "downstream_callees": [
+        "ystar.domains.openclaw.adapter.enforce",
+        "CIEUStore via cieu_writer",
+        "auto_rewrite"
+      ],
+      "evidence_path": "Y-star-gov:ystar/adapters/hook.py",
+      "file_path": "ystar/adapters/hook.py",
+      "layer": "hook_runtime_path",
+      "node_id": "ystar_real_hook_runtime",
+      "runtime_path": true,
+      "symbol": "check_hook, _check_hook_full",
+      "upstream_callers": [
+        "Claude/OpenClaw PreToolUse hook"
+      ],
+      "writes_CIEU_log": true
+    },
+    {
+      "CEO_Cognitive_OS_should_integrate_here": "formal log write candidate for later E85, deferred now",
+      "builds_CIEU_validation_record_only": false,
+      "confidence": "high",
+      "decision_vocabulary": [
+        "decision_canonical",
+        "evidence_grade"
+      ],
+      "docs_tests_artifact_only": false,
+      "downstream_callees": [
+        "SQLite cieu_events table"
+      ],
+      "evidence_path": "Y-star-gov:ystar/governance/cieu_store.py",
+      "file_path": "ystar/governance/cieu_store.py",
+      "layer": "CIEU_log_store",
+      "node_id": "ystar_cieu_store",
+      "runtime_path": true,
+      "symbol": "CIEUStore.write, CIEUStore.write_dict",
+      "upstream_callers": [
+        "hook cieu_writer",
+        "OpenClaw auto-persist",
+        "other governance observers"
+      ],
+      "writes_CIEU_log": true
+    },
+    {
+      "CEO_Cognitive_OS_should_integrate_here": "not in E84; path is hook-specific",
+      "builds_CIEU_validation_record_only": false,
+      "confidence": "high",
+      "decision_vocabulary": [
+        "allow",
+        "deny",
+        "info"
+      ],
+      "docs_tests_artifact_only": false,
+      "downstream_callees": [
+        "CIEUStore.write_dict"
+      ],
+      "evidence_path": "Y-star-gov:ystar/adapters/cieu_writer.py",
+      "file_path": "ystar/adapters/cieu_writer.py",
+      "layer": "CIEU_log_writer_adapter",
+      "node_id": "ystar_cieu_writer",
+      "runtime_path": true,
+      "symbol": "_write_cieu, _write_boot_record",
+      "upstream_callers": [
+        "ystar.adapters.hook.check_hook"
+      ],
+      "writes_CIEU_log": true
+    },
+    {
+      "CEO_Cognitive_OS_should_integrate_here": "semantic interface precedent, not real hook",
+      "builds_CIEU_validation_record_only": false,
+      "confidence": "high",
+      "decision_vocabulary": [
+        "allow",
+        "warn",
+        "require_revision",
+        "deny",
+        "escalate"
+      ],
+      "docs_tests_artifact_only": false,
+      "downstream_callees": [
+        "run_governance_contract_dry_run"
+      ],
+      "evidence_path": "Y-star-gov:ystar/governance/hook_contract_adapter.py",
+      "file_path": "ystar/governance/hook_contract_adapter.py",
+      "layer": "hook_contract_dry_run",
+      "node_id": "ystar_hook_contract_dry_run",
+      "runtime_path": false,
+      "symbol": "run_hook_contract_dry_run",
+      "upstream_callers": [
+        "dry-run CLI",
+        "tests"
+      ],
+      "writes_CIEU_log": false
+    },
+    {
+      "CEO_Cognitive_OS_should_integrate_here": "yes, bridge-labs should call this first",
+      "builds_CIEU_validation_record_only": true,
+      "confidence": "high",
+      "decision_vocabulary": [
+        "ALLOW",
+        "REQUIRE_REVISION",
+        "DENY",
+        "ESCALATE"
+      ],
+      "docs_tests_artifact_only": false,
+      "downstream_callees": [
+        "deterministic validation rules"
+      ],
+      "evidence_path": "Y-star-gov:ystar/governance/ceo_cognitive_os_contract.py",
+      "file_path": "ystar/governance/ceo_cognitive_os_contract.py",
+      "layer": "CEO_packet_governance_validation",
+      "node_id": "ystar_ceo_cognitive_os_validator",
+      "runtime_path": true,
+      "symbol": "validate_ceo_pre_action_packet, validate_ceo_post_action_residual",
+      "upstream_callers": [
+        "bridge-labs E84 call adapter",
+        "future hook/runtime wrapper"
+      ],
+      "writes_CIEU_log": false
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "Y_star_gov_modified": false,
+  "adapter_smoke": {
+    "denied_packet": {
+      "CIEU_validation_record_candidate": {
+        "R_t_plus_1": {
+          "guidance_path": [],
+          "requires_owner_decision": false,
+          "residual": "forbidden claim present: customer_validation_claim"
+        },
+        "U_t": "Y-star-gov CEO Cognitive OS validation",
+        "X_t": {
+          "action_class": "owner_decision_preparation",
+          "contract_id": "ceo_cognitive_os_loop_contract_v1",
+          "packet_id": "e84_sample_pre_action_packet"
+        },
+        "Y_star_t": "CEO major action must pass mandatory cognitive loop before acceptance",
+        "Y_t_plus_1": {
+          "correct_path": [],
+          "decision": "DENY",
+          "guidance": {},
+          "reason": "forbidden claim present: customer_validation_claim"
+        }
+      },
+      "YstarGov_correct_path": [],
+      "YstarGov_decision": "DENY",
+      "YstarGov_failed_stage": "overclaim_boundary",
+      "YstarGov_guidance": {},
+      "YstarGov_import_status": "direct_YstarGov_import_used",
+      "YstarGov_reason": "forbidden claim present: customer_validation_claim",
+      "YstarGov_requires_owner_decision": false,
+      "artifact_id": "e84_ystar_gov_ceo_cognitive_os_call_adapter_result",
+      "external_action_executed": false,
+      "formal_CIEU_log_status": "CIEU_log_write_deferred",
+      "formal_CIEU_log_written": false,
+      "packet_kind": "pre_action_packet",
+      "provider_live_execution": false,
+      "route": {
+        "block_execution": true,
+        "ceo_revision_required": false,
+        "execution_allowed_by_adapter": false,
+        "owner_decision_packet_required": false,
+        "route": "block_execution_and_record_residual"
+      },
+      "validator": "validate_ceo_pre_action_packet"
+    },
+    "escalation_packet": {
+      "CIEU_validation_record_candidate": {
+        "R_t_plus_1": {
+          "guidance_path": [
+            "prepare or present an owner decision packet for the scoped L4/external action",
+            "do not execute until owner_approval_state is approved",
+            "rerun CEO Cognitive OS validation after approval is recorded"
+          ],
+          "requires_owner_decision": true,
+          "residual": "L4/external execution requires explicit owner approval"
+        },
+        "U_t": "Y-star-gov CEO Cognitive OS validation",
+        "X_t": {
+          "action_class": "L4_external_feedback_execution",
+          "contract_id": "ceo_cognitive_os_loop_contract_v1",
+          "packet_id": "e84_sample_pre_action_packet"
+        },
+        "Y_star_t": "CEO major action must pass mandatory cognitive loop before acceptance",
+        "Y_t_plus_1": {
+          "correct_path": [
+            "prepare or present an owner decision packet for the scoped L4/external action",
+            "do not execute until owner_approval_state is approved",
+            "rerun CEO Cognitive OS validation after approval is recorded"
+          ],
+          "decision": "ESCALATE",
+          "guidance": {
+            "approval_required": true,
+            "execution_allowed_before_owner_decision": false,
+            "guidance_type": "owner_decision_required",
+            "owner_approval_state": "pending_owner_decision",
+            "required_packet_changes": [
+              "record explicit owner approval before any L4/external execution",
+              "keep outreach/publication/payment/login/mass-action boundaries denied unless separately approved"
+            ],
+            "revalidate_after_owner_decision": true
+          },
+          "reason": "L4/external execution requires explicit owner approval"
+        }
+      },
+      "YstarGov_correct_path": [
+        "prepare or present an owner decision packet for the scoped L4/external action",
+        "do not execute until owner_approval_state is approved",
+        "rerun CEO Cognitive OS validation after approval is recorded"
+      ],
+      "YstarGov_decision": "ESCALATE",
+      "YstarGov_failed_stage": "owner_approval_gate",
+      "YstarGov_guidance": {
+        "approval_required": true,
+        "execution_allowed_before_owner_decision": false,
+        "guidance_type": "owner_decision_required",
+        "owner_approval_state": "pending_owner_decision",
+        "required_packet_changes": [
+          "record explicit owner approval before any L4/external execution",
+          "keep outreach/publication/payment/login/mass-action boundaries denied unless separately approved"
+        ],
+        "revalidate_after_owner_decision": true
+      },
+      "YstarGov_import_status": "direct_YstarGov_import_used",
+      "YstarGov_reason": "L4/external execution requires explicit owner approval",
+      "YstarGov_requires_owner_decision": true,
+      "artifact_id": "e84_ystar_gov_ceo_cognitive_os_call_adapter_result",
+      "external_action_executed": false,
+      "formal_CIEU_log_status": "CIEU_log_write_deferred",
+      "formal_CIEU_log_written": false,
+      "packet_kind": "pre_action_packet",
+      "provider_live_execution": false,
+      "route": {
+        "block_execution": true,
+        "ceo_revision_required": false,
+        "execution_allowed_by_adapter": false,
+        "owner_decision_packet_required": true,
+        "route": "generate_owner_decision_packet_no_execution"
+      },
+      "validator": "validate_ceo_pre_action_packet"
+    },
+    "post_action_residual": {
+      "CIEU_validation_record_candidate": {
+        "R_t_plus_1": "none",
+        "U_t": "Y-star-gov CEO Cognitive OS validation",
+        "X_t": {
+          "action_class": null,
+          "contract_id": "ceo_cognitive_os_loop_contract_v1",
+          "packet_id": "e84_sample_post_action_residual"
+        },
+        "Y_star_t": "CEO major action must pass mandatory cognitive loop before acceptance",
+        "Y_t_plus_1": {
+          "correct_path": [],
+          "decision": "ALLOW",
+          "guidance": {},
+          "reason": "CEO post-action residual satisfies CEO Cognitive OS contract"
+        }
+      },
+      "YstarGov_correct_path": [],
+      "YstarGov_decision": "ALLOW",
+      "YstarGov_failed_stage": null,
+      "YstarGov_guidance": {},
+      "YstarGov_import_status": "direct_YstarGov_import_used",
+      "YstarGov_reason": "CEO post-action residual satisfies CEO Cognitive OS contract",
+      "YstarGov_requires_owner_decision": false,
+      "artifact_id": "e84_ystar_gov_ceo_cognitive_os_call_adapter_result",
+      "external_action_executed": false,
+      "formal_CIEU_log_status": "CIEU_log_write_deferred",
+      "formal_CIEU_log_written": false,
+      "packet_kind": "post_action_residual",
+      "provider_live_execution": false,
+      "route": {
+        "block_execution": false,
+        "ceo_revision_required": false,
+        "execution_allowed_by_adapter": false,
+        "owner_decision_packet_required": false,
+        "route": "continue_to_approved_next_step_without_external_execution"
+      },
+      "validator": "validate_ceo_post_action_residual"
+    },
+    "revision_packet": {
+      "CIEU_validation_record_candidate": {
+        "R_t_plus_1": {
+          "guidance_path": [
+            "repair the CEO Cognitive OS packet before execution",
+            "do not execute the proposed action while decision is REQUIRE_REVISION",
+            "rerun validate_ceo_pre_action_packet or validate_ceo_post_action_residual after repair",
+            "compare at least two candidate actions before selecting one"
+          ],
+          "requires_owner_decision": false,
+          "residual": "at least two counterfactual comparisons are required"
+        },
+        "U_t": "Y-star-gov CEO Cognitive OS validation",
+        "X_t": {
+          "action_class": "owner_decision_preparation",
+          "contract_id": "ceo_cognitive_os_loop_contract_v1",
+          "packet_id": "e84_sample_pre_action_packet"
+        },
+        "Y_star_t": "CEO major action must pass mandatory cognitive loop before acceptance",
+        "Y_t_plus_1": {
+          "correct_path": [
+            "repair the CEO Cognitive OS packet before execution",
+            "do not execute the proposed action while decision is REQUIRE_REVISION",
+            "rerun validate_ceo_pre_action_packet or validate_ceo_post_action_residual after repair",
+            "compare at least two candidate actions before selecting one"
+          ],
+          "decision": "REQUIRE_REVISION",
+          "guidance": {
+            "correct_path": [
+              "repair the CEO Cognitive OS packet before execution",
+              "do not execute the proposed action while decision is REQUIRE_REVISION",
+              "rerun validate_ceo_pre_action_packet or validate_ceo_post_action_residual after repair",
+              "compare at least two candidate actions before selecting one"
+            ],
+            "execution_allowed_before_revision": false,
+            "failed_stage": "counterfactual_action_comparison",
+            "guidance_type": "require_revision",
+            "missing_fields": [],
+            "missing_loop_stages": [],
+            "required_evidence": [],
+            "required_packet_changes": [
+              "compare at least two candidate actions before selecting one"
+            ],
+            "revalidate_after_revision": true
+          },
+          "reason": "at least two counterfactual comparisons are required"
+        }
+      },
+      "YstarGov_correct_path": [
+        "repair the CEO Cognitive OS packet before execution",
+        "do not execute the proposed action while decision is REQUIRE_REVISION",
+        "rerun validate_ceo_pre_action_packet or validate_ceo_post_action_residual after repair",
+        "compare at least two candidate actions before selecting one"
+      ],
+      "YstarGov_decision": "REQUIRE_REVISION",
+      "YstarGov_failed_stage": "counterfactual_action_comparison",
+      "YstarGov_guidance": {
+        "correct_path": [
+          "repair the CEO Cognitive OS packet before execution",
+          "do not execute the proposed action while decision is REQUIRE_REVISION",
+          "rerun validate_ceo_pre_action_packet or validate_ceo_post_action_residual after repair",
+          "compare at least two candidate actions before selecting one"
+        ],
+        "execution_allowed_before_revision": false,
+        "failed_stage": "counterfactual_action_comparison",
+        "guidance_type": "require_revision",
+        "missing_fields": [],
+        "missing_loop_stages": [],
+        "required_evidence": [],
+        "required_packet_changes": [
+          "compare at least two candidate actions before selecting one"
+        ],
+        "revalidate_after_revision": true
+      },
+      "YstarGov_import_status": "direct_YstarGov_import_used",
+      "YstarGov_reason": "at least two counterfactual comparisons are required",
+      "YstarGov_requires_owner_decision": false,
+      "artifact_id": "e84_ystar_gov_ceo_cognitive_os_call_adapter_result",
+      "external_action_executed": false,
+      "formal_CIEU_log_status": "CIEU_log_write_deferred",
+      "formal_CIEU_log_written": false,
+      "packet_kind": "pre_action_packet",
+      "provider_live_execution": false,
+      "route": {
+        "block_execution": true,
+        "ceo_revision_required": true,
+        "execution_allowed_by_adapter": false,
+        "owner_decision_packet_required": false,
+        "route": "return_correct_path_guidance_to_ceo"
+      },
+      "validator": "validate_ceo_pre_action_packet"
+    },
+    "valid_packet": {
+      "CIEU_validation_record_candidate": {
+        "R_t_plus_1": "none",
+        "U_t": "Y-star-gov CEO Cognitive OS validation",
+        "X_t": {
+          "action_class": "owner_decision_preparation",
+          "contract_id": "ceo_cognitive_os_loop_contract_v1",
+          "packet_id": "e84_sample_pre_action_packet"
+        },
+        "Y_star_t": "CEO major action must pass mandatory cognitive loop before acceptance",
+        "Y_t_plus_1": {
+          "correct_path": [],
+          "decision": "ALLOW",
+          "guidance": {},
+          "reason": "CEO pre-action packet satisfies CEO Cognitive OS contract"
+        }
+      },
+      "YstarGov_correct_path": [],
+      "YstarGov_decision": "ALLOW",
+      "YstarGov_failed_stage": null,
+      "YstarGov_guidance": {},
+      "YstarGov_import_status": "direct_YstarGov_import_used",
+      "YstarGov_reason": "CEO pre-action packet satisfies CEO Cognitive OS contract",
+      "YstarGov_requires_owner_decision": false,
+      "artifact_id": "e84_ystar_gov_ceo_cognitive_os_call_adapter_result",
+      "external_action_executed": false,
+      "formal_CIEU_log_status": "CIEU_log_write_deferred",
+      "formal_CIEU_log_written": false,
+      "packet_kind": "pre_action_packet",
+      "provider_live_execution": false,
+      "route": {
+        "block_execution": false,
+        "ceo_revision_required": false,
+        "execution_allowed_by_adapter": false,
+        "owner_decision_packet_required": false,
+        "route": "continue_to_approved_next_step_without_external_execution"
+      },
+      "validator": "validate_ceo_pre_action_packet"
+    }
+  },
+  "artifact_id": "e84_patch_result",
+  "bridge_labs_modified": true,
+  "files_created": [
+    "office/mission_command/e84_ystar_gov_ceo_cognitive_os_call_adapter.py",
+    "office/mission_command/e84_readback.py",
+    "tests/office/test_e84_runtime_interfaces.py"
+  ],
+  "files_modified": [
+    "office/mission_command/e46b_ceo_brain_adapter.py"
+  ],
+  "formal_CIEU_log_write_implemented": false,
+  "formal_CIEU_log_write_status": "CIEU_log_write_deferred",
+  "gov_mcp_modified": false,
+  "job_id": "E84_YStarGov_GovMCP_BridgeLabs_Runtime_Interface_Audit_and_CEO_CognitiveOS_Hook_Wiring_R1",
+  "patch_made": true,
+  "patch_type": "bridge_labs_call_adapter",
+  "validator_output_status": "CIEU_validation_record_candidate_only"
+}

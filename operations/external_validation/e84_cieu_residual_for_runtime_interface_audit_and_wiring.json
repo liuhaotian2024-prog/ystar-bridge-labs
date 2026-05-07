@@ -1,0 +1,44 @@
+{
+  "R_t_plus_1": {
+    "residual_gaps": [
+      "hook/runtime wiring remains",
+      "formal CIEU log write deferred",
+      "gov-mcp remains read-only and unwired",
+      "L4 not executed",
+      "L5 not ready",
+      "customer/paid/pricing/compliance validation absent"
+    ]
+  },
+  "U_t": {
+    "audited_E83_correctness": true,
+    "audited_Y_star_gov_runtime_topology": true,
+    "audited_bridge_labs_CEO_packet_runtime": true,
+    "audited_gov_mcp_runtime_topology": true,
+    "implemented_patch": "bridge_labs_call_adapter_only",
+    "mapped_cross_repo_interfaces": true
+  },
+  "X_t": {
+    "E83_corrected_auto_guidance_semantics": true,
+    "correct_interfaces_required_before_next_patch": true,
+    "no_external_action_boundary": true,
+    "owner_rejected_invented_CIEU_trace_terminology": true
+  },
+  "Y_star_t": {
+    "constraints": [
+      "no external action",
+      "no gov-mcp mutation",
+      "no fake CIEU log write",
+      "no L4/L5 claims"
+    ],
+    "intended_outcome": "use correct CIEU log terminology, attach CEO Cognitive OS through existing interfaces, avoid duplicate wheels, define correct L4/L5 path"
+  },
+  "Y_t_plus_1": {
+    "correctness_decision": "correct_but_needs_bridge_labs_call_adapter",
+    "interface_map": "generated",
+    "patch_result": "bridge_labs_call_adapter_implemented",
+    "tests": "targeted E84 tests added",
+    "topology_audits": "generated"
+  },
+  "artifact_id": "e84_cieu_residual_for_runtime_interface_audit_and_wiring",
+  "job_id": "E84_YStarGov_GovMCP_BridgeLabs_Runtime_Interface_Audit_and_CEO_CognitiveOS_Hook_Wiring_R1"
+}

@@ -1,0 +1,106 @@
+{
+  "artifact_id": "e84_gov_mcp_runtime_topology_audit",
+  "blocker": null,
+  "gov_mcp_available": true,
+  "gov_mcp_mutated": false,
+  "job_id": "E84_YStarGov_GovMCP_BridgeLabs_Runtime_Interface_Audit_and_CEO_CognitiveOS_Hook_Wiring_R1",
+  "node_count": 5,
+  "nodes": [
+    {
+      "CEO_Cognitive_OS_should_integrate_here": "later, only after Y-star-gov allows/scopes provider/tool execution",
+      "can_consume_Y_star_gov_decision": true,
+      "can_return_REQUIRE_REVISION_guidance": false,
+      "confidence": "high",
+      "decision_values": [
+        "ALLOW",
+        "DENY"
+      ],
+      "evidence_path": "gov-mcp:gov_mcp/server.py",
+      "executes_provider_action": "only deterministic Bash auto-exec; provider execution is separate outbound layer",
+      "file_path": "gov_mcp/server.py",
+      "input_schema": "agent_id, tool_name, params",
+      "layer": "server_registration",
+      "node_id": "gov_mcp_server_registration",
+      "output_schema": "JSON decision envelope",
+      "symbol": "create_server, gov_check, gov_enforce",
+      "writes_receipts": false
+    },
+    {
+      "CEO_Cognitive_OS_should_integrate_here": "later L4/L5 company-action preflight",
+      "can_consume_Y_star_gov_decision": "planned",
+      "can_return_REQUIRE_REVISION_guidance": "not directly",
+      "confidence": "high",
+      "decision_values": [
+        "ok",
+        "needs_budget",
+        "escalation options"
+      ],
+      "evidence_path": "gov-mcp:gov_mcp/company_runtime_tools.py",
+      "executes_provider_action": false,
+      "file_path": "gov_mcp/company_runtime_tools.py",
+      "input_schema": "company action dict and optional mission dict",
+      "layer": "governance_check",
+      "node_id": "gov_mcp_company_preflight",
+      "output_schema": "classification/preflight result with external_action_executed false",
+      "symbol": "gov_company_action_preflight, gov_company_mission_action_preflight",
+      "writes_receipts": false
+    },
+    {
+      "CEO_Cognitive_OS_should_integrate_here": "after CEO packet ALLOW and owner activation",
+      "can_consume_Y_star_gov_decision": "planned",
+      "can_return_REQUIRE_REVISION_guidance": "no, policy returns reason codes",
+      "confidence": "high",
+      "decision_values": [
+        "deny",
+        "send_gated_pending_authorization",
+        "gov_mcp_execute_after_activation"
+      ],
+      "evidence_path": "gov-mcp:gov_mcp/outbound/policy.py",
+      "executes_provider_action": false,
+      "file_path": "gov_mcp/outbound/policy.py",
+      "input_schema": "OutboundActionIntent",
+      "layer": "provider_boundary",
+      "node_id": "gov_mcp_outbound_policy",
+      "output_schema": "OutboundPreflightResult",
+      "symbol": "evaluate_outbound_policy",
+      "writes_receipts": false
+    },
+    {
+      "CEO_Cognitive_OS_should_integrate_here": "L4/L5 no-send rehearsal after Y-star-gov ALLOW/ESCALATE closure",
+      "can_consume_Y_star_gov_decision": "planned",
+      "can_return_REQUIRE_REVISION_guidance": "no, receipt reason codes only",
+      "confidence": "high",
+      "decision_values": [
+        "dry_run_denied",
+        "dry_run_completed"
+      ],
+      "evidence_path": "gov-mcp:gov_mcp/outbound/dry_run_adapter.py",
+      "executes_provider_action": false,
+      "file_path": "gov_mcp/outbound/dry_run_adapter.py",
+      "input_schema": "OutboundActionIntent",
+      "layer": "dry_run",
+      "node_id": "gov_mcp_dry_run_adapter",
+      "output_schema": "no-send receipt",
+      "symbol": "dry_run_outbound_action",
+      "writes_receipts": true
+    },
+    {
+      "CEO_Cognitive_OS_should_integrate_here": "only after future approved provider execution boundary",
+      "can_consume_Y_star_gov_decision": "planned",
+      "can_return_REQUIRE_REVISION_guidance": "no, guard reason codes only",
+      "confidence": "high",
+      "decision_values": [
+        "allowed_for_live_execution true/false"
+      ],
+      "evidence_path": "gov-mcp:gov_mcp/outbound/provider_guard_stack.py",
+      "executes_provider_action": false,
+      "file_path": "gov_mcp/outbound/provider_guard_stack.py",
+      "input_schema": "ProviderExecutionRequest and provider manifest",
+      "layer": "provider_boundary",
+      "node_id": "gov_mcp_provider_guard_stack",
+      "output_schema": "allowed_for_live_execution and reason_codes",
+      "symbol": "evaluate_provider_guard_stack",
+      "writes_receipts": false
+    }
+  ]
+}

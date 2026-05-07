@@ -1,0 +1,67 @@
+{
+  "artifact_id": "e84_bridge_labs_ceo_packet_runtime_audit",
+  "job_id": "E84_YStarGov_GovMCP_BridgeLabs_Runtime_Interface_Audit_and_CEO_CognitiveOS_Hook_Wiring_R1",
+  "node_count": 4,
+  "nodes": [
+    {
+      "can_block_execution": true,
+      "can_route_ESCALATE_to_owner_decision_packet": "limited local DENY only",
+      "can_route_REQUIRE_REVISION_guidance_back_to_CEO": "not before E84",
+      "confidence": "high",
+      "does_call_Y_star_gov": false,
+      "evidence_path": "bridge-labs:office/mission_command/e81_ceo_cognitive_os_preflight_validator.py",
+      "file_path": "office/mission_command/e81_ceo_cognitive_os_preflight_validator.py",
+      "input_schema": "E81 pre-action packet and post-action residual",
+      "node_id": "bridge_e81_pre_sync_validator",
+      "only_records_generated_artifacts": false,
+      "output_schema": "bridge-labs ALLOW/DENY result",
+      "role": "packet_validator",
+      "symbol": "validate_pre_action_packet, validate_post_action_residual"
+    },
+    {
+      "can_block_execution": true,
+      "can_route_ESCALATE_to_owner_decision_packet": true,
+      "can_route_REQUIRE_REVISION_guidance_back_to_CEO": true,
+      "confidence": "high",
+      "does_call_Y_star_gov": true,
+      "evidence_path": "bridge-labs:office/mission_command/e84_ystar_gov_ceo_cognitive_os_call_adapter.py",
+      "file_path": "office/mission_command/e84_ystar_gov_ceo_cognitive_os_call_adapter.py",
+      "input_schema": "CEO pre-action packet or post-action residual",
+      "node_id": "bridge_e84_call_adapter",
+      "only_records_generated_artifacts": false,
+      "output_schema": "Y-star-gov decision plus bridge-labs route",
+      "role": "packet_validator_call_adapter",
+      "symbol": "validate_pre_action_with_ystar_gov, validate_post_action_with_ystar_gov"
+    },
+    {
+      "can_block_execution": false,
+      "can_route_ESCALATE_to_owner_decision_packet": "readback after E84",
+      "can_route_REQUIRE_REVISION_guidance_back_to_CEO": "readback after E84",
+      "confidence": "high",
+      "does_call_Y_star_gov": false,
+      "evidence_path": "bridge-labs:office/mission_command/e46b_ceo_brain_adapter.py",
+      "file_path": "office/mission_command/e46b_ceo_brain_adapter.py",
+      "input_schema": "task dict",
+      "node_id": "bridge_ceo_brain_adapter",
+      "only_records_generated_artifacts": false,
+      "output_schema": "CEO brain readback context",
+      "role": "readback",
+      "symbol": "load_ceo_brain_context"
+    },
+    {
+      "can_block_execution": false,
+      "can_route_ESCALATE_to_owner_decision_packet": false,
+      "can_route_REQUIRE_REVISION_guidance_back_to_CEO": false,
+      "confidence": "high",
+      "does_call_Y_star_gov": false,
+      "evidence_path": "bridge-labs:operations/external_validation/e81_ceo_mandatory_pre_action_packet_schema.json",
+      "file_path": "operations/external_validation/e81_ceo_mandatory_pre_action_packet_schema.json",
+      "input_schema": "none",
+      "node_id": "bridge_e81_schemas",
+      "only_records_generated_artifacts": true,
+      "output_schema": "minimum fields and CIEU prediction fields",
+      "role": "generated_artifact",
+      "symbol": "mandatory pre-action packet schema"
+    }
+  ]
+}

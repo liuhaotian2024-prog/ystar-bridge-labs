@@ -1,0 +1,84 @@
+{
+  "artifact_id": "e84_cross_repo_runtime_interface_map",
+  "edges": [
+    {
+      "correct_next_step": "use adapter for bridge-labs CEO major-action preflight",
+      "current_status": "implemented",
+      "data_passed": "CEO mandatory pre-action packet",
+      "decision_semantics": [
+        "ALLOW",
+        "REQUIRE_REVISION",
+        "DENY",
+        "ESCALATE"
+      ],
+      "edge_id": "bridge_packet_to_ystar_validator",
+      "source_function_or_artifact": "office/mission_command/e84_ystar_gov_ceo_cognitive_os_call_adapter.py",
+      "source_repo": "bridge-labs",
+      "target_function_or_artifact": "ystar.governance.validate_ceo_pre_action_packet",
+      "target_repo": "Y-star-gov"
+    },
+    {
+      "correct_next_step": "require post-action residual validation after future action outputs",
+      "current_status": "implemented",
+      "data_passed": "CEO post-action residual",
+      "decision_semantics": [
+        "ALLOW",
+        "REQUIRE_REVISION",
+        "DENY"
+      ],
+      "edge_id": "bridge_residual_to_ystar_validator",
+      "source_function_or_artifact": "office/mission_command/e84_ystar_gov_ceo_cognitive_os_call_adapter.py",
+      "source_repo": "bridge-labs",
+      "target_function_or_artifact": "ystar.governance.validate_ceo_post_action_residual",
+      "target_repo": "Y-star-gov"
+    },
+    {
+      "correct_next_step": "E85 targeted CIEU log write integration if owner approves and tests prove exact write path",
+      "current_status": "planned",
+      "data_passed": "CIEU validation record candidate",
+      "decision_semantics": [
+        "candidate only"
+      ],
+      "edge_id": "ystar_validator_to_cieu_log",
+      "source_function_or_artifact": "ystar/governance/ceo_cognitive_os_contract.py",
+      "source_repo": "Y-star-gov",
+      "target_function_or_artifact": "ystar/governance/cieu_store.py",
+      "target_repo": "Y-star-gov"
+    },
+    {
+      "correct_next_step": "do not mutate gov-mcp until explicit base approval; use it only after Y-star-gov ALLOW and owner scope",
+      "current_status": "planned",
+      "data_passed": "approved and scoped provider/tool action envelope",
+      "decision_semantics": [
+        "gov-mcp deny/send_gated_pending_authorization/gov_mcp_execute_after_activation"
+      ],
+      "edge_id": "ystar_allow_to_gov_mcp_provider_envelope",
+      "source_function_or_artifact": "validate_ceo_pre_action_packet",
+      "source_repo": "Y-star-gov",
+      "target_function_or_artifact": "gov_mcp.outbound.dry_run_adapter / provider_guard_stack",
+      "target_repo": "gov-mcp"
+    }
+  ],
+  "job_id": "E84_YStarGov_GovMCP_BridgeLabs_Runtime_Interface_Audit_and_CEO_CognitiveOS_Hook_Wiring_R1",
+  "responsibilities": {
+    "K9Audit": [
+      "CIEU ledger/verifier owner if used directly"
+    ],
+    "Y_star_gov": [
+      "canonical CEO Cognitive OS validation",
+      "owner approval governance",
+      "CIEU log path when safely wired"
+    ],
+    "bridge_labs": [
+      "CEO packet producer",
+      "business artifacts",
+      "owner decision packet",
+      "readback",
+      "post-action residual producer"
+    ],
+    "gov_mcp": [
+      "provider/tool execution envelope",
+      "dry-run/provider promotion/receipt path"
+    ]
+  }
+}
