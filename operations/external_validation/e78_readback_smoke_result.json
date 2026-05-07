@@ -1,0 +1,14 @@
+{
+  "artifact_id": "e78_readback_smoke_result",
+  "checks": {
+    "L3_executed": true,
+    "owner_approval_explicit": true,
+    "source_receipts_present": true,
+    "L4_packet_prep_only": true,
+    "L5_not_ready": true,
+    "no_forbidden_claims": true,
+    "no_external_action_after_E78": true
+  },
+  "passes": true,
+  "external_action_allowed": false
+}

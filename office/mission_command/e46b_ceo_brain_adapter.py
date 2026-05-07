@@ -401,6 +401,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e76_e77_l3_lineage_decision_state = {'E76_E77_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision', 'did_execute_L3': False}
     try:
+        from office.mission_command.e78_readback import load_e78_l3_research_state_for_brain
+        e78_l3_research_state = load_e78_l3_research_state_for_brain()
+    except Exception as exc:
+        e78_l3_research_state = {'E78_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision', 'did_execute_L3': False}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -628,6 +633,21 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_e76_e77_L4_ready": e76_e77_l3_lineage_decision_state.get("L4_ready"),
         "current_e76_e77_L5_ready": e76_e77_l3_lineage_decision_state.get("L5_ready"),
         "current_e76_e77_external_action_allowed": e76_e77_l3_lineage_decision_state.get("external_action_allowed"),
+        "latest_e78_l3_research_state": e78_l3_research_state,
+        "current_e78_l3_research_status": e78_l3_research_state.get("E78_status"),
+        "current_e78_l3_executed": e78_l3_research_state.get("did_execute_L3"),
+        "current_e78_owner_approval_explicit": e78_l3_research_state.get("owner_approval_explicit"),
+        "current_e78_public_read_source_count": e78_l3_research_state.get("source_count"),
+        "current_e78_source_categories_used": e78_l3_research_state.get("source_categories_used"),
+        "current_e78_buyer_problem_finding": e78_l3_research_state.get("buyer_problem_finding"),
+        "current_e78_product_offer_finding": e78_l3_research_state.get("product_offer_finding"),
+        "current_e78_CIEU_audit_module_finding": e78_l3_research_state.get("CIEU_audit_module_finding"),
+        "current_e78_pricing_packaging_finding": e78_l3_research_state.get("pricing_packaging_finding"),
+        "current_e78_L4_owner_decision_packet_preparation_justified": e78_l3_research_state.get("L4_owner_decision_packet_preparation_justified"),
+        "current_e78_L4_execution_ready": e78_l3_research_state.get("L4_execution_ready"),
+        "current_e78_L5_ready": e78_l3_research_state.get("L5_ready"),
+        "current_e78_next_recommended_milestone": e78_l3_research_state.get("next_recommended_milestone"),
+        "current_e78_external_action_allowed": e78_l3_research_state.get("external_action_allowed"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

@@ -1,0 +1,571 @@
+{
+  "artifact_id": "e78_l3_source_receipts",
+  "bridge_job_id": "e78_owner_approved_l3_read_only_external_research_pilot_R1_post_E73_20260507T000001Z",
+  "owner_decision_status": "APPROVE_L3_READ_ONLY_RESEARCH_PILOT",
+  "source_count": 21,
+  "source_categories_used": [
+    "ai_governance_observability_security_vendor_pages",
+    "official_agent_framework_docs",
+    "public_github_repos_issues",
+    "public_job_posts",
+    "public_pricing_pages",
+    "public_standards_regulatory_guidance"
+  ],
+  "receipts": [
+    {
+      "source_id": "SRC001",
+      "source_title": "OpenAI Agents SDK tracing documentation",
+      "source_url": "https://openai.github.io/openai-agents-python/tracing/",
+      "source_locator": "https://openai.github.io/openai-agents-python/tracing/",
+      "source_category": "official_agent_framework_docs",
+      "access_mode": "public_read_only",
+      "access_time": "2026-05-07T13:25:00Z",
+      "public_read_only_confirmed": true,
+      "login_required": false,
+      "interaction_required": false,
+      "evidence_type": "tool_trace_and_observability_language",
+      "relevant_claims_supported": [
+        "agent runs need traces",
+        "tool calls and guardrails are observable units"
+      ],
+      "quote_or_summary_boundary": "OpenAI's Agents SDK docs describe tracing of agent runs, model generations, function calls, guardrails, handoffs, and custom spans. This supports tool-call oversight language.",
+      "risk_flags": [
+        "none"
+      ],
+      "allowed_by_owner_scope": true,
+      "included_in_synthesis": true,
+      "exclusion_reason": null,
+      "no_contact_confirmed": true,
+      "no_publication_confirmed": true,
+      "no_payment_confirmed": true
+    },
+    {
+      "source_id": "SRC002",
+      "source_title": "LangChain human-in-the-loop docs",
+      "source_url": "https://docs.langchain.com/oss/python/langchain/human-in-the-loop",
+      "source_locator": "https://docs.langchain.com/oss/python/langchain/human-in-the-loop",
+      "source_category": "official_agent_framework_docs",
+      "access_mode": "public_read_only",
+      "access_time": "2026-05-07T13:25:00Z",
+      "public_read_only_confirmed": true,
+      "login_required": false,
+      "interaction_required": false,
+      "evidence_type": "human_approval_and_control_boundary_language",
+      "relevant_claims_supported": [
+        "human approval can be required before sensitive tool calls",
+        "interrupt and resume patterns are first-class"
+      ],
+      "quote_or_summary_boundary": "LangChain documents middleware that pauses execution and waits for human decisions before tool calls. This supports controlled delegation and owner-gated action language.",
+      "risk_flags": [
+        "none"
+      ],
+      "allowed_by_owner_scope": true,
+      "included_in_synthesis": true,
+      "exclusion_reason": null,
+      "no_contact_confirmed": true,
+      "no_publication_confirmed": true,
+      "no_payment_confirmed": true
+    },
+    {
+      "source_id": "SRC003",
+      "source_title": "Microsoft AutoGen human-in-the-loop guide",
+      "source_url": "https://microsoft.github.io/autogen/stable/user-guide/agentchat-user-guide/tutorial/human-in-the-loop.html",
+      "source_locator": "https://microsoft.github.io/autogen/stable/user-guide/agentchat-user-guide/tutorial/human-in-the-loop.html",
+      "source_category": "official_agent_framework_docs",
+      "access_mode": "public_read_only",
+      "access_time": "2026-05-07T13:25:00Z",
+      "public_read_only_confirmed": true,
+      "login_required": false,
+      "interaction_required": false,
+      "evidence_type": "human_feedback_and_agent_control_language",
+      "relevant_claims_supported": [
+        "agent frameworks expose human feedback modes",
+        "interactive approval is a common agent operations concern"
+      ],
+      "quote_or_summary_boundary": "AutoGen's AgentChat guide includes human-in-the-loop modes and warnings about potential indefinite blocking. This supports a need for explicit action boundaries and operator controls.",
+      "risk_flags": [
+        "none"
+      ],
+      "allowed_by_owner_scope": true,
+      "included_in_synthesis": true,
+      "exclusion_reason": null,
+      "no_contact_confirmed": true,
+      "no_publication_confirmed": true,
+      "no_payment_confirmed": true
+    },
+    {
+      "source_id": "SRC004",
+      "source_title": "LangChain platform overview",
+      "source_url": "https://www.langchain.com/",
+      "source_locator": "https://www.langchain.com/",
+      "source_category": "ai_governance_observability_security_vendor_pages",
+      "access_mode": "public_read_only",
+      "access_time": "2026-05-07T13:25:00Z",
+      "public_read_only_confirmed": true,
+      "login_required": false,
+      "interaction_required": false,
+      "evidence_type": "adjacent_product_category_presence",
+      "relevant_claims_supported": [
+        "agent engineering platform demand",
+        "observability, evaluation, deployment, and iteration are packaged together"
+      ],
+      "quote_or_summary_boundary": "LangChain positions its platform around agent engineering, observability, testing, evaluation, deployment, and improvement. This is adjacent to a governed operations blueprint.",
+      "risk_flags": [
+        "none"
+      ],
+      "allowed_by_owner_scope": true,
+      "included_in_synthesis": true,
+      "exclusion_reason": null,
+      "no_contact_confirmed": true,
+      "no_publication_confirmed": true,
+      "no_payment_confirmed": true
+    },
+    {
+      "source_id": "SRC005",
+      "source_title": "LangSmith observability concepts",
+      "source_url": "https://docs.langchain.com/langsmith/observability-concepts",
+      "source_locator": "https://docs.langchain.com/langsmith/observability-concepts",
+      "source_category": "ai_governance_observability_security_vendor_pages",
+      "access_mode": "public_read_only",
+      "access_time": "2026-05-07T13:25:00Z",
+      "public_read_only_confirmed": true,
+      "login_required": false,
+      "interaction_required": false,
+      "evidence_type": "observability_trace_concept_language",
+      "relevant_claims_supported": [
+        "traces, runs, spans, metadata, and feedback are buyer-readable concepts"
+      ],
+      "quote_or_summary_boundary": "LangSmith explains observability around traces, runs, spans, metadata, feedback, and evaluators. This strengthens the auditability/traceability part of the route.",
+      "risk_flags": [
+        "none"
+      ],
+      "allowed_by_owner_scope": true,
+      "included_in_synthesis": true,
+      "exclusion_reason": null,
+      "no_contact_confirmed": true,
+      "no_publication_confirmed": true,
+      "no_payment_confirmed": true
+    },
+    {
+      "source_id": "SRC006",
+      "source_title": "Langfuse LLM engineering platform",
+      "source_url": "https://langfuse.com/",
+      "source_locator": "https://langfuse.com/",
+      "source_category": "ai_governance_observability_security_vendor_pages",
+      "access_mode": "public_read_only",
+      "access_time": "2026-05-07T13:25:00Z",
+      "public_read_only_confirmed": true,
+      "login_required": false,
+      "interaction_required": false,
+      "evidence_type": "adjacent_product_category_presence",
+      "relevant_claims_supported": [
+        "LLM tracing, evaluation, prompt management, and metrics are established adjacent categories"
+      ],
+      "quote_or_summary_boundary": "Langfuse describes open-source LLM engineering with tracing, prompt management, evaluations, metrics, and datasets. This supports a market category around LLM/agent ops visibility.",
+      "risk_flags": [
+        "none"
+      ],
+      "allowed_by_owner_scope": true,
+      "included_in_synthesis": true,
+      "exclusion_reason": null,
+      "no_contact_confirmed": true,
+      "no_publication_confirmed": true,
+      "no_payment_confirmed": true
+    },
+    {
+      "source_id": "SRC007",
+      "source_title": "Langfuse pricing",
+      "source_url": "https://langfuse.com/pricing",
+      "source_locator": "https://langfuse.com/pricing",
+      "source_category": "public_pricing_pages",
+      "access_mode": "public_read_only",
+      "access_time": "2026-05-07T13:25:00Z",
+      "public_read_only_confirmed": true,
+      "login_required": false,
+      "interaction_required": false,
+      "evidence_type": "pricing_packaging_public_proxy",
+      "relevant_claims_supported": [
+        "usage-based pricing and retention tiers are visible public analogs"
+      ],
+      "quote_or_summary_boundary": "Langfuse public pricing shows free/hobby and paid tiers, usage unit pricing, retention differences, and enterprise features. This is a pricing proxy only, not pricing validation.",
+      "risk_flags": [
+        "pricing_proxy_not_validation"
+      ],
+      "allowed_by_owner_scope": true,
+      "included_in_synthesis": true,
+      "exclusion_reason": null,
+      "no_contact_confirmed": true,
+      "no_publication_confirmed": true,
+      "no_payment_confirmed": true
+    },
+    {
+      "source_id": "SRC008",
+      "source_title": "Arize Phoenix documentation",
+      "source_url": "https://arize.com/docs/phoenix",
+      "source_locator": "https://arize.com/docs/phoenix",
+      "source_category": "ai_governance_observability_security_vendor_pages",
+      "access_mode": "public_read_only",
+      "access_time": "2026-05-07T13:25:00Z",
+      "public_read_only_confirmed": true,
+      "login_required": false,
+      "interaction_required": false,
+      "evidence_type": "llm_observability_and_evaluation_language",
+      "relevant_claims_supported": [
+        "LLM tracing and evaluation are adjacent product capabilities"
+      ],
+      "quote_or_summary_boundary": "Phoenix docs describe AI observability and evaluation workflows with tracing, evaluation, experiments, and prompt management. This is adjacent to blueprint/control-room positioning.",
+      "risk_flags": [
+        "none"
+      ],
+      "allowed_by_owner_scope": true,
+      "included_in_synthesis": true,
+      "exclusion_reason": null,
+      "no_contact_confirmed": true,
+      "no_publication_confirmed": true,
+      "no_payment_confirmed": true
+    },
+    {
+      "source_id": "SRC009",
+      "source_title": "Arize / Phoenix pricing",
+      "source_url": "https://arize.com/pricing/",
+      "source_locator": "https://arize.com/pricing/",
+      "source_category": "public_pricing_pages",
+      "access_mode": "public_read_only",
+      "access_time": "2026-05-07T13:25:00Z",
+      "public_read_only_confirmed": true,
+      "login_required": false,
+      "interaction_required": false,
+      "evidence_type": "pricing_packaging_public_proxy",
+      "relevant_claims_supported": [
+        "open-source/free and pro tiers are visible public analogs"
+      ],
+      "quote_or_summary_boundary": "Arize's public pricing shows free/open-source Phoenix, AX Pro, and enterprise options. This informs packaging analogs but does not validate Y*Bridge pricing.",
+      "risk_flags": [
+        "pricing_proxy_not_validation"
+      ],
+      "allowed_by_owner_scope": true,
+      "included_in_synthesis": true,
+      "exclusion_reason": null,
+      "no_contact_confirmed": true,
+      "no_publication_confirmed": true,
+      "no_payment_confirmed": true
+    },
+    {
+      "source_id": "SRC010",
+      "source_title": "OpenInference specification",
+      "source_url": "https://arize-ai.github.io/openinference/spec/semantic_conventions.html",
+      "source_locator": "https://arize-ai.github.io/openinference/spec/semantic_conventions.html",
+      "source_category": "public_github_repos_issues",
+      "access_mode": "public_read_only",
+      "access_time": "2026-05-07T13:25:00Z",
+      "public_read_only_confirmed": true,
+      "login_required": false,
+      "interaction_required": false,
+      "evidence_type": "trace_semantic_convention_language",
+      "relevant_claims_supported": [
+        "agent, chain, tool, retriever, and embedding spans are standardized public observability concepts"
+      ],
+      "quote_or_summary_boundary": "OpenInference semantic conventions define tracing spans for LLM applications including agents, chains, tools, retrievers, and embeddings. This supports audit trace semantics.",
+      "risk_flags": [
+        "none"
+      ],
+      "allowed_by_owner_scope": true,
+      "included_in_synthesis": true,
+      "exclusion_reason": null,
+      "no_contact_confirmed": true,
+      "no_publication_confirmed": true,
+      "no_payment_confirmed": true
+    },
+    {
+      "source_id": "SRC011",
+      "source_title": "OpenInference GitHub repository",
+      "source_url": "https://github.com/Arize-ai/openinference",
+      "source_locator": "https://github.com/Arize-ai/openinference",
+      "source_category": "public_github_repos_issues",
+      "access_mode": "public_read_only",
+      "access_time": "2026-05-07T13:25:00Z",
+      "public_read_only_confirmed": true,
+      "login_required": false,
+      "interaction_required": false,
+      "evidence_type": "public_repo_category_presence",
+      "relevant_claims_supported": [
+        "open-source instrumentation exists for LLM observability"
+      ],
+      "quote_or_summary_boundary": "The OpenInference repository presents open-source instrumentation for LLM application observability with OpenTelemetry compatibility. This supports the existence of a developer-facing trace ecosystem.",
+      "risk_flags": [
+        "none"
+      ],
+      "allowed_by_owner_scope": true,
+      "included_in_synthesis": true,
+      "exclusion_reason": null,
+      "no_contact_confirmed": true,
+      "no_publication_confirmed": true,
+      "no_payment_confirmed": true
+    },
+    {
+      "source_id": "SRC012",
+      "source_title": "NIST AI Risk Management Framework",
+      "source_url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "source_locator": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "source_category": "public_standards_regulatory_guidance",
+      "access_mode": "public_read_only",
+      "access_time": "2026-05-07T13:25:00Z",
+      "public_read_only_confirmed": true,
+      "login_required": false,
+      "interaction_required": false,
+      "evidence_type": "risk_management_language",
+      "relevant_claims_supported": [
+        "govern, map, measure, manage language supports governance framing"
+      ],
+      "quote_or_summary_boundary": "NIST's AI RMF is a voluntary risk management framework with govern/map/measure/manage functions. It is useful public guidance context, not compliance proof.",
+      "risk_flags": [
+        "regulatory_context_not_compliance_proof"
+      ],
+      "allowed_by_owner_scope": true,
+      "included_in_synthesis": true,
+      "exclusion_reason": null,
+      "no_contact_confirmed": true,
+      "no_publication_confirmed": true,
+      "no_payment_confirmed": true
+    },
+    {
+      "source_id": "SRC013",
+      "source_title": "NIST Generative AI Profile",
+      "source_url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
+      "source_locator": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
+      "source_category": "public_standards_regulatory_guidance",
+      "access_mode": "public_read_only",
+      "access_time": "2026-05-07T13:25:00Z",
+      "public_read_only_confirmed": true,
+      "login_required": false,
+      "interaction_required": false,
+      "evidence_type": "generative_ai_risk_language",
+      "relevant_claims_supported": [
+        "AI risk guidance supports careful governance and evidence language"
+      ],
+      "quote_or_summary_boundary": "NIST's Generative AI Profile points to generative AI risks and risk-management practices. It supports compliance-readiness language only as public context.",
+      "risk_flags": [
+        "regulatory_context_not_compliance_proof"
+      ],
+      "allowed_by_owner_scope": true,
+      "included_in_synthesis": true,
+      "exclusion_reason": null,
+      "no_contact_confirmed": true,
+      "no_publication_confirmed": true,
+      "no_payment_confirmed": true
+    },
+    {
+      "source_id": "SRC014",
+      "source_title": "NIST AI RMF Playbook",
+      "source_url": "https://airc.nist.gov/AI_RMF_Knowledge_Base/Playbook",
+      "source_locator": "https://airc.nist.gov/AI_RMF_Knowledge_Base/Playbook",
+      "source_category": "public_standards_regulatory_guidance",
+      "access_mode": "public_read_only",
+      "access_time": "2026-05-07T13:25:00Z",
+      "public_read_only_confirmed": true,
+      "login_required": false,
+      "interaction_required": false,
+      "evidence_type": "governance_practice_language",
+      "relevant_claims_supported": [
+        "risk management workflows need documentation and repeatable practices"
+      ],
+      "quote_or_summary_boundary": "The NIST AI RMF Playbook provides actions and resources for applying AI risk management. It supports structured governance workflow language without proving compliance.",
+      "risk_flags": [
+        "regulatory_context_not_compliance_proof"
+      ],
+      "allowed_by_owner_scope": true,
+      "included_in_synthesis": true,
+      "exclusion_reason": null,
+      "no_contact_confirmed": true,
+      "no_publication_confirmed": true,
+      "no_payment_confirmed": true
+    },
+    {
+      "source_id": "SRC015",
+      "source_title": "ISO/IEC 42001 overview",
+      "source_url": "https://www.iso.org/standard/42001",
+      "source_locator": "https://www.iso.org/standard/42001",
+      "source_category": "public_standards_regulatory_guidance",
+      "access_mode": "public_read_only",
+      "access_time": "2026-05-07T13:25:00Z",
+      "public_read_only_confirmed": true,
+      "login_required": false,
+      "interaction_required": false,
+      "evidence_type": "ai_management_system_language",
+      "relevant_claims_supported": [
+        "AI management system language exists as a public category"
+      ],
+      "quote_or_summary_boundary": "ISO describes ISO/IEC 42001 as an AI management system standard. This supports management-system and readiness language, not certification or legal sufficiency.",
+      "risk_flags": [
+        "standards_context_not_certification"
+      ],
+      "allowed_by_owner_scope": true,
+      "included_in_synthesis": true,
+      "exclusion_reason": null,
+      "no_contact_confirmed": true,
+      "no_publication_confirmed": true,
+      "no_payment_confirmed": true
+    },
+    {
+      "source_id": "SRC016",
+      "source_title": "Arden AI agent governance platform",
+      "source_url": "https://www.arden.sh/",
+      "source_locator": "https://www.arden.sh/",
+      "source_category": "ai_governance_observability_security_vendor_pages",
+      "access_mode": "public_read_only",
+      "access_time": "2026-05-07T13:25:00Z",
+      "public_read_only_confirmed": true,
+      "login_required": false,
+      "interaction_required": false,
+      "evidence_type": "governance_policy_audit_product_language",
+      "relevant_claims_supported": [
+        "runtime policy enforcement and audit logs are adjacent product claims"
+      ],
+      "quote_or_summary_boundary": "Arden's product language focuses on monitoring agent behavior, enforcing runtime policies, blocking unauthorized actions, and generating audit logs. This strongly supports the buyer/problem category.",
+      "risk_flags": [
+        "none"
+      ],
+      "allowed_by_owner_scope": true,
+      "included_in_synthesis": true,
+      "exclusion_reason": null,
+      "no_contact_confirmed": true,
+      "no_publication_confirmed": true,
+      "no_payment_confirmed": true
+    },
+    {
+      "source_id": "SRC019",
+      "source_title": "Rutile autonomous agent control platform",
+      "source_url": "https://www.rutilea.com/",
+      "source_locator": "https://www.rutilea.com/",
+      "source_category": "ai_governance_observability_security_vendor_pages",
+      "access_mode": "public_read_only",
+      "access_time": "2026-05-07T13:25:00Z",
+      "public_read_only_confirmed": true,
+      "login_required": false,
+      "interaction_required": false,
+      "evidence_type": "control_policy_and_traceability_language",
+      "relevant_claims_supported": [
+        "policy enforcement, HITL, traceability, and logging are adjacent controls"
+      ],
+      "quote_or_summary_boundary": "Rutile presents policy enforcement, human-in-the-loop, monitoring, traceability, and logging for agents. This supports operational assurance and action-boundary pain.",
+      "risk_flags": [
+        "none"
+      ],
+      "allowed_by_owner_scope": true,
+      "included_in_synthesis": true,
+      "exclusion_reason": null,
+      "no_contact_confirmed": true,
+      "no_publication_confirmed": true,
+      "no_payment_confirmed": true
+    },
+    {
+      "source_id": "SRC023",
+      "source_title": "AgentOps documentation",
+      "source_url": "https://docs.agentops.ai/v1/introduction",
+      "source_locator": "https://docs.agentops.ai/v1/introduction",
+      "source_category": "ai_governance_observability_security_vendor_pages",
+      "access_mode": "public_read_only",
+      "access_time": "2026-05-07T13:25:00Z",
+      "public_read_only_confirmed": true,
+      "login_required": false,
+      "interaction_required": false,
+      "evidence_type": "agent_observability_language",
+      "relevant_claims_supported": [
+        "agent observability includes replays, analytics, benchmarks, and monitoring"
+      ],
+      "quote_or_summary_boundary": "AgentOps documentation describes observability for AI agents, including session tracking and analytics. This supports the adjacent agent operations tooling category.",
+      "risk_flags": [
+        "none"
+      ],
+      "allowed_by_owner_scope": true,
+      "included_in_synthesis": true,
+      "exclusion_reason": null,
+      "no_contact_confirmed": true,
+      "no_publication_confirmed": true,
+      "no_payment_confirmed": true
+    },
+    {
+      "source_id": "SRC024",
+      "source_title": "AgentOps GitHub repository",
+      "source_url": "https://github.com/AgentOps-AI/agentops",
+      "source_locator": "https://github.com/AgentOps-AI/agentops",
+      "source_category": "public_github_repos_issues",
+      "access_mode": "public_read_only",
+      "access_time": "2026-05-07T13:25:00Z",
+      "public_read_only_confirmed": true,
+      "login_required": false,
+      "interaction_required": false,
+      "evidence_type": "public_repo_category_presence",
+      "relevant_claims_supported": [
+        "open-source agent observability repos exist"
+      ],
+      "quote_or_summary_boundary": "The AgentOps GitHub repository presents open-source observability for AI agents and indicates developer activity in agent monitoring.",
+      "risk_flags": [
+        "none"
+      ],
+      "allowed_by_owner_scope": true,
+      "included_in_synthesis": true,
+      "exclusion_reason": null,
+      "no_contact_confirmed": true,
+      "no_publication_confirmed": true,
+      "no_payment_confirmed": true
+    },
+    {
+      "source_id": "SRC025",
+      "source_title": "Insight Global AI governance role listing",
+      "source_url": "https://insightglobal.com/jobs/find_a_job/job-495046",
+      "source_locator": "https://insightglobal.com/jobs/find_a_job/job-495046",
+      "source_category": "public_job_posts",
+      "access_mode": "public_read_only",
+      "access_time": "2026-05-07T13:25:00Z",
+      "public_read_only_confirmed": true,
+      "login_required": false,
+      "interaction_required": false,
+      "evidence_type": "job_post_demand_proxy",
+      "relevant_claims_supported": [
+        "AI governance and AI operating model work appears in public job demand"
+      ],
+      "quote_or_summary_boundary": "The public listing references an AI Governance Lead/Strategy role and AI Operating Model responsibilities. This is a demand proxy only and not customer validation.",
+      "risk_flags": [
+        "job_post_proxy_not_customer_validation"
+      ],
+      "allowed_by_owner_scope": true,
+      "included_in_synthesis": true,
+      "exclusion_reason": null,
+      "no_contact_confirmed": true,
+      "no_publication_confirmed": true,
+      "no_payment_confirmed": true
+    },
+    {
+      "source_id": "SRC028",
+      "source_title": "LangSmith pricing public page mirror",
+      "source_url": "https://www.lang.chat/pricing-langgraph-platform",
+      "source_locator": "https://www.lang.chat/pricing-langgraph-platform",
+      "source_category": "public_pricing_pages",
+      "access_mode": "public_read_only",
+      "access_time": "2026-05-07T13:25:00Z",
+      "public_read_only_confirmed": true,
+      "login_required": false,
+      "interaction_required": false,
+      "evidence_type": "pricing_packaging_public_proxy",
+      "relevant_claims_supported": [
+        "per-seat and trace-volume pricing appear as public analogs"
+      ],
+      "quote_or_summary_boundary": "The public pricing page mirror lists developer/plus tier structures and trace-volume pricing for LangSmith/LangGraph platform context. Treat as pricing proxy only.",
+      "risk_flags": [
+        "pricing_proxy_not_validation"
+      ],
+      "allowed_by_owner_scope": true,
+      "included_in_synthesis": true,
+      "exclusion_reason": null,
+      "no_contact_confirmed": true,
+      "no_publication_confirmed": true,
+      "no_payment_confirmed": true
+    }
+  ],
+  "all_sources_public_read_only": true,
+  "no_contact_confirmed": true,
+  "no_publication_confirmed": true,
+  "no_payment_confirmed": true,
+  "external_action_class": "public_read_only_non_contact"
+}

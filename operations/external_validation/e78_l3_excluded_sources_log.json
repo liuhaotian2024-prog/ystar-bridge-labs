@@ -1,0 +1,110 @@
+{
+  "artifact_id": "e78_l3_excluded_sources_log",
+  "bridge_job_id": "e78_owner_approved_l3_read_only_external_research_pilot_R1_post_E73_20260507T000001Z",
+  "excluded_source_count": 10,
+  "excluded_sources": [
+    {
+      "source_id": "EXC001",
+      "source_title": "PepsiCo AI Governance roles search result",
+      "source_url": "https://www.pepsicojobs.com/main/jobs/369152",
+      "source_category": "public_job_posts",
+      "exclusion_reason": "Direct page fetch was unavailable in the read-only research tool; not included in synthesis.",
+      "login_required": false,
+      "interaction_required": false,
+      "no_contact_confirmed": true
+    },
+    {
+      "source_id": "EXC002",
+      "source_title": "Hitachi AI governance job search result",
+      "source_url": "https://careers.hitachi.com/jobs/17001101-director-ai-governance-and-strategy",
+      "source_category": "public_job_posts",
+      "exclusion_reason": "Direct page fetch was unavailable in the read-only research tool; not included in synthesis.",
+      "login_required": false,
+      "interaction_required": false,
+      "no_contact_confirmed": true
+    },
+    {
+      "source_id": "EXC003",
+      "source_title": "AgentID agent governance platform",
+      "source_url": "https://www.agentid.io/",
+      "source_category": "ai_governance_observability_security_vendor_pages",
+      "exclusion_reason": "Direct page fetch returned an internal read error; not included in synthesis.",
+      "login_required": false,
+      "interaction_required": false,
+      "no_contact_confirmed": true
+    },
+    {
+      "source_id": "EXC004",
+      "source_title": "Posturio agent governance platform",
+      "source_url": "https://www.posturio.com/",
+      "source_category": "ai_governance_observability_security_vendor_pages",
+      "exclusion_reason": "Direct page fetch returned an internal read error; not included in synthesis.",
+      "login_required": false,
+      "interaction_required": false,
+      "no_contact_confirmed": true
+    },
+    {
+      "source_id": "EXC005",
+      "source_title": "Preloop governed AI orchestration",
+      "source_url": "https://www.preloop.com/",
+      "source_category": "ai_governance_observability_security_vendor_pages",
+      "exclusion_reason": "Direct page was not safe to open from the available search context; not included in synthesis.",
+      "login_required": false,
+      "interaction_required": false,
+      "no_contact_confirmed": true
+    },
+    {
+      "source_id": "EXC006",
+      "source_title": "Waxell AI guardrails and governance",
+      "source_url": "https://www.waxell.co/",
+      "source_category": "ai_governance_observability_security_vendor_pages",
+      "exclusion_reason": "Direct page was not safe to open from the available search context; not included in synthesis.",
+      "login_required": false,
+      "interaction_required": false,
+      "no_contact_confirmed": true
+    },
+    {
+      "source_id": "EXC007",
+      "source_title": "HumanLatch enterprise AI agent governance",
+      "source_url": "https://humanlatch.com/",
+      "source_category": "ai_governance_observability_security_vendor_pages",
+      "exclusion_reason": "Direct page was not safe to open from the available search context; not included in synthesis.",
+      "login_required": false,
+      "interaction_required": false,
+      "no_contact_confirmed": true
+    },
+    {
+      "source_id": "EXC008",
+      "source_title": "Wells Fargo AI Risk Governance Lead listing mirror",
+      "source_url": "https://www.tealhq.com/job/ai-risk-governance-lead_26207c5c-c82b-4fee-8471-4d4264d26a0e",
+      "source_category": "public_job_posts",
+      "exclusion_reason": "Direct page fetch returned an internal read error; not included in synthesis.",
+      "login_required": false,
+      "interaction_required": false,
+      "no_contact_confirmed": true
+    },
+    {
+      "source_id": "EXC009",
+      "source_title": "PwC AI governance job listing mirror",
+      "source_url": "https://www.tealhq.com/job/director-senior-manager-ai-governance_c748398a-3a4c-433a-97db-ae966941fbc2",
+      "source_category": "public_job_posts",
+      "exclusion_reason": "Direct page fetch returned an internal read error; not included in synthesis.",
+      "login_required": false,
+      "interaction_required": false,
+      "no_contact_confirmed": true
+    },
+    {
+      "source_id": "EXC010",
+      "source_title": "General press/news pages about agent governance",
+      "source_url": "multiple_general_news_results_not_included",
+      "source_category": "not_in_E75_allowlist",
+      "exclusion_reason": "News results were skipped because the approved source categories prioritize official docs, vendor/product pages, public repos, standards, job posts, pricing pages, and case studies.",
+      "login_required": false,
+      "interaction_required": false,
+      "no_contact_confirmed": true
+    }
+  ],
+  "no_contact_confirmed": true,
+  "no_login_gated_source_used": true,
+  "no_payment_source_used": true
+}

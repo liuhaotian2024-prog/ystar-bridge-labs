@@ -1,0 +1,79 @@
+{
+  "artifact_id": "e78_l3_owner_approved_research_run_plan",
+  "bridge_job_id": "e78_owner_approved_l3_read_only_external_research_pilot_R1_post_E73_20260507T000001Z",
+  "approval_block_present": true,
+  "owner_decision_status": "APPROVE_L3_READ_ONLY_RESEARCH_PILOT",
+  "approved_scope": "use_E75_allowlist_and_receipt_schema",
+  "base": {
+    "expected_branch": "backflow/aiden-ceo-meeting-room",
+    "expected_head": "0a44916d01cb5237bdd400ab8a16b9b71f023802",
+    "base_verified_before_research": true
+  },
+  "phase_B_L3_authorized": true,
+  "route": "governed_business_operations_blueprint_for_agent_teams",
+  "product_context": "Governed Business Operations Blueprint for Agent Teams + CIEU Audit Module",
+  "lineage_correction": "This is the first post-E73 CEO-readiness-gated owner-approved L3 read-only pilot for the current route, not the first public-read research in project history.",
+  "source_allowlist_inherited_from_E75": [
+    "official_agent_framework_docs",
+    "ai_governance_observability_security_vendor_pages",
+    "ai_infrastructure_public_blogs",
+    "public_github_repos_issues",
+    "public_standards_regulatory_guidance",
+    "public_founder_operator_discussions",
+    "public_job_posts",
+    "public_pricing_pages",
+    "public_conference_talks_transcripts",
+    "public_vendor_case_studies"
+  ],
+  "denylist_inherited_from_E75": [
+    "private communities",
+    "login-gated pages",
+    "paid databases",
+    "personal social profiles for outreach",
+    "customer contact lists",
+    "scraped emails",
+    "account creation",
+    "API keys or credentials",
+    "form submission",
+    "posting, messaging, or transactions"
+  ],
+  "research_questions": [
+    "buyer_problem_evidence",
+    "product_offer_evidence",
+    "CIEU_audit_module_evidence",
+    "first_cash_route_positioning",
+    "pricing_packaging_public_proxy",
+    "L4_readiness_signal"
+  ],
+  "scope_limits": {
+    "maximum_source_pages": 30,
+    "target_source_pages": "20-30",
+    "maximum_source_categories": 6,
+    "maximum_search_themes": 5,
+    "receipts_required_for_every_included_source": true,
+    "excluded_source_log_required": true
+  },
+  "abort_conditions": [
+    "source requires login",
+    "source requires payment",
+    "source requires account creation",
+    "source requires interactive submission",
+    "source drifts outside approved allowlist",
+    "research drifts into contact, publication, or paid action"
+  ],
+  "no_overclaim_boundaries": [
+    "no customer validation claim",
+    "no expert validation claim",
+    "no paid signal claim",
+    "no pricing validation claim",
+    "no compliance/legal proof claim",
+    "no production deployment claim",
+    "no live ledger claim",
+    "no L4/L5 readiness achieved claim"
+  ],
+  "external_action_class": "owner_approved_public_read_only_non_contact",
+  "no_contact": true,
+  "no_publication": true,
+  "no_payment": true,
+  "no_login": true
+}
