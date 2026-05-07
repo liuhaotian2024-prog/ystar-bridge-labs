@@ -1,0 +1,200 @@
+{
+  "artifact_id": "e81_cognitive_os_enforcement_fixture_results",
+  "bridge_job_id": "e81_discovery_first_ceo_cognitive_os_runtime_binding_and_ystar_gov_enforcement_sync_R1_20260507T000001Z",
+  "canonical_governance_owner": "Y-star-gov",
+  "fixture_count": 9,
+  "invalid_packets_denied": true,
+  "results": [
+    {
+      "CIEU_style_validation_record": {
+        "R_t_plus_1": "no residual",
+        "U_t": "bridge_labs_pre_sync_cognitive_os_validation",
+        "X_t": {
+          "action_class": "owner_decision_preparation",
+          "contract": "ceo_cognitive_os_loop_contract_v1",
+          "packet_id": "e81_valid_live_internal_decision_pre_action_packet"
+        },
+        "Y_star_t": "CEO work passes mandatory discovery-first cognitive loop before acceptance",
+        "Y_t_plus_1": {
+          "decision": "ALLOW",
+          "failed_stage": "",
+          "reason": "pre-action packet satisfies bridge-labs pre-sync cognitive OS validator"
+        }
+      },
+      "decision": "ALLOW",
+      "failed_stage": "",
+      "fixture_id": "valid_full_packet",
+      "reason": "pre-action packet satisfies bridge-labs pre-sync cognitive OS validator"
+    },
+    {
+      "CIEU_style_validation_record": {
+        "R_t_plus_1": "blocked residual: recent-memory-only reasoning is blocked",
+        "U_t": "bridge_labs_pre_sync_cognitive_os_validation",
+        "X_t": {
+          "action_class": "owner_decision_preparation",
+          "contract": "ceo_cognitive_os_loop_contract_v1",
+          "packet_id": "invalid_recent_memory_only"
+        },
+        "Y_star_t": "CEO work passes mandatory discovery-first cognitive loop before acceptance",
+        "Y_t_plus_1": {
+          "decision": "DENY",
+          "failed_stage": "full_capability_inventory_recall",
+          "reason": "recent-memory-only reasoning is blocked"
+        }
+      },
+      "decision": "DENY",
+      "failed_stage": "full_capability_inventory_recall",
+      "fixture_id": "invalid_recent_memory_only",
+      "reason": "recent-memory-only reasoning is blocked"
+    },
+    {
+      "CIEU_style_validation_record": {
+        "R_t_plus_1": "blocked residual: counterfactual comparison requires at least two candidate actions",
+        "U_t": "bridge_labs_pre_sync_cognitive_os_validation",
+        "X_t": {
+          "action_class": "owner_decision_preparation",
+          "contract": "ceo_cognitive_os_loop_contract_v1",
+          "packet_id": "invalid_no_counterfactual"
+        },
+        "Y_star_t": "CEO work passes mandatory discovery-first cognitive loop before acceptance",
+        "Y_t_plus_1": {
+          "decision": "DENY",
+          "failed_stage": "counterfactual_action_comparison",
+          "reason": "counterfactual comparison requires at least two candidate actions"
+        }
+      },
+      "decision": "DENY",
+      "failed_stage": "counterfactual_action_comparison",
+      "fixture_id": "invalid_no_counterfactual",
+      "reason": "counterfactual comparison requires at least two candidate actions"
+    },
+    {
+      "CIEU_style_validation_record": {
+        "R_t_plus_1": "blocked residual: missing pre-action CIEU prediction",
+        "U_t": "bridge_labs_pre_sync_cognitive_os_validation",
+        "X_t": {
+          "action_class": "owner_decision_preparation",
+          "contract": "ceo_cognitive_os_loop_contract_v1",
+          "packet_id": "invalid_no_pre_action_cieu_prediction"
+        },
+        "Y_star_t": "CEO work passes mandatory discovery-first cognitive loop before acceptance",
+        "Y_t_plus_1": {
+          "decision": "DENY",
+          "failed_stage": "pre_action_CIEU_residual_prediction",
+          "reason": "missing pre-action CIEU prediction"
+        }
+      },
+      "decision": "DENY",
+      "failed_stage": "pre_action_CIEU_residual_prediction",
+      "fixture_id": "invalid_no_pre_action_cieu_prediction",
+      "reason": "missing pre-action CIEU prediction"
+    },
+    {
+      "CIEU_style_validation_record": {
+        "R_t_plus_1": "blocked residual: missing adversarial critique",
+        "U_t": "bridge_labs_pre_sync_cognitive_os_validation",
+        "X_t": {
+          "action_class": "owner_decision_preparation",
+          "contract": "ceo_cognitive_os_loop_contract_v1",
+          "packet_id": "invalid_no_adversarial_critique"
+        },
+        "Y_star_t": "CEO work passes mandatory discovery-first cognitive loop before acceptance",
+        "Y_t_plus_1": {
+          "decision": "DENY",
+          "failed_stage": "adversarial_critique",
+          "reason": "missing adversarial critique"
+        }
+      },
+      "decision": "DENY",
+      "failed_stage": "adversarial_critique",
+      "fixture_id": "invalid_no_adversarial_critique",
+      "reason": "missing adversarial critique"
+    },
+    {
+      "CIEU_style_validation_record": {
+        "R_t_plus_1": "blocked residual: construction recommendation missing no-new-wheel proof",
+        "U_t": "bridge_labs_pre_sync_cognitive_os_validation",
+        "X_t": {
+          "action_class": "construction",
+          "contract": "ceo_cognitive_os_loop_contract_v1",
+          "packet_id": "invalid_construction_without_no_new_wheel"
+        },
+        "Y_star_t": "CEO work passes mandatory discovery-first cognitive loop before acceptance",
+        "Y_t_plus_1": {
+          "decision": "DENY",
+          "failed_stage": "no_new_wheel_gate",
+          "reason": "construction recommendation missing no-new-wheel proof"
+        }
+      },
+      "decision": "DENY",
+      "failed_stage": "no_new_wheel_gate",
+      "fixture_id": "invalid_construction_without_no_new_wheel",
+      "reason": "construction recommendation missing no-new-wheel proof"
+    },
+    {
+      "CIEU_style_validation_record": {
+        "R_t_plus_1": "blocked residual: L4/external execution requires explicit owner approval",
+        "U_t": "bridge_labs_pre_sync_cognitive_os_validation",
+        "X_t": {
+          "action_class": "L4_external_feedback_execution",
+          "contract": "ceo_cognitive_os_loop_contract_v1",
+          "packet_id": "invalid_L4_without_owner_approval"
+        },
+        "Y_star_t": "CEO work passes mandatory discovery-first cognitive loop before acceptance",
+        "Y_t_plus_1": {
+          "decision": "DENY",
+          "failed_stage": "owner_approval_gate",
+          "reason": "L4/external execution requires explicit owner approval"
+        }
+      },
+      "decision": "DENY",
+      "failed_stage": "owner_approval_gate",
+      "fixture_id": "invalid_L4_without_owner_approval",
+      "reason": "L4/external execution requires explicit owner approval"
+    },
+    {
+      "CIEU_style_validation_record": {
+        "R_t_plus_1": "blocked residual: unverified runtime-active capability claim: cap_fake_runtime_brain",
+        "U_t": "bridge_labs_pre_sync_cognitive_os_validation",
+        "X_t": {
+          "action_class": "owner_decision_preparation",
+          "contract": "ceo_cognitive_os_loop_contract_v1",
+          "packet_id": "invalid_unverified_runtime_active_capability"
+        },
+        "Y_star_t": "CEO work passes mandatory discovery-first cognitive loop before acceptance",
+        "Y_t_plus_1": {
+          "decision": "DENY",
+          "failed_stage": "repository_evidence",
+          "reason": "unverified runtime-active capability claim: cap_fake_runtime_brain"
+        }
+      },
+      "decision": "DENY",
+      "failed_stage": "repository_evidence",
+      "fixture_id": "invalid_unverified_runtime_active_capability",
+      "reason": "unverified runtime-active capability claim: cap_fake_runtime_brain"
+    },
+    {
+      "CIEU_style_validation_record": {
+        "R_t_plus_1": "blocked residual: forbidden claim present: customer_validation_claim",
+        "U_t": "bridge_labs_pre_sync_cognitive_os_validation",
+        "X_t": {
+          "action_class": "owner_decision_preparation",
+          "contract": "ceo_cognitive_os_loop_contract_v1",
+          "packet_id": "invalid_forbidden_customer_paid_compliance_claim"
+        },
+        "Y_star_t": "CEO work passes mandatory discovery-first cognitive loop before acceptance",
+        "Y_t_plus_1": {
+          "decision": "DENY",
+          "failed_stage": "overclaim_boundary",
+          "reason": "forbidden claim present: customer_validation_claim"
+        }
+      },
+      "decision": "DENY",
+      "failed_stage": "overclaim_boundary",
+      "fixture_id": "invalid_forbidden_customer_paid_compliance_claim",
+      "reason": "forbidden claim present: customer_validation_claim"
+    }
+  ],
+  "valid_packet_allowed": true,
+  "validator": "bridge_labs_pre_sync_validator"
+}

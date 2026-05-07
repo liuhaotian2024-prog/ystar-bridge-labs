@@ -1,0 +1,40 @@
+{
+  "CIEU_record_required_fields": [
+    "X_t",
+    "U_t",
+    "Y_star_t",
+    "Y_t_plus_1",
+    "R_t_plus_1"
+  ],
+  "YstarGov_compatible": true,
+  "artifact_id": "e81_ceo_mandatory_post_action_residual_schema",
+  "bridge_job_id": "e81_discovery_first_ceo_cognitive_os_runtime_binding_and_ystar_gov_enforcement_sync_R1_20260507T000001Z",
+  "invalid_if_missing": [
+    "linked pre-action packet",
+    "CIEU five-tuple",
+    "overclaim check",
+    "no-new-wheel check",
+    "owner usefulness check",
+    "next action recommendation"
+  ],
+  "minimum_required_fields": [
+    "packet_id",
+    "linked_pre_action_packet_id",
+    "action_taken",
+    "expected_outcome",
+    "actual_output",
+    "CIEU_record",
+    "residuals",
+    "unexpected_failures",
+    "overclaim_check",
+    "no_new_wheel_check",
+    "owner_usefulness_check",
+    "intelligence_gate_result",
+    "capability_state_updates",
+    "learning_candidates",
+    "YstarGov_sync_status",
+    "next_action_recommendation",
+    "what_not_to_do_next"
+  ],
+  "schema_id": "ceo_mandatory_post_action_residual_v1"
+}

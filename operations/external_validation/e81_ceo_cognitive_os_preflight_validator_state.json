@@ -1,0 +1,27 @@
+{
+  "Y_star_gov_mutated": false,
+  "artifact_id": "e81_ceo_cognitive_os_preflight_validator_state",
+  "bridge_job_id": "e81_discovery_first_ceo_cognitive_os_runtime_binding_and_ystar_gov_enforcement_sync_R1_20260507T000001Z",
+  "canonical_governance_owner": "Y-star-gov",
+  "contract_loaded": true,
+  "decision_values": [
+    "ALLOW",
+    "DENY",
+    "ESCALATE"
+  ],
+  "denial_rules": [
+    "missing loop stage",
+    "missing repository evidence",
+    "missing counterfactual",
+    "missing CIEU prediction",
+    "missing adversarial critique",
+    "missing what-not-to-do",
+    "missing no-new-wheel proof",
+    "missing owner approval for L4/external action",
+    "forbidden claim",
+    "bypass attempt"
+  ],
+  "external_action_allowed": false,
+  "future_sync_required": true,
+  "validator_status": "bridge_labs_pre_sync_validator_ready"
+}

@@ -1,0 +1,16 @@
+{
+  "artifact_id": "e81_generated_next_milestone_proposal",
+  "bridge_job_id": "e81_discovery_first_ceo_cognitive_os_runtime_binding_and_ystar_gov_enforcement_sync_R1_20260507T000001Z",
+  "external_action_authorized_now": false,
+  "forbidden_routes": [
+    "vague_more_infrastructure",
+    "generic_L3_research",
+    "mass_outreach",
+    "publication",
+    "L5_revenue_work"
+  ],
+  "owner_approval_required": true,
+  "proposed_milestone_id": "E82_Owner_Approved_YStarGov_CEO_Cognitive_OS_Sync_Patch",
+  "routing_basis": "bridge-labs validator works and Y*gov sync packet is ready, but Y-star-gov was not mutated because no expected Y-star-gov base was provided.",
+  "type": "governance_sync_patch"
+}

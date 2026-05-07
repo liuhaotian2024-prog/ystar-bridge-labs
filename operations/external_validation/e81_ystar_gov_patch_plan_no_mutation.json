@@ -1,0 +1,39 @@
+{
+  "Y_star_gov_mutated": false,
+  "artifact_id": "e81_ystar_gov_patch_plan_no_mutation",
+  "bridge_job_id": "e81_discovery_first_ceo_cognitive_os_runtime_binding_and_ystar_gov_enforcement_sync_R1_20260507T000001Z",
+  "expected_future_patch_scope": {
+    "candidate_files": [
+      ".claude/settings.json",
+      ".claude/settings.local.json",
+      ".github/ISSUE_TEMPLATE/bug_report.yml",
+      ".github/ISSUE_TEMPLATE/feature_request.yml",
+      ".github/ISSUE_TEMPLATE/installation_help.yml",
+      ".ystar_coverage.json",
+      "AGENTS.md",
+      "bench_cache.py",
+      "benchmarks/check_latency.py",
+      "claude-code-integration/.claude/agents/ystar-governance.md",
+      "claude-code-integration/.claude/hooks/pre_tool_use.py",
+      "claude-code-integration/.claude/settings.json",
+      "claude-code-integration/README.md",
+      "config/avoidance_phrases_example.yaml",
+      "docs/AMENDMENT_014_DELIVERY_REPORT.md",
+      "docs/CHANGELOG.md",
+      "docs/CZL-KERNEL-OVERRIDE-PRE-FALLBACK-PHASE2.md",
+      "docs/PROVIDER_USAGE.md",
+      "docs/arch/counterfactual_czl_asset_map.md",
+      "docs/arch/knowledge_action_registry.yaml"
+    ],
+    "contract_packet_source": "operations/external_validation/e81_ystar_gov_sync_packet_for_ceo_cognitive_os.json",
+    "new_fixture_candidates": [
+      "test_ceo_cognitive_os_pre_action_packet_validator.py",
+      "test_ceo_cognitive_os_bypass_denied.py",
+      "test_ceo_cognitive_os_post_action_residual_required.py"
+    ]
+  },
+  "non_duplication_proof": "bridge-labs produces contract packet and fixtures only; Y-star-gov remains canonical check/enforce owner",
+  "owner_approval_required_before_patch": true,
+  "rollback_plan": "revert Y-star-gov sync patch and continue using bridge-labs pre-sync validator artifacts",
+  "why_not_mutated": "No explicit expected Y-star-gov base HEAD was provided for E81; read-only inspection only."
+}

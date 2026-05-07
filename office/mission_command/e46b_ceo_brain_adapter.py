@@ -416,6 +416,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e80_cognitive_activation_state = {'E80_R2_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'L4_execution_authorized': False, 'L5_ready': False}
     try:
+        from office.mission_command.e81_readback import load_e81_cognitive_os_state_for_brain
+        e81_cognitive_os_state = load_e81_cognitive_os_state_for_brain()
+    except Exception as exc:
+        e81_cognitive_os_state = {'E81_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'L4_execution_authorized': False, 'L5_ready': False, 'bypass_allowed': True}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -694,6 +699,26 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_e80_external_action_allowed": e80_cognitive_activation_state.get("external_action_allowed"),
         "current_e80_L4_execution_authorized": e80_cognitive_activation_state.get("L4_execution_authorized"),
         "current_e80_L5_ready": e80_cognitive_activation_state.get("L5_ready"),
+        "latest_e81_ceo_cognitive_os_state": e81_cognitive_os_state,
+        "current_e81_status": e81_cognitive_os_state.get("E81_status"),
+        "current_e81_cognitive_OS_contract_installed": e81_cognitive_os_state.get("cognitive_OS_contract_installed_in_bridge_labs"),
+        "current_e81_mandatory_stage_count": e81_cognitive_os_state.get("mandatory_stage_count"),
+        "current_e81_YstarGov_sync_packet_exists": e81_cognitive_os_state.get("YstarGov_sync_packet_exists"),
+        "current_e81_YstarGov_mutated": e81_cognitive_os_state.get("YstarGov_mutated"),
+        "current_e81_future_CEO_work_requires_pre_action_packet": e81_cognitive_os_state.get("future_CEO_work_requires_pre_action_packet"),
+        "current_e81_future_CEO_work_requires_post_action_residual": e81_cognitive_os_state.get("future_CEO_work_requires_post_action_residual"),
+        "current_e81_bypass_allowed": e81_cognitive_os_state.get("bypass_allowed"),
+        "current_e81_bypass_result": e81_cognitive_os_state.get("bypass_result"),
+        "current_e81_enforcement_mode": e81_cognitive_os_state.get("current_enforcement_mode"),
+        "current_e81_YstarGov_sync_status": e81_cognitive_os_state.get("YstarGov_sync_status"),
+        "current_e81_if_CEO_bypasses_loop": e81_cognitive_os_state.get("if_CEO_bypasses_loop"),
+        "current_e81_validator_status": e81_cognitive_os_state.get("validator_status"),
+        "current_e81_bypass_fixture_results": e81_cognitive_os_state.get("bypass_fixture_results"),
+        "current_e81_live_internal_decision_result": e81_cognitive_os_state.get("live_internal_decision_result"),
+        "current_e81_selected_next_action": e81_cognitive_os_state.get("selected_next_action"),
+        "current_e81_external_action_allowed": e81_cognitive_os_state.get("external_action_allowed"),
+        "current_e81_L4_execution_authorized": e81_cognitive_os_state.get("L4_execution_authorized"),
+        "current_e81_L5_ready": e81_cognitive_os_state.get("L5_ready"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

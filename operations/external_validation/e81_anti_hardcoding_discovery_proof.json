@@ -1,0 +1,1121 @@
+{
+  "E80_capabilities_loaded": 13209,
+  "E80_capability_candidates_loaded": 13203,
+  "anti_hardcoding_rule_passed": true,
+  "artifact_id": "e81_anti_hardcoding_discovery_proof",
+  "bridge_job_id": "e81_discovery_first_ceo_cognitive_os_runtime_binding_and_ystar_gov_enforcement_sync_R1_20260507T000001Z",
+  "capabilities_considered_for_CEO_cognition": 2939,
+  "capabilities_named_in_prompt_but_not_verified": [
+    {
+      "active_runtime_capability_claimed": false,
+      "concept": "live_MCP_execution",
+      "searched_terms": [
+        "live mcp execution enabled",
+        "provider live enabled"
+      ],
+      "status": "prompt_hint_unverified"
+    },
+    {
+      "active_runtime_capability_claimed": false,
+      "concept": "production_CIEU_ledger",
+      "searched_terms": [
+        "production_hash_chain_enabled",
+        "production cieu ledger"
+      ],
+      "status": "prompt_hint_unverified"
+    },
+    {
+      "active_runtime_capability_claimed": false,
+      "concept": "customer_validation",
+      "searched_terms": [
+        "customer_validation_claimed true",
+        "customer validation achieved"
+      ],
+      "status": "prompt_hint_unverified"
+    },
+    {
+      "active_runtime_capability_claimed": false,
+      "concept": "paid_signal",
+      "searched_terms": [
+        "paid_signal_claimed true",
+        "paid signal achieved"
+      ],
+      "status": "prompt_hint_unverified"
+    },
+    {
+      "active_runtime_capability_claimed": false,
+      "concept": "pricing_validation",
+      "searched_terms": [
+        "pricing_validation_claimed true",
+        "pricing validation achieved"
+      ],
+      "status": "prompt_hint_unverified"
+    },
+    {
+      "active_runtime_capability_claimed": false,
+      "concept": "L5_revenue_readiness",
+      "searched_terms": [
+        "l5_ready true",
+        "revenue readiness achieved"
+      ],
+      "status": "prompt_hint_unverified"
+    }
+  ],
+  "capabilities_rejected_sample": [
+    {
+      "activation_state": "prompt_hint_unverified",
+      "capability_id": "cap_prompt_hint_unverified_customer_validation_claim",
+      "domain": "other",
+      "evidence_paths": [],
+      "reason": "rejected_due_to_prompt_hint_unverified"
+    },
+    {
+      "activation_state": "prompt_hint_unverified",
+      "capability_id": "cap_prompt_hint_unverified_l5_revenue_readiness_claim",
+      "domain": "other",
+      "evidence_paths": [],
+      "reason": "rejected_due_to_prompt_hint_unverified"
+    },
+    {
+      "activation_state": "prompt_hint_unverified",
+      "capability_id": "cap_prompt_hint_unverified_live_mcp_provider_execution_in_bridge_labs",
+      "domain": "other",
+      "evidence_paths": [],
+      "reason": "rejected_due_to_prompt_hint_unverified"
+    },
+    {
+      "activation_state": "prompt_hint_unverified",
+      "capability_id": "cap_prompt_hint_unverified_paid_signal_claim",
+      "domain": "other",
+      "evidence_paths": [],
+      "reason": "rejected_due_to_prompt_hint_unverified"
+    },
+    {
+      "activation_state": "prompt_hint_unverified",
+      "capability_id": "cap_prompt_hint_unverified_pricing_validation_claim",
+      "domain": "other",
+      "evidence_paths": [],
+      "reason": "rejected_due_to_prompt_hint_unverified"
+    },
+    {
+      "activation_state": "prompt_hint_unverified",
+      "capability_id": "cap_prompt_hint_unverified_production_cieu_ledger_in_bridge_labs",
+      "domain": "other",
+      "evidence_paths": [],
+      "reason": "rejected_due_to_prompt_hint_unverified"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_6d_field_e18",
+      "domain": "6D_field",
+      "evidence_paths": [
+        "operations/external_validation/e24_field_functional_opportunity_map.json"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_6d_field_e24",
+      "domain": "6D_field",
+      "evidence_paths": [
+        "reports/integration/e24_field_functional_opportunity_map.md"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "prompt_hint_unverified",
+      "capability_id": "cap_bridge_labs_6d_field_e24_field_functional_opportunity_map",
+      "domain": "6D_field",
+      "evidence_paths": [],
+      "reason": "rejected_due_to_prompt_hint_unverified"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_6d_field_e35",
+      "domain": "6D_field",
+      "evidence_paths": [
+        "operations/external_validation/e35_cross_domain_opportunity_field.json",
+        "reports/integration/e35_cross_domain_opportunity_field.md",
+        "reports/integration/e35_six_dimensional_opportunity_cognition_protocol.md"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_6d_field_e35_cross_domain_opportunity_field_generator",
+      "domain": "6D_field",
+      "evidence_paths": [
+        "office/mission_command/e35_cross_domain_opportunity_field_generator.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_6d_field_e35_six_dimensional_opportunity_cognition_protocol",
+      "domain": "6D_field",
+      "evidence_paths": [
+        "office/mission_command/e35_six_dimensional_opportunity_cognition_protocol.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "prompt_hint_unverified",
+      "capability_id": "cap_bridge_labs_6d_field_e44a_ceo_cognition_cascade_runtime",
+      "domain": "6D_field",
+      "evidence_paths": [],
+      "reason": "rejected_due_to_prompt_hint_unverified"
+    },
+    {
+      "activation_state": "prompt_hint_unverified",
+      "capability_id": "cap_bridge_labs_6d_field_e44a_e43_replay_comparator",
+      "domain": "6D_field",
+      "evidence_paths": [],
+      "reason": "rejected_due_to_prompt_hint_unverified"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_6d_field_office_mission_command",
+      "domain": "6D_field",
+      "evidence_paths": [
+        "office/mission_command/e24_field_functional_opportunity_map.py",
+        "office/mission_command/e35_cross_domain_opportunity_field_generator.py",
+        "office/mission_command/e35_six_dimensional_opportunity_cognition_protocol.py",
+        "office/mission_command/e36_strategic_field_trial_runner.py",
+        "office/mission_command/e44a_full_history_replay_cascade.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_6d_field_operations_external_validation",
+      "domain": "6D_field",
+      "evidence_paths": [
+        "operations/external_validation/e18_commercial_fit_scores.json",
+        "operations/external_validation/e20_autonomous_outbound_envelope_schema.json",
+        "operations/external_validation/e24_field_functional_opportunity_map.json",
+        "operations/external_validation/e34_frontier_case_archaeology_methodology.json",
+        "operations/external_validation/e35_cross_domain_opportunity_field.json"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_6d_field_reports_integration",
+      "domain": "6D_field",
+      "evidence_paths": [
+        "reports/integration/e24_field_functional_opportunity_map.md",
+        "reports/integration/e35_cross_domain_opportunity_field.md",
+        "reports/integration/e35_six_dimensional_opportunity_cognition_protocol.md",
+        "reports/integration/e36_strategic_field_trial_results.md",
+        "reports/integration/e46b_field_functional_projection_recovery.md"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "prompt_hint_unverified",
+      "capability_id": "cap_bridge_labs_6d_field_test_e24_field_functional_opportunity_map",
+      "domain": "6D_field",
+      "evidence_paths": [],
+      "reason": "rejected_due_to_prompt_hint_unverified"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_6d_field_test_e35_cross_domain_opportunity_field_generator",
+      "domain": "6D_field",
+      "evidence_paths": [
+        "tests/office/test_e35_cross_domain_opportunity_field_generator.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_6d_field_test_e35_six_dimensional_opportunity_cognition_protocol",
+      "domain": "6D_field",
+      "evidence_paths": [
+        "tests/office/test_e35_six_dimensional_opportunity_cognition_protocol.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_6d_field_test_e44a_ceo_cognition_cascade_runtime",
+      "domain": "6D_field",
+      "evidence_paths": [
+        "tests/office/test_e44a_ceo_cognition_cascade_runtime.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_6d_field_test_e44a_full_history_replay_cascade",
+      "domain": "6D_field",
+      "evidence_paths": [
+        "tests/office/test_e44a_full_history_replay_cascade.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_6d_field_test_e44a_router_cognition_overlay",
+      "domain": "6D_field",
+      "evidence_paths": [
+        "tests/office/test_e44a_router_cognition_overlay.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_6d_field_test_e65_market_dynamics_model_schema",
+      "domain": "6D_field",
+      "evidence_paths": [
+        "tests/office/test_e65_market_dynamics_model_schema.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_6d_field_test_e65_no_overclaim",
+      "domain": "6D_field",
+      "evidence_paths": [
+        "tests/office/test_e65_no_overclaim.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_6d_field_test_e78_no_overclaim",
+      "domain": "6D_field",
+      "evidence_paths": [
+        "tests/office/test_e78_no_overclaim.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_6d_field_test_e79_no_external_action_or_overclaim",
+      "domain": "6D_field",
+      "evidence_paths": [
+        "tests/office/test_e79_no_external_action_or_overclaim.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_6d_field_tests_office",
+      "domain": "6D_field",
+      "evidence_paths": [
+        "tests/office/test_e24_field_functional_opportunity_map.py",
+        "tests/office/test_e35_cross_domain_opportunity_field_generator.py",
+        "tests/office/test_e35_six_dimensional_opportunity_cognition_protocol.py",
+        "tests/office/test_e36_strategic_field_trial_runner.py",
+        "tests/office/test_e44a_full_history_replay_cascade.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e24_ceo_brain_state",
+      "domain": "brain",
+      "evidence_paths": [],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e24_ceo_control_room",
+      "domain": "brain",
+      "evidence_paths": [],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e24_ceo_execution_router",
+      "domain": "brain",
+      "evidence_paths": [],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "prompt_hint_unverified",
+      "capability_id": "cap_bridge_labs_brain_e24_ceo_kg_entity_resolution",
+      "domain": "brain",
+      "evidence_paths": [],
+      "reason": "rejected_due_to_prompt_hint_unverified"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e24_ecosystem_archaeology",
+      "domain": "brain",
+      "evidence_paths": [
+        "office/mission_command/e24_ecosystem_archaeology.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e24_legacy_ceo_brain_adapter",
+      "domain": "brain",
+      "evidence_paths": [],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e24_legacy_ceo_brain_archaeology",
+      "domain": "brain",
+      "evidence_paths": [],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e35",
+      "domain": "brain",
+      "evidence_paths": [
+        "operations/external_validation/e44a_ceo_capability_activation_registry.json",
+        "operations/external_validation/e44a_ceo_cognition_cascade_smoke_result.json",
+        "operations/knowledge_graph/e44a_ceo_kg_cognition_reconnection_feedback.json",
+        "reports/integration/e35_ceo_kg_brain_unified_six_dimensional_update.md",
+        "reports/integration/e35_one_brain_integration_guard.md"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e35_capability_abstraction_recombination_method",
+      "domain": "brain",
+      "evidence_paths": [],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e35_ceo_brain_unified_six_dimensional_update",
+      "domain": "brain",
+      "evidence_paths": [
+        "office/mission_command/e35_ceo_brain_unified_six_dimensional_update.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e35_ceo_kg_unified_brain_expansion_feedback",
+      "domain": "brain",
+      "evidence_paths": [
+        "office/mission_command/e35_ceo_kg_unified_brain_expansion_feedback.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e35_ceo_methodology_quality_audit",
+      "domain": "brain",
+      "evidence_paths": [],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "prompt_hint_unverified",
+      "capability_id": "cap_bridge_labs_brain_e35_cross_domain_opportunity_field_generator",
+      "domain": "brain",
+      "evidence_paths": [],
+      "reason": "rejected_due_to_prompt_hint_unverified"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e35_cross_domain_universe_expansion_method",
+      "domain": "brain",
+      "evidence_paths": [],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e35_cross_repo_sync_backlog",
+      "domain": "brain",
+      "evidence_paths": [],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e35_multi_hop_abstraction_jump_engine",
+      "domain": "brain",
+      "evidence_paths": [],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e35_one_brain_integration_guard",
+      "domain": "brain",
+      "evidence_paths": [
+        "office/mission_command/e35_one_brain_integration_guard.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e35_six_dimensional_ceo_cognition_model",
+      "domain": "brain",
+      "evidence_paths": [
+        "office/mission_command/e35_six_dimensional_ceo_cognition_model.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "prompt_hint_unverified",
+      "capability_id": "cap_bridge_labs_brain_e35_six_dimensional_opportunity_cognition_protocol",
+      "domain": "brain",
+      "evidence_paths": [],
+      "reason": "rejected_due_to_prompt_hint_unverified"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e35_superhuman_ceo_cognition_challenge",
+      "domain": "brain",
+      "evidence_paths": [
+        "office/mission_command/e35_superhuman_ceo_cognition_challenge.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e44a",
+      "domain": "brain",
+      "evidence_paths": [
+        "operations/external_validation/e44a_full_history_ceo_brain_update.json",
+        "reports/integration/e44a_ceo_capability_activation_registry.md",
+        "reports/integration/e44a_ceo_cognition_cascade_runtime.md",
+        "reports/integration/e44a_ceo_task_preflight_v2.md",
+        "reports/integration/e44a_e43_task_replay_with_activated_cognition.md"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e44a_breakage_root_cause_diagnosis",
+      "domain": "brain",
+      "evidence_paths": [],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e44a_ceo_capability_activation_registry",
+      "domain": "brain",
+      "evidence_paths": [
+        "office/mission_command/e44a_ceo_capability_activation_registry.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e44a_ceo_cognition_cascade_runtime",
+      "domain": "brain",
+      "evidence_paths": [
+        "office/mission_command/e44a_ceo_cognition_cascade_runtime.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e44a_ceo_task_preflight_v2",
+      "domain": "brain",
+      "evidence_paths": [
+        "office/mission_command/e44a_ceo_task_preflight_v2.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e44a_e43_replay_comparator",
+      "domain": "brain",
+      "evidence_paths": [
+        "office/mission_command/e44a_e43_replay_comparator.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e44a_full_history_preflight_v2",
+      "domain": "brain",
+      "evidence_paths": [],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e44a_full_history_replay_cascade",
+      "domain": "brain",
+      "evidence_paths": [
+        "office/mission_command/e44a_full_history_replay_cascade.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e44a_router_cognition_overlay",
+      "domain": "brain",
+      "evidence_paths": [
+        "office/mission_command/e44a_router_cognition_overlay.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e45",
+      "domain": "brain",
+      "evidence_paths": [
+        "operations/external_validation/e44a_ceo_brain_cognition_runtime_update.json",
+        "operations/external_validation/e47_mainline_adapter_registry.json"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e46b_ceo_brain_canonicalization",
+      "domain": "brain",
+      "evidence_paths": [
+        "office/mission_command/e46b_ceo_brain_canonicalization.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e65",
+      "domain": "brain",
+      "evidence_paths": [
+        "operations/external_validation/e69_ceo_installed_capability_inventory.json"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "active_in_current_CEO_loop",
+      "capability_id": "cap_bridge_labs_brain_e65_ceo_market_dynamics_readback",
+      "domain": "brain",
+      "evidence_paths": [
+        "office/mission_command/e65_ceo_market_dynamics_readback.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "readback_only",
+      "capability_id": "cap_bridge_labs_brain_e66_model_driven_offer_core",
+      "domain": "brain",
+      "evidence_paths": [
+        "office/mission_command/e66_model_driven_offer_core.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e69",
+      "domain": "brain",
+      "evidence_paths": [
+        "operations/external_validation/e70_ceo_installed_capability_inventory.json",
+        "operations/external_validation/e70_ceo_self_improvement_candidate_set.json",
+        "reports/integration/e69_ceo_current_strategic_state_synthesis.md",
+        "reports/integration/e69_ceo_installed_capability_inventory.md",
+        "reports/integration/e69_ceo_next_action_candidate_set.md"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e70",
+      "domain": "brain",
+      "evidence_paths": [
+        "reports/integration/e70_ceo_current_state_and_capability_gap_synthesis.md",
+        "reports/integration/e70_ceo_installed_capability_inventory.md",
+        "reports/integration/e70_ceo_selected_self_bootstrap_decision.md",
+        "reports/integration/e70_ceo_self_improvement_candidate_set.md"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "prompt_hint_unverified",
+      "capability_id": "cap_bridge_labs_brain_e70_ceo_self_bootstrap_planner",
+      "domain": "brain",
+      "evidence_paths": [],
+      "reason": "rejected_due_to_prompt_hint_unverified"
+    },
+    {
+      "activation_state": "active_in_current_CEO_loop",
+      "capability_id": "cap_bridge_labs_brain_e70_ceo_self_bootstrap_readback",
+      "domain": "brain",
+      "evidence_paths": [
+        "office/mission_command/e70_ceo_self_bootstrap_readback.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e73",
+      "domain": "brain",
+      "evidence_paths": [
+        "operations/external_validation/e73_ceo_self_architecture_protocol.md"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e73_ceo_self_architecture_protocol",
+      "domain": "brain",
+      "evidence_paths": [
+        "office/mission_command/e73_ceo_self_architecture_protocol.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "active_in_current_CEO_loop",
+      "capability_id": "cap_bridge_labs_brain_e73_readback",
+      "domain": "brain",
+      "evidence_paths": [
+        "office/mission_command/e73_readback.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "readback_only",
+      "capability_id": "cap_bridge_labs_brain_e78",
+      "domain": "brain",
+      "evidence_paths": [
+        "operations/external_validation/e78_ceo_readback.md",
+        "operations/external_validation/e79_ceo_mediocrity_diagnosis.json"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "active_in_current_CEO_loop",
+      "capability_id": "cap_bridge_labs_brain_e78_readback",
+      "domain": "brain",
+      "evidence_paths": [
+        "office/mission_command/e78_readback.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "readback_only",
+      "capability_id": "cap_bridge_labs_brain_e79",
+      "domain": "brain",
+      "evidence_paths": [
+        "operations/external_validation/e79_ceo_judgment_quality_gate.md",
+        "operations/external_validation/e79_ceo_mediocrity_diagnosis.md",
+        "operations/external_validation/e79_ceo_readback.md"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e79_ceo_strategic_judgment_upgrade",
+      "domain": "brain",
+      "evidence_paths": [],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "active_in_current_CEO_loop",
+      "capability_id": "cap_bridge_labs_brain_e79_readback",
+      "domain": "brain",
+      "evidence_paths": [
+        "office/mission_command/e79_readback.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "active_in_current_CEO_loop",
+      "capability_id": "cap_bridge_labs_brain_office_mission_command",
+      "domain": "brain",
+      "evidence_paths": [
+        "office/mission_command/e15d_gov_mcp_outbound_adapter.py",
+        "office/mission_command/e24_ceo_brain_state.py",
+        "office/mission_command/e24_ceo_control_room.py",
+        "office/mission_command/e24_ceo_execution_router.py",
+        "office/mission_command/e24_ceo_kg_entity_resolution.py"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "active_in_current_CEO_loop",
+      "capability_id": "cap_bridge_labs_brain_operations_external_validation",
+      "domain": "brain",
+      "evidence_paths": [
+        "operations/external_validation/e24_ceo_brain_state.json",
+        "operations/external_validation/e24_ceo_control_room.json",
+        "operations/external_validation/e24_ceo_control_room.md",
+        "operations/external_validation/e24_ceo_execution_router.json",
+        "operations/external_validation/e24_legacy_ceo_brain_adapter.json"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_operations_knowledge_graph",
+      "domain": "brain",
+      "evidence_paths": [
+        "operations/knowledge_graph/e35_ceo_kg_unified_brain_expansion_feedback.json",
+        "operations/knowledge_graph/e44a_ceo_kg_cognition_reconnection_feedback.json"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "active_in_current_CEO_loop",
+      "capability_id": "cap_bridge_labs_brain_reports_integration",
+      "domain": "brain",
+      "evidence_paths": [
+        "reports/integration/e16c0_gov_mcp_no_send_adapter_integration.md",
+        "reports/integration/e24_ceo_execution_router.md",
+        "reports/integration/e24_ceo_knowledge_graph.md",
+        "reports/integration/e24_legacy_ceo_brain_archaeology.md",
+        "reports/integration/e24_whole_ecosystem_ceo_kg_brain_runtime.md"
+      ],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    },
+    {
+      "activation_state": "obsolete",
+      "capability_id": "cap_bridge_labs_brain_scripts_create_e24_whole_ecosystem_ceo_kg_brain_runtime_py",
+      "domain": "brain",
+      "evidence_paths": [
+        "scripts/create_e24_whole_ecosystem_ceo_kg_brain_runtime.py"
+      ],
+      "reason": "rejected_due_to_obsolete"
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_test_e24_ceo_brain_state",
+      "domain": "brain",
+      "evidence_paths": [],
+      "reason": "not_needed_for_mandatory_loop_stage"
+    }
+  ],
+  "capabilities_selected_from_repository_evidence": 20,
+  "created_at": "2026-05-07T16:03:39Z",
+  "evidence_paths_for_every_selected_capability_present": true,
+  "loop_stage_prompt_invented_count": 0,
+  "loop_stages_without_repository_evidence": [],
+  "prompt_hinted_selected_capability_count": 8,
+  "repository_discovered_capabilities_not_named_in_prompt_but_included": [
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_route_planning_e70",
+      "domain": "route_planning",
+      "evidence_paths": [
+        "reports/integration/e70_owner_decision_packet_no_execution.md"
+      ],
+      "prompt_hint_used": false,
+      "repository_discovered": true
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_audit_e24",
+      "domain": "audit",
+      "evidence_paths": [
+        "operations/external_validation/e30_existing_method_wheel_inventory.json"
+      ],
+      "prompt_hint_used": false,
+      "repository_discovered": true
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_audit_e35",
+      "domain": "audit",
+      "evidence_paths": [
+        "reports/integration/e35_ceo_methodology_quality_audit.md"
+      ],
+      "prompt_hint_used": false,
+      "repository_discovered": true
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_audit_e35_ceo_methodology_quality_audit",
+      "domain": "audit",
+      "evidence_paths": [
+        "office/mission_command/e35_ceo_methodology_quality_audit.py"
+      ],
+      "prompt_hint_used": false,
+      "repository_discovered": true
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_audit_e36",
+      "domain": "audit",
+      "evidence_paths": [
+        "reports/integration/e36_e35_capability_effect_audit.md"
+      ],
+      "prompt_hint_used": false,
+      "repository_discovered": true
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_audit_e36_e35_capability_effect_audit",
+      "domain": "audit",
+      "evidence_paths": [
+        "office/mission_command/e36_e35_capability_effect_audit.py"
+      ],
+      "prompt_hint_used": false,
+      "repository_discovered": true
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_audit_e42",
+      "domain": "audit",
+      "evidence_paths": [
+        "operations/external_validation/e44a_pre_e31_capability_reconnection_audit.json"
+      ],
+      "prompt_hint_used": false,
+      "repository_discovered": true
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_audit_e65",
+      "domain": "audit",
+      "evidence_paths": [
+        "reports/integration/e65_reuse_first_growth_audit.md"
+      ],
+      "prompt_hint_used": false,
+      "repository_discovered": true
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_commercial_e18",
+      "domain": "commercial",
+      "evidence_paths": [
+        "operations/external_validation/e24_commercial_imagination_paths.json",
+        "reports/integration/e18_commercial_kpi_packet.md",
+        "reports/integration/e18_revenue_validation_batch_runtime.md"
+      ],
+      "prompt_hint_used": false,
+      "repository_discovered": true
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_commercial_e24",
+      "domain": "commercial",
+      "evidence_paths": [
+        "reports/integration/e24_commercial_imagination_paths.md",
+        "reports/integration/e24_revenue_path_portfolio_selection.md"
+      ],
+      "prompt_hint_used": false,
+      "repository_discovered": true
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_commercial_e25",
+      "domain": "commercial",
+      "evidence_paths": [
+        "operations/external_validation/e24_ceo_brain_state.json",
+        "reports/integration/e25_revenue_portfolio_update.md"
+      ],
+      "prompt_hint_used": false,
+      "repository_discovered": true
+    }
+  ],
+  "selected_capabilities": [
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_create_e24_whole_ecosystem_ceo_kg_brain_runtime",
+      "domain": "brain",
+      "evidence_paths": [
+        "scripts/create_e24_whole_ecosystem_ceo_kg_brain_runtime.py"
+      ],
+      "prompt_hint_used": true,
+      "repository_discovered": false
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_brain_e24",
+      "domain": "brain",
+      "evidence_paths": [
+        "operations/external_validation/e24_ceo_control_room.md",
+        "operations/external_validation/e24_legacy_ceo_brain_adapter.json",
+        "operations/external_validation/e24_legacy_ceo_brain_archaeology.json",
+        "reports/integration/e24_ceo_execution_router.md",
+        "reports/integration/e24_ceo_knowledge_graph.md"
+      ],
+      "prompt_hint_used": true,
+      "repository_discovered": false
+    },
+    {
+      "activation_state": "governance_required_new_contract_layer",
+      "capability_id": "contract_required_full_capability_inventory_recall",
+      "domain": "governance_required_contract_layer",
+      "evidence_paths": [
+        "operations/external_validation/e80_raw_file_inventory.json",
+        "operations/external_validation/e80_discovered_capability_candidates.json",
+        "operations/external_validation/e80_whole_ecosystem_capability_inventory.json"
+      ],
+      "prompt_hint_used": false,
+      "repository_discovered": false
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_kg_memory_e24",
+      "domain": "KG_memory",
+      "evidence_paths": [
+        "operations/external_validation/e25_ceo_kg_sandbox_route_selection.json",
+        "operations/knowledge_graph/e24_ceo_kg_entity_resolution.json",
+        "operations/knowledge_graph/e24_ceo_kg_nodes.jsonl",
+        "operations/knowledge_graph/e24_ceo_kg_read_model.json"
+      ],
+      "prompt_hint_used": true,
+      "repository_discovered": false
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_route_planning_e65",
+      "domain": "route_planning",
+      "evidence_paths": [
+        "reports/integration/e65_sensitivity_and_counterfactual_challenge_model.md"
+      ],
+      "prompt_hint_used": true,
+      "repository_discovered": false
+    },
+    {
+      "activation_state": "active_in_current_CEO_loop",
+      "capability_id": "cap_bridge_labs_route_planning_e69_ceo_next_action_planner",
+      "domain": "route_planning",
+      "evidence_paths": [
+        "office/mission_command/e69_ceo_next_action_planner.py"
+      ],
+      "prompt_hint_used": true,
+      "repository_discovered": false
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_route_planning_e70",
+      "domain": "route_planning",
+      "evidence_paths": [
+        "reports/integration/e70_owner_decision_packet_no_execution.md"
+      ],
+      "prompt_hint_used": false,
+      "repository_discovered": true
+    },
+    {
+      "activation_state": "active_in_current_CEO_loop",
+      "capability_id": "cap_bridge_labs_route_planning_e70_ceo_self_bootstrap_planner",
+      "domain": "route_planning",
+      "evidence_paths": [
+        "office/mission_command/e70_ceo_self_bootstrap_planner.py"
+      ],
+      "prompt_hint_used": true,
+      "repository_discovered": false
+    },
+    {
+      "activation_state": "legacy_promoted",
+      "capability_id": "cap_bridge_labs_route_planning_reports_integration",
+      "domain": "route_planning",
+      "evidence_paths": [
+        "reports/integration/c3_decision_replay_and_consistency.md",
+        "reports/integration/c3_e15_next_action_decision_packet.md",
+        "reports/integration/e10_owner_decision_packet.md",
+        "reports/integration/e10_target_candidate_registry.md",
+        "reports/integration/e12_owner_decision_packet.md"
+      ],
+      "prompt_hint_used": true,
+      "repository_discovered": false
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_audit_e24",
+      "domain": "audit",
+      "evidence_paths": [
+        "operations/external_validation/e30_existing_method_wheel_inventory.json"
+      ],
+      "prompt_hint_used": false,
+      "repository_discovered": true
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_audit_e35",
+      "domain": "audit",
+      "evidence_paths": [
+        "reports/integration/e35_ceo_methodology_quality_audit.md"
+      ],
+      "prompt_hint_used": false,
+      "repository_discovered": true
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_audit_e35_ceo_methodology_quality_audit",
+      "domain": "audit",
+      "evidence_paths": [
+        "office/mission_command/e35_ceo_methodology_quality_audit.py"
+      ],
+      "prompt_hint_used": false,
+      "repository_discovered": true
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_audit_e36",
+      "domain": "audit",
+      "evidence_paths": [
+        "reports/integration/e36_e35_capability_effect_audit.md"
+      ],
+      "prompt_hint_used": false,
+      "repository_discovered": true
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_audit_e36_e35_capability_effect_audit",
+      "domain": "audit",
+      "evidence_paths": [
+        "office/mission_command/e36_e35_capability_effect_audit.py"
+      ],
+      "prompt_hint_used": false,
+      "repository_discovered": true
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_audit_e42",
+      "domain": "audit",
+      "evidence_paths": [
+        "operations/external_validation/e44a_pre_e31_capability_reconnection_audit.json"
+      ],
+      "prompt_hint_used": false,
+      "repository_discovered": true
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_audit_e65",
+      "domain": "audit",
+      "evidence_paths": [
+        "reports/integration/e65_reuse_first_growth_audit.md"
+      ],
+      "prompt_hint_used": false,
+      "repository_discovered": true
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_route_planning_test_e65_sensitivity_and_counterfactual_challenge_model",
+      "domain": "route_planning",
+      "evidence_paths": [
+        "tests/office/test_e65_sensitivity_and_counterfactual_challenge_model.py"
+      ],
+      "prompt_hint_used": true,
+      "repository_discovered": false
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_commercial_e18",
+      "domain": "commercial",
+      "evidence_paths": [
+        "operations/external_validation/e24_commercial_imagination_paths.json",
+        "reports/integration/e18_commercial_kpi_packet.md",
+        "reports/integration/e18_revenue_validation_batch_runtime.md"
+      ],
+      "prompt_hint_used": false,
+      "repository_discovered": true
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_commercial_e24",
+      "domain": "commercial",
+      "evidence_paths": [
+        "reports/integration/e24_commercial_imagination_paths.md",
+        "reports/integration/e24_revenue_path_portfolio_selection.md"
+      ],
+      "prompt_hint_used": false,
+      "repository_discovered": true
+    },
+    {
+      "activation_state": "dormant",
+      "capability_id": "cap_bridge_labs_commercial_e25",
+      "domain": "commercial",
+      "evidence_paths": [
+        "operations/external_validation/e24_ceo_brain_state.json",
+        "reports/integration/e25_revenue_portfolio_update.md"
+      ],
+      "prompt_hint_used": false,
+      "repository_discovered": true
+    }
+  ]
+}

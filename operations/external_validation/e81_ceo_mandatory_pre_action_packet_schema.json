@@ -1,0 +1,77 @@
+{
+  "YstarGov_compatible": true,
+  "artifact_id": "e81_ceo_mandatory_pre_action_packet_schema",
+  "bridge_job_id": "e81_discovery_first_ceo_cognitive_os_runtime_binding_and_ystar_gov_enforcement_sync_R1_20260507T000001Z",
+  "bypass_attempt_allowed_values": [
+    false
+  ],
+  "invalid_if_missing": [
+    "ecosystem recall",
+    "counterfactual comparison",
+    "pre-action CIEU prediction",
+    "adversarial critique",
+    "what-not-to-do declaration",
+    "owner approval state"
+  ],
+  "minimum_required_fields": [
+    "packet_id",
+    "job_id",
+    "proposed_action",
+    "action_class",
+    "owner_intent",
+    "current_mission_context",
+    "discovered_capabilities_consulted",
+    "historical_assets_consulted",
+    "canonical_owner_map",
+    "no_new_wheel_decision",
+    "candidate_actions",
+    "counterfactual_comparison",
+    "predicted_CIEU_records",
+    "adversarial_critique",
+    "what_not_to_do",
+    "selected_action",
+    "why_this_action",
+    "why_not_other_actions",
+    "safety_boundary",
+    "overclaim_boundary",
+    "Y_star_contract_hash_input",
+    "required_YstarGov_check",
+    "approval_required",
+    "owner_approval_state",
+    "bypass_attempt",
+    "loop_stage_results"
+  ],
+  "predicted_CIEU_record_required_fields": [
+    "X_t",
+    "U_t",
+    "Y_star_t",
+    "expected_Y_t_plus_1",
+    "predicted_R_t_plus_1",
+    "residual_severity"
+  ],
+  "required_loop_stage_ids": [
+    "mission_and_owner_constraint_recall",
+    "full_capability_inventory_recall",
+    "relevant_historical_asset_retrieval",
+    "current_problem_classification",
+    "canonical_owner_selection",
+    "existing_module_reuse_extend_wrap_create_new_decision",
+    "long_memory_KG_brain_recall_if_evidence_supported",
+    "field_dimensional_reasoning_if_evidence_supported",
+    "thesis_generation",
+    "counterfactual_action_comparison",
+    "pre_action_CIEU_residual_prediction",
+    "adversarial_critique",
+    "commercial_sharpness_gate",
+    "no_new_wheel_gate",
+    "decision",
+    "post_action_CIEU_residual_and_learning_update"
+  ],
+  "required_owner_approval_states": [
+    "not_required",
+    "pending_owner_decision",
+    "approved",
+    "rejected"
+  ],
+  "schema_id": "ceo_mandatory_pre_action_packet_v1"
+}

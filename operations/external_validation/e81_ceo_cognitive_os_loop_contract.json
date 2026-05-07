@@ -1,0 +1,824 @@
+{
+  "artifact_id": "e81_ceo_cognitive_os_loop_contract",
+  "bridge_job_id": "e81_discovery_first_ceo_cognitive_os_runtime_binding_and_ystar_gov_enforcement_sync_R1_20260507T000001Z",
+  "bridge_labs_role": "pre_sync_validator_and_contract_packet_owner",
+  "bypass_allowed": false,
+  "bypass_decision": "DENY",
+  "can_be_enforced_immediately_in_bridge_labs_preflight": true,
+  "canonical_governance_owner": "Y-star-gov",
+  "contract_id": "ceo_cognitive_os_loop_contract_v1",
+  "contract_name": "CEO Cognitive OS Mandatory Loop",
+  "contract_required_but_not_runtime_backed": [],
+  "created_at": "2026-05-07T16:03:39Z",
+  "derived_from": [
+    "operations/external_validation/e80_discovered_capability_candidates.json",
+    "operations/external_validation/e80_whole_ecosystem_capability_inventory.json",
+    "operations/external_validation/e80_ceo_online_cognition_loop_spec.json",
+    "operations/external_validation/e81_ystar_gov_enforcement_surface_map.json"
+  ],
+  "discovery_evidence_based": true,
+  "external_action_allowed": false,
+  "mandatory_stage_count": 16,
+  "mandatory_stages": [
+    {
+      "CIEU_post_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "Y_t_plus_1",
+        "R_t_plus_1"
+      ],
+      "CIEU_pre_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "expected_Y_t_plus_1",
+        "predicted_R_t_plus_1"
+      ],
+      "Y_star_contract_clause": "CEO work MUST complete stage mission_and_owner_constraint_recall with repository evidence or governance-required contract evidence before major action selection.",
+      "YstarGov_sync_target_candidate_count": 2255,
+      "activation_state": "context_bound_from_repository_evidence",
+      "bypass_allowed": false,
+      "bypass_policy": "DENY if bypassed; ESCALATE only if owner explicitly authorizes emergency override in a later governance layer",
+      "capability_owner": [
+        "bridge-labs"
+      ],
+      "contract_required_but_not_runtime_backed": false,
+      "evidence_source_paths": [
+        "operations/external_validation/e24_ceo_control_room.md",
+        "operations/external_validation/e24_legacy_ceo_brain_adapter.json",
+        "operations/external_validation/e24_legacy_ceo_brain_archaeology.json",
+        "reports/integration/e24_ceo_execution_router.md",
+        "reports/integration/e24_ceo_knowledge_graph.md",
+        "scripts/create_e24_whole_ecosystem_ceo_kg_brain_runtime.py"
+      ],
+      "fail_condition": "fail_if_stage_uses_prompt_memory_without_repository_evidence",
+      "immediate_bridge_labs_preflight_enforceable": true,
+      "pass_condition": "stage_result present, evidence paths non-empty, and fail condition not triggered",
+      "purpose": "mission and owner constraint recall",
+      "required_inputs": [
+        "pre_action_packet",
+        "E80_capability_inventory",
+        "owner_constraints"
+      ],
+      "required_outputs": [
+        "stage_result",
+        "evidence_paths",
+        "pass_or_fail_status"
+      ],
+      "stage_id": "mission_and_owner_constraint_recall",
+      "stage_name": "Mission And Owner Constraint Recall"
+    },
+    {
+      "CIEU_post_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "Y_t_plus_1",
+        "R_t_plus_1"
+      ],
+      "CIEU_pre_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "expected_Y_t_plus_1",
+        "predicted_R_t_plus_1"
+      ],
+      "Y_star_contract_clause": "CEO work MUST complete stage full_capability_inventory_recall with repository evidence or governance-required contract evidence before major action selection.",
+      "YstarGov_sync_target_candidate_count": 2255,
+      "activation_state": "context_bound_from_repository_evidence",
+      "bypass_allowed": false,
+      "bypass_policy": "DENY if bypassed; ESCALATE only if owner explicitly authorizes emergency override in a later governance layer",
+      "capability_owner": [
+        "bridge-labs"
+      ],
+      "contract_required_but_not_runtime_backed": false,
+      "evidence_source_paths": [
+        "operations/external_validation/e80_raw_file_inventory.json",
+        "operations/external_validation/e80_discovered_capability_candidates.json",
+        "operations/external_validation/e80_whole_ecosystem_capability_inventory.json"
+      ],
+      "fail_condition": "fail_if_stage_uses_prompt_memory_without_repository_evidence",
+      "immediate_bridge_labs_preflight_enforceable": true,
+      "pass_condition": "stage_result present, evidence paths non-empty, and fail condition not triggered",
+      "purpose": "full capability inventory recall",
+      "required_inputs": [
+        "pre_action_packet",
+        "E80_capability_inventory",
+        "owner_constraints"
+      ],
+      "required_outputs": [
+        "stage_result",
+        "evidence_paths",
+        "pass_or_fail_status"
+      ],
+      "stage_id": "full_capability_inventory_recall",
+      "stage_name": "Full Capability Inventory Recall"
+    },
+    {
+      "CIEU_post_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "Y_t_plus_1",
+        "R_t_plus_1"
+      ],
+      "CIEU_pre_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "expected_Y_t_plus_1",
+        "predicted_R_t_plus_1"
+      ],
+      "Y_star_contract_clause": "CEO work MUST complete stage relevant_historical_asset_retrieval with repository evidence or governance-required contract evidence before major action selection.",
+      "YstarGov_sync_target_candidate_count": 2255,
+      "activation_state": "context_bound_from_repository_evidence",
+      "bypass_allowed": false,
+      "bypass_policy": "DENY if bypassed; ESCALATE only if owner explicitly authorizes emergency override in a later governance layer",
+      "capability_owner": [
+        "bridge-labs"
+      ],
+      "contract_required_but_not_runtime_backed": false,
+      "evidence_source_paths": [
+        "operations/external_validation/e25_ceo_kg_sandbox_route_selection.json",
+        "operations/knowledge_graph/e24_ceo_kg_entity_resolution.json",
+        "operations/knowledge_graph/e24_ceo_kg_nodes.jsonl",
+        "operations/knowledge_graph/e24_ceo_kg_read_model.json"
+      ],
+      "fail_condition": "fail_if_stage_uses_prompt_memory_without_repository_evidence",
+      "immediate_bridge_labs_preflight_enforceable": true,
+      "pass_condition": "stage_result present, evidence paths non-empty, and fail condition not triggered",
+      "purpose": "relevant historical asset retrieval",
+      "required_inputs": [
+        "pre_action_packet",
+        "E80_capability_inventory",
+        "owner_constraints"
+      ],
+      "required_outputs": [
+        "stage_result",
+        "evidence_paths",
+        "pass_or_fail_status"
+      ],
+      "stage_id": "relevant_historical_asset_retrieval",
+      "stage_name": "Relevant Historical Asset Retrieval"
+    },
+    {
+      "CIEU_post_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "Y_t_plus_1",
+        "R_t_plus_1"
+      ],
+      "CIEU_pre_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "expected_Y_t_plus_1",
+        "predicted_R_t_plus_1"
+      ],
+      "Y_star_contract_clause": "CEO work MUST complete stage current_problem_classification with repository evidence or governance-required contract evidence before major action selection.",
+      "YstarGov_sync_target_candidate_count": 2255,
+      "activation_state": "runtime_active_or_adapter_active",
+      "bypass_allowed": false,
+      "bypass_policy": "DENY if bypassed; ESCALATE only if owner explicitly authorizes emergency override in a later governance layer",
+      "capability_owner": [
+        "bridge-labs"
+      ],
+      "contract_required_but_not_runtime_backed": false,
+      "evidence_source_paths": [
+        "office/mission_command/e69_ceo_next_action_planner.py",
+        "office/mission_command/e70_ceo_self_bootstrap_planner.py",
+        "reports/integration/c3_decision_replay_and_consistency.md",
+        "reports/integration/c3_e15_next_action_decision_packet.md",
+        "reports/integration/e10_owner_decision_packet.md",
+        "reports/integration/e10_target_candidate_registry.md",
+        "reports/integration/e12_owner_decision_packet.md",
+        "reports/integration/e65_sensitivity_and_counterfactual_challenge_model.md",
+        "reports/integration/e70_owner_decision_packet_no_execution.md"
+      ],
+      "fail_condition": "fail_if_stage_uses_prompt_memory_without_repository_evidence",
+      "immediate_bridge_labs_preflight_enforceable": true,
+      "pass_condition": "stage_result present, evidence paths non-empty, and fail condition not triggered",
+      "purpose": "current problem classification",
+      "required_inputs": [
+        "pre_action_packet",
+        "E80_capability_inventory",
+        "owner_constraints"
+      ],
+      "required_outputs": [
+        "stage_result",
+        "evidence_paths",
+        "pass_or_fail_status"
+      ],
+      "stage_id": "current_problem_classification",
+      "stage_name": "Current Problem Classification"
+    },
+    {
+      "CIEU_post_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "Y_t_plus_1",
+        "R_t_plus_1"
+      ],
+      "CIEU_pre_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "expected_Y_t_plus_1",
+        "predicted_R_t_plus_1"
+      ],
+      "Y_star_contract_clause": "CEO work MUST complete stage canonical_owner_selection with repository evidence or governance-required contract evidence before major action selection.",
+      "YstarGov_sync_target_candidate_count": 2255,
+      "activation_state": "context_bound_from_repository_evidence",
+      "bypass_allowed": false,
+      "bypass_policy": "DENY if bypassed; ESCALATE only if owner explicitly authorizes emergency override in a later governance layer",
+      "capability_owner": [
+        "bridge-labs"
+      ],
+      "contract_required_but_not_runtime_backed": false,
+      "evidence_source_paths": [
+        "office/mission_command/e35_ceo_methodology_quality_audit.py",
+        "office/mission_command/e36_e35_capability_effect_audit.py",
+        "operations/external_validation/e30_existing_method_wheel_inventory.json",
+        "operations/external_validation/e44a_pre_e31_capability_reconnection_audit.json",
+        "reports/integration/e35_ceo_methodology_quality_audit.md",
+        "reports/integration/e36_e35_capability_effect_audit.md",
+        "reports/integration/e65_reuse_first_growth_audit.md"
+      ],
+      "fail_condition": "fail_if_stage_uses_prompt_memory_without_repository_evidence",
+      "immediate_bridge_labs_preflight_enforceable": true,
+      "pass_condition": "stage_result present, evidence paths non-empty, and fail condition not triggered",
+      "purpose": "canonical owner selection",
+      "required_inputs": [
+        "pre_action_packet",
+        "E80_capability_inventory",
+        "owner_constraints"
+      ],
+      "required_outputs": [
+        "stage_result",
+        "evidence_paths",
+        "pass_or_fail_status"
+      ],
+      "stage_id": "canonical_owner_selection",
+      "stage_name": "Canonical Owner Selection"
+    },
+    {
+      "CIEU_post_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "Y_t_plus_1",
+        "R_t_plus_1"
+      ],
+      "CIEU_pre_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "expected_Y_t_plus_1",
+        "predicted_R_t_plus_1"
+      ],
+      "Y_star_contract_clause": "CEO work MUST complete stage existing_module_reuse_extend_wrap_create_new_decision with repository evidence or governance-required contract evidence before major action selection.",
+      "YstarGov_sync_target_candidate_count": 2255,
+      "activation_state": "runtime_active_or_adapter_active",
+      "bypass_allowed": false,
+      "bypass_policy": "DENY if bypassed; ESCALATE only if owner explicitly authorizes emergency override in a later governance layer",
+      "capability_owner": [
+        "bridge-labs"
+      ],
+      "contract_required_but_not_runtime_backed": false,
+      "evidence_source_paths": [
+        "office/mission_command/e69_ceo_next_action_planner.py",
+        "office/mission_command/e70_ceo_self_bootstrap_planner.py",
+        "reports/integration/c3_decision_replay_and_consistency.md",
+        "reports/integration/c3_e15_next_action_decision_packet.md",
+        "reports/integration/e10_owner_decision_packet.md",
+        "reports/integration/e10_target_candidate_registry.md",
+        "reports/integration/e12_owner_decision_packet.md",
+        "reports/integration/e65_sensitivity_and_counterfactual_challenge_model.md",
+        "reports/integration/e70_owner_decision_packet_no_execution.md",
+        "tests/office/test_e65_sensitivity_and_counterfactual_challenge_model.py"
+      ],
+      "fail_condition": "fail_if_stage_uses_prompt_memory_without_repository_evidence",
+      "immediate_bridge_labs_preflight_enforceable": true,
+      "pass_condition": "stage_result present, evidence paths non-empty, and fail condition not triggered",
+      "purpose": "existing module reuse extend wrap create new decision",
+      "required_inputs": [
+        "pre_action_packet",
+        "E80_capability_inventory",
+        "owner_constraints"
+      ],
+      "required_outputs": [
+        "stage_result",
+        "evidence_paths",
+        "pass_or_fail_status"
+      ],
+      "stage_id": "existing_module_reuse_extend_wrap_create_new_decision",
+      "stage_name": "Existing Module Reuse Extend Wrap Create New Decision"
+    },
+    {
+      "CIEU_post_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "Y_t_plus_1",
+        "R_t_plus_1"
+      ],
+      "CIEU_pre_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "expected_Y_t_plus_1",
+        "predicted_R_t_plus_1"
+      ],
+      "Y_star_contract_clause": "CEO work MUST complete stage long_memory_KG_brain_recall_if_evidence_supported with repository evidence or governance-required contract evidence before major action selection.",
+      "YstarGov_sync_target_candidate_count": 2255,
+      "activation_state": "context_bound_from_repository_evidence",
+      "bypass_allowed": false,
+      "bypass_policy": "DENY if bypassed; ESCALATE only if owner explicitly authorizes emergency override in a later governance layer",
+      "capability_owner": [
+        "bridge-labs"
+      ],
+      "contract_required_but_not_runtime_backed": false,
+      "evidence_source_paths": [
+        "operations/external_validation/e24_ceo_control_room.md",
+        "operations/external_validation/e24_legacy_ceo_brain_adapter.json",
+        "operations/external_validation/e24_legacy_ceo_brain_archaeology.json",
+        "reports/integration/e24_ceo_execution_router.md",
+        "reports/integration/e24_ceo_knowledge_graph.md",
+        "scripts/create_e24_whole_ecosystem_ceo_kg_brain_runtime.py"
+      ],
+      "fail_condition": "fail_if_stage_uses_prompt_memory_without_repository_evidence",
+      "immediate_bridge_labs_preflight_enforceable": true,
+      "pass_condition": "stage_result present, evidence paths non-empty, and fail condition not triggered",
+      "purpose": "long memory KG brain recall if evidence supported",
+      "required_inputs": [
+        "pre_action_packet",
+        "E80_capability_inventory",
+        "owner_constraints"
+      ],
+      "required_outputs": [
+        "stage_result",
+        "evidence_paths",
+        "pass_or_fail_status"
+      ],
+      "stage_id": "long_memory_KG_brain_recall_if_evidence_supported",
+      "stage_name": "Long Memory Kg Brain Recall If Evidence Supported"
+    },
+    {
+      "CIEU_post_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "Y_t_plus_1",
+        "R_t_plus_1"
+      ],
+      "CIEU_pre_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "expected_Y_t_plus_1",
+        "predicted_R_t_plus_1"
+      ],
+      "Y_star_contract_clause": "CEO work MUST complete stage field_dimensional_reasoning_if_evidence_supported with repository evidence or governance-required contract evidence before major action selection.",
+      "YstarGov_sync_target_candidate_count": 2255,
+      "activation_state": "context_bound_from_repository_evidence",
+      "bypass_allowed": false,
+      "bypass_policy": "DENY if bypassed; ESCALATE only if owner explicitly authorizes emergency override in a later governance layer",
+      "capability_owner": [
+        "bridge-labs"
+      ],
+      "contract_required_but_not_runtime_backed": false,
+      "evidence_source_paths": [
+        "operations/external_validation/e24_ceo_control_room.md",
+        "operations/external_validation/e24_legacy_ceo_brain_adapter.json",
+        "operations/external_validation/e24_legacy_ceo_brain_archaeology.json",
+        "reports/integration/e24_ceo_execution_router.md",
+        "reports/integration/e24_ceo_knowledge_graph.md",
+        "scripts/create_e24_whole_ecosystem_ceo_kg_brain_runtime.py"
+      ],
+      "fail_condition": "fail_if_stage_uses_prompt_memory_without_repository_evidence",
+      "immediate_bridge_labs_preflight_enforceable": true,
+      "pass_condition": "stage_result present, evidence paths non-empty, and fail condition not triggered",
+      "purpose": "field dimensional reasoning if evidence supported",
+      "required_inputs": [
+        "pre_action_packet",
+        "E80_capability_inventory",
+        "owner_constraints"
+      ],
+      "required_outputs": [
+        "stage_result",
+        "evidence_paths",
+        "pass_or_fail_status"
+      ],
+      "stage_id": "field_dimensional_reasoning_if_evidence_supported",
+      "stage_name": "Field Dimensional Reasoning If Evidence Supported"
+    },
+    {
+      "CIEU_post_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "Y_t_plus_1",
+        "R_t_plus_1"
+      ],
+      "CIEU_pre_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "expected_Y_t_plus_1",
+        "predicted_R_t_plus_1"
+      ],
+      "Y_star_contract_clause": "CEO work MUST complete stage thesis_generation with repository evidence or governance-required contract evidence before major action selection.",
+      "YstarGov_sync_target_candidate_count": 2255,
+      "activation_state": "context_bound_from_repository_evidence",
+      "bypass_allowed": false,
+      "bypass_policy": "DENY if bypassed; ESCALATE only if owner explicitly authorizes emergency override in a later governance layer",
+      "capability_owner": [
+        "bridge-labs"
+      ],
+      "contract_required_but_not_runtime_backed": false,
+      "evidence_source_paths": [
+        "operations/external_validation/e24_ceo_brain_state.json",
+        "operations/external_validation/e24_commercial_imagination_paths.json",
+        "reports/integration/e18_commercial_kpi_packet.md",
+        "reports/integration/e18_revenue_validation_batch_runtime.md",
+        "reports/integration/e24_commercial_imagination_paths.md",
+        "reports/integration/e24_revenue_path_portfolio_selection.md",
+        "reports/integration/e25_revenue_portfolio_update.md"
+      ],
+      "fail_condition": "fail_if_buyer_pain_trigger_and_tradeoff_are_generic",
+      "immediate_bridge_labs_preflight_enforceable": true,
+      "pass_condition": "stage_result present, evidence paths non-empty, and fail condition not triggered",
+      "purpose": "thesis generation",
+      "required_inputs": [
+        "pre_action_packet",
+        "E80_capability_inventory",
+        "owner_constraints"
+      ],
+      "required_outputs": [
+        "stage_result",
+        "evidence_paths",
+        "pass_or_fail_status"
+      ],
+      "stage_id": "thesis_generation",
+      "stage_name": "Thesis Generation"
+    },
+    {
+      "CIEU_post_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "Y_t_plus_1",
+        "R_t_plus_1"
+      ],
+      "CIEU_pre_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "expected_Y_t_plus_1",
+        "predicted_R_t_plus_1"
+      ],
+      "Y_star_contract_clause": "CEO work MUST complete stage counterfactual_action_comparison with repository evidence or governance-required contract evidence before major action selection.",
+      "YstarGov_sync_target_candidate_count": 2255,
+      "activation_state": "runtime_active_or_adapter_active",
+      "bypass_allowed": false,
+      "bypass_policy": "DENY if bypassed; ESCALATE only if owner explicitly authorizes emergency override in a later governance layer",
+      "capability_owner": [
+        "bridge-labs"
+      ],
+      "contract_required_but_not_runtime_backed": false,
+      "evidence_source_paths": [
+        "office/mission_command/e69_ceo_next_action_planner.py",
+        "office/mission_command/e70_ceo_self_bootstrap_planner.py",
+        "reports/integration/c3_decision_replay_and_consistency.md",
+        "reports/integration/c3_e15_next_action_decision_packet.md",
+        "reports/integration/e10_owner_decision_packet.md",
+        "reports/integration/e10_target_candidate_registry.md",
+        "reports/integration/e12_owner_decision_packet.md",
+        "reports/integration/e65_sensitivity_and_counterfactual_challenge_model.md",
+        "reports/integration/e70_owner_decision_packet_no_execution.md",
+        "tests/office/test_e65_sensitivity_and_counterfactual_challenge_model.py"
+      ],
+      "fail_condition": "fail_if_only_one_path_is_considered",
+      "immediate_bridge_labs_preflight_enforceable": true,
+      "pass_condition": "stage_result present, evidence paths non-empty, and fail condition not triggered",
+      "purpose": "counterfactual action comparison",
+      "required_inputs": [
+        "pre_action_packet",
+        "E80_capability_inventory",
+        "owner_constraints"
+      ],
+      "required_outputs": [
+        "stage_result",
+        "evidence_paths",
+        "pass_or_fail_status"
+      ],
+      "stage_id": "counterfactual_action_comparison",
+      "stage_name": "Counterfactual Action Comparison"
+    },
+    {
+      "CIEU_post_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "Y_t_plus_1",
+        "R_t_plus_1"
+      ],
+      "CIEU_pre_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "expected_Y_t_plus_1",
+        "predicted_R_t_plus_1"
+      ],
+      "Y_star_contract_clause": "CEO work MUST complete stage pre_action_CIEU_residual_prediction with repository evidence or governance-required contract evidence before major action selection.",
+      "YstarGov_sync_target_candidate_count": 2255,
+      "activation_state": "context_bound_from_repository_evidence",
+      "bypass_allowed": false,
+      "bypass_policy": "DENY if bypassed; ESCALATE only if owner explicitly authorizes emergency override in a later governance layer",
+      "capability_owner": [
+        "bridge-labs"
+      ],
+      "contract_required_but_not_runtime_backed": false,
+      "evidence_source_paths": [
+        "office/mission_command/e35_ceo_methodology_quality_audit.py",
+        "office/mission_command/e36_e35_capability_effect_audit.py",
+        "operations/external_validation/e30_existing_method_wheel_inventory.json",
+        "operations/external_validation/e44a_pre_e31_capability_reconnection_audit.json",
+        "reports/integration/e35_ceo_methodology_quality_audit.md",
+        "reports/integration/e36_e35_capability_effect_audit.md"
+      ],
+      "fail_condition": "fail_if_action_selected_without_X_U_Y_star_Y_next_R_prediction",
+      "immediate_bridge_labs_preflight_enforceable": true,
+      "pass_condition": "stage_result present, evidence paths non-empty, and fail condition not triggered",
+      "purpose": "pre action CIEU residual prediction",
+      "required_inputs": [
+        "pre_action_packet",
+        "E80_capability_inventory",
+        "owner_constraints"
+      ],
+      "required_outputs": [
+        "stage_result",
+        "evidence_paths",
+        "pass_or_fail_status"
+      ],
+      "stage_id": "pre_action_CIEU_residual_prediction",
+      "stage_name": "Pre Action Cieu Residual Prediction"
+    },
+    {
+      "CIEU_post_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "Y_t_plus_1",
+        "R_t_plus_1"
+      ],
+      "CIEU_pre_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "expected_Y_t_plus_1",
+        "predicted_R_t_plus_1"
+      ],
+      "Y_star_contract_clause": "CEO work MUST complete stage adversarial_critique with repository evidence or governance-required contract evidence before major action selection.",
+      "YstarGov_sync_target_candidate_count": 2255,
+      "activation_state": "context_bound_from_repository_evidence",
+      "bypass_allowed": false,
+      "bypass_policy": "DENY if bypassed; ESCALATE only if owner explicitly authorizes emergency override in a later governance layer",
+      "capability_owner": [
+        "bridge-labs"
+      ],
+      "contract_required_but_not_runtime_backed": false,
+      "evidence_source_paths": [
+        "operations/external_validation/e24_ceo_control_room.md",
+        "operations/external_validation/e24_legacy_ceo_brain_adapter.json",
+        "operations/external_validation/e24_legacy_ceo_brain_archaeology.json",
+        "reports/integration/e24_ceo_execution_router.md",
+        "reports/integration/e24_ceo_knowledge_graph.md",
+        "scripts/create_e24_whole_ecosystem_ceo_kg_brain_runtime.py"
+      ],
+      "fail_condition": "fail_if_stage_uses_prompt_memory_without_repository_evidence",
+      "immediate_bridge_labs_preflight_enforceable": true,
+      "pass_condition": "stage_result present, evidence paths non-empty, and fail condition not triggered",
+      "purpose": "adversarial critique",
+      "required_inputs": [
+        "pre_action_packet",
+        "E80_capability_inventory",
+        "owner_constraints"
+      ],
+      "required_outputs": [
+        "stage_result",
+        "evidence_paths",
+        "pass_or_fail_status"
+      ],
+      "stage_id": "adversarial_critique",
+      "stage_name": "Adversarial Critique"
+    },
+    {
+      "CIEU_post_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "Y_t_plus_1",
+        "R_t_plus_1"
+      ],
+      "CIEU_pre_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "expected_Y_t_plus_1",
+        "predicted_R_t_plus_1"
+      ],
+      "Y_star_contract_clause": "CEO work MUST complete stage commercial_sharpness_gate with repository evidence or governance-required contract evidence before major action selection.",
+      "YstarGov_sync_target_candidate_count": 2255,
+      "activation_state": "context_bound_from_repository_evidence",
+      "bypass_allowed": false,
+      "bypass_policy": "DENY if bypassed; ESCALATE only if owner explicitly authorizes emergency override in a later governance layer",
+      "capability_owner": [
+        "bridge-labs"
+      ],
+      "contract_required_but_not_runtime_backed": false,
+      "evidence_source_paths": [
+        "operations/external_validation/e24_ceo_brain_state.json",
+        "operations/external_validation/e24_commercial_imagination_paths.json",
+        "reports/integration/e18_commercial_kpi_packet.md",
+        "reports/integration/e18_revenue_validation_batch_runtime.md",
+        "reports/integration/e24_commercial_imagination_paths.md",
+        "reports/integration/e24_revenue_path_portfolio_selection.md",
+        "reports/integration/e25_revenue_portfolio_update.md"
+      ],
+      "fail_condition": "fail_if_buyer_pain_trigger_and_tradeoff_are_generic",
+      "immediate_bridge_labs_preflight_enforceable": true,
+      "pass_condition": "stage_result present, evidence paths non-empty, and fail condition not triggered",
+      "purpose": "commercial sharpness gate",
+      "required_inputs": [
+        "pre_action_packet",
+        "E80_capability_inventory",
+        "owner_constraints"
+      ],
+      "required_outputs": [
+        "stage_result",
+        "evidence_paths",
+        "pass_or_fail_status"
+      ],
+      "stage_id": "commercial_sharpness_gate",
+      "stage_name": "Commercial Sharpness Gate"
+    },
+    {
+      "CIEU_post_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "Y_t_plus_1",
+        "R_t_plus_1"
+      ],
+      "CIEU_pre_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "expected_Y_t_plus_1",
+        "predicted_R_t_plus_1"
+      ],
+      "Y_star_contract_clause": "CEO work MUST complete stage no_new_wheel_gate with repository evidence or governance-required contract evidence before major action selection.",
+      "YstarGov_sync_target_candidate_count": 2255,
+      "activation_state": "context_bound_from_repository_evidence",
+      "bypass_allowed": false,
+      "bypass_policy": "DENY if bypassed; ESCALATE only if owner explicitly authorizes emergency override in a later governance layer",
+      "capability_owner": [
+        "bridge-labs"
+      ],
+      "contract_required_but_not_runtime_backed": false,
+      "evidence_source_paths": [
+        "office/mission_command/e35_ceo_methodology_quality_audit.py",
+        "office/mission_command/e36_e35_capability_effect_audit.py",
+        "operations/external_validation/e30_existing_method_wheel_inventory.json",
+        "operations/external_validation/e44a_pre_e31_capability_reconnection_audit.json",
+        "reports/integration/e35_ceo_methodology_quality_audit.md",
+        "reports/integration/e36_e35_capability_effect_audit.md"
+      ],
+      "fail_condition": "fail_if_bridge_labs_reimplements_K9_Y_star_gov_or_gov_mcp_core",
+      "immediate_bridge_labs_preflight_enforceable": true,
+      "pass_condition": "stage_result present, evidence paths non-empty, and fail condition not triggered",
+      "purpose": "no new wheel gate",
+      "required_inputs": [
+        "pre_action_packet",
+        "E80_capability_inventory",
+        "owner_constraints"
+      ],
+      "required_outputs": [
+        "stage_result",
+        "evidence_paths",
+        "pass_or_fail_status"
+      ],
+      "stage_id": "no_new_wheel_gate",
+      "stage_name": "No New Wheel Gate"
+    },
+    {
+      "CIEU_post_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "Y_t_plus_1",
+        "R_t_plus_1"
+      ],
+      "CIEU_pre_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "expected_Y_t_plus_1",
+        "predicted_R_t_plus_1"
+      ],
+      "Y_star_contract_clause": "CEO work MUST complete stage decision with repository evidence or governance-required contract evidence before major action selection.",
+      "YstarGov_sync_target_candidate_count": 2255,
+      "activation_state": "context_bound_from_repository_evidence",
+      "bypass_allowed": false,
+      "bypass_policy": "DENY if bypassed; ESCALATE only if owner explicitly authorizes emergency override in a later governance layer",
+      "capability_owner": [
+        "bridge-labs"
+      ],
+      "contract_required_but_not_runtime_backed": false,
+      "evidence_source_paths": [
+        "operations/external_validation/e24_ceo_control_room.md",
+        "operations/external_validation/e24_legacy_ceo_brain_adapter.json",
+        "operations/external_validation/e24_legacy_ceo_brain_archaeology.json",
+        "reports/integration/e24_ceo_execution_router.md",
+        "reports/integration/e24_ceo_knowledge_graph.md",
+        "scripts/create_e24_whole_ecosystem_ceo_kg_brain_runtime.py"
+      ],
+      "fail_condition": "fail_if_stage_uses_prompt_memory_without_repository_evidence",
+      "immediate_bridge_labs_preflight_enforceable": true,
+      "pass_condition": "stage_result present, evidence paths non-empty, and fail condition not triggered",
+      "purpose": "decision",
+      "required_inputs": [
+        "pre_action_packet",
+        "E80_capability_inventory",
+        "owner_constraints"
+      ],
+      "required_outputs": [
+        "stage_result",
+        "evidence_paths",
+        "pass_or_fail_status"
+      ],
+      "stage_id": "decision",
+      "stage_name": "Decision"
+    },
+    {
+      "CIEU_post_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "Y_t_plus_1",
+        "R_t_plus_1"
+      ],
+      "CIEU_pre_action_fields": [
+        "X_t",
+        "U_t",
+        "Y_star_t",
+        "expected_Y_t_plus_1",
+        "predicted_R_t_plus_1"
+      ],
+      "Y_star_contract_clause": "CEO work MUST complete stage post_action_CIEU_residual_and_learning_update with repository evidence or governance-required contract evidence before major action selection.",
+      "YstarGov_sync_target_candidate_count": 2255,
+      "activation_state": "context_bound_from_repository_evidence",
+      "bypass_allowed": false,
+      "bypass_policy": "DENY if bypassed; ESCALATE only if owner explicitly authorizes emergency override in a later governance layer",
+      "capability_owner": [
+        "bridge-labs"
+      ],
+      "contract_required_but_not_runtime_backed": false,
+      "evidence_source_paths": [
+        "operations/external_validation/e24_ceo_control_room.md",
+        "operations/external_validation/e24_legacy_ceo_brain_adapter.json",
+        "operations/external_validation/e24_legacy_ceo_brain_archaeology.json",
+        "reports/integration/e24_ceo_execution_router.md",
+        "reports/integration/e24_ceo_knowledge_graph.md",
+        "scripts/create_e24_whole_ecosystem_ceo_kg_brain_runtime.py"
+      ],
+      "fail_condition": "fail_if_action_selected_without_X_U_Y_star_Y_next_R_prediction",
+      "immediate_bridge_labs_preflight_enforceable": true,
+      "pass_condition": "stage_result present, evidence paths non-empty, and fail condition not triggered",
+      "purpose": "post action CIEU residual and learning update",
+      "required_inputs": [
+        "pre_action_packet",
+        "E80_capability_inventory",
+        "owner_constraints"
+      ],
+      "required_outputs": [
+        "stage_result",
+        "evidence_paths",
+        "pass_or_fail_status"
+      ],
+      "stage_id": "post_action_CIEU_residual_and_learning_update",
+      "stage_name": "Post Action Cieu Residual And Learning Update"
+    }
+  ],
+  "requires_later_YstarGov_mutation": true,
+  "runtime_active_today": [
+    "current_problem_classification",
+    "existing_module_reuse_extend_wrap_create_new_decision",
+    "counterfactual_action_comparison"
+  ],
+  "version": "1.0.0"
+}
