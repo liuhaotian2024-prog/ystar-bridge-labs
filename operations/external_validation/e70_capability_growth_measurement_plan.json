@@ -1,0 +1,23 @@
+{
+  "artifact_id": "e70_capability_growth_measurement_plan",
+  "bridge_job_id": "e70_ceo_self_bootstrap_capability_growth_runtime_L5_20260506T000001Z",
+  "measurement_model": "CIEU_self_evolution_five_tuple",
+  "Y_star_capability_target": "CEO can convert strategic goals into capability gaps, improvement candidates, Codex job proposals, owner-gated skill plans, measured residuals, and CEO readback.",
+  "X_t_current_capability_state": "Before E70, CEO could generate business next-action candidates via E69 but lacked self-improvement candidate generation, Codex job proposal generation, skill boundary planning, and measured capability residuals.",
+  "U_t_improvement_action": "combined_self_bootstrap_foundation_layer",
+  "Y_t_plus_1_measurement_method": [
+    "artifact existence",
+    "runtime API calls",
+    "L5 use-case result",
+    "CEO readback smoke",
+    "tests"
+  ],
+  "R_t_plus_1_remaining_gap_method": "List remaining external and capability limits without overclaim.",
+  "evidence_required": [
+    "e70_self_bootstrap_l5_use_case_result.json",
+    "e70_generated_codex_job_proposal.json",
+    "e70_ceo_self_bootstrap_readback_smoke_result.json",
+    "tests/office/test_e70_*.py"
+  ],
+  "external_action_allowed": false
+}

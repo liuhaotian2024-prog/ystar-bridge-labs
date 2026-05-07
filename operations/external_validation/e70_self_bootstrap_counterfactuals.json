@@ -1,0 +1,60 @@
+{
+  "artifact_id": "e70_self_bootstrap_counterfactuals",
+  "bridge_job_id": "e70_ceo_self_bootstrap_capability_growth_runtime_L5_20260506T000001Z",
+  "counterfactuals": [
+    {
+      "question": "What if CEO gets next-action planning but not self-improvement planning?",
+      "answer": "CEO remains a business proposal generator but cannot request its own capability upgrades."
+    },
+    {
+      "question": "What if CEO can propose code enhancements but not skill installation?",
+      "answer": "Safe and useful; external skill acquisition can remain owner-gated while internal code proposals mature."
+    },
+    {
+      "question": "What if skill discovery is allowed but installation remains owner-gated?",
+      "answer": "This is the intended safe boundary: discovery/planning only, no install."
+    },
+    {
+      "question": "What if capability growth is not measured with CIEU residuals?",
+      "answer": "Self-improvement claims become unverifiable and should fail the no-overclaim gate."
+    },
+    {
+      "question": "What if Codex keeps building features but CEO cannot request them autonomously?",
+      "answer": "Capabilities stay Codex-driven rather than CEO-runtime-driven."
+    },
+    {
+      "question": "What if CEO can propose too many unsafe improvements?",
+      "answer": "Behavior authorization and owner-gated install boundaries must filter proposals."
+    },
+    {
+      "question": "What if owner rejects external skill installation?",
+      "answer": "CEO can still use local inventory, internal proposals, and tests/readback."
+    },
+    {
+      "question": "What if CEO self-improvement becomes disconnected from business objectives?",
+      "answer": "Goal-to-capability mapping must remain required input for each cycle."
+    },
+    {
+      "question": "What is the safest first self-bootstrap capability?",
+      "answer": "Combined foundation layer with internal-only registry, mapper, proposal schema, measurement, and readback."
+    },
+    {
+      "question": "What if CIEU module integration happens before self-bootstrap runtime?",
+      "answer": "Product progress happens, but CEO still cannot request capability growth systematically."
+    },
+    {
+      "question": "What if self-bootstrap runtime happens before CIEU module integration?",
+      "answer": "CEO gains the ability to generate the CIEU integration job proposal as the next step."
+    },
+    {
+      "question": "What sequence maximizes both CEO autonomy and business progress?",
+      "answer": "Build self-bootstrap runtime now, then execute the generated internal CIEU integration proposal."
+    }
+  ],
+  "best_sequence": [
+    "E70 self-bootstrap runtime",
+    "E71 execute CEO-generated Codex job proposal for internal CIEU module integration",
+    "later owner-gated external review or EV5 planning only if approved"
+  ],
+  "external_action_allowed": false
+}

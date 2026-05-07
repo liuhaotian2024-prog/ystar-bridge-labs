@@ -1,0 +1,62 @@
+{
+  "artifact_id": "e70_ceo_capability_gap_registry",
+  "bridge_job_id": "e70_ceo_self_bootstrap_capability_growth_runtime_L5_20260506T000001Z",
+  "goal_id": "integrate_CIEU_audit_log_module_into_governed_business_operations_blueprint",
+  "gap_count": 5,
+  "gaps": [
+    {
+      "capability_gap_id": "gap_self_evolution_creed_not_runtime",
+      "gap": "Old CIEU self-evolution creed exists but is not a CEO-callable runtime loop.",
+      "blocking_goal": "integrate_CIEU_audit_log_module_into_governed_business_operations_blueprint",
+      "severity": "high",
+      "required_capabilities": [
+        "runtime schema",
+        "residual measurement",
+        "readback"
+      ]
+    },
+    {
+      "capability_gap_id": "gap_goal_to_capability_mapping_absent",
+      "gap": "CEO cannot systematically map strategic goals to required internal capabilities.",
+      "blocking_goal": "integrate_CIEU_audit_log_module_into_governed_business_operations_blueprint",
+      "severity": "high",
+      "required_capabilities": [
+        "goal mapper",
+        "capability requirements"
+      ]
+    },
+    {
+      "capability_gap_id": "gap_codex_job_proposal_generation_absent",
+      "gap": "CEO cannot yet generate a complete Codex bridge job proposal for internal capability enhancement.",
+      "blocking_goal": "integrate_CIEU_audit_log_module_into_governed_business_operations_blueprint",
+      "severity": "high",
+      "required_capabilities": [
+        "proposal schema",
+        "proposal generator",
+        "safety boundaries"
+      ]
+    },
+    {
+      "capability_gap_id": "gap_skill_installation_boundary_absent",
+      "gap": "CEO lacks a governed skill/tool inventory and installation boundary plan.",
+      "blocking_goal": "integrate_CIEU_audit_log_module_into_governed_business_operations_blueprint",
+      "severity": "medium",
+      "required_capabilities": [
+        "local skill inventory",
+        "owner gate",
+        "no-install rule"
+      ]
+    },
+    {
+      "capability_gap_id": "gap_capability_growth_measurement_absent",
+      "gap": "CEO cannot claim self-improvement without measured Y_t_plus_1 and R_t_plus_1.",
+      "blocking_goal": "integrate_CIEU_audit_log_module_into_governed_business_operations_blueprint",
+      "severity": "high",
+      "required_capabilities": [
+        "measurement plan",
+        "CIEU residual writeback"
+      ]
+    }
+  ],
+  "external_action_allowed": false
+}

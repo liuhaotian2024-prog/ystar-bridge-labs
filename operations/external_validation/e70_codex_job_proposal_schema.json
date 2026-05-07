@@ -1,0 +1,24 @@
+{
+  "artifact_id": "e70_codex_job_proposal_schema",
+  "bridge_job_id": "e70_ceo_self_bootstrap_capability_growth_runtime_L5_20260506T000001Z",
+  "schema_version": "E70_Codex_job_proposal_v1",
+  "required_fields": [
+    "milestone_id",
+    "expected_base",
+    "repo_scope",
+    "writable_repos",
+    "read_only_repos",
+    "archaeology_requirement",
+    "reuse_first_requirement",
+    "safety_boundary",
+    "implementation_plan",
+    "tests",
+    "completion_gate",
+    "no_overclaim_requirements",
+    "owner_approval_status",
+    "delivery_bridge_fallback"
+  ],
+  "CEO_may_generate_internal_Codex_job_proposals": true,
+  "CEO_may_execute_arbitrary_code_directly": false,
+  "external_action_allowed": false
+}

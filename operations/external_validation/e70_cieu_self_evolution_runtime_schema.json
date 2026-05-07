@@ -1,0 +1,45 @@
+{
+  "artifact_id": "e70_cieu_self_evolution_runtime_schema",
+  "bridge_job_id": "e70_ceo_self_bootstrap_capability_growth_runtime_L5_20260506T000001Z",
+  "schema_version": "E70_CIEU_self_bootstrap_runtime_v1",
+  "fields": {
+    "Y_star_capability_target": "ideal measurable CEO capability target",
+    "X_t_current_capability_state": "honest current CEO capability state",
+    "goal_context": "active business/runtime goal driving capability growth",
+    "capability_gap": "missing capability blocking the goal",
+    "U_t_improvement_action": "immediate internal improvement action",
+    "Y_t_plus_1_measured_improvement": "measured improvement after U_t",
+    "R_t_plus_1_remaining_gap": "remaining distance to Y_star after measurement",
+    "evidence_required": "artifacts/tests/readback needed before claiming improvement",
+    "allowed_improvement_modes": "governed modes CEO may propose",
+    "prohibited_improvement_modes": "unsafe modes CEO must not perform",
+    "behavior_authorization_requirement": "ALLOW/DENY gate must be explicit",
+    "owner_approval_requirement": "external or installation steps stay owner-gated",
+    "KG_CZL_CIEU_writeback_requirement": "results must be written to read model and residual logs",
+    "next_cycle_trigger": "residual or new goal that triggers the next self-bootstrap loop"
+  },
+  "allowed_improvement_modes": [
+    "reuse_existing_capability",
+    "reconnect_existing_capability",
+    "strengthen_existing_capability_with_tests_or_readback",
+    "generate_internal_code_enhancement_proposal",
+    "request_Codex_implementation_under_owner_approved_job",
+    "local_skill_inventory_and_selection",
+    "public_read_only_skill_discovery_plan",
+    "owner_gated_skill_installation_plan",
+    "owner_gated_external_capability_acquisition",
+    "defer_due_to_safety_or_permission"
+  ],
+  "prohibited_improvement_modes": [
+    "autonomous_external_installation",
+    "private_provider_API_use",
+    "internet_package_install_without_approval",
+    "modifying_read_only_repos",
+    "executing_unreviewed_self_modifying_code",
+    "bypassing_behavior_authorization",
+    "claiming_improvement_without_measurement",
+    "using_fabricated_evidence"
+  ],
+  "old_creed_integrated": true,
+  "external_action_allowed": false
+}

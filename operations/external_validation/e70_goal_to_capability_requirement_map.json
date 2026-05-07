@@ -1,0 +1,29 @@
+{
+  "artifact_id": "e70_goal_to_capability_requirement_map",
+  "bridge_job_id": "e70_ceo_self_bootstrap_capability_growth_runtime_L5_20260506T000001Z",
+  "goals": [
+    {
+      "goal_id": "integrate_CIEU_audit_log_module_into_governed_business_operations_blueprint",
+      "active": true,
+      "required_capabilities": [
+        "load_E65_E66_E67_E68_E69_state",
+        "understand_E69_selected_CIEU_module_business_action",
+        "map_goal_to_capability_gaps",
+        "generate_self_improvement_candidates",
+        "score_self_improvement_candidates",
+        "generate_Codex_job_proposal",
+        "measure_CIEU_residual",
+        "write_KG_CZL_CIEU_and_readback"
+      ],
+      "blocking_gaps": [
+        "gap_self_evolution_creed_not_runtime",
+        "gap_goal_to_capability_mapping_absent",
+        "gap_codex_job_proposal_generation_absent",
+        "gap_skill_installation_boundary_absent",
+        "gap_capability_growth_measurement_absent"
+      ],
+      "recommended_capability_growth_action": "combined_self_bootstrap_foundation_layer"
+    }
+  ],
+  "external_action_allowed": false
+}

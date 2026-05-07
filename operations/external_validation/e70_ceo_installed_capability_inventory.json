@@ -1,0 +1,127 @@
+{
+  "artifact_id": "e70_ceo_installed_capability_inventory",
+  "bridge_job_id": "e70_ceo_self_bootstrap_capability_growth_runtime_L5_20260506T000001Z",
+  "e69_selected_business_action": "integrate_CIEU_audit_log_module_into_governed_business_operations_blueprint_no_execution",
+  "capability_count": 9,
+  "capabilities": [
+    {
+      "capability": "autonomous_next_action_planning",
+      "source": "E69",
+      "available_to_CEO": true,
+      "callable_or_read_only": "callable",
+      "evidence_artifact": "operations/external_validation/e69_ceo_brain_next_action_planning_update.json",
+      "loader_API_functions": [
+        "get_ceo_candidate_actions",
+        "get_ceo_next_action_scoring",
+        "get_ceo_selected_next_action"
+      ],
+      "what_CEO_can_answer": [
+        "business candidate set",
+        "business scoring",
+        "selected internal next action",
+        "owner packet"
+      ],
+      "limitation": "business-action planning, not full self-bootstrap before E70",
+      "can_influence_next_action_selection": true,
+      "can_influence_capability_growth_selection": true
+    },
+    {
+      "capability": "market_dynamics",
+      "source": "E65",
+      "available_to_CEO": true,
+      "callable_or_read_only": "callable",
+      "evidence_artifact": "operations/external_validation/e65_ceo_brain_market_dynamics_update.json",
+      "loader_API_functions": [
+        "rank_routes_by_profile",
+        "get_decision_stability",
+        "get_recommended_market_portfolio"
+      ],
+      "what_CEO_can_answer": [
+        "route profiles",
+        "portfolio stability",
+        "evidence limits"
+      ],
+      "limitation": "no customer or paid validation",
+      "can_influence_next_action_selection": true,
+      "can_influence_capability_growth_selection": true
+    },
+    {
+      "capability": "external_validation",
+      "source": "E67",
+      "available_to_CEO": true,
+      "callable_or_read_only": "callable",
+      "evidence_artifact": "operations/external_validation/e67_route_external_validation_scorecards.json",
+      "EV_levels": "EV0-EV8",
+      "owner_gated_validation_roadmap": "operations/external_validation/e67_owner_gated_external_validation_roadmap.json",
+      "limitation": "EV1-EV4 non-contact evidence only",
+      "can_influence_next_action_selection": true,
+      "can_influence_capability_growth_selection": true
+    },
+    {
+      "capability": "CIEU_route",
+      "source": "E68",
+      "available_to_CEO": true,
+      "callable_or_read_only": "callable",
+      "evidence_artifact": "operations/external_validation/e68_ceo_brain_cieu_route_update.json",
+      "portfolio_role": "high-defensibility strategic vertical and module",
+      "product_wedge": "Governed Business Operations Blueprint + CIEU Audit Module",
+      "limitation": "no legal/compliance/medical/energy readiness claim",
+      "can_influence_next_action_selection": true,
+      "can_influence_capability_growth_selection": true
+    },
+    {
+      "capability": "model_driven_offer",
+      "source": "E66",
+      "available_to_CEO": true,
+      "callable_or_read_only": "read_only_artifact",
+      "evidence_artifact": "operations/external_validation/e66_selected_route_offer_blueprint.json",
+      "selected_route": "governed_business_operations_blueprint_for_agent_teams",
+      "limitation": "draft-only internal; not customer or paid validated",
+      "can_influence_next_action_selection": true,
+      "can_influence_capability_growth_selection": false
+    },
+    {
+      "capability": "self_evolution_creed",
+      "source": "old .claude/agents creed",
+      "available_to_CEO": true,
+      "callable_or_read_only": "formalized_by_E70_runtime",
+      "evidence_artifact": ".claude/agents/ceo.md",
+      "limitation": "was instruction-only before E70",
+      "can_influence_next_action_selection": false,
+      "can_influence_capability_growth_selection": true
+    },
+    {
+      "capability": "runtime_governance",
+      "source": "E54/E55/E56/KG_CZL_CIEU",
+      "available_to_CEO": true,
+      "callable_or_read_only": "readback_and_policy",
+      "evidence_artifact": "office/mission_command/e46b_ceo_brain_adapter.py",
+      "limitation": "internal proposal generation only; external execution owner-gated",
+      "can_influence_next_action_selection": true,
+      "can_influence_capability_growth_selection": true
+    },
+    {
+      "capability": "local_skill_tool_capability_inventory",
+      "source": "local repo search",
+      "available_to_CEO": true,
+      "callable_or_read_only": "inventory_only",
+      "evidence_artifact": "operations/external_validation/e70_skill_inventory_and_installation_boundary.json",
+      "local_skill_candidate_count": 80,
+      "limitation": "no external skill installation; selection is proposal-only",
+      "can_influence_next_action_selection": false,
+      "can_influence_capability_growth_selection": true
+    },
+    {
+      "capability": "Codex_bridge_job_proposal",
+      "source": "E70",
+      "available_to_CEO": true,
+      "callable_or_read_only": "callable_after_E70",
+      "evidence_artifact": "operations/external_validation/e70_generated_codex_job_proposal.json",
+      "limitation": "CEO may propose jobs; Codex execution remains an approved bridge job, not arbitrary self-execution",
+      "can_influence_next_action_selection": true,
+      "can_influence_capability_growth_selection": true
+    }
+  ],
+  "all_required_capabilities_available_to_CEO": true,
+  "external_action_allowed": false
+}

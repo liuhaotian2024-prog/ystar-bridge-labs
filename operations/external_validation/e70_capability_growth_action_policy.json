@@ -1,0 +1,32 @@
+{
+  "artifact_id": "e70_capability_growth_action_policy",
+  "bridge_job_id": "e70_ceo_self_bootstrap_capability_growth_runtime_L5_20260506T000001Z",
+  "allowed": [
+    "reuse_existing_capability",
+    "reconnect_existing_capability",
+    "strengthen_existing_capability_with_tests_or_readback",
+    "generate_internal_code_enhancement_proposal",
+    "local_skill_inventory_and_selection_as_proposal",
+    "public_read_only_skill_discovery_plan_no_install",
+    "owner_gated_skill_installation_packet_planning",
+    "KG_CZL_CIEU_writeback"
+  ],
+  "denied": [
+    "external_skill_installation",
+    "internet_package_install",
+    "private_provider_API_use",
+    "modifying_read_only_repos",
+    "unreviewed_self_modifying_code",
+    "external_execution_without_owner_approval",
+    "claiming_improvement_without_measurement"
+  ],
+  "behavior_authorization_required": true,
+  "owner_approval_required_for": [
+    "external_skill_installation",
+    "public experiment",
+    "external review",
+    "client delivery",
+    "payment"
+  ],
+  "external_action_allowed": false
+}

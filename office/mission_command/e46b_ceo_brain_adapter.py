@@ -366,6 +366,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e69_next_action_planning_state = {'planning_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
     try:
+        from office.mission_command.e70_ceo_self_bootstrap_readback import load_e70_self_bootstrap_state_for_brain
+        e70_self_bootstrap_state = load_e70_self_bootstrap_state_for_brain()
+    except Exception as exc:
+        e70_self_bootstrap_state = {'self_bootstrap_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -518,6 +523,16 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_ceo_next_action_requires_owner_approval": e69_next_action_planning_state.get("requires_owner_approval_for_selected_internal_action"),
         "current_ceo_next_action_external_action_allowed": e69_next_action_planning_state.get("external_action_allowed"),
         "current_ceo_next_action_next_milestone": e69_next_action_planning_state.get("next_recommended_milestone"),
+        "latest_ceo_self_bootstrap_state": e70_self_bootstrap_state,
+        "current_ceo_capability_gap_count": e70_self_bootstrap_state.get("capability_gap_count"),
+        "current_ceo_selected_self_improvement_action": e70_self_bootstrap_state.get("selected_self_bootstrap_action"),
+        "current_ceo_generated_codex_job_proposal_id": e70_self_bootstrap_state.get("generated_Codex_job_proposal_id"),
+        "current_ceo_can_generate_codex_job_proposals": e70_self_bootstrap_state.get("Codex_job_proposal_schema_status") == "created",
+        "current_ceo_can_propose_skill_discovery": e70_self_bootstrap_state.get("skill_boundary_status") == "created_no_install",
+        "current_ceo_skill_installation_requires_owner_approval": True,
+        "current_ceo_self_bootstrap_use_case_status": e70_self_bootstrap_state.get("L5_use_case_status"),
+        "current_ceo_capability_growth_next_milestone": e70_self_bootstrap_state.get("next_recommended_milestone"),
+        "current_ceo_self_bootstrap_external_action_allowed": e70_self_bootstrap_state.get("external_action_allowed"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

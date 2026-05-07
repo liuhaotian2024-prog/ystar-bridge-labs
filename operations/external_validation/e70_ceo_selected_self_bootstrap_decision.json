@@ -1,0 +1,32 @@
+{
+  "artifact_id": "e70_ceo_selected_self_bootstrap_decision",
+  "bridge_job_id": "e70_ceo_self_bootstrap_capability_growth_runtime_L5_20260506T000001Z",
+  "selected_self_improvement_action": "combined_self_bootstrap_foundation_layer",
+  "nearest_alternative": "create_Codex_job_proposal_generator_for_internal_code_enhancement",
+  "selection_made_by_scoring": true,
+  "why_selected": "It closes the most important missing runtime loop at once: creed formalization, gap registry, goal mapper, Codex proposal generator, skill boundary, CIEU measurement, and readback.",
+  "why_not_alternatives": {
+    "install_self_evolution_CIEU_loop_as_CEO_runtime_capability": "Strong, but creed installation alone is weaker than the combined foundation because it does not include proposal generation and skill boundaries.",
+    "create_Codex_job_proposal_generator_for_internal_code_enhancement": "Important but depends on a gap registry and goal mapper.",
+    "create_local_skill_inventory_and_selection_model": "Useful but lower urgency and owner-gated for installation."
+  },
+  "risk_tier": "T0_internal_only",
+  "owner_approval_requirement": "not_required_for_internal_runtime_artifacts; required_for_external_skill_installation_or_external_execution",
+  "evidence_basis": [
+    "E69 limitation",
+    "old self-evolution creed",
+    "E70 scoring matrix"
+  ],
+  "no_overclaim_limits": [
+    "CEO is not fully autonomous in external execution",
+    "no external skill installation occurred",
+    "no owner approval was granted",
+    "no validation or revenue claim"
+  ],
+  "whether_internal_only": true,
+  "whether_advances_CEO_autonomy": true,
+  "whether_enables_future_code_enhancement_proposals": true,
+  "whether_enables_future_skill_discovery_or_installation_proposals": true,
+  "next_recommended_self_bootstrap_milestone": "E71_execute_CEO_generated_codex_job_proposal_no_external_action",
+  "external_action_allowed": false
+}

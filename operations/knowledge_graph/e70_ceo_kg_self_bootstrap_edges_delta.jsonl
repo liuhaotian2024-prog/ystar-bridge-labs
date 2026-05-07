@@ -1,0 +1,4 @@
+{"from": "old_CIEU_self_evolution_creed", "to": "e70_ceo_self_bootstrap_runtime", "edge_type": "formalized_into"}
+{"from": "E69_business_next_action_planner", "to": "e70_ceo_self_bootstrap_runtime", "edge_type": "feeds"}
+{"from": "e70_ceo_self_bootstrap_runtime", "to": "e70_codex_job_E71_execute_internal_CIEU_module_integration_no_external_action", "edge_type": "generates"}
+{"from": "e70_codex_job_E71_execute_internal_CIEU_module_integration_no_external_action", "to": "E71_execute_internal_CIEU_module_integration_no_external_action", "edge_type": "proposes_next"}

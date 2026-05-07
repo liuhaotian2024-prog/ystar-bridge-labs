@@ -1,0 +1,13 @@
+{
+  "artifact_id": "e70_no_overclaim_validation_result",
+  "paths_scanned": [
+    "operations/external_validation/e70_self_bootstrap_runtime_state.json",
+    "operations/external_validation/e70_generated_codex_job_proposal.json",
+    "operations/external_validation/e70_owner_decision_packet_no_execution.json",
+    "operations/external_validation/e70_behavior_authorization_result.json",
+    "operations/external_validation/e70_ceo_brain_self_bootstrap_update.json",
+    "operations/external_validation/e70_ceo_self_bootstrap_readback_smoke_result.json"
+  ],
+  "violations": [],
+  "passed": true
+}
