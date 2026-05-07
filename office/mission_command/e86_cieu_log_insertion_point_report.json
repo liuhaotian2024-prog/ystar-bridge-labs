@@ -1,0 +1,118 @@
+{
+  "artifact_id": "e86_cieu_log_insertion_point_report",
+  "job_id": "E86_YStarGov_CEO_Cognitive_OS_CIEU_Log_Write_Insertion_Point_R1",
+  "path_chosen": "formal insertion implemented",
+  "repo_bases": {
+    "Y_star_gov": {
+      "expected_start_HEAD": "0c449edd9f892acb2520acd529e7c4e2fd9a304f",
+      "actual_start_HEAD": "0c449edd9f892acb2520acd529e7c4e2fd9a304f",
+      "final_remote_HEAD": "738e8118fcf7ab87e08a942f265c17eb3386910d"
+    },
+    "bridge_labs": {
+      "expected_start_HEAD": "d2fe99c9f35ee3ea895c2590f78cb7f52c673541",
+      "actual_start_HEAD": "d2fe99c9f35ee3ea895c2590f78cb7f52c673541",
+      "final_HEAD": "reported_after_bridge_delivery_commit"
+    },
+    "gov_mcp": {
+      "expected_read_only_HEAD": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+      "actual_read_only_HEAD": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+      "mutated": false
+    },
+    "K9Audit": {
+      "read_only_HEAD_observed": "37911e18ce4425470e3f745b30d155c43d76ff55",
+      "mutated": false
+    }
+  },
+  "files_inspected": {
+    "Y_star_gov": [
+      "ystar/governance/ceo_cognitive_os_runtime_hook.py",
+      "ystar/governance/ceo_cognitive_os_contract.py",
+      "ystar/governance/cieu_store.py",
+      "ystar/adapters/cieu_writer.py",
+      "tests/governance/test_ceo_cognitive_os_runtime_hook.py",
+      "tests/test_cieu_store.py",
+      "tests/governance/test_omission_engine_cieu_persistence.py"
+    ],
+    "bridge_labs": [
+      "office/mission_command/e85_ceo_cognitive_os_runtime_bridge.py",
+      "office/mission_command/e85r_canonical_delivery_and_runtime_nervous_system_report.json",
+      "operations/external_validation/e85_cieu_log_insertion_assessment.json"
+    ],
+    "K9Audit": [
+      "README.md",
+      "k9log/core.py",
+      "k9log/cli.py"
+    ]
+  },
+  "formal_CIEU_log_written": true,
+  "formal_CIEU_log_status": "formal_CIEU_record_write_path_verified",
+  "validator_output_status": "formal_CIEU_record_written_when_E86_writer_invoked",
+  "runtime_default_formal_CIEU_log_written": false,
+  "runtime_default_status": "CEO runtime validation remains side-effect-free unless an explicit cieu_db path is supplied to the E86 writer",
+  "exact_insertion_path": {
+    "Y_star_gov_module": "ystar/governance/ceo_cognitive_os_cieu_log.py",
+    "Y_star_gov_function": "write_ceo_cognitive_os_cieu_log_record",
+    "validate_and_write_function": "validate_and_write_ceo_runtime_envelope",
+    "underlying_formal_store": "ystar.governance.cieu_store.CIEUStore.write_dict",
+    "event_type": "CEO_COGNITIVE_OS_RUNTIME_DECISION",
+    "db_path_requirement": "caller must provide cieu_db explicitly",
+    "seal_verification_path": "ystar.governance.cieu_store.CIEUStore.seal_session and verify_session_seal"
+  },
+  "decision_mapping": {
+    "ALLOW": "CIEU decision allow; passed true",
+    "REQUIRE_REVISION": "CIEU decision rewrite; passed false; correct_path persisted in result_json",
+    "DENY": "CIEU decision deny; passed false; blocked residual persisted",
+    "ESCALATE": "CIEU decision escalate; passed false; owner decision route persisted",
+    "STATUS_ONLY": "CIEU decision info; passed true"
+  },
+  "post_action_residual_status": {
+    "runtime_requirement": "still required by E85R runtime hook",
+    "formal_write_support": "post-action residual validation result can be persisted through the E86 writer",
+    "test": "tests/governance/test_ceo_cognitive_os_cieu_log.py::test_post_action_residual_validation_result_can_be_written"
+  },
+  "K9Audit_boundary": {
+    "K9Audit_mutated": false,
+    "K9Audit_ledger_written": false,
+    "non_conflict_statement": "E86 writes to Y-star-gov's existing CIEUStore only. It does not write the separate K9Audit hash-chain ledger.",
+    "future_bridge_if_needed": "Owner-approved E87/E86R scope may define a separate Y-star-gov-to-K9Audit evidence-chain bridge."
+  },
+  "tests_run": {
+    "Y_star_gov_local_pre_delivery": [
+      {
+        "command": "PYTHONPYCACHEPREFIX=/tmp/pycache_e86_ystar_gov python3 -m py_compile ystar/governance/ceo_cognitive_os_cieu_log.py ystar/governance/__init__.py tests/governance/test_ceo_cognitive_os_cieu_log.py",
+        "result": "passed"
+      },
+      {
+        "command": "PYTHONPYCACHEPREFIX=/tmp/pycache_e86_ystar_gov pytest -q tests/governance/test_ceo_cognitive_os_runtime_hook.py tests/governance/test_ceo_cognitive_os_cieu_log.py tests/test_cieu_store.py",
+        "result": "29 passed in 0.10s"
+      }
+    ],
+    "Y_star_gov_delivery_bridge": [
+      {
+        "command": "python3 -m py_compile ystar/governance/ceo_cognitive_os_cieu_log.py ystar/governance/__init__.py tests/governance/test_ceo_cognitive_os_cieu_log.py",
+        "result": "passed"
+      },
+      {
+        "command": "pytest -q tests/governance/test_ceo_cognitive_os_runtime_hook.py tests/governance/test_ceo_cognitive_os_cieu_log.py tests/test_cieu_store.py",
+        "result": "29 passed in 0.15s"
+      }
+    ]
+  },
+  "safety_statement": {
+    "no_external_action": true,
+    "no_gov_mcp_live_provider_execution": true,
+    "no_L4_customer_feedback": true,
+    "no_L5_revenue_payment_customer_loop": true,
+    "no_fake_CIEU_log": true,
+    "no_parallel_ledger_created": true,
+    "no_K9Audit_mutation": true,
+    "no_gov_mcp_mutation": true
+  },
+  "remaining_blockers": [
+    "Runtime callers must opt into formal write by passing an explicit cieu_db path.",
+    "K9Audit evidence-chain bridge remains separate and unimplemented without owner approval.",
+    "No L4 external feedback execution occurred.",
+    "No L5 revenue, payment, pricing, customer, compliance, or production loop is complete."
+  ],
+  "recommended_next_milestone": "E87_Owner_Approved_CIEU_Evidence_Chain_Bridge_or_Minimal_L4_Feedback_Through_YStarGov_If_Approved"
+}
