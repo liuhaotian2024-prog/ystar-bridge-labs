@@ -1,0 +1,16 @@
+{
+  "artifact_id": "e76_e77_corrected_l3_milestone_naming_registry",
+  "bridge_job_id": "e76_e77_l3_lineage_decision_and_conditional_pilot_R1_20260507T000001Z",
+  "forbidden_naming": [
+    "first external read-only research",
+    "first public-read validation",
+    "first controlled read-only research in project history"
+  ],
+  "correct_naming": [
+    "first post-E73 CEO-readiness-gated owner-approved L3 read-only pilot",
+    "historical public-read lineage already exists",
+    "post-E73 L3 pilot for current first-cash route"
+  ],
+  "why": "E31/E38/E50B/E59/E61/E63/E67/E68 already show public-read or non-contact lineage; E73-E75 add the readiness/owner-gate structure.",
+  "naming_gate_passed": true
+}

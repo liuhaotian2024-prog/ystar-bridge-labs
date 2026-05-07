@@ -1,0 +1,166 @@
+{
+  "artifact_id": "e76_e77_owner_decision_record",
+  "bridge_job_id": "e76_e77_l3_lineage_decision_and_conditional_pilot_R1_20260507T000001Z",
+  "decision_status": "pending_owner_decision",
+  "default_decision_state": "pending_owner_decision",
+  "phase_b_execution_authorized": false,
+  "authorization_rule": "Phase B requires decision_status = APPROVE_L3_READ_ONLY_RESEARCH_PILOT in a machine-readable bridge-labs artifact or the exact prompt approval block.",
+  "prompt_approval_block_present": false,
+  "machine_readable_approval_artifact_found": false,
+  "approval_source": null,
+  "E75_approval_status": "pending_owner_decision",
+  "E75_approval_granted": false,
+  "owner_decision_scan": {
+    "scanned_artifact_count": 24,
+    "scanned_artifacts": [
+      {
+        "path": "operations/external_validation/e12_owner_approval.request.json",
+        "decision_status": "",
+        "selected_option": "",
+        "approval_granted": false
+      },
+      {
+        "path": "operations/external_validation/e13_owner_decision_packet.json",
+        "decision_status": "",
+        "selected_option": "",
+        "approval_granted": false
+      },
+      {
+        "path": "operations/external_validation/e13r_owner_decision_packet.json",
+        "decision_status": "",
+        "selected_option": "",
+        "approval_granted": false
+      },
+      {
+        "path": "operations/external_validation/e14_owner_approval_packet.request.json",
+        "decision_status": "",
+        "selected_option": "",
+        "approval_granted": false
+      },
+      {
+        "path": "operations/external_validation/e14_owner_decision_console.json",
+        "decision_status": "request_only_not_approval",
+        "selected_option": "",
+        "approval_granted": false
+      },
+      {
+        "path": "operations/external_validation/e14_owner_decision_packet.json",
+        "decision_status": "",
+        "selected_option": "",
+        "approval_granted": false
+      },
+      {
+        "path": "operations/external_validation/e37_owner_approval_packet_for_e38.json",
+        "decision_status": "",
+        "selected_option": "",
+        "approval_granted": false
+      },
+      {
+        "path": "operations/external_validation/e38_owner_decision_packet_for_e39.json",
+        "decision_status": "",
+        "selected_option": "",
+        "approval_granted": false
+      },
+      {
+        "path": "operations/external_validation/e39_owner_decision_packet_for_e40.json",
+        "decision_status": "",
+        "selected_option": "",
+        "approval_granted": false
+      },
+      {
+        "path": "operations/external_validation/e40_owner_approval_packet_for_e41.json",
+        "decision_status": "",
+        "selected_option": "",
+        "approval_granted": false
+      },
+      {
+        "path": "operations/external_validation/e42_owner_decision_packet.json",
+        "decision_status": "",
+        "selected_option": "",
+        "approval_granted": false
+      },
+      {
+        "path": "operations/external_validation/e43_owner_decision_packet.json",
+        "decision_status": "",
+        "selected_option": "",
+        "approval_granted": false
+      },
+      {
+        "path": "operations/external_validation/e46b_consolidated_owner_decision_packet.json",
+        "decision_status": "",
+        "selected_option": "",
+        "approval_granted": false
+      },
+      {
+        "path": "operations/external_validation/e47_consolidated_owner_decision_packet.json",
+        "decision_status": "",
+        "selected_option": "",
+        "approval_granted": false
+      },
+      {
+        "path": "operations/external_validation/e48_owner_decision_packet.json",
+        "decision_status": "",
+        "selected_option": "",
+        "approval_granted": false
+      },
+      {
+        "path": "operations/external_validation/e49_owner_decision_packet.json",
+        "decision_status": "",
+        "selected_option": "",
+        "approval_granted": false
+      },
+      {
+        "path": "operations/external_validation/e53_owner_approval_record_placeholder.json",
+        "decision_status": "pending_owner_decision",
+        "selected_option": "",
+        "approval_granted": false
+      },
+      {
+        "path": "operations/external_validation/e53_owner_approval_record_schema.json",
+        "decision_status": "",
+        "selected_option": "",
+        "approval_granted": false
+      },
+      {
+        "path": "operations/external_validation/e53_owner_approval_validation_result.json",
+        "decision_status": "pending_owner_decision",
+        "selected_option": "",
+        "approval_granted": false
+      },
+      {
+        "path": "operations/external_validation/e69_owner_decision_packet_no_execution.json",
+        "decision_status": "pending_owner_decision",
+        "selected_option": "",
+        "approval_granted": false
+      },
+      {
+        "path": "operations/external_validation/e70_owner_decision_packet_no_execution.json",
+        "decision_status": "pending_owner_decision",
+        "selected_option": "",
+        "approval_granted": false
+      },
+      {
+        "path": "operations/external_validation/e75_cieu_residual_for_owner_decision_packet.json",
+        "decision_status": "",
+        "selected_option": "",
+        "approval_granted": false
+      },
+      {
+        "path": "operations/external_validation/e75_l3_owner_approval_form.json",
+        "decision_status": "pending_owner_decision",
+        "selected_option": "",
+        "approval_granted": false
+      },
+      {
+        "path": "operations/external_validation/e75_l3_owner_decision_packet.json",
+        "decision_status": "pending_owner_decision",
+        "selected_option": "",
+        "approval_granted": false
+      }
+    ],
+    "explicit_approval_found": false,
+    "approving_artifacts": []
+  },
+  "do_not_infer_approval_from_combined_milestone_request": true,
+  "external_action_allowed": false
+}

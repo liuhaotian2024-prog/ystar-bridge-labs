@@ -396,6 +396,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e75_l3_owner_decision_state = {'E75_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_approval_status': 'pending_owner_decision'}
     try:
+        from office.mission_command.e76_e77_readback import load_e76_e77_state_for_brain
+        e76_e77_l3_lineage_decision_state = load_e76_e77_state_for_brain()
+    except Exception as exc:
+        e76_e77_l3_lineage_decision_state = {'E76_E77_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision', 'did_execute_L3': False}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -611,6 +616,18 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_l3_owner_decision_L5_ready": e75_l3_owner_decision_state.get("L5_ready"),
         "current_l3_owner_decision_next_milestone": e75_l3_owner_decision_state.get("next_recommended_milestone"),
         "current_l3_owner_decision_external_action_allowed": e75_l3_owner_decision_state.get("external_action_allowed"),
+        "latest_e76_e77_l3_lineage_decision_state": e76_e77_l3_lineage_decision_state,
+        "current_e76_e77_status": e76_e77_l3_lineage_decision_state.get("E76_E77_status"),
+        "current_e76_e77_phase_b_authorized": e76_e77_l3_lineage_decision_state.get("phase_B_execution_authorized"),
+        "current_e76_e77_l3_executed": e76_e77_l3_lineage_decision_state.get("did_execute_L3"),
+        "current_e76_e77_owner_decision_status": e76_e77_l3_lineage_decision_state.get("owner_decision_status"),
+        "current_e76_e77_prior_public_read_lineage_count": e76_e77_l3_lineage_decision_state.get("prior_public_read_lineage_count"),
+        "current_e76_e77_lineage_correction": e76_e77_l3_lineage_decision_state.get("why_not_first_external_read_only_research"),
+        "current_e76_e77_new_after_E73_E74_E75": e76_e77_l3_lineage_decision_state.get("what_is_genuinely_new_after_E73_E74_E75"),
+        "current_e76_e77_next_milestone": e76_e77_l3_lineage_decision_state.get("next_milestone"),
+        "current_e76_e77_L4_ready": e76_e77_l3_lineage_decision_state.get("L4_ready"),
+        "current_e76_e77_L5_ready": e76_e77_l3_lineage_decision_state.get("L5_ready"),
+        "current_e76_e77_external_action_allowed": e76_e77_l3_lineage_decision_state.get("external_action_allowed"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

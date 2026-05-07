@@ -1,0 +1,12 @@
+{
+  "artifact_id": "e76_e77_phase_gate_result",
+  "bridge_job_id": "e76_e77_l3_lineage_decision_and_conditional_pilot_R1_20260507T000001Z",
+  "phase_A_always_ran": true,
+  "phase_B_authorized": false,
+  "phase_B_execution_authorized": false,
+  "phase_B_execution_status": "not_executed_pending_owner_approval",
+  "why_or_why_not": "No machine-readable owner approval artifact or exact prompt approval block exists.",
+  "approval_artifact_or_prompt_block": null,
+  "exact_next_action": "do not browse; generate disabled future execution packet and await/record owner approval",
+  "external_action_allowed": false
+}

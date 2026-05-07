@@ -1,0 +1,17 @@
+{
+  "artifact_id": "e76_e77_generated_next_milestone_proposal",
+  "bridge_job_id": "e76_e77_l3_lineage_decision_and_conditional_pilot_R1_20260507T000001Z",
+  "owner_decision_status": "pending_owner_decision",
+  "phase_B_execution_authorized": false,
+  "selected_next_milestone": "E78_Record_or_Await_Explicit_Owner_Approval_for_L3_Read_Only_Research",
+  "type": "decision_wait_or_recording",
+  "routing_rules": {
+    "not_authorized": "E78_Record_or_Await_Explicit_Owner_Approval_for_L3_Read_Only_Research",
+    "executed_strong_evidence": "E78_L4_Owner_Decision_Packet_Preparation_No_External_Action",
+    "executed_weak_or_contradictory_evidence": "E78_L3_Evidence_Gap_Burn_Down_or_Second_Read_Only_Run",
+    "executed_route_looks_weak": "E78_Return_to_L2_Route_Reassessment_and_Commercial_Repackaging",
+    "owner_requested_narrower_scope": "E78_L3_Scope_Narrowing_and_Approved_Read_Only_Run"
+  },
+  "why_selected": "Phase B is not authorized; the next milestone must record explicit owner approval or continue waiting, not execute research.",
+  "external_action_allowed": false
+}

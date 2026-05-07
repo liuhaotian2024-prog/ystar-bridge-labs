@@ -1,0 +1,13 @@
+{
+  "artifact_id": "e76_e77_readback_smoke_result",
+  "checks": {
+    "phase_A_state_loaded": true,
+    "owner_decision_recorded": true,
+    "pending_blocks_L3": true,
+    "lineage_correction_available": true,
+    "L4_L5_not_ready": true,
+    "no_forbidden_claims": true
+  },
+  "passes": true,
+  "external_action_allowed": false
+}

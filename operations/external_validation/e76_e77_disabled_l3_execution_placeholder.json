@@ -1,0 +1,96 @@
+{
+  "artifact_id": "e76_e77_disabled_l3_execution_placeholder",
+  "bridge_job_id": "e76_e77_l3_lineage_decision_and_conditional_pilot_R1_20260507T000001Z",
+  "status": "not_executed_pending_owner_approval",
+  "phase_b_execution_authorized": false,
+  "L3_executed": false,
+  "source_evidence_collected": false,
+  "real_source_receipts_generated": false,
+  "evidence_synthesis_generated": false,
+  "reason_not_executed": "Owner approval remains pending or absent; combined E76/E77 prompt is not itself execution approval.",
+  "retained_future_scope": {
+    "allowlist_source_categories": [
+      {
+        "category_id": "official_agent_framework_docs",
+        "category": "Official docs from AI agent frameworks and tool ecosystems",
+        "allowed_use": "market language and workflow-control context"
+      },
+      {
+        "category_id": "ai_governance_observability_security_vendor_pages",
+        "category": "Public product pages from adjacent AI governance, agent observability, security, and audit vendors",
+        "allowed_use": "category and product/offer analogs"
+      },
+      {
+        "category_id": "ai_infrastructure_public_blogs",
+        "category": "Public blog posts from AI infrastructure companies",
+        "allowed_use": "buyer/problem and product language"
+      },
+      {
+        "category_id": "public_github_repos_issues",
+        "category": "Public GitHub repos and issue discussions where no login is required",
+        "allowed_use": "implementation pain and public behavior proxy only"
+      },
+      {
+        "category_id": "public_standards_regulatory_guidance",
+        "category": "Public standards/regulatory guidance pages",
+        "allowed_use": "high-level requirement language; no compliance claim"
+      },
+      {
+        "category_id": "public_founder_operator_discussions",
+        "category": "Public founder/operator discussions accessible without login",
+        "allowed_use": "public behavior proxy only; no outreach"
+      },
+      {
+        "category_id": "public_job_posts",
+        "category": "Public job posts",
+        "allowed_use": "market demand proxy only; no recruitment/outreach"
+      },
+      {
+        "category_id": "public_pricing_pages",
+        "category": "Public pricing pages from adjacent products",
+        "allowed_use": "pricing analog only; no pricing validation claim"
+      },
+      {
+        "category_id": "public_conference_talks_transcripts",
+        "category": "Public conference talks/transcripts accessible without login",
+        "allowed_use": "market language and problem framing"
+      },
+      {
+        "category_id": "public_vendor_case_studies",
+        "category": "Public case studies from vendors",
+        "allowed_use": "category/problem analog only; no customer validation claim for Y*Bridge"
+      }
+    ],
+    "denylisted_source_categories": [
+      "private communities",
+      "login-gated pages",
+      "paid databases or paid reports",
+      "personal social profiles for outreach",
+      "customer contact lists",
+      "scraped emails, phone numbers, or handles",
+      "anything requiring account creation",
+      "anything requiring API keys or credentials",
+      "anything that triggers posting, messaging, forms, transactions, or terms acceptance on behalf of owner"
+    ],
+    "receipt_schema_fields": [
+      "source_id",
+      "source_title",
+      "source_url_or_locator",
+      "source_category",
+      "access_mode",
+      "access_time",
+      "public_read_only_confirmed",
+      "login_required",
+      "interaction_required",
+      "evidence_type",
+      "relevant_claims_supported",
+      "quote_or_summary_boundary",
+      "risk_flags",
+      "allowed_by_owner_scope",
+      "included_in_synthesis",
+      "exclusion_reason"
+    ]
+  },
+  "placeholder_only": true,
+  "external_action_allowed": false
+}
