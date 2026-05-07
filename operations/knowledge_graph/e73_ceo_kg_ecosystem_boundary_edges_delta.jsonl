@@ -1,0 +1,2 @@
+{"from": "e73_ecosystem_boundary_lock", "to": "CEO_L2_internal_autonomous_work_ready", "type": "adjudicates"}
+{"from": "CEO_L2_internal_autonomous_work_ready", "to": "E74_CEO_L2_Internal_Autonomous_Work_Pilot", "type": "enables"}

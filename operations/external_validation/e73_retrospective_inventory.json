@@ -1,0 +1,154 @@
+{
+  "artifact_id": "e73_retrospective_inventory",
+  "bridge_job_id": "e73_ecosystem_boundary_lock_and_ceo_real_work_readiness_closure_R1_20260507T000001Z",
+  "mainline_modules": {
+    "E65_market_dynamics_model": [
+      {
+        "path": "office/mission_command/e65_market_dynamics_model.py",
+        "exists": true
+      },
+      {
+        "path": "operations/external_validation/e65_market_dynamics_analysis_run.json",
+        "exists": true
+      }
+    ],
+    "E66_governed_business_operations_blueprint": [
+      {
+        "path": "operations/external_validation/e66_selected_route_offer_blueprint.json",
+        "exists": true
+      },
+      {
+        "path": "products/governed_business_operations_blueprint_for_agent_teams/updated_offer_blueprint_with_cieu_module.json",
+        "exists": true
+      }
+    ],
+    "E67_external_validation_overlay": [
+      {
+        "path": "office/mission_command/e67_external_validation_model.py",
+        "exists": true
+      },
+      {
+        "path": "operations/external_validation/e67_route_external_validation_scorecards.json",
+        "exists": true
+      }
+    ],
+    "E68_CIEU_route_model": [
+      {
+        "path": "office/mission_command/e68_cieu_route_evaluation_model.py",
+        "exists": true
+      },
+      {
+        "path": "operations/external_validation/e68_cieu_route_model_scoring.json",
+        "exists": true
+      },
+      {
+        "path": "operations/external_validation/e68_strategic_portfolio_update.json",
+        "exists": true
+      }
+    ],
+    "E69_autonomous_next_action_planner": [
+      {
+        "path": "office/mission_command/e69_ceo_next_action_planner.py",
+        "exists": true
+      },
+      {
+        "path": "operations/external_validation/e69_ceo_selected_next_action_decision.json",
+        "exists": true
+      }
+    ],
+    "E70_self_bootstrap_runtime": [
+      {
+        "path": "office/mission_command/e70_ceo_capability_growth_model.py",
+        "exists": true
+      },
+      {
+        "path": "operations/external_validation/e70_self_bootstrap_runtime_state.json",
+        "exists": true
+      }
+    ],
+    "E71_legacy_promotion_gate": [
+      {
+        "path": "office/mission_command/e71_legacy_asset_promotion_gate.py",
+        "exists": true
+      },
+      {
+        "path": "operations/external_validation/e71_promoted_legacy_assets.json",
+        "exists": true
+      },
+      {
+        "path": "operations/external_validation/e71_quarantined_legacy_assets.json",
+        "exists": true
+      }
+    ],
+    "E72_CIEU_hash_chain_context_binding": [
+      {
+        "path": "office/mission_command/e72_cieu_hash_chain_context.py",
+        "exists": true
+      },
+      {
+        "path": "operations/external_validation/e72_cieu_hash_chain_context_state.json",
+        "exists": true
+      },
+      {
+        "path": "operations/external_validation/e72_generated_codex_job_proposal.json",
+        "exists": true
+      }
+    ]
+  },
+  "read_only_context_sources": {
+    "K9Audit": [
+      {
+        "path": "docs/CIEU_spec.md",
+        "exists": true
+      },
+      {
+        "path": "k9log/logger.py",
+        "exists": true
+      },
+      {
+        "path": "k9log/verifier.py",
+        "exists": true
+      }
+    ],
+    "Y-star-gov": [
+      {
+        "path": "ystar/governance/governance_loop.py",
+        "exists": true
+      },
+      {
+        "path": "ystar/governance/cieu_store.py",
+        "exists": true
+      },
+      {
+        "path": "ystar/kernel/cieu.py",
+        "exists": true
+      }
+    ],
+    "gov-mcp": [
+      {
+        "path": "README.md",
+        "exists": true
+      },
+      {
+        "path": "gov_mcp/outbound/provider_promotion.py",
+        "exists": true
+      },
+      {
+        "path": "gov_mcp/outbound/receipts.py",
+        "exists": true
+      }
+    ],
+    "ystar-company": [
+      {
+        "path": "sales/customer_pipeline.md",
+        "exists": true
+      },
+      {
+        "path": "sales/crm/prospect_list_v1.md",
+        "exists": true
+      }
+    ]
+  },
+  "retrospective_first_required_before_future_construction": true,
+  "external_action_allowed": false
+}

@@ -381,6 +381,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e72_cieu_audit_module_state = {'cieu_audit_module_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
     try:
+        from office.mission_command.e73_readback import load_e73_boundary_state_for_brain
+        e73_ecosystem_boundary_lock_state = load_e73_boundary_state_for_brain()
+    except Exception as exc:
+        e73_ecosystem_boundary_lock_state = {'ecosystem_boundary_lock_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -564,6 +569,17 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_cieu_audit_module_residual_gaps": e72_cieu_audit_module_state.get("residual_gaps"),
         "current_cieu_audit_module_next_milestone": e72_cieu_audit_module_state.get("next_recommended_milestone"),
         "current_cieu_audit_module_external_action_allowed": e72_cieu_audit_module_state.get("external_action_allowed"),
+        "latest_ecosystem_boundary_lock_state": e73_ecosystem_boundary_lock_state,
+        "current_ceo_real_work_highest_ready_level": e73_ecosystem_boundary_lock_state.get("highest_ready_CEO_work_level"),
+        "current_ceo_next_allowed_work_class": e73_ecosystem_boundary_lock_state.get("next_allowed_work_class"),
+        "current_ceo_L2_readiness_decision": e73_ecosystem_boundary_lock_state.get("L2_readiness_decision"),
+        "current_ceo_L3_readiness_decision": e73_ecosystem_boundary_lock_state.get("L3_readiness_decision"),
+        "current_ceo_L4_readiness_decision": e73_ecosystem_boundary_lock_state.get("L4_readiness_decision"),
+        "current_ceo_L5_readiness_decision": e73_ecosystem_boundary_lock_state.get("L5_readiness_decision"),
+        "current_ceo_must_not_rebuild": e73_ecosystem_boundary_lock_state.get("must_not_rebuild"),
+        "current_ceo_boundary_lock_e72_proposal_decision": e73_ecosystem_boundary_lock_state.get("E72_proposal_decision"),
+        "current_ceo_real_work_next_recommended_milestone": e73_ecosystem_boundary_lock_state.get("next_recommended_milestone"),
+        "current_ceo_real_work_external_action_allowed": e73_ecosystem_boundary_lock_state.get("external_action_allowed"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

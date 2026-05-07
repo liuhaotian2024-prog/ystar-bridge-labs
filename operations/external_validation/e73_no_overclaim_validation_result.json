@@ -1,0 +1,14 @@
+{
+  "artifact_id": "e73_no_overclaim_validation_result",
+  "bridge_job_id": "e73_ecosystem_boundary_lock_and_ceo_real_work_readiness_closure_R1_20260507T000001Z",
+  "passed": true,
+  "forbidden_true_fields": [],
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false,
+  "pricing_validation_claimed": false,
+  "compliance_legal_claimed": false,
+  "production_deployment_claimed": false,
+  "live_external_action_claimed": false,
+  "live_ledger_claimed": false,
+  "external_action_allowed": false
+}

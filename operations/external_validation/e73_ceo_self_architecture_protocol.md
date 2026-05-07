@@ -1,0 +1,5 @@
+# E73 CEO Self-Architecture Protocol
+
+The CEO must prove reuse/extend/wrap/create-new before proposing future code.
+- Required steps: define_goal, search_existing_mainline_modules, search_promoted_legacy_assets, identify_canonical_repo_owner, choose_reuse_extend_wrap_adapter_or_create_new, produce_dependency_and_boundary_map, produce_no_duplication_proof, produce_tests_before_or_with_implementation, produce_deprecation_or_rollback_path, state_readiness_effect
+- Rejected: feature_construction_that_does_not_improve_readiness_level, new_modules_without_retrospective_search, duplicate_mechanisms, vague_future_productization_without_closure_criterion

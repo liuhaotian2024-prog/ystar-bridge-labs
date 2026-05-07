@@ -1,0 +1,38 @@
+{
+  "artifact_id": "e73_behavior_authorization_result",
+  "bridge_job_id": "e73_ecosystem_boundary_lock_and_ceo_real_work_readiness_closure_R1_20260507T000001Z",
+  "authorization_status": "passed_internal_only",
+  "allowed_actions": [
+    "repository_archaeology",
+    "read_only_cross_repo_inspection",
+    "responsibility_matrix_creation",
+    "overlap_conflict_scan",
+    "no_new_wheel_policy_creation",
+    "CEO_real_work_readiness_adjudication",
+    "CEO_self_architecture_protocol_creation",
+    "E72_proposal_reclassification",
+    "CEO_readback_integration",
+    "KG_CZL_CIEU_writeback"
+  ],
+  "denied_actions": [
+    "external_outreach",
+    "publication",
+    "customer_conversation",
+    "expert_review",
+    "login_form_send",
+    "private_provider_API",
+    "API_key_secret_use",
+    "internet_package_install",
+    "external_skill_install",
+    "payment_invoice_client_delivery",
+    "mutating_read_only_repos",
+    "production_hash_chain_verifier",
+    "governance_enforcement_engine",
+    "live_MCP_provider_execution",
+    "customer_validation_claim",
+    "paid_signal_claim",
+    "compliance_legal_claim",
+    "production_deployment_claim"
+  ],
+  "external_action_allowed": false
+}

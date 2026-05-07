@@ -1,0 +1,23 @@
+{
+  "artifact_id": "e73_generated_next_milestone_proposal",
+  "bridge_job_id": "e73_ecosystem_boundary_lock_and_ceo_real_work_readiness_closure_R1_20260507T000001Z",
+  "selected_next_milestone": "E74_CEO_L2_Internal_Autonomous_Work_Pilot",
+  "selected_class": "real_internal_work",
+  "selection_basis": "CEO is ready for L2 internal autonomous work; E73 should not choose more construction when L2 real work can begin.",
+  "readiness_gate_basis": {
+    "highest_ready_level": "L2_internal_autonomous_work_ready",
+    "L2": "ready",
+    "L3": "conditionally_ready",
+    "L4": "not_ready",
+    "L5": "not_ready"
+  },
+  "purpose": [
+    "CEO performs a real internal work cycle using existing artifacts only",
+    "CEO chooses one business/product objective",
+    "CEO applies retrospective-first protocol before proposing code",
+    "CEO produces a useful owner-facing deliverable",
+    "CEO measures CIEU-style residual"
+  ],
+  "external_action_allowed": false,
+  "owner_decision_status": "pending_owner_decision"
+}

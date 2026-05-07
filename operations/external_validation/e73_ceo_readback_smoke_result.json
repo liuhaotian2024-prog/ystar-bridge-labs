@@ -1,0 +1,12 @@
+{
+  "artifact_id": "e73_ceo_readback_smoke_result",
+  "bridge_job_id": "e73_ecosystem_boundary_lock_and_ceo_real_work_readiness_closure_R1_20260507T000001Z",
+  "checks": {
+    "readiness_level_exposed": true,
+    "no_new_wheel_policy_exposed": true,
+    "E72_reclassification_exposed": true,
+    "external_action_blocked": true
+  },
+  "passes": true,
+  "external_action_allowed": false
+}

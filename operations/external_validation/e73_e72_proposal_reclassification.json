@@ -1,0 +1,25 @@
+{
+  "artifact_id": "e73_e72_proposal_reclassification",
+  "bridge_job_id": "e73_ecosystem_boundary_lock_and_ceo_real_work_readiness_closure_R1_20260507T000001Z",
+  "loaded_E72_proposal_id": "E73_CIEU_hash_chain_structural_verifier_bridge_labs_adapter",
+  "original_recommendation": "E73_CIEU_hash_chain_structural_verifier_bridge_labs_adapter",
+  "responsibility_matrix_owner": "K9Audit for cryptographic ledger/verifier; bridge-labs for adapter/sample packet/product context",
+  "decision": "narrowed_to_adapter_contract_only_and_replaced_by_readiness_closure_for_E73",
+  "accepted_as_is": false,
+  "blindly_executed": false,
+  "blocked_as_production_verifier_duplicate": true,
+  "allowed_narrowed_scope": [
+    "CIEU sample packet structural contract",
+    "adapter contract validating field presence",
+    "claim-boundary checks",
+    "no-execution demo packet context"
+  ],
+  "forbidden_scope": [
+    "bridge-labs production hash-chain verifier",
+    "cryptographic ledger verification independent of K9Audit/Y-star-gov",
+    "production ledger claim"
+  ],
+  "replacement_E73_scope": "ecosystem boundary lock and CEO real-work readiness closure",
+  "future_allowed_milestone_if_needed": "E74_CIEU_Module_Adapter_Contract_Demo_Packet_No_New_Verifier",
+  "external_action_allowed": false
+}

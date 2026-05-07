@@ -1,0 +1,71 @@
+{
+  "artifact_id": "e73_base_verification",
+  "bridge_job_id": "e73_ecosystem_boundary_lock_and_ceo_real_work_readiness_closure_R1_20260507T000001Z",
+  "bridge_labs": {
+    "path": "/private/tmp/e73_bridge_labs_work_7a51_58776",
+    "exists": true,
+    "branch": "backflow/aiden-ceo-meeting-room",
+    "head": "7a51cafdab79d6aaebdf6f0bcd6ddd00ca589a81",
+    "expected_head": "7a51cafdab79d6aaebdf6f0bcd6ddd00ca589a81",
+    "head_matches_expected": true,
+    "clean": false,
+    "status_entry_count": 37,
+    "status_fingerprint": "94fc11fa46a508a771797d07579a0454eae17e9b53afde2006db14165d0182e3",
+    "status_short_preview": "M office/mission_command/e46b_ceo_brain_adapter.py\n?? office/mission_command/e73_ceo_real_work_readiness.py\n?? office/mission_command/e73_ceo_self_architecture_protocol.py\n?? office/mission_command/e73_ecosystem_boundary_lock.py\n?? office/mission_command/e73_readback.py\n?? operations/external_validation/e73_base_verification.json\n?? operations/external_validation/e73_behavior_authorization_result.json\n?? operations/external_validation/e73_ceo_brain_ecosystem_boundary_lock_update.json\n?? operations/external_validation/e73_ceo_readback_smoke_result.json\n?? operations/external_validation/e73_ceo_real_work_readiness_gate.json\n?? operations/external_validation/e73_ceo_real_work_readiness_gate.md\n?? operations/external_validation/e73_ceo_self_architecture_protocol.json\n?? operations/external_validation/e73_ceo_self_architecture_protocol.md\n?? operations/external_validation/e73_cieu_residual_summary.json\n?? operations/external_validation/e73_completion_report.json\n?? operations/external_validation/e73_czl_closure.json\n?? operations/external_validation/e73_e72_proposal_reclassification.json\n?? operations/external_validation/e73_e72_proposal_reclassification.md\n?? operations/external_validation/e73_ecosystem_responsibility_matrix.json\n?? operations/external_validation/e73_ecosystem_responsibility_matrix.md\n?? operations/external_validation/e73_generated_next_milestone_proposal.json\n?? operations/external_validation/e73_no_new_wheel_policy.json\n?? operations/external_validation/e73_no_new_wheel_policy.md\n?? operations/external_validation/e73_no_overclaim_validation_result.json\n?? operations/external_validation/e73_overlap_conflict_map.json\n?? operations/external_validation/e73_overlap_conflict_map.md\n?? operations/external_validation/e73_owner_readable_closure_report.json\n?? operations/external_validation/e73_owner_readable_closure_report.md\n?? operations/external_validation/e73_retrospective_inventory.json\n?? operations/knowledge_graph/e73_ceo_kg_ecosystem_boundary_edges_delta.jsonl\n?? operations/knowledge_graph/e73_ceo_kg_ecosystem_boundary_nodes_delta.jsonl\n?? operations/knowledge_graph/e73_ceo_kg_ecosystem_boundary_read_model_update.json\n?? tests/office/test_e73_ceo_real_work_readiness.py\n?? tests/office/test_e73_ceo_self_architecture_protocol.py\n?? tests/office/test_e73_ecosystem_boundary_lock.py\n?? tests/office/test_e73_no_new_wheel_policy.py\n?? tests/office/test_e73_readback_completion.py"
+  },
+  "expected_branch": "backflow/aiden-ceo-meeting-room",
+  "base_verified": true,
+  "worktree_clean_before_e73": false,
+  "E72_completed_report_present": true,
+  "read_only_repo_status_before": {
+    "K9Audit": {
+      "path": "/Users/haotianliu/.openclaw/workspace/K9Audit",
+      "exists": true,
+      "branch": "main",
+      "head": "37911e18ce4425470e3f745b30d155c43d76ff55",
+      "expected_head": null,
+      "head_matches_expected": true,
+      "clean": true,
+      "status_entry_count": 0,
+      "status_fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status_short_preview": ""
+    },
+    "Y-star-gov": {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "exists": true,
+      "branch": "backflow/company-runtime-domain-pack",
+      "head": "b0d9aa8b1badd1180127a2f79f73ceed48e16451",
+      "expected_head": null,
+      "head_matches_expected": true,
+      "clean": true,
+      "status_entry_count": 0,
+      "status_fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status_short_preview": ""
+    },
+    "gov-mcp": {
+      "path": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+      "exists": true,
+      "branch": "backflow/company-runtime-tools",
+      "head": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+      "expected_head": null,
+      "head_matches_expected": true,
+      "clean": true,
+      "status_entry_count": 0,
+      "status_fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status_short_preview": ""
+    },
+    "ystar-company": {
+      "path": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "exists": true,
+      "branch": "main",
+      "head": "dd9cb6b247a9cf06d953d9319ba1ebd5c38dcbf6",
+      "expected_head": null,
+      "head_matches_expected": true,
+      "clean": false,
+      "status_entry_count": 1011,
+      "status_fingerprint": "36df39ea6bd1811c19e3c41c6ddb2835f5f86f8f5ac4bbe1c9099c0ce9e1f3e2",
+      "status_short_preview": ""
+    }
+  },
+  "external_action_allowed": false
+}
