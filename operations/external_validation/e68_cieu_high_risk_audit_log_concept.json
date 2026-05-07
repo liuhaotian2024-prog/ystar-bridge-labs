@@ -1,0 +1,43 @@
+{
+  "artifact_id": "e68_cieu_high_risk_audit_log_concept",
+  "bridge_job_id": "e68_cieu_high_risk_ai_audit_log_route_evaluation_20260506T000001Z",
+  "concept_name": "CIEU Causal Audit Log for High-Risk AI Agents",
+  "what_CIEU_records": {
+    "X_t": "context: who/what acted, when, where, agent/session/action class",
+    "U_t": "action/intervention: what was done",
+    "Y_star_t": "declared intent, expected outcome, normative baseline, constraints",
+    "Y_t_plus_1": "observed outcome after action",
+    "R_t_plus_1": "residual/deviation/error/governance gap after comparing outcome against intent"
+  },
+  "difference_from_ordinary_logs": [
+    "ordinary logs record events",
+    "traces record calls, latency, tool use, and spans",
+    "CIEU records causal intent-action-outcome-residual structure",
+    "CIEU connects action to expected outcome and observed residual",
+    "CIEU supports governance, incident review, and learning"
+  ],
+  "potential_high_risk_relevance": [
+    "traceability",
+    "post-market monitoring support",
+    "human oversight evidence",
+    "incident review",
+    "residual-based risk learning",
+    "action authorization evidence",
+    "no-overclaim boundary"
+  ],
+  "does_not_claim": [
+    "not legal compliance by itself",
+    "not medical certification",
+    "not energy or critical infrastructure readiness",
+    "not EU AI Act compliance proof",
+    "not replacement for full technical documentation",
+    "not replacement for risk management system",
+    "not customer validated",
+    "not paid validated"
+  ],
+  "source_context": [
+    "K9Audit CIEU_spec.md read-only",
+    "Y*Bridge KG/CZL/CIEU milestones"
+  ],
+  "external_action_allowed": false
+}

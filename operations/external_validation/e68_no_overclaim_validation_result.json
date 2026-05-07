@@ -1,0 +1,12 @@
+{
+  "artifact_id": "e68_no_overclaim_validation_result",
+  "paths_scanned": [
+    "operations/external_validation/e68_cieu_external_validation_scorecard.json",
+    "operations/external_validation/e68_cieu_no_overclaim_legal_caution_policy.json",
+    "operations/external_validation/e68_ceo_brain_cieu_route_update.json",
+    "operations/external_validation/e68_ceo_cieu_route_readback_smoke_result.json",
+    "operations/external_validation/e68_behavior_authorization_result.json"
+  ],
+  "violations": [],
+  "passed": true
+}

@@ -1,0 +1,2151 @@
+{
+  "artifact_id": "e68_cieu_route_repository_archaeology_inventory",
+  "bridge_job_id": "e68_cieu_high_risk_ai_audit_log_route_evaluation_20260506T000001Z",
+  "asset_count": 27284,
+  "discovered_assets": [
+    {
+      "path": "office/mission_command/e67_external_validation_model.py",
+      "exists": true,
+      "capability_type": "E67_external_validation_overlay",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e67_ceo_external_validation_readback.py",
+      "exists": true,
+      "capability_type": "E67_external_validation_overlay",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e67_external_validation_ladder.json",
+      "exists": true,
+      "capability_type": "E67_external_validation_overlay",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e67_route_external_validation_scorecards.json",
+      "exists": true,
+      "capability_type": "E67_external_validation_overlay",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e67_external_validation_evidence_atoms.json",
+      "exists": true,
+      "capability_type": "E67_external_validation_overlay",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e67_ceo_brain_external_validation_update.json",
+      "exists": true,
+      "capability_type": "E67_external_validation_overlay",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e66_selected_route_offer_blueprint.json",
+      "exists": true,
+      "capability_type": "E66_selected_offer_context",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e66_model_driven_revenue_analysis.json",
+      "exists": true,
+      "capability_type": "E66_selected_offer_context",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e66_model_driven_selected_route_decision.json",
+      "exists": true,
+      "capability_type": "E66_selected_offer_context",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e65_broad_market_universe.json",
+      "exists": true,
+      "capability_type": "E65_market_dynamics_model",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e65_market_adjacency_graph.json",
+      "exists": true,
+      "capability_type": "E65_market_dynamics_model",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e65_multi_axis_market_scoring_engine.json",
+      "exists": true,
+      "capability_type": "E65_market_dynamics_model",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e65_market_evidence_quality_model.json",
+      "exists": true,
+      "capability_type": "E65_market_dynamics_model",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e65_market_signal_taxonomy.json",
+      "exists": true,
+      "capability_type": "E65_market_dynamics_model",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/safe_public_page_reader.py",
+      "exists": true,
+      "capability_type": "public_read_adapter",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e46b_ceo_brain_adapter.py",
+      "exists": true,
+      "capability_type": "CEO_brain_readback",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/b2r_action_packet_examples.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/b2r_c1_governed_action_entry_gate.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/b2r_escalation_policy.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/b2r_owner_constitutional_envelope.request.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/b2r_progressive_capability_unlock_matrix.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c1_action_intent_examples.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c1_action_ledger.template.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c1_gov_mcp_execution_contract.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c1_governed_action_readiness_report.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c1_owner_constitutional_envelope.request.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c2_constitutional_activation_packet.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c2_constitutional_activation_packet.md",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c2_gov_mcp_execution_contracts.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c2_governed_action_queue.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c2_owner_handoff_execution_capsule.md",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c2_signal_loop_fixture.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c2_ygov_decision_envelopes.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c3_feedback_signal_fixture.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c3_narrow_constitutional_envelope.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/c3_owner_handoff_validation_batch.md",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e10_autonomous_target_candidates.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e13_owner_decision_packet.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e13_tier1_evidence_request.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e13r_buyer_pain_evidence_request.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e13r_owner_decision_packet.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e14_action_ledger.template.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e14_owner_approval_packet.request.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e14_owner_decision_console.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e14_owner_decision_console.md",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e14_owner_decision_packet.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e15a_feedback_signal_evaluation_fixture.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e15a_owner_execution_console.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e15a_owner_execution_console.md",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e15d_controlled_outbound_domain.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e15d_outbound_audit_receipts.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e15d_outbound_authorization_envelope.request.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e15d_outbound_authorization_envelope.request.md",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e16c0_feedback_wait_state_binding.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e16c0_owner_final_activation_packet.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e16c0_owner_final_activation_packet.md",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e16g_bridge_labs_router_alignment.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e16g_e16_route_update_packet.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e16g_gov_mcp_adapter_promotion_result.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e16g_risk_capability_execution_mapping.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e16x_canonical_taxonomy_proposal.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e16x_cross_repo_canonical_ownership.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e16x_duplicate_overlap_matrix.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e16x_gov_mcp_outbound_promotion_plan.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e16x_route_reconciliation_packet.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e16x_router_consolidation_plan.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e16x_semantic_conflict_report.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e17_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e17_feedback_intake_schema.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e17_owner_activation_console.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e17_owner_activation_console.md",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e17_paid_signal_readiness_packet.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e18_batch_feedback_intake_schema.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e18_batch_owner_console.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e18_batch_owner_console.md",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e18_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e19_commercial_route_decision_packet.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e19_cross_repo_impact_matrix.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e19_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e19_ecosystem_alignment_scan.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e19_ecosystem_drift_register.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e19_owner_action_model.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e19_revenue_validation_control_room.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e19_revenue_validation_control_room.md",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e20_autonomous_outbound_envelope_schema.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e20_batch_autonomous_reclassification.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e20_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e20_ecosystem_alignment_gate.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e20_risk_tier_taxonomy.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e21_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e22_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e22_outbound_envelopes.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e23_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e23_live_provider_enablement_plan.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e24_commercial_imagination_paths.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e24_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e24_ecosystem_route_registry.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e24_existing_wheel_inventory.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e24_field_functional_opportunity_map.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e24_innovation_hypotheses.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e24_mature_pattern_borrowing_matrix.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e24_revenue_path_portfolio_selection.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e24_whole_ecosystem_observation.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e25_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e26_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e26_ecosystem_alignment_gate.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e26_existing_live_readiness_wheel_inventory.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e26_future_anti_duplication_policy.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e26_kill_switch_readiness.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e26_live_readiness_control_room.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e26_reuse_wrap_extend_build_decision.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e27_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e27_ecosystem_alignment_gate.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e27_existing_live_test_wheel_inventory.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e27_future_live_test_canary_policy.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e27_kill_switch_live_test_gate.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e27_live_test_control_room.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e27_reuse_wrap_extend_build_decision.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e28_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e28_decision_control_room.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e28_ecosystem_alignment_gate.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e28_existing_production_live_wheel_inventory.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e28_future_production_live_policy.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e28_production_live_blocker_matrix.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e28_repo_modification_decision_packet.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e28_reuse_wrap_extend_build_decision.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e28r_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e28r_ecosystem_alignment_gate.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e28r_existing_revenue_mode_wheel_inventory.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e28r_revenue_mode_branch_registry.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e29_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e29_ecosystem_alignment_gate.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e29_existing_revenue_branch_wheel_inventory.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e29_reuse_wrap_extend_build_decision.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e30_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e30_czl_closure.md",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e30_ecosystem_alignment_gate.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e30_existing_method_wheel_inventory.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e30_open_commercial_action_space.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e30_system_state_reconstruction.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e31_ceo_kg_real_world_evidence_needs.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e31_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e31_existing_real_world_observation_wheel_inventory.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e31_observed_buyer_pain_evidence.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e31_real_world_observation_receipts.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e31_real_world_observation_run.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e32_ceo_brain_deep_learning_update.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e32_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e32_existing_learning_strategy_wheel_inventory.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e32_frontier_research_agenda.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e32_full_ecosystem_runtime_archaeology.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e32_multi_path_business_plans.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e32_open_monetization_paths.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e32_real_world_learning_receipts.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e32_real_world_learning_run.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e32_shock_level_mvp_selection.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e32_technical_understanding_synthesis.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e32_unique_advantage_weakness_analysis.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e32_y_star_unique_fitness_analysis.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e33_agent_action_black_box_demo_packet.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e33_agent_action_black_box_demo_record.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e33_agent_action_black_box_schema.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e33_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e33_input_artifact_manifest.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e33_no_rebuild_alignment_gate.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e33_owner_validation_route.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e34_analogy_transfer_engine.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e34_ceo_imagination_input_manifest.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e34_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e34_no_rebuild_alignment_gate.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e34_primitive_shift_detector.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e35_base_and_brain_contract_manifest.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e35_capability_abstraction_recombination_method.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e35_ceo_methodology_quality_audit.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e35_cross_domain_opportunity_field.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e35_cross_domain_universe_expansion_method.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e35_cross_repo_governance_execution_alignment.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e35_cross_repo_sync_backlog.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e35_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e35_multi_hop_abstraction_jump_engine.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e35_no_rebuild_alignment_gate.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e35_one_brain_integration_guard.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e36_cross_repo_governance_primitive_alignment.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e36_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e36_evidence_seeking_shortlist.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e36_gov_mcp_execution_boundary_alignment.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e36_strategic_field_trial_results.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e37_base_cross_repo_state_manifest.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e37_ceo_brain_evidence_preflight_update.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e37_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e37_evidence_route_gov_mcp_alignment.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e37_evidence_route_y_star_gov_alignment.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e37_normalized_opportunity_clusters.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e38_base_cross_repo_state_manifest.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e38_ceo_brain_public_evidence_update.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e38_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e38_frontier_capability_import_scan.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e38_gov_mcp_alignment_after_evidence.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e38_y_star_gov_alignment_after_evidence.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e39_cross_repo_alignment_after_capability_import.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e39_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e40_base_ecosystem_state_manifest.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e40_cross_repo_alignment_for_expert_preflight.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e40_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e41_base_whole_ecosystem_state_manifest.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e41_canonical_ceo_runtime_map.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e41_cross_repo_alignment_after_frontier_import.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e41_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e41_frontier_capability_import_loop.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e41_no_rebuild_alignment_gate.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e41_operating_memory_reconciliation.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e41_recent_line_runtime_connection_audit.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e41_whole_bridge_labs_runtime_archaeology.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e42_base_state_manifest.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e42_capability_tag_index.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e42_ceo_task_preflight_packet_examples.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e42_cross_repo_capability_ownership_index.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e42_czl_closure.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e42_internal_resource_inventory.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e42_resource_to_test_index.json",
+      "exists": true,
+      "capability_type": "CIEU_KG_CZL_evidence_closure",
+      "reusable": true,
+      "connected_status": "context_or_connected",
+      "must_not_rebuild": true
+    }
+  ],
+  "reusable_CIEU_assets": [
+    "operations/external_validation/b2r_action_packet_examples.json",
+    "operations/external_validation/b2r_c1_governed_action_entry_gate.json",
+    "operations/external_validation/b2r_escalation_policy.json",
+    "operations/external_validation/b2r_owner_constitutional_envelope.request.json",
+    "operations/external_validation/b2r_progressive_capability_unlock_matrix.json",
+    "operations/external_validation/c1_action_intent_examples.json",
+    "operations/external_validation/c1_action_ledger.template.json",
+    "operations/external_validation/c1_gov_mcp_execution_contract.json",
+    "operations/external_validation/c1_governed_action_readiness_report.json",
+    "operations/external_validation/c1_owner_constitutional_envelope.request.json",
+    "operations/external_validation/c2_constitutional_activation_packet.json",
+    "operations/external_validation/c2_constitutional_activation_packet.md",
+    "operations/external_validation/c2_gov_mcp_execution_contracts.json",
+    "operations/external_validation/c2_governed_action_queue.json",
+    "operations/external_validation/c2_owner_handoff_execution_capsule.md",
+    "operations/external_validation/c2_signal_loop_fixture.json",
+    "operations/external_validation/c2_ygov_decision_envelopes.json",
+    "operations/external_validation/c3_feedback_signal_fixture.json",
+    "operations/external_validation/c3_narrow_constitutional_envelope.json",
+    "operations/external_validation/c3_owner_handoff_validation_batch.md",
+    "operations/external_validation/e10_autonomous_target_candidates.json",
+    "operations/external_validation/e13_owner_decision_packet.json",
+    "operations/external_validation/e13_tier1_evidence_request.json",
+    "operations/external_validation/e13r_buyer_pain_evidence_request.json",
+    "operations/external_validation/e13r_owner_decision_packet.json",
+    "operations/external_validation/e14_action_ledger.template.json",
+    "operations/external_validation/e14_owner_approval_packet.request.json",
+    "operations/external_validation/e14_owner_decision_console.json",
+    "operations/external_validation/e14_owner_decision_console.md",
+    "operations/external_validation/e14_owner_decision_packet.json",
+    "operations/external_validation/e15a_feedback_signal_evaluation_fixture.json",
+    "operations/external_validation/e15a_owner_execution_console.json",
+    "operations/external_validation/e15a_owner_execution_console.md",
+    "operations/external_validation/e15d_controlled_outbound_domain.json",
+    "operations/external_validation/e15d_outbound_audit_receipts.json",
+    "operations/external_validation/e15d_outbound_authorization_envelope.request.json",
+    "operations/external_validation/e15d_outbound_authorization_envelope.request.md",
+    "operations/external_validation/e16c0_feedback_wait_state_binding.json",
+    "operations/external_validation/e16c0_owner_final_activation_packet.json",
+    "operations/external_validation/e16c0_owner_final_activation_packet.md",
+    "operations/external_validation/e16g_bridge_labs_router_alignment.json",
+    "operations/external_validation/e16g_e16_route_update_packet.json",
+    "operations/external_validation/e16g_gov_mcp_adapter_promotion_result.json",
+    "operations/external_validation/e16g_risk_capability_execution_mapping.json",
+    "operations/external_validation/e16x_canonical_taxonomy_proposal.json",
+    "operations/external_validation/e16x_cross_repo_canonical_ownership.json",
+    "operations/external_validation/e16x_duplicate_overlap_matrix.json",
+    "operations/external_validation/e16x_gov_mcp_outbound_promotion_plan.json",
+    "operations/external_validation/e16x_route_reconciliation_packet.json",
+    "operations/external_validation/e16x_router_consolidation_plan.json",
+    "operations/external_validation/e16x_semantic_conflict_report.json",
+    "operations/external_validation/e17_czl_closure.json",
+    "operations/external_validation/e17_feedback_intake_schema.json",
+    "operations/external_validation/e17_owner_activation_console.json",
+    "operations/external_validation/e17_owner_activation_console.md",
+    "operations/external_validation/e17_paid_signal_readiness_packet.json",
+    "operations/external_validation/e18_batch_feedback_intake_schema.json",
+    "operations/external_validation/e18_batch_owner_console.json",
+    "operations/external_validation/e18_batch_owner_console.md",
+    "operations/external_validation/e18_czl_closure.json",
+    "operations/external_validation/e19_commercial_route_decision_packet.json",
+    "operations/external_validation/e19_cross_repo_impact_matrix.json",
+    "operations/external_validation/e19_czl_closure.json",
+    "operations/external_validation/e19_ecosystem_alignment_scan.json",
+    "operations/external_validation/e19_ecosystem_drift_register.json",
+    "operations/external_validation/e19_owner_action_model.json",
+    "operations/external_validation/e19_revenue_validation_control_room.json",
+    "operations/external_validation/e19_revenue_validation_control_room.md",
+    "operations/external_validation/e20_autonomous_outbound_envelope_schema.json",
+    "operations/external_validation/e20_batch_autonomous_reclassification.json",
+    "operations/external_validation/e20_czl_closure.json",
+    "operations/external_validation/e20_ecosystem_alignment_gate.json",
+    "operations/external_validation/e20_risk_tier_taxonomy.json",
+    "operations/external_validation/e21_czl_closure.json",
+    "operations/external_validation/e22_czl_closure.json",
+    "operations/external_validation/e22_outbound_envelopes.json",
+    "operations/external_validation/e23_czl_closure.json",
+    "operations/external_validation/e23_live_provider_enablement_plan.json",
+    "operations/external_validation/e24_commercial_imagination_paths.json",
+    "operations/external_validation/e24_czl_closure.json"
+  ],
+  "reusable_KG_CZL_CIEU_writeback_assets": [
+    "operations/external_validation/e17_czl_closure.json",
+    "operations/external_validation/e18_czl_closure.json",
+    "operations/external_validation/e19_czl_closure.json",
+    "operations/external_validation/e20_czl_closure.json",
+    "operations/external_validation/e21_czl_closure.json",
+    "operations/external_validation/e22_czl_closure.json",
+    "operations/external_validation/e23_czl_closure.json",
+    "operations/external_validation/e24_czl_closure.json",
+    "operations/external_validation/e25_czl_closure.json",
+    "operations/external_validation/e26_czl_closure.json",
+    "operations/external_validation/e27_czl_closure.json",
+    "operations/external_validation/e28_czl_closure.json",
+    "operations/external_validation/e28r_czl_closure.json",
+    "operations/external_validation/e29_czl_closure.json",
+    "operations/external_validation/e30_czl_closure.json",
+    "operations/external_validation/e30_czl_closure.md",
+    "operations/external_validation/e31_ceo_kg_real_world_evidence_needs.json",
+    "operations/external_validation/e31_czl_closure.json",
+    "operations/external_validation/e32_czl_closure.json",
+    "operations/external_validation/e33_czl_closure.json",
+    "operations/external_validation/e34_czl_closure.json",
+    "operations/external_validation/e35_czl_closure.json",
+    "operations/external_validation/e36_czl_closure.json",
+    "operations/external_validation/e37_czl_closure.json",
+    "operations/external_validation/e38_czl_closure.json",
+    "operations/external_validation/e39_czl_closure.json",
+    "operations/external_validation/e40_czl_closure.json",
+    "operations/external_validation/e41_czl_closure.json",
+    "operations/external_validation/e42_czl_closure.json",
+    "operations/external_validation/e43_czl_closure.json",
+    "operations/external_validation/e44a_czl_closure.json",
+    "operations/external_validation/e44a_full_history_czl_closure.json",
+    "operations/external_validation/e45_czl_closure.json",
+    "operations/external_validation/e46b_czl_closure.json",
+    "operations/external_validation/e47_czl_closure.json",
+    "operations/external_validation/e48_czl_closure.json",
+    "operations/external_validation/e49_czl_closure.json",
+    "operations/external_validation/e50a_czl_closure.json",
+    "operations/external_validation/e50b_cieu_residual_summary.json",
+    "operations/external_validation/e50b_czl_closure.json",
+    "operations/external_validation/e50c_cieu_residual_summary.json",
+    "operations/external_validation/e50c_czl_closure.json",
+    "operations/external_validation/e51_cieu_residual_summary.json",
+    "operations/external_validation/e51_czl_closure.json",
+    "operations/external_validation/e52_cieu_residual_summary.json",
+    "operations/external_validation/e52_czl_closure.json",
+    "operations/external_validation/e53_cieu_residual_summary.json",
+    "operations/external_validation/e53_czl_closure.json",
+    "operations/external_validation/e54_cieu_residual_summary.json",
+    "operations/external_validation/e54_czl_closure.json",
+    "operations/external_validation/e55_cieu_residual_summary.json",
+    "operations/external_validation/e55_czl_closure.json",
+    "operations/external_validation/e56_cieu_residual_summary.json",
+    "operations/external_validation/e56_czl_closure.json",
+    "operations/external_validation/e57_cieu_residual_summary.json",
+    "operations/external_validation/e57_czl_closure.json",
+    "operations/external_validation/e58_cieu_residual_summary.json",
+    "operations/external_validation/e58_czl_closure.json",
+    "operations/external_validation/e59_cieu_residual_summary.json",
+    "operations/external_validation/e59_czl_closure.json",
+    "operations/external_validation/e60_cieu_residual_summary.json",
+    "operations/external_validation/e60_czl_closure.json",
+    "operations/external_validation/e61_cieu_residual_summary.json",
+    "operations/external_validation/e61_czl_closure.json",
+    "operations/external_validation/e62_cieu_residual_summary.json",
+    "operations/external_validation/e62_czl_closure.json",
+    "operations/external_validation/e63_cieu_residual_summary.json",
+    "operations/external_validation/e63_czl_closure.json",
+    "operations/external_validation/e64_cieu_residual_summary.json",
+    "operations/external_validation/e64_czl_closure.json",
+    "operations/external_validation/e65_cieu_residual_summary.json",
+    "operations/external_validation/e65_czl_closure.json",
+    "operations/external_validation/e66_cieu_residual_summary.json",
+    "operations/external_validation/e66_czl_closure.json",
+    "operations/external_validation/e67_cieu_residual_summary.json",
+    "operations/external_validation/e67_czl_closure.json",
+    "operations/external_validation/e68_ceo_brain_cieu_route_update.json",
+    "operations/external_validation/e68_ceo_cieu_route_readback_smoke_result.json",
+    "operations/external_validation/e68_cieu_external_validation_scorecard.json",
+    "operations/external_validation/e68_cieu_high_risk_audit_log_concept.json"
+  ],
+  "reusable_evidence_closure_assets": [
+    "operations/external_validation/e67_external_validation_evidence_atoms.json",
+    "operations/external_validation/e65_market_evidence_quality_model.json",
+    "operations/external_validation/e13_tier1_evidence_request.json",
+    "operations/external_validation/e13r_buyer_pain_evidence_request.json",
+    "operations/external_validation/e31_ceo_kg_real_world_evidence_needs.json",
+    "operations/external_validation/e31_observed_buyer_pain_evidence.json",
+    "operations/external_validation/e36_evidence_seeking_shortlist.json",
+    "operations/external_validation/e37_ceo_brain_evidence_preflight_update.json",
+    "operations/external_validation/e37_evidence_route_gov_mcp_alignment.json",
+    "operations/external_validation/e37_evidence_route_y_star_gov_alignment.json",
+    "operations/external_validation/e38_ceo_brain_public_evidence_update.json",
+    "operations/external_validation/e38_gov_mcp_alignment_after_evidence.json",
+    "operations/external_validation/e38_y_star_gov_alignment_after_evidence.json",
+    "operations/external_validation/e55_behavior_evidence_writeback.json",
+    "operations/external_validation/e56_internal_loop_evidence_packet.json",
+    "operations/external_validation/e57_cross_repo_evidence_packet.json",
+    "operations/external_validation/e58_cross_repo_evidence_packet.json",
+    "operations/external_validation/e59_cross_repo_evidence_packet.json",
+    "operations/external_validation/e59_evidence_atoms.jsonl",
+    "operations/external_validation/e60_cross_repo_evidence_packet.json",
+    "operations/external_validation/e64_dual_axis_public_read_evidence_atoms.json",
+    "operations/external_validation/e68_regulatory_public_requirements_evidence_atoms.json",
+    "operations/knowledge_graph/e24_ceo_kg_evidence_index.json",
+    "reports/cross_repo/a1_y_star_gov_full_evidence_chain.md",
+    "reports/cto/p0_2_10_of_10_behavior_rules_evidence_20260416.md",
+    "reports/integration/aiden_evidence_grounding_smoke.md",
+    "reports/integration/e13_tier1_evidence_mission.md",
+    "reports/integration/e13r_buyer_pain_evidence.md",
+    "reports/integration/e1_6_tier1_read_only_evidence_mission_packet.md",
+    "reports/integration/e37_evidence_route_y_star_gov_alignment.md",
+    "reports/integration/e38_y_star_gov_alignment_after_evidence.md",
+    "reports/integration/evidence_gated_7_day_money_plan_20260501.md",
+    "reports/whitepaper/evidence_auto_20260415.md",
+    "tests/office/test_e13_host_tier1_evidence_runner.py",
+    "tests/office/test_e13_tier1_evidence_mission.py",
+    "tests/office/test_e24_ceo_kg_evidence_binder.py",
+    "tests/office/test_e36_evidence_seeking_shortlist_builder.py",
+    "tests/office/test_e56_internal_loop_evidence_writeback.py",
+    "office/aiden_meeting_room/repo_evidence_index.py",
+    "office/mission_command/e13_tier1_evidence_mission.py",
+    "office/mission_command/e13r_buyer_pain_evidence.py",
+    "office/mission_command/e55_behavior_evidence_writeback.py",
+    "office/mission_command/e56_internal_loop_evidence_writeback.py",
+    "office/mission_command/e57_money_route_evidence_writeback.py",
+    "office/mission_command/e58_case_study_evidence_writeback.py",
+    "office/mission_command/evidence_gated_money_plan.py",
+    "office/mission_command/evidence_signal_router.py"
+  ],
+  "reusable_K9Audit_read_only_context": [
+    "/Users/haotianliu/.openclaw/workspace/K9Audit/docs/CIEU_spec.md",
+    "/Users/haotianliu/.openclaw/workspace/K9Audit/docs/causal_tracing.md",
+    "/Users/haotianliu/.openclaw/workspace/K9Audit/k9log/core.py",
+    "/Users/haotianliu/.openclaw/workspace/K9Audit/k9log/verifier.py",
+    "/Users/haotianliu/.openclaw/workspace/K9Audit/k9log/logger.py",
+    "/Users/haotianliu/.openclaw/workspace/K9Audit/k9log/causal_analyzer.py"
+  ],
+  "reusable_Y_star_gov_gov_mcp_governance_assets": [
+    "Y-star-gov governance validators read-only",
+    "gov-mcp ALLOW/DENY harness read-only"
+  ],
+  "reusable_E65_E67_model_assets": [
+    "office/mission_command/e67_external_validation_model.py",
+    "office/mission_command/e67_ceo_external_validation_readback.py",
+    "operations/external_validation/e67_external_validation_ladder.json",
+    "operations/external_validation/e67_route_external_validation_scorecards.json",
+    "operations/external_validation/e67_external_validation_evidence_atoms.json",
+    "operations/external_validation/e67_ceo_brain_external_validation_update.json",
+    "operations/external_validation/e65_broad_market_universe.json",
+    "operations/external_validation/e65_market_adjacency_graph.json",
+    "operations/external_validation/e65_multi_axis_market_scoring_engine.json",
+    "operations/external_validation/e65_market_evidence_quality_model.json",
+    "operations/external_validation/e65_market_signal_taxonomy.json"
+  ],
+  "already_connected": [
+    "office/mission_command/e67_external_validation_model.py",
+    "office/mission_command/e67_ceo_external_validation_readback.py",
+    "operations/external_validation/e67_external_validation_ladder.json",
+    "operations/external_validation/e67_route_external_validation_scorecards.json",
+    "operations/external_validation/e67_external_validation_evidence_atoms.json",
+    "operations/external_validation/e67_ceo_brain_external_validation_update.json",
+    "operations/external_validation/e66_selected_route_offer_blueprint.json",
+    "operations/external_validation/e66_model_driven_revenue_analysis.json",
+    "operations/external_validation/e66_model_driven_selected_route_decision.json",
+    "operations/external_validation/e65_broad_market_universe.json",
+    "operations/external_validation/e65_market_adjacency_graph.json",
+    "operations/external_validation/e65_multi_axis_market_scoring_engine.json",
+    "operations/external_validation/e65_market_evidence_quality_model.json",
+    "operations/external_validation/e65_market_signal_taxonomy.json",
+    "office/mission_command/safe_public_page_reader.py",
+    "office/mission_command/e46b_ceo_brain_adapter.py",
+    "operations/external_validation/b2r_action_packet_examples.json",
+    "operations/external_validation/b2r_c1_governed_action_entry_gate.json",
+    "operations/external_validation/b2r_escalation_policy.json",
+    "operations/external_validation/b2r_owner_constitutional_envelope.request.json",
+    "operations/external_validation/b2r_progressive_capability_unlock_matrix.json",
+    "operations/external_validation/c1_action_intent_examples.json",
+    "operations/external_validation/c1_action_ledger.template.json",
+    "operations/external_validation/c1_gov_mcp_execution_contract.json",
+    "operations/external_validation/c1_governed_action_readiness_report.json",
+    "operations/external_validation/c1_owner_constitutional_envelope.request.json",
+    "operations/external_validation/c2_constitutional_activation_packet.json",
+    "operations/external_validation/c2_constitutional_activation_packet.md",
+    "operations/external_validation/c2_gov_mcp_execution_contracts.json",
+    "operations/external_validation/c2_governed_action_queue.json",
+    "operations/external_validation/c2_owner_handoff_execution_capsule.md",
+    "operations/external_validation/c2_signal_loop_fixture.json",
+    "operations/external_validation/c2_ygov_decision_envelopes.json",
+    "operations/external_validation/c3_feedback_signal_fixture.json",
+    "operations/external_validation/c3_narrow_constitutional_envelope.json",
+    "operations/external_validation/c3_owner_handoff_validation_batch.md",
+    "operations/external_validation/e10_autonomous_target_candidates.json",
+    "operations/external_validation/e13_owner_decision_packet.json",
+    "operations/external_validation/e13_tier1_evidence_request.json",
+    "operations/external_validation/e13r_buyer_pain_evidence_request.json",
+    "operations/external_validation/e13r_owner_decision_packet.json",
+    "operations/external_validation/e14_action_ledger.template.json",
+    "operations/external_validation/e14_owner_approval_packet.request.json",
+    "operations/external_validation/e14_owner_decision_console.json",
+    "operations/external_validation/e14_owner_decision_console.md",
+    "operations/external_validation/e14_owner_decision_packet.json",
+    "operations/external_validation/e15a_feedback_signal_evaluation_fixture.json",
+    "operations/external_validation/e15a_owner_execution_console.json",
+    "operations/external_validation/e15a_owner_execution_console.md",
+    "operations/external_validation/e15d_controlled_outbound_domain.json",
+    "operations/external_validation/e15d_outbound_audit_receipts.json",
+    "operations/external_validation/e15d_outbound_authorization_envelope.request.json",
+    "operations/external_validation/e15d_outbound_authorization_envelope.request.md",
+    "operations/external_validation/e16c0_feedback_wait_state_binding.json",
+    "operations/external_validation/e16c0_owner_final_activation_packet.json",
+    "operations/external_validation/e16c0_owner_final_activation_packet.md",
+    "operations/external_validation/e16g_bridge_labs_router_alignment.json",
+    "operations/external_validation/e16g_e16_route_update_packet.json",
+    "operations/external_validation/e16g_gov_mcp_adapter_promotion_result.json",
+    "operations/external_validation/e16g_risk_capability_execution_mapping.json",
+    "operations/external_validation/e16x_canonical_taxonomy_proposal.json",
+    "operations/external_validation/e16x_cross_repo_canonical_ownership.json",
+    "operations/external_validation/e16x_duplicate_overlap_matrix.json",
+    "operations/external_validation/e16x_gov_mcp_outbound_promotion_plan.json",
+    "operations/external_validation/e16x_route_reconciliation_packet.json",
+    "operations/external_validation/e16x_router_consolidation_plan.json",
+    "operations/external_validation/e16x_semantic_conflict_report.json",
+    "operations/external_validation/e17_czl_closure.json",
+    "operations/external_validation/e17_feedback_intake_schema.json",
+    "operations/external_validation/e17_owner_activation_console.json",
+    "operations/external_validation/e17_owner_activation_console.md",
+    "operations/external_validation/e17_paid_signal_readiness_packet.json",
+    "operations/external_validation/e18_batch_feedback_intake_schema.json",
+    "operations/external_validation/e18_batch_owner_console.json",
+    "operations/external_validation/e18_batch_owner_console.md",
+    "operations/external_validation/e18_czl_closure.json",
+    "operations/external_validation/e19_commercial_route_decision_packet.json",
+    "operations/external_validation/e19_cross_repo_impact_matrix.json",
+    "operations/external_validation/e19_czl_closure.json",
+    "operations/external_validation/e19_ecosystem_alignment_scan.json",
+    "operations/external_validation/e19_ecosystem_drift_register.json",
+    "operations/external_validation/e19_owner_action_model.json",
+    "operations/external_validation/e19_revenue_validation_control_room.json",
+    "operations/external_validation/e19_revenue_validation_control_room.md",
+    "operations/external_validation/e20_autonomous_outbound_envelope_schema.json",
+    "operations/external_validation/e20_batch_autonomous_reclassification.json",
+    "operations/external_validation/e20_czl_closure.json",
+    "operations/external_validation/e20_ecosystem_alignment_gate.json",
+    "operations/external_validation/e20_risk_tier_taxonomy.json",
+    "operations/external_validation/e21_czl_closure.json",
+    "operations/external_validation/e22_czl_closure.json",
+    "operations/external_validation/e22_outbound_envelopes.json",
+    "operations/external_validation/e23_czl_closure.json",
+    "operations/external_validation/e23_live_provider_enablement_plan.json",
+    "operations/external_validation/e24_commercial_imagination_paths.json",
+    "operations/external_validation/e24_czl_closure.json",
+    "operations/external_validation/e24_ecosystem_route_registry.json",
+    "operations/external_validation/e24_existing_wheel_inventory.json",
+    "operations/external_validation/e24_field_functional_opportunity_map.json",
+    "operations/external_validation/e24_innovation_hypotheses.json",
+    "operations/external_validation/e24_mature_pattern_borrowing_matrix.json",
+    "operations/external_validation/e24_revenue_path_portfolio_selection.json",
+    "operations/external_validation/e24_whole_ecosystem_observation.json",
+    "operations/external_validation/e25_czl_closure.json",
+    "operations/external_validation/e26_czl_closure.json",
+    "operations/external_validation/e26_ecosystem_alignment_gate.json",
+    "operations/external_validation/e26_existing_live_readiness_wheel_inventory.json",
+    "operations/external_validation/e26_future_anti_duplication_policy.json",
+    "operations/external_validation/e26_kill_switch_readiness.json",
+    "operations/external_validation/e26_live_readiness_control_room.json",
+    "operations/external_validation/e26_reuse_wrap_extend_build_decision.json",
+    "operations/external_validation/e27_czl_closure.json",
+    "operations/external_validation/e27_ecosystem_alignment_gate.json",
+    "operations/external_validation/e27_existing_live_test_wheel_inventory.json",
+    "operations/external_validation/e27_future_live_test_canary_policy.json",
+    "operations/external_validation/e27_kill_switch_live_test_gate.json",
+    "operations/external_validation/e27_live_test_control_room.json",
+    "operations/external_validation/e27_reuse_wrap_extend_build_decision.json",
+    "operations/external_validation/e28_czl_closure.json",
+    "operations/external_validation/e28_decision_control_room.json"
+  ],
+  "disconnected": [],
+  "what_must_not_be_rebuilt": [
+    "CIEU five-tuple concept",
+    "KG/CZL/CIEU writeback conventions",
+    "E65 Market Dynamics Model",
+    "E67 external validation overlay",
+    "safe public-read adapter",
+    "evidence atomizer conventions",
+    "behavior authorization gate",
+    "CEO brain readback",
+    "Y-star-gov/gov-mcp validation gates",
+    "K9Audit ledger and hash-chain concepts"
+  ],
+  "E68_must_add_only": "strategic route evaluation layer for CIEU high-risk AI audit log positioning",
+  "capability_counts": {
+    "E67_external_validation_overlay": 6,
+    "E66_selected_offer_context": 3,
+    "E65_market_dynamics_model": 5,
+    "public_read_adapter": 1,
+    "CEO_brain_readback": 1,
+    "CIEU_KG_CZL_evidence_closure": 27262,
+    "K9Audit_read_only_causal_ledger_context": 6
+  },
+  "external_action_allowed": false
+}

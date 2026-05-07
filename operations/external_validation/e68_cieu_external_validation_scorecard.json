@@ -1,0 +1,41 @@
+{
+  "artifact_id": "e68_cieu_external_validation_scorecard",
+  "bridge_job_id": "e68_cieu_high_risk_ai_audit_log_route_evaluation_20260506T000001Z",
+  "route_id": "CIEU_high_risk_AI_agent_audit_log",
+  "EV1_public_market_regulatory_language": "medium",
+  "EV2_adjacent_product_competitor_category_presence": "medium",
+  "EV3_public_pricing_packaging_analogs": "low",
+  "EV4_public_demand_behavior_proxy": "medium",
+  "EV5_public_experiment": "owner_gated_unachieved",
+  "EV6_human_feedback": "owner_gated_unachieved",
+  "EV7_paid_signal": "owner_gated_unachieved",
+  "EV8_repeatable_revenue": "owner_gated_unachieved",
+  "highest_achieved_EV_level": "EV4_public_demand_or_behavior_proxy",
+  "evidence_quantity": 14,
+  "evidence_quality": "T2_public_regulatory_and_product_evidence",
+  "contradiction_count": 0,
+  "missing_evidence": [
+    "legal review",
+    "customer validation",
+    "paid signal",
+    "pricing validation",
+    "medical/energy domain validation",
+    "owner-approved external review"
+  ],
+  "confidence": 100.0,
+  "route_implication": "promising_high_defensibility_vertical_not_immediate_primary_first_cash",
+  "overclaim_risks": [
+    "EU AI Act compliance claim",
+    "medical readiness claim",
+    "energy dispatch readiness claim",
+    "public regulatory evidence treated as buyer validation"
+  ],
+  "EV5_EV8_achieved": false,
+  "external_action_allowed": false,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false,
+  "expert_feedback_claimed": false,
+  "legal_compliance_claimed": false,
+  "medical_readiness_claimed": false,
+  "energy_critical_infrastructure_readiness_claimed": false
+}

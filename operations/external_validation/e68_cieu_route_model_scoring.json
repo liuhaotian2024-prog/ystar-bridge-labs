@@ -1,0 +1,345 @@
+{
+  "artifact_id": "e68_cieu_route_model_scoring",
+  "bridge_job_id": "e68_cieu_high_risk_ai_audit_log_route_evaluation_20260506T000001Z",
+  "E65_E67_API_invocations": {
+    "fastest_cash_profile": "founder_operator_decision_brief_service",
+    "strategic_defensibility_profile": "governed_business_operations_blueprint_for_agent_teams",
+    "low_risk_profile": "founder_operator_decision_brief_service",
+    "balanced_CEO_profile": "governed_business_operations_blueprint_for_agent_teams",
+    "portfolio": {
+      "primary_route": "governed_business_operations_blueprint_for_agent_teams",
+      "first_cash_wedge": "governed_business_operations_blueprint_for_agent_teams",
+      "fallback_route": "founder_operator_decision_brief_service",
+      "learning_route": "public_read_market_intelligence_product",
+      "strategic_compounding_route": "AI_agent_company_runtime_harness_deployment_blueprint"
+    },
+    "decision_stability": {
+      "decision_stability_score": 60.0,
+      "fragile_assumptions": [
+        "buyer understands governed business operations",
+        "public-read evidence remains directionally relevant",
+        "owner eventually approves controlled external review"
+      ],
+      "fallback_portfolio": [
+        "founder_operator_decision_brief_service",
+        "public_read_market_intelligence_product",
+        "agent_runtime_audit_and_repair_package"
+      ]
+    },
+    "E67_primary_score": 100.0
+  },
+  "routes_scored": [
+    {
+      "route_id": "governed_business_operations_blueprint_for_agent_teams",
+      "market_optimal_score": 82,
+      "YBridge_unique_score": 88,
+      "shortest_cash_score": 70,
+      "regulatory_safety_driver_score": 55,
+      "buyer_understandability": 88,
+      "delivery_feasibility": 75,
+      "evidence_quality": 80,
+      "non_contact_external_validation_score": 100,
+      "defensibility": 82,
+      "commodity_risk_inverse": 70,
+      "sales_cycle_risk_inverse": 70,
+      "legal_regulatory_caution_score": 75,
+      "strategic_compounding": 88,
+      "first_cash_wedge_fit": 80,
+      "confidence": 74,
+      "balanced_score": 78.47
+    },
+    {
+      "route_id": "founder_operator_decision_brief_service",
+      "market_optimal_score": 88,
+      "YBridge_unique_score": 55,
+      "shortest_cash_score": 90,
+      "regulatory_safety_driver_score": 30,
+      "buyer_understandability": 92,
+      "delivery_feasibility": 85,
+      "evidence_quality": 70,
+      "non_contact_external_validation_score": 66.67,
+      "defensibility": 60,
+      "commodity_risk_inverse": 45,
+      "sales_cycle_risk_inverse": 90,
+      "legal_regulatory_caution_score": 82,
+      "strategic_compounding": 55,
+      "first_cash_wedge_fit": 95,
+      "confidence": 76,
+      "balanced_score": 71.98
+    },
+    {
+      "route_id": "public_read_market_intelligence_product",
+      "market_optimal_score": 78,
+      "YBridge_unique_score": 70,
+      "shortest_cash_score": 75,
+      "regulatory_safety_driver_score": 45,
+      "buyer_understandability": 80,
+      "delivery_feasibility": 82,
+      "evidence_quality": 68,
+      "non_contact_external_validation_score": 50,
+      "defensibility": 70,
+      "commodity_risk_inverse": 60,
+      "sales_cycle_risk_inverse": 88,
+      "legal_regulatory_caution_score": 78,
+      "strategic_compounding": 75,
+      "first_cash_wedge_fit": 80,
+      "confidence": 66,
+      "balanced_score": 71.0
+    },
+    {
+      "route_id": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "market_optimal_score": 72,
+      "YBridge_unique_score": 92,
+      "shortest_cash_score": 55,
+      "regulatory_safety_driver_score": 50,
+      "buyer_understandability": 70,
+      "delivery_feasibility": 60,
+      "evidence_quality": 74,
+      "non_contact_external_validation_score": 100,
+      "defensibility": 90,
+      "commodity_risk_inverse": 85,
+      "sales_cycle_risk_inverse": 65,
+      "legal_regulatory_caution_score": 70,
+      "strategic_compounding": 96,
+      "first_cash_wedge_fit": 60,
+      "confidence": 68,
+      "balanced_score": 73.8
+    },
+    {
+      "route_id": "agent_runtime_audit_and_repair_package",
+      "market_optimal_score": 76,
+      "YBridge_unique_score": 82,
+      "shortest_cash_score": 68,
+      "regulatory_safety_driver_score": 60,
+      "buyer_understandability": 78,
+      "delivery_feasibility": 78,
+      "evidence_quality": 72,
+      "non_contact_external_validation_score": 75,
+      "defensibility": 84,
+      "commodity_risk_inverse": 78,
+      "sales_cycle_risk_inverse": 74,
+      "legal_regulatory_caution_score": 74,
+      "strategic_compounding": 86,
+      "first_cash_wedge_fit": 76,
+      "confidence": 70,
+      "balanced_score": 75.4
+    },
+    {
+      "route_id": "CIEU_high_risk_AI_agent_audit_log",
+      "market_optimal_score": 70,
+      "YBridge_unique_score": 96,
+      "shortest_cash_score": 45,
+      "regulatory_safety_driver_score": 95,
+      "buyer_understandability": 62,
+      "delivery_feasibility": 48,
+      "evidence_quality": 72,
+      "non_contact_external_validation_score": 85,
+      "defensibility": 94,
+      "commodity_risk_inverse": 90,
+      "sales_cycle_risk_inverse": 35,
+      "legal_regulatory_caution_score": 55,
+      "strategic_compounding": 98,
+      "first_cash_wedge_fit": 58,
+      "confidence": 62,
+      "balanced_score": 71.0
+    }
+  ],
+  "profile_rankings": {
+    "fastest_cash_profile": {
+      "top_route": "founder_operator_decision_brief_service",
+      "rankings": [
+        {
+          "route_id": "founder_operator_decision_brief_service",
+          "score": 90.5
+        },
+        {
+          "route_id": "public_read_market_intelligence_product",
+          "score": 79.25
+        },
+        {
+          "route_id": "governed_business_operations_blueprint_for_agent_teams",
+          "score": 78.25
+        },
+        {
+          "route_id": "agent_runtime_audit_and_repair_package",
+          "score": 75.0
+        },
+        {
+          "route_id": "AI_agent_company_runtime_harness_deployment_blueprint",
+          "score": 61.25
+        },
+        {
+          "route_id": "CIEU_high_risk_AI_agent_audit_log",
+          "score": 53.25
+        }
+      ]
+    },
+    "strategic_defensibility_profile": {
+      "top_route": "CIEU_high_risk_AI_agent_audit_log",
+      "rankings": [
+        {
+          "route_id": "CIEU_high_risk_AI_agent_audit_log",
+          "score": 94.5
+        },
+        {
+          "route_id": "AI_agent_company_runtime_harness_deployment_blueprint",
+          "score": 90.75
+        },
+        {
+          "route_id": "agent_runtime_audit_and_repair_package",
+          "score": 82.5
+        },
+        {
+          "route_id": "governed_business_operations_blueprint_for_agent_teams",
+          "score": 82.0
+        },
+        {
+          "route_id": "public_read_market_intelligence_product",
+          "score": 68.75
+        },
+        {
+          "route_id": "founder_operator_decision_brief_service",
+          "score": 53.75
+        }
+      ]
+    },
+    "regulatory_safety_profile": {
+      "top_route": "CIEU_high_risk_AI_agent_audit_log",
+      "rankings": [
+        {
+          "route_id": "CIEU_high_risk_AI_agent_audit_log",
+          "score": 79.0
+        },
+        {
+          "route_id": "governed_business_operations_blueprint_for_agent_teams",
+          "score": 73.0
+        },
+        {
+          "route_id": "agent_runtime_audit_and_repair_package",
+          "score": 72.5
+        },
+        {
+          "route_id": "AI_agent_company_runtime_harness_deployment_blueprint",
+          "score": 71.0
+        },
+        {
+          "route_id": "public_read_market_intelligence_product",
+          "score": 65.25
+        },
+        {
+          "route_id": "founder_operator_decision_brief_service",
+          "score": 60.5
+        }
+      ]
+    },
+    "low_risk_profile": {
+      "top_route": "founder_operator_decision_brief_service",
+      "rankings": [
+        {
+          "route_id": "founder_operator_decision_brief_service",
+          "score": 87.25
+        },
+        {
+          "route_id": "public_read_market_intelligence_product",
+          "score": 82.0
+        },
+        {
+          "route_id": "governed_business_operations_blueprint_for_agent_teams",
+          "score": 77.0
+        },
+        {
+          "route_id": "agent_runtime_audit_and_repair_package",
+          "score": 76.0
+        },
+        {
+          "route_id": "AI_agent_company_runtime_harness_deployment_blueprint",
+          "score": 66.25
+        },
+        {
+          "route_id": "CIEU_high_risk_AI_agent_audit_log",
+          "score": 50.0
+        }
+      ]
+    },
+    "balanced_CEO_profile": {
+      "top_route": "governed_business_operations_blueprint_for_agent_teams",
+      "rankings": [
+        {
+          "route_id": "governed_business_operations_blueprint_for_agent_teams",
+          "score": 78.47
+        },
+        {
+          "route_id": "agent_runtime_audit_and_repair_package",
+          "score": 75.4
+        },
+        {
+          "route_id": "AI_agent_company_runtime_harness_deployment_blueprint",
+          "score": 73.8
+        },
+        {
+          "route_id": "founder_operator_decision_brief_service",
+          "score": 71.98
+        },
+        {
+          "route_id": "public_read_market_intelligence_product",
+          "score": 71.0
+        },
+        {
+          "route_id": "CIEU_high_risk_AI_agent_audit_log",
+          "score": 71.0
+        }
+      ]
+    },
+    "high_risk_vertical_profile": {
+      "top_route": "CIEU_high_risk_AI_agent_audit_log",
+      "rankings": [
+        {
+          "route_id": "CIEU_high_risk_AI_agent_audit_log",
+          "score": 95.75
+        },
+        {
+          "route_id": "AI_agent_company_runtime_harness_deployment_blueprint",
+          "score": 82.0
+        },
+        {
+          "route_id": "governed_business_operations_blueprint_for_agent_teams",
+          "score": 78.25
+        },
+        {
+          "route_id": "agent_runtime_audit_and_repair_package",
+          "score": 78.0
+        },
+        {
+          "route_id": "public_read_market_intelligence_product",
+          "score": 65.0
+        },
+        {
+          "route_id": "founder_operator_decision_brief_service",
+          "score": 50.0
+        }
+      ]
+    }
+  },
+  "CIEU_route_score": {
+    "route_id": "CIEU_high_risk_AI_agent_audit_log",
+    "market_optimal_score": 70,
+    "YBridge_unique_score": 96,
+    "shortest_cash_score": 45,
+    "regulatory_safety_driver_score": 95,
+    "buyer_understandability": 62,
+    "delivery_feasibility": 48,
+    "evidence_quality": 72,
+    "non_contact_external_validation_score": 85,
+    "defensibility": 94,
+    "commodity_risk_inverse": 90,
+    "sales_cycle_risk_inverse": 35,
+    "legal_regulatory_caution_score": 55,
+    "strategic_compounding": 98,
+    "first_cash_wedge_fit": 58,
+    "confidence": 62,
+    "balanced_score": 71.0
+  },
+  "model_conclusion": "CIEU is strongest under high-risk/regulatory and strategic-defensibility profiles, but weaker as immediate first-cash route because of legal/regulatory caution and longer sales cycle.",
+  "external_action_allowed": false,
+  "compliance_claimed": false
+}

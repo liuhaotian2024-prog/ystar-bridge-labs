@@ -1,0 +1,40 @@
+{
+  "artifact_id": "e68_behavior_authorization_result",
+  "authorization_status": "ALLOW_INTERNAL_CIEU_ROUTE_EVALUATION_ONLY",
+  "allowed_actions": [
+    "repository_archaeology",
+    "controlled_public_read_regulatory_market_evidence_collection",
+    "CIEU_route_scoring",
+    "CIEU_external_validation_scoring",
+    "strategic_portfolio_comparison",
+    "internal_product_wedge_hypothesis",
+    "no_overclaim_legal_caution_policy",
+    "CEO_readback_integration",
+    "KG_CZL_CIEU_writeback"
+  ],
+  "denied_actions": [
+    "legal_compliance_claim",
+    "medical_readiness_claim",
+    "energy_dispatch_readiness_claim",
+    "high_risk_production_readiness_claim",
+    "outreach",
+    "publication",
+    "customer_conversation",
+    "expert_review",
+    "human_identification",
+    "contact_scraping",
+    "login_form_send",
+    "private_provider_API",
+    "API_key_secret_use",
+    "payment",
+    "invoice",
+    "client_delivery",
+    "customer_validation_claim",
+    "paid_signal_claim",
+    "expert_feedback_claim"
+  ],
+  "external_business_execution_authorized": false,
+  "external_action_allowed": false,
+  "owner_decision_status": "pending_owner_decision",
+  "passed": true
+}

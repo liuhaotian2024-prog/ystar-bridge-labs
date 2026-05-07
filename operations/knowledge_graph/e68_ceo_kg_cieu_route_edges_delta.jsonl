@@ -1,0 +1,4 @@
+{"from": "e67_external_validation_overlay", "to": "CIEU_high_risk_AI_agent_audit_log", "edge_type": "scores"}
+{"from": "K9Audit_CIEU_context", "to": "CIEU_high_risk_AI_agent_audit_log", "edge_type": "supports_concept"}
+{"from": "CIEU_high_risk_AI_agent_audit_log", "to": "Governed Business Operations Blueprint + CIEU Audit Module", "edge_type": "packages_as"}
+{"from": "CIEU_high_risk_AI_agent_audit_log", "to": "E69_integrate_CIEU_audit_log_module_into_governed_business_operations_blueprint_no_execution", "edge_type": "recommends"}

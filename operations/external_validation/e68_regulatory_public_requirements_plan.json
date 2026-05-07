@@ -1,0 +1,114 @@
+{
+  "artifact_id": "e68_regulatory_public_requirements_plan",
+  "bridge_job_id": "e68_cieu_high_risk_ai_audit_log_route_evaluation_20260506T000001Z",
+  "source_count_planned": 14,
+  "sources": [
+    {
+      "topic": "EU AI Act Article 12 record-keeping",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689",
+      "source_type": "official_regulation",
+      "mapped_CIEU_field": "X_t/U_t/Y_t_plus_1/R_t_plus_1",
+      "signal": "record-keeping and automatically generated logs"
+    },
+    {
+      "topic": "EU AI Act Article 19 automatically generated logs",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689",
+      "source_type": "official_regulation",
+      "mapped_CIEU_field": "Y_t_plus_1/R_t_plus_1",
+      "signal": "log retention and availability"
+    },
+    {
+      "topic": "EU AI Act Article 72 post-market monitoring",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689",
+      "source_type": "official_regulation",
+      "mapped_CIEU_field": "R_t_plus_1",
+      "signal": "post-market monitoring and incident learning"
+    },
+    {
+      "topic": "EU AI Act Article 14 human oversight",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689",
+      "source_type": "official_regulation",
+      "mapped_CIEU_field": "Y_star_t/R_t_plus_1",
+      "signal": "human oversight evidence"
+    },
+    {
+      "topic": "EU AI Act Article 9 risk management",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689",
+      "source_type": "official_regulation",
+      "mapped_CIEU_field": "Y_star_t/R_t_plus_1",
+      "signal": "risk management evidence"
+    },
+    {
+      "topic": "EU AI Act Article 11 technical documentation",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689",
+      "source_type": "official_regulation",
+      "mapped_CIEU_field": "all_CIEU_fields_as_supporting_evidence",
+      "signal": "technical documentation support"
+    },
+    {
+      "topic": "EU AI Act Article 26 deployer obligations",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689",
+      "source_type": "official_regulation",
+      "mapped_CIEU_field": "X_t/Y_star_t/Y_t_plus_1",
+      "signal": "deployer operation evidence"
+    },
+    {
+      "topic": "Annex III high-risk categories",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689",
+      "source_type": "official_regulation",
+      "mapped_CIEU_field": "route_vertical_mapping",
+      "signal": "high-risk category surface"
+    },
+    {
+      "topic": "FDA AI/ML software as medical device",
+      "url": "https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-and-machine-learning-software-medical-device",
+      "source_type": "public_healthcare_regulatory_page",
+      "mapped_CIEU_field": "R_t_plus_1/post_market_evidence",
+      "signal": "medical AI monitoring and lifecycle evidence"
+    },
+    {
+      "topic": "NIST AI Risk Management Framework",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "source_type": "public_standards_page",
+      "mapped_CIEU_field": "Y_star_t/R_t_plus_1",
+      "signal": "AI risk governance and measurement"
+    },
+    {
+      "topic": "NERC bulk power system reliability",
+      "url": "https://www.nerc.com/pa/Stand/Pages/default.aspx",
+      "source_type": "public_energy_standards_page",
+      "mapped_CIEU_field": "action_authorization_and_residuals",
+      "signal": "energy/critical infrastructure control accountability"
+    },
+    {
+      "topic": "CISA critical infrastructure AI guidance",
+      "url": "https://www.cisa.gov/ai",
+      "source_type": "public_critical_infrastructure_page",
+      "mapped_CIEU_field": "risk_and_incident_evidence",
+      "signal": "critical infrastructure AI risk surface"
+    },
+    {
+      "topic": "AI observability/audit product category",
+      "url": "https://www.langchain.com/langsmith",
+      "source_type": "public_product_page",
+      "mapped_CIEU_field": "traceability_adjacent",
+      "signal": "observability/trace category evidence"
+    },
+    {
+      "topic": "AI governance/GRC product category",
+      "url": "https://www.ibm.com/products/watsonx-governance",
+      "source_type": "public_product_page",
+      "mapped_CIEU_field": "governance_evidence_adjacent",
+      "signal": "AI governance category evidence"
+    }
+  ],
+  "rules": {
+    "public_read_only": true,
+    "no_contact": true,
+    "no_login": true,
+    "no_form_submission": true,
+    "no_contact_extraction": true,
+    "no_compliance_claim": true
+  },
+  "external_action_allowed": false
+}

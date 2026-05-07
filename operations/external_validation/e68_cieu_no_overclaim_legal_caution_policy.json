@@ -1,0 +1,24 @@
+{
+  "artifact_id": "e68_cieu_no_overclaim_legal_caution_policy",
+  "bridge_job_id": "e68_cieu_high_risk_ai_audit_log_route_evaluation_20260506T000001Z",
+  "prohibited_claims": [
+    "CIEU ensures EU AI Act compliance",
+    "CIEU is medically certified",
+    "CIEU is suitable for live energy dispatch",
+    "CIEU replaces legal review",
+    "CIEU replaces risk management system",
+    "CIEU replaces technical documentation",
+    "CIEU is production-ready for high-risk AI",
+    "CIEU has customer validation",
+    "CIEU has paid signal"
+  ],
+  "allowed_language_examples": [
+    "CIEU is a causal audit and traceability evidence pattern",
+    "CIEU may support record-keeping and post-market monitoring evidence",
+    "CIEU can help structure action/outcome/residual logs",
+    "CIEU is an internal blueprint or readiness concept unless externally validated",
+    "legal/regulatory review is required before compliance claims"
+  ],
+  "legal_advice_disclaimer_required": true,
+  "external_action_allowed": false
+}

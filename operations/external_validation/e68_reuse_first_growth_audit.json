@@ -1,0 +1,37 @@
+{
+  "artifact_id": "e68_reuse_first_growth_audit",
+  "bridge_job_id": "e68_cieu_high_risk_ai_audit_log_route_evaluation_20260506T000001Z",
+  "reused_assets": [
+    "K9Audit/docs/CIEU_spec.md",
+    "K9Audit/docs/causal_tracing.md",
+    "operations/external_validation/e67_external_validation_ladder.json",
+    "operations/external_validation/e67_route_external_validation_scorecards.json",
+    "operations/external_validation/e65_multi_axis_market_scoring_engine.json",
+    "operations/external_validation/e66_selected_route_offer_blueprint.json",
+    "office/mission_command/safe_public_page_reader.py",
+    "office/mission_command/e46b_ceo_brain_adapter.py"
+  ],
+  "thin_wrappers_added": [
+    "office/mission_command/e68_ceo_cieu_route_readback.py"
+  ],
+  "genuinely_new_assets_added": [
+    "office/mission_command/e68_cieu_route_evaluation_model.py"
+  ],
+  "duplicate_capability_risks_checked": {
+    "CIEU_schema_rebuilt": false,
+    "KG_CZL_CIEU_writeback_rebuilt": false,
+    "E65_market_model_rebuilt": false,
+    "E67_validation_overlay_rebuilt": false,
+    "public_read_adapter_rebuilt": false,
+    "evidence_atomizer_rebuilt": false,
+    "behavior_gate_rebuilt": false,
+    "CEO_readback_rebuilt": false,
+    "K9Audit_ledger_concepts_rebuilt": false
+  },
+  "avoided_rebuilds": [
+    "E68 references K9Audit CIEU/K9 concepts read-only instead of implementing a new ledger.",
+    "E68 invokes E65/E67 route and validation data instead of replacing the market model.",
+    "E68 uses existing public-read and writeback conventions."
+  ],
+  "passed": true
+}

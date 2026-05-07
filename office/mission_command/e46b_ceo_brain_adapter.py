@@ -356,6 +356,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e67_external_validation_state = {'external_validation_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
     try:
+        from office.mission_command.e68_ceo_cieu_route_readback import load_e68_cieu_route_state_for_brain
+        e68_cieu_route_state = load_e68_cieu_route_state_for_brain()
+    except Exception as exc:
+        e68_cieu_route_state = {'cieu_route_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -492,6 +497,14 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_external_validation_owner_gated_next_steps": e67_external_validation_state.get("owner_gated_next_steps"),
         "current_external_validation_next_milestone": e67_external_validation_state.get("next_recommended_milestone"),
         "current_external_validation_external_action_allowed": e67_external_validation_state.get("external_action_allowed"),
+        "latest_cieu_route_state": e68_cieu_route_state,
+        "current_cieu_route_score": e68_cieu_route_state.get("CIEU_route_score"),
+        "current_cieu_highest_EV_level": e68_cieu_route_state.get("CIEU_EV_level"),
+        "current_cieu_portfolio_role": e68_cieu_route_state.get("portfolio_role"),
+        "current_cieu_product_wedge": e68_cieu_route_state.get("product_wedge_hypothesis"),
+        "current_cieu_no_overclaim_policy": e68_cieu_route_state.get("no_overclaim_policy"),
+        "current_cieu_next_milestone": e68_cieu_route_state.get("next_recommended_milestone"),
+        "current_cieu_external_action_allowed": e68_cieu_route_state.get("external_action_allowed"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

@@ -1,0 +1,49 @@
+{
+  "artifact_id": "e68_base_state_manifest",
+  "bridge_job_id": "e68_cieu_high_risk_ai_audit_log_route_evaluation_20260506T000001Z",
+  "bridge_labs": {
+    "path": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+    "branch": "backflow/aiden-ceo-meeting-room",
+    "head": "fe4ce4ce58019f3a7d856cb8743a4dd59bd81a88",
+    "expected_head": "fe4ce4ce58019f3a7d856cb8743a4dd59bd81a88",
+    "head_matches_expected": true,
+    "clean": false,
+    "status_short": "M office/mission_command/e46b_ceo_brain_adapter.py\n?? office/mission_command/__pycache__/\n?? office/mission_command/e68_ceo_cieu_route_readback.py\n?? office/mission_command/e68_cieu_route_evaluation_model.py\n?? operations/external_validation/e68_base_state_manifest.json\n?? operations/external_validation/e68_behavior_authorization_result.json\n?? operations/external_validation/e68_ceo_brain_cieu_route_update.json\n?? operations/external_validation/e68_ceo_cieu_route_readback_smoke_result.json\n?? operations/external_validation/e68_cieu_external_validation_scorecard.json\n?? operations/external_validation/e68_cieu_high_risk_audit_log_concept.json\n?? operations/external_validation/e68_cieu_no_overclaim_legal_caution_policy.json\n?? operations/external_validation/e68_cieu_product_wedge_hypothesis.json\n?? operations/external_validation/e68_cieu_residual_summary.json\n?? operations/external_validation/e68_cieu_route_model_scoring.json\n?? operations/external_validation/e68_cieu_route_repository_archaeology_inventory.json\n?? operations/external_validation/e68_completion_gate_result.json\n?? operations/external_validation/e68_czl_closure.json\n?? operations/external_validation/e68_high_risk_vertical_opportunity_map.json\n?? operations/external_validation/e68_no_overclaim_validation_result.json\n?? operations/external_validation/e68_regulatory_public_requirements_evidence_atoms.json\n?? operations/external_validation/e68_regulatory_public_requirements_plan.json\n?? operations/external_validation/e68_regulatory_public_requirements_receipts.json\n?? operations/external_validation/e68_reuse_first_growth_audit.json\n?? operations/external_validation/e68_strategic_portfolio_update.json\n?? operations/knowledge_graph/e68_ceo_kg_cieu_route_edges_delta.jsonl\n?? operations/knowledge_graph/e68_ceo_kg_cieu_route_nodes_delta.jsonl\n?? operations/knowledge_graph/e68_ceo_kg_cieu_route_read_model_update.json\n?? reports/integration/e68_cieu_external_validation_scorecard.md\n?? reports/integration/e68_cieu_high_risk_audit_log_concept.md\n?? reports/integration/e68_cieu_no_overclaim_legal_caution_policy.md\n?? reports/integration/e68_cieu_product_wedge_hypothesis.md\n?? reports/integration/e68_cieu_route_model_scoring.md\n?? reports/integration/e68_cieu_route_repository_archaeology_inventory.md\n?? reports/integration/e68_completion_gate_result.md\n?? reports/integration/e68_high_risk_vertical_opportunity_map.md\n?? reports/integration/e68_operator_handoff.md\n?? reports/integration/e68_regulatory_public_requirements_map.md\n?? reports/integration/e68_reuse_first_growth_audit.md\n?? reports/integration/e68_strategic_portfolio_update.md\n?? tests/office/test_e68_00_artifact_generation.py\n?? tests/office/test_e68_behavior_authorization.py\n?? tests/office/test_e68_ceo_cieu_route_readback.py\n?? tests/office/test_e68_cieu_external_validation_scorecard.py\n?? tests/office/test_e68_cieu_high_risk_audit_log_concept.py\n?? tests/office/test_e68_cieu_no_overclaim_legal_caution_policy.py\n?? tests/office/test_e68_cieu_product_wedge_hypothesis.py\n?? tests/office/test_e68_cieu_route_model_scoring.py\n?? tests/office/test_e68_cieu_route_repository_archaeology_inventory.py\n?? tests/office/test_e68_completion_gate.py\n?? tests/office/test_e68_high_risk_vertical_opportunity_map.py\n?? tests/office/test_e68_json_artifacts.py\n?? tests/office/test_e68_no_overclaim.py\n?? tests/office/test_e68_regulatory_public_requirements_map.py\n?? tests/office/test_e68_reuse_first_growth_audit.py\n?? tests/office/test_e68_strategic_portfolio_update.py"
+  },
+  "expected_branch": "backflow/aiden-ceo-meeting-room",
+  "base_verified": true,
+  "bridge_labs_worktree_clean_or_e68_scoped": false,
+  "read_only_repos": {
+    "Y-star-gov": {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "branch": "backflow/company-runtime-domain-pack",
+      "head": "b0d9aa8b1badd1180127a2f79f73ceed48e16451",
+      "expected_head": "b0d9aa8b1badd1180127a2f79f73ceed48e16451",
+      "head_matches_expected": true,
+      "clean": true,
+      "status_short": ""
+    },
+    "gov-mcp": {
+      "path": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+      "branch": "backflow/company-runtime-tools",
+      "head": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+      "expected_head": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+      "head_matches_expected": true,
+      "clean": true,
+      "status_short": ""
+    },
+    "K9Audit": {
+      "path": "/Users/haotianliu/.openclaw/workspace/K9Audit",
+      "branch": "main",
+      "head": "37911e18ce4425470e3f745b30d155c43d76ff55",
+      "expected_head": "37911e18ce4425470e3f745b30d155c43d76ff55",
+      "head_matches_expected": true,
+      "clean": true,
+      "status_short": ""
+    }
+  },
+  "read_only_repos_clean": true,
+  "e67_completed_report_present": true,
+  "owner_decision_status": "pending_owner_decision",
+  "external_action_allowed": false
+}
