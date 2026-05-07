@@ -1,0 +1,1711 @@
+{
+  "actual_capabilities_discovered_not_named_in_prompt_count": 10985,
+  "actual_capabilities_discovered_not_named_in_prompt_examples": [
+    {
+      "capability_id": "cap_bridge_labs_audit_test_c3_action_ledger_state",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.office.test_c3_action_ledger_state imports __future__.annotations",
+        "tests.office.test_c3_action_ledger_state imports office.mission_command.c3_action_ledger_state.C3_AUTO_STATES",
+        "tests.office.test_c3_action_ledger_state imports office.mission_command.c3_action_ledger_state.build_c3_action_ledger_state_fixture",
+        "tests.office.test_c3_action_ledger_state imports office.mission_command.c3_action_ledger_state.build_c3_action_ledger_state_template",
+        "tests.office.test_c3_action_ledger_state imports office.mission_command.c3_action_ledger_state.validate_c3_action_ledger_state_fixture",
+        "tests.office.test_c3_action_ledger_state imports office.mission_command.c3_decision_replay.replay_c3_decisions",
+        "tests.office.test_c3_action_ledger_state imports office.mission_command.c3_dry_run_execution_receipts.build_c3_dry_run_receipts",
+        "tests.office.test_c3_action_ledger_state imports office.mission_command.c3_narrow_constitutional_envelope.build_c3_narrow_envelope",
+        "tests.office.test_c3_action_ledger_state imports office.mission_command.c3_validation_batch_selector.build_c3_validation_batch",
+        "tests.office.test_c3_action_ledger_state imports pathlib.Path"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "audit",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/office/test_c3_action_ledger_state.py"
+      ],
+      "evidence_symbols": [
+        "ROOT",
+        "fixture",
+        "test_c3_ledger_fixture_only_uses_auto_states",
+        "test_c3_ledger_state_template_has_owner_confirmation_gates"
+      ],
+      "evidence_tests": [
+        "tests/office/test_c3_action_ledger_state.py"
+      ],
+      "inferred_capability": "audit capability inferred from test c3 action ledger state",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_audit_test_goal_progress",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.test_goal_progress imports goal_progress.calculate_completion",
+        "tests.test_goal_progress imports goal_progress.extract_verify_markers",
+        "tests.test_goal_progress imports goal_progress.extract_yaml_frontmatter",
+        "tests.test_goal_progress imports goal_progress.generate_dashboard",
+        "tests.test_goal_progress imports goal_progress.query_cieu_markers",
+        "tests.test_goal_progress imports goal_progress.render_progress_bar",
+        "tests.test_goal_progress imports pathlib.Path",
+        "tests.test_goal_progress imports pytest",
+        "tests.test_goal_progress imports sqlite3",
+        "tests.test_goal_progress imports sys",
+        "tests.test_goal_progress imports tempfile",
+        "tests.test_goal_progress imports time",
+        "tests.test_goal_progress imports yaml"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "audit",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/test_goal_progress.py"
+      ],
+      "evidence_symbols": [
+        "test_calculate_completion_all_markers_hit",
+        "test_calculate_completion_no_markers",
+        "test_calculate_completion_partial_markers",
+        "test_extract_verify_markers",
+        "test_extract_yaml_frontmatter",
+        "test_integration_with_real_priority_brief",
+        "test_lookback_window_filtering",
+        "test_render_progress_bar",
+        "test_target_sorting_by_completion"
+      ],
+      "evidence_tests": [
+        "tests/test_goal_progress.py"
+      ],
+      "inferred_capability": "audit capability inferred from test goal progress",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_audit_test_per_rule_detectors_telemetry",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.platform.test_per_rule_detectors_telemetry imports pathlib.Path",
+        "tests.platform.test_per_rule_detectors_telemetry imports per_rule_detectors.detect_charter_drift_mid_session",
+        "tests.platform.test_per_rule_detectors_telemetry imports per_rule_detectors.detect_czl_dispatch_missing_5tuple",
+        "tests.platform.test_per_rule_detectors_telemetry imports per_rule_detectors.detect_czl_receipt_rt_not_zero",
+        "tests.platform.test_per_rule_detectors_telemetry imports per_rule_detectors.detect_realtime_artifact_archival_sla",
+        "tests.platform.test_per_rule_detectors_telemetry imports per_rule_detectors.detect_subagent_unauthorized_git_op",
+        "tests.platform.test_per_rule_detectors_telemetry imports per_rule_detectors.detect_wave_scope_undeclared",
+        "tests.platform.test_per_rule_detectors_telemetry imports sys"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "audit",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/platform/test_per_rule_detectors_telemetry.py"
+      ],
+      "evidence_symbols": [
+        "test_charter_drift_mid_session",
+        "test_czl_dispatch_missing_5tuple",
+        "test_czl_receipt_rt_not_zero",
+        "test_no_false_positives",
+        "test_realtime_artifact_archival_sla",
+        "test_subagent_unauthorized_git_op",
+        "test_wave_scope_undeclared"
+      ],
+      "evidence_tests": [
+        "tests/platform/test_per_rule_detectors_telemetry.py"
+      ],
+      "inferred_capability": "audit capability inferred from test per rule detectors telemetry",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_brain_test_brain_writeback_wiring",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.hook.test_brain_writeback_wiring imports brain_writeback_queue",
+        "tests.hook.test_brain_writeback_wiring imports json",
+        "tests.hook.test_brain_writeback_wiring imports os",
+        "tests.hook.test_brain_writeback_wiring imports sys",
+        "tests.hook.test_brain_writeback_wiring imports tempfile",
+        "tests.hook.test_brain_writeback_wiring imports time",
+        "tests.hook.test_brain_writeback_wiring imports types",
+        "tests.hook.test_brain_writeback_wiring imports unittest",
+        "tests.hook.test_brain_writeback_wiring imports unittest.mock"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "brain",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/hook/test_brain_writeback_wiring.py"
+      ],
+      "evidence_symbols": [
+        "COMPANY_ROOT",
+        "SCRIPTS_DIR",
+        "SETTINGS_PATH",
+        "TestEnqueuePostToolUse",
+        "TestFailurePathPreservation",
+        "TestHookWiringInSettings",
+        "TestStopDrain"
+      ],
+      "evidence_tests": [
+        "tests/hook/test_brain_writeback_wiring.py"
+      ],
+      "inferred_capability": "brain capability inferred from test brain writeback wiring",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_brain_test_ceo_pre_output_brain_query",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.scripts.test_ceo_pre_output_brain_query imports hook_ceo_pre_output_brain_query.extract_context_signals",
+        "tests.scripts.test_ceo_pre_output_brain_query imports hook_ceo_pre_output_brain_query.format_brain_context_for_hook",
+        "tests.scripts.test_ceo_pre_output_brain_query imports hook_ceo_pre_output_brain_query.query_brain_for_context",
+        "tests.scripts.test_ceo_pre_output_brain_query imports json",
+        "tests.scripts.test_ceo_pre_output_brain_query imports os",
+        "tests.scripts.test_ceo_pre_output_brain_query imports pytest",
+        "tests.scripts.test_ceo_pre_output_brain_query imports sqlite3",
+        "tests.scripts.test_ceo_pre_output_brain_query imports sys",
+        "tests.scripts.test_ceo_pre_output_brain_query imports tempfile",
+        "tests.scripts.test_ceo_pre_output_brain_query reads reports/deploy_phase2.md",
+        "tests.scripts.test_ceo_pre_output_brain_query reads reports/test.md"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "brain",
+      "evidence_artifacts": [
+        "reports/deploy_phase2.md",
+        "reports/test.md"
+      ],
+      "evidence_paths": [
+        "tests/scripts/test_ceo_pre_output_brain_query.py"
+      ],
+      "evidence_symbols": [
+        "TestExtractContextSignals",
+        "TestFallbackWhenBrainDbMissing",
+        "TestHookResponseIncludesBrainContext",
+        "TestNodesResolveToReadableFiles",
+        "TestQueryReturnsTop3",
+        "_SCRIPTS_DIR",
+        "_create_test_brain_db"
+      ],
+      "evidence_tests": [
+        "tests/scripts/test_ceo_pre_output_brain_query.py"
+      ],
+      "inferred_capability": "brain capability inferred from test ceo pre output brain query",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_external_observation_test_resource_capability_matrix",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.office.test_resource_capability_matrix imports office.mission_command.resource_capability_matrix.build_behavior_capability_matrix",
+        "tests.office.test_resource_capability_matrix imports office.mission_command.resource_capability_matrix.build_resource_inventory",
+        "tests.office.test_resource_capability_matrix imports office.mission_command.resource_capability_matrix.find_behavior_capability",
+        "tests.office.test_resource_capability_matrix imports pathlib.Path"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "external_observation",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/office/test_resource_capability_matrix.py"
+      ],
+      "evidence_symbols": [
+        "REPO_ROOT",
+        "test_behavior_matrix_marks_core_writeback_as_review_gated",
+        "test_behavior_matrix_marks_customer_contact_as_approval_required",
+        "test_behavior_matrix_separates_autonomous_from_owner_approved_actions",
+        "test_no_core_db_writeback",
+        "test_no_customer_contact",
+        "test_no_email",
+        "test_no_external_side_effects",
+        "test_no_payment",
+        "test_no_publication",
+        "test_resource_matrix_contains_y_star_gov_gov_mcp_aiden_mission_command"
+      ],
+      "evidence_tests": [
+        "tests/office/test_resource_capability_matrix.py"
+      ],
+      "inferred_capability": "external_observation capability inferred from test resource capability matrix",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_governance_init",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "ystar.bak.20260415_again.__init__ imports .adapters.hook.check_hook",
+        "ystar.bak.20260415_again.__init__ imports .adapters.omission_adapter.OmissionAdapter",
+        "ystar.bak.20260415_again.__init__ imports .adapters.omission_adapter.create_adapter",
+        "ystar.bak.20260415_again.__init__ imports .domains.omission_domain_packs.apply_devops_pack",
+        "ystar.bak.20260415_again.__init__ imports .domains.omission_domain_packs.apply_domain_pack",
+        "ystar.bak.20260415_again.__init__ imports .domains.omission_domain_packs.apply_finance_pack",
+        "ystar.bak.20260415_again.__init__ imports .domains.omission_domain_packs.apply_healthcare_pack",
+        "ystar.bak.20260415_again.__init__ imports .domains.omission_domain_packs.apply_research_pack",
+        "ystar.bak.20260415_again.__init__ imports .domains.omission_domain_packs.list_packs",
+        "ystar.bak.20260415_again.__init__ imports .governance.governance_loop.GovernanceLoop",
+        "ystar.bak.20260415_again.__init__ imports .governance.governance_loop.GovernanceObservation",
+        "ystar.bak.20260415_again.__init__ imports .governance.governance_loop.GovernanceSuggestion",
+        "ystar.bak.20260415_again.__init__ imports .governance.governance_loop.GovernanceTightenResult",
+        "ystar.bak.20260415_again.__init__ imports .governance.governance_loop.report_to_observation",
+        "ystar.bak.20260415_again.__init__ imports .governance.intervention_engine.DEFAULT_GATING_POLICY",
+        "ystar.bak.20260415_again.__init__ imports .governance.intervention_engine.GatingPolicy",
+        "ystar.bak.20260415_again.__init__ imports .governance.intervention_engine.InterventionEngine",
+        "ystar.bak.20260415_again.__init__ imports .governance.intervention_engine.PulseStore",
+        "ystar.bak.20260415_again.__init__ imports .governance.intervention_models.CapabilityRestriction",
+        "ystar.bak.20260415_again.__init__ imports .governance.intervention_models.GateCheckResult",
+        "ystar.bak.20260415_again.__init__ imports .governance.intervention_models.GateDecision",
+        "ystar.bak.20260415_again.__init__ imports .governance.intervention_models.InterventionActionType",
+        "ystar.bak.20260415_again.__init__ imports .governance.intervention_models.InterventionLevel",
+        "ystar.bak.20260415_again.__init__ imports .governance.intervention_models.InterventionPulse",
+        "ystar.bak.20260415_again.__init__ imports .governance.intervention_models.InterventionResult",
+        "ystar.bak.20260415_again.__init__ imports .governance.intervention_models.InterventionStatus",
+        "ystar.bak.20260415_again.__init__ imports .governance.metalearning.AdaptiveCoefficients",
+        "ystar.bak.20260415_again.__init__ imports .governance.metalearning.CallRecord",
+        "ystar.bak.20260415_again.__init__ imports .governance.metalearning.CandidateRule",
+        "ystar.bak.20260415_again.__init__ imports .governance.metalearning.ConstraintRegistry",
+        "ystar.bak.20260415_again.__init__ imports .governance.metalearning.ContractQuality",
+        "ystar.bak.20260415_again.__init__ imports .governance.metalearning.DimensionDiscovery",
+        "ystar.bak.20260415_again.__init__ imports .governance.metalearning.DomainContext",
+        "ystar.bak.20260415_again.__init__ imports .governance.metalearning.ManagedConstraint",
+        "ystar.bak.20260415_again.__init__ imports .governance.metalearning.MetalearnResult",
+        "ystar.bak.20260415_again.__init__ imports .governance.metalearning.NormativeObjective",
+        "ystar.bak.20260415_again.__init__ imports .governance.metalearning.ParameterHint",
+        "ystar.bak.20260415_again.__init__ imports .governance.metalearning.RefinementFeedback",
+        "ystar.bak.20260415_again.__init__ imports .governance.metalearning.SemanticConstraintProposal",
+        "ystar.bak.20260415_again.__init__ imports .governance.metalearning.VerificationReport",
+        "ystar.bak.20260415_again.domains.crypto.__init__ imports os",
+        "ystar.bak.20260415_again.domains.crypto.__init__ imports sys",
+        "ystar.bak.20260415_again.domains.crypto.__init__ imports ystar.ConstitutionalContract",
+        "ystar.bak.20260415_again.domains.crypto.__init__ imports ystar.DelegationContract",
+        "ystar.bak.20260415_again.domains.crypto.__init__ imports ystar.IntentContract",
+        "ystar.bak.20260415_again.domains.crypto.__init__ imports ystar.domains.DomainPack",
+        "ystar.bak.20260415_again.domains.devops.__init__ imports os",
+        "ystar.bak.20260415_again.domains.devops.__init__ imports sys",
+        "ystar.bak.20260415_again.domains.devops.__init__ imports ystar.ConstitutionalContract",
+        "ystar.bak.20260415_again.domains.devops.__init__ imports ystar.DelegationContract",
+        "ystar.bak.20260415_again.domains.devops.__init__ imports ystar.IntentContract",
+        "ystar.bak.20260415_again.domains.devops.__init__ imports ystar.domains.DomainPack",
+        "ystar.bak.20260415_again.domains.finance.__init__ imports os",
+        "ystar.bak.20260415_again.domains.finance.__init__ imports sys",
+        "ystar.bak.20260415_again.domains.finance.__init__ imports ystar.ConstitutionalContract",
+        "ystar.bak.20260415_again.domains.finance.__init__ imports ystar.DelegationContract",
+        "ystar.bak.20260415_again.domains.finance.__init__ imports ystar.IntentContract",
+        "ystar.bak.20260415_again.domains.finance.__init__ imports ystar.domains.DomainPack",
+        "ystar.bak.20260415_again.domains.healthcare.__init__ imports os",
+        "ystar.bak.20260415_again.domains.healthcare.__init__ imports sys",
+        "ystar.bak.20260415_again.domains.healthcare.__init__ imports ystar.ConstitutionalContract",
+        "ystar.bak.20260415_again.domains.healthcare.__init__ imports ystar.DelegationContract",
+        "ystar.bak.20260415_again.domains.healthcare.__init__ imports ystar.IntentContract",
+        "ystar.bak.20260415_again.domains.healthcare.__init__ imports ystar.domains.DomainPack",
+        "ystar.bak.20260415_again.domains.legal.__init__ imports __future__.annotations",
+        "ystar.bak.20260415_again.domains.legal.__init__ imports typing.Any",
+        "ystar.bak.20260415_again.domains.legal.__init__ imports typing.Dict",
+        "ystar.bak.20260415_again.domains.legal.__init__ imports typing.Optional",
+        "ystar.bak.20260415_again.domains.legal.__init__ imports ystar.domains.DomainPack",
+        "ystar.bak.20260415_again.domains.legal.__init__ imports ystar.kernel.dimensions.ConstitutionalContract",
+        "ystar.bak.20260415_again.domains.legal.__init__ imports ystar.kernel.dimensions.IntentContract",
+        "ystar.bak.20260415_again.domains.pharma.__init__ imports os",
+        "ystar.bak.20260415_again.domains.pharma.__init__ imports sys",
+        "ystar.bak.20260415_again.domains.pharma.__init__ imports ystar.ConstitutionalContract",
+        "ystar.bak.20260415_again.domains.pharma.__init__ imports ystar.IntentContract",
+        "ystar.bak.20260415_again.domains.pharma.__init__ imports ystar.domains.DomainPack",
+        "ystar.bak.20260415_again.domains.ystar_dev.__init__ imports __future__.annotations",
+        "ystar.bak.20260415_again.domains.ystar_dev.__init__ imports hashlib",
+        "ystar.bak.20260415_again.domains.ystar_dev.__init__ imports json",
+        "ystar.bak.20260415_again.domains.ystar_dev.__init__ imports pathlib.Path",
+        "ystar.bak.20260415_again.domains.ystar_dev.__init__ imports typing.Any",
+        "ystar.bak.20260415_again.domains.ystar_dev.__init__ imports typing.Dict",
+        "ystar.bak.20260415_again.domains.ystar_dev.__init__ imports typing.List",
+        "ystar.bak.20260415_again.domains.ystar_dev.__init__ imports typing.Optional",
+        "ystar.bak.20260415_again.domains.ystar_dev.__init__ imports ystar.domains.DomainPack",
+        "ystar.bak.20260415_again.domains.ystar_dev.__init__ imports ystar.kernel.dimensions.ConstitutionalContract",
+        "ystar.bak.20260415_again.domains.ystar_dev.__init__ imports ystar.kernel.dimensions.IntentContract",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.adaptive.AdaptiveCoefficients",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.adaptive.ConstraintRegistry",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.adaptive.ManagedConstraint",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.adaptive.ParameterHint",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.adaptive.RefinementFeedback",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.adaptive.discover_parameters",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.adaptive.update_coefficients",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.amendment.AmendmentEngine",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.amendment.AmendmentProposal",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.auto_configure.AUTO_CONFIGURE_FLOOR_SECS",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.auto_configure.GovernanceAutoConfigureScheduler",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.auto_configure.run_governance_auto_configure",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.contract_lifecycle.ContractDraft",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.contract_lifecycle.ContractLifecycle",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.governance_loop.GovernanceLoop",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.governance_loop.GovernanceObservation",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.governance_loop.GovernanceSuggestion",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.governance_loop.GovernanceTightenResult",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.governance_loop.report_to_observation",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.intervention_engine.DEFAULT_GATING_POLICY",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.intervention_engine.GatingPolicy",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.intervention_engine.InterventionEngine",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.intervention_engine.PulseStore",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.intervention_models.CapabilityRestriction",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.intervention_models.GateCheckResult",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.intervention_models.GateDecision",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.intervention_models.InterventionActionType",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.intervention_models.InterventionLevel",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.intervention_models.InterventionPulse",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.intervention_models.InterventionResult",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.intervention_models.InterventionStatus",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.omission_engine.EngineResult",
+        "ystar.bak.20260415_again.governance.__init__ imports ystar.governance.omission_engine.OmissionEngine"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "governance",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/governance_lockdeath/__init__.py",
+        "ystar.bak.20260415_again/__init__.py",
+        "ystar.bak.20260415_again/domains/legal/__init__.py",
+        "ystar.bak.20260415_again/domains/openclaw/__init__.py",
+        "ystar.bak.20260415_again/domains/ystar_dev/__init__.py",
+        "ystar.bak.20260415_again/patterns/__init__.py"
+      ],
+      "evidence_symbols": [
+        "CORE_PROTECTED_FILES",
+        "Company",
+        "ContractViolationError",
+        "DOMAIN_PACK_FILES",
+        "LEGAL_CONSTITUTION",
+        "LegalComplianceDomainPack",
+        "MONOTONICITY_WEAKENING_PATTERNS",
+        "OpenClawDomainPack",
+        "PROTECTED_FROM_DELETION",
+        "RolePolicy",
+        "YSTAR_CONSTITUTION",
+        "YStarDevDomainPack",
+        "_CONSTITUTION_HISTORY",
+        "_build_from_agents_md",
+        "_format_enforce_reason",
+        "_generate_session_id",
+        "_openclaw_constitution",
+        "_parse_agents_md",
+        "_record",
+        "_record_constitution_change",
+        "contract",
+        "get_legal_contract",
+        "load_constitution_history",
+        "make_openclaw_chain",
+        "make_policy",
+        "make_ystar_dev_session",
+        "nl_to_contract_delta",
+        "propose_constitution_update",
+        "violations_summary"
+      ],
+      "evidence_tests": [
+        "tests/governance_lockdeath/__init__.py"
+      ],
+      "inferred_capability": "governance capability inferred from   init  ",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_governance_test_action_model_v2_enforce",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.governance.test_action_model_v2_enforce imports action_model_validator.CIEU_DB",
+        "tests.governance.test_action_model_v2_enforce imports action_model_validator.intercept",
+        "tests.governance.test_action_model_v2_enforce imports action_model_validator.register_reply",
+        "tests.governance.test_action_model_v2_enforce imports action_model_validator.validate_dispatch_phase_a",
+        "tests.governance.test_action_model_v2_enforce imports action_model_validator.validate_receipt_phase_c",
+        "tests.governance.test_action_model_v2_enforce imports json",
+        "tests.governance.test_action_model_v2_enforce imports pathlib.Path",
+        "tests.governance.test_action_model_v2_enforce imports pytest",
+        "tests.governance.test_action_model_v2_enforce imports sqlite3",
+        "tests.governance.test_action_model_v2_enforce imports sys"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "governance",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/governance/test_action_model_v2_enforce.py"
+      ],
+      "evidence_symbols": [
+        "REPO_ROOT",
+        "TestInterceptEscalation",
+        "TestPhaseADispatchValidation",
+        "TestPhaseCReceiptValidation",
+        "TestReplyRegistration"
+      ],
+      "evidence_tests": [
+        "tests/governance/test_action_model_v2_enforce.py"
+      ],
+      "inferred_capability": "governance capability inferred from test action model v2 enforce",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_governance_test_autonomy_driver",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.test_autonomy_driver imports pathlib.Path",
+        "tests.test_autonomy_driver imports pytest",
+        "tests.test_autonomy_driver imports tempfile",
+        "tests.test_autonomy_driver imports ystar.governance.autonomy_engine.Action",
+        "tests.test_autonomy_driver imports ystar.governance.autonomy_engine.AutonomyEngine",
+        "tests.test_autonomy_driver imports ystar.governance.autonomy_engine.PriorityBrief",
+        "tests.test_autonomy_driver imports ystar.governance.omission_models.ObligationRecord",
+        "tests.test_autonomy_driver imports ystar.governance.omission_models.ObligationStatus",
+        "tests.test_autonomy_driver imports ystar.governance.omission_models.Severity",
+        "tests.test_autonomy_driver imports ystar.governance.omission_store.InMemoryOmissionStore"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "governance",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/test_autonomy_driver.py"
+      ],
+      "evidence_symbols": [
+        "driver",
+        "omission_store",
+        "priority_brief_file",
+        "test_action_queue_deduplication",
+        "test_action_queue_priority_ordering",
+        "test_claim_orphan_obligations",
+        "test_create_autonomy_driver_factory",
+        "test_detect_off_target_false",
+        "test_detect_off_target_true",
+        "test_empty_queue_auto_recompute",
+        "test_get_action_queue_summary",
+        "test_infer_owner_heuristics",
+        "test_pending_obligations_for_agent",
+        "test_priority_brief_parsing",
+        "test_pull_next_action_decrements_queue",
+        "test_pull_next_action_returns_action",
+        "test_recompute_action_queue_non_empty"
+      ],
+      "evidence_tests": [
+        "tests/test_autonomy_driver.py"
+      ],
+      "inferred_capability": "governance capability inferred from test autonomy driver",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_governance_test_autonomy_driver_integration",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.test_autonomy_driver_integration imports pathlib.Path",
+        "tests.test_autonomy_driver_integration imports pytest",
+        "tests.test_autonomy_driver_integration imports tempfile",
+        "tests.test_autonomy_driver_integration imports time",
+        "tests.test_autonomy_driver_integration imports ystar.governance.autonomy_engine.AutonomyEngine",
+        "tests.test_autonomy_driver_integration imports ystar.governance.omission_engine.OmissionEngine",
+        "tests.test_autonomy_driver_integration imports ystar.governance.omission_models.ObligationRecord",
+        "tests.test_autonomy_driver_integration imports ystar.governance.omission_models.ObligationStatus",
+        "tests.test_autonomy_driver_integration imports ystar.governance.omission_models.Severity",
+        "tests.test_autonomy_driver_integration imports ystar.governance.omission_store.InMemoryOmissionStore"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "governance",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/test_autonomy_driver_integration.py"
+      ],
+      "evidence_symbols": [
+        "test_action_queue_summary_for_boot_packages",
+        "test_ceo_idle_5min_auto_pull",
+        "test_off_target_detection_triggers_warning",
+        "test_orphan_obligations_auto_dispatch",
+        "test_priority_brief_drives_action_queue",
+        "test_pull_next_action_with_mixed_sources",
+        "test_recompute_is_idempotent"
+      ],
+      "evidence_tests": [
+        "tests/test_autonomy_driver_integration.py"
+      ],
+      "inferred_capability": "governance capability inferred from test autonomy driver integration",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_governance_test_brain_boundary_and_query",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.hook.test_brain_boundary_and_query imports json",
+        "tests.hook.test_brain_boundary_and_query imports os",
+        "tests.hook.test_brain_boundary_and_query imports pathlib.Path",
+        "tests.hook.test_brain_boundary_and_query imports pytest",
+        "tests.hook.test_brain_boundary_and_query imports subprocess",
+        "tests.hook.test_brain_boundary_and_query imports sys",
+        "tests.hook.test_brain_boundary_and_query imports time",
+        "tests.hook.test_brain_boundary_and_query reads reports/test.md"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "governance",
+      "evidence_artifacts": [
+        "reports/test.md"
+      ],
+      "evidence_paths": [
+        "tests/hook/test_brain_boundary_and_query.py"
+      ],
+      "evidence_symbols": [
+        "COMPANY_ROOT",
+        "TestD1BootBoundaryIngest",
+        "TestD2CloseBoundaryIngest",
+        "TestD3PreQueryHookWiring",
+        "TestD4LatencyStress",
+        "YGOV_ROOT"
+      ],
+      "evidence_tests": [
+        "tests/hook/test_brain_boundary_and_query.py"
+      ],
+      "inferred_capability": "governance capability inferred from test brain boundary and query",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_governance_test_c2_czl_closure",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.office.test_c2_czl_closure reads operations/external_validation/c2_constitutional_activation_packet.json",
+        "tests.office.test_c2_czl_closure reads operations/external_validation/c2_feedback_ingestion_template.json",
+        "tests.office.test_c2_czl_closure reads operations/external_validation/c2_gov_mcp_execution_contracts.json",
+        "tests.office.test_c2_czl_closure reads operations/external_validation/c2_governed_action_queue.json",
+        "tests.office.test_c2_czl_closure reads operations/external_validation/c2_owner_handoff_execution_capsule.md",
+        "tests.office.test_c2_czl_closure reads operations/external_validation/c2_signal_loop_fixture.json",
+        "tests.office.test_c2_czl_closure reads operations/external_validation/c2_ygov_decision_envelopes.json",
+        "tests.office.test_c2_czl_closure reads operations/repository_delivery/delivery_requests/c2_governed_first_action_activation_loop_delivery.json",
+        "tests.office.test_c2_czl_closure reads reports/integration/c2_czl_closure.md",
+        "tests.office.test_c2_czl_closure reads reports/integration/c2_governed_first_action_activation_loop.md",
+        "tests.office.test_c2_czl_closure reads reports/integration/c2_owner_handoff_and_feedback_loop.md",
+        "tests.office.test_c2_czl_closure reads reports/integration/c2_y_gov_gov_mcp_execution_control.md"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "governance",
+      "evidence_artifacts": [
+        "operations/external_validation/c2_constitutional_activation_packet.json",
+        "operations/external_validation/c2_feedback_ingestion_template.json",
+        "operations/external_validation/c2_gov_mcp_execution_contracts.json",
+        "operations/external_validation/c2_governed_action_queue.json",
+        "operations/external_validation/c2_owner_handoff_execution_capsule.md",
+        "operations/external_validation/c2_signal_loop_fixture.json",
+        "operations/external_validation/c2_ygov_decision_envelopes.json",
+        "operations/repository_delivery/delivery_requests/c2_governed_first_action_activation_loop_delivery.json",
+        "reports/integration/c2_czl_closure.md",
+        "reports/integration/c2_governed_first_action_activation_loop.md",
+        "reports/integration/c2_owner_handoff_and_feedback_loop.md",
+        "reports/integration/c2_y_gov_gov_mcp_execution_control.md"
+      ],
+      "evidence_paths": [
+        "tests/office/test_c2_czl_closure.py"
+      ],
+      "evidence_symbols": [
+        "ROOT",
+        "test_c2_czl_closes_local_control_loop_without_external_action",
+        "test_c2_delivery_request_uses_host_side_runner_contract",
+        "test_c2_generated_artifacts_exist_after_generation"
+      ],
+      "evidence_tests": [
+        "tests/office/test_c2_czl_closure.py"
+      ],
+      "inferred_capability": "governance capability inferred from test c2 czl closure",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_governance_test_cancel_obligation",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.test_cancel_obligation imports time",
+        "tests.test_cancel_obligation imports ystar.governance.cieu_store.NullCIEUStore",
+        "tests.test_cancel_obligation imports ystar.governance.omission_engine.OmissionEngine",
+        "tests.test_cancel_obligation imports ystar.governance.omission_models.ObligationRecord",
+        "tests.test_cancel_obligation imports ystar.governance.omission_models.ObligationStatus",
+        "tests.test_cancel_obligation imports ystar.governance.omission_models.Severity",
+        "tests.test_cancel_obligation imports ystar.governance.omission_store.InMemoryOmissionStore"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "governance",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/test_cancel_obligation.py"
+      ],
+      "evidence_symbols": [
+        "make_engine",
+        "test_cancel_obligation_not_found",
+        "test_cancel_obligation_pending",
+        "test_cancel_obligation_soft_overdue",
+        "test_cancel_obligation_wrong_status",
+        "test_cancel_preserves_audit_trail",
+        "test_session_boundary_cancel",
+        "test_session_boundary_empty"
+      ],
+      "evidence_tests": [
+        "tests/test_cancel_obligation.py"
+      ],
+      "inferred_capability": "governance capability inferred from test cancel obligation",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_governance_test_circuit_breaker",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.test_circuit_breaker imports pytest",
+        "tests.test_circuit_breaker imports time",
+        "tests.test_circuit_breaker imports uuid",
+        "tests.test_circuit_breaker imports ystar.governance.cieu_store.NullCIEUStore",
+        "tests.test_circuit_breaker imports ystar.governance.intervention_engine.InterventionEngine",
+        "tests.test_circuit_breaker imports ystar.governance.intervention_models.InterventionLevel",
+        "tests.test_circuit_breaker imports ystar.governance.intervention_models.InterventionStatus",
+        "tests.test_circuit_breaker imports ystar.governance.omission_models.GEventType",
+        "tests.test_circuit_breaker imports ystar.governance.omission_models.ObligationRecord",
+        "tests.test_circuit_breaker imports ystar.governance.omission_models.ObligationStatus",
+        "tests.test_circuit_breaker imports ystar.governance.omission_models.OmissionViolation",
+        "tests.test_circuit_breaker imports ystar.governance.omission_models.Severity",
+        "tests.test_circuit_breaker imports ystar.governance.omission_store.InMemoryOmissionStore"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "governance",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/test_circuit_breaker.py"
+      ],
+      "evidence_symbols": [
+        "TestCircuitBreakerArming",
+        "TestCircuitBreakerBoard20",
+        "TestCircuitBreakerPulseRejection",
+        "TestCircuitBreakerReset",
+        "TestCircuitBreakerSlidingWindow",
+        "_build_engine",
+        "_make_hard_violation",
+        "_make_obligation",
+        "_make_violation"
+      ],
+      "evidence_tests": [
+        "tests/test_circuit_breaker.py"
+      ],
+      "inferred_capability": "governance capability inferred from test circuit breaker",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_governance_test_deny_as_teaching",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.test_deny_as_teaching imports os",
+        "tests.test_deny_as_teaching imports pytest",
+        "tests.test_deny_as_teaching imports unittest.mock.MagicMock",
+        "tests.test_deny_as_teaching imports unittest.mock.patch",
+        "tests.test_deny_as_teaching imports ystar.adapters.boundary_enforcer._check_immutable_paths",
+        "tests.test_deny_as_teaching imports ystar.adapters.boundary_enforcer._check_must_dispatch_via_cto",
+        "tests.test_deny_as_teaching imports ystar.adapters.boundary_enforcer._check_write_boundary",
+        "tests.test_deny_as_teaching imports ystar.session.PolicyResult",
+        "tests.test_deny_as_teaching imports ystar.session.Remediation"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "governance",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/test_deny_as_teaching.py"
+      ],
+      "evidence_symbols": [
+        "TestBackwardCompatibility",
+        "TestImmutablePathsRemediation",
+        "TestMustDispatchViaCTORemediation",
+        "TestRemediationDataStructure",
+        "TestRemediationFormatting",
+        "TestRemediationSchemaValidation",
+        "TestWriteBoundaryViolationRemediation"
+      ],
+      "evidence_tests": [
+        "tests/test_deny_as_teaching.py"
+      ],
+      "inferred_capability": "governance capability inferred from test deny as teaching",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_governance_test_experience_bridge_integration",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.test_experience_bridge_integration imports pytest",
+        "tests.test_experience_bridge_integration imports unittest.mock.Mock",
+        "tests.test_experience_bridge_integration imports ystar.governance.experience_bridge.BridgeInput",
+        "tests.test_experience_bridge_integration imports ystar.governance.experience_bridge.BridgeOutput",
+        "tests.test_experience_bridge_integration imports ystar.governance.experience_bridge.BridgeSuggestionCandidate",
+        "tests.test_experience_bridge_integration imports ystar.governance.experience_bridge.ExperienceBridge",
+        "tests.test_experience_bridge_integration imports ystar.governance.experience_bridge.ExternalGovernancePattern",
+        "tests.test_experience_bridge_integration imports ystar.governance.experience_bridge.InternalGovernanceGap",
+        "tests.test_experience_bridge_integration imports ystar.governance.governance_loop.GovernanceLoop",
+        "tests.test_experience_bridge_integration imports ystar.governance.governance_loop.GovernanceObservation",
+        "tests.test_experience_bridge_integration imports ystar.governance.governance_loop.GovernanceSuggestion",
+        "tests.test_experience_bridge_integration imports ystar.governance.omission_store.OmissionStore",
+        "tests.test_experience_bridge_integration imports ystar.governance.reporting.ReportEngine"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "governance",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/test_experience_bridge_integration.py"
+      ],
+      "evidence_symbols": [
+        "test_bridge_failure_does_not_block_observation",
+        "test_bridge_failure_does_not_block_tighten",
+        "test_bridge_feeds_governance_loop",
+        "test_bridge_ingest_multiple_sources",
+        "test_bridge_suggestion_candidate_conversion",
+        "test_bridge_suggestions_merged_into_tighten",
+        "test_governance_loop_with_bridge",
+        "test_governance_loop_without_bridge",
+        "test_governance_loop_without_bridge_unchanged"
+      ],
+      "evidence_tests": [
+        "tests/test_experience_bridge_integration.py"
+      ],
+      "inferred_capability": "governance capability inferred from test experience bridge integration",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_governance_test_governance_bridge",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.office.test_governance_bridge imports office.mission_command.governance_bridge.preflight_admin_rule",
+        "tests.office.test_governance_bridge imports office.mission_command.governance_bridge.preflight_mission_action",
+        "tests.office.test_governance_bridge imports office.mission_command.governance_bridge.preflight_value_alignment",
+        "tests.office.test_governance_bridge imports office.mission_command.governance_bridge.summarize_preflight_results",
+        "tests.office.test_governance_bridge imports pathlib.Path"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "governance",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/office/test_governance_bridge.py"
+      ],
+      "evidence_symbols": [
+        "MISSION",
+        "REPO_ROOT",
+        "test_governance_bridge_admin_and_value_summary",
+        "test_governance_bridge_handles_missing_imports_gracefully",
+        "test_governance_bridge_preflights_external_action_as_approval_needed",
+        "test_governance_bridge_preflights_read_only_as_allowed",
+        "test_no_customer_contact_executed",
+        "test_no_email_executed",
+        "test_no_payment_executed",
+        "test_no_publication_executed"
+      ],
+      "evidence_tests": [
+        "tests/office/test_governance_bridge.py"
+      ],
+      "inferred_capability": "governance capability inferred from test governance bridge",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_governance_test_governance_pipeline_e2e",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.test_governance_pipeline_e2e imports json",
+        "tests.test_governance_pipeline_e2e imports os",
+        "tests.test_governance_pipeline_e2e imports pathlib.Path",
+        "tests.test_governance_pipeline_e2e imports pytest",
+        "tests.test_governance_pipeline_e2e imports tempfile",
+        "tests.test_governance_pipeline_e2e imports time",
+        "tests.test_governance_pipeline_e2e imports uuid",
+        "tests.test_governance_pipeline_e2e imports ystar.domains.openclaw.accountability_pack.apply_openclaw_accountability_pack",
+        "tests.test_governance_pipeline_e2e imports ystar.governance.cieu_store.CIEUStore",
+        "tests.test_governance_pipeline_e2e imports ystar.governance.omission_engine.OmissionEngine",
+        "tests.test_governance_pipeline_e2e imports ystar.governance.omission_models.EntityStatus",
+        "tests.test_governance_pipeline_e2e imports ystar.governance.omission_models.GEventType",
+        "tests.test_governance_pipeline_e2e imports ystar.governance.omission_models.GovernanceEvent",
+        "tests.test_governance_pipeline_e2e imports ystar.governance.omission_models.ObligationStatus",
+        "tests.test_governance_pipeline_e2e imports ystar.governance.omission_models.TrackedEntity",
+        "tests.test_governance_pipeline_e2e imports ystar.governance.omission_rules.reset_registry",
+        "tests.test_governance_pipeline_e2e imports ystar.governance.omission_store.OmissionStore",
+        "tests.test_governance_pipeline_e2e imports ystar.kernel.dimensions.IntentContract"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "governance",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/test_governance_pipeline_e2e.py"
+      ],
+      "evidence_symbols": [
+        "temp_session_dir",
+        "test_full_governance_pipeline_smoke",
+        "test_governance_loop_produces_suggestions",
+        "test_obligations_produce_violations",
+        "test_report_engine_produces_kpis",
+        "test_session_config_creates_obligations"
+      ],
+      "evidence_tests": [
+        "tests/test_governance_pipeline_e2e.py"
+      ],
+      "inferred_capability": "governance capability inferred from test governance pipeline e2e",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_governance_test_multi_agent_policy",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.test_multi_agent_policy imports __future__.annotations",
+        "tests.test_multi_agent_policy imports os",
+        "tests.test_multi_agent_policy imports pathlib.Path",
+        "tests.test_multi_agent_policy imports pytest",
+        "tests.test_multi_agent_policy imports unittest.mock.patch",
+        "tests.test_multi_agent_policy imports ystar.adapters.boundary_enforcer",
+        "tests.test_multi_agent_policy imports ystar.adapters.boundary_enforcer._AGENT_WRITE_PATHS",
+        "tests.test_multi_agent_policy imports ystar.adapters.boundary_enforcer._check_write_boundary",
+        "tests.test_multi_agent_policy imports ystar.adapters.boundary_enforcer._ensure_write_paths_loaded",
+        "tests.test_multi_agent_policy imports ystar.adapters.boundary_enforcer._extract_write_paths_from_bash",
+        "tests.test_multi_agent_policy imports ystar.adapters.boundary_enforcer._load_write_paths_from_agents_md",
+        "tests.test_multi_agent_policy imports ystar.adapters.hook._extract_params",
+        "tests.test_multi_agent_policy imports ystar.adapters.hook.check_hook",
+        "tests.test_multi_agent_policy imports ystar.adapters.identity_detector._detect_agent_id",
+        "tests.test_multi_agent_policy imports ystar.session.Policy"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "governance",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/test_multi_agent_policy.py"
+      ],
+      "evidence_symbols": [
+        "SAMPLE_AGENTS_MD",
+        "TestBashHookIntegration",
+        "TestDetectAgentId",
+        "TestExtractWritePathsFromBash",
+        "TestFromAgentsMdMulti",
+        "TestHookIntegration",
+        "TestWriteBoundary",
+        "agents_md"
+      ],
+      "evidence_tests": [
+        "tests/test_multi_agent_policy.py"
+      ],
+      "inferred_capability": "governance capability inferred from test multi agent policy",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_governance_test_obligation_triggers",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.test_obligation_triggers imports __future__.annotations",
+        "tests.test_obligation_triggers imports pytest",
+        "tests.test_obligation_triggers imports time",
+        "tests.test_obligation_triggers imports ystar.adapters.omission_adapter.OmissionAdapter",
+        "tests.test_obligation_triggers imports ystar.governance.obligation_triggers.ObligationTrigger",
+        "tests.test_obligation_triggers imports ystar.governance.obligation_triggers.TriggerRegistry",
+        "tests.test_obligation_triggers imports ystar.governance.obligation_triggers.create_obligation_from_trigger",
+        "tests.test_obligation_triggers imports ystar.governance.obligation_triggers.match_triggers",
+        "tests.test_obligation_triggers imports ystar.governance.obligation_triggers.register_default_triggers",
+        "tests.test_obligation_triggers imports ystar.governance.obligation_triggers.reset_trigger_registry",
+        "tests.test_obligation_triggers imports ystar.governance.omission_engine.OmissionEngine",
+        "tests.test_obligation_triggers imports ystar.governance.omission_models.GovernanceEvent",
+        "tests.test_obligation_triggers imports ystar.governance.omission_models.ObligationStatus",
+        "tests.test_obligation_triggers imports ystar.governance.omission_models.OmissionType",
+        "tests.test_obligation_triggers imports ystar.governance.omission_models.Severity",
+        "tests.test_obligation_triggers imports ystar.governance.omission_rules.RuleRegistry",
+        "tests.test_obligation_triggers imports ystar.governance.omission_store.InMemoryOmissionStore",
+        "tests.test_obligation_triggers reads marketing/campaign.md"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "governance",
+      "evidence_artifacts": [
+        "marketing/campaign.md"
+      ],
+      "evidence_paths": [
+        "tests/test_obligation_triggers.py"
+      ],
+      "evidence_symbols": [
+        "test_create_obligation_deduplicate",
+        "test_create_obligation_from_trigger",
+        "test_create_obligation_no_deduplicate",
+        "test_create_obligation_target_agent_resolution",
+        "test_default_triggers_registered",
+        "test_integration_obligation_expires_and_creates_violation",
+        "test_integration_trigger_creates_obligation_in_engine",
+        "test_match_triggers_allow_result_no_deny_trigger",
+        "test_match_triggers_content_write",
+        "test_match_triggers_deny_result",
+        "test_match_triggers_unmatched_tool",
+        "test_match_triggers_web_search",
+        "test_multiple_triggers_can_fire",
+        "test_registry_serialization",
+        "test_trigger_registry_disabled_triggers_excluded",
+        "test_trigger_registry_register_and_get",
+        "test_trigger_serialization"
+      ],
+      "evidence_tests": [
+        "tests/test_obligation_triggers.py"
+      ],
+      "inferred_capability": "governance capability inferred from test obligation triggers",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_governance_test_omission_activity_gate",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.test_omission_activity_gate imports time",
+        "tests.test_omission_activity_gate imports ystar.governance.omission_engine.OmissionEngine",
+        "tests.test_omission_activity_gate imports ystar.governance.omission_models.EntityStatus",
+        "tests.test_omission_activity_gate imports ystar.governance.omission_models.EscalationPolicy",
+        "tests.test_omission_activity_gate imports ystar.governance.omission_models.GovernanceEvent",
+        "tests.test_omission_activity_gate imports ystar.governance.omission_models.ObligationRecord",
+        "tests.test_omission_activity_gate imports ystar.governance.omission_models.ObligationStatus",
+        "tests.test_omission_activity_gate imports ystar.governance.omission_models.Severity",
+        "tests.test_omission_activity_gate imports ystar.governance.omission_models.TrackedEntity",
+        "tests.test_omission_activity_gate imports ystar.governance.omission_store.InMemoryOmissionStore"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "governance",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/test_omission_activity_gate.py"
+      ],
+      "evidence_symbols": [
+        "test_active_entity_fires_violation",
+        "test_activity_window_boundary",
+        "test_dormant_entity_no_violation",
+        "test_hard_overdue_activity_gate",
+        "test_legacy_pending_path_activity_gate"
+      ],
+      "evidence_tests": [
+        "tests/test_omission_activity_gate.py"
+      ],
+      "inferred_capability": "governance capability inferred from test omission activity gate",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_governance_test_omission_intervention_e2e",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.test_omission_intervention_e2e imports pytest",
+        "tests.test_omission_intervention_e2e imports time",
+        "tests.test_omission_intervention_e2e imports uuid",
+        "tests.test_omission_intervention_e2e imports ystar.governance.cieu_store.NullCIEUStore",
+        "tests.test_omission_intervention_e2e imports ystar.governance.intervention_engine.DEFAULT_GATING_POLICY",
+        "tests.test_omission_intervention_e2e imports ystar.governance.intervention_engine.InterventionEngine",
+        "tests.test_omission_intervention_e2e imports ystar.governance.intervention_models.GateDecision",
+        "tests.test_omission_intervention_e2e imports ystar.governance.intervention_models.InterventionLevel",
+        "tests.test_omission_intervention_e2e imports ystar.governance.omission_engine.OmissionEngine",
+        "tests.test_omission_intervention_e2e imports ystar.governance.omission_models.EntityStatus",
+        "tests.test_omission_intervention_e2e imports ystar.governance.omission_models.GEventType",
+        "tests.test_omission_intervention_e2e imports ystar.governance.omission_models.GovernanceEvent",
+        "tests.test_omission_intervention_e2e imports ystar.governance.omission_models.ObligationRecord",
+        "tests.test_omission_intervention_e2e imports ystar.governance.omission_models.ObligationStatus",
+        "tests.test_omission_intervention_e2e imports ystar.governance.omission_models.Severity",
+        "tests.test_omission_intervention_e2e imports ystar.governance.omission_models.TrackedEntity",
+        "tests.test_omission_intervention_e2e imports ystar.governance.omission_rules.get_registry",
+        "tests.test_omission_intervention_e2e imports ystar.governance.omission_store.InMemoryOmissionStore"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "governance",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/test_omission_intervention_e2e.py"
+      ],
+      "evidence_symbols": [
+        "omission_intervention_system",
+        "test_chaos_concurrent_violations",
+        "test_gate_check_allows_fulfillment_action_on_hard_overdue",
+        "test_gate_check_blocks_high_risk_action_on_hard_overdue",
+        "test_resolve_for_actor_restores_capabilities",
+        "test_scan_hard_overdue_produces_interrupt_gate",
+        "test_scan_soft_overdue_produces_soft_pulse"
+      ],
+      "evidence_tests": [
+        "tests/test_omission_intervention_e2e.py"
+      ],
+      "inferred_capability": "governance capability inferred from test omission intervention e2e",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_governance_test_phase_c_automation",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.governance.test_phase_c_automation imports json",
+        "tests.governance.test_phase_c_automation imports os",
+        "tests.governance.test_phase_c_automation imports pathlib.Path",
+        "tests.governance.test_phase_c_automation imports pytest",
+        "tests.governance.test_phase_c_automation imports scripts.action_model_validator.compute_trust_delta",
+        "tests.governance.test_phase_c_automation imports scripts.action_model_validator.extract_knowledge_writeback",
+        "tests.governance.test_phase_c_automation imports scripts.action_model_validator.register_reply",
+        "tests.governance.test_phase_c_automation imports scripts.action_model_validator.trigger_cascade",
+        "tests.governance.test_phase_c_automation imports sqlite3",
+        "tests.governance.test_phase_c_automation imports sys",
+        "tests.governance.test_phase_c_automation imports tempfile"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "governance",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/governance/test_phase_c_automation.py"
+      ],
+      "evidence_symbols": [
+        "TestComputeTrustDelta",
+        "TestExtractKnowledgeWriteback",
+        "TestRegisterReplyWithPhaseC",
+        "TestTriggerCascade"
+      ],
+      "evidence_tests": [
+        "tests/governance/test_phase_c_automation.py"
+      ],
+      "inferred_capability": "governance capability inferred from test phase c automation",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_governance_test_reply_taxonomy",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.governance.test_reply_taxonomy imports pytest",
+        "tests.governance.test_reply_taxonomy imports ystar.governance.reply_taxonomy.audit_reply",
+        "tests.governance.test_reply_taxonomy imports ystar.governance.reply_taxonomy.extract_template_tag",
+        "tests.governance.test_reply_taxonomy imports ystar.governance.reply_taxonomy.validate_template"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "governance",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/governance/test_reply_taxonomy.py"
+      ],
+      "evidence_symbols": [
+        "test_ack_contains_metric",
+        "test_ack_valid",
+        "test_dispatch_missing_5tuple",
+        "test_dispatch_valid",
+        "test_missing_tag",
+        "test_notification_valid",
+        "test_query_too_long",
+        "test_query_valid",
+        "test_receipt_missing_empirical_pastes",
+        "test_receipt_valid"
+      ],
+      "evidence_tests": [
+        "tests/governance/test_reply_taxonomy.py"
+      ],
+      "inferred_capability": "governance capability inferred from test reply taxonomy",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_governance_test_secretary_curate_step1",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.test_secretary_curate_step1 imports json",
+        "tests.test_secretary_curate_step1 imports pathlib.Path",
+        "tests.test_secretary_curate_step1 imports pytest",
+        "tests.test_secretary_curate_step1 imports secretary_curate.FORBIDDEN_KEYWORDS",
+        "tests.test_secretary_curate_step1 imports secretary_curate.check_redline_violation",
+        "tests.test_secretary_curate_step1 imports secretary_curate.extract_board_corrections",
+        "tests.test_secretary_curate_step1 imports secretary_curate.format_skill_draft",
+        "tests.test_secretary_curate_step1 imports secretary_curate.identify_skill_patterns",
+        "tests.test_secretary_curate_step1 imports secretary_curate.step1_skill_extract",
+        "tests.test_secretary_curate_step1 imports sqlite3",
+        "tests.test_secretary_curate_step1 imports sys",
+        "tests.test_secretary_curate_step1 imports tempfile",
+        "tests.test_secretary_curate_step1 imports time"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "governance",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/test_secretary_curate_step1.py"
+      ],
+      "evidence_symbols": [
+        "temp_workspace",
+        "test_check_redline_violation_case_insensitive",
+        "test_check_redline_violation_detect",
+        "test_extract_board_corrections_empty",
+        "test_extract_board_corrections_with_data",
+        "test_format_skill_draft_structure",
+        "test_identify_skill_patterns_basic",
+        "test_step1_skill_extract_integration",
+        "test_step1_skill_extract_no_violations"
+      ],
+      "evidence_tests": [
+        "tests/test_secretary_curate_step1.py"
+      ],
+      "inferred_capability": "governance capability inferred from test secretary curate step1",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_governance_test_secretary_curate_step2",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.test_secretary_curate_step2 imports json",
+        "tests.test_secretary_curate_step2 imports pathlib.Path",
+        "tests.test_secretary_curate_step2 imports pytest",
+        "tests.test_secretary_curate_step2 imports secretary_curate.apply_tombstone",
+        "tests.test_secretary_curate_step2 imports secretary_curate.check_stale_tasks",
+        "tests.test_secretary_curate_step2 imports secretary_curate.scan_tombstone_headers",
+        "tests.test_secretary_curate_step2 imports secretary_curate.step2_tombstone",
+        "tests.test_secretary_curate_step2 imports sys",
+        "tests.test_secretary_curate_step2 imports time"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "governance",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/test_secretary_curate_step2.py"
+      ],
+      "evidence_symbols": [
+        "temp_workspace",
+        "test_apply_tombstone_basic",
+        "test_apply_tombstone_nonexistent_task",
+        "test_check_stale_tasks_empty",
+        "test_check_stale_tasks_old_mentioned",
+        "test_check_stale_tasks_old_not_mentioned",
+        "test_check_stale_tasks_recent",
+        "test_scan_tombstone_headers_found",
+        "test_scan_tombstone_headers_none",
+        "test_step2_tombstone_integration",
+        "test_step2_tombstone_multiple_roles",
+        "test_step2_tombstone_no_stale_tasks"
+      ],
+      "evidence_tests": [
+        "tests/test_secretary_curate_step2.py"
+      ],
+      "inferred_capability": "governance capability inferred from test secretary curate step2",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_governance_test_session_agent_stack",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.test_session_agent_stack imports json",
+        "tests.test_session_agent_stack imports os",
+        "tests.test_session_agent_stack imports pathlib.Path",
+        "tests.test_session_agent_stack imports pytest",
+        "tests.test_session_agent_stack imports tempfile",
+        "tests.test_session_agent_stack imports ystar.session.check_agent_stack_timeout",
+        "tests.test_session_agent_stack imports ystar.session.current_agent",
+        "tests.test_session_agent_stack imports ystar.session.load_session_config",
+        "tests.test_session_agent_stack imports ystar.session.pop_agent",
+        "tests.test_session_agent_stack imports ystar.session.push_agent",
+        "tests.test_session_agent_stack imports ystar.session.save_session_config",
+        "tests.test_session_agent_stack imports ystar.session.set_agent"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "governance",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/test_session_agent_stack.py"
+      ],
+      "evidence_symbols": [
+        "temp_session_config",
+        "test_agent_delegation_round_trip",
+        "test_atomic_write_prevents_corruption",
+        "test_check_agent_stack_timeout_no_op_for_root_only",
+        "test_check_agent_stack_timeout_triggers_after_delay",
+        "test_current_agent_fallback_without_config",
+        "test_current_agent_reads_from_session_config",
+        "test_current_agent_returns_stack_top",
+        "test_pop_agent_preserves_root",
+        "test_pop_agent_restores_previous",
+        "test_push_agent_adds_to_stack",
+        "test_push_agent_initializes_stack_from_legacy_agent_id",
+        "test_session_config_fallback_without_stack",
+        "test_set_agent_replaces_stack"
+      ],
+      "evidence_tests": [
+        "tests/test_session_agent_stack.py"
+      ],
+      "inferred_capability": "governance capability inferred from test session agent stack",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_governance_test_tool_uses_auto_compare",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.governance.test_tool_uses_auto_compare imports hook_stop_reply_scan.CIEU_DB",
+        "tests.governance.test_tool_uses_auto_compare imports hook_stop_reply_scan._emit_cieu",
+        "tests.governance.test_tool_uses_auto_compare imports hook_stop_reply_scan.auto_compare_tool_uses_claim",
+        "tests.governance.test_tool_uses_auto_compare imports pathlib.Path",
+        "tests.governance.test_tool_uses_auto_compare imports re",
+        "tests.governance.test_tool_uses_auto_compare imports sqlite3",
+        "tests.governance.test_tool_uses_auto_compare imports sys",
+        "tests.governance.test_tool_uses_auto_compare imports tempfile"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "governance",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/governance/test_tool_uses_auto_compare.py"
+      ],
+      "evidence_symbols": [
+        "test_claim_format_variations",
+        "test_match_no_mismatch",
+        "test_mismatch_exceeds_threshold",
+        "test_no_claim_in_receipt",
+        "test_over_claim_high_severity",
+        "test_tolerance_within_2"
+      ],
+      "evidence_tests": [
+        "tests/governance/test_tool_uses_auto_compare.py"
+      ],
+      "inferred_capability": "governance capability inferred from test tool uses auto compare",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_governance_test_trigger_activation",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.test_trigger_activation imports time",
+        "tests.test_trigger_activation imports ystar.governance.obligation_triggers.ObligationTrigger",
+        "tests.test_trigger_activation imports ystar.governance.obligation_triggers.TriggerRegistry",
+        "tests.test_trigger_activation imports ystar.governance.obligation_triggers.reset_trigger_registry",
+        "tests.test_trigger_activation imports ystar.governance.omission_engine.OmissionEngine",
+        "tests.test_trigger_activation imports ystar.governance.omission_models.EntityStatus",
+        "tests.test_trigger_activation imports ystar.governance.omission_models.GovernanceEvent",
+        "tests.test_trigger_activation imports ystar.governance.omission_models.ObligationStatus",
+        "tests.test_trigger_activation imports ystar.governance.omission_models.TrackedEntity",
+        "tests.test_trigger_activation imports ystar.governance.omission_store.InMemoryOmissionStore"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "governance",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/test_trigger_activation.py"
+      ],
+      "evidence_symbols": [
+        "test_duplicate_trigger_deduplication",
+        "test_ingest_event_auto_triggers_obligation",
+        "test_no_trigger_match_no_obligation",
+        "test_trigger_only_fires_on_allow",
+        "test_trigger_with_param_filter"
+      ],
+      "evidence_tests": [
+        "tests/test_trigger_activation.py"
+      ],
+      "inferred_capability": "governance capability inferred from test trigger activation",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    },
+    {
+      "capability_id": "cap_bridge_labs_governance_test_x_engagement_safety",
+      "confidence": 0.98,
+      "dependency_relationships": [
+        "tests.test_x_engagement_safety imports json",
+        "tests.test_x_engagement_safety imports pathlib.Path",
+        "tests.test_x_engagement_safety imports pytest",
+        "tests.test_x_engagement_safety imports sys",
+        "tests.test_x_engagement_safety imports x_content_safety_check.QUOTA_FILE",
+        "tests.test_x_engagement_safety imports x_content_safety_check.apply_polite_response_template",
+        "tests.test_x_engagement_safety imports x_content_safety_check.check_rate_limit",
+        "tests.test_x_engagement_safety imports x_content_safety_check.detect_hostile_reply",
+        "tests.test_x_engagement_safety imports x_content_safety_check.has_impersonation",
+        "tests.test_x_engagement_safety imports x_content_safety_check.has_political_content",
+        "tests.test_x_engagement_safety imports x_content_safety_check.has_profanity",
+        "tests.test_x_engagement_safety imports x_content_safety_check.has_religious_content",
+        "tests.test_x_engagement_safety imports x_content_safety_check.increment_quota",
+        "tests.test_x_engagement_safety imports x_content_safety_check.load_quota",
+        "tests.test_x_engagement_safety imports x_content_safety_check.safety_check",
+        "tests.test_x_engagement_safety imports x_content_safety_check.save_quota",
+        "tests.test_x_engagement_safety imports x_disclosure_templates.DISCLOSURES",
+        "tests.test_x_engagement_safety imports x_disclosure_templates.check_disclosure_present",
+        "tests.test_x_engagement_safety imports x_disclosure_templates.get_disclosure"
+      ],
+      "discovered_from": [
+        "dependency_signal",
+        "symbol_signal",
+        "test_signal"
+      ],
+      "domain": "governance",
+      "evidence_artifacts": [],
+      "evidence_paths": [
+        "tests/test_x_engagement_safety.py"
+      ],
+      "evidence_symbols": [
+        "reset_quota",
+        "test_clean_content_passes",
+        "test_disclosure_check_both_languages",
+        "test_disclosure_missing_fails",
+        "test_disclosure_only_no_content",
+        "test_disclosure_present_passes",
+        "test_disclosure_templates_present",
+        "test_dry_run_mode",
+        "test_empty_content",
+        "test_hostile_reply_applies_polite_template",
+        "test_hostile_reply_full_safety_check",
+        "test_impersonation_blocks_safety_check",
+        "test_impersonation_chinese_detected",
+        "test_impersonation_english_detected",
+        "test_multiple_violations",
+        "test_non_reply_skips_hostile_check",
+        "test_political_content_detected",
+        "test_profanity_detected",
+        "test_rate_limit_enforced",
+        "test_rate_limit_per_action",
+        "test_rate_limit_resets_daily",
+        "test_religious_content_detected",
+        "test_strong_disclosure_with_ai_agent_passes",
+        "test_weak_disclosure_rejected",
+        "test_wrong_role_disclosure_fails"
+      ],
+      "evidence_tests": [
+        "tests/test_x_engagement_safety.py"
+      ],
+      "inferred_capability": "governance capability inferred from test x engagement safety",
+      "primary_discovery_signal": "symbol_signal",
+      "prompt_hint_used": false,
+      "repo": "bridge-labs",
+      "repository_discovered": true
+    }
+  ],
+  "artifact_id": "e80_anti_memory_contamination_report",
+  "bridge_job_id": "e80_r2_discovery_first_ecosystem_capability_audit_and_ceo_cognitive_runtime_activation_20260507T000001Z",
+  "created_at": "2026-05-07T14:47:32Z",
+  "findings_from_generated_artifact_metadata": {
+    "artifact_count": 29828,
+    "artifact_type_counts": {
+      "CIEU_artifact": 77,
+      "CZL_artifact": 74,
+      "KG_artifact": 201,
+      "code": 21,
+      "config": 40,
+      "decision_artifact": 129,
+      "doc": 1169,
+      "generated_artifact": 1064,
+      "other": 1,
+      "product": 56,
+      "readback_artifact": 28,
+      "report": 26963,
+      "test": 5
+    }
+  },
+  "findings_from_raw_file_inventory": {
+    "bridge_labs_tracked_files": 33712,
+    "directory_counts_basis": "git ls-files file graph",
+    "total_tracked_files_across_available_repos": 77293
+  },
+  "findings_from_symbol_index": {
+    "python_file_count": 4032,
+    "total_classes": 2376,
+    "total_functions": 17120
+  },
+  "findings_from_tests": {
+    "domains_implied": {
+      "6D_field": 21,
+      "CIEU": 37,
+      "KG_memory": 4,
+      "audit": 69,
+      "brain": 106,
+      "commercial": 63,
+      "external_observation": 70,
+      "governance": 256,
+      "launch": 3,
+      "market": 53,
+      "other": 54,
+      "pricing": 6,
+      "product": 21,
+      "provider": 51,
+      "route_planning": 24,
+      "runtime": 4,
+      "self_bootstrap": 11,
+      "validation": 297
+    },
+    "test_file_count": 1150,
+    "test_function_count": 3990
+  },
+  "findings_only_from_prompt_hints": [
+    {
+      "active_runtime_capability_claimed": false,
+      "concept": "live_MCP_execution",
+      "searched_terms": [
+        "live mcp execution enabled",
+        "provider live enabled"
+      ],
+      "status": "prompt_hint_unverified"
+    },
+    {
+      "active_runtime_capability_claimed": false,
+      "concept": "production_CIEU_ledger",
+      "searched_terms": [
+        "production_hash_chain_enabled",
+        "production cieu ledger"
+      ],
+      "status": "prompt_hint_unverified"
+    },
+    {
+      "active_runtime_capability_claimed": false,
+      "concept": "customer_validation",
+      "searched_terms": [
+        "customer_validation_claimed true",
+        "customer validation achieved"
+      ],
+      "status": "prompt_hint_unverified"
+    },
+    {
+      "active_runtime_capability_claimed": false,
+      "concept": "paid_signal",
+      "searched_terms": [
+        "paid_signal_claimed true",
+        "paid signal achieved"
+      ],
+      "status": "prompt_hint_unverified"
+    },
+    {
+      "active_runtime_capability_claimed": false,
+      "concept": "pricing_validation",
+      "searched_terms": [
+        "pricing_validation_claimed true",
+        "pricing validation achieved"
+      ],
+      "status": "prompt_hint_unverified"
+    },
+    {
+      "active_runtime_capability_claimed": false,
+      "concept": "L5_revenue_readiness",
+      "searched_terms": [
+        "l5_ready true",
+        "revenue readiness achieved"
+      ],
+      "status": "prompt_hint_unverified"
+    }
+  ],
+  "method": "raw_inventory_and_symbol_artifact_test_indexes_before_prompt_hint_interpretation",
+  "prior_assumptions_corrected": [
+    "E80-R2 does not begin from E65-E79 named memory; it begins from tracked file inventory.",
+    "A capability cannot be runtime-active merely because this prompt mentioned it.",
+    "Production ledger/verifier, compliance proof, paid signal, and L5 revenue readiness are not treated as active capabilities.",
+    "Repository-discovered older runtime, test, amendment, hook, memory, and commercial surfaces remain visible even when not named by the prompt."
+  ],
+  "prompt_hinted_capabilities_not_found_or_not_active": [
+    {
+      "active_runtime_capability_claimed": false,
+      "concept": "live_MCP_execution",
+      "searched_terms": [
+        "live mcp execution enabled",
+        "provider live enabled"
+      ],
+      "status": "prompt_hint_unverified"
+    },
+    {
+      "active_runtime_capability_claimed": false,
+      "concept": "production_CIEU_ledger",
+      "searched_terms": [
+        "production_hash_chain_enabled",
+        "production cieu ledger"
+      ],
+      "status": "prompt_hint_unverified"
+    },
+    {
+      "active_runtime_capability_claimed": false,
+      "concept": "customer_validation",
+      "searched_terms": [
+        "customer_validation_claimed true",
+        "customer validation achieved"
+      ],
+      "status": "prompt_hint_unverified"
+    },
+    {
+      "active_runtime_capability_claimed": false,
+      "concept": "paid_signal",
+      "searched_terms": [
+        "paid_signal_claimed true",
+        "paid signal achieved"
+      ],
+      "status": "prompt_hint_unverified"
+    },
+    {
+      "active_runtime_capability_claimed": false,
+      "concept": "pricing_validation",
+      "searched_terms": [
+        "pricing_validation_claimed true",
+        "pricing validation achieved"
+      ],
+      "status": "prompt_hint_unverified"
+    },
+    {
+      "active_runtime_capability_claimed": false,
+      "concept": "L5_revenue_readiness",
+      "searched_terms": [
+        "l5_ready true",
+        "revenue readiness achieved"
+      ],
+      "status": "prompt_hint_unverified"
+    }
+  ],
+  "prompt_hinted_capabilities_not_verified_by_repository_evidence_count": 6,
+  "rules_enforced": [
+    "active classification requires file, symbol, artifact, test, or dependency evidence",
+    "prompt-hinted but unsupported concepts are marked prompt_hint_unverified",
+    "repository-discovered capabilities are marked separately from prompt-hinted capabilities"
+  ]
+}

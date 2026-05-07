@@ -1,0 +1,18 @@
+{
+  "artifact_id": "e80_readback_smoke_result",
+  "checks": {
+    "capabilities_discovered": true,
+    "counterfactual_comparison_active": true,
+    "demo_decision_present": true,
+    "discovery_first_status": true,
+    "files_inventoried": true,
+    "no_L4_execution": true,
+    "no_L5_claim": true,
+    "no_external_action": true,
+    "pre_action_CIEU_prediction_visible": true,
+    "prompt_hinted_unverified_visible": true,
+    "repository_discovered_capabilities_visible": true
+  },
+  "external_action_allowed": false,
+  "passes": true
+}

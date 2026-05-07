@@ -1,0 +1,394 @@
+{
+  "activated_capabilities": [
+    {
+      "CEO_failure_addressed": "flat summaries that do not position intent, risk, time, capability, and market feedback together",
+      "activation_mode": "context_bind_to_online_cognition_loop",
+      "capability_id": "cap_bridge_labs_6d_field_e18",
+      "cognition_loop_stage": "field_dimensional_reasoning_if_evidence_supported",
+      "no_duplication_proof": "bridge-labs reuses existing module/artifact; no new CEO brain or generic runtime",
+      "previous_activation_state": "dormant",
+      "source_evidence": {
+        "paths": [
+          "operations/external_validation/e24_field_functional_opportunity_map.json"
+        ],
+        "repo": "bridge-labs",
+        "symbols": [],
+        "tests": []
+      },
+      "verification_test": "tests/office/test_e80_high_value_capability_activation.py"
+    },
+    {
+      "CEO_failure_addressed": "flat summaries that do not position intent, risk, time, capability, and market feedback together",
+      "activation_mode": "context_bind_to_online_cognition_loop",
+      "capability_id": "cap_bridge_labs_6d_field_e24",
+      "cognition_loop_stage": "field_dimensional_reasoning_if_evidence_supported",
+      "no_duplication_proof": "bridge-labs reuses existing module/artifact; no new CEO brain or generic runtime",
+      "previous_activation_state": "dormant",
+      "source_evidence": {
+        "paths": [
+          "reports/integration/e24_field_functional_opportunity_map.md"
+        ],
+        "repo": "bridge-labs",
+        "symbols": [],
+        "tests": []
+      },
+      "verification_test": "tests/office/test_e80_high_value_capability_activation.py"
+    },
+    {
+      "CEO_failure_addressed": "flat summaries that do not position intent, risk, time, capability, and market feedback together",
+      "activation_mode": "context_bind_to_online_cognition_loop",
+      "capability_id": "cap_bridge_labs_6d_field_e35",
+      "cognition_loop_stage": "field_dimensional_reasoning_if_evidence_supported",
+      "no_duplication_proof": "bridge-labs reuses existing module/artifact; no new CEO brain or generic runtime",
+      "previous_activation_state": "dormant",
+      "source_evidence": {
+        "paths": [
+          "operations/external_validation/e35_cross_domain_opportunity_field.json",
+          "reports/integration/e35_cross_domain_opportunity_field.md",
+          "reports/integration/e35_six_dimensional_opportunity_cognition_protocol.md"
+        ],
+        "repo": "bridge-labs",
+        "symbols": [],
+        "tests": []
+      },
+      "verification_test": "tests/office/test_e80_high_value_capability_activation.py"
+    },
+    {
+      "CEO_failure_addressed": "flat summaries that do not position intent, risk, time, capability, and market feedback together",
+      "activation_mode": "context_bind_to_online_cognition_loop",
+      "capability_id": "cap_bridge_labs_6d_field_e35_cross_domain_opportunity_field_generator",
+      "cognition_loop_stage": "field_dimensional_reasoning_if_evidence_supported",
+      "no_duplication_proof": "bridge-labs reuses existing module/artifact; no new CEO brain or generic runtime",
+      "previous_activation_state": "dormant",
+      "source_evidence": {
+        "paths": [
+          "office/mission_command/e35_cross_domain_opportunity_field_generator.py"
+        ],
+        "repo": "bridge-labs",
+        "symbols": [
+          "build_cross_domain_opportunity_field"
+        ],
+        "tests": []
+      },
+      "verification_test": "tests/office/test_e80_high_value_capability_activation.py"
+    },
+    {
+      "CEO_failure_addressed": "flat summaries that do not position intent, risk, time, capability, and market feedback together",
+      "activation_mode": "context_bind_to_online_cognition_loop",
+      "capability_id": "cap_bridge_labs_6d_field_e35_six_dimensional_opportunity_cognition_protocol",
+      "cognition_loop_stage": "field_dimensional_reasoning_if_evidence_supported",
+      "no_duplication_proof": "bridge-labs reuses existing module/artifact; no new CEO brain or generic runtime",
+      "previous_activation_state": "dormant",
+      "source_evidence": {
+        "paths": [
+          "office/mission_command/e35_six_dimensional_opportunity_cognition_protocol.py"
+        ],
+        "repo": "bridge-labs",
+        "symbols": [
+          "build_six_dimensional_opportunity_cognition_protocol"
+        ],
+        "tests": []
+      },
+      "verification_test": "tests/office/test_e80_high_value_capability_activation.py"
+    },
+    {
+      "CEO_failure_addressed": "flat summaries that do not position intent, risk, time, capability, and market feedback together",
+      "activation_mode": "context_bind_to_online_cognition_loop",
+      "capability_id": "cap_bridge_labs_6d_field_office_mission_command",
+      "cognition_loop_stage": "field_dimensional_reasoning_if_evidence_supported",
+      "no_duplication_proof": "bridge-labs reuses existing module/artifact; no new CEO brain or generic runtime",
+      "previous_activation_state": "dormant",
+      "source_evidence": {
+        "paths": [
+          "office/mission_command/e24_field_functional_opportunity_map.py",
+          "office/mission_command/e35_cross_domain_opportunity_field_generator.py",
+          "office/mission_command/e35_six_dimensional_opportunity_cognition_protocol.py",
+          "office/mission_command/e36_strategic_field_trial_runner.py",
+          "office/mission_command/e44a_full_history_replay_cascade.py",
+          "office/mission_command/e46b_field_functional_projection_recovery.py",
+          "office/mission_command/e46b_field_projection_adapter.py"
+        ],
+        "repo": "bridge-labs",
+        "symbols": [],
+        "tests": []
+      },
+      "verification_test": "tests/office/test_e80_high_value_capability_activation.py"
+    },
+    {
+      "CEO_failure_addressed": "flat summaries that do not position intent, risk, time, capability, and market feedback together",
+      "activation_mode": "context_bind_to_online_cognition_loop",
+      "capability_id": "cap_bridge_labs_6d_field_operations_external_validation",
+      "cognition_loop_stage": "field_dimensional_reasoning_if_evidence_supported",
+      "no_duplication_proof": "bridge-labs reuses existing module/artifact; no new CEO brain or generic runtime",
+      "previous_activation_state": "dormant",
+      "source_evidence": {
+        "paths": [
+          "operations/external_validation/e18_commercial_fit_scores.json",
+          "operations/external_validation/e20_autonomous_outbound_envelope_schema.json",
+          "operations/external_validation/e24_field_functional_opportunity_map.json",
+          "operations/external_validation/e34_frontier_case_archaeology_methodology.json",
+          "operations/external_validation/e35_cross_domain_opportunity_field.json",
+          "operations/external_validation/e35_czl_closure.json",
+          "operations/external_validation/e35_no_rebuild_alignment_gate.json",
+          "operations/external_validation/e35_six_dimensional_opportunity_cognition_protocol.json"
+        ],
+        "repo": "bridge-labs",
+        "symbols": [],
+        "tests": []
+      },
+      "verification_test": "tests/office/test_e80_high_value_capability_activation.py"
+    },
+    {
+      "CEO_failure_addressed": "flat summaries that do not position intent, risk, time, capability, and market feedback together",
+      "activation_mode": "context_bind_to_online_cognition_loop",
+      "capability_id": "cap_bridge_labs_6d_field_reports_integration",
+      "cognition_loop_stage": "field_dimensional_reasoning_if_evidence_supported",
+      "no_duplication_proof": "bridge-labs reuses existing module/artifact; no new CEO brain or generic runtime",
+      "previous_activation_state": "dormant",
+      "source_evidence": {
+        "paths": [
+          "reports/integration/e24_field_functional_opportunity_map.md",
+          "reports/integration/e35_cross_domain_opportunity_field.md",
+          "reports/integration/e35_six_dimensional_opportunity_cognition_protocol.md",
+          "reports/integration/e36_strategic_field_trial_results.md",
+          "reports/integration/e46b_field_functional_projection_recovery.md"
+        ],
+        "repo": "bridge-labs",
+        "symbols": [],
+        "tests": []
+      },
+      "verification_test": "tests/office/test_e80_high_value_capability_activation.py"
+    },
+    {
+      "CEO_failure_addressed": "flat summaries that do not position intent, risk, time, capability, and market feedback together",
+      "activation_mode": "context_bind_to_online_cognition_loop",
+      "capability_id": "cap_bridge_labs_6d_field_test_e35_cross_domain_opportunity_field_generator",
+      "cognition_loop_stage": "field_dimensional_reasoning_if_evidence_supported",
+      "no_duplication_proof": "bridge-labs reuses existing module/artifact; no new CEO brain or generic runtime",
+      "previous_activation_state": "dormant",
+      "source_evidence": {
+        "paths": [
+          "tests/office/test_e35_cross_domain_opportunity_field_generator.py"
+        ],
+        "repo": "bridge-labs",
+        "symbols": [
+          "test_cross_domain_opportunity_field_has_required_breadth_and_boundaries"
+        ],
+        "tests": [
+          "tests/office/test_e35_cross_domain_opportunity_field_generator.py"
+        ]
+      },
+      "verification_test": "tests/office/test_e80_high_value_capability_activation.py"
+    },
+    {
+      "CEO_failure_addressed": "flat summaries that do not position intent, risk, time, capability, and market feedback together",
+      "activation_mode": "context_bind_to_online_cognition_loop",
+      "capability_id": "cap_bridge_labs_6d_field_test_e35_six_dimensional_opportunity_cognition_protocol",
+      "cognition_loop_stage": "field_dimensional_reasoning_if_evidence_supported",
+      "no_duplication_proof": "bridge-labs reuses existing module/artifact; no new CEO brain or generic runtime",
+      "previous_activation_state": "dormant",
+      "source_evidence": {
+        "paths": [
+          "tests/office/test_e35_six_dimensional_opportunity_cognition_protocol.py"
+        ],
+        "repo": "bridge-labs",
+        "symbols": [
+          "test_six_dimensional_protocol_preserves_faculty_tensions"
+        ],
+        "tests": [
+          "tests/office/test_e35_six_dimensional_opportunity_cognition_protocol.py"
+        ]
+      },
+      "verification_test": "tests/office/test_e80_high_value_capability_activation.py"
+    },
+    {
+      "CEO_failure_addressed": "flat summaries that do not position intent, risk, time, capability, and market feedback together",
+      "activation_mode": "context_bind_to_online_cognition_loop",
+      "capability_id": "cap_bridge_labs_6d_field_test_e44a_ceo_cognition_cascade_runtime",
+      "cognition_loop_stage": "field_dimensional_reasoning_if_evidence_supported",
+      "no_duplication_proof": "bridge-labs reuses existing module/artifact; no new CEO brain or generic runtime",
+      "previous_activation_state": "dormant",
+      "source_evidence": {
+        "paths": [
+          "tests/office/test_e44a_ceo_cognition_cascade_runtime.py"
+        ],
+        "repo": "bridge-labs",
+        "symbols": [],
+        "tests": [
+          "tests/office/test_e44a_ceo_cognition_cascade_runtime.py"
+        ]
+      },
+      "verification_test": "tests/office/test_e80_high_value_capability_activation.py"
+    },
+    {
+      "CEO_failure_addressed": "flat summaries that do not position intent, risk, time, capability, and market feedback together",
+      "activation_mode": "context_bind_to_online_cognition_loop",
+      "capability_id": "cap_bridge_labs_6d_field_test_e44a_full_history_replay_cascade",
+      "cognition_loop_stage": "field_dimensional_reasoning_if_evidence_supported",
+      "no_duplication_proof": "bridge-labs reuses existing module/artifact; no new CEO brain or generic runtime",
+      "previous_activation_state": "dormant",
+      "source_evidence": {
+        "paths": [
+          "tests/office/test_e44a_full_history_replay_cascade.py"
+        ],
+        "repo": "bridge-labs",
+        "symbols": [
+          "TASK",
+          "test_full_history_replay_invokes_pre_e31_families"
+        ],
+        "tests": [
+          "tests/office/test_e44a_full_history_replay_cascade.py"
+        ]
+      },
+      "verification_test": "tests/office/test_e80_high_value_capability_activation.py"
+    },
+    {
+      "CEO_failure_addressed": "flat summaries that do not position intent, risk, time, capability, and market feedback together",
+      "activation_mode": "context_bind_to_online_cognition_loop",
+      "capability_id": "cap_bridge_labs_6d_field_test_e44a_router_cognition_overlay",
+      "cognition_loop_stage": "field_dimensional_reasoning_if_evidence_supported",
+      "no_duplication_proof": "bridge-labs reuses existing module/artifact; no new CEO brain or generic runtime",
+      "previous_activation_state": "dormant",
+      "source_evidence": {
+        "paths": [
+          "tests/office/test_e44a_router_cognition_overlay.py"
+        ],
+        "repo": "bridge-labs",
+        "symbols": [],
+        "tests": [
+          "tests/office/test_e44a_router_cognition_overlay.py"
+        ]
+      },
+      "verification_test": "tests/office/test_e80_high_value_capability_activation.py"
+    },
+    {
+      "CEO_failure_addressed": "flat summaries that do not position intent, risk, time, capability, and market feedback together",
+      "activation_mode": "context_bind_to_online_cognition_loop",
+      "capability_id": "cap_bridge_labs_6d_field_test_e65_market_dynamics_model_schema",
+      "cognition_loop_stage": "field_dimensional_reasoning_if_evidence_supported",
+      "no_duplication_proof": "bridge-labs reuses existing module/artifact; no new CEO brain or generic runtime",
+      "previous_activation_state": "dormant",
+      "source_evidence": {
+        "paths": [
+          "tests/office/test_e65_market_dynamics_model_schema.py"
+        ],
+        "repo": "bridge-labs",
+        "symbols": [
+          "ROOT",
+          "test_e65_market_dynamics_schema_is_full_dimensional"
+        ],
+        "tests": []
+      },
+      "verification_test": "tests/office/test_e80_high_value_capability_activation.py"
+    },
+    {
+      "CEO_failure_addressed": "flat summaries that do not position intent, risk, time, capability, and market feedback together",
+      "activation_mode": "context_bind_to_online_cognition_loop",
+      "capability_id": "cap_bridge_labs_6d_field_test_e65_no_overclaim",
+      "cognition_loop_stage": "field_dimensional_reasoning_if_evidence_supported",
+      "no_duplication_proof": "bridge-labs reuses existing module/artifact; no new CEO brain or generic runtime",
+      "previous_activation_state": "dormant",
+      "source_evidence": {
+        "paths": [
+          "tests/office/test_e65_no_overclaim.py"
+        ],
+        "repo": "bridge-labs",
+        "symbols": [
+          "ROOT",
+          "test_e65_no_overclaim_fields_are_false"
+        ],
+        "tests": [
+          "tests/office/test_e65_no_overclaim.py"
+        ]
+      },
+      "verification_test": "tests/office/test_e80_high_value_capability_activation.py"
+    },
+    {
+      "CEO_failure_addressed": "flat summaries that do not position intent, risk, time, capability, and market feedback together",
+      "activation_mode": "context_bind_to_online_cognition_loop",
+      "capability_id": "cap_bridge_labs_6d_field_test_e78_no_overclaim",
+      "cognition_loop_stage": "field_dimensional_reasoning_if_evidence_supported",
+      "no_duplication_proof": "bridge-labs reuses existing module/artifact; no new CEO brain or generic runtime",
+      "previous_activation_state": "dormant",
+      "source_evidence": {
+        "paths": [
+          "tests/office/test_e78_no_overclaim.py"
+        ],
+        "repo": "bridge-labs",
+        "symbols": [
+          "ROOT",
+          "_load",
+          "test_e78_no_contact_publication_payment_login_or_readonly_repo_mutation",
+          "test_e78_no_forbidden_claim_fields_are_true"
+        ],
+        "tests": [
+          "tests/office/test_e78_no_overclaim.py"
+        ]
+      },
+      "verification_test": "tests/office/test_e80_high_value_capability_activation.py"
+    },
+    {
+      "CEO_failure_addressed": "flat summaries that do not position intent, risk, time, capability, and market feedback together",
+      "activation_mode": "context_bind_to_online_cognition_loop",
+      "capability_id": "cap_bridge_labs_6d_field_test_e79_no_external_action_or_overclaim",
+      "cognition_loop_stage": "field_dimensional_reasoning_if_evidence_supported",
+      "no_duplication_proof": "bridge-labs reuses existing module/artifact; no new CEO brain or generic runtime",
+      "previous_activation_state": "dormant",
+      "source_evidence": {
+        "paths": [
+          "tests/office/test_e79_no_external_action_or_overclaim.py"
+        ],
+        "repo": "bridge-labs",
+        "symbols": [
+          "ROOT",
+          "_load",
+          "test_e79_next_milestone_routing_is_quality_driven_not_revenue_or_mass_outreach",
+          "test_e79_no_external_action_outreach_publication_or_readonly_repo_mutation",
+          "test_e79_no_forbidden_claim_fields_are_true"
+        ],
+        "tests": [
+          "tests/office/test_e79_no_external_action_or_overclaim.py"
+        ]
+      },
+      "verification_test": "tests/office/test_e80_high_value_capability_activation.py"
+    },
+    {
+      "CEO_failure_addressed": "flat summaries that do not position intent, risk, time, capability, and market feedback together",
+      "activation_mode": "context_bind_to_online_cognition_loop",
+      "capability_id": "cap_bridge_labs_6d_field_tests_office",
+      "cognition_loop_stage": "field_dimensional_reasoning_if_evidence_supported",
+      "no_duplication_proof": "bridge-labs reuses existing module/artifact; no new CEO brain or generic runtime",
+      "previous_activation_state": "dormant",
+      "source_evidence": {
+        "paths": [
+          "tests/office/test_e24_field_functional_opportunity_map.py",
+          "tests/office/test_e35_cross_domain_opportunity_field_generator.py",
+          "tests/office/test_e35_six_dimensional_opportunity_cognition_protocol.py",
+          "tests/office/test_e36_strategic_field_trial_runner.py",
+          "tests/office/test_e44a_full_history_replay_cascade.py",
+          "tests/office/test_e46b_field_functional_projection_recovery.py",
+          "tests/office/test_e46b_field_projection_adapter.py"
+        ],
+        "repo": "bridge-labs",
+        "symbols": [],
+        "tests": []
+      },
+      "verification_test": "tests/office/test_e80_high_value_capability_activation.py"
+    }
+  ],
+  "activation_basis": "selected_after_repository_discovery_and_activation_gap_classification",
+  "activation_count": 18,
+  "artifact_id": "e80_high_value_capability_activation_plan",
+  "blocked_capabilities": [
+    "production_CIEU_ledger_in_bridge_labs",
+    "duplicate_Y_star_gov_governance_engine",
+    "duplicate_gov_mcp_executor",
+    "customer_validation_claim",
+    "paid_signal_claim",
+    "pricing_validation_claim"
+  ],
+  "bridge_job_id": "e80_r2_discovery_first_ecosystem_capability_audit_and_ceo_cognitive_runtime_activation_20260507T000001Z",
+  "created_at": "2026-05-07T14:47:33Z",
+  "external_action_allowed": false,
+  "not_a_parallel_CEO_brain": true
+}

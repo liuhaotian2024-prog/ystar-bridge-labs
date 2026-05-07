@@ -411,6 +411,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e79_strategic_judgment_state = {'E79_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'L4_execution_authorized': False, 'quality_gate_passed': False}
     try:
+        from office.mission_command.e80_readback import load_e80_cognitive_activation_state_for_brain
+        e80_cognitive_activation_state = load_e80_cognitive_activation_state_for_brain()
+    except Exception as exc:
+        e80_cognitive_activation_state = {'E80_R2_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'L4_execution_authorized': False, 'L5_ready': False}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -666,6 +671,29 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_e79_L4_execution_authorized": e79_strategic_judgment_state.get("L4_execution_authorized"),
         "current_e79_next_recommended_milestone": e79_strategic_judgment_state.get("next_recommended_milestone"),
         "current_e79_external_action_allowed": e79_strategic_judgment_state.get("external_action_allowed"),
+        "latest_e80_discovery_first_cognitive_activation_state": e80_cognitive_activation_state,
+        "current_e80_status": e80_cognitive_activation_state.get("E80_R2_status"),
+        "current_e80_files_inventoried": e80_cognitive_activation_state.get("files_inventoried"),
+        "current_e80_generated_artifacts_indexed": e80_cognitive_activation_state.get("generated_artifacts_indexed"),
+        "current_e80_python_symbols_indexed": e80_cognitive_activation_state.get("python_symbols_indexed"),
+        "current_e80_tests_indexed": e80_cognitive_activation_state.get("tests_indexed"),
+        "current_e80_capabilities_discovered": e80_cognitive_activation_state.get("capabilities_discovered"),
+        "current_e80_repository_discovered_not_prompt_hinted_count": e80_cognitive_activation_state.get("repository_discovered_not_prompt_hinted_count"),
+        "current_e80_prompt_hinted_unverified_count": e80_cognitive_activation_state.get("prompt_hinted_unverified_count"),
+        "current_e80_activation_state_counts": e80_cognitive_activation_state.get("activation_state_counts"),
+        "current_e80_high_value_capabilities_activated": e80_cognitive_activation_state.get("high_value_capabilities_activated"),
+        "current_e80_sixD_field_brain_status": e80_cognitive_activation_state.get("sixD_field_brain_status"),
+        "current_e80_KG_long_memory_status": e80_cognitive_activation_state.get("KG_long_memory_status"),
+        "current_e80_pre_action_CIEU_prediction_status": e80_cognitive_activation_state.get("pre_action_CIEU_prediction_status"),
+        "current_e80_counterfactual_comparison_status": e80_cognitive_activation_state.get("counterfactual_comparison_status"),
+        "current_e80_legacy_commercial_assets_status": e80_cognitive_activation_state.get("legacy_commercial_assets_status"),
+        "current_e80_intelligence_gate_v2_passed": e80_cognitive_activation_state.get("CEO_intelligence_gate_v2_passed"),
+        "current_e80_live_cognition_loop_demo_decision": e80_cognitive_activation_state.get("live_cognition_loop_demo_decision"),
+        "current_e80_what_not_to_do_next": e80_cognitive_activation_state.get("what_not_to_do_next"),
+        "current_e80_next_recommended_milestone": e80_cognitive_activation_state.get("next_recommended_milestone"),
+        "current_e80_external_action_allowed": e80_cognitive_activation_state.get("external_action_allowed"),
+        "current_e80_L4_execution_authorized": e80_cognitive_activation_state.get("L4_execution_authorized"),
+        "current_e80_L5_ready": e80_cognitive_activation_state.get("L5_ready"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

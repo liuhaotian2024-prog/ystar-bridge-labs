@@ -1,0 +1,66 @@
+{
+  "artifact_id": "e80_ceo_intelligence_quality_gate_v2",
+  "bridge_job_id": "e80_r2_discovery_first_ecosystem_capability_audit_and_ceo_cognitive_runtime_activation_20260507T000001Z",
+  "created_at": "2026-05-07T14:47:33Z",
+  "dimensions": [
+    "repository_discovery_depth",
+    "non_prompt_capability_usage",
+    "long_memory_usage",
+    "dormant_capability_activation",
+    "counterfactual_reasoning",
+    "pre_action_CIEU_prediction",
+    "commercial_sharpness",
+    "adversarial_critique",
+    "real_work_progress",
+    "owner_usefulness",
+    "no_new_wheel_compliance",
+    "no_overclaim_compliance"
+  ],
+  "failure_rules": [
+    "fails_if_only_uses_prompt_hinted_capabilities",
+    "fails_if_capability_use_lacks_repository_evidence",
+    "fails_if_generic_GPT_summary_could_ignore_project_memory",
+    "fails_if_buyer_pain_trigger_urgency_missing",
+    "fails_if_no_tradeoff_or_what_not_to_do",
+    "fails_if_no_counterfactual_comparison",
+    "fails_if_no_pre_action_residual_prediction",
+    "fails_if_no_adversarial_critique",
+    "fails_if_no_path_toward_real_feedback_or_revenue",
+    "fails_if_safety_language_substitutes_for_judgment"
+  ],
+  "gate_passed_for_E80_demo": true,
+  "generic_output_example": {
+    "output": "AI teams need governance, audit trails, and better observability.",
+    "result": {
+      "failure_reasons": [
+        "uses_prompt_hints_only",
+        "no_repository_evidenced_capabilities_used",
+        "missing_buyer",
+        "missing_trigger",
+        "missing_tradeoff",
+        "missing_what_not_to_do",
+        "missing_counterfactuals",
+        "missing_pre_action_residual_predictions",
+        "missing_adversarial_critique",
+        "does_not_move_toward_real_feedback_or_revenue"
+      ],
+      "passed": false
+    }
+  },
+  "minimum_average_score": 8,
+  "minimum_dimension_score": 7,
+  "scores": {
+    "adversarial_critique": 9,
+    "commercial_sharpness": 8,
+    "counterfactual_reasoning": 9,
+    "dormant_capability_activation": 8,
+    "long_memory_usage": 8,
+    "no_new_wheel_compliance": 10,
+    "no_overclaim_compliance": 10,
+    "non_prompt_capability_usage": 10,
+    "owner_usefulness": 9,
+    "pre_action_CIEU_prediction": 9,
+    "real_work_progress": 8,
+    "repository_discovery_depth": 10
+  }
+}
