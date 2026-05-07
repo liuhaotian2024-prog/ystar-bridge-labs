@@ -351,6 +351,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e66_model_driven_offer_state = {'model_driven_offer_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
     try:
+        from office.mission_command.e67_ceo_external_validation_readback import load_e67_external_validation_state_for_brain
+        e67_external_validation_state = load_e67_external_validation_state_for_brain()
+    except Exception as exc:
+        e67_external_validation_state = {'external_validation_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -479,6 +484,14 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_model_driven_offer_evidence_quality": e66_model_driven_offer_state.get("evidence_quality_tier"),
         "current_model_driven_offer_next_milestone": e66_model_driven_offer_state.get("next_recommended_milestone"),
         "current_model_driven_offer_external_action_allowed": e66_model_driven_offer_state.get("external_action_allowed"),
+        "latest_external_validation_state": e67_external_validation_state,
+        "current_external_validation_primary_route_score": e67_external_validation_state.get("primary_route_external_validation_score"),
+        "current_external_validation_highest_EV_level": e67_external_validation_state.get("highest_EV_level"),
+        "current_external_validation_non_contact_confidence": e67_external_validation_state.get("non_contact_confidence"),
+        "current_external_validation_missing_evidence": e67_external_validation_state.get("missing_evidence"),
+        "current_external_validation_owner_gated_next_steps": e67_external_validation_state.get("owner_gated_next_steps"),
+        "current_external_validation_next_milestone": e67_external_validation_state.get("next_recommended_milestone"),
+        "current_external_validation_external_action_allowed": e67_external_validation_state.get("external_action_allowed"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

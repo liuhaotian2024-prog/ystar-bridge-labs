@@ -1,0 +1,15 @@
+{
+  "artifact_id": "e67_cieu_residual_summary",
+  "intervention": "Upgraded external validation state with EV1-EV4 non-contact evidence layers.",
+  "resolved_residuals": [
+    "external validation is no longer represented as zero when safe public evidence exists"
+  ],
+  "remaining_residuals": [
+    "EV5 public experiment absent",
+    "EV6 human feedback absent",
+    "EV7 paid signal absent",
+    "EV8 repeatable revenue absent",
+    "owner approval absent"
+  ],
+  "no_external_action": true
+}

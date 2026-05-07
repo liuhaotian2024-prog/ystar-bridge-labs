@@ -1,0 +1,260 @@
+{
+  "artifact_id": "e67_external_validation_ladder",
+  "bridge_job_id": "e67_non_contact_external_validation_evidence_upgrade_20260506T000001Z",
+  "levels": [
+    {
+      "EV_level": "EV0_internal_assumption",
+      "what_it_proves": "internal hypothesis exists",
+      "what_it_cannot_prove": [
+        "external market language",
+        "demand",
+        "buyer willingness to pay"
+      ],
+      "allowed_source_surfaces": [
+        "repo-internal artifacts"
+      ],
+      "prohibited_actions": [
+        "external claim",
+        "validation claim"
+      ],
+      "evidence_artifacts_required": [
+        "internal route artifact"
+      ],
+      "confidence_effect": "baseline only",
+      "overclaim_risk": "treating hypothesis as evidence",
+      "route_scoring_effect": "low confidence starting point",
+      "owner_approval_requirement": "not required for internal reasoning"
+    },
+    {
+      "EV_level": "EV1_public_market_language",
+      "what_it_proves": "public pages contain relevant pain/category/language",
+      "what_it_cannot_prove": [
+        "customer feedback",
+        "purchase intent",
+        "pricing acceptance"
+      ],
+      "allowed_source_surfaces": [
+        "public product pages",
+        "public docs/blogs",
+        "public category pages"
+      ],
+      "prohibited_actions": [
+        "contact",
+        "login",
+        "forms",
+        "scraping contact data"
+      ],
+      "evidence_artifacts_required": [
+        "public-read receipt",
+        "validation evidence atom"
+      ],
+      "confidence_effect": "raises market-language confidence",
+      "overclaim_risk": "calling public language customer validation",
+      "route_scoring_effect": "small positive validation score",
+      "owner_approval_requirement": "not required for safe public read"
+    },
+    {
+      "EV_level": "EV2_competitor_or_adjacent_product_presence",
+      "what_it_proves": "similar/adjacent solutions exist and category may be forming",
+      "what_it_cannot_prove": [
+        "our differentiation wins",
+        "our offer sells"
+      ],
+      "allowed_source_surfaces": [
+        "public product pages",
+        "official docs",
+        "public repo pages"
+      ],
+      "prohibited_actions": [
+        "contacting companies",
+        "scraping employees"
+      ],
+      "evidence_artifacts_required": [
+        "receipt",
+        "competitor/adjacent atom"
+      ],
+      "confidence_effect": "raises category-presence confidence",
+      "overclaim_risk": "claiming competitor presence validates Y*Bridge demand",
+      "route_scoring_effect": "positive category evidence, possible commodity risk",
+      "owner_approval_requirement": "not required for safe public read"
+    },
+    {
+      "EV_level": "EV3_public_pricing_or_packaging_evidence",
+      "what_it_proves": "public pricing/package analogs exist",
+      "what_it_cannot_prove": [
+        "Y*Bridge pricing validation",
+        "paid signal"
+      ],
+      "allowed_source_surfaces": [
+        "public pricing pages",
+        "public service package pages",
+        "public marketplace categories without identity extraction"
+      ],
+      "prohibited_actions": [
+        "payment",
+        "checkout",
+        "contact seller",
+        "invoice"
+      ],
+      "evidence_artifacts_required": [
+        "receipt",
+        "pricing/packaging atom"
+      ],
+      "confidence_effect": "raises packaging analogy confidence",
+      "overclaim_risk": "treating pricing analogs as paid signal",
+      "route_scoring_effect": "positive packaging evidence only",
+      "owner_approval_requirement": "not required for safe public read"
+    },
+    {
+      "EV_level": "EV4_public_demand_or_behavior_proxy",
+      "what_it_proves": "public proxy behavior or demand-adjacent activity exists",
+      "what_it_cannot_prove": [
+        "buyer commitment",
+        "customer feedback",
+        "sales readiness"
+      ],
+      "allowed_source_surfaces": [
+        "public job/category pages",
+        "public repo activity pages",
+        "public RFP/procurement category pages",
+        "public forum pain language without identification"
+      ],
+      "prohibited_actions": [
+        "human identification",
+        "contact extraction",
+        "login",
+        "form submission"
+      ],
+      "evidence_artifacts_required": [
+        "receipt",
+        "demand proxy atom"
+      ],
+      "confidence_effect": "raises non-contact demand-proxy confidence",
+      "overclaim_risk": "calling behavior proxy customer validation",
+      "route_scoring_effect": "positive but limited demand proxy score",
+      "owner_approval_requirement": "not required for safe public read"
+    },
+    {
+      "EV_level": "EV5_owner_approved_public_experiment",
+      "what_it_proves": "owner-approved public experiment can observe behavior",
+      "what_it_cannot_prove": [
+        "human feedback unless collected",
+        "paid signal unless payment occurs"
+      ],
+      "allowed_source_surfaces": [
+        "landing page",
+        "waitlist",
+        "ad",
+        "public post",
+        "pricing-click test"
+      ],
+      "prohibited_actions": [
+        "execution in E67"
+      ],
+      "evidence_artifacts_required": [
+        "owner approval",
+        "experiment plan",
+        "event receipt"
+      ],
+      "confidence_effect": "future stronger behavior evidence",
+      "overclaim_risk": "executing experiment without owner approval",
+      "route_scoring_effect": "not achieved in E67",
+      "owner_approval_requirement": "required before execution",
+      "achieved_in_E67": false
+    },
+    {
+      "EV_level": "EV6_owner_approved_human_feedback",
+      "what_it_proves": "owner-approved person gave feedback",
+      "what_it_cannot_prove": [
+        "paid signal",
+        "repeatable revenue"
+      ],
+      "allowed_source_surfaces": [
+        "customer/expert/reviewer conversation after approval"
+      ],
+      "prohibited_actions": [
+        "execution in E67"
+      ],
+      "evidence_artifacts_required": [
+        "owner approval",
+        "feedback receipt"
+      ],
+      "confidence_effect": "future human-feedback evidence",
+      "overclaim_risk": "contacting or claiming feedback without approval",
+      "route_scoring_effect": "not achieved in E67",
+      "owner_approval_requirement": "required",
+      "achieved_in_E67": false
+    },
+    {
+      "EV_level": "EV7_paid_signal",
+      "what_it_proves": "payment or purchase commitment exists",
+      "what_it_cannot_prove": [
+        "repeatable revenue by itself"
+      ],
+      "allowed_source_surfaces": [
+        "payment",
+        "LOI",
+        "paid pilot",
+        "invoice",
+        "pre-order after approval"
+      ],
+      "prohibited_actions": [
+        "execution in E67"
+      ],
+      "evidence_artifacts_required": [
+        "owner approval",
+        "payment/commitment record"
+      ],
+      "confidence_effect": "future paid validation evidence",
+      "overclaim_risk": "calling pricing pages paid signal",
+      "route_scoring_effect": "not achieved in E67",
+      "owner_approval_requirement": "required",
+      "achieved_in_E67": false
+    },
+    {
+      "EV_level": "EV8_repeatable_revenue",
+      "what_it_proves": "repeated paid demand and delivery learning exists",
+      "what_it_cannot_prove": [
+        "perfect/global optimality"
+      ],
+      "allowed_source_surfaces": [
+        "repeatable paid cycles after approval"
+      ],
+      "prohibited_actions": [
+        "claim in E67"
+      ],
+      "evidence_artifacts_required": [
+        "repeated paid records",
+        "delivery learning"
+      ],
+      "confidence_effect": "future durable market learning",
+      "overclaim_risk": "claiming revenue before it exists",
+      "route_scoring_effect": "not achieved in E67",
+      "owner_approval_requirement": "required",
+      "achieved_in_E67": false
+    }
+  ],
+  "non_contact_levels_available_now": [
+    "EV1_public_market_language",
+    "EV2_competitor_or_adjacent_product_presence",
+    "EV3_public_pricing_or_packaging_evidence",
+    "EV4_public_demand_or_behavior_proxy"
+  ],
+  "owner_gated_levels_not_achieved": [
+    "EV5_owner_approved_public_experiment",
+    "EV6_owner_approved_human_feedback",
+    "EV7_paid_signal",
+    "EV8_repeatable_revenue"
+  ],
+  "customer_validation_levels": [
+    "EV6_owner_approved_human_feedback"
+  ],
+  "paid_validation_levels": [
+    "EV7_paid_signal",
+    "EV8_repeatable_revenue"
+  ],
+  "external_validation_is_not_only_human_feedback": true,
+  "public_evidence_is_not_customer_validation": true,
+  "public_pricing_evidence_is_not_paid_signal": true,
+  "external_action_allowed": false
+}

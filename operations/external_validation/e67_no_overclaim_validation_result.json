@@ -1,0 +1,13 @@
+{
+  "artifact_id": "e67_no_overclaim_validation_result",
+  "paths_scanned": [
+    "operations/external_validation/e67_external_validation_ladder.json",
+    "operations/external_validation/e67_non_contact_public_read_receipts.json",
+    "operations/external_validation/e67_external_validation_evidence_atoms.json",
+    "operations/external_validation/e67_route_external_validation_scorecards.json",
+    "operations/external_validation/e67_ceo_brain_external_validation_update.json",
+    "operations/external_validation/e67_ceo_external_validation_readback_smoke_result.json"
+  ],
+  "violations": [],
+  "passed": true
+}

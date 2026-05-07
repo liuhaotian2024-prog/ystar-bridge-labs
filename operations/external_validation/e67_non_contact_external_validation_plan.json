@@ -1,0 +1,270 @@
+{
+  "artifact_id": "e67_non_contact_external_validation_plan",
+  "bridge_job_id": "e67_non_contact_external_validation_evidence_upgrade_20260506T000001Z",
+  "primary_route": "governed_business_operations_blueprint_for_agent_teams",
+  "fallback_route": "founder_operator_decision_brief_service",
+  "learning_route": "public_read_market_intelligence_product",
+  "strategic_route": "AI_agent_company_runtime_harness_deployment_blueprint",
+  "routes_covered": [
+    "AI_agent_company_runtime_harness_deployment_blueprint",
+    "agent_runtime_audit_and_repair_package",
+    "founder_operator_decision_brief_service",
+    "governed_business_operations_blueprint_for_agent_teams",
+    "public_read_market_intelligence_product"
+  ],
+  "source_count_planned": 26,
+  "source_surfaces_covered": [
+    "AI observability language",
+    "AI observability pricing analog",
+    "AI observability/eval category",
+    "AI operations/governance language",
+    "agent framework repo proxy",
+    "agent platform pricing analog",
+    "agent protocol ecosystem proxy",
+    "agent runtime adjacent product",
+    "agent runtime documentation language",
+    "agent workflow reliability language",
+    "automation operations adjacent product",
+    "automation platform pricing analog",
+    "competitive intelligence category presence",
+    "decision intelligence product presence",
+    "eval/observability repo proxy",
+    "founder/operator decision language",
+    "market intelligence category language",
+    "market intelligence pricing analog",
+    "operator research/brief language",
+    "repo/category activity proxy",
+    "research product pricing analog",
+    "research subscription product presence",
+    "startup/operator discussion proxy",
+    "workflow automation pricing analog",
+    "workflow orchestration adjacent product"
+  ],
+  "EV_levels_attempted": [
+    "EV1_public_market_language",
+    "EV2_competitor_or_adjacent_product_presence",
+    "EV3_public_pricing_or_packaging_evidence",
+    "EV4_public_demand_or_behavior_proxy"
+  ],
+  "sources": [
+    {
+      "route_id": "governed_business_operations_blueprint_for_agent_teams",
+      "EV_level_target": "EV1_public_market_language",
+      "validation_surface": "AI operations/governance language",
+      "source_url": "https://openai.github.io/openai-agents-python/guardrails/",
+      "source_type": "official_docs",
+      "signal_type": "buyer pain signal"
+    },
+    {
+      "route_id": "governed_business_operations_blueprint_for_agent_teams",
+      "EV_level_target": "EV1_public_market_language",
+      "validation_surface": "agent workflow reliability language",
+      "source_url": "https://www.anthropic.com/engineering/building-effective-agents",
+      "source_type": "public_engineering_blog",
+      "signal_type": "technology shift signal"
+    },
+    {
+      "route_id": "governed_business_operations_blueprint_for_agent_teams",
+      "EV_level_target": "EV2_competitor_or_adjacent_product_presence",
+      "validation_surface": "workflow orchestration adjacent product",
+      "source_url": "https://www.langchain.com/langgraph",
+      "source_type": "public_product_page",
+      "signal_type": "competitor movement signal"
+    },
+    {
+      "route_id": "governed_business_operations_blueprint_for_agent_teams",
+      "EV_level_target": "EV2_competitor_or_adjacent_product_presence",
+      "validation_surface": "automation operations adjacent product",
+      "source_url": "https://n8n.io/",
+      "source_type": "public_product_page",
+      "signal_type": "platform/ecosystem change signal"
+    },
+    {
+      "route_id": "governed_business_operations_blueprint_for_agent_teams",
+      "EV_level_target": "EV3_public_pricing_or_packaging_evidence",
+      "validation_surface": "workflow automation pricing analog",
+      "source_url": "https://n8n.io/pricing/",
+      "source_type": "public_pricing_page",
+      "signal_type": "pricing signal"
+    },
+    {
+      "route_id": "governed_business_operations_blueprint_for_agent_teams",
+      "EV_level_target": "EV3_public_pricing_or_packaging_evidence",
+      "validation_surface": "automation platform pricing analog",
+      "source_url": "https://zapier.com/pricing",
+      "source_type": "public_pricing_page",
+      "signal_type": "pricing signal"
+    },
+    {
+      "route_id": "governed_business_operations_blueprint_for_agent_teams",
+      "EV_level_target": "EV4_public_demand_or_behavior_proxy",
+      "validation_surface": "repo/category activity proxy",
+      "source_url": "https://github.com/langchain-ai/langgraph",
+      "source_type": "public_repo_page",
+      "signal_type": "public behavior proxy"
+    },
+    {
+      "route_id": "governed_business_operations_blueprint_for_agent_teams",
+      "EV_level_target": "EV4_public_demand_or_behavior_proxy",
+      "validation_surface": "agent protocol ecosystem proxy",
+      "source_url": "https://github.com/modelcontextprotocol/servers",
+      "source_type": "public_repo_page",
+      "signal_type": "platform/ecosystem change signal"
+    },
+    {
+      "route_id": "founder_operator_decision_brief_service",
+      "EV_level_target": "EV1_public_market_language",
+      "validation_surface": "founder/operator decision language",
+      "source_url": "https://www.ycombinator.com/library",
+      "source_type": "public_knowledge_page",
+      "signal_type": "buyer pain signal"
+    },
+    {
+      "route_id": "founder_operator_decision_brief_service",
+      "EV_level_target": "EV1_public_market_language",
+      "validation_surface": "operator research/brief language",
+      "source_url": "https://www.cbinsights.com/research/",
+      "source_type": "public_research_page",
+      "signal_type": "market intelligence signal"
+    },
+    {
+      "route_id": "founder_operator_decision_brief_service",
+      "EV_level_target": "EV2_competitor_or_adjacent_product_presence",
+      "validation_surface": "decision intelligence product presence",
+      "source_url": "https://www.perplexity.ai/enterprise",
+      "source_type": "public_product_page",
+      "signal_type": "competitor movement signal"
+    },
+    {
+      "route_id": "founder_operator_decision_brief_service",
+      "EV_level_target": "EV2_competitor_or_adjacent_product_presence",
+      "validation_surface": "research subscription product presence",
+      "source_url": "https://www.alpha-sense.com/",
+      "source_type": "public_product_page",
+      "signal_type": "competitor movement signal"
+    },
+    {
+      "route_id": "founder_operator_decision_brief_service",
+      "EV_level_target": "EV3_public_pricing_or_packaging_evidence",
+      "validation_surface": "research product pricing analog",
+      "source_url": "https://www.perplexity.ai/pro",
+      "source_type": "public_pricing_page",
+      "signal_type": "pricing signal"
+    },
+    {
+      "route_id": "founder_operator_decision_brief_service",
+      "EV_level_target": "EV4_public_demand_or_behavior_proxy",
+      "validation_surface": "startup/operator discussion proxy",
+      "source_url": "https://news.ycombinator.com/front",
+      "source_type": "public_forum_category_page",
+      "signal_type": "public behavior proxy"
+    },
+    {
+      "route_id": "public_read_market_intelligence_product",
+      "EV_level_target": "EV1_public_market_language",
+      "validation_surface": "market intelligence category language",
+      "source_url": "https://www.crunchbase.com/market-intelligence",
+      "source_type": "public_product_page",
+      "signal_type": "market intelligence signal"
+    },
+    {
+      "route_id": "public_read_market_intelligence_product",
+      "EV_level_target": "EV2_competitor_or_adjacent_product_presence",
+      "validation_surface": "competitive intelligence category presence",
+      "source_url": "https://www.similarweb.com/corp/solutions/market-research/",
+      "source_type": "public_product_page",
+      "signal_type": "competitor movement signal"
+    },
+    {
+      "route_id": "public_read_market_intelligence_product",
+      "EV_level_target": "EV3_public_pricing_or_packaging_evidence",
+      "validation_surface": "market intelligence pricing analog",
+      "source_url": "https://www.semrush.com/prices/",
+      "source_type": "public_pricing_page",
+      "signal_type": "pricing signal"
+    },
+    {
+      "route_id": "public_read_market_intelligence_product",
+      "EV_level_target": "EV4_public_demand_or_behavior_proxy",
+      "validation_surface": "repo/category activity proxy",
+      "source_url": "https://github.com/awesome-selfhosted/awesome-selfhosted",
+      "source_type": "public_repo_page",
+      "signal_type": "public behavior proxy"
+    },
+    {
+      "route_id": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "EV_level_target": "EV1_public_market_language",
+      "validation_surface": "agent runtime documentation language",
+      "source_url": "https://docs.crewai.com/",
+      "source_type": "official_docs",
+      "signal_type": "technology shift signal"
+    },
+    {
+      "route_id": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "EV_level_target": "EV2_competitor_or_adjacent_product_presence",
+      "validation_surface": "agent runtime adjacent product",
+      "source_url": "https://www.crewai.com/",
+      "source_type": "public_product_page",
+      "signal_type": "competitor movement signal"
+    },
+    {
+      "route_id": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "EV_level_target": "EV3_public_pricing_or_packaging_evidence",
+      "validation_surface": "agent platform pricing analog",
+      "source_url": "https://www.crewai.com/pricing",
+      "source_type": "public_pricing_page",
+      "signal_type": "pricing signal"
+    },
+    {
+      "route_id": "AI_agent_company_runtime_harness_deployment_blueprint",
+      "EV_level_target": "EV4_public_demand_or_behavior_proxy",
+      "validation_surface": "agent framework repo proxy",
+      "source_url": "https://github.com/crewAIInc/crewAI",
+      "source_type": "public_repo_page",
+      "signal_type": "public behavior proxy"
+    },
+    {
+      "route_id": "agent_runtime_audit_and_repair_package",
+      "EV_level_target": "EV1_public_market_language",
+      "validation_surface": "AI observability language",
+      "source_url": "https://www.langchain.com/langsmith",
+      "source_type": "public_product_page",
+      "signal_type": "delivery feasibility signal"
+    },
+    {
+      "route_id": "agent_runtime_audit_and_repair_package",
+      "EV_level_target": "EV2_competitor_or_adjacent_product_presence",
+      "validation_surface": "AI observability/eval category",
+      "source_url": "https://www.helicone.ai/",
+      "source_type": "public_product_page",
+      "signal_type": "competitor movement signal"
+    },
+    {
+      "route_id": "agent_runtime_audit_and_repair_package",
+      "EV_level_target": "EV3_public_pricing_or_packaging_evidence",
+      "validation_surface": "AI observability pricing analog",
+      "source_url": "https://www.helicone.ai/pricing",
+      "source_type": "public_pricing_page",
+      "signal_type": "pricing signal"
+    },
+    {
+      "route_id": "agent_runtime_audit_and_repair_package",
+      "EV_level_target": "EV4_public_demand_or_behavior_proxy",
+      "validation_surface": "eval/observability repo proxy",
+      "source_url": "https://github.com/traceloop/openllmetry",
+      "source_type": "public_repo_page",
+      "signal_type": "public behavior proxy"
+    }
+  ],
+  "rules": {
+    "no_crawl": true,
+    "no_arbitrary_link_following": true,
+    "no_contact_scraping": true,
+    "no_human_identification": true,
+    "no_login": true,
+    "no_form_submission": true,
+    "no_private_provider_API": true,
+    "public_evidence_not_customer_validation": true
+  },
+  "external_action_allowed": false
+}

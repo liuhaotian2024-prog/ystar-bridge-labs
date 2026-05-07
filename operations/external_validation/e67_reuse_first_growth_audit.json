@@ -1,0 +1,36 @@
+{
+  "artifact_id": "e67_reuse_first_growth_audit",
+  "bridge_job_id": "e67_non_contact_external_validation_evidence_upgrade_20260506T000001Z",
+  "reused_assets": [
+    "office/mission_command/safe_public_page_reader.py",
+    "office/mission_command/e65_market_dynamics_model.py",
+    "operations/external_validation/e65_market_evidence_quality_model.json",
+    "operations/external_validation/e65_market_signal_taxonomy.json",
+    "operations/external_validation/e66_selected_route_offer_blueprint.json",
+    "office/mission_command/e46b_ceo_brain_adapter.py"
+  ],
+  "thin_wrappers_added": [
+    "office/mission_command/e67_ceo_external_validation_readback.py"
+  ],
+  "genuinely_new_assets_added": [
+    "office/mission_command/e67_external_validation_model.py"
+  ],
+  "duplicate_capability_risks_checked": {
+    "E65_market_dynamics_model_rebuilt": false,
+    "E65_evidence_quality_ladder_rebuilt": false,
+    "E65_signal_taxonomy_rebuilt": false,
+    "public_read_adapter_rebuilt": false,
+    "source_receipt_builder_rebuilt": false,
+    "evidence_atomizer_rebuilt": false,
+    "behavior_gate_rebuilt": false,
+    "route_scoring_engine_rebuilt": false,
+    "CEO_readback_rebuilt": false
+  },
+  "avoided_rebuilds": [
+    "E67 overlays EV scoring onto E65 rather than modifying/rebuilding E65 scoring.",
+    "E67 uses SafePublicPageReader for controlled public reads.",
+    "E67 maps validation atoms to E65 signal taxonomy rather than creating a parallel taxonomy."
+  ],
+  "justification_for_new_module": "No prior module distinguished EV0-EV8 external validation levels and integrated EV1-EV4 non-contact validation scorecards into CEO readback.",
+  "passed": true
+}

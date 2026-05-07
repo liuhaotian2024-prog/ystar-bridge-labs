@@ -1,0 +1,68 @@
+{
+  "artifact_id": "e67_owner_gated_external_validation_roadmap",
+  "bridge_job_id": "e67_non_contact_external_validation_evidence_upgrade_20260506T000001Z",
+  "current_achievable_done_now": [
+    "EV1 public market language",
+    "EV2 competitor/adjacent product evidence",
+    "EV3 public pricing/packaging evidence",
+    "EV4 public demand/behavior proxy evidence"
+  ],
+  "owner_gated_future": [
+    {
+      "level": "EV5",
+      "required_owner_approval": true,
+      "proposed_action": "controlled landing page/waitlist/ad/public post/pricing-click experiment",
+      "safety_boundary": "no execution before owner approval",
+      "evidence_capture_plan": "event receipts, traffic/click receipts, no-overclaim writeback",
+      "stop_conditions": [
+        "unexpected contact data exposure",
+        "policy boundary uncertainty",
+        "owner revokes approval"
+      ],
+      "no_overclaim_language": "public experiment behavior is not paid signal unless payment occurs",
+      "writeback_path": "E67 overlay -> E65 model -> KG/CZL/CIEU -> CEO readback"
+    },
+    {
+      "level": "EV6",
+      "required_owner_approval": true,
+      "proposed_action": "controlled human feedback conversation/review",
+      "safety_boundary": "approved reviewer/customer category only",
+      "evidence_capture_plan": "feedback receipt and limitations",
+      "stop_conditions": [
+        "no approval",
+        "contact uncertainty",
+        "privacy risk"
+      ],
+      "no_overclaim_language": "feedback is not paid signal",
+      "writeback_path": "feedback evidence -> model confidence update"
+    },
+    {
+      "level": "EV7",
+      "required_owner_approval": true,
+      "proposed_action": "paid signal attempt only after approval",
+      "safety_boundary": "no payment/invoice without approval",
+      "evidence_capture_plan": "payment/LOI/paid pilot/pre-order receipt",
+      "stop_conditions": [
+        "payment boundary unclear",
+        "client delivery risk"
+      ],
+      "no_overclaim_language": "single paid signal is not repeatable revenue",
+      "writeback_path": "paid signal evidence -> route score update"
+    },
+    {
+      "level": "EV8",
+      "required_owner_approval": true,
+      "proposed_action": "repeat paid delivery cycles",
+      "safety_boundary": "governed delivery and evidence closure",
+      "evidence_capture_plan": "repeated revenue and delivery learning receipts",
+      "stop_conditions": [
+        "quality risk",
+        "unsupported delivery promise",
+        "governance failure"
+      ],
+      "no_overclaim_language": "repeatability must be demonstrated over cycles",
+      "writeback_path": "revenue learning -> CEO model update"
+    }
+  ],
+  "external_action_allowed": false
+}

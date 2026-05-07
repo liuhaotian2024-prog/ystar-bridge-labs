@@ -1,0 +1,248 @@
+{
+  "artifact_id": "e67_repository_archaeology_inventory",
+  "bridge_job_id": "e67_non_contact_external_validation_evidence_upgrade_20260506T000001Z",
+  "asset_count": 24,
+  "discovered_assets": [
+    {
+      "path": "office/mission_command/e66_model_driven_offer_core.py",
+      "exists": true,
+      "capability_type": "selected_offer_blueprint",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": false
+    },
+    {
+      "path": "operations/external_validation/e66_model_driven_revenue_analysis.json",
+      "exists": true,
+      "capability_type": "selected_offer_blueprint",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": false
+    },
+    {
+      "path": "operations/external_validation/e66_selected_route_offer_blueprint.json",
+      "exists": true,
+      "capability_type": "selected_offer_blueprint",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": false
+    },
+    {
+      "path": "operations/external_validation/e66_model_driven_selected_route_decision.json",
+      "exists": true,
+      "capability_type": "selected_offer_blueprint",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": false
+    },
+    {
+      "path": "operations/external_validation/e66_revenue_strategy_capability_leap_assessment.json",
+      "exists": true,
+      "capability_type": "selected_offer_blueprint",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": false
+    },
+    {
+      "path": "products/governed_business_operations_blueprint_for_agent_teams/offer_blueprint.json",
+      "exists": true,
+      "capability_type": "selected_offer_blueprint",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": false
+    },
+    {
+      "path": "products/governed_business_operations_blueprint_for_agent_teams/sample_delivery_packet.json",
+      "exists": true,
+      "capability_type": "selected_offer_blueprint",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": false
+    },
+    {
+      "path": "office/mission_command/e65_market_dynamics_model.py",
+      "exists": true,
+      "capability_type": "market_model_or_route_scoring",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e65_ceo_market_dynamics_readback.py",
+      "exists": true,
+      "capability_type": "supporting_context",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": false
+    },
+    {
+      "path": "operations/external_validation/e65_market_dynamics_model_schema.json",
+      "exists": true,
+      "capability_type": "market_model_or_route_scoring",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e65_market_evidence_quality_model.json",
+      "exists": true,
+      "capability_type": "evidence_quality_model",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e65_market_signal_taxonomy.json",
+      "exists": true,
+      "capability_type": "market_signal_taxonomy",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e65_market_dynamics_analysis_run.json",
+      "exists": true,
+      "capability_type": "market_model_or_route_scoring",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e65_ceo_brain_market_dynamics_update.json",
+      "exists": true,
+      "capability_type": "supporting_context",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": false
+    },
+    {
+      "path": "operations/external_validation/e64_dual_axis_public_read_receipts.json",
+      "exists": true,
+      "capability_type": "source_receipt",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e64_dual_axis_public_read_evidence_atoms.json",
+      "exists": true,
+      "capability_type": "evidence_atom",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e64_dual_axis_revenue_route_universe.json",
+      "exists": true,
+      "capability_type": "supporting_context",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": false
+    },
+    {
+      "path": "operations/external_validation/e63_public_read_source_receipts.json",
+      "exists": true,
+      "capability_type": "source_receipt",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e63_revenue_opportunity_evidence_atoms.json",
+      "exists": true,
+      "capability_type": "evidence_atom",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "operations/external_validation/e63_revenue_opportunity_map.json",
+      "exists": true,
+      "capability_type": "supporting_context",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": false
+    },
+    {
+      "path": "office/mission_command/safe_public_page_reader.py",
+      "exists": true,
+      "capability_type": "public_read_adapter",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e59_source_receipt_builder.py",
+      "exists": true,
+      "capability_type": "source_receipt",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e59_claim_extraction_and_evidence_atomizer.py",
+      "exists": true,
+      "capability_type": "evidence_atom",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    },
+    {
+      "path": "office/mission_command/e46b_ceo_brain_adapter.py",
+      "exists": true,
+      "capability_type": "CEO_brain_readback",
+      "reusable": true,
+      "connected_status": "connected",
+      "must_not_rebuild": true
+    }
+  ],
+  "reusable_public_read_assets": [
+    "office/mission_command/safe_public_page_reader.py"
+  ],
+  "reusable_evidence_quality_model_assets": [
+    "operations/external_validation/e65_market_evidence_quality_model.json"
+  ],
+  "reusable_market_signal_taxonomy_assets": [
+    "operations/external_validation/e65_market_signal_taxonomy.json"
+  ],
+  "reusable_route_scoring_assets": [
+    "office/mission_command/e65_market_dynamics_model.py",
+    "operations/external_validation/e65_market_dynamics_model_schema.json",
+    "operations/external_validation/e65_market_dynamics_analysis_run.json"
+  ],
+  "reusable_offer_blueprint_assets": [
+    "office/mission_command/e66_model_driven_offer_core.py",
+    "operations/external_validation/e66_model_driven_revenue_analysis.json",
+    "operations/external_validation/e66_selected_route_offer_blueprint.json",
+    "operations/external_validation/e66_model_driven_selected_route_decision.json",
+    "operations/external_validation/e66_revenue_strategy_capability_leap_assessment.json",
+    "products/governed_business_operations_blueprint_for_agent_teams/offer_blueprint.json",
+    "products/governed_business_operations_blueprint_for_agent_teams/sample_delivery_packet.json"
+  ],
+  "disconnected_validation_assets": [],
+  "what_must_not_be_rebuilt": [
+    "E65 Market Dynamics Model",
+    "E65 evidence quality ladder",
+    "E65 signal taxonomy",
+    "safe_public_page_reader",
+    "E59/E63/E64 source receipt and evidence atom conventions",
+    "E55 behavior authorization",
+    "CEO brain readback",
+    "KG/CZL/CIEU writeback conventions",
+    "no-overclaim validators"
+  ],
+  "E67_must_add_as_thin_layer": "external validation ladder, EV1-EV4 non-contact evidence overlay, route validation scorecards, and CEO readback loader",
+  "capability_counts": {
+    "selected_offer_blueprint": 7,
+    "market_model_or_route_scoring": 3,
+    "supporting_context": 4,
+    "evidence_quality_model": 1,
+    "market_signal_taxonomy": 1,
+    "source_receipt": 3,
+    "evidence_atom": 3,
+    "public_read_adapter": 1,
+    "CEO_brain_readback": 1
+  },
+  "archaeology_completed_before_implementation": true,
+  "external_action_allowed": false
+}
