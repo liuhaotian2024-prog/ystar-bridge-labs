@@ -1,0 +1,13 @@
+{
+  "artifact_id": "e71_no_overclaim_validation_result",
+  "paths_scanned": [
+    "operations/external_validation/e71_ceo_brain_legacy_asset_resurrection_update.json",
+    "operations/external_validation/e71_behavior_authorization_result.json",
+    "operations/external_validation/e71_legacy_pricing_inputs.json",
+    "operations/external_validation/e71_legacy_provider_promotion_inputs.json",
+    "operations/external_validation/e71_generated_codex_job_proposal_from_legacy_assets.json",
+    "operations/external_validation/e71_ceo_legacy_asset_readback_smoke_result.json"
+  ],
+  "violations": [],
+  "passed": true
+}

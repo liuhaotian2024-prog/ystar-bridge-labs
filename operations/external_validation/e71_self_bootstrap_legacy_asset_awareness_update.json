@@ -1,0 +1,17 @@
+{
+  "artifact_id": "e71_self_bootstrap_legacy_asset_awareness_update",
+  "bridge_job_id": "e71_legacy_high_value_asset_resurrection_and_mainline_binding_20260506T000001Z",
+  "affects_capability_gap_registry": "legacy gaps now include missing old-asset check before new code proposals",
+  "CEO_should_consider_resurrected_assets_before_new_code": true,
+  "Codex_job_proposals_should_check_legacy_registry_first": true,
+  "skill_discovery_should_check_local_legacy_assets_first": true,
+  "stale_quarantined_assets_blocked": true,
+  "promotion_gated_assets_can_become_future_capability_candidates": true,
+  "legacy_registry_artifacts": [
+    "operations/external_validation/e71_legacy_asset_archaeology_inventory.json",
+    "operations/external_validation/e71_legacy_asset_promotion_gate_results.json",
+    "operations/external_validation/e71_promoted_legacy_assets.json",
+    "operations/external_validation/e71_quarantined_legacy_assets.json"
+  ],
+  "external_action_allowed": false
+}

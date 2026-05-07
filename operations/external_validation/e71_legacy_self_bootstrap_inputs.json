@@ -1,0 +1,15 @@
+{
+  "artifact_id": "e71_legacy_self_bootstrap_inputs",
+  "bridge_job_id": "e71_legacy_high_value_asset_resurrection_and_mainline_binding_20260506T000001Z",
+  "input_clusters": [
+    "cieu_self_evolution_creed_cluster",
+    "e24_ecosystem_commercial_imagination_cluster",
+    "legacy_ceo_brain_os_heartbeat_cluster"
+  ],
+  "new_rule": "Before proposing new code, CEO self-bootstrap should check the legacy asset registry and promotion gate.",
+  "blocked_sources": [
+    "quarantined assets",
+    "owner-gated launch/provider/sales assets"
+  ],
+  "external_action_allowed": false
+}

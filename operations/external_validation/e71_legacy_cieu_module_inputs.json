@@ -1,0 +1,22 @@
+{
+  "artifact_id": "e71_legacy_cieu_module_inputs",
+  "bridge_job_id": "e71_legacy_high_value_asset_resurrection_and_mainline_binding_20260506T000001Z",
+  "input_clusters": [
+    "k9_cieu_hash_chain_spec_cluster",
+    "cieu_self_evolution_creed_cluster",
+    "y_star_gov_governance_cieu_context_cluster"
+  ],
+  "CIEU_fields": [
+    "X_t",
+    "U_t",
+    "Y_star_t",
+    "Y_t_plus_1",
+    "R_t_plus_1",
+    "prev_hash",
+    "record_hash"
+  ],
+  "hash_chain_context": "K9Audit CIEU spec documents tamper-evident prev_hash/record_hash semantics; E71 binds this as read-only input, not completed integration.",
+  "ordinary_log_difference": "CIEU captures causal intent-action-outcome-residual structure, not just events.",
+  "not_K9Audit_integration_completed": true,
+  "external_action_allowed": false
+}

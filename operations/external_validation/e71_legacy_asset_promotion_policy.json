@@ -1,0 +1,30 @@
+{
+  "artifact_id": "e71_legacy_asset_promotion_policy",
+  "bridge_job_id": "e71_legacy_high_value_asset_resurrection_and_mainline_binding_20260506T000001Z",
+  "dispositions": [
+    "resurrect_now",
+    "bind_as_input",
+    "promote_to_CEO_runtime",
+    "integrate_into_market_model",
+    "integrate_into_external_validation",
+    "integrate_into_CIEU_route",
+    "integrate_into_self_bootstrap",
+    "historical_context_only",
+    "quarantine",
+    "defer_owner_gated"
+  ],
+  "promotion_gate_checks": [
+    "source exists",
+    "evidence quality sufficient",
+    "not contradictory to current E65-E70 state",
+    "no stale canonical state",
+    "no forbidden external action",
+    "no overclaim risk",
+    "test/readback path exists",
+    "owner-gated if required",
+    "read-only repo context remains read-only",
+    "no mutation of Y-star-gov/gov-mcp/K9Audit/ystar-company"
+  ],
+  "historical_artifacts_are_not_current_truth": true,
+  "external_action_allowed": false
+}

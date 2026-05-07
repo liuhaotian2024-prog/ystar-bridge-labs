@@ -1,0 +1,1009 @@
+{
+  "artifact_id": "e71_legacy_asset_scorecards",
+  "bridge_job_id": "e71_legacy_high_value_asset_resurrection_and_mainline_binding_20260506T000001Z",
+  "scoring_axes": [
+    "current_mainline_relevance",
+    "uniqueness",
+    "implementation_maturity",
+    "test_coverage",
+    "evidence_quality",
+    "non_duplication_value",
+    "revenue_relevance",
+    "self_bootstrap_relevance",
+    "CIEU_relevance",
+    "provider_execution_relevance",
+    "pricing_or_packaging_relevance",
+    "launch_or_distribution_relevance",
+    "governance_safety",
+    "risk_of_staleness",
+    "promotion_readiness",
+    "integration_effort_inverse",
+    "owner_gated_risk_inverse"
+  ],
+  "cluster_scorecards": [
+    {
+      "cluster_id": "k9_cieu_hash_chain_spec_cluster",
+      "capability_type": "causal_audit_hash_chain_spec",
+      "axis_scores": {
+        "current_mainline_relevance": 100,
+        "uniqueness": 98,
+        "implementation_maturity": 94,
+        "test_coverage": 80,
+        "evidence_quality": 96,
+        "non_duplication_value": 98,
+        "revenue_relevance": 74,
+        "self_bootstrap_relevance": 86,
+        "CIEU_relevance": 100,
+        "provider_execution_relevance": 55,
+        "pricing_or_packaging_relevance": 45,
+        "launch_or_distribution_relevance": 45,
+        "governance_safety": 98,
+        "risk_of_staleness": 95,
+        "promotion_readiness": 96,
+        "integration_effort_inverse": 90,
+        "owner_gated_risk_inverse": 95
+      },
+      "total_score": 85.0,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_CIEU_route",
+      "asset_ids": [
+        "k9_cieu_hash_chain_spec_cluster__CIEU_spec_md"
+      ],
+      "selected_for_top_priority_review": true,
+      "rank": 1
+    },
+    {
+      "cluster_id": "e24_ecosystem_commercial_imagination_cluster",
+      "capability_type": "ecosystem_archaeology_and_opportunity_generation",
+      "axis_scores": {
+        "current_mainline_relevance": 96,
+        "uniqueness": 90,
+        "implementation_maturity": 88,
+        "test_coverage": 78,
+        "evidence_quality": 80,
+        "non_duplication_value": 88,
+        "revenue_relevance": 96,
+        "self_bootstrap_relevance": 90,
+        "CIEU_relevance": 45,
+        "provider_execution_relevance": 30,
+        "pricing_or_packaging_relevance": 30,
+        "launch_or_distribution_relevance": 30,
+        "governance_safety": 80,
+        "risk_of_staleness": 76,
+        "promotion_readiness": 90,
+        "integration_effort_inverse": 86,
+        "owner_gated_risk_inverse": 80
+      },
+      "total_score": 73.71,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_market_model",
+      "asset_ids": [
+        "e24_ecosystem_commercial_imagination_cluster__e24_ecosystem_archaeology_py",
+        "e24_ecosystem_commercial_imagination_cluster__e24_commercial_imagination_engine_py",
+        "e24_ecosystem_commercial_imagination_cluster__e24_ecosystem_route_registry_py",
+        "e24_ecosystem_commercial_imagination_cluster__e24_revenue_path_portfolio_selector_py",
+        "e24_ecosystem_commercial_imagination_cluster__e24_ceo_execution_router_py"
+      ],
+      "selected_for_top_priority_review": true,
+      "rank": 2
+    },
+    {
+      "cluster_id": "cieu_self_evolution_creed_cluster",
+      "capability_type": "self_bootstrap_cieu_creed",
+      "axis_scores": {
+        "current_mainline_relevance": 92,
+        "uniqueness": 70,
+        "implementation_maturity": 88,
+        "test_coverage": 70,
+        "evidence_quality": 80,
+        "non_duplication_value": 90,
+        "revenue_relevance": 50,
+        "self_bootstrap_relevance": 100,
+        "CIEU_relevance": 92,
+        "provider_execution_relevance": 30,
+        "pricing_or_packaging_relevance": 30,
+        "launch_or_distribution_relevance": 30,
+        "governance_safety": 80,
+        "risk_of_staleness": 78,
+        "promotion_readiness": 96,
+        "integration_effort_inverse": 75,
+        "owner_gated_risk_inverse": 80
+      },
+      "total_score": 72.41,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_self_bootstrap",
+      "asset_ids": [
+        "cieu_self_evolution_creed_cluster__ceo_md",
+        "cieu_self_evolution_creed_cluster__cto_md",
+        "cieu_self_evolution_creed_cluster__cmo_md",
+        "cieu_self_evolution_creed_cluster__cso_md",
+        "cieu_self_evolution_creed_cluster__cfo_md"
+      ],
+      "selected_for_top_priority_review": true,
+      "rank": 3
+    },
+    {
+      "cluster_id": "e10_e23_commercial_revenue_runtime_cluster",
+      "capability_type": "commercial_scoring_paid_signal_and_control_room",
+      "axis_scores": {
+        "current_mainline_relevance": 92,
+        "uniqueness": 70,
+        "implementation_maturity": 86,
+        "test_coverage": 76,
+        "evidence_quality": 80,
+        "non_duplication_value": 84,
+        "revenue_relevance": 98,
+        "self_bootstrap_relevance": 45,
+        "CIEU_relevance": 45,
+        "provider_execution_relevance": 30,
+        "pricing_or_packaging_relevance": 82,
+        "launch_or_distribution_relevance": 30,
+        "governance_safety": 80,
+        "risk_of_staleness": 74,
+        "promotion_readiness": 86,
+        "integration_effort_inverse": 75,
+        "owner_gated_risk_inverse": 80
+      },
+      "total_score": 71.35,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_market_model",
+      "asset_ids": [
+        "e10_e23_commercial_revenue_runtime_cluster__e10_shortest_revenue_path_scorer_py",
+        "e10_e23_commercial_revenue_runtime_cluster__e10_buyer_signal_taxonomy_py",
+        "e10_e23_commercial_revenue_runtime_cluster__e13_paid_signal_readiness_py",
+        "e10_e23_commercial_revenue_runtime_cluster__e13r_offer_revision_py",
+        "e10_e23_commercial_revenue_runtime_cluster__e13r_buyer_pain_evidence_py",
+        "e10_e23_commercial_revenue_runtime_cluster__e17_paid_signal_runtime_py",
+        "e10_e23_commercial_revenue_runtime_cluster__e17_route_decision_py",
+        "e10_e23_commercial_revenue_runtime_cluster__e18_commercial_fit_scoring_py",
+        "e10_e23_commercial_revenue_runtime_cluster__e18_commercial_kpi_py",
+        "e10_e23_commercial_revenue_runtime_cluster__e18_offer_variant_matrix_py",
+        "e10_e23_commercial_revenue_runtime_cluster__e19_revenue_validation_control_room_py",
+        "e10_e23_commercial_revenue_runtime_cluster__e20_route_decision_py",
+        "e10_e23_commercial_revenue_runtime_cluster__e21_route_decision_py",
+        "e10_e23_commercial_revenue_runtime_cluster__e22_route_decision_py",
+        "e10_e23_commercial_revenue_runtime_cluster__e23_route_decision_py"
+      ],
+      "selected_for_top_priority_review": true,
+      "rank": 4
+    },
+    {
+      "cluster_id": "finance_pricing_package_cluster",
+      "capability_type": "pricing_package_and_economics",
+      "axis_scores": {
+        "current_mainline_relevance": 84,
+        "uniqueness": 70,
+        "implementation_maturity": 80,
+        "test_coverage": 62,
+        "evidence_quality": 80,
+        "non_duplication_value": 70,
+        "revenue_relevance": 94,
+        "self_bootstrap_relevance": 45,
+        "CIEU_relevance": 45,
+        "provider_execution_relevance": 30,
+        "pricing_or_packaging_relevance": 98,
+        "launch_or_distribution_relevance": 30,
+        "governance_safety": 80,
+        "risk_of_staleness": 68,
+        "promotion_readiness": 80,
+        "integration_effort_inverse": 75,
+        "owner_gated_risk_inverse": 72
+      },
+      "total_score": 68.41,
+      "priority_band": "P1_bind_as_input",
+      "recommended_disposition": "bind_as_input",
+      "asset_ids": [
+        "finance_pricing_package_cluster__pricing_model_v1_md",
+        "finance_pricing_package_cluster__proof_economics_md",
+        "finance_pricing_package_cluster__ystar_gov_pricing_v1_md",
+        "finance_pricing_package_cluster__discount_authority_matrix_md",
+        "finance_pricing_package_cluster__financial_forecast_12m_md",
+        "finance_pricing_package_cluster__daily_burn_md",
+        "finance_pricing_package_cluster__master_ledger_20260415_md"
+      ],
+      "selected_for_top_priority_review": true,
+      "rank": 5
+    },
+    {
+      "cluster_id": "gov_mcp_provider_promotion_gate_cluster",
+      "capability_type": "provider_dry_run_to_live_promotion_gate",
+      "axis_scores": {
+        "current_mainline_relevance": 82,
+        "uniqueness": 92,
+        "implementation_maturity": 95,
+        "test_coverage": 45,
+        "evidence_quality": 80,
+        "non_duplication_value": 70,
+        "revenue_relevance": 50,
+        "self_bootstrap_relevance": 45,
+        "CIEU_relevance": 45,
+        "provider_execution_relevance": 100,
+        "pricing_or_packaging_relevance": 30,
+        "launch_or_distribution_relevance": 30,
+        "governance_safety": 92,
+        "risk_of_staleness": 70,
+        "promotion_readiness": 62,
+        "integration_effort_inverse": 75,
+        "owner_gated_risk_inverse": 55
+      },
+      "total_score": 65.76,
+      "priority_band": "P3_defer_pending_owner_approval",
+      "recommended_disposition": "defer_owner_gated",
+      "asset_ids": [
+        "gov_mcp_provider_promotion_gate_cluster__provider_capability_py",
+        "gov_mcp_provider_promotion_gate_cluster__provider_adapter_py",
+        "gov_mcp_provider_promotion_gate_cluster__provider_guard_stack_py",
+        "gov_mcp_provider_promotion_gate_cluster__provider_promotion_py",
+        "gov_mcp_provider_promotion_gate_cluster__provider_manifest_py",
+        "gov_mcp_provider_promotion_gate_cluster__dry_run_adapter_py",
+        "gov_mcp_provider_promotion_gate_cluster__receipts_py",
+        "gov_mcp_provider_promotion_gate_cluster__idempotency_py"
+      ],
+      "selected_for_top_priority_review": true,
+      "rank": 6
+    },
+    {
+      "cluster_id": "marketing_launch_skill_marketplace_cluster",
+      "capability_type": "launch_and_distribution_packet",
+      "axis_scores": {
+        "current_mainline_relevance": 72,
+        "uniqueness": 70,
+        "implementation_maturity": 95,
+        "test_coverage": 45,
+        "evidence_quality": 80,
+        "non_duplication_value": 70,
+        "revenue_relevance": 82,
+        "self_bootstrap_relevance": 45,
+        "CIEU_relevance": 45,
+        "provider_execution_relevance": 30,
+        "pricing_or_packaging_relevance": 30,
+        "launch_or_distribution_relevance": 98,
+        "governance_safety": 74,
+        "risk_of_staleness": 70,
+        "promotion_readiness": 58,
+        "integration_effort_inverse": 75,
+        "owner_gated_risk_inverse": 45
+      },
+      "total_score": 63.76,
+      "priority_band": "P3_defer_pending_owner_approval",
+      "recommended_disposition": "defer_owner_gated",
+      "asset_ids": [
+        "marketing_launch_skill_marketplace_cluster__show_hn_draft_md",
+        "marketing_launch_skill_marketplace_cluster__skill_marketplace_listing_md",
+        "marketing_launch_skill_marketplace_cluster__skill_launch_materials_md",
+        "marketing_launch_skill_marketplace_cluster__social_media_launch_plan_md",
+        "marketing_launch_skill_marketplace_cluster__first_user_install_guide_md",
+        "marketing_launch_skill_marketplace_cluster__post_launch_monitoring_protocol_md"
+      ],
+      "selected_for_top_priority_review": true,
+      "rank": 7
+    },
+    {
+      "cluster_id": "y_star_gov_governance_cieu_context_cluster",
+      "capability_type": "governance_cieu_czl_counterfactual_context",
+      "axis_scores": {
+        "current_mainline_relevance": 72,
+        "uniqueness": 70,
+        "implementation_maturity": 94,
+        "test_coverage": 45,
+        "evidence_quality": 80,
+        "non_duplication_value": 70,
+        "revenue_relevance": 50,
+        "self_bootstrap_relevance": 45,
+        "CIEU_relevance": 45,
+        "provider_execution_relevance": 30,
+        "pricing_or_packaging_relevance": 30,
+        "launch_or_distribution_relevance": 30,
+        "governance_safety": 80,
+        "risk_of_staleness": 70,
+        "promotion_readiness": 65,
+        "integration_effort_inverse": 75,
+        "owner_gated_risk_inverse": 80
+      },
+      "total_score": 60.65,
+      "priority_band": "P1_bind_as_input",
+      "recommended_disposition": "bind_as_input",
+      "asset_ids": [
+        "y_star_gov_governance_cieu_context_cluster__governance_loop_py",
+        "y_star_gov_governance_cieu_context_cluster__cieu_store_py",
+        "y_star_gov_governance_cieu_context_cluster__czl_protocol_py",
+        "y_star_gov_governance_cieu_context_cluster__counterfactual_engine_py",
+        "y_star_gov_governance_cieu_context_cluster__router_registry_py",
+        "y_star_gov_governance_cieu_context_cluster__boundary_enforcer_py",
+        "y_star_gov_governance_cieu_context_cluster__cieu_py",
+        "y_star_gov_governance_cieu_context_cluster__ceo_yaml"
+      ],
+      "selected_for_top_priority_review": true,
+      "rank": 8
+    },
+    {
+      "cluster_id": "legacy_ceo_brain_os_heartbeat_cluster",
+      "capability_type": "historical_ceo_brain_and_operating_system",
+      "axis_scores": {
+        "current_mainline_relevance": 72,
+        "uniqueness": 70,
+        "implementation_maturity": 95,
+        "test_coverage": 65,
+        "evidence_quality": 80,
+        "non_duplication_value": 70,
+        "revenue_relevance": 50,
+        "self_bootstrap_relevance": 76,
+        "CIEU_relevance": 45,
+        "provider_execution_relevance": 30,
+        "pricing_or_packaging_relevance": 30,
+        "launch_or_distribution_relevance": 30,
+        "governance_safety": 80,
+        "risk_of_staleness": 44,
+        "promotion_readiness": 48,
+        "integration_effort_inverse": 75,
+        "owner_gated_risk_inverse": 70
+      },
+      "total_score": 60.59,
+      "priority_band": "P2_historical_context",
+      "recommended_disposition": "historical_context_only",
+      "asset_ids": [
+        "legacy_ceo_brain_os_heartbeat_cluster__ceo_json",
+        "legacy_ceo_brain_os_heartbeat_cluster__charter_amendment_007_ceo_operating_system_md",
+        "legacy_ceo_brain_os_heartbeat_cluster__charter_amendment_023_article_11_into_ceo_os_md",
+        "legacy_ceo_brain_os_heartbeat_cluster__ceo_runtime_v0_1_spec_20260424_md",
+        "legacy_ceo_brain_os_heartbeat_cluster__ecosystem_deep_panorama_md",
+        "legacy_ceo_brain_os_heartbeat_cluster__ceo_heartbeat_integration_md"
+      ],
+      "selected_for_top_priority_review": false,
+      "rank": 9
+    },
+    {
+      "cluster_id": "ystar_company_historical_sales_brain_cluster",
+      "capability_type": "historical_sales_and_brain_context",
+      "axis_scores": {
+        "current_mainline_relevance": 72,
+        "uniqueness": 70,
+        "implementation_maturity": 95,
+        "test_coverage": 45,
+        "evidence_quality": 80,
+        "non_duplication_value": 70,
+        "revenue_relevance": 65,
+        "self_bootstrap_relevance": 45,
+        "CIEU_relevance": 45,
+        "provider_execution_relevance": 30,
+        "pricing_or_packaging_relevance": 30,
+        "launch_or_distribution_relevance": 30,
+        "governance_safety": 45,
+        "risk_of_staleness": 25,
+        "promotion_readiness": 25,
+        "integration_effort_inverse": 75,
+        "owner_gated_risk_inverse": 25
+      },
+      "total_score": 51.29,
+      "priority_band": "Q_quarantine_stale_or_risky",
+      "recommended_disposition": "quarantine",
+      "asset_ids": [
+        "ystar_company_historical_sales_brain_cluster__l10_2_aiden_ceo_brain_rescue",
+        "ystar_company_historical_sales_brain_cluster__l7_labs_office_legacy_integration",
+        "ystar_company_historical_sales_brain_cluster__generated",
+        "ystar_company_historical_sales_brain_cluster__customer_pipeline_md",
+        "ystar_company_historical_sales_brain_cluster__prospect_list_v1_md",
+        "ystar_company_historical_sales_brain_cluster__email_template_v1_md",
+        "ystar_company_historical_sales_brain_cluster__first_user_plan_md"
+      ],
+      "selected_for_top_priority_review": false,
+      "rank": 10
+    }
+  ],
+  "asset_scorecards": [
+    {
+      "asset_id": "cieu_self_evolution_creed_cluster__ceo_md",
+      "cluster_id": "cieu_self_evolution_creed_cluster",
+      "path": ".claude/agents/ceo.md",
+      "repo": "ystar-bridge-labs",
+      "total_score": 72.41,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_self_bootstrap"
+    },
+    {
+      "asset_id": "cieu_self_evolution_creed_cluster__cto_md",
+      "cluster_id": "cieu_self_evolution_creed_cluster",
+      "path": ".claude/agents/cto.md",
+      "repo": "ystar-bridge-labs",
+      "total_score": 72.41,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_self_bootstrap"
+    },
+    {
+      "asset_id": "cieu_self_evolution_creed_cluster__cmo_md",
+      "cluster_id": "cieu_self_evolution_creed_cluster",
+      "path": ".claude/agents/cmo.md",
+      "repo": "ystar-bridge-labs",
+      "total_score": 72.41,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_self_bootstrap"
+    },
+    {
+      "asset_id": "cieu_self_evolution_creed_cluster__cso_md",
+      "cluster_id": "cieu_self_evolution_creed_cluster",
+      "path": ".claude/agents/cso.md",
+      "repo": "ystar-bridge-labs",
+      "total_score": 72.41,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_self_bootstrap"
+    },
+    {
+      "asset_id": "cieu_self_evolution_creed_cluster__cfo_md",
+      "cluster_id": "cieu_self_evolution_creed_cluster",
+      "path": ".claude/agents/cfo.md",
+      "repo": "ystar-bridge-labs",
+      "total_score": 72.41,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_self_bootstrap"
+    },
+    {
+      "asset_id": "e24_ecosystem_commercial_imagination_cluster__e24_ecosystem_archaeology_py",
+      "cluster_id": "e24_ecosystem_commercial_imagination_cluster",
+      "path": "office/mission_command/e24_ecosystem_archaeology.py",
+      "repo": "ystar-bridge-labs",
+      "total_score": 73.71,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_market_model"
+    },
+    {
+      "asset_id": "e24_ecosystem_commercial_imagination_cluster__e24_commercial_imagination_engine_py",
+      "cluster_id": "e24_ecosystem_commercial_imagination_cluster",
+      "path": "office/mission_command/e24_commercial_imagination_engine.py",
+      "repo": "ystar-bridge-labs",
+      "total_score": 73.71,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_market_model"
+    },
+    {
+      "asset_id": "e24_ecosystem_commercial_imagination_cluster__e24_ecosystem_route_registry_py",
+      "cluster_id": "e24_ecosystem_commercial_imagination_cluster",
+      "path": "office/mission_command/e24_ecosystem_route_registry.py",
+      "repo": "ystar-bridge-labs",
+      "total_score": 73.71,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_market_model"
+    },
+    {
+      "asset_id": "e24_ecosystem_commercial_imagination_cluster__e24_revenue_path_portfolio_selector_py",
+      "cluster_id": "e24_ecosystem_commercial_imagination_cluster",
+      "path": "office/mission_command/e24_revenue_path_portfolio_selector.py",
+      "repo": "ystar-bridge-labs",
+      "total_score": 73.71,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_market_model"
+    },
+    {
+      "asset_id": "e24_ecosystem_commercial_imagination_cluster__e24_ceo_execution_router_py",
+      "cluster_id": "e24_ecosystem_commercial_imagination_cluster",
+      "path": "office/mission_command/e24_ceo_execution_router.py",
+      "repo": "ystar-bridge-labs",
+      "total_score": 73.71,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_market_model"
+    },
+    {
+      "asset_id": "e10_e23_commercial_revenue_runtime_cluster__e10_shortest_revenue_path_scorer_py",
+      "cluster_id": "e10_e23_commercial_revenue_runtime_cluster",
+      "path": "office/mission_command/e10_shortest_revenue_path_scorer.py",
+      "repo": "ystar-bridge-labs",
+      "total_score": 71.35,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_market_model"
+    },
+    {
+      "asset_id": "e10_e23_commercial_revenue_runtime_cluster__e10_buyer_signal_taxonomy_py",
+      "cluster_id": "e10_e23_commercial_revenue_runtime_cluster",
+      "path": "office/mission_command/e10_buyer_signal_taxonomy.py",
+      "repo": "ystar-bridge-labs",
+      "total_score": 71.35,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_market_model"
+    },
+    {
+      "asset_id": "e10_e23_commercial_revenue_runtime_cluster__e13_paid_signal_readiness_py",
+      "cluster_id": "e10_e23_commercial_revenue_runtime_cluster",
+      "path": "office/mission_command/e13_paid_signal_readiness.py",
+      "repo": "ystar-bridge-labs",
+      "total_score": 71.35,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_market_model"
+    },
+    {
+      "asset_id": "e10_e23_commercial_revenue_runtime_cluster__e13r_offer_revision_py",
+      "cluster_id": "e10_e23_commercial_revenue_runtime_cluster",
+      "path": "office/mission_command/e13r_offer_revision.py",
+      "repo": "ystar-bridge-labs",
+      "total_score": 71.35,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_market_model"
+    },
+    {
+      "asset_id": "e10_e23_commercial_revenue_runtime_cluster__e13r_buyer_pain_evidence_py",
+      "cluster_id": "e10_e23_commercial_revenue_runtime_cluster",
+      "path": "office/mission_command/e13r_buyer_pain_evidence.py",
+      "repo": "ystar-bridge-labs",
+      "total_score": 71.35,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_market_model"
+    },
+    {
+      "asset_id": "e10_e23_commercial_revenue_runtime_cluster__e17_paid_signal_runtime_py",
+      "cluster_id": "e10_e23_commercial_revenue_runtime_cluster",
+      "path": "office/mission_command/e17_paid_signal_runtime.py",
+      "repo": "ystar-bridge-labs",
+      "total_score": 71.35,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_market_model"
+    },
+    {
+      "asset_id": "e10_e23_commercial_revenue_runtime_cluster__e17_route_decision_py",
+      "cluster_id": "e10_e23_commercial_revenue_runtime_cluster",
+      "path": "office/mission_command/e17_route_decision.py",
+      "repo": "ystar-bridge-labs",
+      "total_score": 71.35,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_market_model"
+    },
+    {
+      "asset_id": "e10_e23_commercial_revenue_runtime_cluster__e18_commercial_fit_scoring_py",
+      "cluster_id": "e10_e23_commercial_revenue_runtime_cluster",
+      "path": "office/mission_command/e18_commercial_fit_scoring.py",
+      "repo": "ystar-bridge-labs",
+      "total_score": 71.35,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_market_model"
+    },
+    {
+      "asset_id": "e10_e23_commercial_revenue_runtime_cluster__e18_commercial_kpi_py",
+      "cluster_id": "e10_e23_commercial_revenue_runtime_cluster",
+      "path": "office/mission_command/e18_commercial_kpi.py",
+      "repo": "ystar-bridge-labs",
+      "total_score": 71.35,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_market_model"
+    },
+    {
+      "asset_id": "e10_e23_commercial_revenue_runtime_cluster__e18_offer_variant_matrix_py",
+      "cluster_id": "e10_e23_commercial_revenue_runtime_cluster",
+      "path": "office/mission_command/e18_offer_variant_matrix.py",
+      "repo": "ystar-bridge-labs",
+      "total_score": 71.35,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_market_model"
+    },
+    {
+      "asset_id": "e10_e23_commercial_revenue_runtime_cluster__e19_revenue_validation_control_room_py",
+      "cluster_id": "e10_e23_commercial_revenue_runtime_cluster",
+      "path": "office/mission_command/e19_revenue_validation_control_room.py",
+      "repo": "ystar-bridge-labs",
+      "total_score": 71.35,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_market_model"
+    },
+    {
+      "asset_id": "e10_e23_commercial_revenue_runtime_cluster__e20_route_decision_py",
+      "cluster_id": "e10_e23_commercial_revenue_runtime_cluster",
+      "path": "office/mission_command/e20_route_decision.py",
+      "repo": "ystar-bridge-labs",
+      "total_score": 71.35,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_market_model"
+    },
+    {
+      "asset_id": "e10_e23_commercial_revenue_runtime_cluster__e21_route_decision_py",
+      "cluster_id": "e10_e23_commercial_revenue_runtime_cluster",
+      "path": "office/mission_command/e21_route_decision.py",
+      "repo": "ystar-bridge-labs",
+      "total_score": 71.35,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_market_model"
+    },
+    {
+      "asset_id": "e10_e23_commercial_revenue_runtime_cluster__e22_route_decision_py",
+      "cluster_id": "e10_e23_commercial_revenue_runtime_cluster",
+      "path": "office/mission_command/e22_route_decision.py",
+      "repo": "ystar-bridge-labs",
+      "total_score": 71.35,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_market_model"
+    },
+    {
+      "asset_id": "e10_e23_commercial_revenue_runtime_cluster__e23_route_decision_py",
+      "cluster_id": "e10_e23_commercial_revenue_runtime_cluster",
+      "path": "office/mission_command/e23_route_decision.py",
+      "repo": "ystar-bridge-labs",
+      "total_score": 71.35,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_market_model"
+    },
+    {
+      "asset_id": "k9_cieu_hash_chain_spec_cluster__CIEU_spec_md",
+      "cluster_id": "k9_cieu_hash_chain_spec_cluster",
+      "path": "docs/CIEU_spec.md",
+      "repo": "K9Audit",
+      "total_score": 85.0,
+      "priority_band": "P0_resurrect_now",
+      "recommended_disposition": "integrate_into_CIEU_route"
+    },
+    {
+      "asset_id": "gov_mcp_provider_promotion_gate_cluster__provider_capability_py",
+      "cluster_id": "gov_mcp_provider_promotion_gate_cluster",
+      "path": "gov_mcp/outbound/provider_capability.py",
+      "repo": "gov-mcp",
+      "total_score": 65.76,
+      "priority_band": "P3_defer_pending_owner_approval",
+      "recommended_disposition": "defer_owner_gated"
+    },
+    {
+      "asset_id": "gov_mcp_provider_promotion_gate_cluster__provider_adapter_py",
+      "cluster_id": "gov_mcp_provider_promotion_gate_cluster",
+      "path": "gov_mcp/outbound/provider_adapter.py",
+      "repo": "gov-mcp",
+      "total_score": 65.76,
+      "priority_band": "P3_defer_pending_owner_approval",
+      "recommended_disposition": "defer_owner_gated"
+    },
+    {
+      "asset_id": "gov_mcp_provider_promotion_gate_cluster__provider_guard_stack_py",
+      "cluster_id": "gov_mcp_provider_promotion_gate_cluster",
+      "path": "gov_mcp/outbound/provider_guard_stack.py",
+      "repo": "gov-mcp",
+      "total_score": 65.76,
+      "priority_band": "P3_defer_pending_owner_approval",
+      "recommended_disposition": "defer_owner_gated"
+    },
+    {
+      "asset_id": "gov_mcp_provider_promotion_gate_cluster__provider_promotion_py",
+      "cluster_id": "gov_mcp_provider_promotion_gate_cluster",
+      "path": "gov_mcp/outbound/provider_promotion.py",
+      "repo": "gov-mcp",
+      "total_score": 65.76,
+      "priority_band": "P3_defer_pending_owner_approval",
+      "recommended_disposition": "defer_owner_gated"
+    },
+    {
+      "asset_id": "gov_mcp_provider_promotion_gate_cluster__provider_manifest_py",
+      "cluster_id": "gov_mcp_provider_promotion_gate_cluster",
+      "path": "gov_mcp/outbound/provider_manifest.py",
+      "repo": "gov-mcp",
+      "total_score": 65.76,
+      "priority_band": "P3_defer_pending_owner_approval",
+      "recommended_disposition": "defer_owner_gated"
+    },
+    {
+      "asset_id": "gov_mcp_provider_promotion_gate_cluster__dry_run_adapter_py",
+      "cluster_id": "gov_mcp_provider_promotion_gate_cluster",
+      "path": "gov_mcp/outbound/dry_run_adapter.py",
+      "repo": "gov-mcp",
+      "total_score": 65.76,
+      "priority_band": "P3_defer_pending_owner_approval",
+      "recommended_disposition": "defer_owner_gated"
+    },
+    {
+      "asset_id": "gov_mcp_provider_promotion_gate_cluster__receipts_py",
+      "cluster_id": "gov_mcp_provider_promotion_gate_cluster",
+      "path": "gov_mcp/outbound/receipts.py",
+      "repo": "gov-mcp",
+      "total_score": 65.76,
+      "priority_band": "P3_defer_pending_owner_approval",
+      "recommended_disposition": "defer_owner_gated"
+    },
+    {
+      "asset_id": "gov_mcp_provider_promotion_gate_cluster__idempotency_py",
+      "cluster_id": "gov_mcp_provider_promotion_gate_cluster",
+      "path": "gov_mcp/outbound/idempotency.py",
+      "repo": "gov-mcp",
+      "total_score": 65.76,
+      "priority_band": "P3_defer_pending_owner_approval",
+      "recommended_disposition": "defer_owner_gated"
+    },
+    {
+      "asset_id": "y_star_gov_governance_cieu_context_cluster__governance_loop_py",
+      "cluster_id": "y_star_gov_governance_cieu_context_cluster",
+      "path": "ystar/governance/governance_loop.py",
+      "repo": "Y-star-gov",
+      "total_score": 60.65,
+      "priority_band": "P1_bind_as_input",
+      "recommended_disposition": "bind_as_input"
+    },
+    {
+      "asset_id": "y_star_gov_governance_cieu_context_cluster__cieu_store_py",
+      "cluster_id": "y_star_gov_governance_cieu_context_cluster",
+      "path": "ystar/governance/cieu_store.py",
+      "repo": "Y-star-gov",
+      "total_score": 60.65,
+      "priority_band": "P1_bind_as_input",
+      "recommended_disposition": "bind_as_input"
+    },
+    {
+      "asset_id": "y_star_gov_governance_cieu_context_cluster__czl_protocol_py",
+      "cluster_id": "y_star_gov_governance_cieu_context_cluster",
+      "path": "ystar/governance/czl_protocol.py",
+      "repo": "Y-star-gov",
+      "total_score": 60.65,
+      "priority_band": "P1_bind_as_input",
+      "recommended_disposition": "bind_as_input"
+    },
+    {
+      "asset_id": "y_star_gov_governance_cieu_context_cluster__counterfactual_engine_py",
+      "cluster_id": "y_star_gov_governance_cieu_context_cluster",
+      "path": "ystar/governance/counterfactual_engine.py",
+      "repo": "Y-star-gov",
+      "total_score": 60.65,
+      "priority_band": "P1_bind_as_input",
+      "recommended_disposition": "bind_as_input"
+    },
+    {
+      "asset_id": "y_star_gov_governance_cieu_context_cluster__router_registry_py",
+      "cluster_id": "y_star_gov_governance_cieu_context_cluster",
+      "path": "ystar/governance/router_registry.py",
+      "repo": "Y-star-gov",
+      "total_score": 60.65,
+      "priority_band": "P1_bind_as_input",
+      "recommended_disposition": "bind_as_input"
+    },
+    {
+      "asset_id": "y_star_gov_governance_cieu_context_cluster__boundary_enforcer_py",
+      "cluster_id": "y_star_gov_governance_cieu_context_cluster",
+      "path": "ystar/governance/boundary_enforcer.py",
+      "repo": "Y-star-gov",
+      "total_score": 60.65,
+      "priority_band": "P1_bind_as_input",
+      "recommended_disposition": "bind_as_input"
+    },
+    {
+      "asset_id": "y_star_gov_governance_cieu_context_cluster__cieu_py",
+      "cluster_id": "y_star_gov_governance_cieu_context_cluster",
+      "path": "ystar/kernel/cieu.py",
+      "repo": "Y-star-gov",
+      "total_score": 60.65,
+      "priority_band": "P1_bind_as_input",
+      "recommended_disposition": "bind_as_input"
+    },
+    {
+      "asset_id": "y_star_gov_governance_cieu_context_cluster__ceo_yaml",
+      "cluster_id": "y_star_gov_governance_cieu_context_cluster",
+      "path": "governance/role_runtimes/ceo.yaml",
+      "repo": "Y-star-gov",
+      "total_score": 60.65,
+      "priority_band": "P1_bind_as_input",
+      "recommended_disposition": "bind_as_input"
+    },
+    {
+      "asset_id": "finance_pricing_package_cluster__pricing_model_v1_md",
+      "cluster_id": "finance_pricing_package_cluster",
+      "path": "finance/pricing_model_v1.md",
+      "repo": "ystar-bridge-labs",
+      "total_score": 68.41,
+      "priority_band": "P1_bind_as_input",
+      "recommended_disposition": "bind_as_input"
+    },
+    {
+      "asset_id": "finance_pricing_package_cluster__proof_economics_md",
+      "cluster_id": "finance_pricing_package_cluster",
+      "path": "finance/pricing/proof_economics.md",
+      "repo": "ystar-bridge-labs",
+      "total_score": 68.41,
+      "priority_band": "P1_bind_as_input",
+      "recommended_disposition": "bind_as_input"
+    },
+    {
+      "asset_id": "finance_pricing_package_cluster__ystar_gov_pricing_v1_md",
+      "cluster_id": "finance_pricing_package_cluster",
+      "path": "finance/pricing/ystar_gov_pricing_v1.md",
+      "repo": "ystar-bridge-labs",
+      "total_score": 68.41,
+      "priority_band": "P1_bind_as_input",
+      "recommended_disposition": "bind_as_input"
+    },
+    {
+      "asset_id": "finance_pricing_package_cluster__discount_authority_matrix_md",
+      "cluster_id": "finance_pricing_package_cluster",
+      "path": "finance/pricing/discount_authority_matrix.md",
+      "repo": "ystar-bridge-labs",
+      "total_score": 68.41,
+      "priority_band": "P1_bind_as_input",
+      "recommended_disposition": "bind_as_input"
+    },
+    {
+      "asset_id": "finance_pricing_package_cluster__financial_forecast_12m_md",
+      "cluster_id": "finance_pricing_package_cluster",
+      "path": "finance/financial_forecast_12m.md",
+      "repo": "ystar-bridge-labs",
+      "total_score": 68.41,
+      "priority_band": "P1_bind_as_input",
+      "recommended_disposition": "bind_as_input"
+    },
+    {
+      "asset_id": "finance_pricing_package_cluster__daily_burn_md",
+      "cluster_id": "finance_pricing_package_cluster",
+      "path": "finance/daily_burn.md",
+      "repo": "ystar-bridge-labs",
+      "total_score": 68.41,
+      "priority_band": "P1_bind_as_input",
+      "recommended_disposition": "bind_as_input"
+    },
+    {
+      "asset_id": "finance_pricing_package_cluster__master_ledger_20260415_md",
+      "cluster_id": "finance_pricing_package_cluster",
+      "path": "finance/master_ledger_20260415.md",
+      "repo": "ystar-bridge-labs",
+      "total_score": 68.41,
+      "priority_band": "P1_bind_as_input",
+      "recommended_disposition": "bind_as_input"
+    },
+    {
+      "asset_id": "marketing_launch_skill_marketplace_cluster__show_hn_draft_md",
+      "cluster_id": "marketing_launch_skill_marketplace_cluster",
+      "path": "marketing/show_hn_draft.md",
+      "repo": "ystar-bridge-labs",
+      "total_score": 63.76,
+      "priority_band": "P3_defer_pending_owner_approval",
+      "recommended_disposition": "defer_owner_gated"
+    },
+    {
+      "asset_id": "marketing_launch_skill_marketplace_cluster__skill_marketplace_listing_md",
+      "cluster_id": "marketing_launch_skill_marketplace_cluster",
+      "path": "marketing/skill_marketplace_listing.md",
+      "repo": "ystar-bridge-labs",
+      "total_score": 63.76,
+      "priority_band": "P3_defer_pending_owner_approval",
+      "recommended_disposition": "defer_owner_gated"
+    },
+    {
+      "asset_id": "marketing_launch_skill_marketplace_cluster__skill_launch_materials_md",
+      "cluster_id": "marketing_launch_skill_marketplace_cluster",
+      "path": "marketing/skill_launch_materials.md",
+      "repo": "ystar-bridge-labs",
+      "total_score": 63.76,
+      "priority_band": "P3_defer_pending_owner_approval",
+      "recommended_disposition": "defer_owner_gated"
+    },
+    {
+      "asset_id": "marketing_launch_skill_marketplace_cluster__social_media_launch_plan_md",
+      "cluster_id": "marketing_launch_skill_marketplace_cluster",
+      "path": "marketing/social_media_launch_plan.md",
+      "repo": "ystar-bridge-labs",
+      "total_score": 63.76,
+      "priority_band": "P3_defer_pending_owner_approval",
+      "recommended_disposition": "defer_owner_gated"
+    },
+    {
+      "asset_id": "marketing_launch_skill_marketplace_cluster__first_user_install_guide_md",
+      "cluster_id": "marketing_launch_skill_marketplace_cluster",
+      "path": "marketing/first_user_install_guide.md",
+      "repo": "ystar-bridge-labs",
+      "total_score": 63.76,
+      "priority_band": "P3_defer_pending_owner_approval",
+      "recommended_disposition": "defer_owner_gated"
+    },
+    {
+      "asset_id": "marketing_launch_skill_marketplace_cluster__post_launch_monitoring_protocol_md",
+      "cluster_id": "marketing_launch_skill_marketplace_cluster",
+      "path": "marketing/post_launch_monitoring_protocol.md",
+      "repo": "ystar-bridge-labs",
+      "total_score": 63.76,
+      "priority_band": "P3_defer_pending_owner_approval",
+      "recommended_disposition": "defer_owner_gated"
+    },
+    {
+      "asset_id": "legacy_ceo_brain_os_heartbeat_cluster__ceo_json",
+      "cluster_id": "legacy_ceo_brain_os_heartbeat_cluster",
+      "path": "reports/boot_packages/ceo.json",
+      "repo": "ystar-bridge-labs",
+      "total_score": 60.59,
+      "priority_band": "P2_historical_context",
+      "recommended_disposition": "historical_context_only"
+    },
+    {
+      "asset_id": "legacy_ceo_brain_os_heartbeat_cluster__charter_amendment_007_ceo_operating_system_md",
+      "cluster_id": "legacy_ceo_brain_os_heartbeat_cluster",
+      "path": "reports/proposals/charter_amendment_007_ceo_operating_system.md",
+      "repo": "ystar-bridge-labs",
+      "total_score": 60.59,
+      "priority_band": "P2_historical_context",
+      "recommended_disposition": "historical_context_only"
+    },
+    {
+      "asset_id": "legacy_ceo_brain_os_heartbeat_cluster__charter_amendment_023_article_11_into_ceo_os_md",
+      "cluster_id": "legacy_ceo_brain_os_heartbeat_cluster",
+      "path": "reports/proposals/charter_amendment_023_article_11_into_ceo_os.md",
+      "repo": "ystar-bridge-labs",
+      "total_score": 60.59,
+      "priority_band": "P2_historical_context",
+      "recommended_disposition": "historical_context_only"
+    },
+    {
+      "asset_id": "legacy_ceo_brain_os_heartbeat_cluster__ceo_runtime_v0_1_spec_20260424_md",
+      "cluster_id": "legacy_ceo_brain_os_heartbeat_cluster",
+      "path": "reports/ceo/ceo_runtime_v0.1_spec_20260424.md",
+      "repo": "ystar-bridge-labs",
+      "total_score": 60.59,
+      "priority_band": "P2_historical_context",
+      "recommended_disposition": "historical_context_only"
+    },
+    {
+      "asset_id": "legacy_ceo_brain_os_heartbeat_cluster__ecosystem_deep_panorama_md",
+      "cluster_id": "legacy_ceo_brain_os_heartbeat_cluster",
+      "path": "reports/ceo/ecosystem_deep_panorama.md",
+      "repo": "ystar-bridge-labs",
+      "total_score": 60.59,
+      "priority_band": "P2_historical_context",
+      "recommended_disposition": "historical_context_only"
+    },
+    {
+      "asset_id": "legacy_ceo_brain_os_heartbeat_cluster__ceo_heartbeat_integration_md",
+      "cluster_id": "legacy_ceo_brain_os_heartbeat_cluster",
+      "path": "docs/ceo_heartbeat_integration.md",
+      "repo": "ystar-bridge-labs",
+      "total_score": 60.59,
+      "priority_band": "P2_historical_context",
+      "recommended_disposition": "historical_context_only"
+    },
+    {
+      "asset_id": "ystar_company_historical_sales_brain_cluster__l10_2_aiden_ceo_brain_rescue",
+      "cluster_id": "ystar_company_historical_sales_brain_cluster",
+      "path": "l10_2_aiden_ceo_brain_rescue/",
+      "repo": "ystar-company",
+      "total_score": 51.29,
+      "priority_band": "Q_quarantine_stale_or_risky",
+      "recommended_disposition": "quarantine"
+    },
+    {
+      "asset_id": "ystar_company_historical_sales_brain_cluster__l7_labs_office_legacy_integration",
+      "cluster_id": "ystar_company_historical_sales_brain_cluster",
+      "path": "l7_labs_office_legacy_integration/",
+      "repo": "ystar-company",
+      "total_score": 51.29,
+      "priority_band": "Q_quarantine_stale_or_risky",
+      "recommended_disposition": "quarantine"
+    },
+    {
+      "asset_id": "ystar_company_historical_sales_brain_cluster__generated",
+      "cluster_id": "ystar_company_historical_sales_brain_cluster",
+      "path": "field_functional_archaeology/generated/",
+      "repo": "ystar-company",
+      "total_score": 51.29,
+      "priority_band": "Q_quarantine_stale_or_risky",
+      "recommended_disposition": "quarantine"
+    },
+    {
+      "asset_id": "ystar_company_historical_sales_brain_cluster__customer_pipeline_md",
+      "cluster_id": "ystar_company_historical_sales_brain_cluster",
+      "path": "sales/customer_pipeline.md",
+      "repo": "ystar-company",
+      "total_score": 51.29,
+      "priority_band": "Q_quarantine_stale_or_risky",
+      "recommended_disposition": "quarantine"
+    },
+    {
+      "asset_id": "ystar_company_historical_sales_brain_cluster__prospect_list_v1_md",
+      "cluster_id": "ystar_company_historical_sales_brain_cluster",
+      "path": "sales/crm/prospect_list_v1.md",
+      "repo": "ystar-company",
+      "total_score": 51.29,
+      "priority_band": "Q_quarantine_stale_or_risky",
+      "recommended_disposition": "quarantine"
+    },
+    {
+      "asset_id": "ystar_company_historical_sales_brain_cluster__email_template_v1_md",
+      "cluster_id": "ystar_company_historical_sales_brain_cluster",
+      "path": "sales/outreach/email_template_v1.md",
+      "repo": "ystar-company",
+      "total_score": 51.29,
+      "priority_band": "Q_quarantine_stale_or_risky",
+      "recommended_disposition": "quarantine"
+    },
+    {
+      "asset_id": "ystar_company_historical_sales_brain_cluster__first_user_plan_md",
+      "cluster_id": "ystar_company_historical_sales_brain_cluster",
+      "path": "sales/first_user_plan.md",
+      "repo": "ystar-company",
+      "total_score": 51.29,
+      "priority_band": "Q_quarantine_stale_or_risky",
+      "recommended_disposition": "quarantine"
+    }
+  ],
+  "top_cluster": "k9_cieu_hash_chain_spec_cluster",
+  "external_action_allowed": false
+}

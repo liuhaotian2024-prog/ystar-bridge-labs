@@ -1,0 +1,21 @@
+{
+  "artifact_id": "e71_legacy_pricing_inputs",
+  "bridge_job_id": "e71_legacy_high_value_asset_resurrection_and_mainline_binding_20260506T000001Z",
+  "input_clusters": [
+    "finance_pricing_package_cluster",
+    "e13r_offer_revision"
+  ],
+  "pricing_assets": [
+    "finance/pricing_model_v1.md",
+    "finance/pricing/proof_economics.md",
+    "finance/pricing/ystar_gov_pricing_v1.md",
+    "finance/pricing/discount_authority_matrix.md",
+    "finance/financial_forecast_12m.md",
+    "finance/daily_burn.md",
+    "finance/master_ledger_20260415.md"
+  ],
+  "binding_mode": "pricing_package_hypothesis_input_only",
+  "old_pricing_validated": false,
+  "pricing_validation_claimed": false,
+  "external_action_allowed": false
+}

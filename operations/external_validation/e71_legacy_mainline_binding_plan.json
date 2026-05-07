@@ -1,0 +1,80 @@
+{
+  "artifact_id": "e71_legacy_mainline_binding_plan",
+  "bridge_job_id": "e71_legacy_high_value_asset_resurrection_and_mainline_binding_20260506T000001Z",
+  "bindings": [
+    {
+      "target_runtime": "E65_market_dynamics_model",
+      "asset_source": "E24 opportunity paths, E24 innovation hypotheses, E10-E23 commercial scoring, finance/pricing",
+      "binding_mode": "loader input / score calibration",
+      "no_overclaim_boundary": "input only; not validated; not current truth; no external action",
+      "tests": [
+        "promotion gate",
+        "readback",
+        "no-overclaim"
+      ],
+      "completion_signal": "CEO readback sees binding input artifact"
+    },
+    {
+      "target_runtime": "E67_external_validation_model",
+      "asset_source": "E13 paid signal readiness, E17 paid signal runtime, E19 revenue validation control room",
+      "binding_mode": "validation readiness input only",
+      "no_overclaim_boundary": "input only; not validated; not current truth; no external action",
+      "tests": [
+        "promotion gate",
+        "readback",
+        "no-overclaim"
+      ],
+      "completion_signal": "CEO readback sees binding input artifact"
+    },
+    {
+      "target_runtime": "E68_CIEU_route_and_module",
+      "asset_source": "K9Audit CIEU spec, CIEU self-evolution creed, Y-star-gov CIEU/CZL context",
+      "binding_mode": "read-only evidence / product appendix candidate",
+      "no_overclaim_boundary": "input only; not validated; not current truth; no external action",
+      "tests": [
+        "promotion gate",
+        "readback",
+        "no-overclaim"
+      ],
+      "completion_signal": "CEO readback sees binding input artifact"
+    },
+    {
+      "target_runtime": "E70_self_bootstrap_runtime",
+      "asset_source": "old self-evolution creed, E24 missing wheels, E24 imagination engine",
+      "binding_mode": "capability candidate source",
+      "no_overclaim_boundary": "input only; not validated; not current truth; no external action",
+      "tests": [
+        "promotion gate",
+        "readback",
+        "no-overclaim"
+      ],
+      "completion_signal": "CEO readback sees binding input artifact"
+    },
+    {
+      "target_runtime": "E69_E70_autonomous_planning",
+      "asset_source": "E24 CEO execution router, route portfolio selector, ecosystem route registry",
+      "binding_mode": "promotion-gated candidate input",
+      "no_overclaim_boundary": "input only; not validated; not current truth; no external action",
+      "tests": [
+        "promotion gate",
+        "readback",
+        "no-overclaim"
+      ],
+      "completion_signal": "CEO readback sees binding input artifact"
+    },
+    {
+      "target_runtime": "offer_product_assets",
+      "asset_source": "finance/pricing, marketing/launch, skill marketplace, E13R offer revision",
+      "binding_mode": "pricing/launch packet input only",
+      "no_overclaim_boundary": "input only; not validated; not current truth; no external action",
+      "tests": [
+        "promotion gate",
+        "readback",
+        "no-overclaim"
+      ],
+      "completion_signal": "CEO readback sees binding input artifact"
+    }
+  ],
+  "core_models_rewritten": false,
+  "external_action_allowed": false
+}

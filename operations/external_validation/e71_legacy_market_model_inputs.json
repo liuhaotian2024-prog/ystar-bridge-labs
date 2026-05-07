@@ -1,0 +1,29 @@
+{
+  "artifact_id": "e71_legacy_market_model_inputs",
+  "bridge_job_id": "e71_legacy_high_value_asset_resurrection_and_mainline_binding_20260506T000001Z",
+  "input_clusters": [
+    "e24_ecosystem_commercial_imagination_cluster",
+    "e10_e23_commercial_revenue_runtime_cluster",
+    "finance_pricing_package_cluster"
+  ],
+  "opportunity_paths": [
+    "rev_path_readiness_review_ai_consultancies",
+    "rev_path_ai_agent_governance_audit",
+    "rev_path_governed_outbound_infra_service",
+    "rev_path_founder_operator_ai_automation_review",
+    "rev_path_paid_diagnostic_product",
+    "rev_path_ceo_agent_control_room_product",
+    "rev_path_provider_adapter_productized_capability"
+  ],
+  "innovation_hypotheses": [
+    "innovation_governed_outbound_infra",
+    "innovation_ceo_agent_control_room",
+    "innovation_agent_governance_audit",
+    "innovation_paid_readiness_diagnostic",
+    "innovation_provider_promotion_gate",
+    "innovation_y_star_trust_layer"
+  ],
+  "binding_mode": "market_model_overlay_input_only",
+  "not_current_truth": true,
+  "external_action_allowed": false
+}

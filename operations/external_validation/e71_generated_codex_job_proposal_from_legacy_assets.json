@@ -1,0 +1,42 @@
+{
+  "artifact_id": "e71_generated_codex_job_proposal_from_legacy_assets",
+  "bridge_job_id": "e71_legacy_high_value_asset_resurrection_and_mainline_binding_20260506T000001Z",
+  "proposed_milestone_id": "E72_integrate_K9_CIEU_hash_chain_context_into_CIEU_audit_module",
+  "proposed_title": "Integrate K9 CIEU hash-chain context into CIEU audit module",
+  "generated_from_legacy_asset_scoring": true,
+  "source_legacy_asset_cluster": "k9_cieu_hash_chain_spec_cluster",
+  "source_cluster_score": 85.0,
+  "capability_gap_addressed": "top promoted legacy cluster should become a tested mainline module/input rather than buried context",
+  "expected_base": "E71 completion commit",
+  "repo_scope": "bridge-labs only; read-only context remains read-only",
+  "implementation_plan": [
+    "load E71 promoted legacy asset registry",
+    "bind selected cluster through overlay/input artifact",
+    "update product/runtime readback",
+    "add no-overclaim and owner-gate tests",
+    "write KG/CZL/CIEU residuals"
+  ],
+  "safety_boundary": [
+    "no external action",
+    "no read-only repo mutation",
+    "no compliance or validation claims",
+    "no provider live execution",
+    "no publication"
+  ],
+  "tests": [
+    "legacy cluster loader test",
+    "CEO readback test",
+    "no-overclaim test",
+    "completion gate test"
+  ],
+  "completion_gate": [
+    "base verified",
+    "legacy cluster integrated as input",
+    "readback passes",
+    "tests pass",
+    "remote commit confirmed"
+  ],
+  "owner_approval_status": "pending_owner_decision",
+  "delivery_bridge_fallback": "/tmp/ystar_delivery_bridge/pending/E72_integrate_K9_CIEU_hash_chain_context_into_CIEU_audit_module.json",
+  "external_action_allowed": false
+}

@@ -1,0 +1,203 @@
+{
+  "artifact_id": "e71_quarantined_legacy_assets",
+  "bridge_job_id": "e71_legacy_high_value_asset_resurrection_and_mainline_binding_20260506T000001Z",
+  "quarantined_count": 9,
+  "quarantined_assets": [
+    {
+      "asset_id": "e10_e23_commercial_revenue_runtime_cluster__e13r_buyer_pain_evidence_py",
+      "cluster_id": "e10_e23_commercial_revenue_runtime_cluster",
+      "path": "office/mission_command/e13r_buyer_pain_evidence.py",
+      "repo": "ystar-bridge-labs",
+      "requested_disposition": "integrate_into_market_model",
+      "final_disposition": "quarantine",
+      "promotion_gate_checks": {
+        "source_exists": true,
+        "evidence_quality_sufficient": true,
+        "not_contradictory_to_current_E65_E70_state": true,
+        "no_stale_canonical_state": true,
+        "no_forbidden_external_action": true,
+        "no_overclaim_risk": true,
+        "test_or_readback_path_exists": false,
+        "owner_gated_if_required": true,
+        "read_only_repo_context_remains_read_only": true
+      },
+      "promotion_gate_passed": false,
+      "promotion_limits": "input/readback only; not canonical truth; no external action"
+    },
+    {
+      "asset_id": "y_star_gov_governance_cieu_context_cluster__czl_protocol_py",
+      "cluster_id": "y_star_gov_governance_cieu_context_cluster",
+      "path": "ystar/governance/czl_protocol.py",
+      "repo": "Y-star-gov",
+      "requested_disposition": "bind_as_input",
+      "final_disposition": "quarantine",
+      "promotion_gate_checks": {
+        "source_exists": false,
+        "evidence_quality_sufficient": false,
+        "not_contradictory_to_current_E65_E70_state": true,
+        "no_stale_canonical_state": true,
+        "no_forbidden_external_action": true,
+        "no_overclaim_risk": true,
+        "test_or_readback_path_exists": true,
+        "owner_gated_if_required": true,
+        "read_only_repo_context_remains_read_only": false
+      },
+      "promotion_gate_passed": false,
+      "promotion_limits": "input/readback only; not canonical truth; no external action"
+    },
+    {
+      "asset_id": "ystar_company_historical_sales_brain_cluster__l10_2_aiden_ceo_brain_rescue",
+      "cluster_id": "ystar_company_historical_sales_brain_cluster",
+      "path": "l10_2_aiden_ceo_brain_rescue/",
+      "repo": "ystar-company",
+      "requested_disposition": "quarantine",
+      "final_disposition": "quarantine",
+      "promotion_gate_checks": {
+        "source_exists": true,
+        "evidence_quality_sufficient": true,
+        "not_contradictory_to_current_E65_E70_state": true,
+        "no_stale_canonical_state": true,
+        "no_forbidden_external_action": true,
+        "no_overclaim_risk": true,
+        "test_or_readback_path_exists": true,
+        "owner_gated_if_required": true,
+        "read_only_repo_context_remains_read_only": true
+      },
+      "promotion_gate_passed": true,
+      "promotion_limits": "input/readback only; not canonical truth; no external action"
+    },
+    {
+      "asset_id": "ystar_company_historical_sales_brain_cluster__l7_labs_office_legacy_integration",
+      "cluster_id": "ystar_company_historical_sales_brain_cluster",
+      "path": "l7_labs_office_legacy_integration/",
+      "repo": "ystar-company",
+      "requested_disposition": "quarantine",
+      "final_disposition": "quarantine",
+      "promotion_gate_checks": {
+        "source_exists": true,
+        "evidence_quality_sufficient": true,
+        "not_contradictory_to_current_E65_E70_state": true,
+        "no_stale_canonical_state": true,
+        "no_forbidden_external_action": true,
+        "no_overclaim_risk": true,
+        "test_or_readback_path_exists": true,
+        "owner_gated_if_required": true,
+        "read_only_repo_context_remains_read_only": true
+      },
+      "promotion_gate_passed": true,
+      "promotion_limits": "input/readback only; not canonical truth; no external action"
+    },
+    {
+      "asset_id": "ystar_company_historical_sales_brain_cluster__generated",
+      "cluster_id": "ystar_company_historical_sales_brain_cluster",
+      "path": "field_functional_archaeology/generated/",
+      "repo": "ystar-company",
+      "requested_disposition": "quarantine",
+      "final_disposition": "quarantine",
+      "promotion_gate_checks": {
+        "source_exists": true,
+        "evidence_quality_sufficient": true,
+        "not_contradictory_to_current_E65_E70_state": true,
+        "no_stale_canonical_state": true,
+        "no_forbidden_external_action": true,
+        "no_overclaim_risk": true,
+        "test_or_readback_path_exists": true,
+        "owner_gated_if_required": true,
+        "read_only_repo_context_remains_read_only": true
+      },
+      "promotion_gate_passed": true,
+      "promotion_limits": "input/readback only; not canonical truth; no external action"
+    },
+    {
+      "asset_id": "ystar_company_historical_sales_brain_cluster__customer_pipeline_md",
+      "cluster_id": "ystar_company_historical_sales_brain_cluster",
+      "path": "sales/customer_pipeline.md",
+      "repo": "ystar-company",
+      "requested_disposition": "quarantine",
+      "final_disposition": "quarantine",
+      "promotion_gate_checks": {
+        "source_exists": true,
+        "evidence_quality_sufficient": true,
+        "not_contradictory_to_current_E65_E70_state": true,
+        "no_stale_canonical_state": true,
+        "no_forbidden_external_action": true,
+        "no_overclaim_risk": true,
+        "test_or_readback_path_exists": true,
+        "owner_gated_if_required": true,
+        "read_only_repo_context_remains_read_only": true
+      },
+      "promotion_gate_passed": true,
+      "promotion_limits": "input/readback only; not canonical truth; no external action"
+    },
+    {
+      "asset_id": "ystar_company_historical_sales_brain_cluster__prospect_list_v1_md",
+      "cluster_id": "ystar_company_historical_sales_brain_cluster",
+      "path": "sales/crm/prospect_list_v1.md",
+      "repo": "ystar-company",
+      "requested_disposition": "quarantine",
+      "final_disposition": "quarantine",
+      "promotion_gate_checks": {
+        "source_exists": true,
+        "evidence_quality_sufficient": true,
+        "not_contradictory_to_current_E65_E70_state": true,
+        "no_stale_canonical_state": true,
+        "no_forbidden_external_action": true,
+        "no_overclaim_risk": true,
+        "test_or_readback_path_exists": true,
+        "owner_gated_if_required": true,
+        "read_only_repo_context_remains_read_only": true
+      },
+      "promotion_gate_passed": true,
+      "promotion_limits": "input/readback only; not canonical truth; no external action"
+    },
+    {
+      "asset_id": "ystar_company_historical_sales_brain_cluster__email_template_v1_md",
+      "cluster_id": "ystar_company_historical_sales_brain_cluster",
+      "path": "sales/outreach/email_template_v1.md",
+      "repo": "ystar-company",
+      "requested_disposition": "quarantine",
+      "final_disposition": "quarantine",
+      "promotion_gate_checks": {
+        "source_exists": true,
+        "evidence_quality_sufficient": true,
+        "not_contradictory_to_current_E65_E70_state": true,
+        "no_stale_canonical_state": true,
+        "no_forbidden_external_action": true,
+        "no_overclaim_risk": true,
+        "test_or_readback_path_exists": true,
+        "owner_gated_if_required": true,
+        "read_only_repo_context_remains_read_only": true
+      },
+      "promotion_gate_passed": true,
+      "promotion_limits": "input/readback only; not canonical truth; no external action"
+    },
+    {
+      "asset_id": "ystar_company_historical_sales_brain_cluster__first_user_plan_md",
+      "cluster_id": "ystar_company_historical_sales_brain_cluster",
+      "path": "sales/first_user_plan.md",
+      "repo": "ystar-company",
+      "requested_disposition": "quarantine",
+      "final_disposition": "quarantine",
+      "promotion_gate_checks": {
+        "source_exists": true,
+        "evidence_quality_sufficient": true,
+        "not_contradictory_to_current_E65_E70_state": true,
+        "no_stale_canonical_state": true,
+        "no_forbidden_external_action": true,
+        "no_overclaim_risk": true,
+        "test_or_readback_path_exists": true,
+        "owner_gated_if_required": true,
+        "read_only_repo_context_remains_read_only": true
+      },
+      "promotion_gate_passed": true,
+      "promotion_limits": "input/readback only; not canonical truth; no external action"
+    }
+  ],
+  "quarantine_rules": [
+    "stale current-truth risk",
+    "contact/prospect risk",
+    "read-only context cannot be mutated",
+    "external execution owner-gated"
+  ],
+  "external_action_allowed": false
+}

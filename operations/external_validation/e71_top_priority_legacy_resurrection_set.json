@@ -1,0 +1,144 @@
+{
+  "artifact_id": "e71_top_priority_legacy_resurrection_set",
+  "bridge_job_id": "e71_legacy_high_value_asset_resurrection_and_mainline_binding_20260506T000001Z",
+  "selected_cluster_count": 8,
+  "selected_clusters": [
+    {
+      "cluster_id": "k9_cieu_hash_chain_spec_cluster",
+      "selected": true,
+      "priority_band": "P0_resurrect_now",
+      "score": 85.0,
+      "current_mainline_target": "E68_CIEU_route_and_CIEU_module",
+      "binding_method": "read-only evidence input and product appendix candidate",
+      "why_valuable": "Adds the strongest causal audit and tamper-evident hash-chain detail to the CIEU module.",
+      "why_safe_or_unsafe": "Safe as internal readback/input if promotion gate blocks canonical-truth and validation overclaims.",
+      "tests_needed": [
+        "promotion gate tests",
+        "CEO readback tests",
+        "no-overclaim tests"
+      ],
+      "overclaim_risk": "read-only K9 context is not completed integration",
+      "owner_gate_requirement": "not_required_for_internal_binding"
+    },
+    {
+      "cluster_id": "e24_ecosystem_commercial_imagination_cluster",
+      "selected": true,
+      "priority_band": "P0_resurrect_now",
+      "score": 73.71,
+      "current_mainline_target": "E65_market_model_and_E70_self_bootstrap",
+      "binding_method": "loader input and candidate source",
+      "why_valuable": "Contains old opportunity paths, innovation hypotheses, missing wheels, and route registry logic.",
+      "why_safe_or_unsafe": "Safe as internal readback/input if promotion gate blocks canonical-truth and validation overclaims.",
+      "tests_needed": [
+        "promotion gate tests",
+        "CEO readback tests",
+        "no-overclaim tests"
+      ],
+      "overclaim_risk": "historical input is not current truth",
+      "owner_gate_requirement": "not_required_for_internal_binding"
+    },
+    {
+      "cluster_id": "cieu_self_evolution_creed_cluster",
+      "selected": true,
+      "priority_band": "P0_resurrect_now",
+      "score": 72.41,
+      "current_mainline_target": "E70_self_bootstrap",
+      "binding_method": "self-bootstrap source",
+      "why_valuable": "Already proved valuable in E70 as the self-bootstrap foundation.",
+      "why_safe_or_unsafe": "Safe as internal readback/input if promotion gate blocks canonical-truth and validation overclaims.",
+      "tests_needed": [
+        "promotion gate tests",
+        "CEO readback tests",
+        "no-overclaim tests"
+      ],
+      "overclaim_risk": "historical input is not current truth",
+      "owner_gate_requirement": "not_required_for_internal_binding"
+    },
+    {
+      "cluster_id": "e10_e23_commercial_revenue_runtime_cluster",
+      "selected": true,
+      "priority_band": "P0_resurrect_now",
+      "score": 71.35,
+      "current_mainline_target": "E65_market_model_and_E67_validation",
+      "binding_method": "score calibration and validation readiness input",
+      "why_valuable": "Recovers commercial scoring, buyer signal, paid-signal readiness, KPI, and control-room assets.",
+      "why_safe_or_unsafe": "Safe as internal readback/input if promotion gate blocks canonical-truth and validation overclaims.",
+      "tests_needed": [
+        "promotion gate tests",
+        "CEO readback tests",
+        "no-overclaim tests"
+      ],
+      "overclaim_risk": "paid-signal readiness is not paid signal",
+      "owner_gate_requirement": "not_required_for_internal_binding"
+    },
+    {
+      "cluster_id": "finance_pricing_package_cluster",
+      "selected": true,
+      "priority_band": "P1_bind_as_input",
+      "score": 68.41,
+      "current_mainline_target": "E66_offer_pricing_package_hypothesis",
+      "binding_method": "pricing hypothesis input only",
+      "why_valuable": "Provides pricing/economics hypotheses for offer package refinement.",
+      "why_safe_or_unsafe": "Safe as internal readback/input if promotion gate blocks canonical-truth and validation overclaims.",
+      "tests_needed": [
+        "promotion gate tests",
+        "CEO readback tests",
+        "no-overclaim tests"
+      ],
+      "overclaim_risk": "old pricing is not pricing validation",
+      "owner_gate_requirement": "not_required_for_internal_binding"
+    },
+    {
+      "cluster_id": "gov_mcp_provider_promotion_gate_cluster",
+      "selected": true,
+      "priority_band": "P3_defer_pending_owner_approval",
+      "score": 65.76,
+      "current_mainline_target": "future_owner_gated_execution_boundary",
+      "binding_method": "owner-gated packet input",
+      "why_valuable": "Provides dry-run-to-live promotion boundaries for future owner-gated execution review.",
+      "why_safe_or_unsafe": "Useful but owner-gated because it touches provider/live/publication surfaces.",
+      "tests_needed": [
+        "promotion gate tests",
+        "CEO readback tests",
+        "no-overclaim tests"
+      ],
+      "overclaim_risk": "provider promotion assets do not enable live execution",
+      "owner_gate_requirement": "pending_owner_decision"
+    },
+    {
+      "cluster_id": "marketing_launch_skill_marketplace_cluster",
+      "selected": true,
+      "priority_band": "P3_defer_pending_owner_approval",
+      "score": 63.76,
+      "current_mainline_target": "future_owner_gated_publication_packet",
+      "binding_method": "owner-gated publication packet input",
+      "why_valuable": "Provides launch packet and skill marketplace inputs, but only owner-gated.",
+      "why_safe_or_unsafe": "Useful but owner-gated because it touches provider/live/publication surfaces.",
+      "tests_needed": [
+        "promotion gate tests",
+        "CEO readback tests",
+        "no-overclaim tests"
+      ],
+      "overclaim_risk": "launch assets are not publication approval",
+      "owner_gate_requirement": "pending_owner_decision"
+    },
+    {
+      "cluster_id": "y_star_gov_governance_cieu_context_cluster",
+      "selected": true,
+      "priority_band": "P1_bind_as_input",
+      "score": 60.65,
+      "current_mainline_target": "quarantine",
+      "binding_method": "quarantine",
+      "why_valuable": "Historical context.",
+      "why_safe_or_unsafe": "Safe as internal readback/input if promotion gate blocks canonical-truth and validation overclaims.",
+      "tests_needed": [
+        "promotion gate tests",
+        "CEO readback tests",
+        "no-overclaim tests"
+      ],
+      "overclaim_risk": "historical input is not current truth",
+      "owner_gate_requirement": "not_required_for_internal_binding"
+    }
+  ],
+  "external_action_allowed": false
+}

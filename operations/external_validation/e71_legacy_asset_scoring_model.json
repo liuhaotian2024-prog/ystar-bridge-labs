@@ -1,0 +1,33 @@
+{
+  "artifact_id": "e71_legacy_asset_scoring_model",
+  "bridge_job_id": "e71_legacy_high_value_asset_resurrection_and_mainline_binding_20260506T000001Z",
+  "axes": [
+    "current_mainline_relevance",
+    "uniqueness",
+    "implementation_maturity",
+    "test_coverage",
+    "evidence_quality",
+    "non_duplication_value",
+    "revenue_relevance",
+    "self_bootstrap_relevance",
+    "CIEU_relevance",
+    "provider_execution_relevance",
+    "pricing_or_packaging_relevance",
+    "launch_or_distribution_relevance",
+    "governance_safety",
+    "risk_of_staleness",
+    "promotion_readiness",
+    "integration_effort_inverse",
+    "owner_gated_risk_inverse"
+  ],
+  "priority_bands": [
+    "P0_resurrect_now",
+    "P1_bind_as_input",
+    "P2_historical_context",
+    "P3_defer_pending_owner_approval",
+    "Q_quarantine_stale_or_risky"
+  ],
+  "scoring_rule": "Average axis score, then apply owner-gated/quarantine override.",
+  "historical_assets_do_not_become_current_truth": true,
+  "external_action_allowed": false
+}

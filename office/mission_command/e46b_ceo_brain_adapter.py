@@ -371,6 +371,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e70_self_bootstrap_state = {'self_bootstrap_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
     try:
+        from office.mission_command.e71_legacy_asset_readback import load_e71_legacy_asset_resurrection_state_for_brain
+        e71_legacy_asset_resurrection_state = load_e71_legacy_asset_resurrection_state_for_brain()
+    except Exception as exc:
+        e71_legacy_asset_resurrection_state = {'legacy_asset_resurrection_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -533,6 +538,17 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_ceo_self_bootstrap_use_case_status": e70_self_bootstrap_state.get("L5_use_case_status"),
         "current_ceo_capability_growth_next_milestone": e70_self_bootstrap_state.get("next_recommended_milestone"),
         "current_ceo_self_bootstrap_external_action_allowed": e70_self_bootstrap_state.get("external_action_allowed"),
+        "latest_legacy_asset_resurrection_state": e71_legacy_asset_resurrection_state,
+        "current_legacy_asset_promoted_count": e71_legacy_asset_resurrection_state.get("promoted_count"),
+        "current_legacy_asset_quarantined_count": e71_legacy_asset_resurrection_state.get("quarantined_count"),
+        "current_legacy_asset_top_clusters": e71_legacy_asset_resurrection_state.get("top_clusters"),
+        "current_legacy_asset_market_model_inputs": e71_legacy_asset_resurrection_state.get("market_model_inputs"),
+        "current_legacy_asset_CIEU_module_inputs": e71_legacy_asset_resurrection_state.get("CIEU_module_inputs"),
+        "current_legacy_asset_pricing_inputs": e71_legacy_asset_resurrection_state.get("pricing_inputs"),
+        "current_legacy_asset_self_bootstrap_inputs": e71_legacy_asset_resurrection_state.get("self_bootstrap_inputs"),
+        "current_legacy_asset_provider_promotion_inputs": e71_legacy_asset_resurrection_state.get("provider_promotion_inputs"),
+        "current_legacy_asset_next_recommended_milestone": e71_legacy_asset_resurrection_state.get("next_recommended_milestone"),
+        "current_legacy_asset_external_action_allowed": e71_legacy_asset_resurrection_state.get("external_action_allowed"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

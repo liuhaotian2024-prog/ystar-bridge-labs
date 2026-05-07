@@ -1,0 +1,68 @@
+{
+  "artifact_id": "e71_base_state_manifest",
+  "bridge_job_id": "e71_legacy_high_value_asset_resurrection_and_mainline_binding_20260506T000001Z",
+  "bridge_labs": {
+    "path": "/tmp/e71_bridge_labs_work2",
+    "branch": "backflow/aiden-ceo-meeting-room",
+    "head": "46c906e1e4a19130aa3492d7028c8074657ea81d",
+    "expected_head": "46c906e1e4a19130aa3492d7028c8074657ea81d",
+    "head_matches_expected": true,
+    "clean": false,
+    "status_short": "M office/mission_command/e46b_ceo_brain_adapter.py\n?? office/mission_command/e71_legacy_asset_promotion_gate.py\n?? office/mission_command/e71_legacy_asset_readback.py\n?? operations/external_validation/e71_base_state_manifest.json\n?? operations/external_validation/e71_behavior_authorization_result.json\n?? operations/external_validation/e71_ceo_brain_legacy_asset_resurrection_update.json\n?? operations/external_validation/e71_ceo_legacy_asset_readback_smoke_result.json\n?? operations/external_validation/e71_cieu_residual_summary.json\n?? operations/external_validation/e71_completion_gate_result.json\n?? operations/external_validation/e71_czl_closure.json\n?? operations/external_validation/e71_generated_codex_job_proposal_from_legacy_assets.json\n?? operations/external_validation/e71_legacy_asset_archaeology_inventory.json\n?? operations/external_validation/e71_legacy_asset_promotion_gate_results.json\n?? operations/external_validation/e71_legacy_asset_promotion_policy.json\n?? operations/external_validation/e71_legacy_asset_scorecards.json\n?? operations/external_validation/e71_legacy_asset_scoring_model.json\n?? operations/external_validation/e71_legacy_cieu_module_inputs.json\n?? operations/external_validation/e71_legacy_duplicate_overlap_staleness_map.json\n?? operations/external_validation/e71_legacy_mainline_binding_plan.json\n?? operations/external_validation/e71_legacy_market_model_inputs.json\n?? operations/external_validation/e71_legacy_pricing_inputs.json\n?? operations/external_validation/e71_legacy_provider_promotion_inputs.json\n?? operations/external_validation/e71_legacy_self_bootstrap_inputs.json\n?? operations/external_validation/e71_no_overclaim_validation_result.json\n?? operations/external_validation/e71_promoted_legacy_assets.json\n?? operations/external_validation/e71_quarantined_legacy_assets.json\n?? operations/external_validation/e71_self_bootstrap_legacy_asset_awareness_update.json\n?? operations/external_validation/e71_top_priority_legacy_resurrection_set.json\n?? operations/knowledge_graph/e71_ceo_kg_legacy_asset_edges_delta.jsonl\n?? operations/knowledge_graph/e71_ceo_kg_legacy_asset_nodes_delta.jsonl\n?? operations/knowledge_graph/e71_ceo_kg_legacy_asset_read_model_update.json\n?? reports/integration/e71_completion_gate_result.md\n?? reports/integration/e71_generated_codex_job_proposal_from_legacy_assets.md\n?? reports/integration/e71_legacy_asset_archaeology_inventory.md\n?? reports/integration/e71_legacy_asset_promotion_policy.md\n?? reports/integration/e71_legacy_asset_scorecards.md\n?? reports/integration/e71_legacy_duplicate_overlap_staleness_map.md\n?? reports/integration/e71_legacy_mainline_binding_plan.md\n?? reports/integration/e71_self_bootstrap_legacy_asset_awareness_update.md\n?? reports/integration/e71_top_priority_legacy_resurrection_set.md",
+    "status_fingerprint": "52ac965144d21298c2bea606bbc522234dd56515fa916d37bae49e7a5c2b9723",
+    "status_entry_count": 40
+  },
+  "expected_branch": "backflow/aiden-ceo-meeting-room",
+  "base_verified": true,
+  "bridge_labs_worktree_clean_or_e71_scoped": true,
+  "read_only_repo_status_before": {
+    "Y-star-gov": {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "branch": "backflow/company-runtime-domain-pack",
+      "head": "b0d9aa8b1badd1180127a2f79f73ceed48e16451",
+      "expected_head": null,
+      "head_matches_expected": true,
+      "clean": true,
+      "status_short": "",
+      "status_fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status_entry_count": 0
+    },
+    "gov-mcp": {
+      "path": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+      "branch": "backflow/company-runtime-tools",
+      "head": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+      "expected_head": null,
+      "head_matches_expected": true,
+      "clean": true,
+      "status_short": "",
+      "status_fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status_entry_count": 0
+    },
+    "K9Audit": {
+      "path": "/Users/haotianliu/.openclaw/workspace/K9Audit",
+      "branch": "main",
+      "head": "37911e18ce4425470e3f745b30d155c43d76ff55",
+      "expected_head": null,
+      "head_matches_expected": true,
+      "clean": true,
+      "status_short": "",
+      "status_fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status_entry_count": 0
+    },
+    "ystar-company": {
+      "path": "/Users/haotianliu/.openclaw/workspace/ystar-company",
+      "branch": "main",
+      "head": "dd9cb6b247a9cf06d953d9319ba1ebd5c38dcbf6",
+      "expected_head": null,
+      "head_matches_expected": true,
+      "clean": false,
+      "status_short": "D .k9_subscriber_state.json\n D .ystar_cieu.db-shm\n D .ystar_cieu.db-wal\n D .ystar_cieu_omission.db-shm\n D .ystar_cieu_omission.db-wal\n M .ystar_session.json\n M .ystar_warning_queue_archive.json\n M BOARD_PENDING.md\n M aiden_brain.db\n D aiden_brain.db-shm\n D aiden_brain.db-wal\n M governance/enforce_status_dashboard.md\n M l10_delegated_live_meta_development_runtime/l10_summary.json\n M l10_delegated_live_meta_development_runtime/runtime_packets/cockpit_snapshots/l10_mission_cockpit_latest.json\n M l10_delegated_live_meta_development_runtime/runtime_packets/manifests/l10_delegated_live_meta_development_manifest.json\n M l10_delegated_live_meta_development_runtime/runtime_packets/manifests/l10_no_action_receipt.json\n M l10_delegated_live_meta_development_runtime/runtime_packets/manifests/permission_tier_registry.json\n M l10_delegated_live_meta_development_runtime/runtime_packets/missions/mission_research_and_formulate_the_next_30-day_meta-development_plan_for_y_bridge_labs.json\n M l10_delegated_live_meta_development_runtime/runtime_packets/research_budget_receipts/research_budget_mission_research_and_formulate_the_next_30-day_meta-development_plan_for_y_bridge_labs.json\n M l7_labs_whiteboard_collaboration_runtime/demo_scenarios/demo_first_cash_path_team_discussion.json\n M l7_labs_whiteboard_collaboration_runtime/l7_5_summary.json\n M l7_labs_whiteboard_collaboration_runtime/l7_5_summary.md\n M l7_labs_whiteboard_collaboration_runtime/whiteboard_runtime_state.json\n M l7_real_labs_office_web_ui/office_runtime_state.json\n M l7_real_labs_office_web_ui/runtime_packets/timeline_events.json\n M l7_real_labs_office_web_ui/web_ui_summary.json\n M l7_real_labs_office_web_ui/web_ui_summary.md\n M l8_first_cash_path_operating_loop/l8_no_action_receipt.json\n M l8_first_cash_path_operating_loop/runtime_packets/cockpit_snapshots/l8_cockpit_latest.json\n M l8_first_cash_path_operating_loop/runtime_packets/commercial_action_queue/commercial_action_direct_founder_outreach.json\n M l8_first_cash_path_operating_loop/runtime_packets/commercial_action_queue/commercial_action_founder_operator_diagnostic_offer.json\n M l8_first_cash_path_operating_loop/runtime_packets/commercial_action_queue/commercial_action_warm_intro_request.json\n M l9_meta_development_opportunity_runtime/l9_summary.json\n M l9_meta_development_opportunity_runtime/l9_summary.md\n M l9_meta_development_opportunity_runtime/runtime_packets/cockpit_snapshots/l9_meta_cockpit_latest.json\n M l9_meta_development_opportunity_runtime/runtime_packets/evidence_basis/evidence_opp_agent_workflow_bottleneck_diagnosis.json\n M l9_meta_development_opportunity_runtime/runtime_packets/evidence_basis/evidence_opp_ai_company_cockpit_setup.json\n M l9_meta_development_opportunity_runtime/runtime_packets/evidence_basis/evidence_opp_coding_agent_governance_audit.json\n M l9_meta_development_opportunity_runtime/runtime_packets/evidence_basis/evidence_opp_founder_ai_workflow_audit.json\n M l9_meta_development_opportunity_runtime/runtime_packets/evidence_basis/evidence_opp_governance_template_paid_support.json\n M l9_meta_development_opportunity_runtime/runtime_packets/evidence_basis/evidence_opp_internal_ai_operations_audit.json\n M l9_meta_development_opportunity_runtime/runtime_packets/evidence_basis/evidence_opp_open_source_paid_support_package.json\n M l9_meta_development_opportunity_runtime/runtime_packets/evidence_basis/evidence_opp_runtime_setup_advisory.json\n M l9_meta_development_opportunity_runtime/runtime_packets/internal_asset_inventory/internal_asset_inventory_latest.json\n M l9_meta_development_opportunity_runtime/runtime_packets/manifests/l9_meta_development_manifest.json\n M l9_meta_development_opportunity_runtime/runtime_packets/manifests/l9_no_action_receipt.json\n M l9_meta_development_opportunity_runtime/runtime_packets/money_path_candidates/money_path_agent_workflow_bottleneck_diagnosis.json\n M l9_meta_development_opportunity_runtime/runtime_packets/money_path_candidates/money_path_ai_company_cockpit_setup.json\n \n...TRUNCATED...",
+      "status_fingerprint": "3cecd073ededda3d805b9ecf52632828144bf92d5b7f5de3a944e0ccb6da7e07",
+      "status_entry_count": 983
+    }
+  },
+  "read_only_repos_clean_before": false,
+  "e70_completed_report_present": true,
+  "owner_decision_status": "pending_owner_decision",
+  "external_action_allowed": false
+}

@@ -1,0 +1,23 @@
+{
+  "artifact_id": "e71_cieu_residual_summary",
+  "Y_star": "CEO self-bootstrap checks high-value legacy assets before proposing new work.",
+  "X_t": "Before E71, E70 could generate Codex proposals but had no legacy asset promotion gate or resurrection registry.",
+  "U_t": "Run legacy asset archaeology, scoring, promotion gate, safe binding, readback, and proposal generation.",
+  "Y_t_plus_1": [
+    "legacy assets discovered and scored",
+    "promotion gate created",
+    "P0/P1 assets bound as inputs",
+    "quarantine/defer rules created",
+    "CEO readback integrated",
+    "E70 self-bootstrap legacy awareness update created",
+    "legacy-scored Codex proposal generated"
+  ],
+  "R_t_plus_1": [
+    "actual integration of top cluster remains E72",
+    "provider/live/publication assets remain owner-gated",
+    "historical sales/prospect assets remain quarantined",
+    "old pricing remains unvalidated"
+  ],
+  "no_external_action": true,
+  "no_overclaim": true
+}

@@ -1,0 +1,3 @@
+{"from": "E70_self_bootstrap", "to": "e71_legacy_asset_registry", "edge_type": "uses_before_new_work"}
+{"from": "e71_legacy_asset_registry", "to": "e71_promotion_gate", "edge_type": "filtered_by"}
+{"from": "e71_promotion_gate", "to": "E72_integrate_K9_CIEU_hash_chain_context_into_CIEU_audit_module", "edge_type": "generates"}

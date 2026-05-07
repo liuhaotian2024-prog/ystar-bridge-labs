@@ -1,0 +1,38 @@
+{
+  "artifact_id": "e71_behavior_authorization_result",
+  "bridge_job_id": "e71_legacy_high_value_asset_resurrection_and_mainline_binding_20260506T000001Z",
+  "allow": [
+    "repository_archaeology",
+    "read_only_cross_repo_inspection",
+    "old_asset_scoring",
+    "promotion_gate_creation",
+    "safe_internal_binding",
+    "CEO_readback_integration",
+    "E70_self_bootstrap_overlay",
+    "Codex_job_proposal_generation",
+    "KG_CZL_CIEU_writeback"
+  ],
+  "deny": [
+    "external_outreach",
+    "publication",
+    "customer_conversation",
+    "expert_review",
+    "human_identification",
+    "contact_scraping",
+    "login_form_send",
+    "private_provider_API",
+    "API_key_secret_use",
+    "internet_package_install",
+    "external_skill_install",
+    "payment_invoice_client_delivery",
+    "mutating_read_only_repos",
+    "claiming_old_assets_are_current_truth_without_promotion",
+    "claiming_pricing_customer_paid_validation",
+    "claiming_compliance_readiness",
+    "owner_approval_fabrication"
+  ],
+  "read_only_repos_mutated": false,
+  "external_business_execution_authorized": false,
+  "passed": true,
+  "external_action_allowed": false
+}

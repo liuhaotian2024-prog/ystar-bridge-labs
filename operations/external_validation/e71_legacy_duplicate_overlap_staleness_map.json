@@ -1,0 +1,96 @@
+{
+  "artifact_id": "e71_legacy_duplicate_overlap_staleness_map",
+  "bridge_job_id": "e71_legacy_high_value_asset_resurrection_and_mainline_binding_20260506T000001Z",
+  "rows": [
+    {
+      "old_asset": "E24 route portfolio",
+      "overlapping_current_E65_E70_asset": "E65 market dynamics model",
+      "relationship": "complementary",
+      "integration_decision": "bind as market-model input only",
+      "promotion_gate_required": true,
+      "quarantine_reason": ""
+    },
+    {
+      "old_asset": "E10 shortest revenue path",
+      "overlapping_current_E65_E70_asset": "E65 scoring profiles",
+      "relationship": "complementary",
+      "integration_decision": "score calibration input; no override",
+      "promotion_gate_required": true,
+      "quarantine_reason": ""
+    },
+    {
+      "old_asset": "E13 paid signal readiness",
+      "overlapping_current_E65_E70_asset": "E67 EV ladder",
+      "relationship": "complementary",
+      "integration_decision": "paid-signal readiness input; no validation claim",
+      "promotion_gate_required": true,
+      "quarantine_reason": ""
+    },
+    {
+      "old_asset": "E17 paid signal runtime",
+      "overlapping_current_E65_E70_asset": "E66/E67 owner-gated validation",
+      "relationship": "dangerous_if_promoted_directly",
+      "integration_decision": "owner-gated only",
+      "promotion_gate_required": true,
+      "quarantine_reason": "stale/current-truth risk"
+    },
+    {
+      "old_asset": "E18 commercial KPI",
+      "overlapping_current_E65_E70_asset": "E65 scoring engine",
+      "relationship": "complementary",
+      "integration_decision": "commercial KPI input",
+      "promotion_gate_required": true,
+      "quarantine_reason": ""
+    },
+    {
+      "old_asset": "E19 revenue validation control room",
+      "overlapping_current_E65_E70_asset": "E67 validation overlay",
+      "relationship": "complementary",
+      "integration_decision": "validation input",
+      "promotion_gate_required": true,
+      "quarantine_reason": ""
+    },
+    {
+      "old_asset": "E24 CEO execution router",
+      "overlapping_current_E65_E70_asset": "E69 next-action planner",
+      "relationship": "weaker_but_useful",
+      "integration_decision": "bind as historical router input",
+      "promotion_gate_required": true,
+      "quarantine_reason": ""
+    },
+    {
+      "old_asset": "E24 imagination engine",
+      "overlapping_current_E65_E70_asset": "E70 self-bootstrap candidate generation",
+      "relationship": "complementary",
+      "integration_decision": "legacy candidate source",
+      "promotion_gate_required": true,
+      "quarantine_reason": ""
+    },
+    {
+      "old_asset": "K9Audit CIEU spec",
+      "overlapping_current_E65_E70_asset": "E68 CIEU route model",
+      "relationship": "stronger_for_causal_audit_detail",
+      "integration_decision": "integrate into CIEU module input",
+      "promotion_gate_required": true,
+      "quarantine_reason": ""
+    },
+    {
+      "old_asset": "legacy CEO brain",
+      "overlapping_current_E65_E70_asset": "current CEO brain adapter",
+      "relationship": "stale_if_promoted_directly",
+      "integration_decision": "historical context only",
+      "promotion_gate_required": true,
+      "quarantine_reason": "stale/current-truth risk"
+    },
+    {
+      "old_asset": "ystar-company old sales assets",
+      "overlapping_current_E65_E70_asset": "current owner-gated safety boundary",
+      "relationship": "dangerous_if_promoted_directly",
+      "integration_decision": "quarantine or owner-gated",
+      "promotion_gate_required": true,
+      "quarantine_reason": "stale/current-truth risk"
+    }
+  ],
+  "old_assets_do_not_override_current_state": true,
+  "external_action_allowed": false
+}
