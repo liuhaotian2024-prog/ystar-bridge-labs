@@ -1,0 +1,222 @@
+{
+  "L5_status": {
+    "L5_business_loop_complete": false,
+    "L5_external_feedback_loop_complete": false,
+    "L5_revenue_loop_complete": false,
+    "L5_runtime_foundation": true
+  },
+  "artifact_id": "e85r_canonical_delivery_and_runtime_nervous_system_report",
+  "canonical_final_HEADs_expected_after_delivery": {
+    "Y_star_gov": "0c449edd9f892acb2520acd529e7c4e2fd9a304f",
+    "bridge_labs": "set_by_delivery_bridge_after_this_report_commit",
+    "gov_mcp": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90"
+  },
+  "canonical_starting_HEADs": {
+    "Y_star_gov": "e725b8721e348c4dd9834a265f73125f685a07a7",
+    "bridge_labs": "c87b03f29c2e406578e3ceb3ef881b734b5ae87c",
+    "gov_mcp": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90"
+  },
+  "delivery_rescue_method_used": "host_local_repository_delivery_bridge_after_queue_archaeology_and_stale_queue_cleanup",
+  "job_id": "E85R_Canonical_Delivery_Rescue_And_Full_Runtime_Nervous_System_R1",
+  "prior_bridge_mechanism_found": true,
+  "prior_failed_delivery_reason": "manual sandbox worker could not write canonical repos; GitHub connector token expired; direct network DNS failed; host-local bridge queue contained stale non-job files and a stuck running job",
+  "push_status": "handled_by_host_local_delivery_bridge",
+  "recommended_next_milestone": "E86_YStarGov_CEO_Cognitive_OS_CIEU_Log_Write_Insertion_Point_R1",
+  "remaining_blockers": [
+    "formal CIEU log write insertion point remains deferred",
+    "gov-mcp live provider execution remains pending and not authorized",
+    "L4 external feedback not executed",
+    "L5 customer/revenue/payment loop not complete"
+  ],
+  "runtime_nervous_system_chain_status": {
+    "CIEU_validation_candidate": "validator output remains candidate-only",
+    "Y_star_gov_hook_enforcement": "validate_ceo_runtime_envelope returns runtime decision",
+    "bridge_labs_CEO_runtime": "builds CEO major-action runtime envelope",
+    "formal_CIEU_log_status": "CIEU_log_write_deferred",
+    "gov_mcp_dry_run_execution_envelope": "dry_run_outbound_action used only after Y-star-gov ALLOW on provider/tool category",
+    "post_action_residual": "required before major-action closure",
+    "provider_route_fixture": {
+      "YstarGov_route": {
+        "CIEU_validation_record_candidate": {
+          "R_t_plus_1": "none",
+          "U_t": "Y-star-gov CEO Cognitive OS validation",
+          "X_t": {
+            "action_class": "provider_tool_execution",
+            "contract_id": "ceo_cognitive_os_loop_contract_v1",
+            "packet_id": "e84_sample_pre_action_packet"
+          },
+          "Y_star_t": "CEO major action must pass mandatory cognitive loop before acceptance",
+          "Y_t_plus_1": {
+            "correct_path": [],
+            "decision": "ALLOW",
+            "guidance": {},
+            "reason": "CEO pre-action packet satisfies CEO Cognitive OS contract"
+          }
+        },
+        "CIEU_validation_record_status": "CIEU_validation_record_candidate_only",
+        "YstarGov_classification": {
+          "categories": [
+            "ceo_major_action_declared",
+            "explicit_ceo_cognitive_os_required",
+            "external_read_write_action",
+            "provider_tool_execution"
+          ],
+          "requires_ceo_cognitive_os": true,
+          "signals": [
+            "requires_ceo_cognitive_os=true",
+            "role=ceo; action_type=runtime_major_action",
+            "externality_level=provider_tool_boundary",
+            "provider_tool_execution: provider, mcp"
+          ]
+        },
+        "YstarGov_correct_path": [],
+        "YstarGov_guidance": {},
+        "YstarGov_hook_decision_envelope": {
+          "action_id": "e85r_ceo_provider_tool_dry_run_boundary",
+          "allow_approved_next_step": true,
+          "allow_execution": false,
+          "allow_external_execution": false,
+          "correct_path": [],
+          "decision": "ALLOW",
+          "deny": false,
+          "escalate": false,
+          "external_action_executed": false,
+          "formal_CIEU_log_status": "CIEU_log_write_deferred",
+          "formal_CIEU_log_written": false,
+          "guidance": {},
+          "owner_decision_path_required": false,
+          "provider_live_execution": false,
+          "require_revision": false,
+          "route": "continue_to_approved_next_step_without_external_execution",
+          "status_only": false
+        },
+        "YstarGov_import_status": "direct_YstarGov_runtime_hook_import_used",
+        "YstarGov_post_action_residual_required": true,
+        "YstarGov_reason": "CEO pre-action packet satisfies CEO Cognitive OS contract",
+        "YstarGov_requires_owner_decision": false,
+        "YstarGov_runtime_decision": "ALLOW",
+        "YstarGov_runtime_route": "continue_to_approved_next_step_without_external_execution",
+        "YstarGov_validator_result": {
+          "cieu_validation_record": {
+            "R_t_plus_1": "none",
+            "U_t": "Y-star-gov CEO Cognitive OS validation",
+            "X_t": {
+              "action_class": "provider_tool_execution",
+              "contract_id": "ceo_cognitive_os_loop_contract_v1",
+              "packet_id": "e84_sample_pre_action_packet"
+            },
+            "Y_star_t": "CEO major action must pass mandatory cognitive loop before acceptance",
+            "Y_t_plus_1": {
+              "correct_path": [],
+              "decision": "ALLOW",
+              "guidance": {},
+              "reason": "CEO pre-action packet satisfies CEO Cognitive OS contract"
+            }
+          },
+          "correct_path": [],
+          "decision": "ALLOW",
+          "failed_stage": null,
+          "guidance": {},
+          "passed": true,
+          "reason": "CEO pre-action packet satisfies CEO Cognitive OS contract",
+          "requires_owner_decision": false,
+          "validator": "validate_ceo_pre_action_packet",
+          "violations": []
+        },
+        "artifact_id": "e85_ceo_cognitive_os_runtime_bridge_result",
+        "bridge_labs_route": {
+          "approved_next_step_allowed": true,
+          "ceo_revision_required": false,
+          "execution_blocked": false,
+          "external_execution_allowed": false,
+          "owner_decision_packet_required": false,
+          "route": "approved_next_step_pending_execution_boundary"
+        },
+        "external_action_executed": false,
+        "formal_CIEU_log_status": "CIEU_log_write_deferred",
+        "formal_CIEU_log_written": false,
+        "provider_live_execution": false
+      },
+      "artifact_id": "e85r_runtime_nervous_system_provider_route",
+      "external_side_effect": false,
+      "gov_mcp_dry_run_invoked": true,
+      "gov_mcp_import_status": "direct_gov_mcp_dry_run_import_used",
+      "gov_mcp_receipt": {
+        "YstarGov_decision": "ALLOW",
+        "action_id": "e85r_ceo_provider_tool_dry_run_boundary",
+        "credential_required": false,
+        "execution_mode": "send_gated_dry_run",
+        "execution_mode_boundary": "dry_run_only",
+        "execution_status": "dry_run_completed",
+        "external_action_executed": false,
+        "external_provider_called": false,
+        "external_side_effect": false,
+        "feedback_wait_state": "not_waiting_feedback_until_real_send_receipt",
+        "guard_results": {
+          "batch_kill_switch": "pass",
+          "do_not_contact": "pass",
+          "global_kill_switch": "pass",
+          "max_actions_per_day": "pass",
+          "max_actions_per_target": "pass",
+          "no_followup_without_positive_signal": "pass",
+          "no_send_if_envelope_not_active": "fail",
+          "no_send_if_hard_gate_detected": "pass",
+          "no_send_if_idempotency_key_missing": "pass",
+          "no_send_if_message_unreviewed": "pass",
+          "no_send_if_missing_target_identity": "pass",
+          "no_send_if_owner_activation_missing": "fail",
+          "target_suppression": "pass"
+        },
+        "ledger_transition": "draft_or_dry_run_receipt_recorded",
+        "login_required": false,
+        "network_required": false,
+        "no_send_invariant": true,
+        "preflight_result": {
+          "action_id": "e85r_ceo_provider_tool_dry_run_boundary",
+          "allowed_for_dry_run": true,
+          "allowed_for_real_send": false,
+          "authorization_state": "owner_review_required",
+          "decision": "send_gated_pending_authorization",
+          "execution_mode": "send_gated_dry_run",
+          "external_action_executed": false,
+          "guard_results": {
+            "batch_kill_switch": "pass",
+            "do_not_contact": "pass",
+            "global_kill_switch": "pass",
+            "max_actions_per_day": "pass",
+            "max_actions_per_target": "pass",
+            "no_followup_without_positive_signal": "pass",
+            "no_send_if_envelope_not_active": "fail",
+            "no_send_if_hard_gate_detected": "pass",
+            "no_send_if_idempotency_key_missing": "pass",
+            "no_send_if_message_unreviewed": "pass",
+            "no_send_if_missing_target_identity": "pass",
+            "no_send_if_owner_activation_missing": "fail",
+            "target_suppression": "pass"
+          },
+          "provider_called": false,
+          "real_message_sent": false,
+          "reason_codes": [
+            "owner_authorization_not_activated"
+          ]
+        },
+        "provider_action_executed": false,
+        "provider_adapter_mode": "local_no_send",
+        "provider_called": false,
+        "real_message_sent": false,
+        "reason_codes": [
+          "owner_authorization_not_activated"
+        ],
+        "receipt_id": "outbound_receipt_5d616eeae84cedfd",
+        "send_blocked_until_owner_activation": true,
+        "source_repo": "bridge-labs",
+        "source_runtime": "Y-star-gov CEO Cognitive OS runtime hook"
+      },
+      "provider_action_executed": false
+    }
+  },
+  "temp_commits_applied_or_reconstructed": {
+    "Y_star_gov_temp_commit": "a53fe260a3e3d1323ab477226a70dee9dc8b7942",
+    "bridge_labs_temp_commit": "877733848774f1870d488bf65530eb2ad033e732"
+  }
+}
