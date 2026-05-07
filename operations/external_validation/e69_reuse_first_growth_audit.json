@@ -1,0 +1,34 @@
+{
+  "artifact_id": "e69_reuse_first_growth_audit",
+  "bridge_job_id": "e69_ceo_autonomous_next_action_planner_and_cieu_module_plan_20260506T000001Z",
+  "reused_assets": [
+    "office/mission_command/e65_ceo_market_dynamics_readback.py",
+    "office/mission_command/e67_ceo_external_validation_readback.py",
+    "office/mission_command/e68_ceo_cieu_route_readback.py",
+    "operations/external_validation/e66_selected_route_offer_blueprint.json",
+    "products/governed_business_operations_blueprint_for_agent_teams/offer_blueprint.json"
+  ],
+  "thin_wrappers_added": [
+    "office/mission_command/e69_ceo_next_action_planner_readback.py"
+  ],
+  "genuinely_new_assets_added": [
+    "office/mission_command/e69_ceo_next_action_planner.py"
+  ],
+  "duplicate_capability_risks_checked": {
+    "E65_market_model_rebuilt": false,
+    "E67_external_validation_model_rebuilt": false,
+    "E68_CIEU_route_model_rebuilt": false,
+    "E66_offer_blueprint_rebuilt_from_scratch": false,
+    "public_read_adapter_rebuilt": false,
+    "evidence_atomizer_rebuilt": false,
+    "behavior_authorization_gate_rebuilt": false,
+    "KG_CZL_CIEU_conventions_rebuilt": false,
+    "CEO_readback_mechanism_rebuilt": false
+  },
+  "avoided_rebuilds": [
+    "E69 calls installed E65/E67/E68 APIs instead of cloning their scoring models.",
+    "E69 updates the existing selected product directory only with a CIEU module appendix.",
+    "E69 produces a decision packet but does not treat it as approval."
+  ],
+  "passed": true
+}

@@ -1,0 +1,48 @@
+{
+  "artifact_id": "e69_base_state_manifest",
+  "bridge_job_id": "e69_ceo_autonomous_next_action_planner_and_cieu_module_plan_20260506T000001Z",
+  "bridge_labs": {
+    "path": "/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs",
+    "branch": "backflow/aiden-ceo-meeting-room",
+    "head": "9f00c799a141855c8120c9cb3d9aa1dd5357e33f",
+    "expected_head": "9f00c799a141855c8120c9cb3d9aa1dd5357e33f",
+    "head_matches_expected": true,
+    "clean": false,
+    "status_short": "M office/mission_command/e46b_ceo_brain_adapter.py\n?? office/mission_command/__pycache__/\n?? office/mission_command/e69_ceo_next_action_planner.py\n?? office/mission_command/e69_ceo_next_action_planner_readback.py\n?? operations/external_validation/e69_base_state_manifest.json\n?? operations/external_validation/e69_behavior_authorization_result.json\n?? operations/external_validation/e69_ceo_brain_next_action_planning_update.json\n?? operations/external_validation/e69_ceo_current_strategic_state_synthesis.json\n?? operations/external_validation/e69_ceo_installed_capability_inventory.json\n?? operations/external_validation/e69_ceo_next_action_candidate_set.json\n?? operations/external_validation/e69_ceo_next_action_counterfactuals.json\n?? operations/external_validation/e69_ceo_next_action_planner_readback_smoke_result.json\n?? operations/external_validation/e69_ceo_next_action_scoring_matrix.json\n?? operations/external_validation/e69_ceo_selected_next_action_decision.json\n?? operations/external_validation/e69_cieu_module_integration_plan.json\n?? operations/external_validation/e69_cieu_residual_summary.json\n?? operations/external_validation/e69_completion_gate_result.json\n?? operations/external_validation/e69_czl_closure.json\n?? operations/external_validation/e69_no_overclaim_validation_result.json\n?? operations/external_validation/e69_owner_decision_packet_no_execution.json\n?? operations/external_validation/e69_repository_archaeology_inventory.json\n?? operations/external_validation/e69_reuse_first_growth_audit.json\n?? operations/knowledge_graph/e69_ceo_kg_next_action_planning_edges_delta.jsonl\n?? operations/knowledge_graph/e69_ceo_kg_next_action_planning_nodes_delta.jsonl\n?? operations/knowledge_graph/e69_ceo_kg_next_action_planning_read_model_update.json\n?? products/governed_business_operations_blueprint_for_agent_teams/cieu_audit_module.json\n?? products/governed_business_operations_blueprint_for_agent_teams/cieu_audit_module.md\n?? products/governed_business_operations_blueprint_for_agent_teams/cieu_no_overclaim_notice.md\n?? products/governed_business_operations_blueprint_for_agent_teams/updated_offer_blueprint_with_cieu_module.json\n?? products/governed_business_operations_blueprint_for_agent_teams/updated_offer_blueprint_with_cieu_module.md\n?? reports/integration/e69_ceo_current_strategic_state_synthesis.md\n?? reports/integration/e69_ceo_installed_capability_inventory.md\n?? reports/integration/e69_ceo_next_action_candidate_set.md\n?? reports/integration/e69_ceo_next_action_counterfactuals.md\n?? reports/integration/e69_ceo_next_action_scoring_matrix.md\n?? reports/integration/e69_ceo_selected_next_action_decision.md\n?? reports/integration/e69_cieu_module_integration_plan.md\n?? reports/integration/e69_completion_gate_result.md\n?? reports/integration/e69_operator_handoff.md\n?? reports/integration/e69_owner_decision_packet_no_execution.md\n?? reports/integration/e69_repository_archaeology_inventory.md\n?? reports/integration/e69_reuse_first_growth_audit.md\n?? tests/office/test_e69_00_artifact_generation.py\n?? tests/office/test_e69_behavior_authorization.py\n?? tests/office/test_e69_ceo_current_strategic_state_synthesis.py\n?? tests/office/test_e69_ceo_installed_capability_inventory.py\n?? tests/office/test_e69_ceo_next_action_candidate_set.py\n?? tests/office/test_e69_ceo_next_action_counterfactuals.py\n?? tests/office/test_e69_ceo_next_action_planner_readback.py\n?? tests/office/test_e69_ceo_next_action_scoring_matrix.py\n?? tests/office/test_e69_ceo_selected_next_action_decision.py\n?? tests/office/test_e69_cieu_module_integration_plan.py\n?? tests/office/test_e69_completion_gate.py\n?? tests/office/test_e69_json_artifacts.py\n?? tests/office/test_e69_no_overclaim.py\n?? tests/office/test_e69_owner_decision_packet.py\n?? tests/office/test_e69_repository_archaeology_inventory.py\n?? tests/office/test_e69_reuse_first_growth_audit.py"
+  },
+  "expected_branch": "backflow/aiden-ceo-meeting-room",
+  "base_verified": true,
+  "bridge_labs_worktree_clean_or_e69_scoped": false,
+  "read_only_repos": {
+    "Y-star-gov": {
+      "path": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+      "branch": "backflow/company-runtime-domain-pack",
+      "head": "b0d9aa8b1badd1180127a2f79f73ceed48e16451",
+      "expected_head": "b0d9aa8b1badd1180127a2f79f73ceed48e16451",
+      "head_matches_expected": true,
+      "clean": true,
+      "status_short": ""
+    },
+    "gov-mcp": {
+      "path": "/Users/haotianliu/.openclaw/workspace/gov-mcp",
+      "branch": "backflow/company-runtime-tools",
+      "head": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+      "expected_head": "d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90",
+      "head_matches_expected": true,
+      "clean": true,
+      "status_short": ""
+    },
+    "K9Audit": {
+      "path": "/Users/haotianliu/.openclaw/workspace/K9Audit",
+      "branch": "main",
+      "head": "37911e18ce4425470e3f745b30d155c43d76ff55",
+      "expected_head": "37911e18ce4425470e3f745b30d155c43d76ff55",
+      "head_matches_expected": true,
+      "clean": true,
+      "status_short": ""
+    }
+  },
+  "e68_completed_report_present": true,
+  "owner_decision_status": "pending_owner_decision",
+  "external_action_allowed": false
+}

@@ -1,0 +1,63 @@
+{
+  "artifact_id": "e69_ceo_next_action_planner_readback_smoke_result",
+  "observed_state": {
+    "artifact_id": "e69_ceo_brain_next_action_planning_update",
+    "planning_status": "CEO autonomous next-action proposal generation ready",
+    "installed_capability_inventory_status": "created",
+    "current_strategic_state_status": "synthesized",
+    "generated_candidate_count": 10,
+    "scoring_matrix_top_candidate": "integrate_CIEU_audit_log_module_into_governed_business_operations_blueprint_no_execution",
+    "counterfactual_count": 10,
+    "selected_next_action": "integrate_CIEU_audit_log_module_into_governed_business_operations_blueprint_no_execution",
+    "nearest_alternative": "targeted_non_contact_validation_for_CIEU_high_risk_vertical",
+    "owner_decision_packet_status": "owner_reviewable_no_execution",
+    "CIEU_integration_plan_status": "created",
+    "remaining_uncertainties": [
+      "no customer validation",
+      "no paid signal",
+      "no pricing validation",
+      "no owner-approved external review",
+      "CIEU legal/regulatory caution remains high",
+      "CEO can generate proposals but cannot execute externally"
+    ],
+    "owner_gated_next_steps": [
+      "approve internal CIEU module integration",
+      "approve owner-gated external review preparation",
+      "approve EV5 public experiment planning only",
+      "ask for more non-contact validation",
+      "switch to fallback route",
+      "reject all external progression"
+    ],
+    "next_recommended_milestone": "E70_execute_internal_CIEU_module_integration_no_external_action",
+    "requires_owner_approval_for_selected_internal_action": false,
+    "owner_decision_status": "pending_owner_decision",
+    "external_action_allowed": false,
+    "no_external_action": true,
+    "CEO_fully_autonomous_external_execution_claimed": false,
+    "owner_approval_fabricated": false,
+    "customer_validation_claimed": false,
+    "paid_signal_claimed": false,
+    "expert_feedback_claimed": false,
+    "pricing_validation_claimed": false,
+    "autonomous_revenue_achieved": false,
+    "EU_AI_Act_compliance_claimed": false,
+    "legal_compliance_claimed": false,
+    "medical_readiness_claimed": false,
+    "energy_critical_infrastructure_readiness_claimed": false,
+    "EV5_achieved": false,
+    "EV6_achieved": false,
+    "EV7_achieved": false,
+    "EV8_achieved": false
+  },
+  "checks": {
+    "CEO_sees_candidate_count": true,
+    "CEO_sees_selected_next_action": true,
+    "CEO_sees_nearest_alternative": true,
+    "CEO_sees_owner_decision_packet": true,
+    "CEO_sees_external_action_blocked": true,
+    "CEO_sees_next_milestone": true,
+    "CEO_sees_no_forbidden_claims": true
+  },
+  "passes": true,
+  "external_action_allowed": false
+}

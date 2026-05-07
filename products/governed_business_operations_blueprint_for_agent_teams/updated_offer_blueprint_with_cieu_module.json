@@ -1,0 +1,21 @@
+{
+  "artifact_id": "e69_updated_offer_blueprint_with_cieu_module",
+  "source_offer_blueprint": "operations/external_validation/e66_selected_route_offer_blueprint.json",
+  "offer_name": "Governed Business Operations Blueprint for Agent Teams",
+  "added_module": "CIEU Audit Module",
+  "status": "draft_only_internal",
+  "module_deliverables": [
+    "CIEU field map",
+    "causal action evidence plan",
+    "residual review table",
+    "no-overclaim notice",
+    "owner-gated validation path"
+  ],
+  "owner_approval_required_before_external_use": true,
+  "customer_validation_claimed": false,
+  "paid_signal_claimed": false,
+  "expert_feedback_claimed": false,
+  "legal_compliance_claimed": false,
+  "EU_AI_Act_compliance_claimed": false,
+  "external_action_allowed": false
+}

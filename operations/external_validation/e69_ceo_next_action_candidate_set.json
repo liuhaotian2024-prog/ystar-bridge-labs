@@ -1,0 +1,339 @@
+{
+  "artifact_id": "e69_ceo_next_action_candidate_set",
+  "bridge_job_id": "e69_ceo_autonomous_next_action_planner_and_cieu_module_plan_20260506T000001Z",
+  "generated_from_installed_capabilities": true,
+  "source_state_used": [
+    "E65",
+    "E67",
+    "E68",
+    "E66",
+    "E54_E56_governance"
+  ],
+  "candidate_count": 10,
+  "candidates": [
+    {
+      "candidate_id": "integrate_CIEU_audit_log_module_into_governed_business_operations_blueprint_no_execution",
+      "source_state_used": [
+        "E66_offer",
+        "E68_CIEU_route",
+        "E67_external_validation",
+        "E65_market_dynamics"
+      ],
+      "objective_served": "combine current primary first-cash route with CIEU high-defensibility vertical",
+      "portfolio_role": "primary_route_module_upgrade",
+      "risk_tier": "T0_internal_only",
+      "external_action_required": false,
+      "owner_approval_required": false,
+      "current_evidence_basis": "E66 offer plus E68 CIEU EV4 and E65/E67 portfolio state",
+      "expected_value": 92,
+      "urgency": 86,
+      "reversibility": 92,
+      "learning_value": 84,
+      "relation_to_first_cash": "strengthens current first-cash offer without external action",
+      "relation_to_CIEU_strategic_vertical": "directly integrates CIEU as module",
+      "what_would_be_delivered": "internal CIEU audit module integration plan and product blueprint update",
+      "what_would_remain_blocked": "external review, compliance claims, customer validation, paid signal",
+      "generated_by_CEO_planner": true,
+      "no_overclaim_boundary": [
+        "no external action",
+        "no owner approval fabricated",
+        "no customer validation claim",
+        "no paid signal claim",
+        "no expert feedback claim",
+        "no pricing validation claim",
+        "no legal/EU AI Act compliance claim",
+        "no medical or energy readiness claim"
+      ]
+    },
+    {
+      "candidate_id": "owner_decision_packet_for_controlled_external_review_no_execution",
+      "source_state_used": [
+        "E66_owner_plan",
+        "E67_owner_gated_roadmap",
+        "E68_portfolio"
+      ],
+      "objective_served": "prepare owner choice for later controlled external review",
+      "portfolio_role": "owner_gate_progression",
+      "risk_tier": "T2_draft_only_external_material",
+      "external_action_required": false,
+      "owner_approval_required": false,
+      "current_evidence_basis": "E67 EV4 and E68 CIEU route evaluation",
+      "expected_value": 83,
+      "urgency": 76,
+      "reversibility": 88,
+      "learning_value": 80,
+      "relation_to_first_cash": "moves toward external review but not execution",
+      "relation_to_CIEU_strategic_vertical": "can include CIEU as review angle",
+      "what_would_be_delivered": "owner decision packet only",
+      "what_would_remain_blocked": "actual review, outreach, publication, experiment, payment",
+      "generated_by_CEO_planner": true,
+      "no_overclaim_boundary": [
+        "no external action",
+        "no owner approval fabricated",
+        "no customer validation claim",
+        "no paid signal claim",
+        "no expert feedback claim",
+        "no pricing validation claim",
+        "no legal/EU AI Act compliance claim",
+        "no medical or energy readiness claim"
+      ]
+    },
+    {
+      "candidate_id": "targeted_non_contact_validation_for_CIEU_high_risk_vertical",
+      "source_state_used": [
+        "E68_CIEU_EV_scorecard",
+        "E65_update_triggers"
+      ],
+      "objective_served": "increase CIEU public evidence density",
+      "portfolio_role": "learning_route",
+      "risk_tier": "T1_public_read_only",
+      "external_action_required": false,
+      "owner_approval_required": false,
+      "current_evidence_basis": "E68 14/14 public regulatory reads and EV4",
+      "expected_value": 72,
+      "urgency": 48,
+      "reversibility": 95,
+      "learning_value": 92,
+      "relation_to_first_cash": "indirect; strengthens strategic vertical evidence",
+      "relation_to_CIEU_strategic_vertical": "direct evidence improvement",
+      "what_would_be_delivered": "more non-contact evidence",
+      "what_would_remain_blocked": "EV5-EV8, buyer feedback, paid signal",
+      "generated_by_CEO_planner": true,
+      "no_overclaim_boundary": [
+        "no external action",
+        "no owner approval fabricated",
+        "no customer validation claim",
+        "no paid signal claim",
+        "no expert feedback claim",
+        "no pricing validation claim",
+        "no legal/EU AI Act compliance claim",
+        "no medical or energy readiness claim"
+      ]
+    },
+    {
+      "candidate_id": "model_driven_offer_blueprint_hardening_no_execution",
+      "source_state_used": [
+        "E66_offer",
+        "E65_market_dynamics"
+      ],
+      "objective_served": "harden current blueprint without changing portfolio",
+      "portfolio_role": "first_cash_offer_hardening",
+      "risk_tier": "T0_internal_only",
+      "external_action_required": false,
+      "owner_approval_required": false,
+      "current_evidence_basis": "E66 blueprint and E65 balanced CEO route",
+      "expected_value": 76,
+      "urgency": 70,
+      "reversibility": 93,
+      "learning_value": 70,
+      "relation_to_first_cash": "improves deliverable clarity",
+      "relation_to_CIEU_strategic_vertical": "weak unless CIEU module is included",
+      "what_would_be_delivered": "hardened blueprint",
+      "what_would_remain_blocked": "external use and validation",
+      "generated_by_CEO_planner": true,
+      "no_overclaim_boundary": [
+        "no external action",
+        "no owner approval fabricated",
+        "no customer validation claim",
+        "no paid signal claim",
+        "no expert feedback claim",
+        "no pricing validation claim",
+        "no legal/EU AI Act compliance claim",
+        "no medical or energy readiness claim"
+      ]
+    },
+    {
+      "candidate_id": "prepare_EV5_public_experiment_decision_packet_no_execution",
+      "source_state_used": [
+        "E67_owner_gated_roadmap",
+        "E65_update_triggers"
+      ],
+      "objective_served": "prepare owner decision for public experiment planning",
+      "portfolio_role": "owner_gated_validation_progression",
+      "risk_tier": "T2_draft_only_external_material",
+      "external_action_required": false,
+      "owner_approval_required": false,
+      "current_evidence_basis": "EV5 remains owner-gated and unachieved",
+      "expected_value": 80,
+      "urgency": 68,
+      "reversibility": 86,
+      "learning_value": 88,
+      "relation_to_first_cash": "could unlock stronger validation later",
+      "relation_to_CIEU_strategic_vertical": "possible experiment route, not execution",
+      "what_would_be_delivered": "EV5 planning packet only",
+      "what_would_remain_blocked": "actual landing page/post/ad/pricing-click experiment",
+      "generated_by_CEO_planner": true,
+      "no_overclaim_boundary": [
+        "no external action",
+        "no owner approval fabricated",
+        "no customer validation claim",
+        "no paid signal claim",
+        "no expert feedback claim",
+        "no pricing validation claim",
+        "no legal/EU AI Act compliance claim",
+        "no medical or energy readiness claim"
+      ]
+    },
+    {
+      "candidate_id": "compare_current_primary_route_vs_CIEU_route_after_E68",
+      "source_state_used": [
+        "E65_market_dynamics",
+        "E68_CIEU_route"
+      ],
+      "objective_served": "challenge portfolio decision before integration",
+      "portfolio_role": "counterfactual_check",
+      "risk_tier": "T0_internal_only",
+      "external_action_required": false,
+      "owner_approval_required": false,
+      "current_evidence_basis": "E68 scoring already compares current route and CIEU",
+      "expected_value": 63,
+      "urgency": 45,
+      "reversibility": 96,
+      "learning_value": 75,
+      "relation_to_first_cash": "indirect",
+      "relation_to_CIEU_strategic_vertical": "direct comparison",
+      "what_would_be_delivered": "comparison memo",
+      "what_would_remain_blocked": "module integration and owner packet",
+      "generated_by_CEO_planner": true,
+      "no_overclaim_boundary": [
+        "no external action",
+        "no owner approval fabricated",
+        "no customer validation claim",
+        "no paid signal claim",
+        "no expert feedback claim",
+        "no pricing validation claim",
+        "no legal/EU AI Act compliance claim",
+        "no medical or energy readiness claim"
+      ]
+    },
+    {
+      "candidate_id": "continue_internal_CEO_autonomy_loop_hardening",
+      "source_state_used": [
+        "E54_E56_runtime",
+        "E65_E67_E68_loaders"
+      ],
+      "objective_served": "improve CEO proposal generation before product work",
+      "portfolio_role": "runtime_capability_hardening",
+      "risk_tier": "T0_internal_only",
+      "external_action_required": false,
+      "owner_approval_required": false,
+      "current_evidence_basis": "E69 identifies gap between installed capabilities and autonomous proposal generation",
+      "expected_value": 82,
+      "urgency": 84,
+      "reversibility": 90,
+      "learning_value": 92,
+      "relation_to_first_cash": "indirect but improves future decisions",
+      "relation_to_CIEU_strategic_vertical": "enables more autonomous CIEU planning",
+      "what_would_be_delivered": "stronger planner loop",
+      "what_would_remain_blocked": "external action and product module execution",
+      "generated_by_CEO_planner": true,
+      "no_overclaim_boundary": [
+        "no external action",
+        "no owner approval fabricated",
+        "no customer validation claim",
+        "no paid signal claim",
+        "no expert feedback claim",
+        "no pricing validation claim",
+        "no legal/EU AI Act compliance claim",
+        "no medical or energy readiness claim"
+      ]
+    },
+    {
+      "candidate_id": "defer_external_review_and_strengthen_CIEU_no_overclaim_policy",
+      "source_state_used": [
+        "E68_no_overclaim_policy",
+        "E68_CIEU_EV_scorecard"
+      ],
+      "objective_served": "reduce legal/compliance overclaim risk",
+      "portfolio_role": "risk_reduction",
+      "risk_tier": "T0_internal_only",
+      "external_action_required": false,
+      "owner_approval_required": false,
+      "current_evidence_basis": "E68 overclaim risks around compliance, medical, energy readiness",
+      "expected_value": 68,
+      "urgency": 65,
+      "reversibility": 96,
+      "learning_value": 68,
+      "relation_to_first_cash": "indirect",
+      "relation_to_CIEU_strategic_vertical": "protects CIEU positioning",
+      "what_would_be_delivered": "stricter no-overclaim policy",
+      "what_would_remain_blocked": "integration and owner decision packet",
+      "generated_by_CEO_planner": true,
+      "no_overclaim_boundary": [
+        "no external action",
+        "no owner approval fabricated",
+        "no customer validation claim",
+        "no paid signal claim",
+        "no expert feedback claim",
+        "no pricing validation claim",
+        "no legal/EU AI Act compliance claim",
+        "no medical or energy readiness claim"
+      ]
+    },
+    {
+      "candidate_id": "prepare_fallback_founder_operator_decision_brief_packet",
+      "source_state_used": [
+        "E65_fastest_cash_profile",
+        "E67_fallback_score"
+      ],
+      "objective_served": "prepare fastest-cash fallback option",
+      "portfolio_role": "fallback_first_cash",
+      "risk_tier": "T0_internal_only",
+      "external_action_required": false,
+      "owner_approval_required": false,
+      "current_evidence_basis": "E65 fastest cash route remains founder/operator decision brief",
+      "expected_value": 74,
+      "urgency": 60,
+      "reversibility": 90,
+      "learning_value": 64,
+      "relation_to_first_cash": "direct fallback first-cash path",
+      "relation_to_CIEU_strategic_vertical": "weak",
+      "what_would_be_delivered": "fallback route packet",
+      "what_would_remain_blocked": "external presentation and validation",
+      "generated_by_CEO_planner": true,
+      "no_overclaim_boundary": [
+        "no external action",
+        "no owner approval fabricated",
+        "no customer validation claim",
+        "no paid signal claim",
+        "no expert feedback claim",
+        "no pricing validation claim",
+        "no legal/EU AI Act compliance claim",
+        "no medical or energy readiness claim"
+      ]
+    },
+    {
+      "candidate_id": "refresh_buyer_understandability_language_from_market_dynamics_no_contact",
+      "source_state_used": [
+        "E65_fragile_assumptions",
+        "E65_update_triggers"
+      ],
+      "objective_served": "address fragile assumption that buyers understand governed business operations",
+      "portfolio_role": "model_discovered_additional_candidate",
+      "risk_tier": "T0_internal_only",
+      "external_action_required": false,
+      "owner_approval_required": false,
+      "current_evidence_basis": "E65 fragile assumptions include buyer understandability",
+      "expected_value": 73,
+      "urgency": 72,
+      "reversibility": 94,
+      "learning_value": 78,
+      "relation_to_first_cash": "improves clarity of first-cash offer",
+      "relation_to_CIEU_strategic_vertical": "helps explain CIEU as module instead of compliance product",
+      "what_would_be_delivered": "internal language refinement brief",
+      "what_would_remain_blocked": "external use without owner approval",
+      "generated_by_CEO_planner": true,
+      "no_overclaim_boundary": [
+        "no external action",
+        "no owner approval fabricated",
+        "no customer validation claim",
+        "no paid signal claim",
+        "no expert feedback claim",
+        "no pricing validation claim",
+        "no legal/EU AI Act compliance claim",
+        "no medical or energy readiness claim"
+      ]
+    }
+  ],
+  "external_action_allowed": false
+}

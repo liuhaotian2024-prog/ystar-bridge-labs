@@ -1,0 +1,12 @@
+{
+  "artifact_id": "e69_no_overclaim_validation_result",
+  "paths_scanned": [
+    "operations/external_validation/e69_ceo_brain_next_action_planning_update.json",
+    "operations/external_validation/e69_owner_decision_packet_no_execution.json",
+    "operations/external_validation/e69_behavior_authorization_result.json",
+    "operations/external_validation/e69_ceo_next_action_planner_readback_smoke_result.json",
+    "products/governed_business_operations_blueprint_for_agent_teams/updated_offer_blueprint_with_cieu_module.json"
+  ],
+  "violations": [],
+  "passed": true
+}

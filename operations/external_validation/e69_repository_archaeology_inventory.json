@@ -1,0 +1,108 @@
+{
+  "artifact_id": "e69_repository_archaeology_inventory",
+  "bridge_job_id": "e69_ceo_autonomous_next_action_planner_and_cieu_module_plan_20260506T000001Z",
+  "discovered_assets": [
+    {
+      "path": "office/mission_command/e65_ceo_market_dynamics_readback.py",
+      "capability_type": "E65_market_dynamics_API",
+      "exists": true,
+      "reusable": true,
+      "connected_status": "connected"
+    },
+    {
+      "path": "office/mission_command/e67_ceo_external_validation_readback.py",
+      "capability_type": "E67_external_validation_API",
+      "exists": true,
+      "reusable": true,
+      "connected_status": "connected"
+    },
+    {
+      "path": "office/mission_command/e68_ceo_cieu_route_readback.py",
+      "capability_type": "E68_CIEU_route_API",
+      "exists": true,
+      "reusable": true,
+      "connected_status": "connected"
+    },
+    {
+      "path": "operations/external_validation/e66_selected_route_offer_blueprint.json",
+      "capability_type": "E66_offer_blueprint",
+      "exists": true,
+      "reusable": true,
+      "connected_status": "connected"
+    },
+    {
+      "path": "operations/external_validation/e68_strategic_portfolio_update.json",
+      "capability_type": "E68_CIEU_portfolio",
+      "exists": true,
+      "reusable": true,
+      "connected_status": "connected"
+    },
+    {
+      "path": "operations/external_validation/e67_owner_gated_external_validation_roadmap.json",
+      "capability_type": "E67_owner_gated_validation",
+      "exists": true,
+      "reusable": true,
+      "connected_status": "connected"
+    },
+    {
+      "path": "office/mission_command/e46b_ceo_brain_adapter.py",
+      "capability_type": "CEO_brain_readback",
+      "exists": true,
+      "reusable": true,
+      "connected_status": "connected"
+    },
+    {
+      "path": "products/governed_business_operations_blueprint_for_agent_teams/offer_blueprint.json",
+      "capability_type": "product_offer_blueprint",
+      "exists": true,
+      "reusable": true,
+      "connected_status": "connected"
+    }
+  ],
+  "asset_count": 8,
+  "reusable_CEO_state_loaders": [
+    "office/mission_command/e65_ceo_market_dynamics_readback.py",
+    "office/mission_command/e67_ceo_external_validation_readback.py",
+    "office/mission_command/e68_ceo_cieu_route_readback.py"
+  ],
+  "reusable_market_dynamics_APIs": [
+    "rank_routes_by_profile",
+    "get_decision_stability",
+    "get_recommended_market_portfolio",
+    "list_update_triggers"
+  ],
+  "reusable_external_validation_APIs": [
+    "get_route_external_validation_score",
+    "get_non_contact_validation_portfolio",
+    "list_owner_gated_validation_next_steps"
+  ],
+  "reusable_CIEU_route_APIs": [
+    "get_cieu_route_score",
+    "get_cieu_external_validation",
+    "get_cieu_portfolio_role",
+    "explain_cieu_overclaim_limits"
+  ],
+  "reusable_offer_blueprint_assets": [
+    "operations/external_validation/e66_selected_route_offer_blueprint.json",
+    "products/governed_business_operations_blueprint_for_agent_teams/offer_blueprint.json"
+  ],
+  "reusable_owner_decision_packet_assets": [
+    "operations/external_validation/e66_owner_gated_business_action_plan_no_execution.json"
+  ],
+  "disconnected_planning_assets": [
+    "CEO autonomous next-action planner not yet present before E69"
+  ],
+  "what_must_not_be_rebuilt": [
+    "E65 market dynamics model",
+    "E67 external validation model",
+    "E68 CIEU route model",
+    "E66 offer blueprint",
+    "public-read adapters",
+    "evidence atomizers",
+    "behavior authorization gate",
+    "KG/CZL/CIEU writeback conventions",
+    "CEO brain readback mechanisms"
+  ],
+  "E69_should_add_only": "thin autonomous next-action planning layer over installed CEO capabilities",
+  "external_action_allowed": false
+}

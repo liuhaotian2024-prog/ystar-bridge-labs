@@ -1,0 +1,4 @@
+{"from": "E65_market_dynamics", "to": "e69_ceo_next_action_planner", "edge_type": "feeds"}
+{"from": "E67_external_validation", "to": "e69_ceo_next_action_planner", "edge_type": "feeds"}
+{"from": "E68_CIEU_route", "to": "e69_ceo_next_action_planner", "edge_type": "feeds"}
+{"from": "e69_ceo_next_action_planner", "to": "integrate_CIEU_audit_log_module_into_governed_business_operations_blueprint_no_execution", "edge_type": "selects"}

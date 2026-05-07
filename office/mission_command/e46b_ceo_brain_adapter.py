@@ -361,6 +361,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e68_cieu_route_state = {'cieu_route_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
     try:
+        from office.mission_command.e69_ceo_next_action_planner_readback import load_e69_next_action_state_for_brain
+        e69_next_action_planning_state = load_e69_next_action_state_for_brain()
+    except Exception as exc:
+        e69_next_action_planning_state = {'planning_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -505,6 +510,14 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_cieu_no_overclaim_policy": e68_cieu_route_state.get("no_overclaim_policy"),
         "current_cieu_next_milestone": e68_cieu_route_state.get("next_recommended_milestone"),
         "current_cieu_external_action_allowed": e68_cieu_route_state.get("external_action_allowed"),
+        "latest_ceo_next_action_planning_state": e69_next_action_planning_state,
+        "current_ceo_generated_candidate_count": e69_next_action_planning_state.get("generated_candidate_count"),
+        "current_ceo_selected_next_action": e69_next_action_planning_state.get("selected_next_action"),
+        "current_ceo_next_action_nearest_alternative": e69_next_action_planning_state.get("nearest_alternative"),
+        "current_ceo_owner_decision_packet_status": e69_next_action_planning_state.get("owner_decision_packet_status"),
+        "current_ceo_next_action_requires_owner_approval": e69_next_action_planning_state.get("requires_owner_approval_for_selected_internal_action"),
+        "current_ceo_next_action_external_action_allowed": e69_next_action_planning_state.get("external_action_allowed"),
+        "current_ceo_next_action_next_milestone": e69_next_action_planning_state.get("next_recommended_milestone"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

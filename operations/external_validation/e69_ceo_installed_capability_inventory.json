@@ -1,0 +1,130 @@
+{
+  "artifact_id": "e69_ceo_installed_capability_inventory",
+  "bridge_job_id": "e69_ceo_autonomous_next_action_planner_and_cieu_module_plan_20260506T000001Z",
+  "capabilities": [
+    {
+      "capability": "market_dynamics_capability",
+      "source": "E65",
+      "loader_API_functions": [
+        "rank_routes_by_profile",
+        "get_decision_stability",
+        "get_recommended_market_portfolio",
+        "list_update_triggers"
+      ],
+      "state_fields_in_CEO_brain": [
+        "latest_market_dynamics_model_state",
+        "current_market_dynamics_primary_route",
+        "current_market_dynamics_decision_stability"
+      ],
+      "what_CEO_can_answer": [
+        "best route by profile",
+        "decision stability",
+        "fallback portfolio",
+        "update triggers"
+      ],
+      "available_to_CEO": true,
+      "callable_or_read_only": "callable",
+      "evidence_artifact": "operations/external_validation/e65_ceo_brain_market_dynamics_update.json",
+      "limitation": "T2 public-read evidence; no customer or paid validation",
+      "can_influence_next_action_selection": true
+    },
+    {
+      "capability": "external_validation_capability",
+      "source": "E67",
+      "loader_API_functions": [
+        "get_route_external_validation_score",
+        "get_non_contact_validation_portfolio",
+        "list_owner_gated_validation_next_steps"
+      ],
+      "EV_levels": "EV0-EV8",
+      "route_validation_scores": {
+        "governed_business_operations_blueprint_for_agent_teams": 100.0,
+        "founder_operator_decision_brief_service": 66.67
+      },
+      "available_to_CEO": true,
+      "callable_or_read_only": "callable",
+      "evidence_artifact": "operations/external_validation/e67_route_external_validation_scorecards.json",
+      "limitation": "EV1-EV4 are non-contact evidence, not human feedback or paid signal",
+      "can_influence_next_action_selection": true
+    },
+    {
+      "capability": "CIEU_route_capability",
+      "source": "E68",
+      "loader_API_functions": [
+        "get_cieu_route_score",
+        "get_cieu_external_validation",
+        "get_cieu_portfolio_role",
+        "explain_cieu_overclaim_limits"
+      ],
+      "CIEU_route_score": {
+        "route_id": "CIEU_high_risk_AI_agent_audit_log",
+        "market_optimal_score": 70,
+        "YBridge_unique_score": 96,
+        "shortest_cash_score": 45,
+        "regulatory_safety_driver_score": 95,
+        "buyer_understandability": 62,
+        "delivery_feasibility": 48,
+        "evidence_quality": 72,
+        "non_contact_external_validation_score": 85,
+        "defensibility": 94,
+        "commodity_risk_inverse": 90,
+        "sales_cycle_risk_inverse": 35,
+        "legal_regulatory_caution_score": 55,
+        "strategic_compounding": 98,
+        "first_cash_wedge_fit": 58,
+        "confidence": 62,
+        "balanced_score": 71.0
+      },
+      "CIEU_EV_level": "EV4_public_demand_or_behavior_proxy",
+      "portfolio_role": {
+        "primary_first_cash_route": "governed_business_operations_blueprint_for_agent_teams",
+        "high_defensibility_vertical": "CIEU_high_risk_AI_agent_audit_log",
+        "strategic_compounding_route": "CIEU_high_risk_AI_agent_audit_log",
+        "compliance_audit_module": "Governed Business Operations Blueprint + CIEU Audit Module",
+        "fallback_route": "founder_operator_decision_brief_service",
+        "learning_route": "public_read_market_intelligence_product",
+        "owner_gated_review_candidate": "CIEU High-Risk AI Agent Audit Log Blueprint"
+      },
+      "product_wedge": "Governed Business Operations Blueprint + CIEU Audit Module",
+      "available_to_CEO": true,
+      "callable_or_read_only": "callable",
+      "evidence_artifact": "operations/external_validation/e68_ceo_brain_cieu_route_update.json",
+      "limitation": "strategic and regulatory evidence only; no compliance claim",
+      "can_influence_next_action_selection": true
+    },
+    {
+      "capability": "model_driven_offer_capability",
+      "source": "E66",
+      "selected_route": "governed_business_operations_blueprint_for_agent_teams",
+      "offer_blueprint": "Governed Business Operations Blueprint for Agent Teams",
+      "pricing_package_hypothesis": "draft-only internal",
+      "owner_gated_action_plan": "created",
+      "available_to_CEO": true,
+      "callable_or_read_only": "read_only_artifact",
+      "evidence_artifact": "operations/external_validation/e66_selected_route_offer_blueprint.json",
+      "limitation": "not customer-validated or paid-validated",
+      "can_influence_next_action_selection": true
+    },
+    {
+      "capability": "runtime_governance_capability",
+      "source": "E54/E55/E56/KG_CZL_CIEU",
+      "components": [
+        "CEO Brain",
+        "Behavior Center",
+        "Internal Company Loop",
+        "KG/CZL/CIEU",
+        "anti-drift",
+        "capability binding",
+        "no-overclaim"
+      ],
+      "available_to_CEO": true,
+      "callable_or_read_only": "readback_and_policy",
+      "evidence_artifact": "office/mission_command/e46b_ceo_brain_adapter.py",
+      "limitation": "governed internal proposal generation only; no autonomous external execution",
+      "can_influence_next_action_selection": true
+    }
+  ],
+  "capability_count": 5,
+  "all_required_capabilities_available_to_CEO": true,
+  "external_action_allowed": false
+}
