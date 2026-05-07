@@ -386,6 +386,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e73_ecosystem_boundary_lock_state = {'ecosystem_boundary_lock_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
     try:
+        from office.mission_command.e74_ceo_l2_readback import load_e74_l2_work_state_for_brain
+        e74_l2_internal_work_state = load_e74_l2_work_state_for_brain()
+    except Exception as exc:
+        e74_l2_internal_work_state = {'L2_work_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -580,6 +585,15 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_ceo_boundary_lock_e72_proposal_decision": e73_ecosystem_boundary_lock_state.get("E72_proposal_decision"),
         "current_ceo_real_work_next_recommended_milestone": e73_ecosystem_boundary_lock_state.get("next_recommended_milestone"),
         "current_ceo_real_work_external_action_allowed": e73_ecosystem_boundary_lock_state.get("external_action_allowed"),
+        "latest_ceo_l2_internal_work_state": e74_l2_internal_work_state,
+        "current_ceo_l2_work_status": e74_l2_internal_work_state.get("L2_work_status"),
+        "current_ceo_l2_work_deliverable": e74_l2_internal_work_state.get("deliverable_produced"),
+        "current_ceo_l2_work_owner_packet_status": e74_l2_internal_work_state.get("owner_facing_packet_status"),
+        "current_ceo_l2_work_no_new_wheel_compliance": e74_l2_internal_work_state.get("no_new_wheel_compliance"),
+        "current_ceo_l2_work_readiness_movement": e74_l2_internal_work_state.get("readiness_movement"),
+        "current_ceo_l2_work_l3_status": e74_l2_internal_work_state.get("L3_status_after_E74"),
+        "current_ceo_l2_work_next_recommended_milestone": e74_l2_internal_work_state.get("next_recommended_milestone"),
+        "current_ceo_l2_work_external_action_allowed": e74_l2_internal_work_state.get("external_action_allowed"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

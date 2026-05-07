@@ -1,0 +1,70 @@
+{
+  "artifact_id": "e74_l3_allowlist_proposal_no_execution",
+  "bridge_job_id": "e74_ceo_l2_internal_autonomous_work_pilot_20260507T000001Z",
+  "proposal_status": "owner_approval_required_before_any_L3_execution",
+  "public_source_category_candidates": [
+    "official regulatory/standards pages relevant to AI governance and high-risk record keeping",
+    "AI governance/GRC vendor product and documentation pages",
+    "AI agent observability/auditability product pages",
+    "public pricing/package pages for readiness reviews or governance audits",
+    "public job/RFP/procurement pages mentioning AI governance, oversight, traceability, or audit logs",
+    "public case studies/blogs/docs from vendors or institutions, no account login"
+  ],
+  "allowed_read_only_evidence_types_for_future_L3": [
+    "public market language",
+    "category/competitor presence",
+    "public pricing/package analogs",
+    "public demand proxies",
+    "public behavior/documentation signals"
+  ],
+  "forbidden_evidence_types": [
+    "private profiles or human identification",
+    "emails, phone numbers, social scraping, or contact lists",
+    "login-gated content",
+    "form-submitted content",
+    "paid reports or purchased data",
+    "customer conversations",
+    "expert feedback"
+  ],
+  "rules": {
+    "no_contact": true,
+    "no_account_login_unless_owner_explicitly_approves": true,
+    "no_publication": true,
+    "no_payment": true,
+    "no_scraping_contacts": true,
+    "no_L3_execution_in_E74": true
+  },
+  "source_receipt_requirements": [
+    "source_url",
+    "source_type",
+    "read_timestamp",
+    "evidence_type",
+    "route_relevance",
+    "limitation",
+    "no_customer_validation_claim",
+    "no_paid_signal_claim"
+  ],
+  "maximum_scope_budget_for_future_L3_run": {
+    "source_count_cap": 30,
+    "source_categories_cap": 6,
+    "timebox_hours_cap": 4,
+    "network_mode": "owner_approved_read_only_only"
+  },
+  "abort_conditions": [
+    "source requires login, payment, contact, or form submission",
+    "source contains private personal contact data",
+    "research starts drifting into customer outreach or expert feedback",
+    "evidence would require compliance/legal interpretation beyond public-read summary",
+    "no-overclaim checks fail"
+  ],
+  "owner_approval_fields": {
+    "owner_approved_L3_execution": false,
+    "approved_source_categories": [],
+    "approved_source_urls": [],
+    "approved_source_count_cap": null,
+    "approved_timebox": null,
+    "approved_by": null,
+    "approval_timestamp": null
+  },
+  "external_action_allowed": false
+}
