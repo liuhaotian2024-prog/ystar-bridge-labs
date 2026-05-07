@@ -1,0 +1,21 @@
+{
+  "CIEU_relation": "validation record now carries guidance and correct_path in Y_t_plus_1/R_t_plus_1 without live DB writes",
+  "E82_semantics_audit_decision": "correct_but_needs_auto_guidance_semantics",
+  "K9Audit_relation": "ledger/verifier ownership untouched",
+  "artifact_id": "e83_e82_cognitive_os_semantics_audit",
+  "audited_module": "Y-star-gov:ystar/governance/ceo_cognitive_os_contract.py",
+  "bridge_labs_relation": "bridge-labs produces CEO packets and records evidence/readback",
+  "correct_layer_decision": "governance layer remains correct",
+  "findings": [
+    "E82 correctly placed CEO Cognitive OS in Y-star-gov governance packet validation.",
+    "E82 incorrectly treated repairable missing cognitive stages, counterfactuals, CIEU predictions, and no-new-wheel proof as DENY.",
+    "Y-star-gov mainline already has require_revision semantics in Pre-U, CIEU prediction-delta, contract dry-run, and hook adapter paths.",
+    "Owner-approval-pending L4/external execution should be ESCALATE with owner decision path when otherwise complete.",
+    "Forbidden claims, bypass attempts, unverified runtime-active capability claims, and duplicate core mechanisms remain DENY."
+  ],
+  "gov_mcp_relation": "gov-mcp remains later provider/tool envelope owner",
+  "job_id": "e83_ystar_gov_autoguidance_semantics_correct_path_integration_R1_20260507T000001Z",
+  "no_parallel_governance_engine": true,
+  "patch_result": "implemented_REQUIRE_REVISION_guidance",
+  "validator_patched": true
+}

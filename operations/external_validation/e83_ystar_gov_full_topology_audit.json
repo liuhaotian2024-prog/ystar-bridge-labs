@@ -1,0 +1,238 @@
+{
+  "Y_star_gov_base_verified": true,
+  "artifact_id": "e83_ystar_gov_full_topology_audit",
+  "bridge_labs_base_verified": true,
+  "job_id": "e83_ystar_gov_autoguidance_semantics_correct_path_integration_R1_20260507T000001Z",
+  "no_external_action": true,
+  "rejected_patch_targets": [
+    {
+      "path": "ystar/kernel/engine.py",
+      "reason": "too low-level and generic for CEO packet repair semantics"
+    },
+    {
+      "path": "ystar/adapters/hook.py",
+      "reason": "real hook wiring is later runtime work, not needed for E83 semantic correction"
+    },
+    {
+      "path": "ystar/governance/cieu_store.py",
+      "reason": "live CIEU DB write remains deferred"
+    },
+    {
+      "path": "gov-mcp",
+      "reason": "execution/provider envelope owner remains read-only in E83"
+    }
+  ],
+  "selected_patch_target": "ystar/governance/ceo_cognitive_os_contract.py",
+  "topology_node_count": 8,
+  "topology_nodes": [
+    {
+      "CEO_Cognitive_OS_integrate_here": false,
+      "CIEU_relation": "imports governance CIEU-facing services but does not own CEO packet shape",
+      "auto_guidance_repair_relation": "not the CEO-specific correction point",
+      "confidence": "high",
+      "contract_relation": "exposes IntentContract and higher-order contract primitives",
+      "decision_values_used": [
+        "PASS/VIOLATION via CheckResult",
+        "EnforcementResult modes"
+      ],
+      "downstream_callees": [
+        "ystar.kernel.engine",
+        "ystar.kernel.dimensions",
+        "ystar.governance"
+      ],
+      "evidence_path": "Y-star-gov:ystar/__init__.py",
+      "file_path": "ystar/__init__.py",
+      "layer": "public_api",
+      "node_id": "public_api_root",
+      "owner_approval_relation": "generic HOLD_FOR_APPROVAL mode exists in kernel enforcement",
+      "symbol": "check/enforce/IntentContract/CheckResult/EnforcementResult exports",
+      "upstream_callers": [
+        "package consumers",
+        "gov-mcp references"
+      ]
+    },
+    {
+      "CEO_Cognitive_OS_integrate_here": false,
+      "CIEU_relation": "Y*_t contract intent source for causal records",
+      "auto_guidance_repair_relation": "contract lifecycle states are status-only, not repair interface",
+      "confidence": "high",
+      "contract_relation": "canonical generic contract model",
+      "decision_values_used": [
+        "contract statuses: draft/confirmed/stale/suspended/expired/superseded"
+      ],
+      "downstream_callees": [
+        "hash/canonical serialization",
+        "policy source trust"
+      ],
+      "evidence_path": "Y-star-gov:ystar/kernel/dimensions.py",
+      "file_path": "ystar/kernel/dimensions.py",
+      "layer": "contract_topology",
+      "node_id": "kernel_contract_layer",
+      "owner_approval_relation": "trust upgrades require approval",
+      "symbol": "IntentContract, HigherOrderContract, ConstitutionalContract, PolicySourceTrust",
+      "upstream_callers": [
+        "ystar.__init__",
+        "kernel engine",
+        "hook/session adapters"
+      ]
+    },
+    {
+      "CEO_Cognitive_OS_integrate_here": false,
+      "CIEU_relation": "generic check result can be logged but is not CEO packet residual schema",
+      "auto_guidance_repair_relation": "violation summaries only; too low-level for CEO repair packets",
+      "confidence": "high",
+      "contract_relation": "executes generic IntentContract checks",
+      "decision_values_used": [
+        "passed/violations",
+        "logged/returned/held/simulated"
+      ],
+      "downstream_callees": [
+        "IntentContract dimensions"
+      ],
+      "evidence_path": "Y-star-gov:ystar/kernel/engine.py",
+      "file_path": "ystar/kernel/engine.py",
+      "layer": "runtime_decision_topology",
+      "node_id": "kernel_check_enforce",
+      "owner_approval_relation": "HOLD_FOR_APPROVAL can mark requires_approval",
+      "symbol": "check, enforce, CheckResult, EnforcementResult, EnforcementMode",
+      "upstream_callers": [
+        "ystar public API",
+        "domain adapters"
+      ]
+    },
+    {
+      "CEO_Cognitive_OS_integrate_here": "semantic precedent",
+      "CIEU_relation": "validates pre-U packet structure before prediction-delta dry-run",
+      "auto_guidance_repair_relation": "returns required_revisions for repairable missing fields",
+      "confidence": "high",
+      "contract_relation": "packet validator interface, not IntentContract replacement",
+      "decision_values_used": [
+        "allow",
+        "warn",
+        "require_revision",
+        "escalate",
+        "deny"
+      ],
+      "downstream_callees": [
+        "ValidationResult.required_revisions"
+      ],
+      "evidence_path": "Y-star-gov:ystar/governance/pre_u_packet_validator.py",
+      "file_path": "ystar/governance/pre_u_packet_validator.py",
+      "layer": "governance_packet_validation",
+      "node_id": "pre_u_packet_validator",
+      "owner_approval_relation": "high-risk packets escalate",
+      "symbol": "ValidationDecision.REQUIRE_REVISION, validate_pre_u_packet",
+      "upstream_callers": [
+        "contract_dry_run"
+      ]
+    },
+    {
+      "CEO_Cognitive_OS_integrate_here": "semantic precedent",
+      "CIEU_relation": "builds simulated prediction-delta record without live CIEU write",
+      "auto_guidance_repair_relation": "not-ready Pre-U/delta returns require_revision",
+      "confidence": "high",
+      "contract_relation": "non-executing contract simulation",
+      "decision_values_used": [
+        "pass",
+        "warn",
+        "require_revision",
+        "deny",
+        "escalate"
+      ],
+      "downstream_callees": [
+        "pre_u_packet_validator",
+        "cieu_prediction_delta"
+      ],
+      "evidence_path": "Y-star-gov:ystar/governance/contract_dry_run.py",
+      "file_path": "ystar/governance/contract_dry_run.py",
+      "layer": "governance_dry_run",
+      "node_id": "contract_dry_run",
+      "owner_approval_relation": "escalation propagates from high-risk packet",
+      "symbol": "DryRunDecision.REQUIRE_REVISION, run_governance_contract_dry_run",
+      "upstream_callers": [
+        "hook_contract_adapter"
+      ]
+    },
+    {
+      "CEO_Cognitive_OS_integrate_here": "future hook wiring candidate, not E83 patch target",
+      "CIEU_relation": "no CIEU write; carries dry-run summary",
+      "auto_guidance_repair_relation": "returns require_revision boolean in hook-like envelope",
+      "confidence": "high",
+      "contract_relation": "future hook-like envelope compatibility",
+      "decision_values_used": [
+        "allow",
+        "warn",
+        "require_revision",
+        "deny",
+        "escalate"
+      ],
+      "downstream_callees": [
+        "contract_dry_run"
+      ],
+      "evidence_path": "Y-star-gov:ystar/governance/hook_contract_adapter.py",
+      "file_path": "ystar/governance/hook_contract_adapter.py",
+      "layer": "hook_pretooluse_topology",
+      "node_id": "hook_contract_adapter",
+      "owner_approval_relation": "escalate maps to route-to-review before enforcement",
+      "symbol": "HookAdapterDecision.REQUIRE_REVISION, run_hook_contract_dry_run",
+      "upstream_callers": [
+        "tools/run_hook_contract_dry_run.py",
+        "fixture tests"
+      ]
+    },
+    {
+      "CEO_Cognitive_OS_integrate_here": "later runtime wiring candidate only",
+      "CIEU_relation": "can write real CIEU for hook/runtime events",
+      "auto_guidance_repair_relation": "REDIRECT/REWRITE/AUTO_INVOKE provide correction paths",
+      "confidence": "medium_high",
+      "contract_relation": "uses session and OpenClaw contracts",
+      "decision_values_used": [
+        "allow",
+        "deny",
+        "escalate",
+        "redirect",
+        "rewrite"
+      ],
+      "downstream_callees": [
+        "OpenClaw enforce",
+        "auto_rewrite",
+        "CIEU store"
+      ],
+      "evidence_path": "Y-star-gov:ystar/adapters/hook.py",
+      "file_path": "ystar/adapters/hook.py",
+      "layer": "hook_runtime_topology",
+      "node_id": "real_hook_adapter",
+      "owner_approval_relation": "escalate branch returns deny envelope with owner/human reason",
+      "symbol": "check_hook, handle_hook_event, PreToolUse response envelopes",
+      "upstream_callers": [
+        "Claude/OpenClaw hook runtime"
+      ]
+    },
+    {
+      "CEO_Cognitive_OS_integrate_here": true,
+      "CIEU_relation": "returns CIEU-style validation record without live DB write",
+      "auto_guidance_repair_relation": "E83 patched repairable gaps to REQUIRE_REVISION with correct_path",
+      "confidence": "high",
+      "contract_relation": "CEO Cognitive OS contract validator synced from bridge-labs",
+      "decision_values_used": [
+        "ALLOW",
+        "REQUIRE_REVISION",
+        "DENY",
+        "ESCALATE"
+      ],
+      "downstream_callees": [
+        "deterministic local rules"
+      ],
+      "evidence_path": "Y-star-gov:ystar/governance/ceo_cognitive_os_contract.py",
+      "file_path": "ystar/governance/ceo_cognitive_os_contract.py",
+      "layer": "governance_packet_validation",
+      "node_id": "ceo_cognitive_os_validator",
+      "owner_approval_relation": "complete but unapproved L4/external action escalates to owner path",
+      "symbol": "validate_ceo_pre_action_packet, validate_ceo_post_action_residual",
+      "upstream_callers": [
+        "bridge-labs CEO packet producer",
+        "future hook/runtime wiring"
+      ]
+    }
+  ]
+}

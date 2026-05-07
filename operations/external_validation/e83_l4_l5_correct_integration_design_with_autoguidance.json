@@ -1,0 +1,30 @@
+{
+  "L4_flow": {
+    "L4_execution_status_in_E83": "not_executed",
+    "approved_and_scoped": "ALLOW for the validated packet only",
+    "complete_but_owner_approval_pending": "ESCALATE with owner decision packet path",
+    "forbidden_claim_after_feedback": "DENY",
+    "mass_outreach_publication_payment_login_scraping": "DENY",
+    "post_action_residual_missing": "REQUIRE_REVISION",
+    "pre_action_packet_missing_cognitive_requirements": "REQUIRE_REVISION with missing fields/stages/evidence correct_path"
+  },
+  "L5_flow": {
+    "L5_readiness_status_in_E83": "not_ready",
+    "future_owner_approved_scoped_revenue_experiment": "ALLOW only after future readiness gate",
+    "ledger_or_verifier": "K9Audit remains canonical owner if used",
+    "missing_pricing_customer_legal_prerequisites": "REQUIRE_REVISION or ESCALATE depending authority",
+    "pricing_or_customer_validation_claim_without_evidence": "DENY",
+    "provider_or_tool_execution": "must use gov-mcp governed provider/action envelope",
+    "unapproved_payment_customer_data_publication": "DENY"
+  },
+  "artifact_id": "e83_l4_l5_correct_integration_design_with_autoguidance",
+  "job_id": "e83_ystar_gov_autoguidance_semantics_correct_path_integration_R1_20260507T000001Z",
+  "no_external_action": true,
+  "role_split": {
+    "K9Audit": "ledger/verifier owner if ledger integration is used",
+    "Y_star_gov": "validates cognitive OS packets and returns ALLOW/DENY/REQUIRE_REVISION/ESCALATE",
+    "bridge_labs": "CEO packets, business artifacts, owner decision packets, readbacks",
+    "gov_mcp": "later governed provider/tool execution envelope",
+    "ystar_company": "historical/company context only unless separately approved"
+  }
+}

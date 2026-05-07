@@ -1,0 +1,18 @@
+{
+  "L4_execution_authorized": false,
+  "L5_ready": false,
+  "artifact_id": "e83_generated_next_milestone_proposal",
+  "job_id": "e83_ystar_gov_autoguidance_semantics_correct_path_integration_R1_20260507T000001Z",
+  "not_selected": [
+    "broad inventory",
+    "generic infrastructure",
+    "generic L3 research",
+    "publication",
+    "mass outreach",
+    "L5 revenue"
+  ],
+  "owner_approval_required_for_external_action": true,
+  "selected_next_milestone": "E84_YStarGov_CEO_Cognitive_OS_Hook_Runtime_Wiring_With_AutoGuidance_R1",
+  "type": "specific_governance_runtime_wiring",
+  "why": "Auto-guidance semantics are discovered and patched; the remaining specific gap is optional hook/runtime wiring so real tool-boundary checks can consume the guided decision envelope."
+}

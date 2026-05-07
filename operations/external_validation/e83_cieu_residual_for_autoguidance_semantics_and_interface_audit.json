@@ -1,0 +1,41 @@
+{
+  "R_t_plus_1": {
+    "L4_feedback_not_executed": true,
+    "L5_not_ready": true,
+    "customer_paid_pricing_compliance_validation_absent": true,
+    "decision_vocabulary_ambiguity": "resolved_to_REQUIRE_REVISION_for_auto_guidance",
+    "hook_runtime_wiring_may_remain": true,
+    "live_CIEU_DB_writes_remain_deferred": true
+  },
+  "U_t": {
+    "audited_E82_validator_semantics": true,
+    "audited_Y_star_gov_topology": true,
+    "audited_decision_vocabulary": true,
+    "defined_correct_ALLOW_DENY_REQUIRE_REVISION_ESCALATE_semantics": true,
+    "designed_L4_L5_auto_guidance_interface": true,
+    "discovered_auto_guidance_lineage": true,
+    "patched_validator_if_supported": true
+  },
+  "X_t": {
+    "E82_synced_CEO_Cognitive_OS_into_Y_star_gov": true,
+    "auto_guidance_lineage_uncertain_before_E83": true,
+    "no_external_action_boundary": true,
+    "owner_rejected_simplistic_ESCALATE": true
+  },
+  "Y_star_t": {
+    "ESCALATE_only_for_owner_authority": true,
+    "intended_outcome": "restore correct Y*gov guidance semantics and avoid simple DENY/ESCALATE when repairable",
+    "preserve_hard_DENY_for_forbidden_actions": true
+  },
+  "Y_t_plus_1": {
+    "E82_semantics_audit": "generated",
+    "L4_L5_integration_design": "generated",
+    "auto_guidance_discovery": "generated",
+    "decision_vocabulary_audit": "generated",
+    "patch_result": "REQUIRE_REVISION_guidance_supported",
+    "tests": "targeted Y-star-gov and bridge-labs tests run",
+    "topology_audit": "generated"
+  },
+  "artifact_id": "e83_cieu_residual_for_autoguidance_semantics_and_interface_audit",
+  "job_id": "e83_ystar_gov_autoguidance_semantics_correct_path_integration_R1_20260507T000001Z"
+}

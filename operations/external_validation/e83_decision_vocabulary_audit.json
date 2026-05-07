@@ -1,0 +1,77 @@
+{
+  "artifact_id": "e83_decision_vocabulary_audit",
+  "decision_values": [
+    {
+      "evidence": "kernel engine, pre_u, hook adapter",
+      "maps_to": "ALLOW",
+      "meaning": "runtime or dry-run permits action/packet",
+      "repo": "Y-star-gov",
+      "value": "ALLOW/allow/pass"
+    },
+    {
+      "evidence": "pre_u/hook adapter",
+      "maps_to": "STATUS_ONLY",
+      "meaning": "non-blocking warning or telemetry",
+      "repo": "Y-star-gov",
+      "value": "WARN/warn"
+    },
+    {
+      "evidence": "pre_u, delta, dry_run, hook adapter",
+      "maps_to": "REQUIRE_REVISION",
+      "meaning": "repairable packet/envelope gap; no execution until revised",
+      "repo": "Y-star-gov",
+      "value": "REQUIRE_REVISION/require_revision/requires_revision"
+    },
+    {
+      "evidence": "kernel checks, bridge action semantics",
+      "maps_to": "DENY",
+      "meaning": "hard boundary violation or unsafe/non-repairable action",
+      "repo": "Y-star-gov/bridge-labs",
+      "value": "DENY/deny/BLOCKED"
+    },
+    {
+      "evidence": "kernel enforcement, pre_u, hook adapter",
+      "maps_to": "ESCALATE",
+      "meaning": "valid or high-risk case requiring owner/human authority",
+      "repo": "Y-star-gov",
+      "value": "ESCALATE/escalate/HOLD_FOR_APPROVAL"
+    },
+    {
+      "evidence": "OpenClaw adapter and hook",
+      "maps_to": "REQUIRE_REVISION",
+      "meaning": "runtime correct-path with suggested action/retry",
+      "repo": "Y-star-gov",
+      "value": "REDIRECT/redirect"
+    },
+    {
+      "evidence": "hook auto_rewrite path",
+      "maps_to": "REQUIRE_REVISION",
+      "meaning": "safe transform to compliant payload",
+      "repo": "Y-star-gov",
+      "value": "REWRITE/rewrite"
+    },
+    {
+      "evidence": "action semantics and gov_mcp company_runtime_tools",
+      "maps_to": "STATUS_ONLY",
+      "meaning": "owner decision or company preflight statuses",
+      "repo": "bridge-labs/gov-mcp",
+      "value": "APPROVE/approve, REJECT/reject, request_revision, hold"
+    },
+    {
+      "evidence": "E81/E82 artifacts",
+      "maps_to": "STATUS_ONLY",
+      "meaning": "approval state, not runtime validation result",
+      "repo": "bridge-labs",
+      "value": "pending_owner_decision/owner_approval_required"
+    }
+  ],
+  "job_id": "e83_ystar_gov_autoguidance_semantics_correct_path_integration_R1_20260507T000001Z",
+  "normalized_semantic_taxonomy": {
+    "ALLOW": "packet/action satisfies contract and authorization",
+    "DENY": "hard boundary violation; do not repair through automatic path",
+    "ESCALATE": "genuine owner/human authority needed after automated validation",
+    "REQUIRE_REVISION": "repository-discovered auto-guidance equivalent for repairable incompleteness",
+    "STATUS_ONLY": "artifact status or approval state, not runtime decision"
+  },
+  "selected_auto_guidance_name": "REQUIRE_REVISION"
+}

@@ -426,6 +426,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e82_cognitive_os_sync_state = {'E82_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'L4_execution_authorized': False, 'L5_ready': False, 'YstarGov_synced': False}
     try:
+        from office.mission_command.e83_autoguidance_semantics_readback import load_e83_autoguidance_state_for_brain
+        e83_autoguidance_state = load_e83_autoguidance_state_for_brain()
+    except Exception as exc:
+        e83_autoguidance_state = {'E83_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'L4_execution_authorized': False, 'L5_ready': False, 'Y_star_gov_validator_supports_correct_path_guidance': False}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -738,6 +743,17 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_e82_L4_execution_authorized": e82_cognitive_os_sync_state.get("L4_execution_authorized"),
         "current_e82_L5_ready": e82_cognitive_os_sync_state.get("L5_ready"),
         "current_e82_next_recommended_milestone": e82_cognitive_os_sync_state.get("next_recommended_milestone"),
+        "latest_e83_autoguidance_semantics_state": e83_autoguidance_state,
+        "current_e83_discovered_auto_guidance_lineage": e83_autoguidance_state.get("discovered_auto_guidance_lineage"),
+        "current_e83_actual_decision_vocabulary": e83_autoguidance_state.get("actual_decision_vocabulary"),
+        "current_e83_E82_semantics_correction": e83_autoguidance_state.get("E82_semantics_correction"),
+        "current_e83_YstarGov_validator_supports_correct_path_guidance": e83_autoguidance_state.get("Y_star_gov_validator_supports_correct_path_guidance"),
+        "current_e83_correct_L4_flow": e83_autoguidance_state.get("correct_L4_flow"),
+        "current_e83_correct_L5_flow": e83_autoguidance_state.get("correct_L5_flow"),
+        "current_e83_next_recommended_milestone": e83_autoguidance_state.get("next_milestone"),
+        "current_e83_external_action_allowed": e83_autoguidance_state.get("external_action_allowed"),
+        "current_e83_L4_execution_authorized": e83_autoguidance_state.get("L4_execution_authorized"),
+        "current_e83_L5_ready": e83_autoguidance_state.get("L5_ready"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

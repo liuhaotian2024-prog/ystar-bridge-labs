@@ -1,0 +1,63 @@
+{
+  "artifact_id": "e83_ceo_cognitive_os_correct_decision_semantics",
+  "final_decision_semantics": {
+    "ALLOW": {
+      "execution_allowed": true,
+      "when": [
+        "packet complete",
+        "cognitive loop satisfied",
+        "no forbidden claims",
+        "no bypass",
+        "action authorized"
+      ]
+    },
+    "DENY": {
+      "execution_allowed": false,
+      "when": [
+        "hard boundary violation",
+        "bypass attempt",
+        "forbidden customer/paid/pricing/compliance/production/L4/L5 claim",
+        "unverified runtime-active capability claim presented as truth",
+        "explicit duplicate Y-star-gov/K9Audit/gov-mcp core mechanism",
+        "malformed non-mapping packet"
+      ]
+    },
+    "ESCALATE": {
+      "execution_allowed_before_owner_decision": false,
+      "owner_decision_path_required": true,
+      "when": [
+        "packet is otherwise complete but action needs owner/human authority",
+        "L4/external execution has pending owner approval",
+        "risk authority is ambiguous after automated checks"
+      ]
+    },
+    "REQUIRE_REVISION": {
+      "correct_path_returned": true,
+      "execution_allowed": false,
+      "repository_discovered_equivalent": "require_revision",
+      "when": [
+        "missing required field",
+        "missing cognitive loop stage",
+        "missing repository evidence paths",
+        "recent-memory-only reasoning",
+        "missing counterfactual comparison",
+        "missing pre-action CIEU prediction",
+        "missing adversarial critique",
+        "missing what-not-to-do",
+        "construction lacking no-new-wheel proof but not explicitly duplicate",
+        "repairable post-action residual gap"
+      ]
+    },
+    "STATUS_ONLY": {
+      "runtime_decision": false,
+      "when": [
+        "artifact lifecycle status",
+        "owner approval state",
+        "report status"
+      ]
+    }
+  },
+  "hard_boundaries_remain_DENY": true,
+  "important_distinction": "repairable incompleteness returns REQUIRE_REVISION, not DENY; owner authority gaps return ESCALATE, not generic human dumping",
+  "job_id": "e83_ystar_gov_autoguidance_semantics_correct_path_integration_R1_20260507T000001Z"
+}

@@ -1,0 +1,36 @@
+{
+  "E82_semantics_correction": "repairable incomplete CEO Cognitive OS packets now REQUIRE_REVISION with correct_path; owner-approval-pending L4 external action ESCALATEs; hard boundaries DENY.",
+  "L4_execution_authorized": false,
+  "L5_ready": false,
+  "Y_star_gov_validator_supports_correct_path_guidance": true,
+  "actual_decision_vocabulary": [
+    "ALLOW",
+    "REQUIRE_REVISION",
+    "DENY",
+    "ESCALATE",
+    "STATUS_ONLY"
+  ],
+  "artifact_id": "e83_ceo_cognitive_os_autoguidance_readback",
+  "correct_L4_flow": {
+    "L4_execution_status_in_E83": "not_executed",
+    "approved_and_scoped": "ALLOW for the validated packet only",
+    "complete_but_owner_approval_pending": "ESCALATE with owner decision packet path",
+    "forbidden_claim_after_feedback": "DENY",
+    "mass_outreach_publication_payment_login_scraping": "DENY",
+    "post_action_residual_missing": "REQUIRE_REVISION",
+    "pre_action_packet_missing_cognitive_requirements": "REQUIRE_REVISION with missing fields/stages/evidence correct_path"
+  },
+  "correct_L5_flow": {
+    "L5_readiness_status_in_E83": "not_ready",
+    "future_owner_approved_scoped_revenue_experiment": "ALLOW only after future readiness gate",
+    "ledger_or_verifier": "K9Audit remains canonical owner if used",
+    "missing_pricing_customer_legal_prerequisites": "REQUIRE_REVISION or ESCALATE depending authority",
+    "pricing_or_customer_validation_claim_without_evidence": "DENY",
+    "provider_or_tool_execution": "must use gov-mcp governed provider/action envelope",
+    "unapproved_payment_customer_data_publication": "DENY"
+  },
+  "discovered_auto_guidance_lineage": "Y-star-gov require_revision via Pre-U, CIEU prediction-delta, contract dry-run, and hook adapter; bridge-labs review-gated/request-revision; gov-mcp preflight/dry-run promotion.",
+  "external_action_allowed": false,
+  "job_id": "e83_ystar_gov_autoguidance_semantics_correct_path_integration_R1_20260507T000001Z",
+  "next_milestone": "E84_YStarGov_CEO_Cognitive_OS_Hook_Runtime_Wiring_With_AutoGuidance_R1"
+}

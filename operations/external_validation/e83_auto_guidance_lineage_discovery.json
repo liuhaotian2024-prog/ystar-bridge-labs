@@ -1,0 +1,180 @@
+{
+  "artifact_id": "e83_auto_guidance_lineage_discovery",
+  "job_id": "e83_ystar_gov_autoguidance_semantics_correct_path_integration_R1_20260507T000001Z",
+  "mechanism_count": 6,
+  "mechanisms": [
+    {
+      "blocks_execution": true,
+      "decision_vocabulary": [
+        "allow",
+        "warn",
+        "require_revision",
+        "escalate",
+        "deny"
+      ],
+      "evidence": [
+        "tests/governance/test_pre_u_packet_validator.py",
+        "docs/pre_u_packet_validator/validator_interface_spec.md"
+      ],
+      "file_path": "ystar/governance/pre_u_packet_validator.py",
+      "input_schema": "Pre-U packet mapping",
+      "maturity": "implemented_and_test_backed",
+      "mechanism_id": "ystar_pre_u_require_revision",
+      "output_schema": "ValidationResult with required_revisions",
+      "relation_to_bridge_labs_ceo_packets": "semantic precedent for CEO packet repair",
+      "relation_to_check_enforce_hook": "fed into contract_dry_run then hook adapter",
+      "relation_to_gov_mcp": "upstream governance semantics for provider/tool boundary later",
+      "repo": "Y-star-gov",
+      "requires_owner_approval": false,
+      "returns_corrective_guidance": true,
+      "should_be_reused_in_CEO_Cognitive_OS": "yes",
+      "supports_reprojection_shadow_update_dry_run_revision": "revision",
+      "symbol_or_artifact": "ValidationDecision.REQUIRE_REVISION / required_revisions"
+    },
+    {
+      "blocks_execution": true,
+      "decision_vocabulary": [
+        "allow",
+        "warn",
+        "require_revision",
+        "escalate",
+        "deny"
+      ],
+      "evidence": [
+        "tests/governance/test_cieu_prediction_delta.py",
+        "docs/cieu_prediction_delta/schema_v0.md"
+      ],
+      "file_path": "ystar/governance/cieu_prediction_delta.py",
+      "input_schema": "prediction-delta record",
+      "maturity": "implemented_and_test_backed",
+      "mechanism_id": "ystar_cieu_delta_require_revision",
+      "output_schema": "DeltaValidationResult",
+      "relation_to_bridge_labs_ceo_packets": "post-action residual repair precedent",
+      "relation_to_check_enforce_hook": "used by contract dry-run before hook-like allow",
+      "relation_to_gov_mcp": "matches dry-run-before-live pattern",
+      "repo": "Y-star-gov",
+      "requires_owner_approval": false,
+      "returns_corrective_guidance": true,
+      "should_be_reused_in_CEO_Cognitive_OS": "yes",
+      "supports_reprojection_shadow_update_dry_run_revision": "prediction_delta_revision",
+      "symbol_or_artifact": "DeltaValidationDecision.REQUIRE_REVISION"
+    },
+    {
+      "blocks_execution": true,
+      "decision_vocabulary": [
+        "allow",
+        "warn",
+        "require_revision",
+        "deny",
+        "escalate"
+      ],
+      "evidence": [
+        "tests/fixtures/hook_contract_adapter/require_revision_missing_y_star.json",
+        "docs/hook_cli_contract_compatibility.md"
+      ],
+      "file_path": "ystar/governance/hook_contract_adapter.py",
+      "input_schema": "hook-like envelope",
+      "maturity": "implemented_and_test_backed",
+      "mechanism_id": "ystar_hook_contract_require_revision",
+      "output_schema": "hook decision envelope with require_revision boolean",
+      "relation_to_bridge_labs_ceo_packets": "preferred decision vocabulary for E83 patch",
+      "relation_to_check_enforce_hook": "future hook boundary compatibility layer",
+      "relation_to_gov_mcp": "compatible with governed tool boundary patterns",
+      "repo": "Y-star-gov",
+      "requires_owner_approval": false,
+      "returns_corrective_guidance": true,
+      "should_be_reused_in_CEO_Cognitive_OS": "yes",
+      "supports_reprojection_shadow_update_dry_run_revision": "dry_run_revision",
+      "symbol_or_artifact": "HookAdapterDecision.REQUIRE_REVISION"
+    },
+    {
+      "blocks_execution": "redirect allows correction/retry; deny blocks",
+      "decision_vocabulary": [
+        "allow",
+        "deny",
+        "escalate",
+        "redirect",
+        "invoke",
+        "inject",
+        "auto_post",
+        "rewrite"
+      ],
+      "evidence": [
+        "Y-star-gov:ystar/adapters/hook.py",
+        "Y-star-gov:ystar/domains/openclaw/adapter.py"
+      ],
+      "file_path": "ystar/domains/openclaw/adapter.py and ystar/adapters/hook.py",
+      "input_schema": "OpenClaw event/hook payload",
+      "maturity": "implemented",
+      "mechanism_id": "ystar_openclaw_redirect_rewrite",
+      "output_schema": "hook PreToolUse decision envelope",
+      "relation_to_bridge_labs_ceo_packets": "confirms incomplete-but-repairable should not always be DENY",
+      "relation_to_check_enforce_hook": "real hook/runtime correction precedent",
+      "relation_to_gov_mcp": "later tool/provider boundary can consume Y-star-gov decisions",
+      "repo": "Y-star-gov",
+      "requires_owner_approval": "only for escalated authority cases",
+      "returns_corrective_guidance": true,
+      "should_be_reused_in_CEO_Cognitive_OS": "maybe_later_runtime_wiring",
+      "supports_reprojection_shadow_update_dry_run_revision": "redirect/rewrite/corrective retry",
+      "symbol_or_artifact": "EnforceDecision.REDIRECT / REWRITE / GuidancePayload"
+    },
+    {
+      "blocks_execution": "review-gated until owner or review path",
+      "decision_vocabulary": [
+        "ALLOW_INTERNAL",
+        "REVIEW_GATED",
+        "NEEDS_OWNER_APPROVAL",
+        "BLOCKED"
+      ],
+      "evidence": [
+        "tests/office/test_action_semantics.py"
+      ],
+      "file_path": "office/mission_command/action_semantics.py",
+      "input_schema": "structured action dict",
+      "maturity": "implemented_and_test_backed",
+      "mechanism_id": "bridge_labs_review_gated_action_semantics",
+      "output_schema": "StructuredAction",
+      "relation_to_bridge_labs_ceo_packets": "bridge side precedent for approval/revision/blocked distinctions",
+      "relation_to_check_enforce_hook": "bridge-labs packet producer, not canonical enforcement",
+      "relation_to_gov_mcp": "company preflight semantics mirror gov-mcp company_runtime_tools",
+      "repo": "bridge-labs",
+      "requires_owner_approval": "for external side effects and live read-only research",
+      "returns_corrective_guidance": true,
+      "should_be_reused_in_CEO_Cognitive_OS": "context_only",
+      "supports_reprojection_shadow_update_dry_run_revision": "review_gate",
+      "symbol_or_artifact": "decision_from_structured_action -> REVIEW_GATED / NEEDS_OWNER_APPROVAL"
+    },
+    {
+      "blocks_execution": "provider live path blocked until promotion contract passes",
+      "decision_vocabulary": [
+        "approve",
+        "reject",
+        "request_revision",
+        "hold",
+        "promotion_allowed",
+        "dry_run_denied"
+      ],
+      "evidence": [
+        "gov-mcp:gov_mcp/company_runtime_tools.py",
+        "gov-mcp:gov_mcp/outbound/provider_promotion.py"
+      ],
+      "file_path": "gov_mcp/company_runtime_tools.py and gov_mcp/outbound/provider_promotion.py",
+      "input_schema": "company action/preflight/provider request",
+      "maturity": "implemented_read_only_in_E83",
+      "mechanism_id": "gov_mcp_company_preflight_and_provider_promotion",
+      "output_schema": "governance/preflight/promotion result",
+      "relation_to_bridge_labs_ceo_packets": "L4/L5 execution must later use gov-mcp where provider/tool action exists",
+      "relation_to_check_enforce_hook": "tool/provider executor side, not E83 patch target",
+      "relation_to_gov_mcp": "canonical provider/tool envelope owner",
+      "repo": "gov-mcp",
+      "requires_owner_approval": "risk-tier dependent",
+      "returns_corrective_guidance": true,
+      "should_be_reused_in_CEO_Cognitive_OS": "yes_later_execution_boundary",
+      "supports_reprojection_shadow_update_dry_run_revision": "dry_run_and_promotion",
+      "symbol_or_artifact": "gov_company_action_preflight / request_revision / dry_run_to_live_promotion"
+    }
+  ],
+  "no_external_action": true,
+  "owner_correction_confirmed": "repairable incomplete CEO packets should receive require_revision guidance, not flat DENY or human-dump ESCALATE",
+  "repository_discovered_correct_path_name": "REQUIRE_REVISION"
+}
