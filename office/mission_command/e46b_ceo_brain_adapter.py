@@ -406,6 +406,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e78_l3_research_state = {'E78_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision', 'did_execute_L3': False}
     try:
+        from office.mission_command.e79_readback import load_e79_strategic_judgment_state_for_brain
+        e79_strategic_judgment_state = load_e79_strategic_judgment_state_for_brain()
+    except Exception as exc:
+        e79_strategic_judgment_state = {'E79_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'L4_execution_authorized': False, 'quality_gate_passed': False}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -648,6 +653,19 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_e78_L5_ready": e78_l3_research_state.get("L5_ready"),
         "current_e78_next_recommended_milestone": e78_l3_research_state.get("next_recommended_milestone"),
         "current_e78_external_action_allowed": e78_l3_research_state.get("external_action_allowed"),
+        "latest_e79_strategic_judgment_state": e79_strategic_judgment_state,
+        "current_e79_status": e79_strategic_judgment_state.get("E79_status"),
+        "current_e79_selected_strategic_thesis": e79_strategic_judgment_state.get("selected_strategic_thesis"),
+        "current_e79_backup_thesis_id": e79_strategic_judgment_state.get("backup_thesis_id"),
+        "current_e79_target_buyer": e79_strategic_judgment_state.get("target_buyer"),
+        "current_e79_trigger_event": e79_strategic_judgment_state.get("trigger_event"),
+        "current_e79_frontstage_message": e79_strategic_judgment_state.get("frontstage_message"),
+        "current_e79_backstage_CIEU_role": e79_strategic_judgment_state.get("backstage_CIEU_role"),
+        "current_e79_quality_gate_passed": e79_strategic_judgment_state.get("quality_gate_passed"),
+        "current_e79_L4_packet_status": e79_strategic_judgment_state.get("L4_packet_status"),
+        "current_e79_L4_execution_authorized": e79_strategic_judgment_state.get("L4_execution_authorized"),
+        "current_e79_next_recommended_milestone": e79_strategic_judgment_state.get("next_recommended_milestone"),
+        "current_e79_external_action_allowed": e79_strategic_judgment_state.get("external_action_allowed"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

@@ -1,0 +1,17 @@
+# E79 CEO Judgment Quality Gate
+
+E78 classification: process_success_but_requires_E79_strategic_correction_before_L4_packet_is_trusted
+E78 score: 5.5
+E79 selected thesis score: 9.9
+Gate passed: True
+
+## Failure Rules
+- fails_if_output_could_have_been_written_without_reading_project_artifacts
+- fails_if_it_only_lists_generic_market_words
+- fails_if_no_target_buyer
+- fails_if_no_trigger_event
+- fails_if_no_explicit_not_to_do_tradeoff
+- fails_if_no_falsifiable_validation_question
+- fails_if_recommends_more_construction_when_real_work_is_possible
+- fails_if_public_read_evidence_is_treated_as_customer_validation
+- fails_if_safety_language_replaces_strategic_judgment

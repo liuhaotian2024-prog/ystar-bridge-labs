@@ -1,0 +1,16 @@
+{
+  "artifact_id": "e79_readback_smoke_result",
+  "checks": {
+    "strategic_judgment_upgraded": true,
+    "selected_thesis_present": true,
+    "target_buyer_present": true,
+    "trigger_event_present": true,
+    "quality_gate_passed": true,
+    "L4_packet_only": true,
+    "L5_not_claimed": true,
+    "no_forbidden_claims": true,
+    "no_external_action": true
+  },
+  "passes": true,
+  "external_action_allowed": false
+}
