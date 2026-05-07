@@ -1,0 +1,165 @@
+{
+  "artifact_id": "e75_future_E76_disabled_execution_prompt_draft",
+  "bridge_job_id": "e75_l3_read_only_external_research_owner_decision_packet_finalization_20260507T000001Z",
+  "proposed_future_milestone": "E76_Owner_Approved_L3_Read_Only_External_Research_Pilot",
+  "draft_status": "disabled_pending_explicit_owner_approval",
+  "execution_disabled": true,
+  "owner_approval_required": true,
+  "owner_approval_granted": false,
+  "expected_base_placeholder": "<fill with current bridge-labs HEAD after E75>",
+  "owner_approval_field_required": {
+    "owner_selected_option": "APPROVE_L3_READ_ONLY_RESEARCH_PILOT or APPROVE_WITH_SCOPE_REDUCTION",
+    "approved_source_categories": "required non-empty subset of E75 allowlist",
+    "approved_source_count_cap": "required",
+    "approved_timebox": "required",
+    "approval_timestamp": "required"
+  },
+  "inherited_allowlist": [
+    {
+      "category_id": "official_agent_framework_docs",
+      "category": "Official docs from AI agent frameworks and tool ecosystems",
+      "allowed_use": "market language and workflow-control context"
+    },
+    {
+      "category_id": "ai_governance_observability_security_vendor_pages",
+      "category": "Public product pages from adjacent AI governance, agent observability, security, and audit vendors",
+      "allowed_use": "category and product/offer analogs"
+    },
+    {
+      "category_id": "ai_infrastructure_public_blogs",
+      "category": "Public blog posts from AI infrastructure companies",
+      "allowed_use": "buyer/problem and product language"
+    },
+    {
+      "category_id": "public_github_repos_issues",
+      "category": "Public GitHub repos and issue discussions where no login is required",
+      "allowed_use": "implementation pain and public behavior proxy only"
+    },
+    {
+      "category_id": "public_standards_regulatory_guidance",
+      "category": "Public standards/regulatory guidance pages",
+      "allowed_use": "high-level requirement language; no compliance claim"
+    },
+    {
+      "category_id": "public_founder_operator_discussions",
+      "category": "Public founder/operator discussions accessible without login",
+      "allowed_use": "public behavior proxy only; no outreach"
+    },
+    {
+      "category_id": "public_job_posts",
+      "category": "Public job posts",
+      "allowed_use": "market demand proxy only; no recruitment/outreach"
+    },
+    {
+      "category_id": "public_pricing_pages",
+      "category": "Public pricing pages from adjacent products",
+      "allowed_use": "pricing analog only; no pricing validation claim"
+    },
+    {
+      "category_id": "public_conference_talks_transcripts",
+      "category": "Public conference talks/transcripts accessible without login",
+      "allowed_use": "market language and problem framing"
+    },
+    {
+      "category_id": "public_vendor_case_studies",
+      "category": "Public case studies from vendors",
+      "allowed_use": "category/problem analog only; no customer validation claim for Y*Bridge"
+    }
+  ],
+  "no_contact_boundary": [
+    "contacting customers",
+    "contacting experts",
+    "sending emails or messages",
+    "submitting forms",
+    "posting comments",
+    "joining communities",
+    "scraping behind login",
+    "accepting terms on behalf of owner",
+    "payment actions",
+    "creating accounts",
+    "API calls requiring credentials",
+    "publication",
+    "advertising",
+    "claiming customer validation",
+    "claiming paid signal",
+    "claiming compliance/legal proof",
+    "claiming production readiness"
+  ],
+  "public_read_only_research_instructions": [
+    "Only read owner-approved public source categories.",
+    "Do not log in, submit forms, post, message, pay, call private APIs, or collect contact data.",
+    "Create one receipt per source.",
+    "Synthesize public evidence as proxy evidence only."
+  ],
+  "receipt_schema": {
+    "source_id": "stable internal id for the source",
+    "source_title": "public source title",
+    "source_url_or_locator": "URL or public locator; no private locator",
+    "source_category": "must match owner-approved allowlist category",
+    "access_mode": "public_read_only",
+    "access_time": "UTC timestamp for future E76 read",
+    "public_read_only_confirmed": "boolean",
+    "login_required": "boolean, must be false unless owner explicitly approves a special case",
+    "interaction_required": "boolean, must be false",
+    "evidence_type": "market_language, category_presence, pricing_analog, demand_proxy, behavior_proxy, or exclusion",
+    "relevant_claims_supported": "bounded list of supported hypotheses",
+    "quote_or_summary_boundary": "short quote or summary limit, copyright-safe",
+    "risk_flags": "overclaim, login, contact, paywall, privacy, relevance, or none",
+    "allowed_by_owner_scope": "boolean",
+    "included_in_synthesis": "boolean",
+    "exclusion_reason": "required if excluded"
+  },
+  "synthesis_requirements": [
+    "answer approved research questions",
+    "score evidence quality and limitations",
+    "map findings to buyer/problem/product assumptions",
+    "state whether evidence strengthens, weakens, or redirects the current route",
+    "recommend next owner decision"
+  ],
+  "no_overclaim_controls": {
+    "forbidden_after_future_L3": [
+      "customer validation",
+      "expert validation",
+      "paid signal",
+      "pricing validation",
+      "legal compliance",
+      "regulatory certification",
+      "production deployment",
+      "live audit ledger",
+      "live provider execution",
+      "L4 external action readiness",
+      "L5 revenue readiness"
+    ],
+    "allowed_after_future_L3": [
+      "public-read evidence collected",
+      "non-contact market signal",
+      "public proxy evidence",
+      "source-backed hypothesis refinement",
+      "readiness or non-readiness for next owner decision"
+    ]
+  },
+  "stop_abort_conditions": [
+    "source requires login, payment, contact, or form submission",
+    "source contains private personal contact data",
+    "research starts drifting into customer outreach or expert feedback",
+    "evidence would require compliance/legal interpretation beyond public-read summary",
+    "no-overclaim checks fail"
+  ],
+  "output_artifacts": [
+    "E76 source receipt log",
+    "E76 evidence atom map",
+    "E76 synthesis report",
+    "E76 route implication scorecard",
+    "E76 no-overclaim validation",
+    "E76 CIEU residual",
+    "E76 owner decision packet"
+  ],
+  "tests_or_checks": [
+    "all sources are owner-approved public-read only",
+    "no login/contact/payment/publication occurred",
+    "receipt schema complete",
+    "forbidden claims absent",
+    "L4/L5 not falsely marked ready"
+  ],
+  "external_action_allowed_in_E75": false
+}

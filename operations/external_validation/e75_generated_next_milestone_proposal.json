@@ -1,0 +1,16 @@
+{
+  "artifact_id": "e75_generated_next_milestone_proposal",
+  "bridge_job_id": "e75_l3_read_only_external_research_owner_decision_packet_finalization_20260507T000001Z",
+  "owner_decision_status": "pending_owner_decision",
+  "selected_next_milestone": "E76_Await_or_Record_Owner_Decision_for_L3_Read_Only_Research",
+  "decision_state_routing": {
+    "pending_owner_decision": "E76_Await_or_Record_Owner_Decision_for_L3_Read_Only_Research",
+    "APPROVE_L3_READ_ONLY_RESEARCH_PILOT": "E76_Owner_Approved_L3_Read_Only_External_Research_Pilot",
+    "APPROVE_WITH_SCOPE_REDUCTION": "E76_L3_Read_Only_Research_Scope_Narrowing_R1",
+    "REQUEST_MORE_L2_INTERNAL_WORK": "E76_Return_to_L2_Internal_Work_or_Commercial_Packaging",
+    "REJECT_L3_FOR_NOW": "E76_Return_to_L2_Internal_Work_or_Commercial_Packaging"
+  },
+  "why_selected": "Owner approval remains pending, so the next milestone must await or record owner decision rather than executing L3.",
+  "next_step_is_decision_not_construction": true,
+  "external_action_allowed": false
+}

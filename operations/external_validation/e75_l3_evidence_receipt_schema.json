@@ -1,0 +1,45 @@
+{
+  "artifact_id": "e75_l3_evidence_receipt_schema",
+  "bridge_job_id": "e75_l3_read_only_external_research_owner_decision_packet_finalization_20260507T000001Z",
+  "schema_status": "template_only_no_execution",
+  "fields": {
+    "source_id": "stable internal id for the source",
+    "source_title": "public source title",
+    "source_url_or_locator": "URL or public locator; no private locator",
+    "source_category": "must match owner-approved allowlist category",
+    "access_mode": "public_read_only",
+    "access_time": "UTC timestamp for future E76 read",
+    "public_read_only_confirmed": "boolean",
+    "login_required": "boolean, must be false unless owner explicitly approves a special case",
+    "interaction_required": "boolean, must be false",
+    "evidence_type": "market_language, category_presence, pricing_analog, demand_proxy, behavior_proxy, or exclusion",
+    "relevant_claims_supported": "bounded list of supported hypotheses",
+    "quote_or_summary_boundary": "short quote or summary limit, copyright-safe",
+    "risk_flags": "overclaim, login, contact, paywall, privacy, relevance, or none",
+    "allowed_by_owner_scope": "boolean",
+    "included_in_synthesis": "boolean",
+    "exclusion_reason": "required if excluded"
+  },
+  "sample_placeholder_receipt": {
+    "source_id": "TEMPLATE_ONLY_DO_NOT_TREAT_AS_SOURCE",
+    "source_title": "Placeholder only",
+    "source_url_or_locator": "not_applicable_E75_no_browsing",
+    "source_category": "placeholder",
+    "access_mode": "not_accessed",
+    "access_time": null,
+    "public_read_only_confirmed": false,
+    "login_required": null,
+    "interaction_required": null,
+    "evidence_type": "template_only",
+    "relevant_claims_supported": [],
+    "quote_or_summary_boundary": "no quote collected in E75",
+    "risk_flags": [
+      "template_only"
+    ],
+    "allowed_by_owner_scope": false,
+    "included_in_synthesis": false,
+    "exclusion_reason": "E75 does not execute external research"
+  },
+  "real_receipts_generated_in_E75": false,
+  "external_action_allowed": false
+}

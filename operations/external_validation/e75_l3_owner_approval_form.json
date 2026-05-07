@@ -1,0 +1,39 @@
+{
+  "artifact_id": "e75_l3_owner_approval_form",
+  "bridge_job_id": "e75_l3_read_only_external_research_owner_decision_packet_finalization_20260507T000001Z",
+  "approval_status": "pending_owner_decision",
+  "decision_options": [
+    {
+      "option_id": "APPROVE_L3_READ_ONLY_RESEARCH_PILOT",
+      "meaning": "Owner approves a future E76 read-only research pilot within the exact boundaries of this packet.",
+      "selected": false
+    },
+    {
+      "option_id": "APPROVE_WITH_SCOPE_REDUCTION",
+      "meaning": "Owner approves only a narrower source set, smaller question set, or smaller evidence budget.",
+      "selected": false
+    },
+    {
+      "option_id": "REQUEST_MORE_L2_INTERNAL_WORK",
+      "meaning": "Owner does not approve external research yet and requests more internal packaging, pricing, buyer hypothesis, or source planning.",
+      "selected": false
+    },
+    {
+      "option_id": "REJECT_L3_FOR_NOW",
+      "meaning": "Owner declines L3 and keeps CEO at L2 only.",
+      "selected": false
+    }
+  ],
+  "empty_owner_fields": {
+    "owner_selected_option": null,
+    "approved_source_categories": [],
+    "approved_research_questions": [],
+    "approved_source_count_cap": null,
+    "approved_timebox": null,
+    "approval_notes": null,
+    "approved_by": null,
+    "approval_timestamp": null
+  },
+  "approval_granted": false,
+  "external_action_allowed": false
+}

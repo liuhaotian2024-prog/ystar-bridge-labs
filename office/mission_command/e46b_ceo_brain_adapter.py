@@ -391,6 +391,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e74_l2_internal_work_state = {'L2_work_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_decision_status': 'pending_owner_decision'}
     try:
+        from office.mission_command.e75_readback import load_e75_owner_decision_state_for_brain
+        e75_l3_owner_decision_state = load_e75_owner_decision_state_for_brain()
+    except Exception as exc:
+        e75_l3_owner_decision_state = {'E75_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'owner_approval_status': 'pending_owner_decision'}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -594,6 +599,18 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_ceo_l2_work_l3_status": e74_l2_internal_work_state.get("L3_status_after_E74"),
         "current_ceo_l2_work_next_recommended_milestone": e74_l2_internal_work_state.get("next_recommended_milestone"),
         "current_ceo_l2_work_external_action_allowed": e74_l2_internal_work_state.get("external_action_allowed"),
+        "latest_l3_owner_decision_packet_state": e75_l3_owner_decision_state,
+        "current_l3_owner_decision_packet_status": e75_l3_owner_decision_state.get("E75_status"),
+        "current_l3_owner_decision_packet_l3_executed": e75_l3_owner_decision_state.get("L3_executed"),
+        "current_l3_owner_decision_packet_owner_approval_status": e75_l3_owner_decision_state.get("owner_approval_status"),
+        "current_l3_owner_decision_packet_source_categories": e75_l3_owner_decision_state.get("proposed_source_categories"),
+        "current_l3_owner_decision_packet_forbidden_actions": e75_l3_owner_decision_state.get("forbidden_actions"),
+        "current_l3_owner_decision_requested": e75_l3_owner_decision_state.get("decision_requested_from_owner"),
+        "current_l3_owner_decision_if_owner_approves": e75_l3_owner_decision_state.get("if_owner_approves"),
+        "current_l3_owner_decision_L4_ready": e75_l3_owner_decision_state.get("L4_ready"),
+        "current_l3_owner_decision_L5_ready": e75_l3_owner_decision_state.get("L5_ready"),
+        "current_l3_owner_decision_next_milestone": e75_l3_owner_decision_state.get("next_recommended_milestone"),
+        "current_l3_owner_decision_external_action_allowed": e75_l3_owner_decision_state.get("external_action_allowed"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,
