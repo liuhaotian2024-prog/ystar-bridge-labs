@@ -1,0 +1,118 @@
+{
+  "Y_star_gov_root": "/Users/haotianliu/.openclaw/workspace/Y-star-gov",
+  "artifact_id": "e82_live_cross_repo_validation_fixture",
+  "bridge_job_id": "e82_owner_approved_ystar_gov_ceo_cognitive_os_sync_target_narrowing_and_patch_R1_20260507T000001Z",
+  "direct_Y_star_gov_import_used": true,
+  "external_action_executed": false,
+  "fallback_fixture_used": false,
+  "forbidden_claim_result": {
+    "cieu_validation_record": {
+      "R_t_plus_1": "blocked residual: forbidden claim present: customer_validation_claim",
+      "U_t": "Y-star-gov CEO Cognitive OS validation",
+      "X_t": {
+        "action_class": "owner_decision_preparation",
+        "contract_id": "ceo_cognitive_os_loop_contract_v1",
+        "packet_id": "e82_invalid_forbidden_claim"
+      },
+      "Y_star_t": "CEO major action must pass mandatory cognitive loop before acceptance",
+      "Y_t_plus_1": {
+        "decision": "DENY",
+        "reason": "forbidden claim present: customer_validation_claim"
+      }
+    },
+    "decision": "DENY",
+    "failed_stage": "overclaim_boundary",
+    "passed": false,
+    "reason": "forbidden claim present: customer_validation_claim",
+    "violations": [
+      "customer_validation_claim"
+    ]
+  },
+  "invalid_l4_without_owner_approval_result": {
+    "cieu_validation_record": {
+      "R_t_plus_1": "blocked residual: L4/external execution requires explicit owner approval",
+      "U_t": "Y-star-gov CEO Cognitive OS validation",
+      "X_t": {
+        "action_class": "L4_external_feedback_execution",
+        "contract_id": "ceo_cognitive_os_loop_contract_v1",
+        "packet_id": "e82_invalid_l4_without_owner_approval"
+      },
+      "Y_star_t": "CEO major action must pass mandatory cognitive loop before acceptance",
+      "Y_t_plus_1": {
+        "decision": "DENY",
+        "reason": "L4/external execution requires explicit owner approval"
+      }
+    },
+    "decision": "DENY",
+    "failed_stage": "owner_approval_gate",
+    "passed": false,
+    "reason": "L4/external execution requires explicit owner approval",
+    "violations": []
+  },
+  "invalid_missing_counterfactual_result": {
+    "cieu_validation_record": {
+      "R_t_plus_1": "blocked residual: at least two counterfactual comparisons are required",
+      "U_t": "Y-star-gov CEO Cognitive OS validation",
+      "X_t": {
+        "action_class": "owner_decision_preparation",
+        "contract_id": "ceo_cognitive_os_loop_contract_v1",
+        "packet_id": "e82_invalid_missing_counterfactual"
+      },
+      "Y_star_t": "CEO major action must pass mandatory cognitive loop before acceptance",
+      "Y_t_plus_1": {
+        "decision": "DENY",
+        "reason": "at least two counterfactual comparisons are required"
+      }
+    },
+    "decision": "DENY",
+    "failed_stage": "counterfactual_action_comparison",
+    "passed": false,
+    "reason": "at least two counterfactual comparisons are required",
+    "violations": []
+  },
+  "invalid_recent_memory_only_result": {
+    "cieu_validation_record": {
+      "R_t_plus_1": "blocked residual: recent-memory-only reasoning is not accepted",
+      "U_t": "Y-star-gov CEO Cognitive OS validation",
+      "X_t": {
+        "action_class": "owner_decision_preparation",
+        "contract_id": "ceo_cognitive_os_loop_contract_v1",
+        "packet_id": "e82_invalid_recent_memory_only"
+      },
+      "Y_star_t": "CEO major action must pass mandatory cognitive loop before acceptance",
+      "Y_t_plus_1": {
+        "decision": "DENY",
+        "reason": "recent-memory-only reasoning is not accepted"
+      }
+    },
+    "decision": "DENY",
+    "failed_stage": "full_capability_inventory_recall",
+    "passed": false,
+    "reason": "recent-memory-only reasoning is not accepted",
+    "violations": [
+      "recent_memory_only"
+    ]
+  },
+  "limitations": [],
+  "valid_packet_result": {
+    "cieu_validation_record": {
+      "R_t_plus_1": "none",
+      "U_t": "Y-star-gov CEO Cognitive OS validation",
+      "X_t": {
+        "action_class": "owner_decision_preparation",
+        "contract_id": "ceo_cognitive_os_loop_contract_v1",
+        "packet_id": "e81_live_internal_decision_pre_action_packet"
+      },
+      "Y_star_t": "CEO major action must pass mandatory cognitive loop before acceptance",
+      "Y_t_plus_1": {
+        "decision": "ALLOW",
+        "reason": "CEO pre-action packet satisfies CEO Cognitive OS contract"
+      }
+    },
+    "decision": "ALLOW",
+    "failed_stage": null,
+    "passed": true,
+    "reason": "CEO pre-action packet satisfies CEO Cognitive OS contract",
+    "violations": []
+  }
+}

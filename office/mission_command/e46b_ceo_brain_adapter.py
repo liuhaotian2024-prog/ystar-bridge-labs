@@ -421,6 +421,11 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
     except Exception as exc:
         e81_cognitive_os_state = {'E81_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'L4_execution_authorized': False, 'L5_ready': False, 'bypass_allowed': True}
     try:
+        from office.mission_command.e82_ystar_gov_sync_readback import load_e82_cognitive_os_sync_state_for_brain
+        e82_cognitive_os_sync_state = load_e82_cognitive_os_sync_state_for_brain()
+    except Exception as exc:
+        e82_cognitive_os_sync_state = {'E82_status': 'unavailable_nonfatal', 'error': str(exc), 'external_action_allowed': False, 'L4_execution_authorized': False, 'L5_ready': False, 'YstarGov_synced': False}
+    try:
         wisdom_results = json.loads(wisdom.get("stdout") or "[]") if wisdom.get("returncode") == 0 else []
     except Exception:
         wisdom_results = []
@@ -719,6 +724,20 @@ def load_ceo_brain_context(task: dict[str, Any]) -> dict[str, Any]:
         "current_e81_external_action_allowed": e81_cognitive_os_state.get("external_action_allowed"),
         "current_e81_L4_execution_authorized": e81_cognitive_os_state.get("L4_execution_authorized"),
         "current_e81_L5_ready": e81_cognitive_os_state.get("L5_ready"),
+        "latest_e82_ceo_cognitive_os_sync_state": e82_cognitive_os_sync_state,
+        "current_e82_status": e82_cognitive_os_sync_state.get("E82_status"),
+        "current_e82_enforcement_mode": e82_cognitive_os_sync_state.get("current_enforcement_mode"),
+        "current_e82_YstarGov_synced": e82_cognitive_os_sync_state.get("YstarGov_synced"),
+        "current_e82_YstarGov_module_path": e82_cognitive_os_sync_state.get("YstarGov_module_path"),
+        "current_e82_YstarGov_tests_path": e82_cognitive_os_sync_state.get("YstarGov_tests_path"),
+        "current_e82_direct_YstarGov_import_used": e82_cognitive_os_sync_state.get("direct_YstarGov_import_used"),
+        "current_e82_bypass_status": e82_cognitive_os_sync_state.get("bypass_status"),
+        "current_e82_future_CEO_work_requires_pre_action_packet": e82_cognitive_os_sync_state.get("future_CEO_work_requires_pre_action_packet"),
+        "current_e82_future_CEO_work_requires_post_action_residual": e82_cognitive_os_sync_state.get("future_CEO_work_requires_post_action_residual"),
+        "current_e82_if_CEO_bypasses_loop": e82_cognitive_os_sync_state.get("if_CEO_bypasses_loop"),
+        "current_e82_L4_execution_authorized": e82_cognitive_os_sync_state.get("L4_execution_authorized"),
+        "current_e82_L5_ready": e82_cognitive_os_sync_state.get("L5_ready"),
+        "current_e82_next_recommended_milestone": e82_cognitive_os_sync_state.get("next_recommended_milestone"),
         "commercial_assets": _commercial_assets(),
         "read_model_role": "active read context assembled from wisdom, working memory status, latest KG/brain/read-model artifacts, directives, commercial assets, and E50B current decision state",
         "no_external_action": True,

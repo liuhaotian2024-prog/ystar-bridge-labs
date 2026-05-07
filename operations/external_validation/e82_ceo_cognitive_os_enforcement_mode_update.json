@@ -1,0 +1,13 @@
+{
+  "L4_execution_authorized": false,
+  "L5_ready": false,
+  "artifact_id": "e82_ceo_cognitive_os_enforcement_mode_update",
+  "bridge_job_id": "e82_owner_approved_ystar_gov_ceo_cognitive_os_sync_target_narrowing_and_patch_R1_20260507T000001Z",
+  "bridge_labs_role": "product/company runtime + evidence/readback + pre-action packet producer",
+  "bypass_status": "denied by bridge-labs preflight and Y-star-gov validator",
+  "canonical_governance_owner": "Y-star-gov",
+  "current_mode": "dual_enforced_bridge_labs_and_YstarGov",
+  "future_CEO_work_requires_post_action_residual": true,
+  "future_CEO_work_requires_pre_action_packet": true,
+  "previous_mode": "bridge_labs_pre_sync_validator"
+}

@@ -1,0 +1,91 @@
+{
+  "CIEU_fields_mapped": {
+    "post_action_residual": [
+      "X_t",
+      "U_t",
+      "Y_star_t",
+      "Y_t_plus_1",
+      "R_t_plus_1"
+    ],
+    "pre_action_prediction": [
+      "X_t",
+      "U_t",
+      "Y_star_t",
+      "expected_Y_t_plus_1",
+      "predicted_R_t_plus_1",
+      "residual_severity"
+    ]
+  },
+  "E81_contract_id": "ceo_cognitive_os_loop_contract_v1",
+  "E81_contract_source_path": "operations/external_validation/e81_ceo_cognitive_os_loop_contract.json",
+  "E81_post_action_schema_path": "operations/external_validation/e81_ceo_mandatory_post_action_residual_schema.json",
+  "E81_pre_action_schema_path": "operations/external_validation/e81_ceo_mandatory_pre_action_packet_schema.json",
+  "Y_star_gov_module_path": "ystar/governance/ceo_cognitive_os_contract.py",
+  "Y_star_gov_tests_path": "tests/governance/test_ceo_cognitive_os_contract.py",
+  "artifact_id": "e82_cross_repo_cognitive_os_traceability_matrix",
+  "bridge_job_id": "e82_owner_approved_ystar_gov_ceo_cognitive_os_sync_target_narrowing_and_patch_R1_20260507T000001Z",
+  "bypass_rules_mapped": [
+    "bypass_attempt must be false",
+    "missing packet is DENY"
+  ],
+  "denial_rules_mapped": [
+    "missing required fields",
+    "bypass_attempt true",
+    "missing mandatory loop stage",
+    "missing discovered capabilities or repository evidence",
+    "recent_memory_only reasoning",
+    "fewer than two counterfactual candidates",
+    "missing or malformed pre-action CIEU prediction",
+    "missing adversarial critique",
+    "missing what-not-to-do",
+    "construction action without no-new-wheel proof",
+    "L4/external action without owner approval",
+    "forbidden customer/paid/pricing/compliance/production/L4/L5 claims"
+  ],
+  "exported_symbols": [
+    "CEOCognitiveOSContract",
+    "CEOCognitiveOSDecision",
+    "CEOCognitiveOSDecisionValue",
+    "build_ceo_cognitive_os_cieu_record",
+    "build_ceo_cognitive_os_contract",
+    "validate_ceo_pre_action_packet",
+    "validate_ceo_post_action_residual"
+  ],
+  "forbidden_claims_mapped": [
+    "customer_validation_claim",
+    "expert_validation_claim",
+    "paid_signal_claim",
+    "pricing_validation_claim",
+    "compliance_legal_claim",
+    "production_deployment_claim",
+    "L4_execution_claim",
+    "L5_readiness_claim"
+  ],
+  "gaps_or_intentional_differences": [
+    "Y-star-gov validator does not mine bridge-labs repository at runtime; it validates evidence paths supplied in packet.",
+    "Y-star-gov returns CIEU-style validation records but does not write live CIEU DB records in E82.",
+    "Hook/PreToolUse runtime wiring remains a possible later narrow milestone."
+  ],
+  "mandatory_stage_count": 16,
+  "owner_approval_rules_mapped": [
+    "L4/external execution requires owner_approval_state=approved"
+  ],
+  "required_loop_stage_ids": [
+    "mission_and_owner_constraint_recall",
+    "full_capability_inventory_recall",
+    "relevant_historical_asset_retrieval",
+    "current_problem_classification",
+    "canonical_owner_selection",
+    "existing_module_reuse_extend_wrap_create_new_decision",
+    "long_memory_KG_brain_recall_if_evidence_supported",
+    "field_dimensional_reasoning_if_evidence_supported",
+    "thesis_generation",
+    "counterfactual_action_comparison",
+    "pre_action_CIEU_residual_prediction",
+    "adversarial_critique",
+    "commercial_sharpness_gate",
+    "no_new_wheel_gate",
+    "decision",
+    "post_action_CIEU_residual_and_learning_update"
+  ]
+}

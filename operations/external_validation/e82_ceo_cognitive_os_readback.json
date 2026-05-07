@@ -1,0 +1,21 @@
+{
+  "E82_status": "YstarGov_CEO_Cognitive_OS_sync_patch_recorded",
+  "L4_execution_authorized": false,
+  "L5_ready": false,
+  "YstarGov_module_path": "ystar/governance/ceo_cognitive_os_contract.py",
+  "YstarGov_synced": true,
+  "YstarGov_tests_path": "tests/governance/test_ceo_cognitive_os_contract.py",
+  "artifact_id": "e82_ceo_cognitive_os_readback",
+  "bridge_job_id": "e82_owner_approved_ystar_gov_ceo_cognitive_os_sync_target_narrowing_and_patch_R1_20260507T000001Z",
+  "bridge_labs_role": "product/company runtime + evidence/readback + pre-action packet producer",
+  "bypass_status": "denied by bridge-labs preflight and Y-star-gov validator",
+  "canonical_governance_owner": "Y-star-gov",
+  "current_enforcement_mode": "dual_enforced_bridge_labs_and_YstarGov",
+  "direct_YstarGov_import_used": true,
+  "external_action_allowed": false,
+  "future_CEO_work_requires_post_action_residual": true,
+  "future_CEO_work_requires_pre_action_packet": true,
+  "if_CEO_bypasses_loop": "Y-star-gov-side validator returns DENY; bridge-labs preflight also DENYs",
+  "next_recommended_milestone": "E83_Record_Owner_Decision_or_Execute_Minimal_L4_Feedback_Through_YStarGov_Cognitive_OS_If_Approved",
+  "previous_mode": "bridge_labs_pre_sync_validator"
+}

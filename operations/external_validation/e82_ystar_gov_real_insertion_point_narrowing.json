@@ -1,0 +1,163 @@
+{
+  "artifact_id": "e82_ystar_gov_real_insertion_point_narrowing",
+  "bridge_job_id": "e82_owner_approved_ystar_gov_ceo_cognitive_os_sync_target_narrowing_and_patch_R1_20260507T000001Z",
+  "candidate_count": 6,
+  "candidate_insertion_points": [
+    {
+      "candidate_id": "canonical_check_path",
+      "classification": "selected",
+      "file_path": "ystar/governance/ceo_cognitive_os_contract.py",
+      "mutation_required": true,
+      "risk": "Low: isolated standard-library validator.",
+      "selected_for_patch": true,
+      "symbol": "validate_ceo_pre_action_packet",
+      "test_strategy": "direct ALLOW/DENY fixture tests.",
+      "why_relevant": "Adds deterministic CEO Cognitive OS packet validation in the governance services layer.",
+      "why_right_or_not": "Right insertion point: mirrors existing Pre-U validator without touching generic kernel checks or runtime hooks."
+    },
+    {
+      "candidate_id": "hook_pretooluse_path",
+      "classification": "rejected_for_E82_runtime_wiring",
+      "file_path": "ystar/_hook_entry.py; ystar/_hook_daemon.py; ystar/governance/hook_contract_adapter.py",
+      "mutation_required": false,
+      "risk": "Medium if wired prematurely.",
+      "selected_for_patch": false,
+      "symbol": "check_hook / run_hook_contract_dry_run",
+      "test_strategy": "future hook runtime wiring tests.",
+      "why_relevant": "Future tool-call boundary can consume CEO Cognitive OS decisions.",
+      "why_right_or_not": "Not patched in E82 to avoid live hook behavior changes before validator is stable."
+    },
+    {
+      "candidate_id": "intent_contract_layer",
+      "classification": "rejected_too_low_level",
+      "file_path": "ystar/kernel/engine.py; ystar/kernel/dimensions.py",
+      "mutation_required": false,
+      "risk": "High blast radius if generic engine is changed.",
+      "selected_for_patch": false,
+      "symbol": "check / enforce / IntentContract",
+      "test_strategy": "existing check/enforce tests remain untouched.",
+      "why_relevant": "Canonical generic Y* contract checking.",
+      "why_right_or_not": "CEO Cognitive OS packet shape is governance-level, not generic IntentContract parameter checking."
+    },
+    {
+      "candidate_id": "CIEU_residual_logging_path",
+      "classification": "context_and_future_logging",
+      "file_path": "ystar/governance/cieu_store.py; ystar/governance/cieu_prediction_delta.py",
+      "mutation_required": false,
+      "risk": "Medium if live writes are added without hook policy.",
+      "selected_for_patch": false,
+      "symbol": "CIEUStore / validate_prediction_delta",
+      "test_strategy": "assert five-tuple record shape.",
+      "why_relevant": "Validator emits CIEU-style validation records structurally.",
+      "why_right_or_not": "E82 must not write live CIEU DB records; it returns records for future logging."
+    },
+    {
+      "candidate_id": "role_runtime_or_AGENTS_contract_path",
+      "classification": "context_only",
+      "file_path": "governance/role_runtimes/ceo.yaml; AGENTS.md",
+      "mutation_required": false,
+      "risk": "Low as context, high if treated as executable enforcement.",
+      "selected_for_patch": false,
+      "symbol": "CEO role runtime contract",
+      "test_strategy": "not selected for E82 patch.",
+      "why_relevant": "Describes CEO role constraints.",
+      "why_right_or_not": "Not deterministic enough as the primary enforcement point."
+    },
+    {
+      "candidate_id": "test_fixture_path",
+      "classification": "selected",
+      "file_path": "tests/governance/test_ceo_cognitive_os_contract.py",
+      "mutation_required": true,
+      "risk": "Low.",
+      "selected_for_patch": true,
+      "symbol": "valid/invalid CEO Cognitive OS fixtures",
+      "test_strategy": "targeted deterministic pytest.",
+      "why_relevant": "Proves ALLOW/DENY behavior without runtime side effects.",
+      "why_right_or_not": "Right test insertion point matching existing governance test layout."
+    }
+  ],
+  "created_at": "2026-05-07T17:00:37Z",
+  "minimal_patch_target_set": [
+    "ystar/governance/ceo_cognitive_os_contract.py",
+    "ystar/governance/__init__.py",
+    "tests/governance/test_ceo_cognitive_os_contract.py",
+    "docs/ceo_cognitive_os_sync/e82_insertion_point_narrowing.md"
+  ],
+  "rejected_or_deferred_targets": [
+    {
+      "candidate_id": "hook_pretooluse_path",
+      "classification": "rejected_for_E82_runtime_wiring",
+      "file_path": "ystar/_hook_entry.py; ystar/_hook_daemon.py; ystar/governance/hook_contract_adapter.py",
+      "mutation_required": false,
+      "risk": "Medium if wired prematurely.",
+      "selected_for_patch": false,
+      "symbol": "check_hook / run_hook_contract_dry_run",
+      "test_strategy": "future hook runtime wiring tests.",
+      "why_relevant": "Future tool-call boundary can consume CEO Cognitive OS decisions.",
+      "why_right_or_not": "Not patched in E82 to avoid live hook behavior changes before validator is stable."
+    },
+    {
+      "candidate_id": "intent_contract_layer",
+      "classification": "rejected_too_low_level",
+      "file_path": "ystar/kernel/engine.py; ystar/kernel/dimensions.py",
+      "mutation_required": false,
+      "risk": "High blast radius if generic engine is changed.",
+      "selected_for_patch": false,
+      "symbol": "check / enforce / IntentContract",
+      "test_strategy": "existing check/enforce tests remain untouched.",
+      "why_relevant": "Canonical generic Y* contract checking.",
+      "why_right_or_not": "CEO Cognitive OS packet shape is governance-level, not generic IntentContract parameter checking."
+    },
+    {
+      "candidate_id": "CIEU_residual_logging_path",
+      "classification": "context_and_future_logging",
+      "file_path": "ystar/governance/cieu_store.py; ystar/governance/cieu_prediction_delta.py",
+      "mutation_required": false,
+      "risk": "Medium if live writes are added without hook policy.",
+      "selected_for_patch": false,
+      "symbol": "CIEUStore / validate_prediction_delta",
+      "test_strategy": "assert five-tuple record shape.",
+      "why_relevant": "Validator emits CIEU-style validation records structurally.",
+      "why_right_or_not": "E82 must not write live CIEU DB records; it returns records for future logging."
+    },
+    {
+      "candidate_id": "role_runtime_or_AGENTS_contract_path",
+      "classification": "context_only",
+      "file_path": "governance/role_runtimes/ceo.yaml; AGENTS.md",
+      "mutation_required": false,
+      "risk": "Low as context, high if treated as executable enforcement.",
+      "selected_for_patch": false,
+      "symbol": "CEO role runtime contract",
+      "test_strategy": "not selected for E82 patch.",
+      "why_relevant": "Describes CEO role constraints.",
+      "why_right_or_not": "Not deterministic enough as the primary enforcement point."
+    }
+  ],
+  "selected_patch_targets": [
+    {
+      "candidate_id": "canonical_check_path",
+      "classification": "selected",
+      "file_path": "ystar/governance/ceo_cognitive_os_contract.py",
+      "mutation_required": true,
+      "risk": "Low: isolated standard-library validator.",
+      "selected_for_patch": true,
+      "symbol": "validate_ceo_pre_action_packet",
+      "test_strategy": "direct ALLOW/DENY fixture tests.",
+      "why_relevant": "Adds deterministic CEO Cognitive OS packet validation in the governance services layer.",
+      "why_right_or_not": "Right insertion point: mirrors existing Pre-U validator without touching generic kernel checks or runtime hooks."
+    },
+    {
+      "candidate_id": "test_fixture_path",
+      "classification": "selected",
+      "file_path": "tests/governance/test_ceo_cognitive_os_contract.py",
+      "mutation_required": true,
+      "risk": "Low.",
+      "selected_for_patch": true,
+      "symbol": "valid/invalid CEO Cognitive OS fixtures",
+      "test_strategy": "targeted deterministic pytest.",
+      "why_relevant": "Proves ALLOW/DENY behavior without runtime side effects.",
+      "why_right_or_not": "Right test insertion point matching existing governance test layout."
+    }
+  ],
+  "source": "actual Y-star-gov code inspection, narrowed from E81 broad surface map"
+}

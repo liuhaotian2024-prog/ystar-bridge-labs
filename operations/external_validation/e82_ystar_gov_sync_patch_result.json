@@ -1,0 +1,24 @@
+{
+  "Y_star_gov_base_verified": true,
+  "Y_star_gov_expected_base": "b0d9aa8b1badd1180127a2f79f73ceed48e16451",
+  "Y_star_gov_module_path": "ystar/governance/ceo_cognitive_os_contract.py",
+  "Y_star_gov_patch_status": "implemented_in_worktree_pending_delivery",
+  "Y_star_gov_tests_path": "tests/governance/test_ceo_cognitive_os_contract.py",
+  "artifact_id": "e82_ystar_gov_sync_patch_result",
+  "bridge_job_id": "e82_owner_approved_ystar_gov_ceo_cognitive_os_sync_target_narrowing_and_patch_R1_20260507T000001Z",
+  "bridge_labs_base_verified": true,
+  "bypass_status": "denied",
+  "exported_symbols": [
+    "CEOCognitiveOSContract",
+    "CEOCognitiveOSDecision",
+    "CEOCognitiveOSDecisionValue",
+    "build_ceo_cognitive_os_cieu_record",
+    "build_ceo_cognitive_os_contract",
+    "validate_ceo_pre_action_packet",
+    "validate_ceo_post_action_residual"
+  ],
+  "external_action_executed": false,
+  "live_cross_repo_fixture_passed": true,
+  "owner_decision_status": "APPROVE_YSTARGOV_CEO_COGNITIVE_OS_SYNC_PATCH",
+  "validator_status": "YstarGov_synced"
+}
