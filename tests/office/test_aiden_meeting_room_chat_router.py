@@ -47,14 +47,19 @@ def test_aiden_strategy_question_auto_upgrades_to_evidence_derived_open_world_ru
 
     assert route.route == "aiden_ceo_strategy_runtime"
     assert route.protocol == "AidenStrategyRuntimeV1"
-    assert "CEO Strategy Runtime: E106_FULL_STRATEGY_PROCESS_WITH_ANTI_ANCHOR_AUDIT" in route.response_text
+    assert "CEO Strategy Runtime: E107_MARKET_FIRST_STRATEGY_MATH_MODEL" in route.response_text
     assert "AI Agent Control Room Rescue" in route.response_text
     assert "CPA route status: credible_high_risk_candidate_demoted_not_selected" in route.response_text
     assert "Y-star-gov open-world decision: ALLOW" in route.response_text
     assert "Y-star-gov process integrity decision: ALLOW" in route.response_text
+    assert "Y-star-gov math model decision: ALLOW" in route.response_text
     assert "Completed strategy phases:" in route.response_text
     assert "Anchor penalty applied: true" in route.response_text
     assert "Recent-memory-only: false" in route.response_text
+    assert "Internal capability role: feasibility_multiplier_not_primary_selector" in route.response_text
+    assert "Market-first mathematical ranking:" in route.response_text
+    assert "Mathematical model sources:" in route.response_text
+    assert "Value-of-information next experiment:" in route.response_text
     assert "Open-world discovery proof:" in route.response_text
     assert "Strategy process integrity proof:" in route.response_text
     assert "Competitor saturation scan:" in route.response_text

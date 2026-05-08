@@ -1,0 +1,43 @@
+{
+  "milestone_id": "E107_Market_First_Strategy_Math_Model_Runtime_R1",
+  "purpose": "Replace arbitrary CEO strategy weights with a source-backed market-first mathematical model.",
+  "runtime_path": "office.mission_command.e107_strategy_math_model_runtime.run_e107_strategy_math_model_session",
+  "aiden_router_status": "Aiden strategy questions now route to E107 market-first strategy math runtime.",
+  "model_id": "market_first_expected_utility_model_v1",
+  "model_principle": "Internal capability is a feasibility multiplier, not the primary selector.",
+  "model_sources": {
+    "multi_attribute_utility": "Keeney and Raiffa, Decisions with Multiple Objectives",
+    "analytic_hierarchy_process": "Saaty, The Analytic Hierarchy Process",
+    "expected_utility": "Expected utility decision theory",
+    "value_of_information": "Decision Analysis / value of information",
+    "competitive_forces": "Porter's Five Forces",
+    "adoption_diffusion": "Bass diffusion model",
+    "business_model_canvas": "Strategyzer Business Model Canvas",
+    "product_market_fit_measurement": "Superhuman / Sean Ellis PMF leading indicator",
+    "rice_prioritization": "Intercom RICE prioritization"
+  },
+  "Y_star_gov_contract": "ystar.governance.ceo_strategy_math_model_contract.validate_and_write_ceo_strategy_math_model",
+  "formal_CIEU_event_type": "CEO_STRATEGY_MATH_MODEL_DECISION",
+  "governance_invariants": [
+    "arbitrary weights require revision",
+    "internal-capability-first route selection is denied",
+    "missing source-backed model families require revision",
+    "missing value-of-information validation design requires revision",
+    "external/provider execution remains denied unless owner-approved in a future milestone"
+  ],
+  "sample_result": {
+    "selected_route_id": "agentic_ai_runtime_governance_rescue",
+    "selected_path": "AI Agent Control Room Rescue for founder-led teams",
+    "top_market_first_score": 47.08,
+    "top_EVSI_usd": 59.28,
+    "CIEU_events_in_test_session": 5
+  },
+  "truth_boundary": {
+    "external_action_executed": false,
+    "customer_validation_claimed": false,
+    "revenue_or_payment_claimed": false,
+    "pricing_validation_claimed": false,
+    "live_provider_execution_claimed": false,
+    "K9Audit_integrated": false
+  }
+}

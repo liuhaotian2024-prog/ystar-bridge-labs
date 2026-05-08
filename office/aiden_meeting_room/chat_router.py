@@ -14,8 +14,8 @@ from pathlib import Path
 from typing import Any
 
 from office.aiden_meeting_room.governed_gateway import answer_owner_governed_text
-from office.mission_command.e106_strategy_process_integrity_runtime import (
-    run_e106_strategy_process_integrity_session,
+from office.mission_command.e107_strategy_math_model_runtime import (
+    run_e107_strategy_math_model_session,
 )
 
 
@@ -124,6 +124,7 @@ def render_aiden_strategy_runtime_response(result: dict[str, Any]) -> str:
     competitors = strategy["adaptive_market_governance_gates"]["competitor_saturation_scan"]["competitors"]
     packet = strategy["next_L4_feedback_owner_decision_packet"]
     route_scores = strategy["route_scoring"][:5]
+    math_scores = strategy["route_math_scores"][:5]
     offer = strategy["customer_visible_offer_shape"]
     cpa_status = strategy["cpa_route_status"]
     founder_fit = strategy["founder_market_fit_assessment"]
@@ -135,22 +136,34 @@ def render_aiden_strategy_runtime_response(result: dict[str, Any]) -> str:
     route_lines = "\n".join(
         f"- {item['route_id']}: {item['first_cash_score']}" for item in route_scores
     )
+    math_route_lines = "\n".join(
+        f"- {item['route_id']}: score={item['market_first_score']}, EVSI=${item['evsi_usd']}"
+        for item in math_scores
+    )
+    source_lines = "\n".join(
+        f"- {key}: {value['source_name']}" for key, value in strategy["mathematical_source_map"].items()
+    )
     visible_lines = "\n".join(f"- {item}" for item in offer["visible_deliverables"])
     return (
-        "CEO Strategy Runtime: E106_FULL_STRATEGY_PROCESS_WITH_ANTI_ANCHOR_AUDIT\n"
+        "CEO Strategy Runtime: E107_MARKET_FIRST_STRATEGY_MATH_MODEL\n"
         "This Aiden strategy question was auto-upgraded from meeting-room answer "
         "to the governed 6D brain + public-read evidence feed + evidence-derived open-world strategy "
-        "runtime + full process integrity audit.\n\n"
+        "runtime + full process integrity audit + source-backed market-first mathematical model.\n\n"
         f"Y-star-gov strategic decision: {receipt['Y_star_gov_strategic_decision']}\n"
         f"Y-star-gov market refresh decision: {receipt['Y_star_gov_market_refresh_decision']}\n"
         f"Y-star-gov open-world decision: {receipt['Y_star_gov_open_world_decision']}\n"
         f"Y-star-gov process integrity decision: {receipt['Y_star_gov_process_integrity_decision']}\n"
+        f"Y-star-gov math model decision: {receipt['Y_star_gov_math_model_decision']}\n"
         f"CIEUStore written: {str(receipt['CIEUStore_written']).lower()}\n"
         f"Completed strategy phases: {receipt['completed_strategy_phase_count']}\n"
         f"Opportunity universe domains: {receipt['opportunity_universe_count']}\n"
         f"Counterfactual routes compared: {receipt['counterfactual_route_count']}\n"
         f"Anchor penalty applied: {str(receipt['anchor_penalty_applied']).lower()}\n"
         f"Recent-memory-only: {str(receipt['recent_memory_only']).lower()}\n"
+        f"Math model: {receipt['math_model_id']}\n"
+        f"Internal capability role: {receipt['internal_capability_role']}\n"
+        f"Top market-first score: {receipt['top_market_first_score']}\n"
+        f"Top EVSI: ${receipt['top_evsi_usd']}\n"
         f"CIEU events: {receipt['CIEU_event_count']}\n\n"
         "Selected first-cash path:\n"
         f"{selected['current_best_first_cash_path']}\n"
@@ -166,6 +179,10 @@ def render_aiden_strategy_runtime_response(result: dict[str, Any]) -> str:
         f"- strong_fit_assets: {', '.join(founder_fit['strong_fit_assets'][:4])}\n\n"
         "Route comparison:\n"
         f"{route_lines}\n\n"
+        "Market-first mathematical ranking:\n"
+        f"{math_route_lines}\n\n"
+        "Mathematical model sources:\n"
+        f"{source_lines}\n\n"
         "Open-world discovery proof:\n"
         f"- evidence_feed_mode: {proof['evidence_feed_mode']}\n"
         f"- query_expansion_rounds: {len(proof['query_expansion_rounds'])}\n"
@@ -189,6 +206,10 @@ def render_aiden_strategy_runtime_response(result: dict[str, Any]) -> str:
         f"Will a founder/operator using AI coding agents consider paying {pricing['hypothesis_price_range_usd']} "
         "for a 48-hour AI Agent Control Room Rescue Brief that prevents repo drift, prompt-scope creep, "
         "and unsafe delivery?\n\n"
+        "Value-of-information next experiment:\n"
+        f"- experiment_id: {strategy['validation_experiment_design']['experiment_id']}\n"
+        f"- target_route_id: {strategy['validation_experiment_design']['target_route_id']}\n"
+        f"- EVSI: ${strategy['validation_experiment_design']['expected_value_of_sample_information_usd']}\n\n"
         "Next owner-gated L4 packet:\n"
         f"- packet_id: {packet['packet_id']}\n"
         f"- target_profile: {packet['target_profile']}\n"
@@ -211,7 +232,7 @@ def run_aiden_strategy_runtime(
 ) -> AidenChatRoute:
     root = repo_root or Path(__file__).resolve().parents[2]
     selected_cieu_db = Path(cieu_db) if cieu_db is not None else default_aiden_strategy_cieu_db(root)
-    result = run_e106_strategy_process_integrity_session(
+    result = run_e107_strategy_math_model_session(
         cieu_db=selected_cieu_db,
         owner_intent=owner_message,
         brain_db=brain_db,
