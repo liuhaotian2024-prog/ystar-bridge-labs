@@ -14,8 +14,8 @@ from pathlib import Path
 from typing import Any
 
 from office.aiden_meeting_room.governed_gateway import answer_owner_governed_text
-from office.mission_command.e100_brain_locked_autonomous_profit_strategy import (
-    run_e100_brain_locked_autonomous_profit_strategy,
+from office.mission_command.e104_adaptive_market_intelligence_strategy_runtime import (
+    run_e104_adaptive_market_intelligence_strategy_session,
 )
 
 
@@ -121,47 +121,56 @@ def render_aiden_strategy_runtime_response(result: dict[str, Any]) -> str:
     receipt = result["CEO_runtime_receipt"]
     selected = strategy["selected_strategy"]
     pricing = strategy["offer_and_pricing_hypotheses"]["entry_offer"]
-    competitors = strategy["competitor_analysis"]["direct_competitors"]
+    competitors = strategy["adaptive_market_governance_gates"]["competitor_saturation_scan"]["competitors"]
     packet = strategy["next_L4_feedback_owner_decision_packet"]
     route_scores = strategy["route_scoring"][:5]
-    product_stages = strategy["product_strategy"]["product_stages"]
+    offer = strategy["customer_visible_offer_shape"]
+    cpa_status = strategy["cpa_route_status"]
+    founder_fit = strategy["founder_market_fit_assessment"]
     competitor_lines = "\n".join(
-        f"- {item['competitor_id']}: {item['positioning']}" for item in competitors[:5]
+        f"- {item['competitor_id']}: {item['threat_level']}" for item in competitors[:8]
     )
     route_lines = "\n".join(
-        f"- {item['route_id']}: {item['brain_adjusted_first_cash_score']}" for item in route_scores
+        f"- {item['route_id']}: {item['first_cash_score']}" for item in route_scores
     )
-    product_lines = "\n".join(
-        f"- {item['stage_id']}: {item['description']} ({item['execution_status']})"
-        for item in product_stages
-    )
+    visible_lines = "\n".join(f"- {item}" for item in offer["visible_deliverables"])
     return (
-        "CEO Strategy Runtime: E100_BRAIN_LOCKED_AUTONOMOUS_PROFIT_STRATEGY\n"
+        "CEO Strategy Runtime: E104_ADAPTIVE_MARKET_INTELLIGENCE_OPEN_WORLD_STRATEGY\n"
         "This Aiden strategy question was auto-upgraded from meeting-room answer "
-        "to the governed 6D brain-locked strategy runtime.\n\n"
-        f"Y-star-gov decision: {receipt['Y_star_gov_decision']}\n"
+        "to the governed 6D brain + live market refresh + open-world strategy runtime.\n\n"
+        f"Y-star-gov strategic decision: {receipt['Y_star_gov_strategic_decision']}\n"
+        f"Y-star-gov market refresh decision: {receipt['Y_star_gov_market_refresh_decision']}\n"
         f"CIEUStore written: {str(receipt['CIEUStore_written']).lower()}\n"
         f"Brain unique nodes: {receipt['brain_unique_nodes']}\n"
+        f"External public-read evidence items: {receipt['external_evidence_count']}\n"
         f"CIEU events: {receipt['CIEU_event_count']}\n\n"
         "Selected first-cash path:\n"
-        f"{selected['current_best_first_cash_path']}\n\n"
+        f"{selected['current_best_first_cash_path']}\n"
+        f"- selected_route_id: {selected['selected_route_id']}\n\n"
         "Why this now:\n"
         f"{selected['why_this_path_now']}\n\n"
-        "Why not the others:\n"
-        f"{selected['why_not_others']}\n\n"
+        "Why CPA review bottleneck was demoted:\n"
+        f"{selected['why_not_cpa_first']}\n"
+        f"- CPA route status: {cpa_status['status']}\n"
+        f"- CPA validation question: {cpa_status['strongest_validation_question']}\n\n"
+        "Founder-market fit:\n"
+        f"- founder_is_cpa: {str(founder_fit['founder_is_cpa']).lower()}\n"
+        f"- strong_fit_assets: {', '.join(founder_fit['strong_fit_assets'][:4])}\n\n"
         "Route comparison:\n"
         f"{route_lines}\n\n"
-        "Competitor / alternative map:\n"
+        "Competitor saturation scan:\n"
         f"{competitor_lines}\n"
-        f"- indirect alternatives: {', '.join(strategy['competitor_analysis']['indirect_alternatives'])}\n\n"
-        "Product shape:\n"
-        f"{product_lines}\n\n"
+        f"- saturation: {strategy['competitor_saturation_assessment']['CPA_review_bottleneck_route']}\n\n"
+        "Customer-visible offer shape:\n"
+        f"- {offer['offer_name']}\n"
+        f"{visible_lines}\n\n"
         "Pricing hypothesis, not validation:\n"
         f"- {pricing['name']}: {pricing['hypothesis_price_range_usd']}\n"
         f"- status: {strategy['offer_and_pricing_hypotheses']['pricing_validation_status']}\n\n"
         "Strongest validation question:\n"
-        "Will a principal of a 2-10 person CPA/bookkeeping firm consider paying "
-        f"{pricing['hypothesis_price_range_usd']} for a 48-hour review bottleneck rescue brief?\n\n"
+        f"Will a founder/operator using AI coding agents consider paying {pricing['hypothesis_price_range_usd']} "
+        "for a 48-hour AI Agent Control Room Rescue Brief that prevents repo drift, prompt-scope creep, "
+        "and unsafe delivery?\n\n"
         "Next owner-gated L4 packet:\n"
         f"- packet_id: {packet['packet_id']}\n"
         f"- target_profile: {packet['target_profile']}\n"
@@ -184,7 +193,7 @@ def run_aiden_strategy_runtime(
 ) -> AidenChatRoute:
     root = repo_root or Path(__file__).resolve().parents[2]
     selected_cieu_db = Path(cieu_db) if cieu_db is not None else default_aiden_strategy_cieu_db(root)
-    result = run_e100_brain_locked_autonomous_profit_strategy(
+    result = run_e104_adaptive_market_intelligence_strategy_session(
         cieu_db=selected_cieu_db,
         brain_db=brain_db,
         ystar_gov_root=ystar_gov_root,
@@ -264,6 +273,8 @@ def answer_aiden_prefixed_message(message: str, **kwargs: Any) -> str:
     """Return the governed Aiden response for an explicit ``Aiden:`` message."""
 
     route = route_chat_message_to_aiden_meeting_room(message, **kwargs)
+    if route.route == "aiden_ceo_strategy_runtime":
+        return route.response_text or build_empty_aiden_prefix_revision()
     if route.route != "aiden_ceo_meeting_room":
         return (
             "This message was not routed to Aiden because it did not start with "

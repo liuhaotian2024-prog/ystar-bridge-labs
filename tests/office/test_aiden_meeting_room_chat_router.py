@@ -34,7 +34,7 @@ def test_aiden_ascii_prefix_routes_to_governed_meeting_room(tmp_path):
     assert "Runtime governance:" in route.response_text
 
 
-def test_aiden_strategy_question_auto_upgrades_to_brain_locked_strategy_runtime(tmp_path):
+def test_aiden_strategy_question_auto_upgrades_to_adaptive_market_strategy_runtime(tmp_path):
     route = route_chat_message_to_aiden_meeting_room(
         "Aiden：你提出的给小会计事务所出那个类似于workflow的东西，你到底是怎么想的？",
         repo_root=REPO_ROOT,
@@ -44,13 +44,16 @@ def test_aiden_strategy_question_auto_upgrades_to_brain_locked_strategy_runtime(
 
     assert route.route == "aiden_ceo_strategy_runtime"
     assert route.protocol == "AidenStrategyRuntimeV1"
-    assert "CEO Strategy Runtime: E100_BRAIN_LOCKED_AUTONOMOUS_PROFIT_STRATEGY" in route.response_text
-    assert "CPA Review Bottleneck Rescue" in route.response_text
-    assert "Competitor / alternative map:" in route.response_text
-    assert "taxdome" in route.response_text
-    assert "karbon" in route.response_text
-    assert "Product shape:" in route.response_text
-    assert "$500-$2,000" in route.response_text
+    assert "CEO Strategy Runtime: E104_ADAPTIVE_MARKET_INTELLIGENCE_OPEN_WORLD_STRATEGY" in route.response_text
+    assert "AI Agent Control Room Rescue" in route.response_text
+    assert "CPA route status: credible_high_risk_candidate_demoted_not_selected" in route.response_text
+    assert "Competitor saturation scan:" in route.response_text
+    assert "black_ore" in route.response_text
+    assert "basis" in route.response_text
+    assert "juno" in route.response_text
+    assert "founder_is_cpa: false" in route.response_text
+    assert "Customer-visible offer shape:" in route.response_text
+    assert "$1,000-$3,000" in route.response_text
     assert "Strongest validation question:" in route.response_text
     assert "No external action was executed" in route.response_text
 
