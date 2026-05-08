@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from e101_adaptive_governance_discovery_and_correct_path_navigator import (
+from office.mission_command.e101_adaptive_governance_discovery_and_correct_path_navigator import (
     build_adaptive_governance_result,
     discover_adaptive_governance_obligations,
 )
