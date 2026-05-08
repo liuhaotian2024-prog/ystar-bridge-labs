@@ -37,4 +37,4 @@ with it.
 
 Board capability system directive (2026-04-10). First populated per
 the `role_definition/` priority of the idle learning loop defined in
-`AGENTS.md` and `governance/WORKING_STYLE.md` 第九条.
+`AGENTS.md` and `governance/WORKING_STYLE.md` Article 9.

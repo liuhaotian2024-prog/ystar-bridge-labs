@@ -2,7 +2,7 @@
 
 The theory library for this role. One file per task type listed in
 `role_definition/task_type_map.md`. Built via the **6-step theory
-calibration protocol** documented in `governance/WORKING_STYLE.md` 第九条
+calibration protocol** documented in `governance/WORKING_STYLE.md` Article 9
 (as the expansion of layer 3 of the 12-layer autonomous execution
 framework).
 
@@ -21,7 +21,7 @@ entry follows this format:
 - **Insight for this task type**: one sentence on how it applies here
 - **Source**: paper / book / Wikipedia / author — with link where available
 - **Date added**: YYYY-MM-DD
-- **Added via**: [自主学习 | 任务触发 | gemma 提问 | 其他]
+- **Added via**: [self-learning | task-triggered | Gemma question | other]
 ```
 
 Theories are not added at random. The 6-step protocol is:
@@ -51,4 +51,4 @@ responsibility, not a distillation task Secretary can do on its behalf.
 ## Source
 
 Board capability system directive (2026-04-10); 6-step theory
-calibration protocol in `governance/WORKING_STYLE.md` 第九条 layer 3.
+calibration protocol in `governance/WORKING_STYLE.md` Article 9 layer 3.

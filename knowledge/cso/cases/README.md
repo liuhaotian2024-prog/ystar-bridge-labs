@@ -56,4 +56,4 @@ agent noticed but has not worked through yet.
 ## Source
 
 Board capability system directive (2026-04-10); distillation
-protocol from `governance/WORKING_STYLE.md` 第七条 and 第九条.
+protocol from `governance/WORKING_STYLE.md` Article 7 and Article 9.
