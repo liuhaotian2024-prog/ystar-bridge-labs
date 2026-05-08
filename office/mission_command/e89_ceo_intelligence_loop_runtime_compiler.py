@@ -18,6 +18,10 @@ from office.mission_command.e87_ceo_runtime_session import (
 from office.mission_command.e85_ceo_cognitive_os_runtime_bridge import (
     route_provider_tool_action_through_runtime_nervous_system,
 )
+from office.mission_command.e91_ceo_doctrine_enforced_runtime_session import (
+    build_e89_doctrine_action_context,
+    enforce_doctrine_before_ceo_runtime,
+)
 
 
 BRIDGE_ROOT = Path(os.environ.get("YSTAR_BRIDGE_LABS_ROOT", Path(__file__).resolve().parents[2]))
@@ -77,6 +81,8 @@ def compile_ceo_intelligence_loop_packet(
     packet = {
         "artifact_id": "ceo_intelligence_loop_packet",
         "milestone_id": MILESTONE_ID,
+        "generation_mode": "deterministic_fixture",
+        "doctrine_registry_required": True,
         "intelligence_loop_id": intelligence_loop_id,
         "session_id": "e89_ceo_intelligence_runtime_session",
         "agent_id": "bridge_labs_ceo",
@@ -191,6 +197,21 @@ def run_ceo_intelligence_runtime_session(
 
     governance = _load_ystar_governance_module(ystar_gov_root)
     session_id = "e89_ceo_intelligence_runtime_session"
+    doctrine_gate = enforce_doctrine_before_ceo_runtime(
+        action_context=build_e89_doctrine_action_context(),
+        cieu_db=cieu_db,
+        ystar_gov_root=ystar_gov_root,
+        session_id=session_id,
+        seal_session=False,
+    )
+    if not doctrine_gate["runtime_may_continue"]:
+        return {
+            "artifact_id": "e89_ceo_intelligence_runtime_session_blocked_by_doctrine",
+            "milestone_id": MILESTONE_ID,
+            "doctrine_gate": doctrine_gate,
+            "runtime_may_continue": False,
+            "end_to_end_intelligence_chain_proven": False,
+        }
     intelligence_packet = compile_ceo_intelligence_loop_packet(owner_intent=owner_intent, repo_root=repo_root)
     intelligence_write = governance.validate_and_write_ceo_intelligence_loop_packet(
         intelligence_packet,
@@ -222,6 +243,7 @@ def run_ceo_intelligence_runtime_session(
                 "YstarGov_intelligence_decision": intelligence_write["governance_decision"]["decision"],
                 "commercial_sharpness_summary": intelligence_packet["commercial_sharpness_gate"],
                 "owner_approval_state": intelligence_packet["owner_approval_state"],
+                **doctrine_gate["doctrine_metadata"],
             },
         }
     )
@@ -268,6 +290,9 @@ def run_ceo_intelligence_runtime_session(
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "owner_intent": owner_intent,
         "behavior_center_used": True,
+        "doctrine_gate": doctrine_gate,
+        "doctrine_invocation_plan_decision": doctrine_gate["plan_write"]["governance_decision"]["decision"],
+        "doctrine_invocation_proof_decision": doctrine_gate["proof_write"]["governance_decision"]["decision"],
         "intelligence_packet": intelligence_packet,
         "intelligence_governance_decision": intelligence_write["governance_decision"]["decision"],
         "intelligence_CIEU_write": intelligence_write["CIEU_write_result"],

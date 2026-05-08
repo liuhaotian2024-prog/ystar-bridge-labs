@@ -24,6 +24,10 @@ from office.mission_command.e90_ceo_strategic_intelligence_benchmark import (
     MILESTONE_ID,
     score_ceo_strategic_intelligence,
 )
+from office.mission_command.e91_ceo_doctrine_enforced_runtime_session import (
+    build_e90_doctrine_action_context,
+    enforce_doctrine_before_ceo_runtime,
+)
 
 
 BRIDGE_ROOT = Path(os.environ.get("YSTAR_BRIDGE_LABS_ROOT", Path(__file__).resolve().parents[2]))
@@ -66,6 +70,9 @@ def build_market_grounded_strategy_artifact(
     strategy = {
         "artifact_id": "e90_market_grounded_strategy_run",
         "milestone_id": MILESTONE_ID,
+        "generation_mode": "runtime_generated_structured_output",
+        "doctrine_registry_required": True,
+        "external_observation_doctrine_status": "historical_public_read_wrapper_invoked_not_customer_validation",
         "strategy_run_id": "e90_market_grounded_strategy_run",
         "session_id": SESSION_ID,
         "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -147,12 +154,28 @@ def run_e90_market_grounded_strategy_session(
     repo_root: Path | None = None,
     ystar_gov_root: Path | None = None,
     gov_mcp_root: Path | None = None,
+    test_mode: bool = True,
     seal_session: bool = True,
 ) -> dict[str, Any]:
     """Run E89 intelligence -> E90 benchmark -> E88 runtime -> residual."""
 
     governance = _load_ystar_governance_module(ystar_gov_root)
     root = repo_root or BRIDGE_ROOT
+    doctrine_gate = enforce_doctrine_before_ceo_runtime(
+        action_context=build_e90_doctrine_action_context(test_mode=test_mode),
+        cieu_db=cieu_db,
+        ystar_gov_root=ystar_gov_root,
+        session_id=SESSION_ID,
+        seal_session=False,
+    )
+    if not doctrine_gate["runtime_may_continue"]:
+        return {
+            "artifact_id": "e90_market_grounded_strategy_session_blocked_by_doctrine",
+            "milestone_id": MILESTONE_ID,
+            "doctrine_gate": doctrine_gate,
+            "runtime_may_continue": False,
+            "end_to_end_chain_proven": False,
+        }
     intelligence_packet = compile_ceo_intelligence_loop_packet(owner_intent=owner_intent, repo_root=root)
     intelligence_write = governance.validate_and_write_ceo_intelligence_loop_packet(
         intelligence_packet,
@@ -195,6 +218,7 @@ def run_e90_market_grounded_strategy_session(
                 "commercial_sharpness_summary": strategy["benchmark_result"]["dimensions"]["commercial_sharpness"],
                 "owner_approval_state": "not_required",
                 "L4_owner_approval_state": "pending_owner_decision",
+                **doctrine_gate["doctrine_metadata"],
             },
         }
     )
@@ -240,6 +264,9 @@ def run_e90_market_grounded_strategy_session(
         "milestone_id": MILESTONE_ID,
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "owner_intent": owner_intent,
+        "doctrine_gate": doctrine_gate,
+        "doctrine_invocation_plan_decision": doctrine_gate["plan_write"]["governance_decision"]["decision"],
+        "doctrine_invocation_proof_decision": doctrine_gate["proof_write"]["governance_decision"]["decision"],
         "strategy": strategy,
         "benchmark_result": strategy["benchmark_result"],
         "intelligence_governance_decision": intelligence_write["governance_decision"]["decision"],

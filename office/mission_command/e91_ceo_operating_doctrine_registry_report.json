@@ -1,0 +1,25 @@
+{
+  "artifact_id": "e91_ceo_operating_doctrine_registry_report",
+  "coverage_summary": {
+    "findings_from_E65_E80": 632,
+    "findings_from_L5_or_L6": 56,
+    "findings_in_Y_star_gov": 571,
+    "findings_in_gov_mcp": 118,
+    "findings_older_than_E86": 4109,
+    "total_tracked_files_scanned": 34819
+  },
+  "milestone_id": "E91_Open_World_CEO_Doctrine_Discovery_And_Runtime_Enforcement_R1",
+  "no_external_action": true,
+  "ontology_source": "open_world_asset_graph_clusters",
+  "prompt_categories_used_as_closed_ontology": false,
+  "query_expansion_rounds": 4,
+  "registry_id": "ceo_operating_doctrine_registry_open_world_v1",
+  "static_evidence_template_loopholes_closed": true,
+  "status_counts": {
+    "runtime_active": 16
+  },
+  "total_doctrines": 16,
+  "unseeded_clusters": [
+    "unseeded_brain_capability_cluster"
+  ]
+}

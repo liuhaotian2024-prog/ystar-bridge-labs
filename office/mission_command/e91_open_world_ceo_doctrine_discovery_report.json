@@ -1,0 +1,195 @@
+{
+  "E89_E90_integration_status": "doctrine plan/proof gate required before continuation in prepared bridge-labs runtime",
+  "L5_truth_table_after_E91": {
+    "L5-A": "complete_internal_runtime_foundation",
+    "L5-B": "complete_for_structured_governed_intelligence_loop_with_open_world_doctrine_enforcement",
+    "L5-B+": "partial_dynamic_intelligence_pending_live_external_observation_and_real_feedback",
+    "L5-C": "partial_dry_run_only",
+    "L5-D": "absent_or_not_executed"
+  },
+  "artifact_id": "e91_open_world_ceo_doctrine_discovery_report",
+  "asset_graph": {
+    "edge_count": 20058,
+    "total_assets": 34819,
+    "tracked_files_by_repo": {
+      "K9Audit": 91,
+      "Y-star-gov": 657,
+      "bridge-labs": 33940,
+      "gov-mcp": 131
+    }
+  },
+  "canonical_doctrine_count": 16,
+  "cluster_count": 16,
+  "coverage": {
+    "K9Audit_boundary_findings": 74,
+    "artifact_id": "e91_discovery_coverage_proof",
+    "findings_from_E1_E64": 3346,
+    "findings_from_E65_E80": 632,
+    "findings_from_L5_or_L6": 56,
+    "findings_in_Y_star_gov": 571,
+    "findings_in_gov_mcp": 118,
+    "findings_older_than_E86": 4109,
+    "generated_at": "2026-05-08T02:09:03.460631+00:00",
+    "milestone_id": "E91_Open_World_CEO_Doctrine_Discovery_And_Runtime_Enforcement_R1",
+    "prompt_seeds_not_closed_ontology": true,
+    "query_rounds": 4,
+    "total_assets_clustered": 3961,
+    "total_files_matched_by_any_discovery_signal": 32914,
+    "total_files_parsed_as_python": 3144,
+    "total_tracked_files_scanned": 34819,
+    "total_unclustered_high_signal_assets": 31779,
+    "tracked_files_by_repo": {
+      "K9Audit": 91,
+      "Y-star-gov": 657,
+      "bridge-labs": 33940,
+      "gov-mcp": 131
+    },
+    "unclustered_sample": [
+      {
+        "path": ".claude/agents/ceo.md",
+        "reason_irrelevant_or_lower_priority": "high-signal term present but no repeated same-problem cluster after four rounds",
+        "repo": "bridge-labs"
+      },
+      {
+        "path": ".claude/agents/cfo.md",
+        "reason_irrelevant_or_lower_priority": "high-signal term present but no repeated same-problem cluster after four rounds",
+        "repo": "bridge-labs"
+      },
+      {
+        "path": ".claude/agents/cmo.md",
+        "reason_irrelevant_or_lower_priority": "high-signal term present but no repeated same-problem cluster after four rounds",
+        "repo": "bridge-labs"
+      },
+      {
+        "path": ".claude/agents/cso.md",
+        "reason_irrelevant_or_lower_priority": "high-signal term present but no repeated same-problem cluster after four rounds",
+        "repo": "bridge-labs"
+      },
+      {
+        "path": ".claude/agents/cto.md",
+        "reason_irrelevant_or_lower_priority": "high-signal term present but no repeated same-problem cluster after four rounds",
+        "repo": "bridge-labs"
+      },
+      {
+        "path": ".claude/agents/eng-compliance.md",
+        "reason_irrelevant_or_lower_priority": "high-signal term present but no repeated same-problem cluster after four rounds",
+        "repo": "bridge-labs"
+      },
+      {
+        "path": ".claude/agents/eng-data.md",
+        "reason_irrelevant_or_lower_priority": "high-signal term present but no repeated same-problem cluster after four rounds",
+        "repo": "bridge-labs"
+      },
+      {
+        "path": ".claude/agents/eng-domains.md",
+        "reason_irrelevant_or_lower_priority": "high-signal term present but no repeated same-problem cluster after four rounds",
+        "repo": "bridge-labs"
+      },
+      {
+        "path": ".claude/agents/eng-governance.md",
+        "reason_irrelevant_or_lower_priority": "high-signal term present but no repeated same-problem cluster after four rounds",
+        "repo": "bridge-labs"
+      },
+      {
+        "path": ".claude/agents/eng-kernel.md",
+        "reason_irrelevant_or_lower_priority": "high-signal term present but no repeated same-problem cluster after four rounds",
+        "repo": "bridge-labs"
+      },
+      {
+        "path": ".claude/agents/eng-ml.md",
+        "reason_irrelevant_or_lower_priority": "high-signal term present but no repeated same-problem cluster after four rounds",
+        "repo": "bridge-labs"
+      },
+      {
+        "path": ".claude/agents/eng-perf.md",
+        "reason_irrelevant_or_lower_priority": "high-signal term present but no repeated same-problem cluster after four rounds",
+        "repo": "bridge-labs"
+      },
+      {
+        "path": ".claude/agents/eng-platform.md",
+        "reason_irrelevant_or_lower_priority": "high-signal term present but no repeated same-problem cluster after four rounds",
+        "repo": "bridge-labs"
+      },
+      {
+        "path": ".claude/agents/eng-security.md",
+        "reason_irrelevant_or_lower_priority": "high-signal term present but no repeated same-problem cluster after four rounds",
+        "repo": "bridge-labs"
+      },
+      {
+        "path": ".claude/agents/secretary.md",
+        "reason_irrelevant_or_lower_priority": "high-signal term present but no repeated same-problem cluster after four rounds",
+        "repo": "bridge-labs"
+      },
+      {
+        "path": ".claude/settings.local.json",
+        "reason_irrelevant_or_lower_priority": "high-signal term present but no repeated same-problem cluster after four rounds",
+        "repo": "bridge-labs"
+      },
+      {
+        "path": ".claude/tasks/.completed/exp-004-w3-w5.md",
+        "reason_irrelevant_or_lower_priority": "high-signal term present but no repeated same-problem cluster after four rounds",
+        "repo": "bridge-labs"
+      },
+      {
+        "path": ".claude/tasks/AMENDMENT_015_SYSTEMIC_UNLOCK_20260413.md",
+        "reason_irrelevant_or_lower_priority": "high-signal term present but no repeated same-problem cluster after four rounds",
+        "repo": "bridge-labs"
+      },
+      {
+        "path": ".claude/tasks/CTO_RITUAL_AND_AUTONOMY_FIX_20260413.md",
+        "reason_irrelevant_or_lower_priority": "high-signal term present but no repeated same-problem cluster after four rounds",
+        "repo": "bridge-labs"
+      },
+      {
+        "path": ".claude/tasks/NEXT_SESSION_P0_yml_session_bridge.md",
+        "reason_irrelevant_or_lower_priority": "high-signal term present but no repeated same-problem cluster after four rounds",
+        "repo": "bridge-labs"
+      },
+      {
+        "path": ".claude/tasks/W16_ryan_hook_chaos_others.md",
+        "reason_irrelevant_or_lower_priority": "high-signal term present but no repeated same-problem cluster after four rounds",
+        "repo": "bridge-labs"
+      },
+      {
+        "path": ".claude/tasks/_archive/eng-kernel-k9-causal_completed_20260415.md",
+        "reason_irrelevant_or_lower_priority": "high-signal term present but no repeated same-problem cluster after four rounds",
+        "repo": "bridge-labs"
+      },
+      {
+        "path": ".claude/tasks/agent-behavior-rules-spec.md",
+        "reason_irrelevant_or_lower_priority": "high-signal term present but no repeated same-problem cluster after four rounds",
+        "repo": "bridge-labs"
+      },
+      {
+        "path": ".claude/tasks/archived/eng-governance-w7-3.md",
+        "reason_irrelevant_or_lower_priority": "high-signal term present but no repeated same-problem cluster after four rounds",
+        "repo": "bridge-labs"
+      },
+      {
+        "path": ".claude/tasks/board-github-token-workflow-scope.md",
+        "reason_irrelevant_or_lower_priority": "high-signal term present but no repeated same-problem cluster after four rounds",
+        "repo": "bridge-labs"
+      }
+    ],
+    "ystar_company_findings": 0
+  },
+  "external_observation_model_status": "historical public-read wrappers found; live external observation remains gated/unavailable unless future owner-approved provider exists",
+  "generated_at": "2026-05-08T02:09:03.541693+00:00",
+  "milestone_id": "E91_Open_World_CEO_Doctrine_Discovery_And_Runtime_Enforcement_R1",
+  "prompt_seeds_were_not_closed_ontology": true,
+  "query_expansion_rounds": 4,
+  "safety_statement": {
+    "no_K9Audit_write": true,
+    "no_L4_feedback_executed": true,
+    "no_customer_revenue_payment_claim": true,
+    "no_external_action": true,
+    "no_live_provider_execution": true
+  },
+  "static_template_evidence_loophole_status": "closed by registry and Y-star-gov contract",
+  "unseeded_clusters": [
+    "unseeded_brain_capability_cluster"
+  ],
+  "unseeded_doctrines": [
+    "unseeded_brain_capability_cluster"
+  ]
+}
