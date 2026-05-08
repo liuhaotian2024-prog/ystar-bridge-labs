@@ -1,0 +1,954 @@
+{
+  "milestone_id": "E93_BRAIN_GROUNDED_LIVE_RUNTIME_R1",
+  "session_id": "e93_sample_session",
+  "owner_intent": "Demonstrate E93 brain-grounded live runtime: M-3 first cash path, preserving M-2a governability and M-2b anti-stagnation.",
+  "brain_grounded_decision": "ALLOW",
+  "brain_grounded_CIEU_write": {
+    "artifact_id": "ceo_brain_grounded_validate_and_write_result",
+    "governance_decision": {
+      "artifact_id": "ceo_brain_grounded_intelligence_decision",
+      "decision": "ALLOW",
+      "passed": true,
+      "reason": "brain-grounded CEO intelligence packet satisfies contract",
+      "failed_field": null,
+      "violations": [],
+      "guidance": {
+        "guidance_type": "deterministic_governance",
+        "failed_field": null
+      },
+      "correct_path": [],
+      "cieu_validation_record": {
+        "session_id": "e93_sample_session",
+        "decision": "ALLOW",
+        "reason": "brain-grounded CEO intelligence packet satisfies contract"
+      }
+    },
+    "CIEU_write_result": {
+      "artifact_id": "ceo_brain_grounded_cieu_write_result",
+      "formal_CIEU_log_written": true,
+      "formal_CIEU_log_status": "written",
+      "formal_CIEU_log_path": "ystar.governance.cieu_store.CIEUStore.write_dict",
+      "cieu_db": "/tmp/e93_sample.db",
+      "event_id": "3ef419aa-e2a7-4c2d-b9c2-354ab30d4f9d",
+      "session_id": "e93_sample_session",
+      "event_type": "CEO_BRAIN_GROUNDED_INTELLIGENCE_DECISION",
+      "decision": "allow",
+      "CIEU_record": {
+        "event_id": "3ef419aa-e2a7-4c2d-b9c2-354ab30d4f9d",
+        "seq_global": 1778212102411054,
+        "created_at": 1778212102.411056,
+        "session_id": "e93_sample_session",
+        "agent_id": "bridge_labs_ceo",
+        "event_type": "CEO_BRAIN_GROUNDED_INTELLIGENCE_DECISION",
+        "decision": "allow",
+        "passed": true,
+        "violations": [],
+        "drift_detected": false,
+        "drift_details": null,
+        "task_description": "CEO brain-grounded intelligence packet decision",
+        "contract_hash": "ceo-brain-grounded-intelligence-v1",
+        "params": {
+          "intelligence_loop_id": "e93_il_1778212102",
+          "owner_intent": "Demonstrate E93 brain-grounded live runtime: M-3 first cash path, preserving M-2a governability and M-2b anti-stagnation.",
+          "brain_db": "/home/claude/ystar-bridge-labs/aiden_brain.db",
+          "total_brain_activations": 100,
+          "unique_brain_nodes": 20,
+          "stage_count": 20,
+          "selected_candidate_id": "e93_brain_grounded_internal_runtime",
+          "private_chain_of_thought_stored": false
+        },
+        "result": {
+          "decision": "ALLOW",
+          "reason": "brain-grounded CEO intelligence packet satisfies contract",
+          "failed_field": null,
+          "selected_action_description": "Run brain-grounded CEO intelligence runtime end-to-end writing persistent CIEU records and triggering brain learning ingestion.",
+          "formal_CIEU_log_path": "ystar.governance.cieu_store.CIEUStore.write_dict"
+        },
+        "human_initiator": null,
+        "lineage_path": [
+          "bridge-labs",
+          "Y-star-gov",
+          "aiden_brain",
+          "CIEUStore"
+        ],
+        "evidence_grade": "governance",
+        "m_functor": "M-2b",
+        "m_weight": 1.0,
+        "y_star_validator_pass": true
+      },
+      "seal_result": {},
+      "verify_result": {}
+    },
+    "formal_CIEU_log_written": true
+  },
+  "pre_action_decision": "ALLOW",
+  "pre_action_CIEU_write": {
+    "artifact_id": "ceo_cognitive_os_formal_cieu_write_result",
+    "formal_CIEU_log_written": true,
+    "formal_CIEU_log_status": "formal_CIEU_record_written",
+    "validator_output_status": "formal_CIEU_record_written",
+    "formal_CIEU_log_path": "ystar.governance.cieu_store.CIEUStore.write_dict",
+    "formal_CIEU_log_module": "ystar.governance.ceo_cognitive_os_cieu_log",
+    "formal_CIEU_log_function": "write_ceo_cognitive_os_cieu_log_record",
+    "cieu_db": "/tmp/e93_sample.db",
+    "event_id": "24f47012-f750-4bc8-9438-8a4093ef9108",
+    "session_id": "e93_sample_session",
+    "event_type": "CEO_COGNITIVE_OS_RUNTIME_DECISION",
+    "decision": "allow",
+    "runtime_decision": "ALLOW",
+    "CIEU_record": {
+      "event_id": "24f47012-f750-4bc8-9438-8a4093ef9108",
+      "seq_global": 1778212102439239,
+      "created_at": 1778212102.4392416,
+      "session_id": "e93_sample_session",
+      "agent_id": "bridge_labs_ceo",
+      "event_type": "CEO_COGNITIVE_OS_RUNTIME_DECISION",
+      "decision": "allow",
+      "passed": true,
+      "violations": [],
+      "drift_detected": false,
+      "drift_details": null,
+      "task_description": "CEO Cognitive OS runtime decision for unknown_action",
+      "contract_hash": "sha256:e84-runtime-interface",
+      "params": {
+        "runtime_envelope": {
+          "envelope_id": "e93_pre_env_1778212102",
+          "session_id": "e93_sample_session",
+          "agent_id": "bridge_labs_ceo",
+          "action_class": "provider_tool_execution",
+          "pre_action_packet": {
+            "packet_id": "e93_pre_packet_1778212102",
+            "job_id": "E93_BRAIN_GROUNDED_LIVE_RUNTIME_R1",
+            "proposed_action": "Run brain-grounded CEO intelligence runtime end-to-end writing persistent CIEU records and triggering brain learning ingestion.",
+            "action_class": "provider_tool_execution",
+            "owner_intent": "Demonstrate E93 brain-grounded live runtime: M-3 first cash path, preserving M-2a governability and M-2b anti-stagnation.",
+            "current_mission_context": {
+              "reasoning_scope": "runtime_interface_audited"
+            },
+            "discovered_capabilities_consulted": [
+              {
+                "capability_id": "ystar_gov_ceo_cognitive_os_validator",
+                "evidence_paths": [
+                  "Y-star-gov:ystar/governance/ceo_cognitive_os_contract.py"
+                ],
+                "claimed_runtime_active": true,
+                "runtime_evidence_status": "runtime_active_verified"
+              },
+              {
+                "capability_id": "bridge_labs_ceo_packet_artifacts",
+                "evidence_paths": [
+                  "bridge-labs:operations/external_validation/e81_ceo_mandatory_pre_action_packet_schema.json"
+                ],
+                "claimed_runtime_active": false
+              }
+            ],
+            "historical_assets_consulted": [
+              "E81 schema",
+              "E82 sync packet",
+              "E83 autoguidance semantics"
+            ],
+            "canonical_owner_map": {
+              "Y-star-gov": "canonical governance validator",
+              "bridge-labs": "packet producer"
+            },
+            "no_new_wheel_decision": {
+              "decision": "call_existing_YstarGov_validator",
+              "non_duplication_proof": "no bridge-labs governance clone"
+            },
+            "candidate_actions": [
+              "bridge-labs call adapter",
+              "Y-star-gov hook rewrite later"
+            ],
+            "counterfactual_comparison": [
+              {
+                "candidate": "bridge-labs call adapter",
+                "expected_gain": "immediate canonical validation"
+              },
+              {
+                "candidate": "Y-star-gov hook rewrite later",
+                "expected_gain": "runtime hook enforcement after scope closure"
+              }
+            ],
+            "predicted_CIEU_records": [
+              {
+                "X_t": "Y-star-gov validator exists; bridge-labs packets exist",
+                "U_t": "call validator before accepting CEO major action",
+                "Y_star_t": "CEO work routes through canonical governance without external execution",
+                "expected_Y_t_plus_1": "ALLOW/REQUIRE_REVISION/DENY/ESCALATE routing is returned to bridge-labs",
+                "predicted_R_t_plus_1": "formal CIEU log write remains deferred",
+                "residual_severity": "medium"
+              }
+            ],
+            "adversarial_critique": "Adapter could become decorative if future CEO workflows do not call it.",
+            "what_not_to_do": [
+              "do not execute L4",
+              "do not claim formal CIEU log write",
+              "do not mutate gov-mcp"
+            ],
+            "selected_action": "bridge-labs call adapter",
+            "why_this_action": "It connects the existing packet producer to canonical Y-star-gov validation now.",
+            "why_not_other_actions": "Hook rewriting and CIEU log writes need tighter insertion-point closure.",
+            "safety_boundary": {
+              "external_action_allowed": false
+            },
+            "overclaim_boundary": {
+              "customer_validation_claim": false,
+              "expert_validation_claim": false,
+              "paid_signal_claim": false,
+              "pricing_validation_claim": false,
+              "compliance_legal_claim": false,
+              "production_deployment_claim": false,
+              "live_ledger_claim": false,
+              "L4_execution_claim": false,
+              "L5_readiness_claim": false
+            },
+            "Y_star_contract_hash_input": "sha256:e84-runtime-interface",
+            "required_YstarGov_check": "validate_ceo_pre_action_packet",
+            "approval_required": false,
+            "owner_approval_state": "approved",
+            "bypass_attempt": false,
+            "loop_stage_results": [
+              {
+                "stage_id": "mission_and_owner_constraint_recall",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "full_capability_inventory_recall",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "relevant_historical_asset_retrieval",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "current_problem_classification",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "canonical_owner_selection",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "existing_module_reuse_extend_wrap_create_new_decision",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "long_memory_KG_brain_recall_if_evidence_supported",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "field_dimensional_reasoning_if_evidence_supported",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "thesis_generation",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "counterfactual_action_comparison",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "pre_action_CIEU_residual_prediction",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "adversarial_critique",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "commercial_sharpness_gate",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "no_new_wheel_gate",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "decision",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "post_action_CIEU_residual_and_learning_update",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              }
+            ]
+          },
+          "proposed_action": "Run brain-grounded CEO intelligence runtime end-to-end writing persistent CIEU records and triggering brain learning ingestion.",
+          "owner_intent": "Demonstrate E93 brain-grounded live runtime: M-3 first cash path, preserving M-2a governability and M-2b anti-stagnation.",
+          "current_mission_context": {
+            "reasoning_scope": "e93_brain_grounded_live_runtime",
+            "brain_db": "/home/claude/ystar-bridge-labs/aiden_brain.db",
+            "intelligence_loop_id": "e93_il_1778212102"
+          },
+          "evidence_basis": [
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://meta/retrospective_sandbox_workflow: Retrospective Sandbox Workflow (\u7ecf\u9a8c\u63d0\u53d6\u6807\u51c6\u6d41\u7a0b)",
+            "brain://product/ystar_defuse: Product: ystar_defuse",
+            "brain://entanglement/0: Entanglement: CTO lacks cross-layer system t",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://meta/retrospective_sandbox_workflow: Retrospective Sandbox Workflow (\u7ecf\u9a8c\u63d0\u53d6\u6807\u51c6\u6d41\u7a0b)",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://meta/retrospective_sandbox_workflow: Retrospective Sandbox Workflow (\u7ecf\u9a8c\u63d0\u53d6\u6807\u51c6\u6d41\u7a0b)",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://meta/retrospective_sandbox_workflow: Retrospective Sandbox Workflow (\u7ecf\u9a8c\u63d0\u53d6\u6807\u51c6\u6d41\u7a0b)",
+            "brain://logic/fol: First-Order Logic \u2014 \u91cf\u5316\u63a8\u7406\u7684\u57fa\u77f3",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://meta/sandbox_16h_counterfactual_replay: 16h Session Counterfactual Sandbox \u2014 \u5e73\u884c\u5b87\u5b99\u590d\u76d8",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://meta/retrospective_sandbox_workflow: Retrospective Sandbox Workflow (\u7ecf\u9a8c\u63d0\u53d6\u6807\u51c6\u6d41\u7a0b)",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://logic/fol: First-Order Logic \u2014 \u91cf\u5316\u63a8\u7406\u7684\u57fa\u77f3",
+            "brain://ceo_learning/risk_management_antifragile: CEO Risk Management \u2014 Antifragile Thinking (\u5b66\u4e60\u7b14\u8bb0 Round 3)",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://product/ystar_defuse: Product: ystar_defuse",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://meta/retrospective_sandbox_workflow: Retrospective Sandbox Workflow (\u7ecf\u9a8c\u63d0\u53d6\u6807\u51c6\u6d41\u7a0b)",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://meta/retrospective_sandbox_workflow: Retrospective Sandbox Workflow (\u7ecf\u9a8c\u63d0\u53d6\u6807\u51c6\u6d41\u7a0b)",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://meta/retrospective_sandbox_workflow: Retrospective Sandbox Workflow (\u7ecf\u9a8c\u63d0\u53d6\u6807\u51c6\u6d41\u7a0b)",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://logic/fol: First-Order Logic \u2014 \u91cf\u5316\u63a8\u7406\u7684\u57fa\u77f3"
+          ],
+          "historical_assets_consulted": [
+            "operations/baseline/e87r_full_repo_baseline/baseline_summary.json",
+            "brain://aiden_brain.db"
+          ],
+          "canonical_owner_map": {
+            "bridge-labs": "CEO behavior + brain-grounded intelligence compiler",
+            "Y-star-gov": "governance reflexes + CIEUStore",
+            "gov-mcp": "dry-run boundary"
+          },
+          "no_new_wheel_decision": {
+            "decision": "reuse_existing_systems",
+            "non_duplication_proof": "Reuses aiden_brain spreading activation, E84 packet builder, E86 CIEUStore writer, gov-mcp dry-run."
+          },
+          "intent_contract": {
+            "Y_star_t": "live brain-grounded CEO cognition recorded in persistent CIEU",
+            "expected_Y_t_plus_1": "session sealed with Merkle root"
+          },
+          "owner_approval_state": "not_required",
+          "intelligence_loop_id": "e93_il_1778212102",
+          "selected_candidate_id": "e93_brain_grounded_internal_runtime",
+          "YstarGov_intelligence_decision": "ALLOW",
+          "intelligence_loop_metadata": {
+            "intelligence_loop_id": "e93_il_1778212102",
+            "selected_candidate_id": "e93_brain_grounded_internal_runtime",
+            "YstarGov_intelligence_decision": "ALLOW",
+            "owner_approval_state": "not_required",
+            "brain_grounded": true,
+            "brain_unique_nodes": 20
+          }
+        },
+        "cieu_validation_record_candidate": {
+          "X_t": {
+            "contract_id": "ceo_cognitive_os_loop_contract_v1",
+            "packet_id": "e93_pre_packet_1778212102",
+            "action_class": "provider_tool_execution"
+          },
+          "U_t": "Y-star-gov CEO Cognitive OS validation",
+          "Y_star_t": "CEO major action must pass mandatory cognitive loop before acceptance",
+          "Y_t_plus_1": {
+            "decision": "ALLOW",
+            "reason": "CEO pre-action packet satisfies CEO Cognitive OS contract",
+            "guidance": {},
+            "correct_path": []
+          },
+          "R_t_plus_1": "none"
+        }
+      },
+      "result": {
+        "runtime_decision": "ALLOW",
+        "runtime_route": "continue_to_approved_next_step_without_external_execution",
+        "reason": "CEO pre-action packet satisfies CEO Cognitive OS contract",
+        "guidance": {
+          "guidance_type": null,
+          "failed_stage": null,
+          "missing_fields": [],
+          "missing_loop_stages": [],
+          "required_packet_changes": [],
+          "revalidate_after_revision": null,
+          "execution_allowed_before_revision": null
+        },
+        "correct_path": [],
+        "validator_result": {
+          "validator": "validate_ceo_pre_action_packet",
+          "decision": "ALLOW",
+          "passed": true,
+          "reason": "CEO pre-action packet satisfies CEO Cognitive OS contract",
+          "failed_stage": null,
+          "violations": [],
+          "requires_owner_decision": false
+        },
+        "post_action_residual_validation": {
+          "validator": null,
+          "decision": null,
+          "passed": null,
+          "reason": null,
+          "failed_stage": null,
+          "violations": [],
+          "requires_owner_decision": null
+        },
+        "hook_decision_envelope": {
+          "decision": "ALLOW",
+          "route": "continue_to_approved_next_step_without_external_execution",
+          "allow_execution": false,
+          "allow_approved_next_step": true,
+          "allow_external_execution": false,
+          "require_revision": false,
+          "deny": false,
+          "escalate": false,
+          "owner_decision_path_required": false
+        },
+        "formal_CIEU_log_path": "ystar.governance.cieu_store.CIEUStore.write_dict"
+      },
+      "human_initiator": null,
+      "lineage_path": [
+        "bridge-labs",
+        "Y-star-gov",
+        "CIEUStore"
+      ],
+      "evidence_grade": "governance",
+      "m_functor": "M-2b",
+      "m_weight": 1.0,
+      "y_star_validator_pass": true
+    },
+    "seal_result": {},
+    "verify_result": {}
+  },
+  "gov_mcp_receipt": {
+    "no_send_invariant": true,
+    "external_provider_called": false,
+    "provider_action_executed": false,
+    "external_side_effect": false,
+    "intelligence_loop_id": "e93_il_1778212102",
+    "selected_candidate_id": "e93_brain_grounded_internal_runtime",
+    "YstarGov_intelligence_decision": "ALLOW"
+  },
+  "post_action_decision": "ALLOW",
+  "post_action_CIEU_write": {
+    "artifact_id": "ceo_cognitive_os_formal_cieu_write_result",
+    "formal_CIEU_log_written": true,
+    "formal_CIEU_log_status": "formal_CIEU_record_written",
+    "validator_output_status": "formal_CIEU_record_written",
+    "formal_CIEU_log_path": "ystar.governance.cieu_store.CIEUStore.write_dict",
+    "formal_CIEU_log_module": "ystar.governance.ceo_cognitive_os_cieu_log",
+    "formal_CIEU_log_function": "write_ceo_cognitive_os_cieu_log_record",
+    "cieu_db": "/tmp/e93_sample.db",
+    "event_id": "459bdd7c-542a-4a5c-bede-c1410d2dd217",
+    "session_id": "e93_sample_session",
+    "event_type": "CEO_COGNITIVE_OS_RUNTIME_DECISION",
+    "decision": "allow",
+    "runtime_decision": "ALLOW",
+    "CIEU_record": {
+      "event_id": "459bdd7c-542a-4a5c-bede-c1410d2dd217",
+      "seq_global": 1778212102456756,
+      "created_at": 1778212102.4567583,
+      "session_id": "e93_sample_session",
+      "agent_id": "bridge_labs_ceo",
+      "event_type": "CEO_COGNITIVE_OS_RUNTIME_DECISION",
+      "decision": "allow",
+      "passed": true,
+      "violations": [],
+      "drift_detected": false,
+      "drift_details": null,
+      "task_description": "CEO Cognitive OS runtime decision for unknown_action",
+      "contract_hash": "sha256:e84-runtime-interface",
+      "params": {
+        "runtime_envelope": {
+          "envelope_id": "e93_post_env_1778212102",
+          "session_id": "e93_sample_session",
+          "agent_id": "bridge_labs_ceo",
+          "action_class": "provider_tool_execution",
+          "pre_action_packet": {
+            "packet_id": "e93_pre_packet_1778212102",
+            "job_id": "E93_BRAIN_GROUNDED_LIVE_RUNTIME_R1",
+            "proposed_action": "Run brain-grounded CEO intelligence runtime end-to-end writing persistent CIEU records and triggering brain learning ingestion.",
+            "action_class": "provider_tool_execution",
+            "owner_intent": "Demonstrate E93 brain-grounded live runtime: M-3 first cash path, preserving M-2a governability and M-2b anti-stagnation.",
+            "current_mission_context": {
+              "reasoning_scope": "runtime_interface_audited"
+            },
+            "discovered_capabilities_consulted": [
+              {
+                "capability_id": "ystar_gov_ceo_cognitive_os_validator",
+                "evidence_paths": [
+                  "Y-star-gov:ystar/governance/ceo_cognitive_os_contract.py"
+                ],
+                "claimed_runtime_active": true,
+                "runtime_evidence_status": "runtime_active_verified"
+              },
+              {
+                "capability_id": "bridge_labs_ceo_packet_artifacts",
+                "evidence_paths": [
+                  "bridge-labs:operations/external_validation/e81_ceo_mandatory_pre_action_packet_schema.json"
+                ],
+                "claimed_runtime_active": false
+              }
+            ],
+            "historical_assets_consulted": [
+              "E81 schema",
+              "E82 sync packet",
+              "E83 autoguidance semantics"
+            ],
+            "canonical_owner_map": {
+              "Y-star-gov": "canonical governance validator",
+              "bridge-labs": "packet producer"
+            },
+            "no_new_wheel_decision": {
+              "decision": "call_existing_YstarGov_validator",
+              "non_duplication_proof": "no bridge-labs governance clone"
+            },
+            "candidate_actions": [
+              "bridge-labs call adapter",
+              "Y-star-gov hook rewrite later"
+            ],
+            "counterfactual_comparison": [
+              {
+                "candidate": "bridge-labs call adapter",
+                "expected_gain": "immediate canonical validation"
+              },
+              {
+                "candidate": "Y-star-gov hook rewrite later",
+                "expected_gain": "runtime hook enforcement after scope closure"
+              }
+            ],
+            "predicted_CIEU_records": [
+              {
+                "X_t": "Y-star-gov validator exists; bridge-labs packets exist",
+                "U_t": "call validator before accepting CEO major action",
+                "Y_star_t": "CEO work routes through canonical governance without external execution",
+                "expected_Y_t_plus_1": "ALLOW/REQUIRE_REVISION/DENY/ESCALATE routing is returned to bridge-labs",
+                "predicted_R_t_plus_1": "formal CIEU log write remains deferred",
+                "residual_severity": "medium"
+              }
+            ],
+            "adversarial_critique": "Adapter could become decorative if future CEO workflows do not call it.",
+            "what_not_to_do": [
+              "do not execute L4",
+              "do not claim formal CIEU log write",
+              "do not mutate gov-mcp"
+            ],
+            "selected_action": "bridge-labs call adapter",
+            "why_this_action": "It connects the existing packet producer to canonical Y-star-gov validation now.",
+            "why_not_other_actions": "Hook rewriting and CIEU log writes need tighter insertion-point closure.",
+            "safety_boundary": {
+              "external_action_allowed": false
+            },
+            "overclaim_boundary": {
+              "customer_validation_claim": false,
+              "expert_validation_claim": false,
+              "paid_signal_claim": false,
+              "pricing_validation_claim": false,
+              "compliance_legal_claim": false,
+              "production_deployment_claim": false,
+              "live_ledger_claim": false,
+              "L4_execution_claim": false,
+              "L5_readiness_claim": false
+            },
+            "Y_star_contract_hash_input": "sha256:e84-runtime-interface",
+            "required_YstarGov_check": "validate_ceo_pre_action_packet",
+            "approval_required": false,
+            "owner_approval_state": "approved",
+            "bypass_attempt": false,
+            "loop_stage_results": [
+              {
+                "stage_id": "mission_and_owner_constraint_recall",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "full_capability_inventory_recall",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "relevant_historical_asset_retrieval",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "current_problem_classification",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "canonical_owner_selection",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "existing_module_reuse_extend_wrap_create_new_decision",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "long_memory_KG_brain_recall_if_evidence_supported",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "field_dimensional_reasoning_if_evidence_supported",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "thesis_generation",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "counterfactual_action_comparison",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "pre_action_CIEU_residual_prediction",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "adversarial_critique",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "commercial_sharpness_gate",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "no_new_wheel_gate",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "decision",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              },
+              {
+                "stage_id": "post_action_CIEU_residual_and_learning_update",
+                "status": "passed",
+                "evidence_paths": [
+                  "repo://E84/evidence"
+                ]
+              }
+            ]
+          },
+          "proposed_action": "Run brain-grounded CEO intelligence runtime end-to-end writing persistent CIEU records and triggering brain learning ingestion.",
+          "owner_intent": "Demonstrate E93 brain-grounded live runtime: M-3 first cash path, preserving M-2a governability and M-2b anti-stagnation.",
+          "current_mission_context": {
+            "reasoning_scope": "e93_brain_grounded_live_runtime",
+            "brain_db": "/home/claude/ystar-bridge-labs/aiden_brain.db",
+            "intelligence_loop_id": "e93_il_1778212102"
+          },
+          "evidence_basis": [
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://meta/retrospective_sandbox_workflow: Retrospective Sandbox Workflow (\u7ecf\u9a8c\u63d0\u53d6\u6807\u51c6\u6d41\u7a0b)",
+            "brain://product/ystar_defuse: Product: ystar_defuse",
+            "brain://entanglement/0: Entanglement: CTO lacks cross-layer system t",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://meta/retrospective_sandbox_workflow: Retrospective Sandbox Workflow (\u7ecf\u9a8c\u63d0\u53d6\u6807\u51c6\u6d41\u7a0b)",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://meta/retrospective_sandbox_workflow: Retrospective Sandbox Workflow (\u7ecf\u9a8c\u63d0\u53d6\u6807\u51c6\u6d41\u7a0b)",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://meta/retrospective_sandbox_workflow: Retrospective Sandbox Workflow (\u7ecf\u9a8c\u63d0\u53d6\u6807\u51c6\u6d41\u7a0b)",
+            "brain://logic/fol: First-Order Logic \u2014 \u91cf\u5316\u63a8\u7406\u7684\u57fa\u77f3",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://meta/sandbox_16h_counterfactual_replay: 16h Session Counterfactual Sandbox \u2014 \u5e73\u884c\u5b87\u5b99\u590d\u76d8",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://meta/retrospective_sandbox_workflow: Retrospective Sandbox Workflow (\u7ecf\u9a8c\u63d0\u53d6\u6807\u51c6\u6d41\u7a0b)",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://logic/fol: First-Order Logic \u2014 \u91cf\u5316\u63a8\u7406\u7684\u57fa\u77f3",
+            "brain://ceo_learning/risk_management_antifragile: CEO Risk Management \u2014 Antifragile Thinking (\u5b66\u4e60\u7b14\u8bb0 Round 3)",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://product/ystar_defuse: Product: ystar_defuse",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://meta/retrospective_sandbox_workflow: Retrospective Sandbox Workflow (\u7ecf\u9a8c\u63d0\u53d6\u6807\u51c6\u6d41\u7a0b)",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://meta/retrospective_sandbox_workflow: Retrospective Sandbox Workflow (\u7ecf\u9a8c\u63d0\u53d6\u6807\u51c6\u6d41\u7a0b)",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://meta/retrospective_sandbox_workflow: Retrospective Sandbox Workflow (\u7ecf\u9a8c\u63d0\u53d6\u6807\u51c6\u6d41\u7a0b)",
+            "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks (\u5b66\u4e60\u7b14\u8bb0 Round 1)",
+            "brain://logic/fol: First-Order Logic \u2014 \u91cf\u5316\u63a8\u7406\u7684\u57fa\u77f3"
+          ],
+          "historical_assets_consulted": [
+            "operations/baseline/e87r_full_repo_baseline/baseline_summary.json",
+            "brain://aiden_brain.db"
+          ],
+          "canonical_owner_map": {
+            "bridge-labs": "CEO behavior + brain-grounded intelligence compiler",
+            "Y-star-gov": "governance reflexes + CIEUStore",
+            "gov-mcp": "dry-run boundary"
+          },
+          "no_new_wheel_decision": {
+            "decision": "reuse_existing_systems",
+            "non_duplication_proof": "Reuses aiden_brain spreading activation, E84 packet builder, E86 CIEUStore writer, gov-mcp dry-run."
+          },
+          "intent_contract": {
+            "Y_star_t": "live brain-grounded CEO cognition recorded in persistent CIEU",
+            "expected_Y_t_plus_1": "session sealed with Merkle root"
+          },
+          "owner_approval_state": "not_required",
+          "intelligence_loop_id": "e93_il_1778212102",
+          "selected_candidate_id": "e93_brain_grounded_internal_runtime",
+          "YstarGov_intelligence_decision": "ALLOW",
+          "intelligence_loop_metadata": {
+            "intelligence_loop_id": "e93_il_1778212102",
+            "selected_candidate_id": "e93_brain_grounded_internal_runtime",
+            "YstarGov_intelligence_decision": "ALLOW",
+            "owner_approval_state": "not_required",
+            "brain_grounded": true,
+            "brain_unique_nodes": 20
+          },
+          "action_phase": "completed",
+          "completed_action": true,
+          "post_action_residual": {
+            "packet_id": "e93_post_residual_1778212102",
+            "linked_pre_action_packet_id": "e93_pre_packet_1778212102",
+            "action_taken": "Run brain-grounded CEO intelligence runtime end-to-end writing persistent CIEU records and triggering brain learning ingestion.",
+            "expected_outcome": "canonical Y-star-gov decision returned",
+            "actual_output": "Brain-grounded CEO session completed; no_send_invariant=True; brain_unique_nodes=20",
+            "CIEU_record": {
+              "X_t": "Y-star-gov validator available",
+              "U_t": "bridge-labs adapter invoked validator",
+              "Y_star_t": "CEO major action is governance-checked before acceptance",
+              "Y_t_plus_1": "decision route returned to bridge-labs",
+              "R_t_plus_1": "formal CIEU log write remains deferred"
+            },
+            "residuals": [
+              "hook runtime wiring pending",
+              "formal CIEU log write deferred"
+            ],
+            "unexpected_failures": [],
+            "overclaim_check": {
+              "customer_validation_claim": false,
+              "expert_validation_claim": false,
+              "paid_signal_claim": false,
+              "pricing_validation_claim": false,
+              "compliance_legal_claim": false,
+              "production_deployment_claim": false,
+              "live_ledger_claim": false,
+              "L4_execution_claim": false,
+              "L5_readiness_claim": false
+            },
+            "no_new_wheel_check": {
+              "passed": true
+            },
+            "owner_usefulness_check": {
+              "passed": true
+            },
+            "intelligence_gate_result": {
+              "passed": true
+            },
+            "capability_state_updates": [
+              "bridge-labs can call Y-star-gov validator directly"
+            ],
+            "learning_candidates": [
+              "wire hook runtime after owner-approved closure"
+            ],
+            "YstarGov_sync_status": "YstarGov_synced_call_adapter_active",
+            "next_action_recommendation": "E85_YStarGov_CEO_Cognitive_OS_Hook_Runtime_Wiring_R1",
+            "what_not_to_do_next": [
+              "do not execute L4 without owner approval",
+              "do not claim formal CIEU log write"
+            ]
+          }
+        },
+        "cieu_validation_record_candidate": {
+          "X_t": {
+            "contract_id": "ceo_cognitive_os_loop_contract_v1",
+            "packet_id": "e93_post_residual_1778212102",
+            "action_class": null
+          },
+          "U_t": "Y-star-gov CEO Cognitive OS validation",
+          "Y_star_t": "CEO major action must pass mandatory cognitive loop before acceptance",
+          "Y_t_plus_1": {
+            "decision": "ALLOW",
+            "reason": "CEO post-action residual satisfies CEO Cognitive OS contract",
+            "guidance": {},
+            "correct_path": []
+          },
+          "R_t_plus_1": "none"
+        }
+      },
+      "result": {
+        "runtime_decision": "ALLOW",
+        "runtime_route": "continue_to_approved_next_step_without_external_execution",
+        "reason": "CEO post-action residual satisfies CEO Cognitive OS contract",
+        "guidance": {
+          "guidance_type": null,
+          "failed_stage": null,
+          "missing_fields": [],
+          "missing_loop_stages": [],
+          "required_packet_changes": [],
+          "revalidate_after_revision": null,
+          "execution_allowed_before_revision": null
+        },
+        "correct_path": [],
+        "validator_result": {
+          "validator": "validate_ceo_post_action_residual",
+          "decision": "ALLOW",
+          "passed": true,
+          "reason": "CEO post-action residual satisfies CEO Cognitive OS contract",
+          "failed_stage": null,
+          "violations": [],
+          "requires_owner_decision": false
+        },
+        "post_action_residual_validation": {
+          "validator": null,
+          "decision": "ALLOW",
+          "passed": true,
+          "reason": "CEO post-action residual satisfies CEO Cognitive OS contract",
+          "failed_stage": null,
+          "violations": [],
+          "requires_owner_decision": false
+        },
+        "hook_decision_envelope": {
+          "decision": "ALLOW",
+          "route": "continue_to_approved_next_step_without_external_execution",
+          "allow_execution": false,
+          "allow_approved_next_step": true,
+          "allow_external_execution": false,
+          "require_revision": false,
+          "deny": false,
+          "escalate": false,
+          "owner_decision_path_required": false
+        },
+        "formal_CIEU_log_path": "ystar.governance.cieu_store.CIEUStore.write_dict"
+      },
+      "human_initiator": null,
+      "lineage_path": [
+        "bridge-labs",
+        "Y-star-gov",
+        "CIEUStore"
+      ],
+      "evidence_grade": "governance",
+      "m_functor": "M-2b",
+      "m_weight": 1.0,
+      "y_star_validator_pass": true
+    },
+    "seal_result": {
+      "session_id": "e93_sample_session",
+      "event_count": 3,
+      "merkle_root": "a648645c0f9d52e1d55ff839160900c55fd0ae3c45ed6e9454ab41b421b0cb36",
+      "prev_root": null,
+      "sealed_at": 1778212102.4640622
+    },
+    "verify_result": {
+      "session_id": "e93_sample_session",
+      "valid": true,
+      "stored_root": "a648645c0f9d52e1d55ff839160900c55fd0ae3c45ed6e9454ab41b421b0cb36",
+      "computed_root": "a648645c0f9d52e1d55ff839160900c55fd0ae3c45ed6e9454ab41b421b0cb36",
+      "stored_count": 3,
+      "current_count": 3,
+      "sealed_at": 1778212102.4640622
+    }
+  },
+  "CIEUStore_summary": {
+    "event_count": 3,
+    "sealed_event_count": 3,
+    "merkle_root": "a648645c0f9d52e1d55ff839160900c55fd0ae3c45ed6e9454ab41b421b0cb36",
+    "sealed_session_valid": true
+  },
+  "brain_provenance": {
+    "brain_db": "/home/claude/ystar-bridge-labs/aiden_brain.db",
+    "total_activations": 100,
+    "unique_nodes": 20
+  },
+  "end_to_end_brain_grounded_chain_proven": true,
+  "L5_truth_table_after": {
+    "L5-A Runtime Foundation": "complete_with_persistent_cieu_store",
+    "L5-B CEO Intelligence Loop": "complete_with_brain_grounded_evidence_per_stage",
+    "L5-C Controlled External Action": "partial_dry_run_only",
+    "L5-D Revenue/Customer/Payment Loop": "absent_or_not_executed",
+    "L5-E Brain Learning Loop": "active_via_cieu_brain_streamer"
+  },
+  "no_external_action_executed": true,
+  "no_customer_revenue_payment_claim": true,
+  "K9Audit_integration_claim": false
+}
