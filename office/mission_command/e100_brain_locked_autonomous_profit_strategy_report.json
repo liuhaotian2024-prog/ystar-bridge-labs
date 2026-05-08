@@ -1,0 +1,629 @@
+{
+  "CEO_runtime_receipt": {
+    "CIEUStore_written": true,
+    "CIEU_event_count": 1,
+    "Y_star_gov_decision": "ALLOW",
+    "brain_total_activations": 36,
+    "brain_unique_nodes": 14,
+    "mode": "CEO_RUNTIME_CERTIFIED_BRAIN_LOCKED_AUTONOMOUS_PROFIT_STRATEGY",
+    "previous_tariff_route_rank": 4,
+    "runtime_session_id": "e100_brain_locked_autonomous_profit_strategy",
+    "selected_first_cash_path": "CPA Review Bottleneck Rescue for small accounting firms",
+    "selected_route_id": "cpa_review_bottleneck_rescue",
+    "truth_boundary": {
+      "no_L4_feedback_executed": true,
+      "no_customer_validation": true,
+      "no_revenue_or_payment_signal": true,
+      "no_tax_accounting_legal_advice": true
+    }
+  },
+  "YstarGov_write_result": {
+    "decision": "ALLOW",
+    "formal_CIEU_log_written": true
+  },
+  "autonomous_route_selection": {
+    "brain_adjustment_rules": [
+      "penalize routes requiring licensed/legal/customs/medical authority before first sale",
+      "reward routes with clear small-business buyer, low data sensitivity, and 48h demo feasibility",
+      "reward routes aligned with brain activations around customer discovery, PMF, evidence-before-pitch, and not hiding in infrastructure"
+    ],
+    "previous_tariff_route_rank": 4,
+    "selected_route_id": "cpa_review_bottleneck_rescue",
+    "selected_route_name": "CPA Review Bottleneck Rescue for small accounting firms"
+  },
+  "competitor_analysis": {
+    "direct_competitors": [
+      {
+        "competitor_id": "taxdome",
+        "positioning": "practice management platform",
+        "source_url": "https://taxdome.com/"
+      },
+      {
+        "competitor_id": "karbon",
+        "positioning": "collaborative accounting workflow management",
+        "source_url": "https://karbonhq.com/"
+      },
+      {
+        "competitor_id": "canopy",
+        "positioning": "tax practice management platform",
+        "source_url": "https://www.getcanopy.com/"
+      },
+      {
+        "competitor_id": "jetpack_workflow",
+        "positioning": "recurring accounting workflow software",
+        "source_url": "https://jetpackworkflow.com/"
+      },
+      {
+        "competitor_id": "financial_cents",
+        "positioning": "practice management for accounting firms",
+        "source_url": "https://financial-cents.com/"
+      }
+    ],
+    "indirect_alternatives": [
+      "spreadsheet trackers",
+      "more offshore prep",
+      "hiring reviewers",
+      "generic AI prompts",
+      "doing nothing until deadline crisis"
+    ],
+    "positioning_decision": "Do not compete as another practice-management platform. Start as a 48-hour review bottleneck diagnostic and rescue sprint that produces a workflow map, reviewer risk queue, and no-send client-chasing scripts."
+  },
+  "market_target_reset": {
+    "previous_target": "Tariff Shock Margin Rescue Desk for small importers",
+    "previous_target_status": "removed_as_default_target_retained_only_as_candidate",
+    "strategy_selection_mode": "brain_adjusted_cash_first_rerun"
+  },
+  "milestone_id": "E100_Brain_Locked_Autonomous_Profit_Strategy_Rerun_R1",
+  "product_strategy": {
+    "first_deliverable": "v0_no_send_demo_report",
+    "product_name": "CPA Review Bottleneck Rescue",
+    "product_stages": [
+      {
+        "description": "fictional CPA review queue diagnosis and rescue report",
+        "execution_status": "next_internal_work",
+        "stage_id": "v0_no_send_demo_report"
+      },
+      {
+        "description": "48-hour custom review bottleneck rescue sprint",
+        "execution_status": "requires_owner_approved_L4_feedback_before_sale",
+        "stage_id": "v1_human_assisted_service_sprint"
+      },
+      {
+        "description": "internal agent that prepares reviewer queue, missing-doc, and client follow-up drafts for human review",
+        "execution_status": "future_after_feedback",
+        "stage_id": "v2_internal_review_analyst_agent"
+      },
+      {
+        "description": "dashboard only after repeated paid sprint demand",
+        "execution_status": "not_now",
+        "stage_id": "v3_firm_dashboard"
+      }
+    ]
+  },
+  "recommended_next_milestone": "E101_CPA_Review_Bottleneck_No_Send_Demo_Pack_R1",
+  "route_scoring": [
+    {
+      "base_cash_score": 4.3,
+      "brain_adjusted_first_cash_score": 4.67,
+      "brain_customer_discovery_bonus": 0.57,
+      "buyer_pain_intensity": 5,
+      "differentiation": 4,
+      "external_validation_next_step": "no-send fictional review queue demo then owner-approved CPA principal feedback",
+      "implementation_readiness": 5,
+      "kill_criteria": "firms may see it as generic workflow consulting",
+      "name": "CPA Review Bottleneck Rescue for small accounting firms",
+      "owner_burden": 2,
+      "proof_needed": 2,
+      "regulated_boundary_penalty": 0.2,
+      "route_id": "cpa_review_bottleneck_rescue",
+      "route_type": "review-capacity service sprint",
+      "sales_friction": 3,
+      "speed_to_first_cash": 5,
+      "trust_compliance_value": 4
+    },
+    {
+      "base_cash_score": 4.0,
+      "brain_adjusted_first_cash_score": 4.42,
+      "brain_customer_discovery_bonus": 0.52,
+      "buyer_pain_intensity": 4,
+      "differentiation": 3,
+      "external_validation_next_step": "no-send broken workflow diagnosis demo",
+      "implementation_readiness": 5,
+      "kill_criteria": "too generic unless narrowed to a vertical",
+      "name": "Small Business AI Workflow Rescue",
+      "owner_burden": 1,
+      "proof_needed": 2,
+      "regulated_boundary_penalty": 0.1,
+      "route_id": "small_business_ai_workflow_rescue",
+      "route_type": "AI workflow repair sprint",
+      "sales_friction": 3,
+      "speed_to_first_cash": 5,
+      "trust_compliance_value": 3
+    },
+    {
+      "base_cash_score": 3.8,
+      "brain_adjusted_first_cash_score": 4.12,
+      "brain_customer_discovery_bonus": 0.42,
+      "buyer_pain_intensity": 4,
+      "differentiation": 5,
+      "external_validation_next_step": "demo runtime receipt and no-send guard",
+      "implementation_readiness": 5,
+      "kill_criteria": "less direct cash pain and budget owner is less obvious",
+      "name": "Agent Autonomy Flight Recorder",
+      "owner_burden": 1,
+      "proof_needed": 2,
+      "regulated_boundary_penalty": 0.1,
+      "route_id": "agent_autonomy_flight_recorder",
+      "route_type": "agent governance readiness sprint",
+      "sales_friction": 3,
+      "speed_to_first_cash": 5,
+      "trust_compliance_value": 5
+    },
+    {
+      "base_cash_score": 4.55,
+      "brain_adjusted_first_cash_score": 4.02,
+      "brain_customer_discovery_bonus": 0.37,
+      "buyer_pain_intensity": 5,
+      "differentiation": 4,
+      "external_validation_next_step": "no-send tariff demo then owner-approved importer/broker feedback",
+      "implementation_readiness": 4,
+      "kill_criteria": "requires customs/legal boundary and may need licensed partners",
+      "name": "Tariff Shock Margin Rescue Desk for small importers",
+      "owner_burden": 2,
+      "proof_needed": 2,
+      "regulated_boundary_penalty": 0.9,
+      "route_id": "tariff_shock_margin_rescue",
+      "route_type": "tariff margin service sprint",
+      "sales_friction": 3,
+      "speed_to_first_cash": 5,
+      "trust_compliance_value": 4
+    },
+    {
+      "base_cash_score": 3.7,
+      "brain_adjusted_first_cash_score": 3.62,
+      "brain_customer_discovery_bonus": 0.42,
+      "buyer_pain_intensity": 4,
+      "differentiation": 3,
+      "external_validation_next_step": "public hazard/premium demo",
+      "implementation_readiness": 3,
+      "kill_criteria": "local insurance complexity and broker relationship dependence",
+      "name": "Insurance Premium Rescue Brief",
+      "owner_burden": 2,
+      "proof_needed": 3,
+      "regulated_boundary_penalty": 0.5,
+      "route_id": "insurance_premium_rescue_brief",
+      "route_type": "property insurance cost brief",
+      "sales_friction": 3,
+      "speed_to_first_cash": 4,
+      "trust_compliance_value": 4
+    },
+    {
+      "base_cash_score": 3.7,
+      "brain_adjusted_first_cash_score": 3.37,
+      "brain_customer_discovery_bonus": 0.47,
+      "buyer_pain_intensity": 5,
+      "differentiation": 3,
+      "external_validation_next_step": "public-resource demo only",
+      "implementation_readiness": 3,
+      "kill_criteria": "PHI/medical boundary and fragmented buyer",
+      "name": "Caregiver Admin Relief Packet",
+      "owner_burden": 3,
+      "proof_needed": 3,
+      "regulated_boundary_penalty": 0.8,
+      "route_id": "caregiver_admin_relief_packet",
+      "route_type": "family admin relief packet",
+      "sales_friction": 4,
+      "speed_to_first_cash": 4,
+      "trust_compliance_value": 3
+    }
+  ],
+  "selected_strategy": {
+    "current_best_first_cash_path": "CPA Review Bottleneck Rescue for small accounting firms",
+    "next_48h_action": "Build a no-send CPA Review Bottleneck Rescue demo using a fictional review queue and client-document backlog.",
+    "next_7d_action": "Prepare owner-approved L4 feedback packet for 2-10 person CPA/bookkeeping firm principals; no send until approval.",
+    "next_owner_decision_needed": "Approve or reject no-send L4 feedback packet after reviewing the CPA demo pack.",
+    "second_best_path": "Small Business AI Workflow Rescue",
+    "what_evidence_could_falsify_it": "CPA firm principals say review bottleneck is not urgent, not budget-owned, or already solved by practice-management software.",
+    "why_not_others": "Tariff rescue remains attractive but was demoted because customs/legal boundaries must be solved before first sale; agent governance remains useful but less cash-direct.",
+    "why_this_path_now": "The 6D brain rerun penalized regulated customs risk and selected a clearer service sprint with a visible buyer: small CPA firm principals facing review bottlenecks."
+  },
+  "six_d_brain_review": [
+    {
+      "CIEU_recording_required": true,
+      "brain_activation_count": 6,
+      "brain_stage_id": "mission_and_owner_constraint_recall",
+      "dimension_id": "D1_memory_and_mission",
+      "evidence_refs": [
+        "brain://ceo_learning/product_management: CEO Product Management  PLG + PMF + Prioritization ( Round 11)",
+        "brain://customer/pmf: Product-Market Fit",
+        "brain://WHO_I_AM: Who I Am",
+        "brain://impact/crossing_chasm: Crossing the Chasm (Moore)",
+        "brain://ecosystem/positioning: Y* Bridge Labs",
+        "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks ( Round 1)"
+      ],
+      "output_summary": "D1_memory_and_mission: CEO Product Management  PLG + PMF + Prioritization ( Round 1, Product-Market Fit, Who I Am",
+      "question": "mission, owner constraints, prior strategy errors",
+      "runtime_governance_required": true,
+      "top_activations": [
+        {
+          "activation_level": 0.293,
+          "file_path": "ceo_learning/product_management.md",
+          "hop_distance": 0,
+          "node_id": "ceo_learning/product_management",
+          "node_name": "CEO Product Management  PLG + PMF + Prioritization ( Round 11)"
+        },
+        {
+          "activation_level": 0.293,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "customer/pmf",
+          "node_name": "Product-Market Fit"
+        },
+        {
+          "activation_level": 0.215,
+          "file_path": "WHO_I_AM.md",
+          "hop_distance": 0,
+          "node_id": "WHO_I_AM",
+          "node_name": "Who I Am"
+        },
+        {
+          "activation_level": 0.209,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "impact/crossing_chasm",
+          "node_name": "Crossing the Chasm (Moore)"
+        },
+        {
+          "activation_level": 0.198,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "ecosystem/positioning",
+          "node_name": "Y* Bridge Labs"
+        },
+        {
+          "activation_level": 0.195,
+          "file_path": "ceo_learning/decision_making_frameworks.md",
+          "hop_distance": 0,
+          "node_id": "ceo_learning/decision_making_frameworks",
+          "node_name": "CEO Decision-Making Frameworks ( Round 1)"
+        }
+      ]
+    },
+    {
+      "CIEU_recording_required": true,
+      "brain_activation_count": 6,
+      "brain_stage_id": "commercial_sharpness_gate",
+      "dimension_id": "D2_market_cash_pain",
+      "evidence_refs": [
+        "brain://customer/pmf: Product-Market Fit",
+        "brain://WHO_I_AM: Who I Am",
+        "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks ( Round 1)",
+        "brain://ceo_learning/product_management: CEO Product Management  PLG + PMF + Prioritization ( Round 11)",
+        "brain://meta/17_meta_rules_from_practice: 17 Meta-Rules  CEO  ()",
+        "brain://theory/baars_gwt: Baars GWT  N1"
+      ],
+      "output_summary": "D2_market_cash_pain: Product-Market Fit, Who I Am, CEO Decision-Making Frameworks ( Round 1)",
+      "question": "cash pain, buyer urgency, willingness to pay",
+      "runtime_governance_required": true,
+      "top_activations": [
+        {
+          "activation_level": 0.286,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "customer/pmf",
+          "node_name": "Product-Market Fit"
+        },
+        {
+          "activation_level": 0.21,
+          "file_path": "WHO_I_AM.md",
+          "hop_distance": 0,
+          "node_id": "WHO_I_AM",
+          "node_name": "Who I Am"
+        },
+        {
+          "activation_level": 0.19,
+          "file_path": "ceo_learning/decision_making_frameworks.md",
+          "hop_distance": 0,
+          "node_id": "ceo_learning/decision_making_frameworks",
+          "node_name": "CEO Decision-Making Frameworks ( Round 1)"
+        },
+        {
+          "activation_level": 0.19,
+          "file_path": "ceo_learning/product_management.md",
+          "hop_distance": 0,
+          "node_id": "ceo_learning/product_management",
+          "node_name": "CEO Product Management  PLG + PMF + Prioritization ( Round 11)"
+        },
+        {
+          "activation_level": 0.19,
+          "file_path": "meta/17_meta_rules_from_practice.md",
+          "hop_distance": 0,
+          "node_id": "meta/17_meta_rules_from_practice",
+          "node_name": "17 Meta-Rules  CEO  ()"
+        },
+        {
+          "activation_level": 0.19,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "theory/baars_gwt",
+          "node_name": "Baars GWT  N1"
+        }
+      ]
+    },
+    {
+      "CIEU_recording_required": true,
+      "brain_activation_count": 6,
+      "brain_stage_id": "opportunity_framing",
+      "dimension_id": "D3_customer_discovery",
+      "evidence_refs": [
+        "brain://customer/pmf: Product-Market Fit",
+        "brain://customer/blank_custdev: Steve Blank Customer Development",
+        "brain://strategic/evidence_before_pitch: Evidence Before Pitch ()",
+        "brain://WHO_I_AM: Who I Am",
+        "brain://impact/evidence_portfolio: Evidence Portfolio",
+        "brain://impact/crossing_chasm: Crossing the Chasm (Moore)"
+      ],
+      "output_summary": "D3_customer_discovery: Product-Market Fit, Steve Blank Customer Development, Evidence Before Pitch ()",
+      "question": "customer discovery, evidence before pitch, route validation",
+      "runtime_governance_required": true,
+      "top_activations": [
+        {
+          "activation_level": 0.585,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "customer/pmf",
+          "node_name": "Product-Market Fit"
+        },
+        {
+          "activation_level": 0.39,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "customer/blank_custdev",
+          "node_name": "Steve Blank Customer Development"
+        },
+        {
+          "activation_level": 0.371,
+          "file_path": "strategic/evidence_before_pitch.md",
+          "hop_distance": 0,
+          "node_id": "strategic/evidence_before_pitch",
+          "node_name": "Evidence Before Pitch ()"
+        },
+        {
+          "activation_level": 0.3,
+          "file_path": "WHO_I_AM.md",
+          "hop_distance": 0,
+          "node_id": "WHO_I_AM",
+          "node_name": "Who I Am"
+        },
+        {
+          "activation_level": 0.293,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "impact/evidence_portfolio",
+          "node_name": "Evidence Portfolio"
+        },
+        {
+          "activation_level": 0.252,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "impact/crossing_chasm",
+          "node_name": "Crossing the Chasm (Moore)"
+        }
+      ]
+    },
+    {
+      "CIEU_recording_required": true,
+      "brain_activation_count": 6,
+      "brain_stage_id": "selected_action_decision",
+      "dimension_id": "D4_product_shape",
+      "evidence_refs": [
+        "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks ( Round 1)",
+        "brain://customer/pmf: Product-Market Fit",
+        "brain://WHO_I_AM: Who I Am",
+        "brain://ceo_learning/product_management: CEO Product Management  PLG + PMF + Prioritization ( Round 11)",
+        "brain://meta/u_action_workflow: U-Action Workflow (\"\" 5 )",
+        "brain://meta/17_meta_rules_from_practice: 17 Meta-Rules  CEO  ()"
+      ],
+      "output_summary": "D4_product_shape: CEO Decision-Making Frameworks ( Round 1), Product-Market Fit, Who I Am",
+      "question": "first paid unit, service sprint, agent, dashboard",
+      "runtime_governance_required": true,
+      "top_activations": [
+        {
+          "activation_level": 0.4,
+          "file_path": "ceo_learning/decision_making_frameworks.md",
+          "hop_distance": 0,
+          "node_id": "ceo_learning/decision_making_frameworks",
+          "node_name": "CEO Decision-Making Frameworks ( Round 1)"
+        },
+        {
+          "activation_level": 0.3,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "customer/pmf",
+          "node_name": "Product-Market Fit"
+        },
+        {
+          "activation_level": 0.22,
+          "file_path": "WHO_I_AM.md",
+          "hop_distance": 0,
+          "node_id": "WHO_I_AM",
+          "node_name": "Who I Am"
+        },
+        {
+          "activation_level": 0.2,
+          "file_path": "ceo_learning/product_management.md",
+          "hop_distance": 0,
+          "node_id": "ceo_learning/product_management",
+          "node_name": "CEO Product Management  PLG + PMF + Prioritization ( Round 11)"
+        },
+        {
+          "activation_level": 0.2,
+          "file_path": "meta/u_action_workflow.md",
+          "hop_distance": 0,
+          "node_id": "meta/u_action_workflow",
+          "node_name": "U-Action Workflow (\"\" 5 )"
+        },
+        {
+          "activation_level": 0.2,
+          "file_path": "meta/17_meta_rules_from_practice.md",
+          "hop_distance": 0,
+          "node_id": "meta/17_meta_rules_from_practice",
+          "node_name": "17 Meta-Rules  CEO  ()"
+        }
+      ]
+    },
+    {
+      "CIEU_recording_required": true,
+      "brain_activation_count": 6,
+      "brain_stage_id": "risk_owner_burden_evaluation",
+      "dimension_id": "D5_risk_boundary",
+      "evidence_refs": [
+        "brain://customer/pmf: Product-Market Fit",
+        "brain://WHO_I_AM: Who I Am",
+        "brain://ceo_learning/risk_management_antifragile: CEO Risk Management  Antifragile Thinking ( Round 3)",
+        "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks ( Round 1)",
+        "brain://ceo_learning/product_management: CEO Product Management  PLG + PMF + Prioritization ( Round 11)",
+        "brain://meta/17_meta_rules_from_practice: 17 Meta-Rules  CEO  ()"
+      ],
+      "output_summary": "D5_risk_boundary: Product-Market Fit, Who I Am, CEO Risk Management  Antifragile Thinking ( Round 3)",
+      "question": "regulatory risk, owner burden, no-send boundaries",
+      "runtime_governance_required": true,
+      "top_activations": [
+        {
+          "activation_level": 0.293,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "customer/pmf",
+          "node_name": "Product-Market Fit"
+        },
+        {
+          "activation_level": 0.215,
+          "file_path": "WHO_I_AM.md",
+          "hop_distance": 0,
+          "node_id": "WHO_I_AM",
+          "node_name": "Who I Am"
+        },
+        {
+          "activation_level": 0.195,
+          "file_path": "ceo_learning/risk_management_antifragile.md",
+          "hop_distance": 0,
+          "node_id": "ceo_learning/risk_management_antifragile",
+          "node_name": "CEO Risk Management  Antifragile Thinking ( Round 3)"
+        },
+        {
+          "activation_level": 0.195,
+          "file_path": "ceo_learning/decision_making_frameworks.md",
+          "hop_distance": 0,
+          "node_id": "ceo_learning/decision_making_frameworks",
+          "node_name": "CEO Decision-Making Frameworks ( Round 1)"
+        },
+        {
+          "activation_level": 0.195,
+          "file_path": "ceo_learning/product_management.md",
+          "hop_distance": 0,
+          "node_id": "ceo_learning/product_management",
+          "node_name": "CEO Product Management  PLG + PMF + Prioritization ( Round 11)"
+        },
+        {
+          "activation_level": 0.195,
+          "file_path": "meta/17_meta_rules_from_practice.md",
+          "hop_distance": 0,
+          "node_id": "meta/17_meta_rules_from_practice",
+          "node_name": "17 Meta-Rules  CEO  ()"
+        }
+      ]
+    },
+    {
+      "CIEU_recording_required": true,
+      "brain_activation_count": 6,
+      "brain_stage_id": "post_action_learning_plan",
+      "dimension_id": "D6_learning_loop",
+      "evidence_refs": [
+        "brain://ceo_learning/decision_making_frameworks: CEO Decision-Making Frameworks ( Round 1)",
+        "brain://ceo_learning/product_management: CEO Product Management  PLG + PMF + Prioritization ( Round 11)",
+        "brain://product/quality_gates: Quality Gates",
+        "brain://customer/pmf: Product-Market Fit",
+        "brain://WHO_I_AM: Who I Am",
+        "brain://impact/crossing_chasm: Crossing the Chasm (Moore)"
+      ],
+      "output_summary": "D6_learning_loop: CEO Decision-Making Frameworks ( Round 1), CEO Product Management  PLG + PMF + Prioritization ( Round 1, Quality Gates",
+      "question": "residual learning, pivot criteria, next action",
+      "runtime_governance_required": true,
+      "top_activations": [
+        {
+          "activation_level": 0.3,
+          "file_path": "ceo_learning/decision_making_frameworks.md",
+          "hop_distance": 0,
+          "node_id": "ceo_learning/decision_making_frameworks",
+          "node_name": "CEO Decision-Making Frameworks ( Round 1)"
+        },
+        {
+          "activation_level": 0.3,
+          "file_path": "ceo_learning/product_management.md",
+          "hop_distance": 0,
+          "node_id": "ceo_learning/product_management",
+          "node_name": "CEO Product Management  PLG + PMF + Prioritization ( Round 11)"
+        },
+        {
+          "activation_level": 0.3,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "product/quality_gates",
+          "node_name": "Quality Gates"
+        },
+        {
+          "activation_level": 0.3,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "customer/pmf",
+          "node_name": "Product-Market Fit"
+        },
+        {
+          "activation_level": 0.244,
+          "file_path": "WHO_I_AM.md",
+          "hop_distance": 0,
+          "node_id": "WHO_I_AM",
+          "node_name": "Who I Am"
+        },
+        {
+          "activation_level": 0.214,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "impact/crossing_chasm",
+          "node_name": "Crossing the Chasm (Moore)"
+        }
+      ]
+    }
+  ],
+  "target_customer_segments": [
+    {
+      "buyer": "principal/owner of 2-10 person CPA firm",
+      "first_offer_fit": "high",
+      "pain": "review backlog and partner bottleneck",
+      "segment_id": "small_cpa_principal"
+    },
+    {
+      "buyer": "bookkeeping/CAS firm owner",
+      "first_offer_fit": "medium",
+      "pain": "recurring close/review workflow chaos",
+      "segment_id": "bookkeeping_firm_owner"
+    },
+    {
+      "buyer": "tax firm operator",
+      "first_offer_fit": "high",
+      "pain": "prep throughput exceeds review capacity",
+      "segment_id": "tax_season_overloaded_firm"
+    },
+    {
+      "buyer": "accounting workflow automation consultant",
+      "first_offer_fit": "medium",
+      "pain": "needs fast diagnostic artifact for firms",
+      "segment_id": "workflow_consultant_partner"
+    }
+  ],
+  "what_was_not_claimed": [
+    "No L4 feedback was executed.",
+    "No customer validation, pricing validation, paid signal, payment, or revenue evidence was claimed.",
+    "No tax, accounting, legal, customs, or compliance advice was claimed."
+  ]
+}
