@@ -29,9 +29,32 @@ def _load_ystar_governance_module(ystar_gov_root: Path | None = None) -> Any:
 
 def _load_gov_mcp_dry_run_adapter(gov_mcp_root: Path | None = None) -> Any:
     root = gov_mcp_root or GOV_MCP_ROOT
-    if root.exists() and str(root) not in sys.path:
+    if root.exists() and str(root) in sys.path:
+        sys.path.remove(str(root))
+    if root.exists():
         sys.path.insert(0, str(root))
+    _clear_shadowed_gov_mcp_package(root)
+    importlib.invalidate_caches()
     return importlib.import_module("gov_mcp.outbound.dry_run_adapter")
+
+
+def _clear_shadowed_gov_mcp_package(root: Path) -> None:
+    """Ensure bridge-labs' local gov_mcp package does not hide the gov-mcp repo."""
+
+    module = sys.modules.get("gov_mcp")
+    module_file = Path(getattr(module, "__file__", "")) if module is not None else None
+    if module_file and root.exists() and not _is_relative_to(module_file, root):
+        for name in list(sys.modules):
+            if name == "gov_mcp" or name.startswith("gov_mcp."):
+                sys.modules.pop(name, None)
+
+
+def _is_relative_to(path: Path, root: Path) -> bool:
+    try:
+        path.resolve().relative_to(root.resolve())
+        return True
+    except ValueError:
+        return False
 
 
 def build_ceo_major_action_runtime_envelope(
@@ -202,13 +225,14 @@ def route_provider_tool_action_through_runtime_nervous_system(
         dry_run_adapter = _load_gov_mcp_dry_run_adapter(gov_mcp_root)
         receipt = dry_run_adapter.dry_run_outbound_action(
             _build_gov_mcp_dry_run_intent(envelope),
-            {
-                "source_repo": "bridge-labs",
-                "source_runtime": "Y-star-gov CEO Cognitive OS runtime hook",
-                "YstarGov_decision": decision,
-                "execution_boundary": "dry_run_only",
-            },
-        )
+        {
+            "source_repo": "bridge-labs",
+            "source_runtime": "Y-star-gov CEO Cognitive OS runtime hook",
+            "YstarGov_decision": decision,
+            "execution_boundary": "dry_run_only",
+            "intelligence_loop_metadata": _intelligence_loop_metadata_from_envelope(envelope),
+        },
+    )
         import_status = "direct_gov_mcp_dry_run_import_used"
     except Exception as exc:
         receipt = {
@@ -267,8 +291,31 @@ def _build_gov_mcp_dry_run_intent(envelope: Mapping[str, Any]) -> dict[str, Any]
             "source_repo": "bridge-labs",
             "source_runtime": "Y-star-gov CEO Cognitive OS runtime hook",
             "no_real_provider_action": True,
+            **_intelligence_loop_metadata_from_envelope(envelope),
         },
     }
+
+
+def _intelligence_loop_metadata_from_envelope(envelope: Mapping[str, Any]) -> dict[str, Any]:
+    metadata = envelope.get("intelligence_loop_metadata")
+    if isinstance(metadata, Mapping):
+        result = dict(metadata)
+    else:
+        result = {}
+    for key in (
+        "intelligence_loop_id",
+        "selected_candidate_id",
+        "YstarGov_intelligence_decision",
+        "commercial_sharpness_summary",
+        "owner_approval_state",
+    ):
+        if key in envelope:
+            result[key] = envelope[key]
+    if result:
+        result.setdefault("provider_action_executed", False)
+        result.setdefault("external_side_effect", False)
+        result.setdefault("no_send_invariant", True)
+    return result
 
 
 def _bridge_route_for_decision(decision: str) -> dict[str, Any]:
