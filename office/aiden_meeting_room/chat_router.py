@@ -14,8 +14,8 @@ from pathlib import Path
 from typing import Any
 
 from office.aiden_meeting_room.governed_gateway import answer_owner_governed_text
-from office.mission_command.e105_open_world_market_discovery_runtime import (
-    run_e105_open_world_market_discovery_strategy_session,
+from office.mission_command.e106_strategy_process_integrity_runtime import (
+    run_e106_strategy_process_integrity_session,
 )
 
 
@@ -128,6 +128,7 @@ def render_aiden_strategy_runtime_response(result: dict[str, Any]) -> str:
     cpa_status = strategy["cpa_route_status"]
     founder_fit = strategy["founder_market_fit_assessment"]
     proof = strategy["open_world_discovery_proof"]
+    process = strategy["strategy_process_integrity_proof"]
     competitor_lines = "\n".join(
         f"- {item['competitor_id']}: {item['threat_level']}" for item in competitors[:8]
     )
@@ -136,19 +137,20 @@ def render_aiden_strategy_runtime_response(result: dict[str, Any]) -> str:
     )
     visible_lines = "\n".join(f"- {item}" for item in offer["visible_deliverables"])
     return (
-        "CEO Strategy Runtime: E105_EVIDENCE_DERIVED_OPEN_WORLD_MARKET_DISCOVERY\n"
+        "CEO Strategy Runtime: E106_FULL_STRATEGY_PROCESS_WITH_ANTI_ANCHOR_AUDIT\n"
         "This Aiden strategy question was auto-upgraded from meeting-room answer "
-        "to the governed 6D brain + public-read evidence feed + evidence-derived open-world strategy runtime.\n\n"
+        "to the governed 6D brain + public-read evidence feed + evidence-derived open-world strategy "
+        "runtime + full process integrity audit.\n\n"
         f"Y-star-gov strategic decision: {receipt['Y_star_gov_strategic_decision']}\n"
         f"Y-star-gov market refresh decision: {receipt['Y_star_gov_market_refresh_decision']}\n"
         f"Y-star-gov open-world decision: {receipt['Y_star_gov_open_world_decision']}\n"
+        f"Y-star-gov process integrity decision: {receipt['Y_star_gov_process_integrity_decision']}\n"
         f"CIEUStore written: {str(receipt['CIEUStore_written']).lower()}\n"
-        f"Brain unique nodes: {receipt['brain_unique_nodes']}\n"
-        f"External public-read evidence items: {receipt['external_evidence_count']}\n"
-        f"Opportunity clusters: {receipt['opportunity_cluster_count']}\n"
-        f"Unseeded clusters: {receipt['unseeded_cluster_count']}\n"
-        f"Candidate generation: {receipt['candidate_generation_mode']}\n"
-        f"Closed preset used: {str(receipt['closed_route_preset_used']).lower()}\n"
+        f"Completed strategy phases: {receipt['completed_strategy_phase_count']}\n"
+        f"Opportunity universe domains: {receipt['opportunity_universe_count']}\n"
+        f"Counterfactual routes compared: {receipt['counterfactual_route_count']}\n"
+        f"Anchor penalty applied: {str(receipt['anchor_penalty_applied']).lower()}\n"
+        f"Recent-memory-only: {str(receipt['recent_memory_only']).lower()}\n"
         f"CIEU events: {receipt['CIEU_event_count']}\n\n"
         "Selected first-cash path:\n"
         f"{selected['current_best_first_cash_path']}\n"
@@ -168,6 +170,12 @@ def render_aiden_strategy_runtime_response(result: dict[str, Any]) -> str:
         f"- evidence_feed_mode: {proof['evidence_feed_mode']}\n"
         f"- query_expansion_rounds: {len(proof['query_expansion_rounds'])}\n"
         f"- opportunity_clusters: {', '.join(cluster['cluster_id'] for cluster in proof['opportunity_clusters'][:6])}\n\n"
+        "Strategy process integrity proof:\n"
+        f"- process_mode: {process['process_mode']}\n"
+        f"- completed_phases: {len(process['completed_phases'])}\n"
+        f"- opportunity_universe_scan: {len(process['opportunity_universe_scan'])}\n"
+        f"- anchor_prior_routes: {', '.join(process['anchor_dependence_audit']['prior_anchors'])}\n"
+        f"- selected_supported_without_anchor: {str(process['anchor_dependence_audit']['selected_route_supported_without_anchor']).lower()}\n\n"
         "Competitor saturation scan:\n"
         f"{competitor_lines}\n"
         f"- saturation: {strategy['competitor_saturation_assessment']['CPA_review_bottleneck_route']}\n\n"
@@ -203,7 +211,7 @@ def run_aiden_strategy_runtime(
 ) -> AidenChatRoute:
     root = repo_root or Path(__file__).resolve().parents[2]
     selected_cieu_db = Path(cieu_db) if cieu_db is not None else default_aiden_strategy_cieu_db(root)
-    result = run_e105_open_world_market_discovery_strategy_session(
+    result = run_e106_strategy_process_integrity_session(
         cieu_db=selected_cieu_db,
         owner_intent=owner_message,
         brain_db=brain_db,
