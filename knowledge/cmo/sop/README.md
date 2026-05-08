@@ -63,4 +63,4 @@ top of the file, but files are never deleted (append-only audit).
 ## Source
 
 Board capability system directive (2026-04-10);
-`governance/WORKING_STYLE.md` 第九条.
+`governance/WORKING_STYLE.md` Article 9.

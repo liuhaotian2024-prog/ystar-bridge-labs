@@ -52,5 +52,5 @@ stronger evidence than a missing file.
 ## Source
 
 Board capability system directive (2026-04-10);
-`governance/WORKING_STYLE.md` 第九条 layer 2 (assumptions) and the
+`governance/WORKING_STYLE.md` Article 9 layer 2 (assumptions) and the
 idle learning loop definition in `AGENTS.md`.

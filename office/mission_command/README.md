@@ -19,6 +19,6 @@ It does not execute external actions. It creates a local, reviewable summary:
 Run:
 
 ```bash
-python3.11 office/mission_command/mission_cli.py "Aiden，带团队制定未来 7 天最可能产生第一笔收入的行动方案"
+python3.11 office/mission_command/mission_cli.py "Aiden, lead the team to define the most likely seven-day plan for producing the first revenue signal"
 ```
 

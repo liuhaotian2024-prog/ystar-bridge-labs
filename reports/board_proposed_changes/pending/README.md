@@ -81,5 +81,5 @@ This is the Q3 cadence Board confirmed in the GOV-008 answers.
 - `scripts/gov_order.py` — the producer
 - `scripts/gov_order_undo.py` — the rollback tool for already-registered obligations
 - `reports/cto/gov_order_pipeline.md` — the full design doc
-- `governance/WORKING_STYLE.md` 第七条 7.5 — the GOV-006 protocol that
+- `governance/WORKING_STYLE.md` Article 7 7.5 — the GOV-006 protocol that
   gov_order's `INTENT_RECORDED` writes piggyback on

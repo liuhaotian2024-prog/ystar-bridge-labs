@@ -19,7 +19,7 @@ This is not a demo. We ship code, fix bugs, write patents, and argue about produ
 | Name | Role | What They Do |
 |---|---|---|
 | **Haotian Liu** | Board / Founder | Human. Sets direction, makes final calls, holds everyone accountable. |
-| **Aiden (承远)** | CEO | Coordinates the team, reports to Board, integrates all departments. Named March 29, 2026. |
+| **Aiden (Chengyuan)** | CEO | Coordinates the team, reports to Board, integrates all departments. Named March 29, 2026. |
 | **CTO** | Engineering | Architecture, code, tests. Built 806+ tests, 3 patents, Pearl causal inference. |
 | **CMO** | Content & Growth | Market research, positioning, HN strategy. Caught fabricating data once (CASE-001) — learned the hard way. |
 | **CFO** | Finance | Pricing, cost modeling. Also caught fabricating data (CASE-002). Honesty policy now constitutional. |
