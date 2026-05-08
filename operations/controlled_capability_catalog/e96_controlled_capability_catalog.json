@@ -1,0 +1,423 @@
+{
+  "artifact_id": "e96_controlled_capability_catalog",
+  "controlled_capabilities": [
+    {
+      "autonomy_level": "autonomous_for_internal_low_risk_and_dry_run_routes",
+      "capability_id": "owner_facing_aiden_governed_gateway",
+      "cieustore_recording": "Y-star-gov CIEUStore behavior-center runtime records",
+      "entrypoint": "office/aiden_meeting_room/governed_gateway.py::answer_owner_governed",
+      "gaps": [],
+      "governance_path": "E94 behavior-center runtime gateway -> Y-star-gov behavior-center contract",
+      "owner_repo": "bridge-labs",
+      "risk_boundary": "real external side effects still require governed adapter and hard-risk screen",
+      "status": "active_runtime",
+      "title": "Owner-facing Aiden behavior gateway"
+    },
+    {
+      "autonomy_level": "not_owner_facing",
+      "capability_id": "raw_answer_owner_kernel",
+      "cieustore_recording": "not direct; recorded only through governed gateway",
+      "entrypoint": "office/aiden_meeting_room/aiden_response_engine.py::answer_owner",
+      "gaps": [
+        "legacy boundary wording is more conservative than current low-risk autonomy policy"
+      ],
+      "governance_path": "must be wrapped by answer_owner_governed for owner-facing use",
+      "owner_repo": "bridge-labs",
+      "risk_boundary": "direct owner-facing use is a bypass",
+      "status": "internal_kernel_only",
+      "title": "Raw Aiden behavior-center intent kernel"
+    },
+    {
+      "autonomy_level": "autonomous_read_provenance_only",
+      "capability_id": "brain_grounding_and_provenance",
+      "cieustore_recording": "brain provenance is written in behavior-center CIEUStore records",
+      "entrypoint": "office/mission_command/e93_brain_grounded_live_runtime.py::query_brain_for_stage",
+      "gaps": [],
+      "governance_path": "E94 requires brain provenance before behavior-center runtime decision",
+      "owner_repo": "bridge-labs",
+      "risk_boundary": "production brain writes require explicit sleep/dream commit policy",
+      "status": "active_runtime_partial_writeback",
+      "title": "Aiden brain activation and provenance"
+    },
+    {
+      "autonomy_level": "governance_reflex",
+      "capability_id": "ceo_behavior_center_runtime_contract",
+      "cieustore_recording": "formal CIEUStore write_dict path",
+      "entrypoint": "ystar/governance/ceo_behavior_center_runtime_contract.py::validate_and_write_ceo_behavior_center_runtime_packet",
+      "gaps": [],
+      "governance_path": "deterministic ALLOW/REQUIRE_REVISION/DENY/ESCALATE behavior-center governance",
+      "owner_repo": "Y-star-gov",
+      "risk_boundary": "does not execute external actions",
+      "status": "active_runtime",
+      "title": "Y-star-gov behavior-center runtime validation"
+    },
+    {
+      "autonomy_level": "governance_reflex",
+      "capability_id": "ceo_major_action_runtime_hook",
+      "cieustore_recording": "formal CIEUStore writer via CEO Cognitive OS CIEU log adapter",
+      "entrypoint": "ystar/governance/ceo_cognitive_os_runtime_hook.py::validate_ceo_runtime_envelope",
+      "gaps": [],
+      "governance_path": "pre-action packet and post-action residual validation",
+      "owner_repo": "Y-star-gov",
+      "risk_boundary": "ALLOW means approved next step, not external execution",
+      "status": "active_runtime",
+      "title": "CEO major-action runtime hook"
+    },
+    {
+      "autonomy_level": "autonomous_dry_run_only",
+      "capability_id": "gov_mcp_dry_run_boundary",
+      "cieustore_recording": "receipt can be attached to CIEUStore runtime records",
+      "entrypoint": "gov_mcp/outbound/dry_run_adapter.py::dry_run_outbound_action",
+      "gaps": [],
+      "governance_path": "called after Y-star-gov ALLOW for provider/tool dry-run routes",
+      "owner_repo": "gov-mcp",
+      "risk_boundary": "provider_action_executed=false and external_side_effect=false",
+      "status": "active_dry_run_only",
+      "title": "gov-mcp provider/tool dry-run boundary"
+    },
+    {
+      "autonomy_level": "autonomous_for_test_or_structured_internal_planning",
+      "capability_id": "ceo_intelligence_loop_compiler",
+      "cieustore_recording": "formal CIEUStore intelligence-loop record",
+      "entrypoint": "office/mission_command/e89_ceo_intelligence_loop_runtime_compiler.py::run_ceo_intelligence_runtime_session",
+      "gaps": [
+        "some generation remains deterministic fixture rather than live external observation"
+      ],
+      "governance_path": "E91 doctrine gate then Y-star-gov intelligence-loop contract",
+      "owner_repo": "bridge-labs",
+      "risk_boundary": "non-test live cognition cannot be static_template",
+      "status": "active_structured_fixture_runtime",
+      "title": "Structured CEO intelligence loop compiler"
+    },
+    {
+      "autonomy_level": "autonomous_for_internal_strategy_and_no_send_preflight",
+      "capability_id": "ceo_market_strategy_benchmark",
+      "cieustore_recording": "formal CIEUStore benchmark/pre-action/residual records",
+      "entrypoint": "office/mission_command/e90_market_grounded_strategy_run.py::run_e90_market_grounded_strategy_session",
+      "gaps": [
+        "live fresh external observation remains blocked when test_mode=false"
+      ],
+      "governance_path": "E91 doctrine gate then Y-star-gov strategic benchmark validator",
+      "owner_repo": "bridge-labs",
+      "risk_boundary": "no customer validation or revenue claim without real feedback",
+      "status": "active_benchmark_limited_external_grounding",
+      "title": "Market-grounded strategy benchmark and route selection"
+    },
+    {
+      "autonomy_level": "mandatory_preflight_for_major_actions",
+      "capability_id": "ceo_doctrine_registry",
+      "cieustore_recording": "CEO_OPERATING_DOCTRINE_INVOCATION_DECISION CIEUStore records",
+      "entrypoint": "office/mission_command/e91_ceo_operating_doctrine_registry.py::build_ceo_operating_doctrine_registry",
+      "gaps": [
+        "some discovered callable paths are broad or imprecise and need catalog hygiene"
+      ],
+      "governance_path": "Y-star-gov doctrine invocation contract",
+      "owner_repo": "bridge-labs",
+      "risk_boundary": "registry cannot substitute report-only artifacts for live doctrines",
+      "status": "active_but_needs_integrity_cleanup",
+      "title": "CEO operating doctrine registry"
+    },
+    {
+      "autonomy_level": "autonomous_engineering_order_generation",
+      "capability_id": "codex_executor_boundary",
+      "cieustore_recording": "order, handoff-prompt, receipt, and residual CIEUStore records",
+      "entrypoint": "office/mission_command/e92_ceo_principal_codex_executor_boundary.py::run_ceo_codex_executor_boundary_session",
+      "gaps": [],
+      "governance_path": "Y-star-gov CEO Codex executor contract",
+      "owner_repo": "bridge-labs",
+      "risk_boundary": "Codex cannot change strategy or execute external actions without escalation",
+      "status": "active_runtime",
+      "title": "CEO principal to Codex executor boundary"
+    },
+    {
+      "autonomy_level": "autonomous_candidate_generation_only",
+      "capability_id": "sleep_dream_learning_candidate",
+      "cieustore_recording": "candidate and isolated proof only by default",
+      "entrypoint": "office/mission_command/e95_behavior_center_caller_migration_and_sleep_dream_loop.py::apply_sleep_dream_learning_candidate",
+      "gaps": [],
+      "governance_path": "E95 residual-derived candidate; production commit still policy-gated",
+      "owner_repo": "bridge-labs",
+      "risk_boundary": "production brain DB commit requires explicit controlled policy",
+      "status": "partial_isolated_write_proof",
+      "title": "Behavior-center sleep/dream residual learning"
+    }
+  ],
+  "controlled_capability_count": 11,
+  "doctrine_registry_integrity": {
+    "issue_count": 1,
+    "issues": [
+      {
+        "callable_implementation_path": "tests/governance/test_ceo_cognitive_os_runtime_hook.py",
+        "doctrine_id": "ystar_governance_runtime_reflex",
+        "issue": "callable_path_not_found_in_bridge_labs_tree",
+        "recommended_status": "mapped_but_not_runtime_active"
+      }
+    ],
+    "registry_claims_need_hygiene": true,
+    "status": "needs_registry_hygiene"
+  },
+  "generated_at": "2026-05-08T14:38:01.892483+00:00",
+  "milestone_id": "E96_CEO_Controlled_Capability_Control_Plane_And_Strategy_Intelligence_Leap_R1",
+  "quarantined_entrypoint_count": 30,
+  "quarantined_entrypoints": [
+    {
+      "current_status": "review_required_external_surface_with_some_local_controls",
+      "external_action_allowed": false,
+      "path": "office/mission_command/e40_no_send_message_and_walkthrough.py",
+      "required_control_path": "register in E96 control plane and route through Y-star-gov/gov-mcp before use",
+      "risk_type": "auto_discovered_external_surface",
+      "why_it_matters": "It contains external-capable code and local safety language, but is not the canonical governed gateway."
+    },
+    {
+      "current_status": "review_required_external_surface_with_some_local_controls",
+      "external_action_allowed": false,
+      "path": "office/mission_command/e96_ceo_controlled_capability_control_plane.py",
+      "required_control_path": "register in E96 control plane and route through Y-star-gov/gov-mcp before use",
+      "risk_type": "auto_discovered_external_surface",
+      "why_it_matters": "It contains external-capable code and local safety language, but is not the canonical governed gateway."
+    },
+    {
+      "current_status": "review_required_external_surface_with_some_local_controls",
+      "external_action_allowed": false,
+      "path": "scripts/auto_commit_push.py",
+      "required_control_path": "register in E96 control plane and route through Y-star-gov/gov-mcp before use",
+      "risk_type": "auto_discovered_external_surface",
+      "why_it_matters": "It contains external-capable code and local safety language, but is not the canonical governed gateway."
+    },
+    {
+      "current_status": "quarantined_high_risk_live_external_action",
+      "external_action_allowed": false,
+      "path": "scripts/create_channel.py",
+      "required_control_path": "must require future gov-mcp live-ready preflight plus explicit owner approval",
+      "risk_type": "live_channel_creation_and_publication",
+      "why_it_matters": "It can create a public channel and send an initial public message."
+    },
+    {
+      "current_status": "quarantined_external_surface_no_canonical_gateway",
+      "external_action_allowed": false,
+      "path": "scripts/deploy_mac_cto.py",
+      "required_control_path": "register in E96 control plane and route through Y-star-gov/gov-mcp before use",
+      "risk_type": "auto_discovered_external_surface",
+      "why_it_matters": "It contains external-capable code without the current behavior-center/Y-star-gov/gov-mcp control path."
+    },
+    {
+      "current_status": "quarantined_external_surface_no_canonical_gateway",
+      "external_action_allowed": false,
+      "path": "scripts/deploy_mac_cto_ssh.py",
+      "required_control_path": "register in E96 control plane and route through Y-star-gov/gov-mcp before use",
+      "risk_type": "auto_discovered_external_surface",
+      "why_it_matters": "It contains external-capable code without the current behavior-center/Y-star-gov/gov-mcp control path."
+    },
+    {
+      "current_status": "quarantined_external_surface_no_canonical_gateway",
+      "external_action_allowed": false,
+      "path": "scripts/gemma_client.py",
+      "required_control_path": "register in E96 control plane and route through Y-star-gov/gov-mcp before use",
+      "risk_type": "auto_discovered_external_surface",
+      "why_it_matters": "It contains external-capable code without the current behavior-center/Y-star-gov/gov-mcp control path."
+    },
+    {
+      "current_status": "review_required_external_surface_with_some_local_controls",
+      "external_action_allowed": false,
+      "path": "scripts/gov_order.py",
+      "required_control_path": "register in E96 control plane and route through Y-star-gov/gov-mcp before use",
+      "risk_type": "auto_discovered_external_surface",
+      "why_it_matters": "It contains external-capable code and local safety language, but is not the canonical governed gateway."
+    },
+    {
+      "current_status": "quarantined_external_surface_no_canonical_gateway",
+      "external_action_allowed": false,
+      "path": "scripts/k9.py",
+      "required_control_path": "register in E96 control plane and route through Y-star-gov/gov-mcp before use",
+      "risk_type": "auto_discovered_external_surface",
+      "why_it_matters": "It contains external-capable code without the current behavior-center/Y-star-gov/gov-mcp control path."
+    },
+    {
+      "current_status": "quarantined_external_surface_no_canonical_gateway",
+      "external_action_allowed": false,
+      "path": "scripts/k9_baseline_verify.py",
+      "required_control_path": "register in E96 control plane and route through Y-star-gov/gov-mcp before use",
+      "risk_type": "auto_discovered_external_surface",
+      "why_it_matters": "It contains external-capable code without the current behavior-center/Y-star-gov/gov-mcp control path."
+    },
+    {
+      "current_status": "quarantined_external_surface_no_canonical_gateway",
+      "external_action_allowed": false,
+      "path": "scripts/k9_inbox.py",
+      "required_control_path": "register in E96 control plane and route through Y-star-gov/gov-mcp before use",
+      "risk_type": "auto_discovered_external_surface",
+      "why_it_matters": "It contains external-capable code without the current behavior-center/Y-star-gov/gov-mcp control path."
+    },
+    {
+      "current_status": "quarantined_external_surface_no_canonical_gateway",
+      "external_action_allowed": false,
+      "path": "scripts/k9_login.py",
+      "required_control_path": "register in E96 control plane and route through Y-star-gov/gov-mcp before use",
+      "risk_type": "auto_discovered_external_surface",
+      "why_it_matters": "It contains external-capable code without the current behavior-center/Y-star-gov/gov-mcp control path."
+    },
+    {
+      "current_status": "quarantined_external_surface_no_canonical_gateway",
+      "external_action_allowed": false,
+      "path": "scripts/k9_phase1.py",
+      "required_control_path": "register in E96 control plane and route through Y-star-gov/gov-mcp before use",
+      "risk_type": "auto_discovered_external_surface",
+      "why_it_matters": "It contains external-capable code without the current behavior-center/Y-star-gov/gov-mcp control path."
+    },
+    {
+      "current_status": "quarantined_external_surface_no_canonical_gateway",
+      "external_action_allowed": false,
+      "path": "scripts/k9_phase2.py",
+      "required_control_path": "register in E96 control plane and route through Y-star-gov/gov-mcp before use",
+      "risk_type": "auto_discovered_external_surface",
+      "why_it_matters": "It contains external-capable code without the current behavior-center/Y-star-gov/gov-mcp control path."
+    },
+    {
+      "current_status": "quarantined_external_surface_no_canonical_gateway",
+      "external_action_allowed": false,
+      "path": "scripts/k9_phase4_baseline.py",
+      "required_control_path": "register in E96 control plane and route through Y-star-gov/gov-mcp before use",
+      "risk_type": "auto_discovered_external_surface",
+      "why_it_matters": "It contains external-capable code without the current behavior-center/Y-star-gov/gov-mcp control path."
+    },
+    {
+      "current_status": "quarantined_external_surface_no_canonical_gateway",
+      "external_action_allowed": false,
+      "path": "scripts/k9_reinstall.py",
+      "required_control_path": "register in E96 control plane and route through Y-star-gov/gov-mcp before use",
+      "risk_type": "auto_discovered_external_surface",
+      "why_it_matters": "It contains external-capable code without the current behavior-center/Y-star-gov/gov-mcp control path."
+    },
+    {
+      "current_status": "quarantined_external_surface_no_canonical_gateway",
+      "external_action_allowed": false,
+      "path": "scripts/k9_watch.py",
+      "required_control_path": "register in E96 control plane and route through Y-star-gov/gov-mcp before use",
+      "risk_type": "auto_discovered_external_surface",
+      "why_it_matters": "It contains external-capable code without the current behavior-center/Y-star-gov/gov-mcp control path."
+    },
+    {
+      "current_status": "quarantined_high_risk_live_external_action",
+      "external_action_allowed": false,
+      "path": "scripts/linkedin_auth.py",
+      "required_control_path": "must be unreachable except through future gov-mcp live-ready preflight, owner approval, and receipt guard",
+      "risk_type": "live_social_posting_and_login",
+      "why_it_matters": "It can login, persist cookies, and publish LinkedIn posts."
+    },
+    {
+      "current_status": "quarantined_external_surface_no_canonical_gateway",
+      "external_action_allowed": false,
+      "path": "scripts/mac_command.py",
+      "required_control_path": "register in E96 control plane and route through Y-star-gov/gov-mcp before use",
+      "risk_type": "auto_discovered_external_surface",
+      "why_it_matters": "It contains external-capable code without the current behavior-center/Y-star-gov/gov-mcp control path."
+    },
+    {
+      "current_status": "quarantined_external_surface_no_canonical_gateway",
+      "external_action_allowed": false,
+      "path": "scripts/mac_deploy_agents.py",
+      "required_control_path": "register in E96 control plane and route through Y-star-gov/gov-mcp before use",
+      "risk_type": "auto_discovered_external_surface",
+      "why_it_matters": "It contains external-capable code without the current behavior-center/Y-star-gov/gov-mcp control path."
+    },
+    {
+      "current_status": "quarantined_until_governed_gateway_adapter",
+      "external_action_allowed": false,
+      "path": "scripts/meeting_room/server.py",
+      "required_control_path": "dialogue endpoint must call answer_owner_governed for Aiden and mark TTS as provider boundary",
+      "risk_type": "meeting_room_canned_dialogue_and_tts",
+      "why_it_matters": "It has an Aiden dialogue endpoint and optional ElevenLabs network call outside the governed behavior path."
+    },
+    {
+      "current_status": "quarantined_high_risk_live_external_action",
+      "external_action_allowed": false,
+      "path": "scripts/post_ep01.py",
+      "required_control_path": "must require future gov-mcp live-ready preflight plus explicit owner approval",
+      "risk_type": "live_publication",
+      "why_it_matters": "It can post content to a public Telegram channel."
+    },
+    {
+      "current_status": "quarantined_external_surface_no_canonical_gateway",
+      "external_action_allowed": false,
+      "path": "scripts/post_episodes.py",
+      "required_control_path": "register in E96 control plane and route through Y-star-gov/gov-mcp before use",
+      "risk_type": "auto_discovered_external_surface",
+      "why_it_matters": "It contains external-capable code without the current behavior-center/Y-star-gov/gov-mcp control path."
+    },
+    {
+      "current_status": "quarantined_high_risk_live_external_action",
+      "external_action_allowed": false,
+      "path": "scripts/publish_telegram.py",
+      "required_control_path": "must be replaced by gov-mcp no-send/live-ready Telegram adapter before use",
+      "risk_type": "live_publication",
+      "why_it_matters": "It can send Telegram channel messages."
+    },
+    {
+      "current_status": "quarantined_high_risk_live_external_action",
+      "external_action_allowed": false,
+      "path": "scripts/publish_x.py",
+      "required_control_path": "must be replaced by gov-mcp no-send/live-ready publication adapter before use",
+      "risk_type": "live_publication",
+      "why_it_matters": "It can publish to X/Twitter using credentials."
+    },
+    {
+      "current_status": "quarantined_high_risk_live_external_action",
+      "external_action_allowed": false,
+      "path": "scripts/publish_x_v2.py",
+      "required_control_path": "must be replaced by gov-mcp no-send/live-ready publication adapter before use",
+      "risk_type": "live_publication",
+      "why_it_matters": "It can publish to X/Twitter using OAuth credentials."
+    },
+    {
+      "current_status": "quarantined_external_surface_no_canonical_gateway",
+      "external_action_allowed": false,
+      "path": "scripts/quality_compare.py",
+      "required_control_path": "register in E96 control plane and route through Y-star-gov/gov-mcp before use",
+      "risk_type": "auto_discovered_external_surface",
+      "why_it_matters": "It contains external-capable code without the current behavior-center/Y-star-gov/gov-mcp control path."
+    },
+    {
+      "current_status": "quarantined_high_risk_remote_control",
+      "external_action_allowed": false,
+      "path": "scripts/telegram_bridge.py",
+      "required_control_path": "must require CEOImplementationOrder, owner approval, and command receipt before use",
+      "risk_type": "remote_command_bridge",
+      "why_it_matters": "It can send commands to a bot that controls the Mac."
+    },
+    {
+      "current_status": "review_required_external_surface_with_some_local_controls",
+      "external_action_allowed": false,
+      "path": "scripts/telegram_notify.py",
+      "required_control_path": "register in E96 control plane and route through Y-star-gov/gov-mcp before use",
+      "risk_type": "auto_discovered_external_surface",
+      "why_it_matters": "It contains external-capable code and local safety language, but is not the canonical governed gateway."
+    },
+    {
+      "current_status": "quarantined_until_governed_gateway_adapter",
+      "external_action_allowed": false,
+      "path": "worker.js",
+      "required_control_path": "must route role=ceo through CEOImplementationOrder or answer_owner_governed before model call",
+      "risk_type": "cloud_llm_persona_responder",
+      "why_it_matters": "It can answer as CEO through an external model without brain provenance, Y-star-gov validation, or CIEUStore."
+    }
+  ],
+  "repo_root": "/private/tmp/e94_bridge_work",
+  "status_summary": {
+    "active_benchmark_limited_external_grounding": 1,
+    "active_but_needs_integrity_cleanup": 1,
+    "active_dry_run_only": 1,
+    "active_runtime": 4,
+    "active_runtime_partial_writeback": 1,
+    "active_structured_fixture_runtime": 1,
+    "internal_kernel_only": 1,
+    "partial_isolated_write_proof": 1
+  },
+  "truth_boundaries": {
+    "K9Audit_write_integrated": false,
+    "L5-D": "absent_or_not_executed",
+    "L5_D_revenue_customer_payment_loop_complete": false,
+    "customer_validation_claimed": false,
+    "live_provider_execution_enabled": false,
+    "no_live_external_execution": true
+  }
+}

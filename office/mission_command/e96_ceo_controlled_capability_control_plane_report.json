@@ -1,0 +1,282 @@
+{
+  "CIEUStore_summary": {
+    "db_exists": true,
+    "decisions": [
+      "allow",
+      "allow",
+      "allow",
+      "allow",
+      "allow",
+      "allow",
+      "allow",
+      "allow"
+    ],
+    "event_count": 8,
+    "event_types": [
+      "CEO_BEHAVIOR_CENTER_RUNTIME_DECISION",
+      "CEO_COGNITIVE_OS_RUNTIME_DECISION",
+      "CEO_INTELLIGENCE_LOOP_RUNTIME_DECISION",
+      "CEO_OPERATING_DOCTRINE_INVOCATION_DECISION",
+      "CEO_STRATEGIC_INTELLIGENCE_BENCHMARK_DECISION"
+    ]
+  },
+  "L5_truth_table_after_E96": {
+    "L5-A Runtime Foundation": "complete_internal_runtime_foundation_with_controlled_capability_catalog_and_entry_quarantine",
+    "L5-B CEO Intelligence Loop": "complete_for_structured_governed_intelligence_loop_with_strategy_control_plane_upgrade",
+    "L5-B+": "partial_dynamic_intelligence_pending_live_external_observation_and_real_feedback",
+    "L5-C Controlled External Action": "partial_low_risk_autonomy_dry_run_only_high_risk_quarantined",
+    "L5-D Revenue/Customer/Payment Loop": "absent_or_not_executed"
+  },
+  "autonomous_work_queue": {
+    "allowed_without_owner_count": 3,
+    "catalog_quarantine_count": 30,
+    "decisions": [
+      {
+        "action_id": "e96_package_governed_action_proof_packet",
+        "autonomy_decision": "ALLOW_AUTONOMOUS_DRY_RUN_NO_SEND",
+        "human_work_minimization": "owner is only needed for hard-risk approval or unavailable live provider authorization",
+        "may_execute_without_owner": true,
+        "no_external_side_effect_guarantee": true,
+        "owner_decision_packet_required": false,
+        "structured_action": {
+          "account_creation": false,
+          "action_id": "e96_package_governed_action_proof_packet",
+          "approval_packet_only": false,
+          "artifact_only": false,
+          "blocked": false,
+          "core_writeback": true,
+          "customer_contact": false,
+          "decision": "REVIEW_GATED",
+          "email_or_message": false,
+          "external_side_effect": false,
+          "form_submission": false,
+          "live_read_only_research": false,
+          "obligation_dry_run": false,
+          "payment": false,
+          "preparation_only": false,
+          "publication": false,
+          "raw_title": "Build a no-send governed agent action proof packet using existing CIEUStore and gov-mcp dry-run receipts.",
+          "repo_modification": false,
+          "requires_owner_approval": false,
+          "research_planning": false,
+          "research_read_only": false,
+          "residual_candidate": false,
+          "review_gated": true,
+          "semantic_reason": "Core DB/brain/memory/CIEU writeback remains review-gated.",
+          "source": "e96_strategy_runtime"
+        }
+      },
+      {
+        "action_id": "e96_refresh_public_read_evidence",
+        "autonomy_decision": "ALLOW_AUTONOMOUS_PUBLIC_READ_ONLY_WITH_RECEIPT",
+        "human_work_minimization": "owner is only needed for hard-risk approval or unavailable live provider authorization",
+        "may_execute_without_owner": true,
+        "no_external_side_effect_guarantee": false,
+        "owner_decision_packet_required": false,
+        "structured_action": {
+          "account_creation": false,
+          "action_id": "e96_refresh_public_read_evidence",
+          "approval_packet_only": false,
+          "artifact_only": false,
+          "blocked": false,
+          "core_writeback": false,
+          "customer_contact": false,
+          "decision": "NEEDS_OWNER_APPROVAL",
+          "email_or_message": false,
+          "external_side_effect": true,
+          "form_submission": true,
+          "live_read_only_research": true,
+          "obligation_dry_run": false,
+          "payment": false,
+          "preparation_only": false,
+          "publication": false,
+          "raw_title": "Run live read-only research to collect public evidence with no contact, no login, no form submission, and no publication.",
+          "repo_modification": false,
+          "requires_owner_approval": true,
+          "research_planning": false,
+          "research_read_only": true,
+          "residual_candidate": false,
+          "review_gated": false,
+          "semantic_reason": "Customer contact, email/message, publication, external price quote, account creation, or form submission requires owner approval.",
+          "source": "experiment_tier1_research"
+        }
+      },
+      {
+        "action_id": "e96_prepare_l4_feedback_preflight",
+        "autonomy_decision": "ALLOW_AUTONOMOUS_DRY_RUN_NO_SEND",
+        "human_work_minimization": "owner is only needed for hard-risk approval or unavailable live provider authorization",
+        "may_execute_without_owner": true,
+        "no_external_side_effect_guarantee": false,
+        "owner_decision_packet_required": false,
+        "structured_action": {
+          "account_creation": false,
+          "action_id": "e96_prepare_l4_feedback_preflight",
+          "approval_packet_only": false,
+          "artifact_only": false,
+          "blocked": false,
+          "core_writeback": false,
+          "customer_contact": false,
+          "decision": "NEEDS_OWNER_APPROVAL",
+          "email_or_message": true,
+          "external_side_effect": true,
+          "form_submission": false,
+          "live_read_only_research": false,
+          "obligation_dry_run": false,
+          "payment": false,
+          "preparation_only": true,
+          "publication": false,
+          "raw_title": "Prepare owner-review L4 feedback preflight packet and gov-mcp dry-run receipt; do not send message.",
+          "repo_modification": false,
+          "requires_owner_approval": true,
+          "research_planning": true,
+          "research_read_only": true,
+          "residual_candidate": false,
+          "review_gated": false,
+          "semantic_reason": "Customer contact, email/message, publication, external price quote, account creation, or form submission requires owner approval.",
+          "source": "research_planning"
+        }
+      },
+      {
+        "action_id": "e96_direct_social_publish_blocked",
+        "autonomy_decision": "GOVERNED_PREFLIGHT_ONLY_UNTIL_LIVE_ADAPTER",
+        "human_work_minimization": "owner is only needed for hard-risk approval or unavailable live provider authorization",
+        "may_execute_without_owner": false,
+        "no_external_side_effect_guarantee": true,
+        "owner_decision_packet_required": false,
+        "structured_action": {
+          "account_creation": false,
+          "action_id": "e96_direct_social_publish_blocked",
+          "approval_packet_only": false,
+          "artifact_only": false,
+          "blocked": false,
+          "core_writeback": false,
+          "customer_contact": false,
+          "decision": "NEEDS_OWNER_APPROVAL",
+          "email_or_message": false,
+          "external_side_effect": true,
+          "form_submission": false,
+          "live_read_only_research": false,
+          "obligation_dry_run": false,
+          "payment": false,
+          "preparation_only": false,
+          "publication": true,
+          "raw_title": "Publish public social post directly through LinkedIn or X.",
+          "repo_modification": false,
+          "requires_owner_approval": true,
+          "research_planning": false,
+          "research_read_only": false,
+          "residual_candidate": false,
+          "review_gated": false,
+          "semantic_reason": "Customer contact, email/message, publication, external price quote, account creation, or form submission requires owner approval.",
+          "source": "live_external_action"
+        }
+      },
+      {
+        "action_id": "e96_payment_path_blocked",
+        "autonomy_decision": "DENY_OR_OWNER_DECISION_HARD_RISK",
+        "human_work_minimization": "owner is only needed for hard-risk approval or unavailable live provider authorization",
+        "may_execute_without_owner": false,
+        "no_external_side_effect_guarantee": true,
+        "owner_decision_packet_required": true,
+        "structured_action": {
+          "account_creation": false,
+          "action_id": "e96_payment_path_blocked",
+          "approval_packet_only": false,
+          "artifact_only": false,
+          "blocked": true,
+          "core_writeback": false,
+          "customer_contact": false,
+          "decision": "BLOCKED",
+          "email_or_message": false,
+          "external_side_effect": false,
+          "form_submission": false,
+          "live_read_only_research": false,
+          "obligation_dry_run": false,
+          "payment": true,
+          "preparation_only": false,
+          "publication": false,
+          "raw_title": "Create payment link and process payment for a customer.",
+          "repo_modification": false,
+          "requires_owner_approval": false,
+          "research_planning": false,
+          "research_read_only": false,
+          "residual_candidate": false,
+          "review_gated": false,
+          "semantic_reason": "Payment or payment-path creation is blocked in this runtime.",
+          "source": "revenue_payment_action"
+        }
+      }
+    ],
+    "hard_risk_owner_or_deny_count": 1,
+    "human_approval_minimized": true,
+    "queue_id": "e96_autonomous_work_queue",
+    "selected_first_cash_path": {
+      "next_48h": [
+        "Package a no-send governed-agent action proof packet from existing CIEUStore and gov-mcp dry-run receipts.",
+        "Run autonomous public-read-only evidence refresh if a safe read-only mechanism is available.",
+        "Generate one owner-facing L4 feedback preflight packet, not a send."
+      ],
+      "next_7d": [
+        "Convert the proof packet into a repeatable dashboard-backed review workflow.",
+        "Use gov-mcp dry-run receipts to test a low-risk transparent feedback envelope.",
+        "Only request owner approval for hard-risk live external action, not for internal analysis or dry-runs."
+      ],
+      "reason": "highest governed executability, strongest reuse of existing CIEU/Y-star-gov/gov-mcp controls, and lowest owner burden before live feedback",
+      "route_id": "cieu_audit_module"
+    }
+  },
+  "controlled_capability_count": 11,
+  "doctrine_registry_integrity": {
+    "issue_count": 1,
+    "issues": [
+      {
+        "callable_implementation_path": "tests/governance/test_ceo_cognitive_os_runtime_hook.py",
+        "doctrine_id": "ystar_governance_runtime_reflex",
+        "issue": "callable_path_not_found_in_bridge_labs_tree",
+        "recommended_status": "mapped_but_not_runtime_active"
+      }
+    ],
+    "registry_claims_need_hygiene": true,
+    "status": "needs_registry_hygiene"
+  },
+  "end_to_end_chain_proven": true,
+  "existing_systems_reused": [
+    "answer_owner_governed",
+    "E94 behavior-center runtime gateway",
+    "E90 market strategy runtime session",
+    "E91 doctrine registry",
+    "Y-star-gov CIEUStore writers through existing runtime calls",
+    "gov-mcp dry_run_outbound_action through existing E90/E94 calls"
+  ],
+  "milestone_id": "E96_CEO_Controlled_Capability_Control_Plane_And_Strategy_Intelligence_Leap_R1",
+  "quarantined_entrypoint_count": 30,
+  "recommended_next_milestone": "E97_Governed_Low_Risk_Public_Read_Observation_And_Feedback_Preflight_Activation_R1",
+  "repos_modified": [
+    "bridge-labs"
+  ],
+  "repos_read": [
+    "bridge-labs",
+    "Y-star-gov",
+    "gov-mcp"
+  ],
+  "selected_first_cash_path": {
+    "next_48h": [
+      "Package a no-send governed-agent action proof packet from existing CIEUStore and gov-mcp dry-run receipts.",
+      "Run autonomous public-read-only evidence refresh if a safe read-only mechanism is available.",
+      "Generate one owner-facing L4 feedback preflight packet, not a send."
+    ],
+    "next_7d": [
+      "Convert the proof packet into a repeatable dashboard-backed review workflow.",
+      "Use gov-mcp dry-run receipts to test a low-risk transparent feedback envelope.",
+      "Only request owner approval for hard-risk live external action, not for internal analysis or dry-runs."
+    ],
+    "reason": "highest governed executability, strongest reuse of existing CIEU/Y-star-gov/gov-mcp controls, and lowest owner burden before live feedback",
+    "route_id": "cieu_audit_module"
+  },
+  "what_was_not_claimed": [
+    "No L4 feedback was executed.",
+    "No live provider action was enabled.",
+    "No customer validation, paid signal, pricing validation, payment, or revenue evidence was claimed.",
+    "No K9Audit write or bridge was claimed."
+  ]
+}

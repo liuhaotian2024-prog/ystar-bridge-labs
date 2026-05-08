@@ -1,0 +1,29 @@
+{
+  "L5_truth_table_after_E96": {
+    "L5-A Runtime Foundation": "complete_internal_runtime_foundation_with_controlled_capability_catalog_and_entry_quarantine",
+    "L5-B CEO Intelligence Loop": "complete_for_structured_governed_intelligence_loop_with_strategy_control_plane_upgrade",
+    "L5-B+": "partial_dynamic_intelligence_pending_live_external_observation_and_real_feedback",
+    "L5-C Controlled External Action": "partial_low_risk_autonomy_dry_run_only_high_risk_quarantined",
+    "L5-D Revenue/Customer/Payment Loop": "absent_or_not_executed"
+  },
+  "controlled_capability_catalog_status": "active_runtime_catalog_written",
+  "end_to_end_chain_proven": true,
+  "entrypoint_quarantine_status": "known_external_bypass_surfaces_quarantined_by_catalog",
+  "hard_risk_scope": [
+    "payment",
+    "legal_or_contract_commitment",
+    "credentials_or_login",
+    "customer_system_access",
+    "live_publication_or_contact_without_adapter",
+    "production_deployment"
+  ],
+  "low_risk_autonomy_status": "internal_public_read_and_dry_run_routes_may_continue_without_owner",
+  "milestone_id": "E96_CEO_Controlled_Capability_Control_Plane_And_Strategy_Intelligence_Leap_R1",
+  "next": "E97_Governed_Low_Risk_Public_Read_Observation_And_Feedback_Preflight_Activation_R1",
+  "no_claims": [
+    "No L4 feedback was executed.",
+    "No live provider action was enabled.",
+    "No customer validation, paid signal, pricing validation, payment, or revenue evidence was claimed.",
+    "No K9Audit write or bridge was claimed."
+  ]
+}
