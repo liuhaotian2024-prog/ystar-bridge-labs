@@ -1,0 +1,184 @@
+{
+  "milestone_id": "E95_Behavior_Center_Gateway_Caller_Migration_And_Sleep_Dream_Learning_Loop_R1",
+  "repos_read": [
+    "bridge-labs",
+    "Y-star-gov",
+    "gov-mcp"
+  ],
+  "repos_modified": [
+    "bridge-labs"
+  ],
+  "existing_systems_reused": [
+    "office/aiden_meeting_room/aiden_response_engine.py::answer_owner as internal kernel",
+    "office/aiden_meeting_room/governed_gateway.py::answer_owner_governed",
+    "office/mission_command/e94_behavior_center_runtime_gateway.py",
+    "Y-star-gov:ystar/governance/ceo_behavior_center_runtime_contract.py",
+    "Y-star-gov:CIEUStore.write_dict",
+    "gov-mcp:dry_run_outbound_action",
+    "scripts/aiden_brain.py isolated DB write path"
+  ],
+  "owner_facing_raw_callers_closed": true,
+  "caller_inventory": {
+    "artifact_id": "e95_behavior_center_caller_inventory",
+    "milestone_id": "E95_Behavior_Center_Gateway_Caller_Migration_And_Sleep_Dream_Learning_Loop_R1",
+    "total_python_files_with_answer_owner_signal": 15,
+    "callers": [
+      {
+        "path": "office/aiden_meeting_room/__init__.py",
+        "direct_raw_import": true,
+        "calls_raw_answer_owner": false,
+        "uses_governed_gateway": true,
+        "migration_status": "migrated_to_governed_gateway"
+      },
+      {
+        "path": "office/aiden_meeting_room/aiden_response_engine.py",
+        "direct_raw_import": false,
+        "calls_raw_answer_owner": false,
+        "uses_governed_gateway": false,
+        "migration_status": "not_behavior_center_caller"
+      },
+      {
+        "path": "office/aiden_meeting_room/governed_gateway.py",
+        "direct_raw_import": false,
+        "calls_raw_answer_owner": false,
+        "uses_governed_gateway": true,
+        "migration_status": "migrated_to_governed_gateway"
+      },
+      {
+        "path": "office/aiden_meeting_room/meeting_cli.py",
+        "direct_raw_import": false,
+        "calls_raw_answer_owner": false,
+        "uses_governed_gateway": true,
+        "migration_status": "migrated_to_governed_gateway"
+      },
+      {
+        "path": "office/mission_command/e87_ceo_runtime_session.py",
+        "direct_raw_import": true,
+        "calls_raw_answer_owner": true,
+        "uses_governed_gateway": false,
+        "migration_status": "allowed_internal_kernel_or_compatibility_test"
+      },
+      {
+        "path": "office/mission_command/e89_ceo_intelligence_loop_runtime_compiler.py",
+        "direct_raw_import": true,
+        "calls_raw_answer_owner": true,
+        "uses_governed_gateway": false,
+        "migration_status": "allowed_internal_kernel_or_compatibility_test"
+      },
+      {
+        "path": "office/mission_command/e91_open_world_doctrine_discovery.py",
+        "direct_raw_import": false,
+        "calls_raw_answer_owner": false,
+        "uses_governed_gateway": false,
+        "migration_status": "not_behavior_center_caller"
+      },
+      {
+        "path": "office/mission_command/e93_brain_grounded_live_runtime.py",
+        "direct_raw_import": false,
+        "calls_raw_answer_owner": false,
+        "uses_governed_gateway": false,
+        "migration_status": "not_behavior_center_caller"
+      },
+      {
+        "path": "office/mission_command/e94_behavior_center_runtime_gateway.py",
+        "direct_raw_import": true,
+        "calls_raw_answer_owner": true,
+        "uses_governed_gateway": false,
+        "migration_status": "allowed_internal_kernel_or_compatibility_test"
+      },
+      {
+        "path": "office/mission_command/e95_behavior_center_caller_migration_and_sleep_dream_loop.py",
+        "direct_raw_import": false,
+        "calls_raw_answer_owner": false,
+        "uses_governed_gateway": true,
+        "migration_status": "migrated_to_governed_gateway"
+      },
+      {
+        "path": "tests/office/test_aiden_evidence_grounding.py",
+        "direct_raw_import": true,
+        "calls_raw_answer_owner": true,
+        "uses_governed_gateway": false,
+        "migration_status": "allowed_internal_kernel_or_compatibility_test"
+      },
+      {
+        "path": "tests/office/test_aiden_meeting_room.py",
+        "direct_raw_import": true,
+        "calls_raw_answer_owner": true,
+        "uses_governed_gateway": false,
+        "migration_status": "allowed_internal_kernel_or_compatibility_test"
+      },
+      {
+        "path": "tests/office/test_e75_cieu_residual_and_readback.py",
+        "direct_raw_import": false,
+        "calls_raw_answer_owner": false,
+        "uses_governed_gateway": false,
+        "migration_status": "not_behavior_center_caller"
+      },
+      {
+        "path": "tests/office/test_e94_behavior_center_runtime_gateway.py",
+        "direct_raw_import": false,
+        "calls_raw_answer_owner": false,
+        "uses_governed_gateway": false,
+        "migration_status": "not_behavior_center_caller"
+      },
+      {
+        "path": "tests/office/test_e95_behavior_center_caller_migration_and_sleep_dream_loop.py",
+        "direct_raw_import": false,
+        "calls_raw_answer_owner": false,
+        "uses_governed_gateway": true,
+        "migration_status": "migrated_to_governed_gateway"
+      }
+    ],
+    "unmigrated_owner_facing_callers": []
+  },
+  "behavior_center_decision": "ALLOW",
+  "route_type": "ceo_implementation_order_required",
+  "CIEUStore_summary": {
+    "event_count": 2,
+    "event_types": [
+      "CEO_BEHAVIOR_CENTER_RUNTIME_DECISION",
+      "CEO_BEHAVIOR_CENTER_RUNTIME_DECISION"
+    ],
+    "decisions": [
+      "allow",
+      "allow"
+    ],
+    "sealed_session_event_count": 2,
+    "sealed_session_merkle_root": "4556e6daa77789382179e791106903a60f2536f70132019a23b160ac695996f1",
+    "sealed_session_valid": true
+  },
+  "sleep_dream_apply_result": {
+    "status": "ALLOW",
+    "brain_db": "/tmp/e95_report_brain_copy.db",
+    "brain_node_written": true,
+    "brain_edge_written": true,
+    "written_node_id": "behavior_center/residual/9a7a5c2fc46c26cf"
+  },
+  "L5_truth_table_after": {
+    "L5-A Runtime Foundation": "complete_internal_runtime_foundation_with_owner_facing_behavior_gateway",
+    "L5-B CEO Intelligence Loop": "complete_for_structured_governed_intelligence_loop_with_behavior_center_sleep_dream_learning_candidate",
+    "L5-B+": "partial_dynamic_intelligence_pending_live_external_observation_and_real_feedback",
+    "L5-C Controlled External Action": "partial_autonomous_low_risk_dry_run_only_high_risk_owner_bound",
+    "L5-D Revenue/Customer/Payment Loop": "absent_or_not_executed"
+  },
+  "what_changed": [
+    "meeting_cli now uses the governed behavior-center gateway instead of raw answer_owner.",
+    "owner-facing behavior entrypoint now returns governance/CIEU/route receipt metadata.",
+    "E95 produces a deterministic sleep/dream learning candidate from governed residuals.",
+    "Sleep/dream write path is proven on isolated brain DB copies; production brain write remains explicit-authority only."
+  ],
+  "what_was_not_claimed": [
+    "No L4 feedback was executed.",
+    "No live provider action was enabled.",
+    "No customer validation, revenue, pricing, payment, or paid signal was claimed.",
+    "No production brain DB write was performed by default.",
+    "No K9Audit write or bridge was claimed."
+  ],
+  "remaining_blockers": [
+    "Future non-test scripts that import raw answer_owner should migrate to answer_owner_governed.",
+    "Live external observation and real feedback remain pending.",
+    "Production brain sleep/dream commits require a later explicit authorization policy."
+  ],
+  "recommended_next_milestone": "E96_Owner_Approved_Low_Risk_Public_Read_And_L4_Feedback_Preflight_R1",
+  "generated_at": "2026-05-08T13:50:19.604751+00:00"
+}

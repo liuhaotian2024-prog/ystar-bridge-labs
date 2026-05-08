@@ -10,7 +10,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from office.aiden_meeting_room.aiden_response_engine import answer_owner  # noqa: E402
+from office.aiden_meeting_room.governed_gateway import answer_owner_governed_text  # noqa: E402
 from office.aiden_meeting_room.meeting_summary import build_summary  # noqa: E402
 
 
@@ -24,7 +24,7 @@ def main() -> int:
         return 0
     if not args.message:
         parser.error("message is required unless --summary is used")
-    print(answer_owner(args.message, repo_root=REPO_ROOT))
+    print(answer_owner_governed_text(args.message, repo_root=REPO_ROOT))
     return 0
 
 
