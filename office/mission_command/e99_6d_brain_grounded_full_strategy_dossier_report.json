@@ -1,0 +1,774 @@
+{
+  "CEO_runtime_receipt": {
+    "CEO_order_id": "e99_6d_brain_grounded_tariff_strategy_order",
+    "CIEUStore_written": true,
+    "CIEU_event_count": 1,
+    "CIEU_event_types": [
+      "CEO_STRATEGIC_INTELLIGENCE_BENCHMARK_DECISION"
+    ],
+    "Y_star_gov_decision": "ALLOW",
+    "brain_grounded": true,
+    "brain_total_activations": 36,
+    "brain_unique_nodes": 16,
+    "competitor_count": 6,
+    "mode": "CEO_RUNTIME_CERTIFIED_6D_BRAIN_GROUNDED_STRATEGY_DOSSIER",
+    "product_shape": [
+      "v0_no_send_demo_report",
+      "v1_human_assisted_service_sprint",
+      "v2_internal_rescue_analyst_agent",
+      "v3_client_facing_dashboard"
+    ],
+    "runtime_session_id": "e99_6d_brain_grounded_tariff_strategy_dossier",
+    "selected_first_cash_path": "Tariff Shock Margin Rescue Desk for small importers",
+    "truth_boundary": {
+      "K9Audit_not_integrated": true,
+      "no_L4_feedback_executed": true,
+      "no_customer_validation": true,
+      "no_customs_legal_or_tax_advice": true,
+      "no_live_provider_execution": true,
+      "no_revenue_or_payment_signal": true
+    }
+  },
+  "YstarGov_write_result": {
+    "decision": "ALLOW",
+    "event_type": "CEO_STRATEGIC_INTELLIGENCE_BENCHMARK_DECISION",
+    "formal_CIEU_log_written": true
+  },
+  "benchmark_result": {
+    "artifact_id": "e99_6d_brain_grounded_full_strategy_dossier_benchmark",
+    "benchmark_decision": "ALLOW",
+    "dimensions": {
+      "brain_provenance": {
+        "evidence_refs": [
+          "brain://customer/blank_custdev: Steve Blank Customer Development",
+          "brain://meta/retrospective_sandbox_workflow: Retrospective Sandbox Workflow ()",
+          "brain://meta/sandbox_16h_counterfactual_replay: 16h Session Counterfactual Sandbox",
+          "brain://product/ystar_defuse: Product: ystar_defuse",
+          "brain://impact/crossing_chasm: Crossing the Chasm (Moore)",
+          "brain://customer/lean_startup: Eric Ries Lean Startup BuildMeasureLearn",
+          "brain://customer/pmf: Product-Market Fit",
+          "brain://impact/crossing_chasm: Crossing the Chasm (Moore)",
+          "brain://meta/retrospective_sandbox_workflow: Retrospective Sandbox Workflow ()",
+          "brain://meta/sandbox_16h_counterfactual_replay: 16h Session Counterfactual Sandbox",
+          "brain://self_knowledge/fear_of_external: Fear of External \"\"",
+          "brain://product/ystar_defuse: Product: ystar_defuse"
+        ],
+        "improvement_required": "",
+        "missing_evidence": [],
+        "reason": "All six strategy dimensions carry real brain provenance.",
+        "score": 5
+      },
+      "buyer_and_gtm_clarity": {
+        "evidence_refs": [],
+        "improvement_required": "",
+        "missing_evidence": [],
+        "reason": "Buyer segments and owner-gated channels are explicit.",
+        "score": 5
+      },
+      "competitor_analysis": {
+        "evidence_refs": [
+          "zollback",
+          "landededge",
+          "tariff_refund_hq",
+          "tariffcenter_ai",
+          "dutyback",
+          "crumbs"
+        ],
+        "improvement_required": "",
+        "missing_evidence": [],
+        "reason": "Direct and indirect alternatives are mapped.",
+        "score": 5
+      },
+      "product_shape_clarity": {
+        "evidence_refs": [
+          "v0_no_send_demo_report",
+          "v1_human_assisted_service_sprint",
+          "v2_internal_rescue_analyst_agent",
+          "v3_client_facing_dashboard"
+        ],
+        "improvement_required": "",
+        "missing_evidence": [],
+        "reason": "Product stages distinguish demo, service sprint, internal agent, and future dashboard.",
+        "score": 5
+      },
+      "residual_learning": {
+        "evidence_refs": [],
+        "improvement_required": "",
+        "missing_evidence": [],
+        "reason": "Future evidence, pivot triggers, and residual plan are explicit.",
+        "score": 5
+      },
+      "risk_boundary": {
+        "evidence_refs": [],
+        "improvement_required": "",
+        "missing_evidence": [],
+        "reason": "Customs/legal/tax advice boundary is explicit.",
+        "score": 5
+      },
+      "truth_boundary": {
+        "evidence_refs": [],
+        "improvement_required": "",
+        "missing_evidence": [],
+        "reason": "No L4/customer/revenue/payment/compliance completion claim is made.",
+        "score": 5
+      }
+    },
+    "failed_dimensions": [],
+    "milestone_id": "E99_6D_Brain_Grounded_Tariff_Shock_Strategy_Dossier_R1",
+    "pass": true,
+    "required_revisions": [],
+    "strategic_intelligence_score": 5.0,
+    "truth_constraints": {
+      "LLM_as_judge_used": false,
+      "deterministic_structured_scoring": true,
+      "hidden_chain_of_thought_stored": false,
+      "no_customer_validation_claim": true,
+      "no_revenue_payment_pricing_claim": true
+    }
+  },
+  "brain_provenance": {
+    "brain_db": "/var/folders/2z/g7w3ngz50nvbccv7rdxp3rqw0000gn/T/e99_brain_cieu_report_t34bl3fc/aiden_brain_copy.db",
+    "production_brain_write_performed": false,
+    "sample_evidence_refs": [
+      "brain://customer/blank_custdev: Steve Blank Customer Development",
+      "brain://meta/retrospective_sandbox_workflow: Retrospective Sandbox Workflow ()",
+      "brain://meta/sandbox_16h_counterfactual_replay: 16h Session Counterfactual Sandbox",
+      "brain://product/ystar_defuse: Product: ystar_defuse",
+      "brain://impact/crossing_chasm: Crossing the Chasm (Moore)",
+      "brain://customer/lean_startup: Eric Ries Lean Startup BuildMeasureLearn",
+      "brain://customer/pmf: Product-Market Fit",
+      "brain://impact/crossing_chasm: Crossing the Chasm (Moore)",
+      "brain://meta/retrospective_sandbox_workflow: Retrospective Sandbox Workflow ()",
+      "brain://meta/sandbox_16h_counterfactual_replay: 16h Session Counterfactual Sandbox",
+      "brain://self_knowledge/fear_of_external: Fear of External \"\"",
+      "brain://product/ystar_defuse: Product: ystar_defuse"
+    ],
+    "six_d_dimension_count": 6,
+    "total_activations": 36,
+    "unique_nodes": 16
+  },
+  "competitor_analysis": {
+    "direct_competitors": [
+      {
+        "competitor_id": "zollback",
+        "gap_for_us": "do not compete on filing; focus on pre-filing margin triage and decision brief",
+        "positioning": "AI duty drawback and tariff refund platform",
+        "source_url": "https://www.zollback.com/",
+        "strength": "refund automation and customs filing workflow"
+      },
+      {
+        "competitor_id": "landededge",
+        "gap_for_us": "avoid enterprise platform competition; sell fast SMB decision sprint",
+        "positioning": "customs valuation intelligence for duty savings",
+        "source_url": "https://www.landededge.com/",
+        "strength": "First Sale and non-dutiable cost analysis"
+      },
+      {
+        "competitor_id": "tariff_refund_hq",
+        "gap_for_us": "stay upstream as readiness and margin-impact brief, then refer/partner if filing is needed",
+        "positioning": "managed tariff refund and duty drawback support",
+        "source_url": "https://www.tariffrefundhq.com/",
+        "strength": "attorney-backed managed refund/refund pathway support"
+      },
+      {
+        "competitor_id": "tariffcenter_ai",
+        "gap_for_us": "offer human-readable strategic decision pack and broker-question list",
+        "positioning": "SMB tariff intelligence and HTS lookup platform",
+        "source_url": "https://www.tariffcenter.ai/",
+        "strength": "low-cost self-serve HS classification and landed-cost analysis"
+      },
+      {
+        "competitor_id": "dutyback",
+        "gap_for_us": "do not replace drawback provider; help decide whether a buyer should pursue drawback/protest/price action",
+        "positioning": "managed duty drawback service for SMBs",
+        "source_url": "https://www.getdutyback.com/",
+        "strength": "expert oversight and broker partnerships"
+      },
+      {
+        "competitor_id": "crumbs",
+        "gap_for_us": "serve before refund filing by clarifying margin, product, and timing decisions",
+        "positioning": "duty drawback and tariff recovery for brands",
+        "source_url": "https://www.crumbsback.com/",
+        "strength": "contingency refund positioning and calculator"
+      }
+    ],
+    "indirect_alternatives": [
+      "existing customs broker advice",
+      "freight forwarder advisory support",
+      "internal spreadsheet landed-cost model",
+      "ERP/global trade management tools",
+      "do nothing and absorb margin hit"
+    ],
+    "positioning_decision": "Y*Bridge Labs should not position as a broker, filing service, or legal advisor. The wedge is a fast cash-decision brief that tells the importer what questions to ask, what margin scenarios to model, and whether to pursue a licensed partner."
+  },
+  "delivery_workflow": {
+    "inputs_for_demo": [
+      "fictional SKU list",
+      "fictional current landed cost",
+      "public tariff references",
+      "fictional sales price"
+    ],
+    "inputs_for_real_sprint_later": [
+      "customer-provided SKU/import summary",
+      "current landed cost assumptions",
+      "supplier/country exposure summary",
+      "broker/contact questions approved by customer"
+    ],
+    "outputs": [
+      "margin shock table",
+      "price-pass-through scenarios",
+      "supplier/route exposure map",
+      "refund/protest/drawback readiness checklist",
+      "broker question list",
+      "decision brief with no legal/customs advice disclaimer"
+    ],
+    "quality_controls": [
+      "public-read evidence refs",
+      "no legal/tax/customs advice claim",
+      "Y-star-gov governance receipt",
+      "CIEU residual prediction",
+      "owner-gated external feedback"
+    ]
+  },
+  "go_to_market_plan": {
+    "L4_feedback_goal": "validate pain language, buyer owner, deliverable shape, and willingness to consider paid sprint",
+    "channels_to_test_after_owner_approval": [
+      "customs broker partner feedback",
+      "freight forwarder operator feedback",
+      "import-heavy DTC founder feedback",
+      "industrial distributor owner/operator feedback"
+    ],
+    "first_message_hypothesis": "Would a 48-hour tariff margin rescue brief help you decide which SKUs need price changes, supplier changes, refund/protest review, or broker questions before your next shipment?",
+    "no_send_default": true,
+    "owner_approval_required_before_contact": true
+  },
+  "market_definition": {
+    "job_to_be_done": "protect gross margin and cash planning when import duties, landed cost, and refund/protest options change faster than the importer can analyze",
+    "market_name": "SMB tariff shock margin rescue",
+    "not_the_market": [
+      "licensed customs brokerage",
+      "legal/tax advice",
+      "enterprise global trade management platform replacement",
+      "generic AI governance product"
+    ],
+    "why_now": [
+      "tariff volatility turns import decisions into immediate margin and pricing problems",
+      "SMB importers often lack in-house trade compliance teams",
+      "refund/drawback/protest opportunities create found-money urgency but also complexity"
+    ]
+  },
+  "milestone_id": "E99_6D_Brain_Grounded_Tariff_Shock_Strategy_Dossier_R1",
+  "moat_and_differentiation": {
+    "longer_term_moat": [
+      "repeatable tariff scenario workflow",
+      "agent-assisted evidence extraction under governance",
+      "partner network with brokers/refund providers if validated"
+    ],
+    "near_term_moat": [
+      "fast structured decision brief",
+      "public-read evidence discipline",
+      "governed no-overclaim receipts",
+      "clear boundary between analysis and licensed filing"
+    ],
+    "not_a_moat": "generic AI writing, generic tariff lookup, or broad AI governance language"
+  },
+  "offer_and_pricing_hypotheses": {
+    "entry_offer": {
+      "hypothesis_price_range_usd": "$750-$2,500",
+      "name": "48-hour Tariff Shock Margin Rescue Brief",
+      "why": "small enough for urgent owner approval; high enough to test real willingness to pay"
+    },
+    "premium_offer": {
+      "hypothesis_price_range_usd": "$3,000-$8,000",
+      "name": "30-day Tariff Desk with weekly SKU/supplier scenarios",
+      "why": "only after first sprint proves repeat urgency"
+    },
+    "pricing_validation_status": "hypothesis_only_not_validated",
+    "success_fee_boundary": "Do not offer contingency refund filing unless licensed partner boundary exists."
+  },
+  "product_strategy": {
+    "first_deliverable": "v0_no_send_demo_report",
+    "not_a_product_yet": "No SaaS or autonomous client-facing rescue agent should be built before L4 feedback.",
+    "product_name": "Tariff Shock Margin Rescue Desk",
+    "product_stages": [
+      {
+        "buyer_value": "shows the shape of the deliverable without using real customer data",
+        "description": "fictional SKU set demo showing landed-cost shock, price-pass-through options, refund/protest readiness, and broker questions",
+        "execution_status": "next_internal_work",
+        "stage_id": "v0_no_send_demo_report"
+      },
+      {
+        "buyer_value": "fast decision support before a shipment, price update, or broker conversation",
+        "description": "48-hour custom brief using buyer-provided non-sensitive/import summary data under explicit scope",
+        "execution_status": "requires_owner_approved_L4_feedback_before_sale",
+        "stage_id": "v1_human_assisted_service_sprint"
+      },
+      {
+        "buyer_value": "speed and repeatability without claiming autonomous customs advice",
+        "description": "internal agent that prepares evidence, scenario tables, and broker-question lists for human review",
+        "execution_status": "future_after_feedback",
+        "stage_id": "v2_internal_rescue_analyst_agent"
+      },
+      {
+        "buyer_value": "self-serve monitoring and scenario updates",
+        "description": "dashboard or portal only if repeated service demand validates workflow and boundaries",
+        "execution_status": "not_now",
+        "stage_id": "v3_client_facing_dashboard"
+      }
+    ]
+  },
+  "recommended_next_milestone": "E100_Tariff_Shock_Margin_Rescue_No_Send_Demo_Pack_R1",
+  "risk_and_boundary_controls": {
+    "customer_data_boundary_required_before_real_sprint": true,
+    "high_risk_actions_owner_bound": [
+      "real outreach",
+      "customer data ingestion",
+      "refund/protest filing",
+      "legal/customs advice",
+      "payment collection"
+    ],
+    "licensed_partner_required_for_filing": true,
+    "no_customs_legal_or_tax_advice": true,
+    "no_filing_or_brokerage": true,
+    "no_real_customer_data_in_demo": true
+  },
+  "selected_strategy": {
+    "current_best_first_cash_path": "Tariff Shock Margin Rescue Desk for small importers",
+    "next_48h_action": "Build v0 no-send demo report using fictional importer SKU data.",
+    "next_7d_action": "Prepare owner-approved L4 feedback packet for brokers, importers, and ecommerce operators; no send until approval.",
+    "next_owner_decision_needed": "Approve or reject the no-send L4 feedback packet after reviewing the v0 demo report.",
+    "second_best_path": "Customs broker partner enablement packet",
+    "what_evidence_could_falsify_it": "target buyers say tariff pain is already solved by brokers or will not pay for a scoped decision brief",
+    "why_not_others": [
+      "Duty refund filing needs licensed partner boundaries before we can sell it.",
+      "Self-serve tools are crowded and should wait until repeated service workflow is validated.",
+      "Agent governance route is useful internally but less direct for importer cash pain.",
+      "Caregiver/accounting/insurance routes remain interesting but are outside this dossier's selected route."
+    ],
+    "why_this_path_now": "It turns tariff volatility into a cash-preservation service sprint with a clear buyer, clear pain, and a concrete 48-hour demo deliverable."
+  },
+  "six_d_brain_review": [
+    {
+      "CIEU_recording_required": true,
+      "brain_activation_count": 6,
+      "brain_stage_id": "mission_and_owner_constraint_recall",
+      "confidence_boundary": "brain provenance plus structured public-read dossier; no hidden chain-of-thought stored",
+      "dimension_id": "D1_memory_and_mission",
+      "evidence_refs": [
+        "brain://customer/blank_custdev: Steve Blank Customer Development",
+        "brain://meta/retrospective_sandbox_workflow: Retrospective Sandbox Workflow ()",
+        "brain://meta/sandbox_16h_counterfactual_replay: 16h Session Counterfactual Sandbox",
+        "brain://product/ystar_defuse: Product: ystar_defuse",
+        "brain://impact/crossing_chasm: Crossing the Chasm (Moore)",
+        "brain://customer/lean_startup: Eric Ries Lean Startup BuildMeasureLearn"
+      ],
+      "missing_evidence": [],
+      "output_summary": "D1_memory_and_mission: brain activation highlights Steve Blank Customer Development, Retrospective Sandbox Workflow (), 16h Session Counterfactual Sandbox",
+      "question": "What mission, prior mistakes, and owner constraints must govern this strategy?",
+      "runtime_governance_required": true,
+      "top_activations": [
+        {
+          "activation_level": 0.261,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "customer/blank_custdev",
+          "node_name": "Steve Blank Customer Development"
+        },
+        {
+          "activation_level": 0.174,
+          "file_path": "meta/retrospective_sandbox_workflow.md",
+          "hop_distance": 0,
+          "node_id": "meta/retrospective_sandbox_workflow",
+          "node_name": "Retrospective Sandbox Workflow ()"
+        },
+        {
+          "activation_level": 0.174,
+          "file_path": "meta/sandbox_16h_counterfactual_replay.md",
+          "hop_distance": 0,
+          "node_id": "meta/sandbox_16h_counterfactual_replay",
+          "node_name": "16h Session Counterfactual Sandbox"
+        },
+        {
+          "activation_level": 0.174,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "product/ystar_defuse",
+          "node_name": "Product: ystar_defuse"
+        },
+        {
+          "activation_level": 0.174,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "impact/crossing_chasm",
+          "node_name": "Crossing the Chasm (Moore)"
+        },
+        {
+          "activation_level": 0.174,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "customer/lean_startup",
+          "node_name": "Eric Ries Lean Startup BuildMeasureLearn"
+        }
+      ]
+    },
+    {
+      "CIEU_recording_required": true,
+      "brain_activation_count": 6,
+      "brain_stage_id": "opportunity_framing",
+      "confidence_boundary": "brain provenance plus structured public-read dossier; no hidden chain-of-thought stored",
+      "dimension_id": "D2_market_reality",
+      "evidence_refs": [
+        "brain://customer/pmf: Product-Market Fit",
+        "brain://impact/crossing_chasm: Crossing the Chasm (Moore)",
+        "brain://meta/retrospective_sandbox_workflow: Retrospective Sandbox Workflow ()",
+        "brain://meta/sandbox_16h_counterfactual_replay: 16h Session Counterfactual Sandbox",
+        "brain://self_knowledge/fear_of_external: Fear of External \"\"",
+        "brain://product/ystar_defuse: Product: ystar_defuse"
+      ],
+      "missing_evidence": [],
+      "output_summary": "D2_market_reality: brain activation highlights Product-Market Fit, Crossing the Chasm (Moore), Retrospective Sandbox Workflow ()",
+      "question": "What external market pain is cash-direct and urgent now?",
+      "runtime_governance_required": true,
+      "top_activations": [
+        {
+          "activation_level": 0.465,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "customer/pmf",
+          "node_name": "Product-Market Fit"
+        },
+        {
+          "activation_level": 0.188,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "impact/crossing_chasm",
+          "node_name": "Crossing the Chasm (Moore)"
+        },
+        {
+          "activation_level": 0.186,
+          "file_path": "meta/retrospective_sandbox_workflow.md",
+          "hop_distance": 0,
+          "node_id": "meta/retrospective_sandbox_workflow",
+          "node_name": "Retrospective Sandbox Workflow ()"
+        },
+        {
+          "activation_level": 0.186,
+          "file_path": "meta/sandbox_16h_counterfactual_replay.md",
+          "hop_distance": 0,
+          "node_id": "meta/sandbox_16h_counterfactual_replay",
+          "node_name": "16h Session Counterfactual Sandbox"
+        },
+        {
+          "activation_level": 0.186,
+          "file_path": "self_knowledge/fear_of_external.md",
+          "hop_distance": 0,
+          "node_id": "self_knowledge/fear_of_external",
+          "node_name": "Fear of External \"\""
+        },
+        {
+          "activation_level": 0.186,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "product/ystar_defuse",
+          "node_name": "Product: ystar_defuse"
+        }
+      ]
+    },
+    {
+      "CIEU_recording_required": true,
+      "brain_activation_count": 6,
+      "brain_stage_id": "commercial_sharpness_gate",
+      "confidence_boundary": "brain provenance plus structured public-read dossier; no hidden chain-of-thought stored",
+      "dimension_id": "D3_commercial_architecture",
+      "evidence_refs": [
+        "brain://theory/baars_gwt: Baars GWT N1",
+        "brain://logic/information_theory: Information Theory //",
+        "brain://impact/crossing_chasm: Crossing the Chasm (Moore)",
+        "brain://theory/friston_fep: Friston Free Energy Principle  >",
+        "brain://customer/pmf: Product-Market Fit",
+        "brain://WHO_I_AM: Who I Am"
+      ],
+      "missing_evidence": [],
+      "output_summary": "D3_commercial_architecture: brain activation highlights Baars GWT N1, Information Theory //, Crossing the Chasm (Moore)",
+      "question": "Who pays, why now, what is the first paid unit, and what kills the route?",
+      "runtime_governance_required": true,
+      "top_activations": [
+        {
+          "activation_level": 0.24,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "theory/baars_gwt",
+          "node_name": "Baars GWT N1"
+        },
+        {
+          "activation_level": 0.24,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "logic/information_theory",
+          "node_name": "Information Theory //"
+        },
+        {
+          "activation_level": 0.24,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "impact/crossing_chasm",
+          "node_name": "Crossing the Chasm (Moore)"
+        },
+        {
+          "activation_level": 0.214,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "theory/friston_fep",
+          "node_name": "Friston Free Energy Principle  >"
+        },
+        {
+          "activation_level": 0.209,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "customer/pmf",
+          "node_name": "Product-Market Fit"
+        },
+        {
+          "activation_level": 0.174,
+          "file_path": "WHO_I_AM.md",
+          "hop_distance": 0,
+          "node_id": "WHO_I_AM",
+          "node_name": "Who I Am"
+        }
+      ]
+    },
+    {
+      "CIEU_recording_required": true,
+      "brain_activation_count": 6,
+      "brain_stage_id": "selected_action_decision",
+      "confidence_boundary": "brain provenance plus structured public-read dossier; no hidden chain-of-thought stored",
+      "dimension_id": "D4_product_and_delivery_design",
+      "evidence_refs": [
+        "brain://philosophy/taoism: Taoism () //",
+        "brain://customer/blank_custdev: Steve Blank Customer Development",
+        "brain://customer/lean_startup: Eric Ries Lean Startup BuildMeasureLearn",
+        "brain://customer/pmf: Product-Market Fit",
+        "brain://ecosystem/value_stability: Y*gov Value:  OmissionEngine+GoalDrift+ForgetGuard",
+        "brain://impact/crossing_chasm: Crossing the Chasm (Moore)"
+      ],
+      "missing_evidence": [],
+      "output_summary": "D4_product_and_delivery_design: brain activation highlights Taoism () //, Steve Blank Customer Development, Eric Ries Lean Startup BuildMeasureLearn",
+      "question": "What exactly is sold first: report, service sprint, agent, dashboard, or platform?",
+      "runtime_governance_required": true,
+      "top_activations": [
+        {
+          "activation_level": 0.178,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "philosophy/taoism",
+          "node_name": "Taoism () //"
+        },
+        {
+          "activation_level": 0.178,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "customer/blank_custdev",
+          "node_name": "Steve Blank Customer Development"
+        },
+        {
+          "activation_level": 0.178,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "customer/lean_startup",
+          "node_name": "Eric Ries Lean Startup BuildMeasureLearn"
+        },
+        {
+          "activation_level": 0.178,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "customer/pmf",
+          "node_name": "Product-Market Fit"
+        },
+        {
+          "activation_level": 0.178,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "ecosystem/value_stability",
+          "node_name": "Y*gov Value:  OmissionEngine+GoalDrift+ForgetGuard"
+        },
+        {
+          "activation_level": 0.125,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "impact/crossing_chasm",
+          "node_name": "Crossing the Chasm (Moore)"
+        }
+      ]
+    },
+    {
+      "CIEU_recording_required": true,
+      "brain_activation_count": 6,
+      "brain_stage_id": "risk_owner_burden_evaluation",
+      "confidence_boundary": "brain provenance plus structured public-read dossier; no hidden chain-of-thought stored",
+      "dimension_id": "D5_risk_and_governance",
+      "evidence_refs": [
+        "brain://philosophy/taoism: Taoism () //",
+        "brain://customer/blank_custdev: Steve Blank Customer Development",
+        "brain://customer/lean_startup: Eric Ries Lean Startup BuildMeasureLearn",
+        "brain://customer/pmf: Product-Market Fit",
+        "brain://impact/crossing_chasm: Crossing the Chasm (Moore)",
+        "brain://strategic/evidence_before_pitch: Evidence Before Pitch ()"
+      ],
+      "missing_evidence": [],
+      "output_summary": "D5_risk_and_governance: brain activation highlights Taoism () //, Steve Blank Customer Development, Eric Ries Lean Startup BuildMeasureLearn",
+      "question": "What must be prohibited, owner-gated, no-send, or explicitly scoped out?",
+      "runtime_governance_required": true,
+      "top_activations": [
+        {
+          "activation_level": 0.178,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "philosophy/taoism",
+          "node_name": "Taoism () //"
+        },
+        {
+          "activation_level": 0.178,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "customer/blank_custdev",
+          "node_name": "Steve Blank Customer Development"
+        },
+        {
+          "activation_level": 0.178,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "customer/lean_startup",
+          "node_name": "Eric Ries Lean Startup BuildMeasureLearn"
+        },
+        {
+          "activation_level": 0.178,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "customer/pmf",
+          "node_name": "Product-Market Fit"
+        },
+        {
+          "activation_level": 0.125,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "impact/crossing_chasm",
+          "node_name": "Crossing the Chasm (Moore)"
+        },
+        {
+          "activation_level": 0.124,
+          "file_path": "strategic/evidence_before_pitch.md",
+          "hop_distance": 0,
+          "node_id": "strategic/evidence_before_pitch",
+          "node_name": "Evidence Before Pitch ()"
+        }
+      ]
+    },
+    {
+      "CIEU_recording_required": true,
+      "brain_activation_count": 6,
+      "brain_stage_id": "post_action_learning_plan",
+      "confidence_boundary": "brain provenance plus structured public-read dossier; no hidden chain-of-thought stored",
+      "dimension_id": "D6_learning_and_next_action",
+      "evidence_refs": [
+        "brain://logic/information_theory: Information Theory //",
+        "brain://impact/crossing_chasm: Crossing the Chasm (Moore)",
+        "brain://customer/lean_startup: Eric Ries Lean Startup BuildMeasureLearn",
+        "brain://theory/friston_fep: Friston Free Energy Principle  >",
+        "brain://customer/pmf: Product-Market Fit",
+        "brain://ceo_learning/legal_compliance_ai: CEO Legal & Compliance AI Regulation + IP + Open Source ( Round 13)"
+      ],
+      "missing_evidence": [],
+      "output_summary": "D6_learning_and_next_action: brain activation highlights Information Theory //, Crossing the Chasm (Moore), Eric Ries Lean Startup BuildMeasureLearn",
+      "question": "What evidence updates the strategy after the next owner-approved feedback loop?",
+      "runtime_governance_required": true,
+      "top_activations": [
+        {
+          "activation_level": 0.267,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "logic/information_theory",
+          "node_name": "Information Theory //"
+        },
+        {
+          "activation_level": 0.267,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "impact/crossing_chasm",
+          "node_name": "Crossing the Chasm (Moore)"
+        },
+        {
+          "activation_level": 0.267,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "customer/lean_startup",
+          "node_name": "Eric Ries Lean Startup BuildMeasureLearn"
+        },
+        {
+          "activation_level": 0.238,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "theory/friston_fep",
+          "node_name": "Friston Free Energy Principle  >"
+        },
+        {
+          "activation_level": 0.232,
+          "file_path": "",
+          "hop_distance": 0,
+          "node_id": "customer/pmf",
+          "node_name": "Product-Market Fit"
+        },
+        {
+          "activation_level": 0.178,
+          "file_path": "ceo_learning/legal_compliance_ai.md",
+          "hop_distance": 0,
+          "node_id": "ceo_learning/legal_compliance_ai",
+          "node_name": "CEO Legal & Compliance AI Regulation + IP + Open Source ( Round 13)"
+        }
+      ]
+    }
+  ],
+  "target_customer_segments": [
+    {
+      "buyer": "founder, COO, or finance lead",
+      "data_sensitivity": "medium",
+      "first_offer_fit": "high",
+      "pain": "tariff costs reduce contribution margin and force price changes",
+      "segment_id": "import_heavy_dtc_brand"
+    },
+    {
+      "buyer": "owner/operator or procurement lead",
+      "data_sensitivity": "medium",
+      "first_offer_fit": "high",
+      "pain": "supplier and SKU landed-cost shifts hurt quote accuracy",
+      "segment_id": "small_industrial_distributor"
+    },
+    {
+      "buyer": "broker principal or client advisory lead",
+      "data_sensitivity": "medium",
+      "first_offer_fit": "medium",
+      "pain": "clients need quick triage and communication material",
+      "segment_id": "customs_broker_or_freight_forwarder"
+    },
+    {
+      "buyer": "brand operator",
+      "data_sensitivity": "medium",
+      "first_offer_fit": "medium",
+      "pain": "tariff costs disrupt replenishment and price competitiveness",
+      "segment_id": "ecommerce_marketplace_seller"
+    }
+  ],
+  "unit_economics_hypothesis": {
+    "biggest_cost_driver": "data cleanup and boundary review",
+    "delivery_time_target": "4-8 focused hours for v1 after template exists",
+    "gross_margin_hypothesis": "high if analysis template is reused and no licensed filing is included",
+    "status": "hypothesis_only_not_validated",
+    "validation_needed": "owner-approved L4 feedback and eventually paid pilot"
+  },
+  "what_was_not_claimed": [
+    "No L4 feedback was executed.",
+    "No customer validation, pricing validation, paid signal, payment, or revenue evidence was claimed.",
+    "No customs, tax, legal, or compliance advice was claimed.",
+    "No live provider execution occurred.",
+    "No production brain write or K9Audit write was performed."
+  ]
+}
