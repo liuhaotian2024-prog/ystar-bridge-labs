@@ -19,4 +19,14 @@ that prefix route to the governed Aiden behavior center. Messages without that
 prefix remain normal Codex/executor conversation and must not be treated as
 Aiden speaking.
 
+Strategy routing:
+
+If an `Aiden:` message asks about market strategy, first cash, product shape,
+pricing, customer validation, competitors, or CPA/workflow rescue, the router
+auto-upgrades the message to the governed E100 6D brain-locked strategy runtime
+instead of returning a plain meeting-room answer. The response must include
+Y-star-gov decision, CIEUStore write status, route comparison, competitor map,
+product shape, pricing-hypothesis boundary, strongest validation question, and
+no-send owner-gated L4 packet status.
+
 This reads safe local company context and answers as Aiden CEO. It does not send email, contact customers, publish, pay, submit forms, create accounts, read secrets/env/DB/WAL/SHM/log/active-agent marker contents, or write core memory/CIEU DB.

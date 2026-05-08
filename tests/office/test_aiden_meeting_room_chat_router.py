@@ -4,6 +4,7 @@ from shutil import copyfile
 from office.aiden_meeting_room.chat_router import (
     answer_aiden_prefixed_message,
     is_aiden_meeting_room_message,
+    is_aiden_strategy_runtime_message,
     route_chat_message_to_aiden_meeting_room,
     strip_aiden_meeting_room_prefix,
 )
@@ -31,6 +32,27 @@ def test_aiden_ascii_prefix_routes_to_governed_meeting_room(tmp_path):
     assert route.owner_message == "你现在自己是一个什么状态？"
     assert "repo-grounded CEO meeting layer" in route.response_text
     assert "Runtime governance:" in route.response_text
+
+
+def test_aiden_strategy_question_auto_upgrades_to_brain_locked_strategy_runtime(tmp_path):
+    route = route_chat_message_to_aiden_meeting_room(
+        "Aiden：你提出的给小会计事务所出那个类似于workflow的东西，你到底是怎么想的？",
+        repo_root=REPO_ROOT,
+        cieu_db=tmp_path / "aiden_strategy.db",
+        brain_db=_isolated_brain_db(tmp_path, "aiden_strategy_brain.db"),
+    )
+
+    assert route.route == "aiden_ceo_strategy_runtime"
+    assert route.protocol == "AidenStrategyRuntimeV1"
+    assert "CEO Strategy Runtime: E100_BRAIN_LOCKED_AUTONOMOUS_PROFIT_STRATEGY" in route.response_text
+    assert "CPA Review Bottleneck Rescue" in route.response_text
+    assert "Competitor / alternative map:" in route.response_text
+    assert "taxdome" in route.response_text
+    assert "karbon" in route.response_text
+    assert "Product shape:" in route.response_text
+    assert "$500-$2,000" in route.response_text
+    assert "Strongest validation question:" in route.response_text
+    assert "No external action was executed" in route.response_text
 
 
 def test_aiden_fullwidth_prefix_routes_to_governed_meeting_room(tmp_path):
@@ -64,5 +86,6 @@ def test_empty_aiden_prefix_requires_revision():
 def test_prefix_helpers_accept_both_colon_forms():
     assert is_aiden_meeting_room_message("Aiden: hello")
     assert is_aiden_meeting_room_message("Aiden：hello")
+    assert is_aiden_strategy_runtime_message("我们怎么最快赚钱？")
     assert strip_aiden_meeting_room_prefix("Aiden: hello") == "hello"
     assert strip_aiden_meeting_room_prefix("Aiden：hello") == "hello"

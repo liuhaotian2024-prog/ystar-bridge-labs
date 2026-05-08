@@ -4,6 +4,7 @@ from .aiden_response_engine import answer_owner
 from .chat_router import (
     answer_aiden_prefixed_message,
     is_aiden_meeting_room_message,
+    is_aiden_strategy_runtime_message,
     route_chat_message_to_aiden_meeting_room,
     strip_aiden_meeting_room_prefix,
 )
@@ -16,6 +17,7 @@ __all__ = [
     "answer_owner_governed",
     "answer_owner_governed_text",
     "is_aiden_meeting_room_message",
+    "is_aiden_strategy_runtime_message",
     "load_company_context",
     "route_chat_message_to_aiden_meeting_room",
     "strip_aiden_meeting_room_prefix",
