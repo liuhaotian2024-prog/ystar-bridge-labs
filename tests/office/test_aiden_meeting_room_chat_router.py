@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from shutil import copyfile
 
@@ -11,6 +12,7 @@ from office.aiden_meeting_room.chat_router import (
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
+YSTAR_ROOT = Path(os.environ.get("E105_TEST_YSTAR_GOV_ROOT", "/Users/haotianliu/.openclaw/workspace/Y-star-gov"))
 
 
 def _isolated_brain_db(tmp_path: Path, name: str = "aiden_brain.db") -> Path:
@@ -34,19 +36,24 @@ def test_aiden_ascii_prefix_routes_to_governed_meeting_room(tmp_path):
     assert "Runtime governance:" in route.response_text
 
 
-def test_aiden_strategy_question_auto_upgrades_to_adaptive_market_strategy_runtime(tmp_path):
+def test_aiden_strategy_question_auto_upgrades_to_evidence_derived_open_world_runtime(tmp_path):
     route = route_chat_message_to_aiden_meeting_room(
         "Aiden：你提出的给小会计事务所出那个类似于workflow的东西，你到底是怎么想的？",
         repo_root=REPO_ROOT,
         cieu_db=tmp_path / "aiden_strategy.db",
         brain_db=_isolated_brain_db(tmp_path, "aiden_strategy_brain.db"),
+        ystar_gov_root=YSTAR_ROOT,
     )
 
     assert route.route == "aiden_ceo_strategy_runtime"
     assert route.protocol == "AidenStrategyRuntimeV1"
-    assert "CEO Strategy Runtime: E104_ADAPTIVE_MARKET_INTELLIGENCE_OPEN_WORLD_STRATEGY" in route.response_text
+    assert "CEO Strategy Runtime: E105_EVIDENCE_DERIVED_OPEN_WORLD_MARKET_DISCOVERY" in route.response_text
     assert "AI Agent Control Room Rescue" in route.response_text
     assert "CPA route status: credible_high_risk_candidate_demoted_not_selected" in route.response_text
+    assert "Y-star-gov open-world decision: ALLOW" in route.response_text
+    assert "Candidate generation: dynamic_evidence_cluster_derivation" in route.response_text
+    assert "Closed preset used: false" in route.response_text
+    assert "Open-world discovery proof:" in route.response_text
     assert "Competitor saturation scan:" in route.response_text
     assert "black_ore" in route.response_text
     assert "basis" in route.response_text
