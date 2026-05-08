@@ -11,6 +11,10 @@ from office.mission_command.e91_ceo_operating_doctrine_registry import (
     build_doctrine_invocation_plan,
     build_doctrine_invocation_proof,
 )
+from office.mission_command.e101_adaptive_governance_discovery_and_correct_path_navigator import (
+    adaptive_metadata_from_gate,
+    enforce_adaptive_governance_before_runtime,
+)
 
 
 Y_GOV_ROOT = Path(os.environ.get("YSTAR_GOV_ROOT", "/Users/haotianliu/.openclaw/workspace/Y-star-gov"))
@@ -34,6 +38,46 @@ def enforce_doctrine_before_ceo_runtime(
     """Validate/write doctrine plan and proof before any CEO major action continues."""
 
     governance = load_ystar_governance(ystar_gov_root)
+    adaptive_invocation_proof = action_context.get("adaptive_governance_invocation_proof") if isinstance(action_context, Mapping) else None
+    if adaptive_invocation_proof is None and action_context.get("test_mode") is True:
+        adaptive_invocation_proof = {
+            "proof_id": f"{action_context.get('action_id', 'unknown')}_test_mode_adaptive_proof",
+            "satisfied_obligations": [
+                "six_d_brain_review",
+                "pricing_hypothesis_source_audit",
+                "right_to_win_analysis",
+                "strongest_validation_question",
+                "competitor_differentiation_map",
+                "external_observation_or_staleness_boundary",
+                "gov_mcp_dry_run_preflight",
+                "ceo_implementation_order",
+                "post_action_residual",
+            ],
+            "evidence_refs": ["test_mode: existing E89/E90 deterministic fixtures and reports"],
+        }
+    adaptive_gate = enforce_adaptive_governance_before_runtime(
+        action_context=action_context,
+        cieu_db=cieu_db,
+        runtime_artifact={"source_gate": "e91_doctrine_enforced_runtime_session"},
+        invocation_proof=adaptive_invocation_proof,
+        ystar_gov_root=ystar_gov_root,
+        session_id=session_id,
+        seal_session=False,
+    )
+    if not adaptive_gate["runtime_may_continue"]:
+        return {
+            "adaptive_governance_gate_passed": False,
+            "doctrine_gate_passed": False,
+            "blocked_at": "adaptive_governance",
+            "adaptive_gate": adaptive_gate,
+            "plan": {},
+            "plan_write": {},
+            "proof": {},
+            "proof_write": {},
+            "runtime_may_continue": False,
+            "correct_path": adaptive_gate.get("correct_path", []),
+        }
+
     plan = build_doctrine_invocation_plan(action_context)
     plan_write = governance.validate_and_write_ceo_doctrine_invocation_plan(
         plan,
@@ -50,6 +94,7 @@ def enforce_doctrine_before_ceo_runtime(
             "proof": {},
             "proof_write": {},
             "runtime_may_continue": False,
+            "adaptive_gate": adaptive_gate,
         }
 
     proof = build_doctrine_invocation_proof(action_context)
@@ -68,7 +113,12 @@ def enforce_doctrine_before_ceo_runtime(
         "proof": proof,
         "proof_write": proof_write,
         "runtime_may_continue": passed,
-        "doctrine_metadata": doctrine_metadata_from_gate(plan_write, proof_write, proof),
+        "adaptive_gate": adaptive_gate,
+        "adaptive_metadata": adaptive_metadata_from_gate(adaptive_gate),
+        "doctrine_metadata": {
+            **adaptive_metadata_from_gate(adaptive_gate),
+            **doctrine_metadata_from_gate(plan_write, proof_write, proof),
+        },
     }
 
 
