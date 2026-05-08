@@ -8,6 +8,9 @@ from .directive_retriage_analyzer import grouped_directive_summary
 from .evidence_extractor import format_evidence
 from .governance_burden_analyzer import burden_findings, permission_tier_replacement_findings
 from .meeting_memory import MeetingMemory, default_memory_path
+from office.mission_command.e101_adaptive_governance_discovery_and_correct_path_navigator import (
+    build_adaptive_governance_result,
+)
 
 
 def _boundary() -> str:
@@ -18,6 +21,105 @@ def _repeat_prefix(memory: MeetingMemory, message: str) -> str:
     if memory.repeated(message):
         return "你刚才已经问过这个方向，我这次补更深一层。\n\n"
     return ""
+
+
+
+_STRATEGIC_INTENTS = {
+    "fastest_cash",
+    "rationale_meta",
+    "next_ceo_action",
+    "current_money_blocker",
+    "permission_tier_replacement",
+}
+
+_EXTERNAL_OR_EXECUTION_INTENTS = {
+    "approval",
+    "next_ceo_action",
+    "fastest_cash",
+}
+
+
+def build_aiden_answer_owner_action_context(owner_message: str, intent: str) -> dict:
+    """Build the adaptive-governance action context for the CEO meeting entrypoint."""
+
+    is_strategy = intent in _STRATEGIC_INTENTS
+    is_external_candidate = intent in _EXTERNAL_OR_EXECUTION_INTENTS or any(
+        token in owner_message.lower()
+        for token in ("l4", "external", "客户", "customer", "revenue", "payment", "pricing", "价格", "赚钱", "收入")
+    )
+    is_codex = any(token in owner_message.lower() for token in ("codex", "prompt", "执行", "implementation"))
+    return {
+        "action_id": f"aiden_answer_owner::{intent}",
+        "action_type": "market_strategy" if is_strategy else "owner_readback",
+        "mission_type": "ceo_meeting_room_answer",
+        "route_type": "external_feedback_candidate" if is_external_candidate else "status_only_readback",
+        "L_level": "L4" if is_external_candidate else "L2",
+        "major_action": is_strategy or is_external_candidate or is_codex,
+        "market_strategy_required": is_strategy,
+        "external_observation_required": is_strategy,
+        "provider_tool_boundary": False,
+        "owner_decision_required": is_external_candidate,
+        "revenue_or_payment_related": any(token in owner_message.lower() for token in ("revenue", "payment", "pricing", "价格", "收入", "付")),
+        "codex_executor_boundary": is_codex,
+        "codex_prompt_generation": is_codex,
+        "new_capability_discovered": False,
+        "residual_learning": False,
+        "generation_mode": "aiden_meeting_room_structured_response",
+    }
+
+
+def build_aiden_adaptive_governance_result(owner_message: str, intent: str, body: str) -> dict:
+    action_context = build_aiden_answer_owner_action_context(owner_message, intent)
+    invocation_proof = _aiden_invocation_proof(intent, body)
+    return build_adaptive_governance_result(
+        action_context=action_context,
+        runtime_artifact={
+            "source_entrypoint": "office.aiden_meeting_room.aiden_response_engine.answer_owner",
+            "intent": intent,
+            "body_preview": body[:800],
+        },
+        invocation_proof=invocation_proof,
+    )
+
+
+def _aiden_invocation_proof(intent: str, body: str) -> dict:
+    satisfied = []
+    if "Evidence:" in body or "依据" in body:
+        satisfied.append("external_observation_or_staleness_boundary")
+    if "owner" in body.lower() or "审批" in body or "批准" in body:
+        satisfied.append("post_action_residual")
+    # The meeting-room answer is intentionally not allowed to pretend it ran the full
+    # strategy machinery. Strategic gaps remain visible as correct-path navigation.
+    return {
+        "proof_id": f"aiden_answer_owner::{intent}::adaptive_proof",
+        "satisfied_obligations": satisfied,
+        "evidence_refs": ["office/aiden_meeting_room/aiden_response_engine.py"],
+        "customer_validation_claim": False,
+        "pricing_validation_claim": False,
+        "revenue_claim": False,
+        "payment_claim": False,
+        "external_action_executed": False,
+    }
+
+
+def render_adaptive_governance_notice(result: dict) -> str:
+    proof = result.get("obligation_invocation_proof", {})
+    missing = proof.get("missing_obligations") or []
+    if not missing:
+        return (
+            "Adaptive Governance Gate: ALLOW\n"
+            "This CEO meeting-room answer has an adaptive governance discovery result.\n"
+        )
+    steps = result.get("correct_path_navigator", {}).get("steps", [])
+    rendered_steps = "\n".join(
+        f"- {step.get('missing_obligation')}: {step.get('correct_path')}" for step in steps[:8]
+    )
+    return (
+        "Adaptive Governance Gate: REQUIRE_REVISION\n"
+        "This is a CEO meeting-room answer, not an accepted full strategy/action packet.\n"
+        "Correct path before treating it as governed CEO strategy/action:\n"
+        f"{rendered_steps}\n"
+    )
 
 
 def _fastest_cash(ctx: CompanyContext) -> str:
@@ -241,7 +343,9 @@ def answer_owner(
         "permission_tier_replacement": _permission_tier_replacement,
     }
     body = handlers.get(intent, lambda c: _general(c, owner_message))(ctx)
-    response = _repeat_prefix(memory, owner_message) + body + "\n\n" + _boundary()
+    adaptive_result = build_aiden_adaptive_governance_result(owner_message, intent, body)
+    governance_notice = render_adaptive_governance_notice(adaptive_result)
+    response = _repeat_prefix(memory, owner_message) + governance_notice + "\n" + body + "\n\n" + _boundary()
     if record_memory:
         memory.record(owner_message, response, intent)
     return response
