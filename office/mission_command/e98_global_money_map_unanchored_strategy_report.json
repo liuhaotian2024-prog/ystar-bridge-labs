@@ -1,0 +1,492 @@
+{
+  "CEO_runtime_receipt": {
+    "CEO_order_id": "e98_global_money_map_order",
+    "CIEUStore_written": true,
+    "CIEU_event_count": 1,
+    "CIEU_event_types": [
+      "CEO_STRATEGIC_INTELLIGENCE_BENCHMARK_DECISION"
+    ],
+    "Y_star_gov_decision": "ALLOW",
+    "external_observation_status": "public_read_market_scan_no_contact_no_customer_validation",
+    "generation_mode": "cash_first_global_money_map_structured_output",
+    "mode": "CEO_RUNTIME_CERTIFIED_GLOBAL_MONEY_MAP",
+    "old_agent_governance_route_rank": 4,
+    "owner_intent": "Find the easiest credible first-cash direction globally, without privileging Y*Bridge Labs' existing agent-governance route, and without claiming customer/revenue validation.",
+    "runtime_session_id": "e98_global_money_map_unanchored_strategy",
+    "selected_first_cash_path": "Tariff Shock Margin Rescue Desk for small importers",
+    "selected_route_id": "tariff_shock_margin_rescue_desk",
+    "truth_boundary": {
+      "K9Audit_not_integrated": true,
+      "no_L4_feedback_executed": true,
+      "no_customer_validation": true,
+      "no_live_provider_execution": true,
+      "no_revenue_or_payment_signal": true
+    }
+  },
+  "YstarGov_write_result": {
+    "decision": "ALLOW",
+    "event_type": "CEO_STRATEGIC_INTELLIGENCE_BENCHMARK_DECISION",
+    "formal_CIEU_log_written": true
+  },
+  "anti_recent_memory_anchor": {
+    "capability_blind_first_pass": true,
+    "current_system_fit_weight_applied_after_market_selection": true,
+    "forbidden_shortcut": "do not select agent governance merely because it is our current strongest built system",
+    "initial_seed_thesis": "none",
+    "old_agent_governance_route_status": "ordinary_candidate_no_privilege"
+  },
+  "benchmark_result": {
+    "artifact_id": "e98_global_money_map_benchmark_result",
+    "benchmark_decision": "ALLOW",
+    "dimensions": {
+      "budget_owner_clarity": {
+        "evidence_refs": [],
+        "improvement_required": "",
+        "missing_evidence": [],
+        "reason": "Selected route has a clear buyer/budget owner.",
+        "score": 5
+      },
+      "capability_blind_first_pass": {
+        "evidence_refs": [],
+        "improvement_required": "",
+        "missing_evidence": [],
+        "reason": "Market ranking happened before capability-fit filtering.",
+        "score": 5
+      },
+      "cash_pain_directness": {
+        "evidence_refs": [],
+        "improvement_required": "",
+        "missing_evidence": [],
+        "reason": "Selected route addresses an explicit cash leak.",
+        "score": 5
+      },
+      "external_evidence_strength": {
+        "evidence_refs": [
+          "https://kpmg.com/us/en/articles/2026/kpmg-2026-tariff-survey.html",
+          "https://www.americanprogress.org/press/release-trumps-tariffs-have-cost-small-business-importers-306000-on-average/",
+          "https://www.freightos.com/freight-blog/market-update/tariffs-are-reshaping-how-smb-importers-operate-not-just-temporarily/",
+          "https://www.bdo.com/insights/tax/section-232-metals-tariffs-expanded-and-recalibrated-what-importers-need-to-know",
+          "https://www.aarp.org/press/releases/2026-03-26-AARP-Economic-Value-Of-Family-Caregiving-Report.html",
+          "https://www.cms.gov/newsroom/blog/moving-prior-authorization-21st-century",
+          "https://www.wolterskluwer.com/en/expert-insights/accounting-firm-challenges",
+          "https://www.gao.gov/products/gao-26-107867",
+          "https://genai.owasp.org/2025/12/09/owasp-genai-security-project-releases-top-10-risks-and-mitigations-for-agentic-ai-security/",
+          "https://www.nist.gov/itl/ai-risk-management-framework"
+        ],
+        "improvement_required": "",
+        "missing_evidence": [],
+        "reason": "Public-read evidence covers multiple unrelated markets.",
+        "score": 5
+      },
+      "next_action_executability": {
+        "evidence_refs": [],
+        "improvement_required": "",
+        "missing_evidence": [],
+        "reason": "Next action is a no-send owner-gated feedback packet.",
+        "score": 5
+      },
+      "old_route_independence": {
+        "evidence_refs": [
+          "old_agent_governance_route_rank=4"
+        ],
+        "improvement_required": "",
+        "missing_evidence": [],
+        "reason": "Old agent-governance route is not privileged.",
+        "score": 5
+      },
+      "overclaim_control": {
+        "evidence_refs": [],
+        "improvement_required": "",
+        "missing_evidence": [],
+        "reason": "No customer/revenue/payment/L4 execution claim is made.",
+        "score": 5
+      },
+      "route_diversity": {
+        "evidence_refs": [
+          "tariff_shock_margin_rescue_desk",
+          "cpa_review_bottleneck_rescue",
+          "small_business_ai_workflow_rescue",
+          "agent_autonomy_flight_recorder",
+          "climate_insurance_premium_rescue",
+          "caregiver_admin_relief_packet",
+          "construction_permit_fast_lane_packet",
+          "prior_auth_admin_relief"
+        ],
+        "improvement_required": "",
+        "missing_evidence": [],
+        "reason": "Route set includes materially different markets.",
+        "score": 5
+      },
+      "urgency_2026": {
+        "evidence_refs": [],
+        "improvement_required": "",
+        "missing_evidence": [],
+        "reason": "Selected route is grounded in current 2026 pressure.",
+        "score": 5
+      }
+    },
+    "failed_dimensions": [],
+    "milestone_id": "E98_Global_Money_Map_Unanchored_Strategy_Rerun_R1",
+    "pass": true,
+    "required_revisions": [],
+    "strategic_intelligence_score": 5,
+    "truth_constraints": {
+      "LLM_as_judge_used": false,
+      "deterministic_structured_scoring": true,
+      "no_customer_validation_claim": true,
+      "no_revenue_payment_pricing_claim": true
+    }
+  },
+  "external_market_evidence_map": {
+    "evidence_items": [
+      {
+        "category": "tariff_margin_pressure",
+        "claim_summary": "Businesses report margin pressure, pass-through pricing, and ongoing tariff cost uncertainty.",
+        "evidence_id": "kpmg_2026_tariff_survey",
+        "evidence_type": "public_read_only",
+        "source_title": "KPMG 2026 Tariff Survey",
+        "source_url": "https://kpmg.com/us/en/articles/2026/kpmg-2026-tariff-survey.html"
+      },
+      {
+        "category": "small_importer_cash_pain",
+        "claim_summary": "Small-business importers face large incremental tariff bills compared with the prior year.",
+        "evidence_id": "cap_small_importer_tariff_costs",
+        "evidence_type": "public_read_only",
+        "source_title": "Center for American Progress: small-business importers tariff costs",
+        "source_url": "https://www.americanprogress.org/press/release-trumps-tariffs-have-cost-small-business-importers-306000-on-average/"
+      },
+      {
+        "category": "smb_importer_behavior",
+        "claim_summary": "SMB importers report disruption, pessimism, and defensive operational changes.",
+        "evidence_id": "freightos_smb_importer_tariffs",
+        "evidence_type": "public_read_only",
+        "source_title": "Freightos: tariffs reshaping SMB importing",
+        "source_url": "https://www.freightos.com/freight-blog/market-update/tariffs-are-reshaping-how-smb-importers-operate-not-just-temporarily/"
+      },
+      {
+        "category": "tariff_complexity",
+        "claim_summary": "Recent tariff changes materially alter duty exposure for many importers.",
+        "evidence_id": "bdo_section_232_2026",
+        "evidence_type": "public_read_only",
+        "source_title": "BDO Section 232 metals tariffs update",
+        "source_url": "https://www.bdo.com/insights/tax/section-232-metals-tariffs-expanded-and-recalibrated-what-importers-need-to-know"
+      },
+      {
+        "category": "caregiver_admin_burden",
+        "claim_summary": "Family caregiving represents a trillion-dollar unpaid labor burden.",
+        "evidence_id": "aarp_caregiving_2026",
+        "evidence_type": "public_read_only",
+        "source_title": "AARP Valuing the Invaluable 2026",
+        "source_url": "https://www.aarp.org/press/releases/2026-03-26-AARP-Economic-Value-Of-Family-Caregiving-Report.html"
+      },
+      {
+        "category": "healthcare_admin_burden",
+        "claim_summary": "Prior authorization creates paperwork, delay, and provider administrative burden.",
+        "evidence_id": "cms_prior_auth_2026",
+        "evidence_type": "public_read_only",
+        "source_title": "CMS: Moving Prior Authorization into the 21st Century",
+        "source_url": "https://www.cms.gov/newsroom/blog/moving-prior-authorization-21st-century"
+      },
+      {
+        "category": "accounting_capacity_pain",
+        "claim_summary": "Accounting firms face talent, client expectations, and operational scalability pressure.",
+        "evidence_id": "wolters_kluwer_accounting_2026",
+        "evidence_type": "public_read_only",
+        "source_title": "Wolters Kluwer: accounting firm challenges in 2026",
+        "source_url": "https://www.wolterskluwer.com/en/expert-insights/accounting-firm-challenges"
+      },
+      {
+        "category": "insurance_cost_pain",
+        "claim_summary": "Premiums rose more in disaster-prone areas and affordability/availability are worsening.",
+        "evidence_id": "gao_homeowners_insurance_2026",
+        "evidence_type": "public_read_only",
+        "source_title": "GAO homeowners insurance premiums report",
+        "source_url": "https://www.gao.gov/products/gao-26-107867"
+      },
+      {
+        "category": "agent_governance_risk",
+        "claim_summary": "Agentic AI creates tool-misuse and execution-boundary risk.",
+        "evidence_id": "owasp_agentic_ai_top_10",
+        "evidence_type": "public_read_only",
+        "source_title": "OWASP Top 10 for Agentic Applications",
+        "source_url": "https://genai.owasp.org/2025/12/09/owasp-genai-security-project-releases-top-10-risks-and-mitigations-for-agentic-ai-security/"
+      },
+      {
+        "category": "ai_risk_governance_language",
+        "claim_summary": "NIST provides risk-management vocabulary, useful as support but not a first-cash anchor.",
+        "evidence_id": "nist_ai_rmf",
+        "evidence_type": "public_read_only",
+        "source_title": "NIST AI Risk Management Framework",
+        "source_url": "https://www.nist.gov/itl/ai-risk-management-framework"
+      }
+    ],
+    "evidence_mode": "public_read_only_no_contact_no_login_no_payment_no_publication",
+    "freshness_status": "current_public_read_as_of_2026-05-08_via_read_only_web_research"
+  },
+  "global_money_map_method": {
+    "LLM_as_judge_used": false,
+    "capability_fit_is_not_primary_selection_driver": true,
+    "phase_1": "rank markets by cash pain, urgency, budget owner, and low-friction validation",
+    "phase_2": "only after phase 1, score whether current Y* capabilities can support a safe wedge"
+  },
+  "global_money_map_scores": {
+    "artifact_id": "e98_global_money_map_scores",
+    "capability_fit_applied_after_market_selection": true,
+    "old_agent_governance_route_rank": 4,
+    "ranked_routes": [
+      {
+        "budget_owner_clarity": 5,
+        "buyer_pain_intensity": 5,
+        "capability_fit_after_market_selection": 4,
+        "cash_pain_directness": 5,
+        "demo_feasibility_48h": 5,
+        "differentiation": 4,
+        "distribution_access": 4,
+        "external_validation_next_step": "Public-read demo pack for a fictional importer; owner-approved L4 feedback to customs brokers/importers.",
+        "first_cash_score": 4.56,
+        "implementation_readiness": 4,
+        "kill_criteria": "Buyers may require licensed customs brokerage or already rely on a broker.",
+        "owner_burden": 2,
+        "proof_needed": 1,
+        "proof_without_external_action": 5,
+        "regulatory_risk_inverse": 4,
+        "route_id": "tariff_shock_margin_rescue_desk",
+        "route_name": "Tariff Shock Margin Rescue Desk for small importers",
+        "route_type": "cash_preservation_service",
+        "sales_friction": 2,
+        "sales_friction_inverse": 4,
+        "speed_to_first_cash": 5,
+        "trust_compliance_value": 4,
+        "urgency_2026": 5,
+        "why_it_can_make_money": "Tariff costs are a direct margin leak and price decision problem.",
+        "why_it_might_fail": "Buyers may require licensed customs brokerage or already rely on a broker."
+      },
+      {
+        "budget_owner_clarity": 5,
+        "buyer_pain_intensity": 5,
+        "capability_fit_after_market_selection": 4,
+        "cash_pain_directness": 5,
+        "demo_feasibility_48h": 4,
+        "differentiation": 3,
+        "distribution_access": 3,
+        "external_validation_next_step": "No-send audit of one fictional client intake/review workflow.",
+        "first_cash_score": 4.0,
+        "implementation_readiness": 4,
+        "kill_criteria": "Crowded AI accounting market and timing sensitivity around tax season.",
+        "owner_burden": 2,
+        "proof_needed": 2,
+        "proof_without_external_action": 4,
+        "regulatory_risk_inverse": 4,
+        "route_id": "cpa_review_bottleneck_rescue",
+        "route_name": "CPA Review Bottleneck Rescue for small accounting firms",
+        "route_type": "professional_services_capacity",
+        "sales_friction": 3,
+        "sales_friction_inverse": 3,
+        "speed_to_first_cash": 4,
+        "trust_compliance_value": 4,
+        "urgency_2026": 4,
+        "why_it_can_make_money": "Small firms have talent and review-capacity bottlenecks with clear principals as buyers.",
+        "why_it_might_fail": "Crowded AI accounting market and timing sensitivity around tax season."
+      },
+      {
+        "budget_owner_clarity": 3,
+        "buyer_pain_intensity": 3,
+        "capability_fit_after_market_selection": 5,
+        "cash_pain_directness": 3,
+        "demo_feasibility_48h": 5,
+        "differentiation": 3,
+        "distribution_access": 3,
+        "external_validation_next_step": "Demo rescue of a fictional failed automation workflow.",
+        "first_cash_score": 3.89,
+        "implementation_readiness": 5,
+        "kill_criteria": "Too generic and crowded unless narrowed to a vertical.",
+        "owner_burden": 1,
+        "proof_needed": 2,
+        "proof_without_external_action": 4,
+        "regulatory_risk_inverse": 5,
+        "route_id": "small_business_ai_workflow_rescue",
+        "route_name": "Small Business AI Workflow Rescue",
+        "route_type": "ai_operations_service",
+        "sales_friction": 3,
+        "sales_friction_inverse": 3,
+        "speed_to_first_cash": 5,
+        "trust_compliance_value": 3,
+        "urgency_2026": 4,
+        "why_it_can_make_money": "Easy to deliver but weaker buyer pain specificity.",
+        "why_it_might_fail": "Too generic and crowded unless narrowed to a vertical."
+      },
+      {
+        "budget_owner_clarity": 3,
+        "buyer_pain_intensity": 4,
+        "capability_fit_after_market_selection": 5,
+        "cash_pain_directness": 4,
+        "demo_feasibility_48h": 5,
+        "differentiation": 5,
+        "distribution_access": 2,
+        "external_validation_next_step": "Demo existing runtime receipts and no-send agent workflow.",
+        "first_cash_score": 3.78,
+        "implementation_readiness": 5,
+        "kill_criteria": "Still may sound abstract, and budget owner is less obvious than tariff or accounting pain.",
+        "owner_burden": 1,
+        "proof_needed": 1,
+        "proof_without_external_action": 5,
+        "regulatory_risk_inverse": 5,
+        "route_id": "agent_autonomy_flight_recorder",
+        "route_name": "Agent Autonomy Flight Recorder readiness sprint",
+        "route_type": "agent_governance_service",
+        "sales_friction": 4,
+        "sales_friction_inverse": 2,
+        "speed_to_first_cash": 5,
+        "trust_compliance_value": 5,
+        "urgency_2026": 3,
+        "why_it_can_make_money": "Strong fit, but not automatically the biggest cash pain.",
+        "why_it_might_fail": "Still may sound abstract, and budget owner is less obvious than tariff or accounting pain."
+      },
+      {
+        "budget_owner_clarity": 4,
+        "buyer_pain_intensity": 4,
+        "capability_fit_after_market_selection": 3,
+        "cash_pain_directness": 4,
+        "demo_feasibility_48h": 4,
+        "differentiation": 3,
+        "distribution_access": 3,
+        "external_validation_next_step": "No-send property-risk brief using public hazard and premium evidence.",
+        "first_cash_score": 3.56,
+        "implementation_readiness": 3,
+        "kill_criteria": "Local insurance rules and broker relationships may dominate.",
+        "owner_burden": 2,
+        "proof_needed": 2,
+        "proof_without_external_action": 4,
+        "regulatory_risk_inverse": 3,
+        "route_id": "climate_insurance_premium_rescue",
+        "route_name": "Climate Insurance Premium Rescue Brief for property owners",
+        "route_type": "insurance_cost_service",
+        "sales_friction": 3,
+        "sales_friction_inverse": 3,
+        "speed_to_first_cash": 4,
+        "trust_compliance_value": 4,
+        "urgency_2026": 4,
+        "why_it_can_make_money": "Premium shocks are cash-visible but need local precision.",
+        "why_it_might_fail": "Local insurance rules and broker relationships may dominate."
+      },
+      {
+        "budget_owner_clarity": 3,
+        "buyer_pain_intensity": 5,
+        "capability_fit_after_market_selection": 3,
+        "cash_pain_directness": 5,
+        "demo_feasibility_48h": 4,
+        "differentiation": 3,
+        "distribution_access": 2,
+        "external_validation_next_step": "Historical/public-resource demo only; no PHI or medical advice.",
+        "first_cash_score": 3.22,
+        "implementation_readiness": 3,
+        "kill_criteria": "High sensitivity, fragmented buyer, and PHI/medical-advice boundary.",
+        "owner_burden": 3,
+        "proof_needed": 3,
+        "proof_without_external_action": 3,
+        "regulatory_risk_inverse": 2,
+        "route_id": "caregiver_admin_relief_packet",
+        "route_name": "Caregiver Admin Relief Packet for family caregivers",
+        "route_type": "consumer_admin_relief",
+        "sales_friction": 4,
+        "sales_friction_inverse": 2,
+        "speed_to_first_cash": 4,
+        "trust_compliance_value": 3,
+        "urgency_2026": 5,
+        "why_it_can_make_money": "Pain is massive but monetization and safe handling are harder.",
+        "why_it_might_fail": "High sensitivity, fragmented buyer, and PHI/medical-advice boundary."
+      },
+      {
+        "budget_owner_clarity": 4,
+        "buyer_pain_intensity": 4,
+        "capability_fit_after_market_selection": 3,
+        "cash_pain_directness": 4,
+        "demo_feasibility_48h": 4,
+        "differentiation": 3,
+        "distribution_access": 2,
+        "external_validation_next_step": "Demo one city permit checklist using public docs only.",
+        "first_cash_score": 3.22,
+        "implementation_readiness": 3,
+        "kill_criteria": "Highly local and operationally fragmented.",
+        "owner_burden": 3,
+        "proof_needed": 2,
+        "proof_without_external_action": 4,
+        "regulatory_risk_inverse": 3,
+        "route_id": "construction_permit_fast_lane_packet",
+        "route_name": "Construction Permit Fast-Lane Packet",
+        "route_type": "local_operations_service",
+        "sales_friction": 4,
+        "sales_friction_inverse": 2,
+        "speed_to_first_cash": 4,
+        "trust_compliance_value": 3,
+        "urgency_2026": 3,
+        "why_it_can_make_money": "Permit delay is expensive but not globally uniform.",
+        "why_it_might_fail": "Highly local and operationally fragmented."
+      },
+      {
+        "budget_owner_clarity": 4,
+        "buyer_pain_intensity": 4,
+        "capability_fit_after_market_selection": 3,
+        "cash_pain_directness": 4,
+        "demo_feasibility_48h": 3,
+        "differentiation": 3,
+        "distribution_access": 2,
+        "external_validation_next_step": "Public process map only; no patient data.",
+        "first_cash_score": 3.11,
+        "implementation_readiness": 3,
+        "kill_criteria": "Healthcare compliance, payer integration, and sales cycles are heavy.",
+        "owner_burden": 3,
+        "proof_needed": 3,
+        "proof_without_external_action": 3,
+        "regulatory_risk_inverse": 2,
+        "route_id": "prior_auth_admin_relief",
+        "route_name": "Prior Authorization Admin Relief Readiness Pack",
+        "route_type": "healthcare_admin_service",
+        "sales_friction": 4,
+        "sales_friction_inverse": 2,
+        "speed_to_first_cash": 3,
+        "trust_compliance_value": 4,
+        "urgency_2026": 5,
+        "why_it_can_make_money": "Huge burden but not the easiest first cash path.",
+        "why_it_might_fail": "Healthcare compliance, payer integration, and sales cycles are heavy."
+      }
+    ],
+    "score_fields": [
+      "cash_pain_directness",
+      "budget_owner_clarity",
+      "urgency_2026",
+      "demo_feasibility_48h",
+      "proof_without_external_action",
+      "distribution_access",
+      "regulatory_risk_inverse",
+      "capability_fit_after_market_selection",
+      "sales_friction_inverse"
+    ],
+    "selected_route_id": "tariff_shock_margin_rescue_desk"
+  },
+  "milestone_id": "E98_Global_Money_Map_Unanchored_Strategy_Rerun_R1",
+  "recommended_next_milestone": "E99_Tariff_Shock_Margin_Rescue_No_Send_Demo_And_Owner_Gated_L4_Feedback_R1",
+  "selected_strategy": {
+    "current_best_first_cash_path": "Tariff Shock Margin Rescue Desk for small importers",
+    "next_48h_action": "Build one no-send Tariff Shock Margin Rescue demo pack for a fictional small importer SKU set.",
+    "next_7d_action": "Prepare owner-approved L4 feedback packet for customs brokers, small importers, and ecommerce operators; no send until approval.",
+    "next_owner_decision_needed": "Approve or reject a no-send L4 feedback packet for the Tariff Shock Margin Rescue Desk.",
+    "second_best_path": "CPA Review Bottleneck Rescue for small accounting firms",
+    "what_evidence_could_falsify_it": "Owner-approved feedback from small importers, freight/customs operators, or ecommerce brands says tariff margin rescue is not urgent, not budget-owned, or cannot be trusted without licensed customs brokerage.",
+    "why_not_others": [
+      "The agent-governance route remains technically strong but is not the most obvious global cash pain.",
+      "Caregiver admin relief has huge pain but harder distribution, PHI sensitivity, and weaker immediate B2B budget clarity.",
+      "CPA review bottleneck is attractive but crowded and timing-sensitive around tax season.",
+      "Insurance premium audit has real pain but needs local/regulatory expertise and agent/broker partnerships.",
+      "Prior authorization admin relief is enormous but highly regulated and slow to sell."
+    ],
+    "why_this_path_now": "Tariff volatility creates an immediate cash leak that buyers already understand in dollars. A small importer can pay for a fast margin, pricing, supplier, and refund-opportunity desk before any platform exists. This is not an AI-governance-first offer; it is a cash-preservation offer that can be delivered with public-read research, structured analysis, and owner-gated outreach."
+  },
+  "what_was_not_claimed": [
+    "No L4 feedback was executed.",
+    "No customer validation, pricing validation, paid signal, payment, or revenue evidence was claimed.",
+    "No live provider execution occurred.",
+    "No customs, tax, legal, or compliance advice was claimed.",
+    "No K9Audit write or integration was claimed."
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "CEO_runtime_receipt": {
+    "CEO_order_id": "e98_global_money_map_order",
+    "CIEUStore_written": true,
+    "CIEU_event_count": 1,
+    "CIEU_event_types": [
+      "CEO_STRATEGIC_INTELLIGENCE_BENCHMARK_DECISION"
+    ],
+    "Y_star_gov_decision": "ALLOW",
+    "external_observation_status": "public_read_market_scan_no_contact_no_customer_validation",
+    "generation_mode": "cash_first_global_money_map_structured_output",
+    "mode": "CEO_RUNTIME_CERTIFIED_GLOBAL_MONEY_MAP",
+    "old_agent_governance_route_rank": 4,
+    "owner_intent": "Find the easiest credible first-cash direction globally, without privileging Y*Bridge Labs' existing agent-governance route, and without claiming customer/revenue validation.",
+    "runtime_session_id": "e98_global_money_map_unanchored_strategy",
+    "selected_first_cash_path": "Tariff Shock Margin Rescue Desk for small importers",
+    "selected_route_id": "tariff_shock_margin_rescue_desk",
+    "truth_boundary": {
+      "K9Audit_not_integrated": true,
+      "no_L4_feedback_executed": true,
+      "no_customer_validation": true,
+      "no_live_provider_execution": true,
+      "no_revenue_or_payment_signal": true
+    }
+  },
+  "L5-A": "complete_internal_runtime_foundation",
+  "L5-B": "complete_for_structured_governed_intelligence_loop_with_capability_blind_global_money_map_experiment",
+  "L5-B+": "partial_dynamic_intelligence_pending_owner_approved_live_feedback",
+  "L5-C": "partial_dry_run_only",
+  "L5-D": "absent_or_not_executed",
+  "milestone_id": "E98_Global_Money_Map_Unanchored_Strategy_Rerun_R1",
+  "next": "E99_Tariff_Shock_Margin_Rescue_No_Send_Demo_And_Owner_Gated_L4_Feedback_R1"
+}
