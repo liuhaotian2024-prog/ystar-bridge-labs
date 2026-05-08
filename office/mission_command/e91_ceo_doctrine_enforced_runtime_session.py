@@ -158,7 +158,7 @@ def build_e89_doctrine_action_context() -> dict[str, Any]:
 
 
 def build_e90_doctrine_action_context(*, test_mode: bool = True) -> dict[str, Any]:
-    return build_default_action_context(
+    context = build_default_action_context(
         action_id="e90_market_grounded_strategy_session",
         action_type="market_strategy",
         mission_type="market_strategy",
@@ -171,6 +171,17 @@ def build_e90_doctrine_action_context(*, test_mode: bool = True) -> dict[str, An
         test_mode=test_mode,
         live_external_observation_required=not test_mode,
     )
+    context.update(
+        {
+            "price_hypothesis_present": True,
+            "first_cash_path_selected": True,
+            "product_shape_selected": True,
+            "route_selected": True,
+            "L4_feedback_packet_prepared": True,
+            "strategy_question_answered": True,
+        }
+    )
+    return context
 
 
 __all__ = [

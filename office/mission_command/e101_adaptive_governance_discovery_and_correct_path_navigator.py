@@ -260,7 +260,17 @@ def _signals(action_context: Mapping[str, Any], artifact: Mapping[str, Any]) -> 
     action_type = str(action_context.get("action_type") or "")
     mission_type = str(action_context.get("mission_type") or "")
     route_type = str(action_context.get("route_type") or "")
-    text = " ".join(str(value).lower() for value in [action_type, mission_type, route_type, artifact])
+    text = " ".join(
+        str(value).lower()
+        for value in [
+            action_type,
+            mission_type,
+            route_type,
+            action_context.get("owner_intent", ""),
+            action_context,
+            artifact,
+        ]
+    )
     if "market" in text or "strategy" in text:
         signals.update({"market_strategy_required", "strategic_decision", "route_selected"})
     if "price" in text or "$" in text or "cash" in text or "revenue" in text:

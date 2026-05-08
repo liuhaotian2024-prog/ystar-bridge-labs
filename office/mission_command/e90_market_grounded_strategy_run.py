@@ -20,6 +20,10 @@ from office.mission_command.e89_ceo_intelligence_loop_runtime_compiler import (
     compile_ceo_intelligence_loop_packet,
     build_pre_action_packet_from_intelligence_packet,
 )
+from office.mission_command.e108_live_global_open_world_strategy_runtime import (
+    _brain_provenance,
+    _six_d_brain_review,
+)
 from office.mission_command.e90_ceo_strategic_intelligence_benchmark import (
     MILESTONE_ID,
     score_ceo_strategic_intelligence,
@@ -27,6 +31,10 @@ from office.mission_command.e90_ceo_strategic_intelligence_benchmark import (
 from office.mission_command.e91_ceo_doctrine_enforced_runtime_session import (
     build_e90_doctrine_action_context,
     enforce_doctrine_before_ceo_runtime,
+)
+from office.mission_command.e110_labs_universal_operating_control_plane import (
+    build_operation_context,
+    enforce_labs_universal_control_before_runtime,
 )
 
 
@@ -66,11 +74,15 @@ def build_market_grounded_strategy_artifact(
 
     root = repo_root or BRIDGE_ROOT
     intelligence_packet = compile_ceo_intelligence_loop_packet(owner_intent=owner_intent, repo_root=root)
+    brain_db = root / "aiden_brain.db"
+    if not brain_db.exists():
+        brain_db = BRIDGE_ROOT / "aiden_brain.db"
+    six_d_brain_review = _six_d_brain_review(owner_intent, brain_db=brain_db)
     routes = _route_candidates()
     strategy = {
         "artifact_id": "e90_market_grounded_strategy_run",
         "milestone_id": MILESTONE_ID,
-        "generation_mode": "runtime_generated_structured_output",
+        "generation_mode": "brain_grounded_runtime_generated_structured_output",
         "doctrine_registry_required": True,
         "external_observation_doctrine_status": "historical_public_read_wrapper_invoked_not_customer_validation",
         "strategy_run_id": "e90_market_grounded_strategy_run",
@@ -79,6 +91,8 @@ def build_market_grounded_strategy_artifact(
         "owner_intent": owner_intent,
         "strategy_scope": strategy_scope,
         "source_intelligence_loop_id": intelligence_packet["intelligence_loop_id"],
+        "brain_provenance": _brain_provenance(six_d_brain_review, brain_db),
+        "six_d_brain_review": six_d_brain_review,
         "internal_capability_map": _internal_capability_map(),
         "historical_route_assets": _historical_route_assets(),
         "external_market_evidence_map": _external_market_evidence_map(),
@@ -132,6 +146,7 @@ def build_market_grounded_strategy_artifact(
             "K9Audit_integration_claim": False,
         },
         "truth_constraints": {
+            "brain_grounded": True,
             "external_public_read_only": True,
             "customer_validation_claim": False,
             "revenue_or_payment_claim": False,
@@ -161,6 +176,28 @@ def run_e90_market_grounded_strategy_session(
 
     governance = _load_ystar_governance_module(ystar_gov_root)
     root = repo_root or BRIDGE_ROOT
+    universal_gate = enforce_labs_universal_control_before_runtime(
+        operation_context=build_operation_context(
+            owner_intent=owner_intent,
+            operation_id=SESSION_ID,
+            operation_type="strategic_market_analysis",
+            market_strategy_required=True,
+            provider_tool_boundary=True,
+            test_mode=test_mode,
+        ),
+        cieu_db=cieu_db,
+        ystar_gov_root=ystar_gov_root,
+        session_id=SESSION_ID,
+        seal_session=False,
+    )
+    if not universal_gate["runtime_may_continue"]:
+        return {
+            "artifact_id": "e90_market_grounded_strategy_session_blocked_by_universal_control",
+            "milestone_id": MILESTONE_ID,
+            "universal_control_gate": universal_gate,
+            "runtime_may_continue": False,
+            "end_to_end_chain_proven": False,
+        }
     doctrine_gate = enforce_doctrine_before_ceo_runtime(
         action_context=build_e90_doctrine_action_context(test_mode=test_mode),
         cieu_db=cieu_db,
@@ -172,6 +209,7 @@ def run_e90_market_grounded_strategy_session(
         return {
             "artifact_id": "e90_market_grounded_strategy_session_blocked_by_doctrine",
             "milestone_id": MILESTONE_ID,
+            "universal_control_gate": universal_gate,
             "doctrine_gate": doctrine_gate,
             "runtime_may_continue": False,
             "end_to_end_chain_proven": False,

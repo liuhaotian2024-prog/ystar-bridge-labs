@@ -22,6 +22,10 @@ from office.mission_command.e91_ceo_doctrine_enforced_runtime_session import (
     build_e89_doctrine_action_context,
     enforce_doctrine_before_ceo_runtime,
 )
+from office.mission_command.e110_labs_universal_operating_control_plane import (
+    build_operation_context,
+    enforce_labs_universal_control_before_runtime,
+)
 
 
 BRIDGE_ROOT = Path(os.environ.get("YSTAR_BRIDGE_LABS_ROOT", Path(__file__).resolve().parents[2]))
@@ -197,6 +201,27 @@ def run_ceo_intelligence_runtime_session(
 
     governance = _load_ystar_governance_module(ystar_gov_root)
     session_id = "e89_ceo_intelligence_runtime_session"
+    universal_gate = enforce_labs_universal_control_before_runtime(
+        operation_context=build_operation_context(
+            owner_intent=owner_intent,
+            operation_id=session_id,
+            operation_type="ceo_intelligence_runtime",
+            market_strategy_required=False,
+            provider_tool_boundary=True,
+        ),
+        cieu_db=cieu_db,
+        ystar_gov_root=ystar_gov_root,
+        session_id=session_id,
+        seal_session=False,
+    )
+    if not universal_gate["runtime_may_continue"]:
+        return {
+            "artifact_id": "e89_ceo_intelligence_runtime_session_blocked_by_universal_control",
+            "milestone_id": MILESTONE_ID,
+            "universal_control_gate": universal_gate,
+            "runtime_may_continue": False,
+            "end_to_end_intelligence_chain_proven": False,
+        }
     doctrine_gate = enforce_doctrine_before_ceo_runtime(
         action_context=build_e89_doctrine_action_context(),
         cieu_db=cieu_db,
@@ -208,6 +233,7 @@ def run_ceo_intelligence_runtime_session(
         return {
             "artifact_id": "e89_ceo_intelligence_runtime_session_blocked_by_doctrine",
             "milestone_id": MILESTONE_ID,
+            "universal_control_gate": universal_gate,
             "doctrine_gate": doctrine_gate,
             "runtime_may_continue": False,
             "end_to_end_intelligence_chain_proven": False,
