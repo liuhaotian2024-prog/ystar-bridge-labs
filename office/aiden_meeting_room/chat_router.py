@@ -14,8 +14,8 @@ from pathlib import Path
 from typing import Any
 
 from office.aiden_meeting_room.governed_gateway import answer_owner_governed_text
-from office.mission_command.e107_strategy_math_model_runtime import (
-    run_e107_strategy_math_model_session,
+from office.mission_command.e108_live_global_open_world_strategy_runtime import (
+    run_e108_live_global_open_world_strategy_session,
 )
 
 
@@ -119,6 +119,8 @@ def default_aiden_strategy_cieu_db(repo_root: Path) -> Path:
 def render_aiden_strategy_runtime_response(result: dict[str, Any]) -> str:
     strategy = result["strategy"]
     receipt = result["CEO_runtime_receipt"]
+    if "Y_star_gov_live_global_decision" in receipt:
+        return render_aiden_live_global_strategy_runtime_response(result)
     selected = strategy["selected_strategy"]
     pricing = strategy["offer_and_pricing_hypotheses"]["entry_offer"]
     competitors = strategy["adaptive_market_governance_gates"]["competitor_saturation_scan"]["competitors"]
@@ -222,6 +224,70 @@ def render_aiden_strategy_runtime_response(result: dict[str, Any]) -> str:
     )
 
 
+def render_aiden_live_global_strategy_runtime_response(result: dict[str, Any]) -> str:
+    strategy = result["strategy"]
+    receipt = result["CEO_runtime_receipt"]
+    selected = strategy["selected_strategy"]
+    scan = strategy["live_global_open_world_scan"]
+    packet = strategy["next_L4_feedback_owner_decision_packet"]
+    math_scores = strategy["route_math_scores"][:8]
+    domains = scan["scan_domains"][:16]
+    cluster_lines = "\n".join(
+        f"- {cluster['cluster_id']}: {cluster['discovered_name']} ({cluster['evidence_count']} evidence)"
+        for cluster in scan["opportunity_clusters"][:10]
+    )
+    domain_lines = "\n".join(
+        f"- {domain['domain_id']}: {domain['domain_name']} | adjacent_to_prior_anchor={str(domain['adjacent_to_prior_anchor']).lower()}"
+        for domain in domains
+    )
+    math_lines = "\n".join(
+        f"- {row['route_id']}: score={row['market_first_score']}, EVSI=${row['evsi_usd']}"
+        for row in math_scores
+    )
+    return (
+        "CEO Strategy Runtime: E108_LIVE_GLOBAL_OPEN_WORLD_MARKET_DISCOVERY\n"
+        "This Aiden strategy question was routed to live global public-read discovery, "
+        "6D brain provenance, dynamic opportunity clustering, market-first math ranking, "
+        "Y-star-gov validation, and CIEUStore recording.\n\n"
+        f"Y-star-gov live-global decision: {receipt['Y_star_gov_live_global_decision']}\n"
+        f"Y-star-gov math model decision: {receipt['Y_star_gov_math_model_decision']}\n"
+        f"CIEUStore written: {str(receipt['CIEUStore_written']).lower()}\n"
+        f"scan_mode: {receipt['scan_mode']}\n"
+        f"provider_status: {receipt['provider_status']}\n"
+        f"scan domains: {receipt['scan_domain_count']}\n"
+        f"evidence items: {receipt['evidence_count']}\n"
+        f"opportunity clusters: {receipt['opportunity_cluster_count']}\n"
+        f"route candidates: {receipt['route_candidate_count']}\n"
+        f"CIEU events: {receipt['CIEU_event_count']}\n\n"
+        "Selected first-cash path:\n"
+        f"{selected['current_best_first_cash_path']}\n"
+        f"- selected_route_id: {selected['selected_route_id']}\n"
+        f"- market_first_score: {receipt['top_market_first_score']}\n"
+        f"- EVSI: ${receipt['top_evsi_usd']}\n\n"
+        "Why this now:\n"
+        f"{selected['why_this_path_now']}\n\n"
+        "Live global scan domains:\n"
+        f"{domain_lines}\n\n"
+        "Top opportunity clusters:\n"
+        f"{cluster_lines}\n\n"
+        "Market-first mathematical ranking:\n"
+        f"{math_lines}\n\n"
+        "Anchor proximity audit:\n"
+        f"- selected_route_is_prior_anchor_clone: {str(scan['anchor_proximity_audit']['selected_route_is_prior_anchor_clone']).lower()}\n"
+        f"- non_adjacent_domain_count: {scan['anchor_proximity_audit']['non_adjacent_domain_count']}\n"
+        f"- globally_ranked_against_non_adjacent_domains: {str(scan['anchor_proximity_audit']['globally_ranked_against_non_adjacent_domains']).lower()}\n\n"
+        "Next owner-gated L4 packet:\n"
+        f"- packet_id: {packet['packet_id']}\n"
+        f"- target_profile: {packet['target_profile']}\n"
+        f"- evidence_sought: {', '.join(packet['evidence_sought'])}\n"
+        f"- no_send_default: {str(packet['no_send_default']).lower()}\n"
+        f"- owner_approval_state: {packet['owner_approval_state']}\n\n"
+        "Boundary:\n"
+        "No external action was executed. No customer validation, pricing validation, "
+        "paid signal, payment, revenue, live provider execution, or K9Audit integration is claimed."
+    )
+
+
 def run_aiden_strategy_runtime(
     owner_message: str,
     *,
@@ -229,14 +295,18 @@ def run_aiden_strategy_runtime(
     cieu_db: str | Path | None = None,
     brain_db: Path | None = None,
     ystar_gov_root: Path | None = None,
+    live_public_read_provider: Any | None = None,
+    allow_live_network: bool = True,
 ) -> AidenChatRoute:
     root = repo_root or Path(__file__).resolve().parents[2]
     selected_cieu_db = Path(cieu_db) if cieu_db is not None else default_aiden_strategy_cieu_db(root)
-    result = run_e107_strategy_math_model_session(
+    result = run_e108_live_global_open_world_strategy_session(
         cieu_db=selected_cieu_db,
         owner_intent=owner_message,
         brain_db=brain_db,
         ystar_gov_root=ystar_gov_root,
+        provider=live_public_read_provider,
+        allow_live_network=allow_live_network,
         seal_session=True,
     )
     response_text = render_aiden_strategy_runtime_response(result)
@@ -258,6 +328,8 @@ def route_chat_message_to_aiden_meeting_room(
     ystar_gov_root: Path | None = None,
     gov_mcp_root: Path | None = None,
     session_id: str | None = None,
+    live_public_read_provider: Any | None = None,
+    allow_live_network: bool = True,
 ) -> AidenChatRoute:
     """Route an owner chat message if it explicitly targets Aiden.
 
@@ -290,6 +362,8 @@ def route_chat_message_to_aiden_meeting_room(
             cieu_db=cieu_db,
             brain_db=brain_db,
             ystar_gov_root=ystar_gov_root,
+            live_public_read_provider=live_public_read_provider,
+            allow_live_network=allow_live_network,
         )
 
     response_text = answer_owner_governed_text(
@@ -334,6 +408,7 @@ __all__ = [
     "is_aiden_meeting_room_message",
     "is_aiden_strategy_runtime_message",
     "render_aiden_strategy_runtime_response",
+    "render_aiden_live_global_strategy_runtime_response",
     "route_chat_message_to_aiden_meeting_room",
     "run_aiden_strategy_runtime",
     "strip_aiden_meeting_room_prefix",

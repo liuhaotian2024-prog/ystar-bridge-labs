@@ -9,6 +9,7 @@ from office.aiden_meeting_room.chat_router import (
     route_chat_message_to_aiden_meeting_room,
     strip_aiden_meeting_room_prefix,
 )
+from office.mission_command.e108_live_global_open_world_strategy_runtime import FixtureGlobalPublicReadProvider
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -43,33 +44,21 @@ def test_aiden_strategy_question_auto_upgrades_to_evidence_derived_open_world_ru
         cieu_db=tmp_path / "aiden_strategy.db",
         brain_db=_isolated_brain_db(tmp_path, "aiden_strategy_brain.db"),
         ystar_gov_root=YSTAR_ROOT,
+        live_public_read_provider=FixtureGlobalPublicReadProvider(),
+        allow_live_network=False,
     )
 
     assert route.route == "aiden_ceo_strategy_runtime"
     assert route.protocol == "AidenStrategyRuntimeV1"
-    assert "CEO Strategy Runtime: E107_MARKET_FIRST_STRATEGY_MATH_MODEL" in route.response_text
-    assert "AI Agent Control Room Rescue" in route.response_text
-    assert "CPA route status: credible_high_risk_candidate_demoted_not_selected" in route.response_text
-    assert "Y-star-gov open-world decision: ALLOW" in route.response_text
-    assert "Y-star-gov process integrity decision: ALLOW" in route.response_text
+    assert "CEO Strategy Runtime: E108_LIVE_GLOBAL_OPEN_WORLD_MARKET_DISCOVERY" in route.response_text
+    assert "Y-star-gov live-global decision: ALLOW" in route.response_text
     assert "Y-star-gov math model decision: ALLOW" in route.response_text
-    assert "Completed strategy phases:" in route.response_text
-    assert "Anchor penalty applied: true" in route.response_text
-    assert "Recent-memory-only: false" in route.response_text
-    assert "Internal capability role: feasibility_multiplier_not_primary_selector" in route.response_text
+    assert "scan_mode: owner_supplied_live_public_read" in route.response_text
+    assert "scan domains:" in route.response_text
+    assert "route candidates:" in route.response_text
     assert "Market-first mathematical ranking:" in route.response_text
-    assert "Mathematical model sources:" in route.response_text
-    assert "Value-of-information next experiment:" in route.response_text
-    assert "Open-world discovery proof:" in route.response_text
-    assert "Strategy process integrity proof:" in route.response_text
-    assert "Competitor saturation scan:" in route.response_text
-    assert "black_ore" in route.response_text
-    assert "basis" in route.response_text
-    assert "juno" in route.response_text
-    assert "founder_is_cpa: false" in route.response_text
-    assert "Customer-visible offer shape:" in route.response_text
-    assert "$1,000-$3,000" in route.response_text
-    assert "Strongest validation question:" in route.response_text
+    assert "Anchor proximity audit:" in route.response_text
+    assert "selected_route_is_prior_anchor_clone: false" in route.response_text
     assert "No external action was executed" in route.response_text
 
 

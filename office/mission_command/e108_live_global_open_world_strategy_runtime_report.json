@@ -1,0 +1,40 @@
+{
+  "milestone_id": "E108_Live_Global_Open_World_Market_Discovery_Runtime_R1",
+  "purpose": "Make global first-cash strategy require live public-read global market discovery instead of stored snapshots or prior anchors.",
+  "runtime_path": "office.mission_command.e108_live_global_open_world_strategy_runtime.run_e108_live_global_open_world_strategy_session",
+  "aiden_router_status": "Aiden strategy questions now route to E108 live global open-world discovery.",
+  "live_provider_status": {
+    "default_provider": "DuckDuckGoLitePublicReadProvider",
+    "test_provider": "FixtureGlobalPublicReadProvider",
+    "external_side_effects": false,
+    "login_required": false,
+    "payment_required": false,
+    "publication_or_contact": false
+  },
+  "governance_lock": {
+    "Y_star_gov_contract": "ystar.governance.ceo_live_global_open_world_strategy_contract.validate_and_write_ceo_live_global_open_world_strategy",
+    "snapshot_evidence_sufficient": false,
+    "fixed_candidate_list_sufficient": false,
+    "prior_anchor_clone_allowed": false,
+    "minimum_domains": 12,
+    "minimum_evidence_items": 24,
+    "minimum_clusters": 10,
+    "minimum_route_candidates": 10,
+    "minimum_query_rounds": 4
+  },
+  "sample_test_result": {
+    "scan_mode": "owner_supplied_live_public_read",
+    "provider_status": "success",
+    "scan_domains": 16,
+    "route_candidates": 16,
+    "cieustore_records": 2
+  },
+  "truth_boundary": {
+    "external_action_executed": false,
+    "customer_validation_claimed": false,
+    "revenue_or_payment_claimed": false,
+    "pricing_validation_claimed": false,
+    "live_provider_execution_claimed": false,
+    "K9Audit_integrated": false
+  }
+}
