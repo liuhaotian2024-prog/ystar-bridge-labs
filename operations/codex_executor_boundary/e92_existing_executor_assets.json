@@ -1,0 +1,3177 @@
+{
+  "artifact_id": "e92_existing_executor_assets",
+  "asset_count": 835,
+  "assets": [
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "\"instructions\": \"Owner fills one row only after manually sending, skipping, replacing, or suppressing a target. Aiden/Codex must not create sent confirmations.\", \"fields\": { \"action_id\": \"REQUIRED_FROM_CONSOLE\", \"ledger_id\": \"REQUIRED_FROM_CONSOLE\", \"feedback_event_id\": \"REQUIRED_FROM_CONSOLE\", \"targe",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "office/mission_command/e15a_owner_confirmation_packet.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "delivery_bridge",
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "moke_probe(LIVE_URLS) return { \"artifact_id\": \"e62_sandbox_dns_probe_result\", \"probe_environment\": \"codex_sandbox_or_staging\", \"dns_probe\": dns, \"controlled_smoke_probe_passed\": smoke.get(\"controlled_public_read_smoke_probe_passed\"), \"smoke_failure_classes\": smoke.get(\"failure_classes\", []), \"live_receipt_c",
+      "matched_terms": [
+        "Codex",
+        "delivery bridge"
+      ],
+      "path": "office/mission_command/e62_revenue_runtime_core.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "completion) write_md( base, \"operations/external_validation/e78_completion_report.md\", \"E78 Completion Report\", [ f\"- Final status: {completion['final_status']}\", f\"- Gate passed: {completion['gate_passed']}\", f\"- Owner approval block detected: {completion['owner_approval_block_detected'",
+      "matched_terms": [
+        "completion report"
+      ],
+      "path": "office/mission_command/e78_l3_owner_approved_research_pilot.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "elf_improvement_action\": e70_self_bootstrap_state.get(\"selected_self_bootstrap_action\"), \"current_ceo_generated_codex_job_proposal_id\": e70_self_bootstrap_state.get(\"generated_Codex_job_proposal_id\"), \"current_ceo_can_generate_codex_job_proposals\": e70_self_bootstrap_state.get(\"Codex_job_proposal_schema_status\") == \"created\", \"current",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "office/mission_command/e46b_ceo_brain_adapter.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "_for_brain, build_readback_smoke, build_cieu_hash_chain_context, build_product_binding, build_generated_codex_job_proposal, load_e71_promoted_k9_cieu_assets, map_k9_cieu_to_bridge_labs_audit_module, write_json, ) def load_e72_cieu_audit_module_state_for_brain(root: Path | None = None) -> dict: return build_e72_state_for_brai",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "office/mission_command/e72_cieu_audit_module_readback.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "ts\", ], what_is_not_approved=[ \"Aiden autonomous sending\", \"customer contact by Codex/Aiden\", \"publication\", \"payment collection\", \"account creation\", \"form submission\", \"login\", \"tracking links or attachments\", \"core brain/CIEU/memory",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "office/mission_command/e14_owner_approval_packet.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "anonical_action_runtime\"] record[\"binding_status\"] = \"wrong_centerline\" elif mode == \"brain_executor\": record[\"capability_id\"] = \"broken_ceo_brain_direct_execution\" record[\"functional_class\"] = \"behavior_control_capability\" record[\"actual_binding\"] = [\"CEO_brain\"] rec",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e55_gov_mcp_validation_harness.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "sset check before new code proposals\", \"CEO_should_consider_resurrected_assets_before_new_code\": True, \"Codex_job_proposals_should_check_legacy_registry_first\": True, \"skill_discovery_should_check_local_legacy_assets_first\": True, \"stale_quarantined_assets_blocked\": True, \"promotion_gated_assets_can_become_future_capab",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "office/mission_command/e71_legacy_asset_promotion_gate.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "str, Any], *, ystar_gov_root: Path | None = None, ) -> dict[str, Any]: \"\"\"Call the canonical Y-star-gov CEO post-action validator without CIEU log writes.\"\"\" try: governance = _load_ystar_governance_module(ystar_gov_root) raw = governance.validate_ceo_post_action_residual(residual) result = _normalize_decision_result(",
+      "matched_terms": [
+        "post-action"
+      ],
+      "path": "office/mission_command/e84_ystar_gov_ceo_cognitive_os_call_adapter.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "scope_and_validation"
+      ],
+      "evidence_excerpt": ", '.join(item['errors'])}\") else: lines.append(\"- none at seed-validation stage\") lines.extend([\"\", \"## Forbidden Actions\"]) lines.extend(f\"- {item}\" for item in plan.forbidden_actions) lines.extend([\"\", \"## Raw Seed Details\", render_public_source_seed_plan(plan)]) return \"\\n\".join(lines) def build_e6_sample_deliverable(row: Dic",
+      "matched_terms": [
+        "forbidden actions"
+      ],
+      "path": "office/mission_command/e6_cycle.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card"
+      ],
+      "evidence_excerpt": "trol integration','governance boundary','evidence / audit closure','commercial judgment','autonomy / proactivity','team dispatch / management','self-repair / anti-drift','external-world interface','owner-review state management'] def diagnose_ceo_brain_maturity() -> dict[str, Any]: dimensions=[] for name in DIMENSIONS: lvl='L5' if name in {'",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "office/mission_command/e54_ceo_brain_maturity_diagnosis.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "delivery_bridge",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "lic research provider\", \"claim register\", \"CEO KG persistence shape\", \"gov-mcp outbound provider boundary\", \"repository delivery bridge\"], \"file_folder_clusters_found\": [{\"cluster_id\": \"ceo_kg_brain\", \"mvp_support\": true, \"paths\": [\"office/mission_command/e24_ceo_knowledge_graph_builder.py\", \"office/mission_command/e24_ceo_brain_state.py\", \"operations/knowle",
+      "matched_terms": [
+        "delivery bridge",
+        "execution receipt",
+        "post-action",
+        "host-local delivery",
+        "remote_confirmed"
+      ],
+      "path": "office/mission_command/e32_base_reconciliation.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "ime envelope -> Y-star-gov CEO Cognitive OS runtime hook -> gov-mcp dry-run envelope only for provider/tool category -> post-action residual requirement -> CIEU validation record candidate.\", ] return \"\\n\".join(lines) + \"\\n\" if __name__ == \"__main__\": write_e85_artifacts()",
+      "matched_terms": [
+        "post-action"
+      ],
+      "path": "office/mission_command/e85_ceo_cognitive_os_runtime_bridge.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "_recording\", \"\"), \"\", \"## What C2 Does Not Authorize\", \"- customer contact by Aiden/Codex\", \"- email/message sending\", \"- publication\", \"- payment\", \"- account creation\", \"- form submission\", \"- login\", \"- core brain/CIEU/memory writeback\",",
+      "matched_terms": [
+        "Codex",
+        "executor"
+      ],
+      "path": "office/mission_command/c2_owner_handoff_capsule.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "ter, \" \"Y-star-gov runtime validation, formal CIEUStore writes, gov-mcp dry-run, \" \"and post-action residual closure\" ), \"owner_intent\": ( \"prove a real internal runtime nervous-system session without external action \" \"or L5 revenue/customer/payment claims\" )",
+      "matched_terms": [
+        "post-action"
+      ],
+      "path": "office/mission_command/e87_ceo_runtime_session.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "re external feedback\"], \"bypass_detection_rules\": [\"bypass_attempt true\", \"missing pre-action packet\", \"missing post-action residual\"], \"CIEU_logging_requirements\": [\"pre-action predicted tuple\", \"post-action actual tuple\", \"validator decision record\"], \"integration_target_candidates_from_YstarGov_inspection\": sync_targets, \"p",
+      "matched_terms": [
+        "post-action"
+      ],
+      "path": "office/mission_command/e81_ceo_cognitive_os_contract.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "delivery_bridge",
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "low\", \"allow\" ], \"event_count\": 3, \"event_types\": [ \"CEO_IMPLEMENTATION_ORDER_DECISION\", \"CODEX_EXECUTION_RECEIPT_DECISION\", \"CEO_POST_CODEX_RESIDUAL_DECISION\" ], \"sealed_events\": 3, \"session_id\": \"e92_ceo_principal_codex_executor_boundary_session\" }, \"CIEUStore_write_status\": { \"formal_CIEU_log_path\":",
+      "matched_terms": [
+        "Codex",
+        "executor",
+        "dispatch",
+        "delivery bridge",
+        "completion report",
+        "host-local delivery",
+        "remote_confirmed"
+      ],
+      "path": "office/mission_command/e92_ceo_principal_codex_executor_boundary_report.json",
+      "repo": "bridge-labs",
+      "runtime_status": "runtime_active_or_current_milestone"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card"
+      ],
+      "evidence_excerpt": "and residual.\", \"does_not_claim\": [\"EU AI Act compliance\", \"legal compliance\", \"medical certification\", \"energy dispatch readiness\", \"production readiness\", \"customer validation\", \"paid signal\"], \"delivery_artifacts\": [\"CIEU field map\", \"causal action evidence plan\", \"residual review table\", \"no-overclaim notice\", \"owner-gated validation path",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "office/mission_command/e69_ceo_next_action_planner.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": ", write_md from .e56_internal_loop_authorization import run_internal_loop_authorization from .e56_internal_loop_dry_run_executor import run_internal_loop_dry_run_executor def build_internal_loop_evidence_packet() -> dict[str, Any]: auth = run_internal_loop_authorization() dry = run_internal_loop_dry_run_executor() return { \"artifact_id\"",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e56_internal_loop_evidence_writeback.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "scope_and_validation"
+      ],
+      "evidence_excerpt": ": \"canonical\", \"name\": \"Public source seed model\", \"notes\": \"Validates public no-login source seeds and forbidden actions.\", \"path\": \"office/mission_command/public_source_seed_model.py\", \"repo\": \"ystar-bridge-labs\", \"reuse_decision\": \"reuse_existing\" }, { \"can_support_real_public_readonly_observatio",
+      "matched_terms": [
+        "forbidden actions"
+      ],
+      "path": "office/mission_command/e31_existing_real_world_observation_wheel_inventory.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "delivery_bridge",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "h control loop reaches owner-handoff readiness without unauthorized external execution.\", x_t={ \"c2_remote_confirmed_base\": base_head, \"c2_queue_source\": \"operations/external_validation/c2_governed_action_queue.json\", \"c2_envelope_source\": \"operations/external_validation/c2_constitutional_activation_packet.json\",",
+      "matched_terms": [
+        "remote_confirmed"
+      ],
+      "path": "office/mission_command/c3_czl_closure.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "Audit Module binding updated\", \"structural verification scope declared\", \"next residual-driven Codex proposal generated\", ], \"capabilities_not_added\": [ \"production hash-chain ledger\", \"live ledger writes\", \"full audit verification over real event stream\", \"legal/complia",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "office/mission_command/e72_cieu_hash_chain_context.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "ion_claim\", \"paid_signal_claim\", \"real_mcp_transport_claim\", \"external_intelligence_l5_claim\"}), \"ceo_brain_not_executor\": True, } return { \"artifact_id\": \"e58_case_study_behavior_authorization_result\", \"allowed_internal_actions\": allowed, \"denied_actions\": denied, \"checks\": checks, \"passed\": all(checks",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e58_case_study_behavior_authorization.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "on) write_md( base, \"operations/external_validation/e76_e77_completion_report.md\", \"E76/E77 Completion Report\", [ f\"- Final status: {completion['final_status']}\", f\"- Gate passed: {completion['gate_passed']}\", f\"- Owner decision status: {completion['owner_decision_status']}\",",
+      "matched_terms": [
+        "completion report"
+      ],
+      "path": "office/mission_command/e76_e77_lineage_decision_and_conditional_l3.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "scope_and_validation"
+      ],
+      "evidence_excerpt": "dule only orchestrates existing artifacts and emits owner-facing packet; it creates no verifier, governance engine, MCP executor, or CEO brain.\", \"scope_boundary\": \"L2 internal no-external-action work product generation only.\", }, \"office/mission_command/e74_ceo_l2_readback.py\": { \"decision\": \"create_re",
+      "matched_terms": [
+        "executor",
+        "completion report",
+        "forbidden actions"
+      ],
+      "path": "office/mission_command/e74_ceo_l2_internal_work_pilot.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "completion) write_md( base, \"operations/external_validation/e82_completion_report.md\", \"E82 Completion Report\", [ f\"- Final status: {completion['final_status']}\", f\"- Bridge-labs base verified: {completion['bridge_labs_base_verified']}\", f\"- Y-star-gov base verified: {completion['Y_star_",
+      "matched_terms": [
+        "completion report"
+      ],
+      "path": "office/mission_command/e82_ystar_gov_sync_readback.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "mall agencies\",\"offer\":\"Founder/Operator AI Automation Review\",\"expected_pain\":\"too many AI ideas, unclear ROI, no safe implementation order\",\"required_evidence\":[\"segment evidence\",\"message clarity\",\"offer packaging\"],\"required_capability\":[\"E10 scoring\",\"E17/E18 message packages\"],\"required_outbound_action\":\"evidence expansion and dry-run variant test\",\"ri",
+      "matched_terms": [
+        "implementation order"
+      ],
+      "path": "office/mission_command/e24_ecosystem_archaeology.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "horization_gate\", \"operations/external_validation/e55_action_authorization_gate_result.json\", \"boundary\", [\"e55_dry_run_executor\", \"e55_readiness_gate\"]), _artifact(\"e55_dry_run_executor\", \"operations/external_validation/e55_dry_run_action_executor_result.json\", \"runtime_module\", [\"e55_evidence_writeback\", \"e55_readiness_gate\"]), _artifact(\"e",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e55_behavior_anti_drift_gate.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "blic_evidence\", \"very_high\", \"very_high\", \"very_high\", \"medical AI audit log readiness brief\", False), (\"energy_dispatch_AI_agent_audit_log\", \"energy/critical infrastructure operators\", \"critical infrastructure reliability\", \"CIEU can structure dispatch action evidence\", \"medium\", \"low\", \"low\", \"very_high\", \"T2_public_standards_evidence\", \"EV4_non_co",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "office/mission_command/e68_cieu_route_evaluation_model.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "], ) write_md( root, \"operations/external_validation/e81_completion_report.md\", \"E81 Completion Report\", [ f\"- Final status: {completion['final_status']}\", f\"- Base verified: {completion['base_verified']}\", f\"- Y-star-gov mutated: {completion['Y_star_gov_mutated']}\", f",
+      "matched_terms": [
+        "completion report"
+      ],
+      "path": "office/mission_command/e81_readback.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "if mode=='outside_brain': r['actual_binding']=[]; r['binding_status']='wrong_centerline' if mode=='executor': r['functional_class']='behavior_control_capability'; r['actual_binding']=['Y_star_gov_boundary']; r['binding_status']='wrong_centerline' if mode=='reference_current': r['functional_class']='reference_only_artifact'; r",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e54_gov_mcp_validation_harness.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "\"\", ] ) lines.extend( [ \"## Not Authorized\", \"- Aiden/Codex sending\", \"- publication\", \"- payment\", \"- account creation\", \"- form submission\", \"- login\", \"- core brain/CIEU/memory writeback\", ] ) return \"\\n",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "office/mission_command/c3_owner_handoff_execution_batch.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "y_risk_tier_not_owner_manual_by_default\", \"actions_agent_can_do_autonomously_now\": [row for row in rows if row[\"executor_decision\"] in {\"agent_autonomous_allowed\", \"agent_autonomous_allowed_with_limits\"}], \"actions_agent_could_do_after_provider_implementation\": [row for row in rows if row[\"classification\"] == \"policy_allows_autonomous_but_pro",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e20_autonomous_control_room.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "\", [\"Y_star_gov_boundary\", \"gov_mcp_boundary\"], [\"Y_star_gov_boundary\", \"gov_mcp_boundary\"]), _rec(\"e56_dry_run_executor\", \"office/mission_command/e56_internal_loop_dry_run_executor.py\", \"behavior_control_capability\", [\"canonical_action_runtime\", \"Y_star_gov_boundary\", \"KG_CZL_CIEU_K9_evidence\"], [\"canonical_action_runtime\", \"Y_star_gov_boundary\", \"K",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e56_internal_loop_capability_binding_gate.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "approval_packet_valid else \"invalid_request_revision_needed\", action_execution_status=\"not_executed_by_aiden_or_codex\", feedback_capture_status=\"not_captured_until_owner_records_real_feedback\", e15_entry_allowed=signal.e15_entry_allowed, exact_owner_action=\"Review e14_owner_approval_packet.request.json; if acceptable, owner ma",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "office/mission_command/e14_owner_decision_packet.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "/external_validation/e72_cieu_hash_chain_context_state.json\", \"operations/external_validation/e72_generated_codex_job_proposal.json\", ], } read_only_sources = { \"K9Audit\": [\"docs/CIEU_spec.md\", \"k9log/logger.py\", \"k9log/verifier.py\"], \"Y-star-gov\": [\"ystar/governance/governance_loop.py\", \"ystar/governance/cieu_stor",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "office/mission_command/e73_ecosystem_boundary_lock.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "scope_and_validation",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "receipt = { \"mission_id\": \"e9_external_pattern_mining\", \"research_ran\": True, \"provider_name\": \"codex_public_read_only_web_search\", \"queries_used\": 16, \"pages_read\": len(sources), \"domains_touched\": sorted({source.domain for source in sources}), \"external_action_executed\": False, \"customer_conta",
+      "matched_terms": [
+        "Codex",
+        "forbidden actions"
+      ],
+      "path": "office/mission_command/external_pattern_mining.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "e__ import annotations import json import os from pathlib import Path from typing import Any from .e55_dry_run_action_executor import run_dry_run_executor BRIDGE_ROOT = Path(os.environ.get(\"YSTAR_BRIDGE_LABS_ROOT\", Path(__file__).resolve().parents[2])) def build_behavior_evidence_writeback() -> dict[str, Any]: executor = run_dry_run_executor() a",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e55_behavior_evidence_writeback.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "intervention_boundary import requires_human_intervention from .e20_provider_capability_detector import live_ready E20_EXECUTOR_DECISIONS = [ \"agent_autonomous_allowed\", \"agent_autonomous_allowed_with_limits\", \"owner_approval_required\", \"owner_manual_only\", \"blocked_no_go\", \"provider_capability_missing\", \"evidence_required_before",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e20_autonomous_execution_eligibility.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "\"output_schema\": \"governance/preflight/promotion result\", \"relation_to_check_enforce_hook\": \"tool/provider executor side, not E83 patch target\", \"relation_to_gov_mcp\": \"canonical provider/tool envelope owner\", \"relation_to_bridge_labs_ceo_packets\": \"L4/L5 execution must later use gov-mcp where provider/tool action exists\"",
+      "matched_terms": [
+        "executor",
+        "post-action"
+      ],
+      "path": "office/mission_command/e83_autoguidance_semantics_readback.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "ws: List[Dict[str, Any]] = [] for row in e20_reclassification.get(\"rows\", []): evidence_required = row.get(\"executor_decision\") == \"evidence_required_before_execution\" owner_required = bool(row.get(\"owner_approval_truly_required\")) dry_run_available = bool(provider_sync.get(\"dry_run_available\")) and not evidence_required l",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e21_batch_provider_reclassification.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "e75_completion_report.json\", report) write_md(base, \"operations/external_validation/e75_completion_report.md\", \"E75 Completion Report\", _lines_completion(report)) return report if __name__ == \"__main__\": print(json.dumps(write_all_e75_artifacts(), indent=2, ensure_ascii=False))",
+      "matched_terms": [
+        "completion report"
+      ],
+      "path": "office/mission_command/e75_l3_owner_decision_packet.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "ected_action_authorized\": auth.get(\"authorization_status\") == \"passed\", \"dry_run_execution_completed\": dry.get(\"executor_status\") == \"passed\", \"external_action_denied\": auth.get(\"checks\", {}).get(\"external_first_user_review_denied\") is True, \"evidence_packet_written\": evidence.get(\"selected_action\") == \"run_internal_operating_loop_sel",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e56_internal_company_loop_l5_readiness_gate.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "sion_command/e54_ceo_next_action_reasoner.py','cognitive_capability',['CEO_brain'],['CEO_brain'],current=True,gate='not executor',actual_gate='behavior_execution_required_false'),_rec('e54_l5_contract','operations/external_validation/e54_ceo_brain_l5_contract.json','cognitive_capability',['CEO_brain'],['CEO_brain'],current=True),_rec('e54_anti_drift_gate','o",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e54_brain_l5_capability_binding_gate.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "# E92 CEO Principal / Codex Executor Boundary - CEO is principal, decision-maker, and strategy owner. - Codex is executor and engineering worker. - Codex cannot self-authorize strategic changes, expand scope, or execute external actions. - end_to_end_chain_prov",
+      "matched_terms": [
+        "Codex",
+        "executor"
+      ],
+      "path": "office/mission_command/e92_ceo_principal_codex_executor_boundary_readback.md",
+      "repo": "bridge-labs",
+      "runtime_status": "runtime_active_or_current_milestone"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "vidence_artifacts\": envelope.get(\"expected_artifacts\", []), \"no_external_action\": True, } def run_dry_run_executor() -> dict[str, Any]: auth = run_authorization_gate() envelopes = [build_execution_envelope(action_id) for action_id in DRY_RUN_ACTIONS] results = [execute_dry_run_envelope(env) for env in envelopes] refused_external",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e55_dry_run_action_executor.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "s_1\": { \"correct_path\": [], \"decision\": \"ALLOW\", \"guidance\": {}, \"reason\": \"CEO post-action residual satisfies CEO Cognitive OS contract\" } }, \"YstarGov_correct_path\": [], \"YstarGov_decision\": \"ALLOW\", \"YstarGov_failed_stage\": null, \"YstarGov_guidance\": {}, \"YstarGov_import_s",
+      "matched_terms": [
+        "post-action"
+      ],
+      "path": "office/mission_command/e85_ceo_nervous_system_l5_runtime_foundation_report.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "e_post_action_residual\", \"role\": \"packet_validator\", \"input_schema\": \"E81 pre-action packet and post-action residual\", \"output_schema\": \"bridge-labs ALLOW/DENY result\", \"does_call_Y_star_gov\": False, \"only_records_generated_artifacts\": False, \"can_route_REQUIRE_REVISION_guidance_back_to_",
+      "matched_terms": [
+        "post-action"
+      ],
+      "path": "office/mission_command/e84_readback.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "scope_and_validation"
+      ],
+      "evidence_excerpt": "f\"- {item.get('source_type')}: {item.get('url')}\" for item in request.get(\"source_urls\", [])) lines.extend([\"\", \"## Forbidden Actions\"]) lines.extend(f\"- {item}\" for item in E13R_FORBIDDEN_ACTIONS) return \"\\n\".join(lines)",
+      "matched_terms": [
+        "forbidden actions"
+      ],
+      "path": "office/mission_command/e13r_buyer_pain_evidence.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "icy_allows_autonomous_in_principle\"], \"current_provider_capability_permits_live\": False if eligibility[\"executor_decision\"] == \"provider_capability_missing\" else provider_capability.get(\"live_provider_adapter_present\", False), \"owner_approval_truly_required\": eligibility[\"owner_approval_required\"], \"more_eviden",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e20_batch_autonomous_reclassification.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "action source, Y-star-gov validated and wrote formal CIEUStore records, gov-mcp produced a dry-run no-send receipt, and post-action residual closure was written. No L4 feedback, live provider execution, K9Audit write, customer validation, revenue, payment, or pricing signal occurred.",
+      "matched_terms": [
+        "post-action"
+      ],
+      "path": "office/mission_command/e88_bind_existing_labs_behavior_center_to_runtime_cieu_loop_readback.md",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": ", write_md from .e56_internal_loop_authorization import run_internal_loop_authorization def run_internal_loop_dry_run_executor() -> dict[str, Any]: auth = run_internal_loop_authorization() authorized = auth[\"selected_action_authorization\"][\"authorization_status\"] in {\"dry_run_only\", \"allow\"} trace = [] for index, stage in enumerate(cycle_st",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e56_internal_loop_dry_run_executor.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "rization_gate_status\": auth.get(\"gate_status\") or update.get(\"authorization_gate_status\") or \"passed\", \"dry_run_executor_status\": update.get(\"dry_run_executor_status\") or \"passed\", \"allowed_internal_dry_run_actions\": update.get(\"allowed_internal_dry_run_actions\") or queue.get(\"dry_run_only_actions\", []), \"external_actions_blocked\": Tr",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e55_behavior_center_readback_smoke.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "aclass(frozen=True) class E14ActionLedgerTemplate: action_id: str approval_id: str target_id: str owner_executor: str executed_by: str execution_time: str channel: str message_hash: str draft_version: str external_action_type: str result_status: str no_response_allowed_after_date: str notes: str evidenc",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e14_action_ledger.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "delivery_bridge",
+        "execution_receipt",
+        "scope_and_validation",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": ".get(\"YSTAR_GOV_ROOT\", \"/Users/haotianliu/.openclaw/workspace/Y-star-gov\")) MILESTONE_ID = \"E92_CEO_Principal_Order_And_Codex_Executor_Boundary_R1\" SESSION_ID = \"e92_ceo_principal_codex_executor_boundary_session\" REQUIRED_CODEX_RECEIPT_FIELDS: tuple[str, ...] = ( \"receipt_id\", \"linked_order_id\", \"executor_actor\", \"execution_status\", \"rep",
+      "matched_terms": [
+        "Codex",
+        "executor",
+        "implementation order",
+        "work order",
+        "task packet",
+        "dispatch",
+        "delivery bridge",
+        "patch bundle",
+        "execution receipt",
+        "completion report",
+        "post-action",
+        "bridge job"
+      ],
+      "path": "office/mission_command/e92_ceo_principal_codex_executor_boundary.py",
+      "repo": "bridge-labs",
+      "runtime_status": "runtime_active_or_current_milestone"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "delivery_bridge",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "_BUSINESS_ACTION = \"integrate_CIEU_audit_log_module_into_governed_business_operations_blueprint_no_execution\" GENERATED_CODEX_JOB_PROPOSAL_ID = \"e70_codex_job_E71_execute_internal_CIEU_module_integration_no_external_action\" GENERATED_MILESTONE = \"E71_execute_internal_CIEU_module_integration_no_external_action\" NEXT_RECOMMENDED_MILESTONE = \"E71_execute_CEO_ge",
+      "matched_terms": [
+        "Codex",
+        "dispatch",
+        "delivery bridge",
+        "bridge job"
+      ],
+      "path": "office/mission_command/e70_ceo_self_bootstrap_planner.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "d_action_proposal()[\"evidence_path\"]), \"requires_KG_CZL_CIEU_writeback\": True, \"ceo_brain_is_source_not_executor\": selected_action_proposal()[\"source\"] != \"CEO_brain\", } return { \"artifact_id\": \"e56_internal_loop_authorization_result\", \"authorization_status\": \"passed\" if all(checks.values()) else \"failed\", \"sel",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e56_internal_loop_authorization.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "delivery_bridge",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "_tier\": route[\"risk_tier\"], \"provider_mode\": \"sandbox_ready\" if ready else \"sandbox_disabled\", \"executor_decision\": \"agent_autonomous_sandbox_allowed\", \"evidence_references\": [ \"operations/external_validation/e24_revenue_path_portfolio_selection.json\", \"operations/external_validation/e22_dry",
+      "matched_terms": [
+        "executor",
+        "remote_confirmed"
+      ],
+      "path": "office/mission_command/e25_ceo_kg_sandbox_route_selector.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "ime envelope -> Y-star-gov CEO Cognitive OS runtime hook -> gov-mcp dry-run envelope only for provider/tool category -> post-action residual requirement -> CIEU validation record candidate.",
+      "matched_terms": [
+        "post-action"
+      ],
+      "path": "office/mission_command/e85r_canonical_delivery_and_runtime_nervous_system_readback.md",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "ill_installation_packet, explain_self_bootstrap_boundaries, generate_capability_growth_candidates, generate_codex_job_proposal, get_capability_gap_registry, list_local_skill_candidates, load_e70_self_bootstrap_state_for_brain, map_goal_to_capability_requirements, measure_capability_growth_result, ) def get_selected_self_boot",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "office/mission_command/e70_ceo_self_bootstrap_readback.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "delivery_bridge",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "gov_delivery_report() -> Dict[str, Any]: path = Path(GOV_MCP_E26_REPORT) if not path.exists(): return {\"remote_confirmed\": False, \"result_head\": git_head(GOV_MCP_ROOT), \"repository_delivery_rt1\": 1} return json.loads(path.read_text(encoding=\"utf-8\")) def wheel(name: str, repo: str, path: str, category: str, status: str, supports: List[s",
+      "matched_terms": [
+        "remote_confirmed"
+      ],
+      "path": "office/mission_command/e26_existing_live_readiness_wheel_inventory.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "safe_exists(repo_root / \"office\" / \"mission_command\"), } company_root = _ystar_company_root(repo_root) l10_executor = company_root / \"l10_delegated_live_meta_development_runtime\" / \"controlled_research_executor.py\" l10_budget = company_root / \"l10_delegated_live_meta_development_runtime\" / \"research_budget_model.py\" l10_planner = company",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/research_capability.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "ref\": message_ref, \"message_hash\": message_hash, \"risk_tier\": CANONICAL_RISK_TIER, \"executor_decision\": \"agent_autonomous_dry_run\", \"provider_mode\": \"dry_run\", \"capability_domain\": \"external_validation_message\", \"evidence_references\": prior.get(\"evidence_references\", []), \"gu",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e22_outbound_envelope_builder.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card"
+      ],
+      "evidence_excerpt": "ner approval boundary\", \"gov-mcp/Y-star-gov validation path\", \"dry-run execution support\", \"external action blocking\", \"dispatch / task routing\", \"behavior queue / scheduling\", \"evidence capture\", \"CIEU/CZL/KG writeback\", \"CEO brain readback after action\", \"anti-drift linkage\", \"capability centerline binding\", \"process/port cleanup\", \"no-overclaim boundary\",",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "office/mission_command/e55_behavior_center_maturity_diagnosis.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "`. - Y-star-gov delivery-bridge validation: `29 passed`. - The tests prove ALLOW, REQUIRE_REVISION, DENY, ESCALATE, and post-action residual validation can be persisted through the formal CIEU store path. ## Remaining Work - Decide whether a later owner-approved bridge should also write or mirror selected governance records into the separate K9Audit eviden",
+      "matched_terms": [
+        "post-action"
+      ],
+      "path": "office/mission_command/e86_cieu_log_insertion_point_readback.md",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "dry_run\", \"idempotency\", \"promotion\"], \"self_bootstrap\": [\"self_bootstrap\", \"capability_gap\", \"capability_growth\", \"codex_job\"], \"route_planning\": [\"planner\", \"decision\", \"counterfactual\", \"candidate\", \"score\", \"router\"], \"product\": [\"product\", \"blueprint\", \"module\", \"packet\", \"control_room\", \"diagnostic\"], \"launch\": [\"launch\", \"marketing\", \"",
+      "matched_terms": [
+        "Codex",
+        "executor"
+      ],
+      "path": "office/mission_command/e80_repository_discovery.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card"
+      ],
+      "evidence_excerpt": "owner decision status.\", predicted_Yt_plus_1=\"External action remains blocked.\", expected_outputs=[\"e55_dry_run_action_executor_result.json\"], externality_level=\"none\", evidence_path=[\"operations/external_validation/e55_dry_run_action_executor_result.json\"], **common), ] def build_broken_action_fixtures() -> list[dict[str, Any]]: base = build_seed",
+      "matched_terms": [
+        "executor",
+        "dispatch"
+      ],
+      "path": "office/mission_command/e55_behavior_action_model.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "_binding_gate(body) checks = {\"capability_binding_correct\": gate.get(\"allowed\") is True, \"decision_is_cognitive_not_executor\": True, \"behavior_authorization_bound_to_action_runtime\": True, \"evidence_bound_to_KG_CZL_CIEU\": True, \"external_action_blocked\": True} return {\"artifact_id\": \"e57_money_route_capability_binding_gate_result\", \"payload\": body, \"",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e57_money_route_capability_binding_gate.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "delivery_bridge"
+      ],
+      "evidence_excerpt": "ack capture loop is ready without agent external execution or fake sent/feedback state.\", x_t={ \"c3_remote_confirmed_base\": base_head, \"c3_owner_handoff_batch_source\": \"operations/external_validation/c3_owner_handoff_validation_batch.json\", \"c3_validation_batch_source\": \"operations/external_validation/c3_validation",
+      "matched_terms": [
+        "remote_confirmed"
+      ],
+      "path": "office/mission_command/e15a_czl_closure.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "er_available': False, 'session_public_readonly_observation_provider_available': True, 'provider_used': 'Codex public web search/open, bounded read-only, no login/contact/forms/private API', 'public_readonly_policy_present': public_readonly_policy_present, 'evidence_receipt_precedent_paths_found': found, 'missing_preced",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "office/mission_command/e50b_external_observation_preflight.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "delivery_bridge",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "report() -> Dict[str, Any]: path = Path(GOV_MCP_E27_REPORT) if not path.exists(): return { \"remote_confirmed\": False, \"result_head\": git_head(GOV_MCP_ROOT), \"remote_head\": git_head(GOV_MCP_ROOT), \"repository_delivery_rt1\": 1, \"status\": \"MISSING_REPORT\", } return json.load",
+      "matched_terms": [
+        "remote_confirmed"
+      ],
+      "path": "office/mission_command/e27_existing_live_test_wheel_inventory.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "il explicit owner approval.\", ]) write_md(base, \"operations/external_validation/e79_completion_report.md\", \"E79 Completion Report\", [ f\"Job id: {completion['job_id']}\", f\"Base verified: {completion['base_verified']}\", f\"Selected thesis: {completion['selected_strategic_thesis']}\", f\"Backup thesis: {completion['backup_th",
+      "matched_terms": [
+        "completion report"
+      ],
+      "path": "office/mission_command/e79_ceo_strategic_judgment_upgrade.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "oot) or planner.build_self_improvement_candidate_set(root) return {\"goal_id\": goal_id, **candidates} def generate_codex_job_proposal(capability_gap_id: str, root: Path | None = None) -> dict: proposal = planner.load_json(\"operations/external_validation/e70_generated_codex_job_proposal.json\", root) or planner.generated_codex_job_proposal(root) r",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "office/mission_command/e70_ceo_capability_growth_model.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "pany_root = workspace / \"ystar-company\" l10_root = company_root / \"l10_delegated_live_meta_development_runtime\" executor = l10_root / \"controlled_research_executor.py\" planner = l10_root / \"controlled_research_planner.py\" budget = l10_root / \"research_budget_model.py\" stdlib_contract = company_root / \"controlled_public_page_read_adapter\"",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/tier1_research_runtime.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "scope_and_validation",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "\"mission_id\": \"e10_autonomous_buyer_discovery\", \"public_target_discovery_ran\": True, \"provider_name\": \"codex_public_read_only_web_search\", \"queries_used\": 20, \"pages_read\": len(sources), \"domains_touched\": sorted({source.domain for source in sources}), \"external_action_executed\": False, \"customer_conta",
+      "matched_terms": [
+        "Codex",
+        "forbidden actions"
+      ],
+      "path": "office/mission_command/e10_autonomous_target_discovery.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "scope_and_validation"
+      ],
+      "evidence_excerpt": "lines.extend(f\"- {question}\" for question in request.get(\"counterfactual_questions\", [])) lines.extend([\"\", \"## Forbidden Actions\"]) lines.extend(f\"- {action}\" for action in request.get(\"forbidden_actions\", [])) return \"\\n\".join(lines)",
+      "matched_terms": [
+        "forbidden actions"
+      ],
+      "path": "office/mission_command/e13_tier1_evidence_mission.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "get(\"minimum_required_fields\", []) if field not in residual] if missing: return _decision(\"DENY\", f\"missing post-action fields: {', '.join(missing)}\", residual, \"post_action_schema\") cieu = residual.get(\"CIEU_record\", {}) for field in schema.get(\"CIEU_record_required_fields\", []): if field not in cieu: return _decision",
+      "matched_terms": [
+        "post-action"
+      ],
+      "path": "office/mission_command/e81_ceo_cognitive_os_preflight_validator.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "delivery_bridge",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "s ready for draft-only/send-gated governance without unauthorized outbound execution.\", x_t={ \"e15a_remote_confirmed_base\": base_head, \"e15a_console_source\": \"operations/external_validation/e15a_owner_execution_console.json\", \"c3_batch_source\": \"operations/external_validation/c3_validation_batch.json\",",
+      "matched_terms": [
+        "remote_confirmed"
+      ],
+      "path": "office/mission_command/e15d_czl_closure.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "residual semantics, and hard gates.\", \"gov_mcp_execution_expectation\": \"gov-mcp returns allow/deny/escalate and execution receipt; no secret printing or credential disclosure.\", \"action_ledger_schema_ref\": \"operations/external_validation/c1_action_ledger.template.json\", \"cieu_residual_semantics\": \"CIEU residual compares intended gover",
+      "matched_terms": [
+        "execution receipt"
+      ],
+      "path": "office/mission_command/c1_action_intent_packet.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "rtifact_id':'e54_ceo_brain_l5_contract','criteria':criteria,'brain_is':'cognitive state center','brain_is_not':['direct executor','governance bypass','owner approval substitute'],'no_external_action':True} def build_ceo_brain_state(reasoning: dict[str, Any] | None=None, metrics: dict[str, Any] | None=None) -> dict[str, Any]: resolution=resolve_current_s",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e54_ceo_brain_state_schema.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "_queue_snapshot.json\") auth = _json(\"operations/external_validation/e55_action_authorization_gate_result.json\") executor = _json(\"operations/external_validation/e55_dry_run_action_executor_result.json\") evidence = _json(\"operations/external_validation/e55_behavior_evidence_writeback.json\") readback = _json(\"operations/external_validation/e55_",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e55_behavior_center_l5_readiness_gate.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "ti-agent architecture report fixture\", \"fixture_content\": \"Multi-agent architecture reports compare planner/executor/evaluator separation. Supports CEO brain vs behavior center separation.\", }, ] def build_source_discovery_policy() -> dict[str, Any]: candidates = fixture_sources() + [ { \"source_id\": \"candidat",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e59_external_intelligence_core.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card"
+      ],
+      "evidence_excerpt": "r_approval_required\" if action_type in {\"internal_analysis\", \"internal_packaging\", \"internal_validation\", \"internal_dispatch\"}: return \"internal_dry_run_candidate\" if action_type == \"public_readonly_observation\": return \"future_public_readonly_candidate\" return \"unknown_blocked\" def validate_queue_item(item: dict[str, Any]) -> d",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "office/mission_command/e55_behavior_queue.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "authorization\", \"operations/external_validation/e56_internal_loop_authorization_result.json\", \"boundary\", [\"e56_dry_run_executor\"]), _artifact(\"e56_dry_run_result\", \"operations/external_validation/e56_internal_loop_dry_run_result.json\", \"runtime_module\", [\"e56_evidence_writeback\"]), _artifact(\"e56_evidence_packet\", \"operations/external_valida",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e56_internal_loop_anti_drift_gate.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "_center_controls_next_action\": selected_next_action_proposal()[\"source\"] == \"canonical_runtime\", \"ceo_brain_not_executor\": selected_next_action_proposal()[\"source\"] != \"CEO_brain\", } return { \"artifact_id\": \"e57_selected_route_behavior_authorization_result\", \"selected_route\": SELECTED_ROUTE, \"selected_next_action\": NEX",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e57_selected_route_behavior_authorization.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "\"Owner can manually send the three primary copy/paste messages, then fill one ledger row per sent/skipped target. Aiden/Codex does not send.\", \"primary_action_count\": len(primary_actions), \"fallback_action_count\": len(fallback_actions), \"primary_actions\": primary_actions, \"fallback_actions\": fallback_actions, \"not_appr",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "office/mission_command/e15a_owner_execution_console.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "\"T5_no_go_blocked\", ] @dataclass(frozen=True) class E20RiskTier: tier: str examples: List[str] allowed_executor: str required_checks: List[str] required_evidence: List[str] rate_limits: Dict[str, int] idempotency_requirements: List[str] suppression_requirements: List[str] rollback_reversal_requirements: List[str]",
+      "matched_terms": [
+        "executor",
+        "execution receipt"
+      ],
+      "path": "office/mission_command/e20_risk_tier_taxonomy.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "_ref\": \"E18/E19 approved message variant; not executed in E20\", \"risk_tier\": eligibility[\"risk_tier\"], \"executor_decision\": eligibility[\"executor_decision\"], \"policy_checks\": [\"Y*gov/gov-mcp compatibility\", \"AI transparency\", \"opt-out\", \"template hash\"], \"evidence_references\": list(candidate.get(\"evidence_basis\", [])),",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e20_autonomous_outbound_envelope.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "eted\", \"completed_action\": True, \"post_action_residual\": post_residual, \"context\": \"post-action residual closure for E89 governed intelligence runtime session\", } ) post_write = governance.validate_and_write_ceo_runtime_envelope( post_envelope, cieu_db=cieu_db, session_id=session_id,",
+      "matched_terms": [
+        "post-action"
+      ],
+      "path": "office/mission_command/e89_ceo_intelligence_loop_runtime_compiler.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "ic_readonly_commercial_observation_run', 'status': 'public_readonly_observation_executed', 'provider': 'Codex web public search/open', 'source_receipt_count': len(receipts), 'domains_covered': sorted(set(receipt['domain'] for receipt in receipts)), 'page_read_cap': 40, 'contacts_identified': False, 'per",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "office/mission_command/e50b_public_observation.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "tions/external_validation/e22_dry_run_receipt_ledger.json\", \"dry-run evidence\", \"usable\", \"reuse_existing\", [\"no-effect execution receipts\"], \"low\"), _wheel(\"E23 evidence tightening\", \"ystar-bridge-labs\", \"office/mission_command/e23_evidence_tightening_evaluator.py\", \"evidence expansion\", \"usable\", \"reuse_existing\", [\"evidence gaps\", \"candidate statu",
+      "matched_terms": [
+        "execution receipt"
+      ],
+      "path": "office/mission_command/e30_existing_method_wheel_inventory.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "delivery_bridge"
+      ],
+      "evidence_excerpt": ", \"enforce\", \"cieu\", \"kernel\", \"residual\"], \"execution_boundary_layer\": [\"gov-mcp\", \"gov_mcp\", \"mcp\", \"execution\", \"delivery bridge\", \"repository_delivery\", \"command\", \"runner\", \"demo\", \"install\", \"status\", \"plugin\"], \"evidence_audit_layer\": [\"k9\", \"audit\", \"cieu\", \"czl\", \"claim\", \"evidence\", \"contradiction\", \"source quality\", \"burden\", \"proof\", \"led",
+      "matched_terms": [
+        "delivery bridge"
+      ],
+      "path": "office/mission_command/e46b_runtime_spine_archaeology.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "\", [\"Y_star_gov_boundary\", \"gov_mcp_boundary\"], [\"Y_star_gov_boundary\", \"gov_mcp_boundary\"]), _rec(\"e55_dry_run_executor\", \"office/mission_command/e55_dry_run_action_executor.py\", \"behavior_control_capability\", [\"canonical_action_runtime\", \"Y_star_gov_boundary\", \"KG_CZL_CIEU_K9_evidence\"], [\"canonical_action_runtime\", \"Y_star_gov_boundary\", \"KG_CZL_C",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e55_behavior_capability_binding_gate.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "\"no new behavior center\", \"no new governance engine\", \"no new provider executor\", \"no new CIEU ledger\", ], }, \"adversarial_critique\": [ \"The selected wedge could still sound like a consulting memo unless the L4 packet tests a concrete operator pain statem",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e90_market_grounded_strategy_run.py",
+      "repo": "bridge-labs",
+      "runtime_status": "runtime_active_or_current_milestone"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "ction_CIEU_ledger_in_bridge_labs\", \"duplicate_Y_star_gov_governance_engine\", \"duplicate_gov_mcp_executor\", \"customer_validation_claim\", \"paid_signal_claim\", \"pricing_validation_claim\", ], \"not_a_parallel_CEO_brain\": True, \"external_action_allowed\": False, } def _loop_st",
+      "matched_terms": [
+        "executor",
+        "completion report"
+      ],
+      "path": "office/mission_command/e80_ceo_online_cognition_loop.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "{'question': 'Is CEO brain only context, or does it select route/action?', 'answer': 'context_center_not_direct_executor', 'evidence': 'e46b runtime loads brain before route decision; route selection remains in canonical runtime layers.'}, {'question': 'Does CEO brain loader read E50B brain update?', 'answer': _contains(brain_code, 'e50b_ceo_",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "office/mission_command/e50c_ceo_brain_centerline_diagnosis.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "tion_residual_status\": { \"runtime_requirement\": \"still required by E85R runtime hook\", \"formal_write_support\": \"post-action residual validation result can be persisted through the E86 writer\", \"test\": \"tests/governance/test_ceo_cognitive_os_cieu_log.py::test_post_action_residual_validation_result_can_be_written\" }, \"K9Audit_boundary\": { \"",
+      "matched_terms": [
+        "post-action"
+      ],
+      "path": "office/mission_command/e86_cieu_log_insertion_point_report.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "delivery_bridge",
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "acket\", \"explain_self_bootstrap_boundaries\", \"generate_capability_growth_candidates\", \"generate_codex_job_proposal\", \"get_capability_gap_registry\", \"list_local_skill_candidates\", \"load_e70_self_bootstrap_state_for_brain\", \"map_goal_to_capability_requirements\", \"measure_capability_growth_result\"",
+      "matched_terms": [
+        "Codex",
+        "executor",
+        "dispatch",
+        "remote_confirmed"
+      ],
+      "path": "operations/ceo_doctrine_registry/e91_asset_graph.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "operations/external_validation/e71_czl_closure.json\", \"bridge-labs:operations/external_validation/e71_generated_codex_job_proposal_from_legacy_assets.json\", \"bridge-labs:operations/external_validation/e71_legacy_asset_archaeology_inventory.json\", \"bridge-labs:operations/external_validation/e71_legacy_asset_promotion_gate_results.json\"",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/ceo_doctrine_registry/e91_open_world_same_problem_clusters.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "ridge-labs:.claude_tasks_eng-platform-20260413-phase1-mcp-permission-matrix.md\", \"bridge-labs:.claude_tasks_gov-dispatch-spec-v0.1.0.md\", \"bridge-labs:.claude_tasks_leo_v3_omission_unification_and_petri_daemon.md\", \"bridge-labs:.claude_tasks_p2_path_a_acknowledgement_fix.md\", \"bridge-labs:.czl_subgoals.json\", \"bridge-l",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "operations/ceo_doctrine_registry/e91_query_expansion_log.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "operations/external_validation/e71_czl_closure.json\", \"bridge-labs:operations/external_validation/e71_generated_codex_job_proposal_from_legacy_assets.json\", \"bridge-labs:operations/external_validation/e71_legacy_asset_archaeology_inventory.json\", \"bridge-labs:operations/external_validation/e71_legacy_asset_promotion_gate_results.json\"",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/ceo_doctrine_registry/e91_canonical_doctrine_registry_spec.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card"
+      ],
+      "evidence_excerpt": "y\": [ \"CIEU ensures EU AI Act compliance\", \"CIEU is medically certified\", \"CIEU is suitable for live energy dispatch\", \"CIEU replaces legal review\", \"CIEU replaces risk management system\", \"CIEU replaces technical documentation\", \"CIEU is production-ready for high-risk AI\", \"CIEU has customer validation\", \"CIEU has paid si",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "operations/knowledge_graph/e68_ceo_kg_cieu_route_read_model_update.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "eated\", \"selected_self_bootstrap_action\": \"combined_self_bootstrap_foundation_layer\", \"capability_gap_count\": 5, \"Codex_job_proposal_schema_status\": \"created\", \"generated_Codex_job_proposal_id\": \"e70_codex_job_E71_execute_internal_CIEU_module_integration_no_external_action\", \"skill_boundary_status\": \"created_no_install\", \"L5_use_case_status\": \"pa",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/knowledge_graph/e70_ceo_kg_self_bootstrap_read_model_update.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "des_added\": [ \"e55_behavior_control_center\", \"e55_action_queue\", \"e55_authorization_gate\", \"e55_dry_run_executor\", \"e55_behavior_evidence_loop\" ], \"selected_next_milestone\": \"E56_internal_company_operating_loop_L5\", \"owner_decision_status\": \"pending_owner_decision\", \"external_action_allowed\": false, \"no_external_action\": true }",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "operations/knowledge_graph/e55_ceo_kg_read_model_update.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "\"provider_promotion_inputs\": \"operations/external_validation/e71_legacy_provider_promotion_inputs.json\", \"generated_codex_job_proposal\": \"E72_integrate_K9_CIEU_hash_chain_context_into_CIEU_audit_module\", \"next_recommended_milestone\": \"E72_integrate_K9_CIEU_hash_chain_context_into_CIEU_audit_module\", \"owner_decision_status\": \"pending_owner_decision\",",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/knowledge_graph/e71_ceo_kg_legacy_asset_read_model_update.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "delivery_bridge",
+        "scope_and_validation",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "- `/tmp/ystar_delivery_bridge/completed/` - `/tmp/ystar_delivery_bridge/failed/` - `/tmp/ystar_delivery_bridge/logs/` Codex submits structured, allowlisted jobs with `scripts/repository_delivery_bridge_submit.py`. The host-local worker validates the job, installs the payload, runs tests, commits only allowed files, pushes, and confirms the remote SHA. Thi",
+      "matched_terms": [
+        "Codex",
+        "delivery bridge",
+        "bridge job",
+        "allowed files"
+      ],
+      "path": "operations/repository_delivery/bridge_jobs/README.md",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "delivery_bridge",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "d: false - job_submission_contract: `scripts/repository_delivery_bridge_submit.py` - credentials_printed: false Future Codex tasks must submit bridge jobs. Future Codex tasks must not ask owner to run per-milestone bootstrap. Owner manual terminal command is only allowed for one-time bridge repair/reinstall.",
+      "matched_terms": [
+        "Codex",
+        "delivery bridge",
+        "bridge job",
+        "host-local delivery"
+      ],
+      "path": "operations/repository_delivery/delivery_reports/host_local_delivery_bridge_install.md",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "delivery_bridge",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "d: false - job_submission_contract: `scripts/repository_delivery_bridge_submit.py` - credentials_printed: false Future Codex tasks must submit bridge jobs. Future Codex tasks must not ask owner to run per-milestone bootstrap. Owner manual terminal command is only allowed for one-time bridge repair/reinstall. ## Activation Proof - status: submitted_for_rem",
+      "matched_terms": [
+        "Codex",
+        "delivery bridge",
+        "bridge job"
+      ],
+      "path": "operations/repository_delivery/delivery_reports/repository_delivery_bridge_status.md",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "eam.cpython-311.pyc\", \"scripts/__pycache__/brain_writeback_queue.cpython-311.pyc\", \"scripts/__pycache__/dispatch_role_routing.cpython-311.pyc\", \"scripts/__pycache__/forget_guard.cpython-311.pyc\", \"scripts/__pycache__/hook_ceo_post_output_brain_writeback.cpython-311.pyc\", \"scripts/__pycache__/hook_ceo_pre_output_brain_q",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "operations/repository_delivery/delivery_reports/repository_delivery_transport_doctor.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": ": 1 - external_business_side_effects: false After one-time activation succeeds with self-delivery remote confirmation, Codex should submit bridge jobs instead of printing per-milestone bootstrap commands. ## Bridge Activation Proof - status: host_local_bridge_activation_proof_pending_delivery - bridge_installed: true - transport_mode: host_local_bridge -",
+      "matched_terms": [
+        "Codex",
+        "bridge job"
+      ],
+      "path": "operations/repository_delivery/delivery_reports/direct_delivery_restoration_report.md",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "\"origin\", \"push_branch\": \"backflow/aiden-ceo-meeting-room\", \"remote_confirmation_required\": true, \"created_by\": \"Codex E16X\", \"created_at\": \"2026-05-03T00:00:00+00:00\", \"safety_boundary\": \"E16X is read-only cross-repo governance ownership and outbound canonicalization audit. It produces reports, taxonomy, promotion plan, and route reconciliation o",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/repository_delivery/delivery_requests/e16x_cross_repo_governance_canonicalization_delivery.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "\"origin\", \"push_branch\": \"backflow/aiden-ceo-meeting-room\", \"remote_confirmation_required\": true, \"created_by\": \"Codex E14\", \"created_at\": \"2026-05-03T00:00:00+00:00\", \"safety_boundary\": \"host-side delivery only; E14 prepares owner-operated validation and does not execute outreach\", \"no_external_side_effects_statement\": \"E14 performs no customer",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/repository_delivery/delivery_requests/e14_owner_operated_validation_prep_delivery.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "aiden-ceo-meeting-room\", \"remote_confirmation_required\": true, \"cleanup_generated_bytecode\": true, \"created_by\": \"Codex\", \"created_at\": \"2026-05-02T21:21:53.788317+00:00\", \"safety_boundary\": { \"force_push\": false, \"history_rewrite\": false, \"remote_url_mutation\": false, \"arbitrary_shell\": false, \"commit_outside_allowed_files\": fa",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/repository_delivery/delivery_requests/e12r_repository_delivery_reliability.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "scope_and_validation",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "in\", \"push_branch\": \"backflow/aiden-ceo-meeting-room\", \"remote_confirmation_required\": true, \"created_by\": \"Codex A1/B1\", \"created_at\": \"2026-05-03T00:00:00+00:00\", \"safety_boundary\": \"host-side delivery only; scripts/host_delivery_runner.py must validate, test, commit allowed files only, push, and confirm remote SHA\", \"no_external_si",
+      "matched_terms": [
+        "Codex",
+        "allowed files"
+      ],
+      "path": "operations/repository_delivery/delivery_requests/a1_b1_cross_repo_audit_owner_console_delivery.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "\"origin\", \"push_branch\": \"backflow/aiden-ceo-meeting-room\", \"remote_confirmation_required\": true, \"created_by\": \"Codex C2\", \"created_at\": \"2026-05-03T00:00:00+00:00\", \"safety_boundary\": \"C2 creates governed first action activation loop artifacts only; host_delivery_runner validates dirty set, tests, commit, push, and remote SHA confirmation. No li",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/repository_delivery/delivery_requests/c2_governed_first_action_activation_loop_delivery.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "delivery_bridge",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "aiden-ceo-meeting-room\", \"remote_confirmation_required\": true, \"cleanup_generated_bytecode\": true, \"created_by\": \"Codex host delivery bootstrap\", \"created_at\": \"2026-05-02T21:33:29.330660+00:00\", \"safety_boundary\": { \"force_push\": false, \"history_rewrite\": false, \"remote_url_mutation\": false, \"arbitrary_shell\": false, \"commit_ou",
+      "matched_terms": [
+        "Codex",
+        "delivery bridge"
+      ],
+      "path": "operations/repository_delivery/delivery_requests/e12t_host_delivery_bridge_bootstrap.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "aiden-ceo-meeting-room\", \"remote_confirmation_required\": true, \"cleanup_generated_bytecode\": true, \"created_by\": \"Codex\", \"created_at\": \"2026-05-02T21:43:26.503978+00:00\", \"safety_boundary\": { \"force_push\": false, \"history_rewrite\": false, \"remote_url_mutation\": false, \"arbitrary_shell\": false, \"commit_outside_allowed_files\": fa",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/repository_delivery/delivery_requests/e13_tier1_evidence_delivery.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "\"origin\", \"push_branch\": \"backflow/aiden-ceo-meeting-room\", \"remote_confirmation_required\": true, \"created_by\": \"Codex E13R\", \"created_at\": \"2026-05-03T05:39:39.647177+00:00\", \"safety_boundary\": \"host-side delivery only; no customer contact, no email/message, no publication, no payment, no account/form/login, no core writeback\", \"no_external_sid",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/repository_delivery/delivery_requests/e13r_offer_revision_delivery.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "scope_and_validation",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "\"origin\", \"push_branch\": \"backflow/aiden-ceo-meeting-room\", \"remote_confirmation_required\": true, \"created_by\": \"Codex AB2\", \"created_at\": \"2026-05-03T00:00:00+00:00\", \"safety_boundary\": \"host-side delivery only; scripts/host_delivery_runner.py must validate, test, commit allowed files only, push, and confirm remote SHA. AB2 builds governed runtim",
+      "matched_terms": [
+        "Codex",
+        "allowed files"
+      ],
+      "path": "operations/repository_delivery/delivery_requests/ab2_integrated_cross_repo_alignment_b2r_delivery.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "scope_and_validation",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "in\", \"push_branch\": \"backflow/aiden-ceo-meeting-room\", \"remote_confirmation_required\": true, \"created_by\": \"Codex AB3\", \"created_at\": \"2026-05-03T00:00:00+00:00\", \"safety_boundary\": \"host-side delivery only; scripts/host_delivery_runner.py must close AB2 if missing, install C1 readiness package, validate, test, commit allowed files only,",
+      "matched_terms": [
+        "Codex",
+        "allowed files"
+      ],
+      "path": "operations/repository_delivery/delivery_requests/ab3_c1_governed_action_readiness_delivery.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "\"origin\", \"push_branch\": \"backflow/aiden-ceo-meeting-room\", \"remote_confirmation_required\": true, \"created_by\": \"Codex E15D\", \"created_at\": \"2026-05-03T00:00:00+00:00\", \"safety_boundary\": \"E15D defines controlled outbound capability, authorization envelope request, Y*gov policy, gov-mcp adapter contract, draft-only receipts, send-gated queue, safe",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/repository_delivery/delivery_requests/e15d_controlled_outbound_execution_pilot_delivery.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "\"origin\", \"push_branch\": \"backflow/aiden-ceo-meeting-room\", \"remote_confirmation_required\": true, \"created_by\": \"Codex C3\", \"created_at\": \"2026-05-03T00:00:00+00:00\", \"safety_boundary\": \"C3 creates owner-handoff-only validation batch control loop artifacts; host_delivery_runner validates dirty set, tests, commit, push, and remote SHA confirmation.",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/repository_delivery/delivery_requests/c3_validation_batch_control_loop_delivery.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "\"origin\", \"push_branch\": \"backflow/aiden-ceo-meeting-room\", \"remote_confirmation_required\": true, \"created_by\": \"Codex E15A\", \"created_at\": \"2026-05-03T00:00:00+00:00\", \"safety_boundary\": \"E15A creates owner execution console, confirmation template, ledger transition, feedback capture, signal evaluation, replacement routing, result packet, and CZL",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/repository_delivery/delivery_requests/e15a_owner_operated_validation_execution_delivery.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "\"origin\", \"push_branch\": \"backflow/aiden-ceo-meeting-room\", \"remote_confirmation_required\": true, \"created_by\": \"Codex E16G\", \"created_at\": \"2026-05-03T00:00:00+00:00\", \"safety_boundary\": \"E16G bridge-labs alignment only; no real outbound action or provider call.\", \"no_external_side_effects_statement\": \"E16G performs code/static alignment and no",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/repository_delivery/delivery_requests/e16g_bridge_labs_router_alignment_delivery.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "# Runtime Status After E92 - CEO_principal_Codex_executor_boundary: true - L5-A: complete_internal_runtime_foundation - L5-B: complete_for_structured_governed_intelligence_loop_with_CEO_principal_Codex_executor_boundary - L5-C: partial_dry_run_only - L5-D: absent_or_not_executed - n",
+      "matched_terms": [
+        "Codex",
+        "executor"
+      ],
+      "path": "operations/baseline/e87r_full_repo_baseline/current_runtime_status_after_e92_ceo_principal_codex_executor_boundary.md",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "on\": 1, \"plugin.json\": 1, \"pyproject.toml\": 1, \"reports\": 5, \"scripts\": 1, \"tests\": 56, \"verify_dispatch.py\": 1 }, \"display_name\": \"gov-mcp\", \"expected_head\": \"d0181bc8f19d8ae7714bd0f8a220fe12e6ceee90\", \"path\": \"/Users/haotianliu/.openclaw/workspace/gov-mcp\", \"repo\": \"gov_mcp\", \"tracked_file_count\": 130, \"tracked_files\":",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "operations/baseline/e87r_full_repo_baseline/gov_mcp_file_manifest.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "\"ALLOW / REQUIRE_REVISION / DENY / ESCALATE routing\", \"formal CIEUStore write path when invoked\", \"post-action residual requirement\" ], \"evidence_files\": [ \"bridge-labs:office/mission_command/e85_ceo_cognitive_os_runtime_bridge.py\", \"Y-star-gov:ystar/governance/ceo_cognitive_os_runtime_hook.py\", \"Y-sta",
+      "matched_terms": [
+        "post-action"
+      ],
+      "path": "operations/baseline/e87r_full_repo_baseline/l5_truth_table.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "{ \"CEO_principal_Codex_executor_boundary\": true, \"CIEUStore_order_receipt_residual_records_written\": true, \"K9Audit_integrated\": false, \"L5-A\": \"complete_internal_runtime_foundation\", \"L5-B\": \"complete_for_structured_governed_intelligence_loop_with_",
+      "matched_terms": [
+        "Codex",
+        "executor"
+      ],
+      "path": "operations/baseline/e87r_full_repo_baseline/current_runtime_status_after_e92_ceo_principal_codex_executor_boundary.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "Y-star-gov runtime hook; ALLOW / REQUIRE_REVISION / DENY / ESCALATE routing; formal CIEUStore write path when invoked; post-action residual requirement - Gaps: normal CEO session still needs one canonical end-to-end runner binding all parts - Exact next milestone needed: `E87 end-to-end CEO runtime session binding` ## L5-B CEO Intelligence Loop - Status: `",
+      "matched_terms": [
+        "post-action"
+      ],
+      "path": "operations/baseline/e87r_full_repo_baseline/l5_truth_table.md",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "scope_and_validation"
+      ],
+      "evidence_excerpt": "l: Bind existing bridge-labs CEO behavior center to Y-star-gov runtime hook, E86 CIEUStore writer, gov-mcp dry-run, and post-action residual in one canonical internal CEO runtime session. - Repo scope: `bridge-labs`, `Y-star-gov read/import`, `gov-mcp dry-run import` - Existing files to reuse: `office/mission_command/e85_ceo_cognitive_os_runtime_bridge.py`,",
+      "matched_terms": [
+        "post-action",
+        "tests required",
+        "completion criteria"
+      ],
+      "path": "operations/baseline/e87r_full_repo_baseline/next_engineering_roadmap.md",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card"
+      ],
+      "evidence_excerpt": "DME_PLUGIN.md`: 1 - `SOUL.md`: 1 - `manifest.json`: 1 - `plugin.json`: 1 - `pyproject.toml`: 1 - `scripts`: 1 - `verify_dispatch.py`: 1 Full tracked file manifest is in the paired JSON file.",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "operations/baseline/e87r_full_repo_baseline/gov_mcp_file_manifest.md",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": ", \"lifecycle\": \"generated_or_report\", \"likely_category\": \"generated_report\", \"path\": \"reports/cto/CZL-DISPATCH-EXEC-ruling.md\", \"size_bytes\": 14778, \"tracked\": true }, { \"extension\": \".md\", \"file_type\": \"generated_report\", \"lifecycle\": \"generated_or_report\", \"likely_category\": \"generated_report\",",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "operations/baseline/e87r_full_repo_baseline/Y_star_gov_file_manifest.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "delivery_bridge",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "_labs\", \"text\": \"| **Aiden Liu** | CEO | Digital twin of the Board. Decomposes directives into tracked tasks, dispatches to the right department, escalates Level 3 decisions back to the Board with the team's counterfactual analysis. Bound by Level 2 authori\" }, { \"line\": 145, \"path\": \"README.md\", \"query",
+      "matched_terms": [
+        "dispatch",
+        "delivery bridge"
+      ],
+      "path": "operations/baseline/e87r_full_repo_baseline/architecture_evidence_map.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "runtime hook -> formal CIEUStore write if invoked -> gov-mcp dry-run boundary where provider/tool action is involved -> post-action residual. - Evidence: `office/mission_command/e85_ceo_cognitive_os_runtime_bridge.py`, `ystar/governance/ceo_cognitive_os_runtime_hook.py`, `gov_mcp/outbound/dry_run_adapter.py` ## governance reflex center - Canonical owner: `Y",
+      "matched_terms": [
+        "post-action"
+      ],
+      "path": "operations/baseline/e87r_full_repo_baseline/stable_vocabulary_and_owner_map.md",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "mand/e49_minimal_mcp_client_path_maturity.py` - cli_entrypoint - `bridge_labs:office/mission_command/e55_dry_run_action_executor.py` - package_or_config_entrypoint - `bridge_labs:office/mission_command/e56_internal_loop_dry_run_executor.py` - package_or_config_entrypoint - `bridge_labs:office/mission_command/mission_cli.py` - cli_entrypoint - `bridge_labs:op",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "operations/baseline/e87r_full_repo_baseline/code_index.md",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": ": \"generated_or_report\", \"likely_category\": \"generated_report\", \"path\": \"operations/external_validation/e70_codex_job_proposal_schema.json\", \"size_bytes\": 711, \"tracked\": true }, { \"extension\": \".json\", \"file_type\": \"generated_report\", \"lifecycle\": \"generated_or_report\", \"likely_category\": \"generated_re",
+      "matched_terms": [
+        "Codex",
+        "executor",
+        "dispatch"
+      ],
+      "path": "operations/baseline/e87r_full_repo_baseline/bridge_labs_file_manifest.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "delivery_bridge",
+        "execution_receipt",
+        "scope_and_validation",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "}, { \"async\": false, \"decorators\": [], \"line\": 31, \"name\": \"generate_codex_job_proposal\" }, { \"async\": false, \"decorators\": [], \"line\": 36, \"name\": \"list_local_skill_candidates\" }, { \"async\": false, \"decorators\": [],",
+      "matched_terms": [
+        "Codex",
+        "executor",
+        "dispatch",
+        "completion report",
+        "post-action",
+        "remote_confirmed",
+        "completion criteria"
+      ],
+      "path": "operations/baseline/e87r_full_repo_baseline/code_index.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "runtime hook -> formal CIEUStore write if invoked -> gov-mcp dry-run boundary where provider/tool action is involved -> post-action residual.\", \"evidence_files\": [ \"office/mission_command/e85_ceo_cognitive_os_runtime_bridge.py\", \"ystar/governance/ceo_cognitive_os_runtime_hook.py\", \"gov_mcp/outbound/dry_run_adapter.py\" ],",
+      "matched_terms": [
+        "post-action"
+      ],
+      "path": "operations/baseline/e87r_full_repo_baseline/stable_vocabulary_and_owner_map.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": ": \"Bind existing bridge-labs CEO behavior center to Y-star-gov runtime hook, E86 CIEUStore writer, gov-mcp dry-run, and post-action residual in one canonical internal CEO runtime session.\", \"likely_files_to_modify\": [ \"bridge-labs:office/mission_command/e87_ceo_runtime_session.py\", \"bridge-labs:tests/office/test_e87_ceo_runtime_session.",
+      "matched_terms": [
+        "post-action"
+      ],
+      "path": "operations/baseline/e87r_full_repo_baseline/next_engineering_roadmap.json",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "delivery_bridge",
+        "execution_receipt",
+        "scope_and_validation"
+      ],
+      "evidence_excerpt": "\"cross_repo_integration\": [ \"Y-star-gov\", \"gov-mcp\", \"K9Audit\", \"CIEUStore\", \"delivery bridge\", \"repository_delivery_bridge\", \"validate_ceo_runtime_envelope\", \"dry_run_outbound_action\", ], } @dataclass class PythonSymbolIndex: repo: str path: str module: str imports: list",
+      "matched_terms": [
+        "delivery bridge",
+        "post-action",
+        "tests required",
+        "completion criteria"
+      ],
+      "path": "operations/baseline/e87r_full_repo_baseline/tools/build_e87r_full_repo_baseline.py",
+      "repo": "bridge-labs",
+      "runtime_status": "unknown"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "delivery_bridge",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "\"bypassed_by_E_series\": true, \"callable_function_names\": [ \"check_producer_integrity\", \"check_executor_integrity\", \"check_governed_integrity\", \"generate_report\", \"main\" ], \"capability_family\": \"live_runtime_enforcement\", \"covered_by_later_artifact_line\": false, \"duplicated_by_E_series\"",
+      "matched_terms": [
+        "executor",
+        "dispatch",
+        "remote_confirmed"
+      ],
+      "path": "operations/external_validation/e44a_full_history_runtime_capability_map.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "_risk\": \"none\", \"high_risk_pattern_present\": false }, { \"path\": \"operations/external_validation/e70_codex_job_proposal_schema.json\", \"matched_terms\": [ \"live\", \"external_action\", \"CEO\", \"self_bootstrap\" ], \"canonical_owner\": \"bridge-labs\", \"bridge_labs_role\": \"generated_state\",",
+      "matched_terms": [
+        "Codex",
+        "executor",
+        "dispatch"
+      ],
+      "path": "operations/external_validation/e73_overlap_conflict_map.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "ities\": [ \"goal mapper\", \"capability requirements\" ] }, { \"capability_gap_id\": \"gap_codex_job_proposal_generation_absent\", \"gap\": \"CEO cannot yet generate a complete Codex bridge job proposal for internal capability enhancement.\", \"blocking_goal\": \"integrate_CIEU_audit_log_module_into_governed_business_operatio",
+      "matched_terms": [
+        "Codex",
+        "bridge job"
+      ],
+      "path": "operations/external_validation/e70_ceo_capability_gap_registry.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "-improvement claims become unverifiable and should fail the no-overclaim gate.\" }, { \"question\": \"What if Codex keeps building features but CEO cannot request them autonomously?\", \"answer\": \"Capabilities stay Codex-driven rather than CEO-runtime-driven.\" }, { \"question\": \"What if CEO can propose too many unsafe improvements?",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/external_validation/e70_self_bootstrap_counterfactuals.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "delivery_bridge"
+      ],
+      "evidence_excerpt": "nfig_sync\", \"source_repo\": \"gov-mcp\", \"source_head\": \"4f758d9d4823eed108ae3d63be1f4db192a974d6\", \"source_delivery_remote_confirmed\": true, \"live_test_config_ready\": true, \"production_live_config_ready\": false, \"production_live_enabled\": false, \"live_test_enabled\": true, \"fake_credential_variable_names\": [ \"TEST_ONLY_YSTAR_OUTBOUND_PROVIDE",
+      "matched_terms": [
+        "remote_confirmed"
+      ],
+      "path": "operations/external_validation/e27_live_test_config_sync.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "\": true, \"action_has_evidence_path\": true, \"requires_KG_CZL_CIEU_writeback\": true, \"ceo_brain_is_source_not_executor\": true }, \"external_action_allowed\": false, \"owner_decision_status\": \"pending_owner_decision\", \"no_external_action\": true }",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "operations/external_validation/e56_internal_loop_authorization_result.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "# E78 Completion Report - Final status: e78_owner_approved_l3_public_read_pilot_completed - Gate passed: True - Owner approval block detected: True - L3 executed: True - Source count: 21 - Excluded source count: 10 - L4 owner-decision packet pre",
+      "matched_terms": [
+        "completion report"
+      ],
+      "path": "operations/external_validation/e78_completion_report.md",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "{ \"artifact_id\": \"e72_generated_codex_job_proposal\", \"bridge_job_id\": \"e72_integrate_K9_CIEU_hash_chain_context_into_CIEU_audit_module_20260506T000001Z\", \"proposed_milestone_id\": \"E73_CIEU_hash_chain_structural_verifier_bridge_labs_adapter\", \"proposed_title\": \"Build",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/external_validation/e72_generated_codex_job_proposal.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card"
+      ],
+      "evidence_excerpt": "r decision\", \"E51 anti-drift/capability gates\" ], \"expected_outputs\": [ \"e55_dry_run_action_executor_result.json\" ], \"side_effect_profile\": { \"external_action\": false, \"network\": false, \"server_started\": false, \"client_config_mutation\": false }, \"externality_level\": \"none\",",
+      "matched_terms": [
+        "executor",
+        "dispatch"
+      ],
+      "path": "operations/external_validation/e55_behavior_queue_snapshot.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "\"no_go_or_suppression_applies\": false, \"classification\": \"policy_allows_autonomous_but_provider_missing\", \"executor_decision\": \"provider_capability_missing\", \"risk_tier\": \"T2_low_medium_limited_outbound\", \"reason_codes\": [ \"limited_outbound_autonomous_policy\", \"policy_allows_autonomous_but_provider_missing\" ],",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "operations/external_validation/e20_batch_autonomous_reclassification.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "# E84 Completion Report - artifact_id: `e84_completion_report` - job_id: `E84_YStarGov_GovMCP_BridgeLabs_Runtime_Interface_Audit_and_CEO_CognitiveOS_Hook_Wiring_R1` - gov_mcp_availability: `available_read_only` - E83_correctness_decision: `corre",
+      "matched_terms": [
+        "completion report"
+      ],
+      "path": "operations/external_validation/e84_completion_report.md",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "\"closed_loop\": \"goal -> capability gaps -> self-improvement candidates -> scoring -> selected self-bootstrap action -> Codex job proposal -> L5 use-case -> residual measurement -> readback\", \"recommended_next_milestone\": \"E71_execute_CEO_generated_codex_job_proposal_no_external_action\", \"no_external_action\": true }",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/external_validation/e70_czl_closure.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card"
+      ],
+      "evidence_excerpt": "_validate\", \"gov_counterfactual\", \"gov_coverage\", \"gov_delegate\", \"gov_delta\", \"gov_demo\", \"gov_dispatch\", \"gov_doctor\", \"gov_domain_describe\", \"gov_domain_init\", \"gov_domain_list\", \"gov_enforce\", \"gov_escalate\", \"gov_exec\", \"gov_forget\", \"gov_health\", \"gov_health_retrospective\", \"gov_impact",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "operations/external_validation/e50a_fake_fastmcp_harness_result.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card"
+      ],
+      "evidence_excerpt": "pair\": true, \"whether_future_internal_company_loop_milestone_must_repair\": false }, { \"dimension\": \"dispatch / task routing\", \"current_level\": \"L4\", \"evidence_path\": \"operations/external_validation/e54_ceo_brain_l5_readiness_gate_result.json\", \"code_symbol\": \"canonical runtime / E55 behavior center\", \"gap_to_L5\": \"",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "operations/external_validation/e55_behavior_center_maturity_diagnosis.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card"
+      ],
+      "evidence_excerpt": "l.\", \"does_not_claim\": [ \"EU AI Act compliance\", \"legal compliance\", \"medical certification\", \"energy dispatch readiness\", \"production readiness\", \"customer validation\", \"paid signal\" ], \"delivery_artifacts\": [ \"CIEU field map\", \"causal action evidence plan\", \"residual review table\", \"no-overclaim notice\",",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "operations/external_validation/e69_cieu_module_integration_plan.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "_disabled\" ], \"risk_tier\": \"T2_low_medium_limited_outbound\", \"provider_mode\": \"sandbox_ready\", \"executor_decision\": \"agent_autonomous_sandbox_allowed\", \"evidence_references\": [ \"operations/external_validation/e24_revenue_path_portfolio_selection.json\", \"operations/external_validation/e22_dry_run_receipt_ledger.js",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "operations/external_validation/e25_sandbox_envelopes.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "thout_production_claim\": true, \"product_binding_exists\": true, \"CEO_readback_passes\": true, \"generated_next_codex_proposal_exists\": true, \"read_only_repos_unchanged\": true, \"no_overclaim_fields_true\": true }, \"gate_passed\": true, \"final_status\": \"e72_k9_cieu_hash_chain_context_integrated_into_audit_module\", \"next_recommended_miles",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/external_validation/e72_completion_gate_result.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "delivery_bridge",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "], \"commits_between_previous_base_and_current_head\": [ { \"classification\": \"intentional_milestone_commit_remote_confirmed\", \"commit\": \"31f0a7125a10bf058dbc0b356f4425e0a6aaa361\", \"dangerous_history_pollution\": false, \"summary\": \"tools: add ceo deep learning market strategy\" } ], \"current_branch\": \"backflow/aiden-ceo-me",
+      "matched_terms": [
+        "remote_confirmed"
+      ],
+      "path": "operations/external_validation/e32_base_reconciliation.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": ", residual semantics, and hard gates.\", \"gov_mcp_execution_expectation\": \"gov-mcp returns allow/deny/escalate and execution receipt; no secret printing or credential disclosure.\", \"action_ledger_schema_ref\": \"operations/external_validation/c1_action_ledger.template.json\", \"cieu_residual_semantics\": \"CIEU residual compares intended governed",
+      "matched_terms": [
+        "execution receipt"
+      ],
+      "path": "operations/external_validation/c1_action_intent_examples.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "delivery_bridge"
+      ],
+      "evidence_excerpt": "\"governance/ceo_operating_methodology_v1.md\" ], \"function\": \"Translates directives into strategy and role dispatch.\", \"data_artifacts\": [ \"agents/CEO.md\" ], \"owner_role\": \"CEO\", \"relationship_to_Y_star_gov\": \"Y-star-gov owns deterministic governance semantics; Labs only maps or references them.\", \"relations",
+      "matched_terms": [
+        "dispatch",
+        "delivery bridge",
+        "host-local delivery"
+      ],
+      "path": "operations/external_validation/e41_canonical_ceo_runtime_map.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "# E81 Completion Report - Final status: e81_ceo_cognitive_os_bridge_labs_pre_sync_enforcement_ready - Base verified: True - Y-star-gov mutated: False - Enforcement mode: bridge_labs_pre_sync_validator - Bypass blocked inside bridge-labs: True -",
+      "matched_terms": [
+        "completion report"
+      ],
+      "path": "operations/external_validation/e81_completion_report.md",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "ffice/mission_command/e56_internal_loop_capability_binding_gate.py\\n?? office/mission_command/e56_internal_loop_dry_run_executor.py\\n?? office/mission_command/e56_internal_loop_evidence_writeback.py\\n?? office/mission_command/e56_internal_loop_maturity_diagnosis.py\\n?? office/mission_command/e56_internal_loop_readback_smoke.py\\n?? office/mission_command/e56_",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "operations/external_validation/e56_base_state_manifest.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "scope_and_validation"
+      ],
+      "evidence_excerpt": "imebox - confirm no login, no contact, no publication, no paid action - confirm receipt format and abort conditions ## Forbidden Actions - customer outreach - expert outreach - contact scraping - login or form submission - publication - payment or invoice setup - live provider/MCP execution - compliance/legal/customer/paid/production claims Recommended own",
+      "matched_terms": [
+        "forbidden actions"
+      ],
+      "path": "operations/external_validation/e74_owner_facing_l3_readiness_packet.md",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "_sent\", \"approval_packet_status\": \"request_only_not_approval\", \"action_execution_status\": \"not_executed_by_aiden_or_codex\", \"feedback_capture_status\": \"not_captured_until_owner_records_real_feedback\", \"e15_entry_allowed\": false, \"exact_owner_action\": \"Review e14_owner_approval_packet.request.json; if acceptable, owner may manually approve and execu",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/external_validation/e14_owner_decision_packet.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": ", \"required_fields\": [ \"action_id\", \"target\", \"channel\", \"message_content_ref\", \"risk_tier\", \"executor_decision\", \"policy_checks\", \"evidence_references\", \"guard_checks\", \"rate_limit\", \"idempotency_key\", \"suppression_status\", \"provider_capability_status\", \"dry_run_receipt\", \"live_execution_readines",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "operations/external_validation/e20_autonomous_outbound_envelope_schema.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": ", \"hash-chain context imported\", \"product binding updated\", \"CEO readback added\", \"next residual-driven Codex proposal generated\" ], \"R_t_plus_1\": [ \"production hash-chain ledger\", \"live ledger writes\", \"full audit verification over real event stream\", \"legal/compliance certification\", \"customer validation\", \"paid",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/external_validation/e72_cieu_residual_summary.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "\"operations/external_validation\", \"extension\": \".json\", \"path\": \"operations/external_validation/e70_codex_job_proposal_schema.json\" }, { \"artifact_type\": \"generated_artifact\", \"directory\": \"operations/external_validation\", \"extension\": \".json\", \"path\": \"operations/external_validation",
+      "matched_terms": [
+        "Codex",
+        "executor",
+        "dispatch"
+      ],
+      "path": "operations/external_validation/e80_raw_file_inventory.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "ext_action_selection\": false, \"can_influence_capability_growth_selection\": true }, { \"capability\": \"Codex_bridge_job_proposal\", \"source\": \"E70\", \"available_to_CEO\": true, \"callable_or_read_only\": \"callable_after_E70\", \"evidence_artifact\": \"operations/external_validation/e70_generated_codex_job_proposal.json\",",
+      "matched_terms": [
+        "Codex",
+        "bridge job"
+      ],
+      "path": "operations/external_validation/e70_ceo_installed_capability_inventory.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "sk\": \"low\", \"can_support_opportunity_discovery_or_action_execution\": true, \"supports\": [ \"no-effect execution receipts\" ], \"new_wheel_justification\": \"reuse, wrap, or extend existing wheel\" }, { \"name\": \"E23 evidence tightening\", \"repo\": \"ystar-bridge-labs\", \"path\": \"office/mission_command/e23_evidenc",
+      "matched_terms": [
+        "execution receipt"
+      ],
+      "path": "operations/external_validation/e30_existing_method_wheel_inventory.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card"
+      ],
+      "evidence_excerpt": "y\": [ \"CIEU ensures EU AI Act compliance\", \"CIEU is medically certified\", \"CIEU is suitable for live energy dispatch\", \"CIEU replaces legal review\", \"CIEU replaces risk management system\", \"CIEU replaces technical documentation\", \"CIEU is production-ready for high-risk AI\", \"CIEU has customer validation\", \"CIEU has paid si",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "operations/external_validation/e68_ceo_brain_cieu_route_update.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "/external_validation/e55_action_authorization_gate_result.json\", \"operations/external_validation/e55_dry_run_action_executor_result.json\", \"operations/knowledge_graph/e55_ceo_kg_read_model_update.json\", \"operations/external_validation/e55_czl_closure.json\", \"operations/external_validation/e55_cieu_residual_summary.json\" ], \"KG_update\": \"o",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "operations/external_validation/e55_behavior_evidence_writeback.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "\"instructions\": \"Owner fills one row only after manually sending, skipping, replacing, or suppressing a target. Aiden/Codex must not create sent confirmations.\", \"fields\": { \"action_id\": \"REQUIRED_FROM_CONSOLE\", \"ledger_id\": \"REQUIRED_FROM_CONSOLE\", \"feedback_event_id\": \"REQUIRED_FROM_CONSOLE\", \"target_id\": \"REQUIRED_FROM_CONSOLE\", \"s",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/external_validation/e15a_owner_send_confirmation_template.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": ", \"selected_self_bootstrap_action\": \"combined_self_bootstrap_foundation_layer\", \"capability_gap_count\": 5, \"Codex_job_proposal_schema_status\": \"created\", \"generated_Codex_job_proposal_id\": \"e70_codex_job_E71_execute_internal_CIEU_module_integration_no_external_action\", \"skill_boundary_status\": \"created_no_install\", \"L5_use_case_status",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/external_validation/e70_ceo_self_bootstrap_readback_smoke_result.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "pyproject.toml\", \"gov_mcp/server.py\", \"gov_mcp/router.py\", \"gov_mcp/company_runtime_tools.py\", \"gov_mcp/dispatch_logic.py\", \"gov_mcp/exec_whitelist.yaml\" ], \"current_limitations\": [ \"gov-mcp exposes gov_check/gov_enforce and contract lifecycle tools.\", \"README describes deterministic command execution and custom adapters for n",
+      "matched_terms": [
+        "dispatch",
+        "execution receipt"
+      ],
+      "path": "operations/external_validation/e16x_gov_mcp_outbound_promotion_plan.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "Handlers Implementation\", \"**Scope**: gov-mcp FastMCP plugin tool handlers (Day 2 of 30-day atomic dispatch)\", \"\\u2705 **MIX**. Y*gov CLI functions (`_cmd_doctor`, `_cmd_check`) exist but are CLI-oriented (print + sys.exit). Wrote **thin wrappers** returning JSON for MCP protocol. Followed existing pattern: `register_",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "operations/external_validation/e46b_canonical_runtime_v1_1_smoke_result.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "ation/e55_action_authorization_gate_result.json\", \"e55_dry_run\": \"operations/external_validation/e55_dry_run_action_executor_result.json\", \"e55_evidence\": \"operations/external_validation/e55_behavior_evidence_writeback.json\", \"e53_risk_gate\": \"operations/external_validation/e53_first_user_review_risk_gate_result.json\", \"e52_proof_packet\": \"pr",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "operations/external_validation/e56_prior_gate_preflight.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "s\": [ \"production_CIEU_ledger_in_bridge_labs\", \"duplicate_Y_star_gov_governance_engine\", \"duplicate_gov_mcp_executor\", \"customer_validation_claim\", \"paid_signal_claim\", \"pricing_validation_claim\" ], \"bridge_job_id\": \"e80_r2_discovery_first_ecosystem_capability_audit_and_ceo_cognitive_runtime_activation_20260507T000001Z\", \"create",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "operations/external_validation/e80_high_value_capability_activation_plan.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "m.cpython-311.pyc\", \" D scripts/__pycache__/brain_writeback_queue.cpython-311.pyc\", \" D scripts/__pycache__/dispatch_role_routing.cpython-311.pyc\", \" D scripts/__pycache__/forget_guard.cpython-311.pyc\", \" D scripts/__pycache__/hook_ceo_post_output_brain_writeback.cpython-311.pyc\", \" D scripts/__pycache__/hook_ceo_pre_output_brai",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "operations/external_validation/e41_base_whole_ecosystem_state_manifest.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "up, and it is completely fine to ignore this. If this is not relevant, please disregard. ``` ## Not Authorized - Aiden/Codex sending - publication - payment - account creation - form submission - login - core brain/CIEU/memory writeback",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/external_validation/c3_owner_handoff_validation_batch.md",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "_capability_building\": true, \"external_action_remains_blocked\": true, \"claims_denied\": true, \"ceo_brain_not_executor\": true }, \"passed\": true, \"owner_decision_status\": \"pending_owner_decision\", \"external_action_allowed\": false, \"no_external_action\": true }",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "operations/external_validation/e58_case_study_behavior_authorization_result.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card"
+      ],
+      "evidence_excerpt": "\"gov_counterfactual\", \"gov_coverage\", \"gov_delegate\", \"gov_delta\", \"gov_demo\", \"gov_dispatch\", \"gov_doctor\", \"gov_domain_describe\", \"gov_domain_init\", \"gov_domain_list\", \"gov_enforce\", \"gov_escalate\" ], \"server_import_check\": { \"command\": [ \"python3\", \"-c\",",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "operations/external_validation/e49_semantic_route_score_matrix.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "delivery_bridge",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "\"artifact_dependencies\": [], \"callable_function_names\": [ \"check_producer_integrity\", \"check_executor_integrity\", \"check_governed_integrity\", \"generate_report\", \"main\" ], \"capability_domains\": [ \"audit\", \"cieu\", \"decision\", \"governance\", \"runtime\" ],",
+      "matched_terms": [
+        "executor",
+        "dispatch",
+        "remote_confirmed"
+      ],
+      "path": "operations/external_validation/e44a_full_ceo_capability_archaeology.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "delivery_bridge",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "te\": true, \"does_not_invoke_unnecessary_strategy_evidence_machinery\": false }, { \"task_title\": \"Fix delivery bridge/status issue\", \"task_description\": \"Fix delivery bridge status issue and reuse repository delivery bridge tests.\", \"top_matches\": [ { \"resource_id\": \"e42_ystar_bridge_labs_d6aaec1a5af9\",",
+      "matched_terms": [
+        "delivery bridge"
+      ],
+      "path": "operations/external_validation/e42_task_capability_matcher_fixture_results.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "1Z\", \"selected_self_improvement_action\": \"combined_self_bootstrap_foundation_layer\", \"nearest_alternative\": \"create_Codex_job_proposal_generator_for_internal_code_enhancement\", \"selection_made_by_scoring\": true, \"why_selected\": \"It closes the most important missing runtime loop at once: creed formalization, gap registry, goal mapper, Codex proposal g",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/external_validation/e70_ceo_selected_self_bootstrap_decision.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "delivery_bridge",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "\"route registry\", \"observation runner\", \"MVP selector\", \"Black Box builder\", \"provider sandbox\", \"delivery bridge\" ], \"remote_tracking_head\": \"301fb5c1e7bd2da18d047a2165d64051d4844199\", \"repo_convention_conflicts\": [], \"repo_path\": \"/Users/haotianliu/.openclaw/workspace/ystar-bridge-labs\", \"required_inputs\": [ { \"art",
+      "matched_terms": [
+        "delivery bridge"
+      ],
+      "path": "operations/external_validation/e35_base_and_brain_contract_manifest.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "\"question\": \"Is CEO brain only context, or does it select route/action?\", \"answer\": \"context_center_not_direct_executor\", \"evidence\": \"e46b runtime loads brain before route decision; route selection remains in canonical runtime layers.\" }, { \"question\": \"Does CEO brain loader read E50B brain update?\", \"answer\": true,",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "operations/external_validation/e50c_ceo_brain_centerline_diagnosis.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "wedge_offer\": \"medical AI audit log readiness brief\", \"selected\": false }, { \"vertical_id\": \"energy_dispatch_AI_agent_audit_log\", \"buyer_category\": \"energy/critical infrastructure operators\", \"regulatory_or_safety_driver\": \"critical infrastructure reliability\", \"problem_pain\": \"critical infrastructure reliability\",",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "operations/external_validation/e68_high_risk_vertical_opportunity_map.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card"
+      ],
+      "evidence_excerpt": "\"gov_counterfactual\", \"gov_coverage\", \"gov_delegate\", \"gov_delta\", \"gov_demo\", \"gov_dispatch\", \"gov_doctor\", \"gov_domain_describe\", \"gov_domain_init\", \"gov_domain_list\", \"gov_enforce\", \"gov_escalate\", \"gov_exec\", \"gov_forget\", \"gov_health\", \"gov_health_retrospecti",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "operations/external_validation/e48_real_code_interface_discovery.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "basis\": \"declared_metadata\" }, { \"artifact_type\": \"decision_artifact\", \"declared_artifact_id\": \"e70_codex_job_proposal_schema\", \"declared_job_id\": \"e70_ceo_self_bootstrap_capability_growth_runtime_L5_20260506T000001Z\", \"declared_source_artifact\": \"\", \"milestone\": \"\", \"path\": \"operations/external_validation/e70_code",
+      "matched_terms": [
+        "Codex",
+        "executor",
+        "dispatch"
+      ],
+      "path": "operations/external_validation/e80_artifact_provenance_map.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "{ \"artifact_id\": \"e70_generated_codex_job_proposal\", \"proposal_id\": \"e70_codex_job_E71_execute_internal_CIEU_module_integration_no_external_action\", \"proposed_milestone_id\": \"E71_execute_internal_CIEU_module_integration_no_external_action\", \"proposed_title\": \"Execut",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/external_validation/e70_generated_codex_job_proposal.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "\"reversibility\", \"no_overclaim_safety\", \"CIEU_self_evolution_fit\", \"runtime_integration_depth\", \"future_Codex_job_generation_value\" ], \"rows\": [ { \"candidate_id\": \"combined_self_bootstrap_foundation_layer\", \"axis_scores\": { \"contribution_to_CEO_autonomy\": 99, \"improves_goal_to_capability_mapping\": 98,",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/external_validation/e70_self_improvement_scoring_matrix.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "otstrap_foundation_layer\", \"selected_self_bootstrap_action\": \"combined_self_bootstrap_foundation_layer\", \"generated_codex_job_proposal\": { \"proposal_id\": \"e70_codex_job_E71_execute_internal_CIEU_module_integration_no_external_action\", \"proposed_milestone_id\": \"E71_execute_internal_CIEU_module_integration_no_external_action\", \"external_action_",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/external_validation/e70_owner_decision_packet_no_execution.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "{ \"artifact_id\": \"e55_dry_run_action_executor_result\", \"executor_status\": \"passed\", \"envelopes\": [ { \"action_id\": \"e55_validate_behavior_action_model\", \"execution_mode\": \"dry_run\", \"command_or_operation\": \"dry_run::e55_validate_behavior_action_model\",",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "operations/external_validation/e55_dry_run_action_executor_result.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "delivery_bridge",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "ync\", \"source_repo\": \"gov-mcp\", \"source_head\": \"4f758d9d4823eed108ae3d63be1f4db192a974d6\", \"source_delivery_remote_confirmed\": true, \"live_test_config_ready\": true, \"production_live_config_ready\": false, \"production_live_enabled\": false, \"live_test_enabled\": true, \"fake_credential_variable_names\": [ \"TEST_ONLY_YSTAR_OUTB",
+      "matched_terms": [
+        "remote_confirmed"
+      ],
+      "path": "operations/external_validation/e27_live_test_control_room.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "text_state.json\", \"exists\": true }, { \"path\": \"operations/external_validation/e72_generated_codex_job_proposal.json\", \"exists\": true } ] }, \"read_only_context_sources\": { \"K9Audit\": [ { \"path\": \"docs/CIEU_spec.md\", \"exists\": true }, { \"path\": \"k9log/logger.py\",",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/external_validation/e73_retrospective_inventory.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "perations/external_validation/e70_self_bootstrap_runtime_state.json\", \"operations/external_validation/e70_generated_codex_job_proposal.json\", \"operations/external_validation/e70_owner_decision_packet_no_execution.json\", \"operations/external_validation/e70_behavior_authorization_result.json\", \"operations/external_validation/e70_ceo_brain_self_",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/external_validation/e70_no_overclaim_validation_result.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "dule only orchestrates existing artifacts and emits owner-facing packet; it creates no verifier, governance engine, MCP executor, or CEO brain.\", \"scope_boundary\": \"L2 internal no-external-action work product generation only.\" }, \"office/mission_command/e74_ceo_l2_readback.py\": { \"decision\": \"create_readback_facade_for_E74_state\", \"",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "operations/external_validation/e74_existing_artifact_reuse_map.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "s_1\": { \"correct_path\": [], \"decision\": \"ALLOW\", \"guidance\": {}, \"reason\": \"CEO post-action residual satisfies CEO Cognitive OS contract\" } }, \"YstarGov_correct_path\": [], \"YstarGov_decision\": \"ALLOW\", \"YstarGov_failed_stage\": null, \"YstarGov_guidance\": {}, \"YstarGov_import_s",
+      "matched_terms": [
+        "post-action"
+      ],
+      "path": "operations/external_validation/e84_patch_result.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "delivery_bridge",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "ter after gap confirmation\", \"recommended_execution_path\": \"reuse_existing\" }, { \"task_title\": \"Fix delivery bridge/status issue\", \"task_interpretation\": \"Fix delivery bridge status issue and reuse repository delivery bridge tests.\", \"relevant_existing_resources\": [ { \"resource_id\": \"e42_ystar_bridge_labs_d6a",
+      "matched_terms": [
+        "delivery bridge"
+      ],
+      "path": "operations/external_validation/e42_ceo_task_preflight_packet_examples.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card"
+      ],
+      "evidence_excerpt": "\"gov_counterfactual\", \"gov_coverage\", \"gov_delegate\", \"gov_delta\", \"gov_demo\", \"gov_dispatch\", \"gov_doctor\", \"gov_domain_describe\", \"gov_domain_init\", \"gov_domain_list\", \"gov_enforce\", \"gov_escalate\", \"gov_exec\", \"gov_forget\", \"gov_health\", \"gov_health_retrospecti",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "operations/external_validation/e50a_local_tool_layer_proof_result.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "delivery_bridge",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "E57/E60 commercial route matrices\", \"E58 case study source artifacts\" ], \"missing_or_disconnected\": [ \"host delivery bridge network result is not available until host validation runs\", \"live public read freshness remains blocked unless host DNS/network succeeds\", \"autonomous revenue runtime centerline exists only as scattered route/readin",
+      "matched_terms": [
+        "delivery bridge"
+      ],
+      "path": "operations/external_validation/e62_repository_archaeology_inventory.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "delivery_bridge",
+        "execution_receipt",
+        "scope_and_validation",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "tstrap_capability_growth_runtime_L5_20260506T000001Z\", \"next_recommended_milestone\": \"E71_execute_CEO_generated_codex_job_proposal_no_external_action\", \"parseable_json\": true, \"top_level_keys\": [ \"Codex_job_proposal_schema_status\", \"EU_AI_Act_compliance_claimed\", \"L5_use_case_status\", \"artifact_",
+      "matched_terms": [
+        "Codex",
+        "executor",
+        "dispatch",
+        "delivery bridge",
+        "execution receipt",
+        "completion report",
+        "bridge job",
+        "host-local delivery",
+        "remote_confirmed",
+        "forbidden actions",
+        "tests required"
+      ],
+      "path": "operations/external_validation/e80_generated_artifact_index.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": ": \"Multi-agent architecture report fixture\", \"fixture_content\": \"Multi-agent architecture reports compare planner/executor/evaluator separation. Supports CEO brain vs behavior center separation.\", \"policy_allowed\": true, \"policy_reason\": \"public_read_only_source_candidate\", \"human_contact_required\": false }, { \"source_id",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "operations/external_validation/e59_source_discovery_policy.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "bservability product pages\" ], \"mvp_implication\": \"Y* can differentiate by adding pre-action legitimacy and post-action learning boundaries.\", \"topic\": \"agent tracing and observability\", \"why_it_matters_to_y_star\": \"Tracing proves what happened after or during an agent run but does not by itself prove whether the action should have ha",
+      "matched_terms": [
+        "post-action"
+      ],
+      "path": "operations/external_validation/e32_frontier_research_agenda.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "Owner can manually send the three primary copy/paste messages, then fill one ledger row per sent/skipped target. Aiden/Codex does not send. ## Owner \u6700\u5c0f\u52a8\u4f5c 1. \u53ea\u770b\u4e0b\u9762 3 \u4e2a primary actions\u3002 2. \u5982\u679c\u51b3\u5b9a\u6267\u884c\uff0c\u628a\u5bf9\u5e94 copy/paste block \u624b\u52a8\u53d1\u9001\u3002 3. \u53d1\u9001\u540e\u53ea\u56de\u586b action_id / ledger_id / sent_at / channel_used\u3002 4. \u6536\u5230\u56de\u590d\u540e\u4f7f\u7528 feedback_event_id \u586b E15A feedback form\u3002 5. \u5982\u679c\u6682\u65f6\u4e0d\u53d1\uff0c\u586b not_sent_reason\uff0c",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/external_validation/e15a_owner_execution_console.md",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "# E80 Completion Report - Final status: e80_r2_discovery_first_ceo_cognitive_runtime_activation_completed - Base verified: True - Total tracked files inventoried: 33712 - Capabilities discovered: 13203 - Repository-discovered not prompt-hinted:",
+      "matched_terms": [
+        "completion report"
+      ],
+      "path": "operations/external_validation/e80_completion_report.md",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "act_to_it\": false, \"enforcement_stage\": \"post_action_residual_or_obligation\", \"file_path\": \"reports/cto/CZL-DISPATCH-EXEC-ruling.md\", \"governance_role\": \"CIEU_logging_or_store\", \"input_schema_if_discoverable\": \"not fully discoverable from read-only inspection\", \"line\": 0, \"mutation_required\": false, \"output_schema_if",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "operations/external_validation/e81_ystar_gov_enforcement_surface_map.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "control_center_l5_ready\", \"behavior_queue_status\": \"valid\", \"authorization_gate_status\": \"passed\", \"dry_run_executor_status\": \"passed\", \"allowed_internal_dry_run_actions\": [ \"e55_validate_behavior_action_model\", \"e55_validate_behavior_queue\", \"e55_validate_authorization_gate\", \"e55_validate_no_external_action_allowed\"",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "operations/external_validation/e55_behavior_center_readback_smoke_result.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "apability_gap_count\": 5, \"selected_self_improvement_action\": \"combined_self_bootstrap_foundation_layer\", \"generated_codex_job_proposal_id\": \"e70_codex_job_E71_execute_internal_CIEU_module_integration_no_external_action\", \"can_generate_codex_job_proposals\": true, \"can_propose_skill_discovery\": true, \"skill_installation_requires_owner_approval\": true",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/external_validation/e70_self_bootstrap_runtime_state.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "nel-czl163-abc.md\", \".claude/tasks/eng-platform-behavior-rules-gap-analysis.md\", \".claude/tasks/gov-dispatch-spec-v0.1.0.md\", \".claude/tasks/governance-evolution-exec-spec.md\" ], \"mcp_execution\": [ \".claude/agents/ceo.md\", \".claude/agents/cto.md\", \".claude/agents/eng-domains.md\",",
+      "matched_terms": [
+        "dispatch",
+        "execution receipt"
+      ],
+      "path": "operations/external_validation/e16x_cross_repo_canonical_ownership.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "{ \"reason\": \"capability_binding_invalid\", \"severity\": \"P0\", \"capability_id\": \"e55_dry_run_executor\", \"details\": [ { \"reason\": \"behavior_capability_bypasses_action_runtime_or_governance\", \"severity\": \"P0\", \"missing\": [ \"Y_star_gov_boundary\"",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "operations/external_validation/e55_gov_mcp_validation_harness_result.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "delivery_bridge"
+      ],
+      "evidence_excerpt": "decision\": \"modified_and_delivered\", \"reason\": \"canonical provider boundary needed live-test gate wheels\", \"remote_confirmed\": true, \"result_head\": \"4f758d9d4823eed108ae3d63be1f4db192a974d6\" }, { \"repo\": \"ystar-bridge-labs\", \"decision\": \"modify_and_deliver\", \"reason\": \"commercial control room and CEO KG readiness f",
+      "matched_terms": [
+        "remote_confirmed"
+      ],
+      "path": "operations/external_validation/e27_repo_modification_decision_packet.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "\"offer\": \"Founder/Operator AI Automation Review\", \"expected_pain\": \"too many AI ideas, unclear ROI, no safe implementation order\", \"required_evidence\": [ \"segment evidence\", \"message clarity\", \"offer packaging\" ], \"required_capability\": [ \"E10 scoring\", \"E17/E18 message packages\" ],",
+      "matched_terms": [
+        "implementation order"
+      ],
+      "path": "operations/external_validation/e24_revenue_path_portfolio_selection.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "n_template.json; public evidence is not validation feedback. ## What C2 Does Not Authorize - customer contact by Aiden/Codex - email/message sending - publication - payment - account creation - form submission - login - core brain/CIEU/memory writeback",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/external_validation/c2_owner_handoff_execution_capsule.md",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "\"source_type\": \"public_knowledge_fixture\", \"technical_claim\": \"Multi-agent architecture reports compare planner/executor/evaluator separation. Supports CEO brain vs behavior center separation.\", \"relevance_to_Y_star\": \"informs E60 route-readiness retest\", \"relevance_to_AI_agent_company_runtime_harness\": \"maps external language and technic",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "operations/external_validation/e59_frontier_technology_capture.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card"
+      ],
+      "evidence_excerpt": "s\": [ \"CIEU ensures EU AI Act compliance\", \"CIEU is medically certified\", \"CIEU is suitable for live energy dispatch\", \"CIEU replaces legal review\", \"CIEU replaces risk management system\", \"CIEU replaces technical documentation\", \"CIEU is production-ready for high-risk AI\", \"CIEU has customer validation\", \"CIEU has paid si",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "operations/external_validation/e68_cieu_no_overclaim_legal_caution_policy.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "d\": false, \"status\": \"planned_read_only\", \"step\": 6 }, { \"description\": \"bridge-labs produces post-action residual\", \"existing_module\": \"E81 post-action schema\", \"patch_required\": false, \"step\": 7 }, { \"description\": \"Y-star-gov validates post-action residual\", \"existing_module\": \"e84 adapter +",
+      "matched_terms": [
+        "post-action"
+      ],
+      "path": "operations/external_validation/e84_runtime_wiring_design.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "# E79 Completion Report Job id: e79_ceo_strategic_judgment_upgrade_and_nonbanal_l4_packet_R1_20260507T000001Z Base verified: True Selected thesis: Small AI-agent teams do not first buy governance; they buy a way to stop autonomous workflows from",
+      "matched_terms": [
+        "completion report"
+      ],
+      "path": "operations/external_validation/e79_completion_report.md",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "scope_and_validation"
+      ],
+      "evidence_excerpt": "rt with the intended agent action.\", \"Show the evidence chain and claim register.\", \"Show authorization and forbidden actions.\", \"Show the output and residuals.\", \"Ask whether this is useful enough for a paid audit/review.\" ] }, \"recommended_first_validation_route\": \"owner-approved friendly reviewer walkthrough\", \"route_stat",
+      "matched_terms": [
+        "forbidden actions"
+      ],
+      "path": "operations/external_validation/e33_owner_validation_route.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "ycle_20260506T000001Z\", \"selected_action\": \"run_internal_operating_loop_self_test\", \"execution_mode\": \"dry_run\", \"executor_status\": \"passed\", \"stage_trace\": [ { \"order\": 1, \"stage_id\": \"load_ceo_brain_state\", \"status\": \"dry_run_completed\", \"external_action\": false }, { \"order\": 2, \"stage_id\": \"interpret",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "operations/external_validation/e56_internal_loop_dry_run_result.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card"
+      ],
+      "evidence_excerpt": "t_active\": \"bridge\" }, { \"class\": \"static_artifact\", \"path\": \"knowledge/ceo/lessons/atomic_task_per_dispatch_2026_04_13.md\", \"repo\": \"ystar-bridge-labs\", \"resolution\": \"bridge\", \"risk\": \"future task may bypass or duplicate this capability\", \"should_affect_ceo_runtime\": true, \"spine_layer\": \"field_functional_p",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "operations/external_validation/e46b_remaining_disconnected_capabilities.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "\"legacy archaeology -> scoring -> duplicate map -> promotion gate -> safe bindings -> CEO readback -> E70 awareness -> Codex proposal\", \"next_recommended_milestone\": \"E72_integrate_K9_CIEU_hash_chain_context_into_CIEU_audit_module\", \"no_external_action\": true }",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/external_validation/e71_czl_closure.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "CIEU_cycle_as_runtime_artifact\": true, \"missing_measured_capability_improvement_loop\": true, \"missing_automatic_Codex_job_proposal_generation\": true, \"missing_reusable_goal_to_capability_mapping\": true }, \"unresolved_residuals\": [ \"customer validation absent\", \"paid signal absent\", \"external action owner-gated\", \"CIEU module n",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/external_validation/e70_ceo_current_state_and_capability_gap_synthesis.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "\"no_external_action\": true }, \"checks\": { \"capability_binding_correct\": true, \"decision_is_cognitive_not_executor\": true, \"behavior_authorization_bound_to_action_runtime\": true, \"evidence_bound_to_KG_CZL_CIEU\": true, \"external_action_blocked\": true }, \"passed\": true, \"external_action_allowed\": false, \"no_external_action\": t",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "operations/external_validation/e57_money_route_capability_binding_gate_result.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "ION\", \"approval_id\": \"OWNER_APPROVAL_ID_REQUIRED\", \"target_id\": \"OWNER_APPROVED_TARGET_ID_REQUIRED\", \"owner_executor\": \"OWNER_TO_FILL\", \"executed_by\": \"owner_manual_execution_only\", \"execution_time\": \"OWNER_TO_FILL_ISO8601\", \"channel\": \"OWNER_APPROVED_CHANNEL_REQUIRED\", \"message_hash\": \"APPROVED_DRAFT_HASH_REQUIRED\", \"draft_ve",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "operations/external_validation/e14_action_ledger.template.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "ritique', 'missing what-not-to-do', 'construction lacking no-new-wheel proof but not explicitly duplicate', 'repairable post-action residual gap'], 'correct_path_returned': True, 'execution_allowed': False} - `DENY`: {'when': ['hard boundary violation', 'bypass attempt', 'forbidden customer/paid/pricing/compliance/production/L4/L5 claim', 'unverified runtime",
+      "matched_terms": [
+        "post-action"
+      ],
+      "path": "operations/external_validation/e83_ceo_cognitive_os_correct_decision_semantics.md",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "ine_stage\": \"governance_boundary\", \"final_status\": \"active_governance_boundary\", \"path\": \".claude/tasks/gov-dispatch-spec-v0.1.0.md\", \"previous_status\": \"static_artifact\", \"reason\": \"covered by canonical runtime spine final status mapping\", \"repo\": \"ystar-bridge-labs\", \"resource_id\": \"ystar-bridge-labs:.claude/tasks/gov-di",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "operations/external_validation/e47_capability_final_status_matrix.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "ort\": \"\", \"k9audit_status_short\": \"\", \"ports_7920_7930_clear\": true, \"process_check_limitation\": \"ps is denied in Codex sandbox; E50C starts no gov-mcp process or server.\", \"no_e50c_leftovers_before_delivery\": true, \"base_verified\": true, \"no_external_action\": true }",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/external_validation/e50c_base_state_manifest.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "ng what-not-to-do\", \"construction lacking no-new-wheel proof but not explicitly duplicate\", \"repairable post-action residual gap\" ] }, \"STATUS_ONLY\": { \"runtime_decision\": false, \"when\": [ \"artifact lifecycle status\", \"owner approval state\", \"report status\" ] } }, \"hard_boundarie",
+      "matched_terms": [
+        "post-action"
+      ],
+      "path": "operations/external_validation/e83_ceo_cognitive_os_correct_decision_semantics.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "{ \"CIEU_logging_requirements\": [ \"pre-action predicted tuple\", \"post-action actual tuple\", \"validator decision record\" ], \"Y_star_clauses\": [ \"CEO work MUST complete stage mission_and_owner_constraint_recall with repository evidence or governance-required contract evidence before major actio",
+      "matched_terms": [
+        "post-action"
+      ],
+      "path": "operations/external_validation/e81_ystar_gov_sync_packet_for_ceo_cognitive_os.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "eated\", \"selected_self_bootstrap_action\": \"combined_self_bootstrap_foundation_layer\", \"capability_gap_count\": 5, \"Codex_job_proposal_schema_status\": \"created\", \"generated_Codex_job_proposal_id\": \"e70_codex_job_E71_execute_internal_CIEU_module_integration_no_external_action\", \"skill_boundary_status\": \"created_no_install\", \"L5_use_case_status\": \"pa",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/external_validation/e70_ceo_brain_self_bootstrap_update.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "ter_drift_mid_session\", \"tests.platform.test_per_rule_detectors_telemetry imports per_rule_detectors.detect_czl_dispatch_missing_5tuple\", \"tests.platform.test_per_rule_detectors_telemetry imports per_rule_detectors.detect_czl_receipt_rt_not_zero\", \"tests.platform.test_per_rule_detectors_telemetry imports per_rule_detectors.detect_real",
+      "matched_terms": [
+        "dispatch"
+      ],
+      "path": "operations/external_validation/e80_anti_memory_contamination_report.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "executor_boundary_context"
+      ],
+      "evidence_excerpt": "er\": \"CEO brain/E55 runtime\", \"actual_reader\": \"e54_ceo_brain_l5_readback_smoke\", \"required_gate\": \"not executor\", \"actual_gate\": \"behavior_execution_required_false\", \"remediation\": \"no_action\", \"severity\": \"P0\", \"affects_current_state\": true, \"agent_facing\": false, \"consumed_as_current\": false,",
+      "matched_terms": [
+        "executor"
+      ],
+      "path": "operations/external_validation/e54_brain_l5_capability_binding_gate_result.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "execution_receipt"
+      ],
+      "evidence_excerpt": "\"local artifact generation\", \"dry-run receipt\", \"internal KPI placeholder\" ], \"allowed_executor\": \"agent\", \"required_checks\": [ \"repo safety\", \"no external effect\" ], \"required_evidence\": [ \"local input artifact\" ], \"rate_limits\": { \"max_actions_per_day\": 999",
+      "matched_terms": [
+        "executor",
+        "execution receipt"
+      ],
+      "path": "operations/external_validation/e20_risk_tier_taxonomy.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "delivery_bridge",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "but not installed\", \"external skill/package install requires owner approval\" ] }, \"existing_bridge_job_or_Codex_proposal_patterns\": [ \"delivery bridge completed report convention\", \"operations/external_validation owner packet convention\", \"E69 generated owner decision packet no-execution pattern\" ], \"disconnected_self_improvemen",
+      "matched_terms": [
+        "Codex",
+        "delivery bridge"
+      ],
+      "path": "operations/external_validation/e70_self_bootstrap_repository_archaeology_inventory.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "_may_address_it\": \"sandboxed cloud coding/task agent\", \"capability_source_url\": \"https://platform.openai.com/docs/codex/overview\", \"proposed_import_pattern\": \"sandbox adapter\", \"target_repo\": \"gov-mcp\", \"priority\": \"medium\", \"risk\": \"medium/high for command execution and code mutation\", \"owner_decision_required\": true,",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/external_validation/e38_ceo_capability_gap_mapping.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "dispatch_and_task_card",
+        "delivery_bridge",
+        "execution_receipt",
+        "scope_and_validation",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "\"# E9 External Pattern Evidence Receipt - mission_id: e9_external_pattern_mining - research_ran: True - provider_name: codex_public_read_only_web_search - queries_used: 16 - pages_read: 12 - domains_touched: ['docs.langchain.c\", \"recommended_reuse_path\": \"consume_as_context_or_evidence\" }, { \"asset_id\": \"cf_reports_integration_e9_externa",
+      "matched_terms": [
+        "Codex",
+        "executor",
+        "dispatch",
+        "delivery bridge",
+        "execution receipt",
+        "remote_confirmed",
+        "tests required"
+      ],
+      "path": "operations/external_validation/e50b_counterfactual_asset_inventory.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "-facing CIEU Audit Module binding updated\", \"structural verification scope declared\", \"next residual-driven Codex proposal generated\" ], \"capabilities_not_added\": [ \"production hash-chain ledger\", \"live ledger writes\", \"full audit verification over real event stream\", \"legal/compliance certification\", \"custom",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/external_validation/e72_cieu_hash_chain_context_state.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "ility proposal/runtime only; no full external autonomy or validation claim.\" }, { \"candidate_id\": \"create_Codex_job_proposal_generator_for_internal_code_enhancement\", \"candidate_type\": \"self_improvement\", \"generated_by_CEO_planner\": true, \"source_state_used\": [ \"old_CIEU_self_evolution_creed\", \"E69\", \"E",
+      "matched_terms": [
+        "Codex"
+      ],
+      "path": "operations/external_validation/e70_ceo_self_improvement_candidate_set.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    },
+    {
+      "categories": [
+        "execution_receipt",
+        "codex_job_proposal"
+      ],
+      "evidence_excerpt": "\"target_segment\": \"founder/operators and small agencies\", \"buyer_pain\": \"too many AI ideas, unclear ROI, no safe implementation order\", \"evidence_strength\": \"low_medium\", \"execution_readiness\": 6, \"provider_capability\": \"dry_run_available_live_disabled\", \"risk_tier\": \"T1_low_risk_reversible_external\", \"compliance_constrai",
+      "matched_terms": [
+        "implementation order"
+      ],
+      "path": "operations/external_validation/e24_field_functional_opportunity_map.json",
+      "repo": "bridge-labs",
+      "runtime_status": "generated_or_historical_artifact"
+    }
+  ],
+  "generated_at": "2026-05-08T02:33:54.213722+00:00",
+  "high_value_existing_assets": [
+    {
+      "exists": true,
+      "path": "scripts/repository_delivery_bridge_submit.py",
+      "role": "host-local canonical delivery for Codex executor commits"
+    },
+    {
+      "exists": true,
+      "path": "scripts/repository_delivery_bridge_worker.py",
+      "role": "host-local canonical delivery for Codex executor commits"
+    },
+    {
+      "exists": true,
+      "path": "scripts/repository_delivery_bridge_status.py",
+      "role": "host-local canonical delivery for Codex executor commits"
+    },
+    {
+      "exists": true,
+      "path": "operations/external_validation/e70_owner_decision_packet_no_execution.json",
+      "role": "historical Codex job proposal/order precedent"
+    },
+    {
+      "exists": true,
+      "path": "operations/external_validation/e70_generated_codex_job_proposal.json",
+      "role": "historical Codex job proposal/order precedent"
+    },
+    {
+      "exists": true,
+      "path": "operations/external_validation/e71_generated_codex_job_proposal_from_legacy_assets.json",
+      "role": "historical Codex job proposal/order precedent"
+    },
+    {
+      "exists": true,
+      "path": "operations/external_validation/e55_dry_run_action_executor_result.json",
+      "role": "dry-run executor receipt precedent"
+    },
+    {
+      "exists": true,
+      "path": "office/mission_command/e90_market_grounded_strategy_run.py",
+      "role": "CEO selected strategy/action source"
+    },
+    {
+      "exists": true,
+      "path": "office/mission_command/e91_ceo_operating_doctrine_registry.py",
+      "role": "doctrine proof source"
+    }
+  ],
+  "milestone_id": "E92_CEO_Principal_Order_And_Codex_Executor_Boundary_R1",
+  "repo_root": "/tmp/e92_bridge_work2",
+  "search_terms": [
+    "Codex",
+    "executor",
+    "implementation order",
+    "work order",
+    "task packet",
+    "dispatch",
+    "delivery bridge",
+    "patch bundle",
+    "execution receipt",
+    "completion report",
+    "post-action",
+    "bridge job",
+    "host-local delivery",
+    "remote_confirmed",
+    "allowed files",
+    "forbidden actions",
+    "tests required",
+    "completion criteria"
+  ],
+  "synthesis": {
+    "gap_closed_by_E92": "Bind CEO strategy/order to Codex executor receipt and CEO residual learning under Y-star-gov validation.",
+    "reusable_delivery_assets": "repository_delivery_bridge_submit/worker/status are canonical host-local delivery assets for Codex executor delivery.",
+    "reusable_dispatch_assets": "Historical dispatch/gov_dispatch and task-card assets exist, but not as the current CEOImplementationOrder schema.",
+    "reusable_receipt_assets": "completion reports, dry-run receipts, CIEU residuals, and remote_confirmed reports provide receipt evidence patterns."
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "CIEU_write_status": "order_receipt_residual_written_in_test_db",
+  "artifact_id": "CodexExecutionReceipt",
+  "commits": [
+    {
+      "hash": "simulated_e92_fixture_commit",
+      "repo": "bridge-labs"
+    }
+  ],
+  "customer_or_payment_claim_made": false,
+  "deviations_from_order": [],
+  "execution_status": "completed",
+  "executor_actor": "Codex",
+  "external_action_executed": false,
+  "files_changed": [
+    "office/mission_command/e92_ceo_principal_codex_executor_boundary.py",
+    "ystar/governance/ceo_codex_executor_contract.py"
+  ],
+  "linked_order_id": "e92_ceo_order_from_e90_selected_action",
+  "overclaim_detected": false,
+  "provider_action_executed": false,
+  "receipt_id": "receipt_e92_ceo_order_from_e90_selected_action",
+  "recommended_next_action": "CEO reviews receipt and emits residual learning",
+  "remote_push_status": "simulated_fixture_no_external_push_in_unit_test",
+  "repos_modified": [
+    "bridge-labs",
+    "Y-star-gov"
+  ],
+  "repos_read": [
+    "bridge-labs",
+    "Y-star-gov",
+    "gov-mcp"
+  ],
+  "residual_observations": [
+    "Codex stayed within CEOImplementationOrder boundary"
+  ],
+  "scope_expanded_by_codex": false,
+  "strategy_changed_by_codex": false,
+  "test_results": {
+    "failed": 0,
+    "passed": "targeted E92 fixture"
+  },
+  "tests_run": [
+    "tests/office/test_e92_ceo_principal_codex_executor_boundary.py",
+    "tests/governance/test_ceo_codex_executor_contract.py",
+    "E88/E89/E90 continuity tests"
+  ],
+  "unexpected_blockers": []
+}
