@@ -1,6 +1,8 @@
 {
   "CEO_principal_Codex_executor_boundary": true,
-  "CIEUStore_order_receipt_residual_records_written": true,
+  "CIEUStore_order_prompt_receipt_residual_records_written": true,
+  "Codex_prompt_generated_after_validated_cieu_written_order": true,
+  "Codex_prompt_generation_governed_action": true,
   "K9Audit_integrated": false,
   "L5-A": "complete_internal_runtime_foundation",
   "L5-B": "complete_for_structured_governed_intelligence_loop_with_CEO_principal_Codex_executor_boundary",

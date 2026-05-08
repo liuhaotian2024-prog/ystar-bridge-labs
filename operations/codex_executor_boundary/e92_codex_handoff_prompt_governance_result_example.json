@@ -1,0 +1,229 @@
+{
+  "artifact_id": "codex_handoff_prompt_generation_result",
+  "generated_after_validated_cieu_written_order": true,
+  "prompt": "CEOImplementationOrder: e92_ceo_order_from_e90_selected_action\n\nYou are Codex, the executor / engineering worker. You are not the CEO, not the strategy owner, and not the principal decision-maker.\nDo not change strategy. Do not expand scope. Do not infer a new plan from owner natural language.\nExecute only within this CEOImplementationOrder after Y-star-gov validation.\n\nSelected action: e90_next_l4_feedback_owner_decision_packet_no_send\nWhy this action: It reuses the strongest existing runtime proof, maps to public market pain around agent governance, and can be tested with a narrow no-send owner-approved L4 packet.\nAllowed repos: bridge-labs, Y-star-gov\nAllowed paths: office/mission_command/e92_*, operations/codex_executor_boundary/e92_*, operations/baseline/e87r_full_repo_baseline/current_runtime_status_after_e92_*, tests/office/test_e92_*, ystar/governance/ceo_codex_executor_contract.py, tests/governance/test_ceo_codex_executor_contract.py, ystar/governance/__init__.py\nForbidden repos: K9Audit, ystar-company\nForbidden actions: Codex strategy change, Codex scope expansion, external outreach, publication, payment or revenue action, live provider execution, K9Audit mutation, customer/pricing/revenue validation claim\n\nIf implementation requires strategy or scope change, stop and return an ESCALATE CodexExecutionReceipt.\nIf required information is missing, return REQUIRE_REVISION. If tests fail, report exact failures.\nDo not execute external actions, outreach, publication, payment, live provider calls, or K9Audit mutation.\nIf direct push fails, use the host-local repository delivery bridge.\n\nRequired tests:\n- tests/office/test_e92_ceo_principal_codex_executor_boundary.py\n- tests/governance/test_ceo_codex_executor_contract.py\n- E88/E89/E90 continuity tests\n\nReturn a CodexExecutionReceipt with these fields:\n- receipt_id\n- linked_order_id\n- executor_actor\n- execution_status\n- repos_read\n- repos_modified\n- files_changed\n- tests_run\n- test_results\n- commits\n- remote_push_status\n- deviations_from_order\n- unexpected_blockers\n- strategy_changed_by_codex\n- scope_expanded_by_codex\n- external_action_executed\n- provider_action_executed\n- customer_or_payment_claim_made\n- overclaim_detected\n- CIEU_write_status\n- recommended_next_action\n- residual_observations\n\nTruth constraints: no customer validation, no revenue/payment/pricing claim, no L5-D completion claim, no hidden chain-of-thought storage.",
+  "prompt_generation_decision": {
+    "artifact_id": "ceo_codex_executor_governance_decision",
+    "cieu_validation_record": {
+      "decision": {
+        "artifact_id": "ceo_codex_executor_governance_decision",
+        "cieu_validation_record": {},
+        "correct_path": [],
+        "decision": "ALLOW",
+        "failed_field": null,
+        "guidance": {},
+        "passed": true,
+        "reason": "Codex handoff prompt generation is governed by validated CEOImplementationOrder",
+        "requires_owner_decision": false,
+        "violations": []
+      },
+      "payload_artifact_id": "CodexHandoffPromptGenerationRequest",
+      "validator": "ystar.governance.ceo_codex_executor_contract",
+      "validator_output_status": "CIEU_validation_record_candidate"
+    },
+    "correct_path": [],
+    "decision": "ALLOW",
+    "failed_field": null,
+    "guidance": {},
+    "passed": true,
+    "reason": "Codex handoff prompt generation is governed by validated CEOImplementationOrder",
+    "requires_owner_decision": false,
+    "violations": []
+  },
+  "prompt_generation_request": {
+    "CIEUStore_order_write_required": true,
+    "YstarGov_order_validation_required": true,
+    "artifact_id": "CodexHandoffPromptGenerationRequest",
+    "linked_order_id": "e92_ceo_order_from_e90_selected_action",
+    "order_validation_result": {
+      "CIEU_write_result": {
+        "CIEU_record": {
+          "agent_id": "bridge_labs_ceo",
+          "contract_hash": "ceo-principal-codex-executor-boundary-v1",
+          "created_at": 1778208240.1057642,
+          "decision": "allow",
+          "drift_details": null,
+          "drift_detected": false,
+          "event_id": "bd845216-1c17-42f2-b36c-f7daa88f1e8a",
+          "event_type": "CEO_IMPLEMENTATION_ORDER_DECISION",
+          "evidence_grade": "governance",
+          "human_initiator": "owner",
+          "lineage_path": [
+            "owner",
+            "bridge-labs CEO",
+            "Y-star-gov",
+            "Codex",
+            "bridge-labs CEO",
+            "CIEUStore"
+          ],
+          "m_functor": "M-2b",
+          "m_weight": 1.0,
+          "params": {
+            "CEO_decision_actor": "bridge_labs_ceo",
+            "executor_actor": "Codex",
+            "linked_order_id": "e92_ceo_order_from_e90_selected_action",
+            "payload_artifact_id": "CEOImplementationOrder",
+            "payload_id": "e92_ceo_order_from_e90_selected_action"
+          },
+          "passed": true,
+          "result": {
+            "correct_path": [],
+            "decision": "ALLOW",
+            "failed_field": null,
+            "formal_CIEU_log_path": "ystar.governance.cieu_store.CIEUStore.write_dict",
+            "reason": "CEOImplementationOrder satisfies CEO-principal/Codex-executor contract"
+          },
+          "seq_global": 1778208240105763,
+          "session_id": "e92_ceo_principal_codex_executor_boundary_session",
+          "task_description": "CEO-Codex executor boundary decision for e92_ceo_order_from_e90_selected_action",
+          "violations": [],
+          "y_star_validator_pass": true
+        },
+        "artifact_id": "ceo_codex_executor_formal_cieu_write_result",
+        "cieu_db": "/tmp/e92_meta_prompt_governance_report.db",
+        "decision": "allow",
+        "event_id": "bd845216-1c17-42f2-b36c-f7daa88f1e8a",
+        "event_type": "CEO_IMPLEMENTATION_ORDER_DECISION",
+        "formal_CIEU_log_function": "write_ceo_codex_executor_cieu_record",
+        "formal_CIEU_log_module": "ystar.governance.ceo_codex_executor_contract",
+        "formal_CIEU_log_path": "ystar.governance.cieu_store.CIEUStore.write_dict",
+        "formal_CIEU_log_status": "formal_CIEU_record_written",
+        "formal_CIEU_log_written": true,
+        "seal_result": {},
+        "session_id": "e92_ceo_principal_codex_executor_boundary_session",
+        "validator_output_status": "formal_CIEU_record_written",
+        "verify_result": {}
+      },
+      "artifact_id": "ceo_implementation_order_validate_and_write_result",
+      "formal_CIEU_log_path": "ystar.governance.cieu_store.CIEUStore.write_dict",
+      "formal_CIEU_log_status": "formal_CIEU_record_written",
+      "formal_CIEU_log_written": true,
+      "governance_decision": {
+        "artifact_id": "ceo_codex_executor_governance_decision",
+        "cieu_validation_record": {
+          "decision": {
+            "artifact_id": "ceo_codex_executor_governance_decision",
+            "cieu_validation_record": {},
+            "correct_path": [],
+            "decision": "ALLOW",
+            "failed_field": null,
+            "guidance": {},
+            "passed": true,
+            "reason": "CEOImplementationOrder satisfies CEO-principal/Codex-executor contract",
+            "requires_owner_decision": false,
+            "violations": []
+          },
+          "payload_artifact_id": "CEOImplementationOrder",
+          "validator": "ystar.governance.ceo_codex_executor_contract",
+          "validator_output_status": "CIEU_validation_record_candidate"
+        },
+        "correct_path": [],
+        "decision": "ALLOW",
+        "failed_field": null,
+        "guidance": {},
+        "passed": true,
+        "reason": "CEOImplementationOrder satisfies CEO-principal/Codex-executor contract",
+        "requires_owner_decision": false,
+        "violations": []
+      },
+      "validator_output_status": "formal_CIEU_record_written"
+    },
+    "prompt_generation_after_cieu_write_required": true,
+    "prompt_request_id": "prompt_request_e92_ceo_order_from_e90_selected_action",
+    "raw_natural_language_prompt_used": false,
+    "source_prompt_type": "CEOImplementationOrder"
+  },
+  "prompt_write": {
+    "CIEU_write_result": {
+      "CIEU_record": {
+        "agent_id": "bridge_labs_ceo",
+        "contract_hash": "ceo-principal-codex-executor-boundary-v1",
+        "created_at": 1778208240.1262279,
+        "decision": "allow",
+        "drift_details": null,
+        "drift_detected": false,
+        "event_id": "47500fcc-d351-4adf-b82a-3a7a56e727b3",
+        "event_type": "CODEX_HANDOFF_PROMPT_DECISION",
+        "evidence_grade": "governance",
+        "human_initiator": "owner",
+        "lineage_path": [
+          "owner",
+          "bridge-labs CEO",
+          "Y-star-gov",
+          "Codex",
+          "bridge-labs CEO",
+          "CIEUStore"
+        ],
+        "m_functor": "M-2b",
+        "m_weight": 1.0,
+        "params": {
+          "CEO_decision_actor": null,
+          "executor_actor": null,
+          "linked_order_id": "e92_ceo_order_from_e90_selected_action",
+          "payload_artifact_id": "CodexHandoffPromptGenerationRequest",
+          "payload_id": "unknown"
+        },
+        "passed": true,
+        "result": {
+          "correct_path": [],
+          "decision": "ALLOW",
+          "failed_field": null,
+          "formal_CIEU_log_path": "ystar.governance.cieu_store.CIEUStore.write_dict",
+          "reason": "Codex handoff prompt generation is governed by validated CEOImplementationOrder"
+        },
+        "seq_global": 1778208240126227,
+        "session_id": "e92_ceo_principal_codex_executor_boundary_session",
+        "task_description": "CEO-Codex executor boundary decision for unknown",
+        "violations": [],
+        "y_star_validator_pass": true
+      },
+      "artifact_id": "ceo_codex_executor_formal_cieu_write_result",
+      "cieu_db": "/tmp/e92_meta_prompt_governance_report.db",
+      "decision": "allow",
+      "event_id": "47500fcc-d351-4adf-b82a-3a7a56e727b3",
+      "event_type": "CODEX_HANDOFF_PROMPT_DECISION",
+      "formal_CIEU_log_function": "write_ceo_codex_executor_cieu_record",
+      "formal_CIEU_log_module": "ystar.governance.ceo_codex_executor_contract",
+      "formal_CIEU_log_path": "ystar.governance.cieu_store.CIEUStore.write_dict",
+      "formal_CIEU_log_status": "formal_CIEU_record_written",
+      "formal_CIEU_log_written": true,
+      "seal_result": {},
+      "session_id": "e92_ceo_principal_codex_executor_boundary_session",
+      "validator_output_status": "formal_CIEU_record_written",
+      "verify_result": {}
+    },
+    "artifact_id": "codex_handoff_prompt_validate_and_write_result",
+    "formal_CIEU_log_path": "ystar.governance.cieu_store.CIEUStore.write_dict",
+    "formal_CIEU_log_status": "formal_CIEU_record_written",
+    "formal_CIEU_log_written": true,
+    "governance_decision": {
+      "artifact_id": "ceo_codex_executor_governance_decision",
+      "cieu_validation_record": {
+        "decision": {
+          "artifact_id": "ceo_codex_executor_governance_decision",
+          "cieu_validation_record": {},
+          "correct_path": [],
+          "decision": "ALLOW",
+          "failed_field": null,
+          "guidance": {},
+          "passed": true,
+          "reason": "Codex handoff prompt generation is governed by validated CEOImplementationOrder",
+          "requires_owner_decision": false,
+          "violations": []
+        },
+        "payload_artifact_id": "CodexHandoffPromptGenerationRequest",
+        "validator": "ystar.governance.ceo_codex_executor_contract",
+        "validator_output_status": "CIEU_validation_record_candidate"
+      },
+      "correct_path": [],
+      "decision": "ALLOW",
+      "failed_field": null,
+      "guidance": {},
+      "passed": true,
+      "reason": "Codex handoff prompt generation is governed by validated CEOImplementationOrder",
+      "requires_owner_decision": false,
+      "violations": []
+    },
+    "validator_output_status": "formal_CIEU_record_written"
+  }
+}

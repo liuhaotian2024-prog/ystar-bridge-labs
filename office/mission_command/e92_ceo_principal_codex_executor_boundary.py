@@ -321,7 +321,82 @@ def validate_ceo_implementation_order_local(order: Mapping[str, Any]) -> dict[st
     return {"decision": "ALLOW", "missing_fields": [], "passed": True}
 
 
-def build_codex_handoff_prompt_from_order(order: Mapping[str, Any]) -> str:
+def build_codex_handoff_prompt_from_order(
+    order: Mapping[str, Any],
+    *,
+    order_write: Mapping[str, Any] | None = None,
+    cieu_db: str | None = None,
+    ystar_gov_root: Path | None = None,
+    session_id: str = SESSION_ID,
+) -> dict[str, Any]:
+    """Govern Codex prompt generation before returning executable prompt text.
+
+    A raw natural-language instruction is not sufficient for Codex execution.
+    The prompt is rendered only after the linked CEOImplementationOrder has an
+    ALLOW decision and a formal CIEUStore write.
+    """
+
+    request = _build_prompt_generation_request(order, order_write)
+    if not _present(order.get("order_id")):
+        return {
+            "artifact_id": "codex_handoff_prompt_generation_result",
+            "prompt_generation_decision": {
+                "decision": "DENY",
+                "reason": "Codex prompt generation requires linked CEOImplementationOrder",
+                "failed_field": "order_id",
+            },
+            "prompt": "",
+            "generated_after_validated_cieu_written_order": False,
+        }
+    if order_write is None:
+        return {
+            "artifact_id": "codex_handoff_prompt_generation_result",
+            "prompt_generation_decision": {
+                "decision": "REQUIRE_REVISION",
+                "reason": "Y-star-gov order validation and CIEUStore write are required before Codex prompt generation",
+                "failed_field": "order_validation_result",
+                "correct_path": [
+                    "validate CEOImplementationOrder through Y-star-gov",
+                    "write CEOImplementationOrder decision to CIEUStore",
+                    "then generate Codex handoff prompt",
+                ],
+            },
+            "prompt": "",
+            "prompt_generation_request": request,
+            "generated_after_validated_cieu_written_order": False,
+        }
+    governance = _load_ystar_governance(ystar_gov_root)
+    if cieu_db:
+        prompt_write = governance.validate_and_write_codex_handoff_prompt_generation(
+            request,
+            cieu_db=cieu_db,
+            session_id=session_id,
+            seal_session=False,
+        )
+        decision = prompt_write["governance_decision"]
+    else:
+        prompt_write = {}
+        decision = governance.validate_codex_handoff_prompt_generation(request).to_dict()
+    if decision["decision"] != "ALLOW":
+        return {
+            "artifact_id": "codex_handoff_prompt_generation_result",
+            "prompt_generation_decision": decision,
+            "prompt_write": prompt_write,
+            "prompt": "",
+            "prompt_generation_request": request,
+            "generated_after_validated_cieu_written_order": False,
+        }
+    return {
+        "artifact_id": "codex_handoff_prompt_generation_result",
+        "prompt_generation_decision": decision,
+        "prompt_write": prompt_write,
+        "prompt_generation_request": request,
+        "prompt": _render_codex_handoff_prompt_from_order(order),
+        "generated_after_validated_cieu_written_order": True,
+    }
+
+
+def _render_codex_handoff_prompt_from_order(order: Mapping[str, Any]) -> str:
     return "\n".join(
         [
             f"CEOImplementationOrder: {order.get('order_id')}",
@@ -351,6 +426,20 @@ def build_codex_handoff_prompt_from_order(order: Mapping[str, Any]) -> str:
             "Truth constraints: no customer validation, no revenue/payment/pricing claim, no L5-D completion claim, no hidden chain-of-thought storage.",
         ]
     )
+
+
+def _build_prompt_generation_request(order: Mapping[str, Any], order_write: Mapping[str, Any] | None) -> dict[str, Any]:
+    return {
+        "artifact_id": "CodexHandoffPromptGenerationRequest",
+        "prompt_request_id": f"prompt_request_{order.get('order_id') or 'missing_order'}",
+        "linked_order_id": order.get("order_id"),
+        "source_prompt_type": "CEOImplementationOrder" if _present(order.get("order_id")) else "raw_natural_language",
+        "order_validation_result": dict(order_write or {}),
+        "YstarGov_order_validation_required": True,
+        "CIEUStore_order_write_required": True,
+        "prompt_generation_after_cieu_write_required": True,
+        "raw_natural_language_prompt_used": not _present(order.get("order_id")),
+    }
 
 
 def parse_codex_execution_receipt(receipt: str | Mapping[str, Any]) -> dict[str, Any]:
@@ -454,7 +543,14 @@ def run_ceo_codex_executor_boundary_session(
         session_id=SESSION_ID,
         seal_session=False,
     )
-    handoff_prompt = build_codex_handoff_prompt_from_order(order)
+    handoff_prompt_result = build_codex_handoff_prompt_from_order(
+        order,
+        order_write=order_write,
+        cieu_db=cieu_db,
+        ystar_gov_root=ystar_gov_root,
+        session_id=SESSION_ID,
+    )
+    handoff_prompt = handoff_prompt_result["prompt"]
     receipt = build_compliant_codex_execution_receipt(order)
     parsed_receipt = parse_codex_execution_receipt(json.dumps(receipt))
     receipt_write = governance.validate_and_write_codex_execution_receipt(
@@ -473,9 +569,11 @@ def run_ceo_codex_executor_boundary_session(
     summary = _cieu_summary(cieu_db)
     chain_proven = (
         order_write["governance_decision"]["decision"] == "ALLOW"
+        and handoff_prompt_result["prompt_generation_decision"]["decision"] == "ALLOW"
+        and handoff_prompt_result["generated_after_validated_cieu_written_order"] is True
         and receipt_write["governance_decision"]["decision"] == "ALLOW"
         and residual_write["governance_decision"]["decision"] == "ALLOW"
-        and summary["event_count"] >= 3
+        and summary["event_count"] >= 4
     )
     return {
         "artifact_id": "e92_ceo_codex_executor_boundary_session_result",
@@ -483,6 +581,7 @@ def run_ceo_codex_executor_boundary_session(
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "order": order,
         "order_write": order_write,
+        "codex_handoff_prompt_generation": handoff_prompt_result,
         "codex_handoff_prompt": handoff_prompt,
         "codex_execution_receipt": parsed_receipt,
         "receipt_write": receipt_write,
@@ -519,6 +618,7 @@ def write_e92_boundary_reports(
         "assets_md": base / "operations/codex_executor_boundary/e92_existing_executor_assets.md",
         "order_example": base / "operations/codex_executor_boundary/e92_ceo_implementation_order_example.json",
         "prompt_example": base / "operations/codex_executor_boundary/e92_codex_handoff_prompt_example.md",
+        "prompt_governance_example": base / "operations/codex_executor_boundary/e92_codex_handoff_prompt_governance_result_example.json",
         "receipt_example": base / "operations/codex_executor_boundary/e92_codex_execution_receipt_example.json",
         "report_json": base / "office/mission_command/e92_ceo_principal_codex_executor_boundary_report.json",
         "report_md": base / "office/mission_command/e92_ceo_principal_codex_executor_boundary_readback.md",
@@ -531,6 +631,7 @@ def write_e92_boundary_reports(
     files["assets_md"].write_text(_assets_markdown(discovery), encoding="utf-8")
     files["order_example"].write_text(json.dumps(session["order"], indent=2, sort_keys=True), encoding="utf-8")
     files["prompt_example"].write_text(session["codex_handoff_prompt"] + "\n", encoding="utf-8")
+    files["prompt_governance_example"].write_text(json.dumps(session["codex_handoff_prompt_generation"], indent=2, sort_keys=True), encoding="utf-8")
     files["receipt_example"].write_text(json.dumps(session["codex_execution_receipt"], indent=2, sort_keys=True), encoding="utf-8")
     files["report_json"].write_text(json.dumps(report, indent=2, sort_keys=True), encoding="utf-8")
     files["report_md"].write_text(_report_markdown(report), encoding="utf-8")
@@ -557,12 +658,17 @@ def _completion_report(session: Mapping[str, Any], discovery: Mapping[str, Any])
         "existing_executor_assets_discovered": discovery["asset_count"],
         "reusable_assets": discovery["synthesis"],
         "CEOImplementationOrder_status": session["order_write"]["governance_decision"]["decision"],
+        "Codex_handoff_prompt_generation_status": session["codex_handoff_prompt_generation"]["prompt_generation_decision"]["decision"],
+        "Codex_handoff_prompt_generated_after_validated_cieu_written_order": session["codex_handoff_prompt_generation"][
+            "generated_after_validated_cieu_written_order"
+        ],
         "CodexExecutionReceipt_status": session["receipt_write"]["governance_decision"]["decision"],
         "post_Codex_residual_status": session["residual_write"]["governance_decision"]["decision"],
         "end_to_end_chain_proven": session["end_to_end_ceo_codex_ceo_chain_proven"],
         "end_to_end_chain": [
             "CEO builds CEOImplementationOrder",
             "Y-star-gov validates and writes order decision to CIEUStore",
+            "Y-star-gov validates and writes Codex handoff prompt generation decision to CIEUStore",
             "bridge-labs generates Codex handoff prompt",
             "Codex returns CodexExecutionReceipt",
             "Y-star-gov validates and writes receipt decision to CIEUStore",
@@ -572,6 +678,9 @@ def _completion_report(session: Mapping[str, Any], discovery: Mapping[str, Any])
         "CIEUStore_records": session["CIEUStore_record_summary"],
         "CIEUStore_write_status": {
             "order_decision_written": session["order_write"]["formal_CIEU_log_written"],
+            "prompt_generation_decision_written": bool(
+                session["codex_handoff_prompt_generation"].get("prompt_write", {}).get("formal_CIEU_log_written")
+            ),
             "receipt_decision_written": session["receipt_write"]["formal_CIEU_log_written"],
             "post_codex_residual_written": session["residual_write"]["formal_CIEU_log_written"],
             "formal_CIEU_log_path": session["order_write"].get(
@@ -590,6 +699,8 @@ def _completion_report(session: Mapping[str, Any], discovery: Mapping[str, Any])
             "Codex": "executor_engineering_worker",
             "Codex_can_change_strategy": False,
             "Codex_can_execute_external_action_without_order": False,
+            "raw_natural_language_prompt_can_authorize_codex": False,
+            "codex_prompt_generation_requires_validated_cieu_written_order": True,
         },
         "L5_truth_table_after_E92": _l5_after_e92(),
         "safety_statement": session["safety_statement"],
@@ -609,7 +720,11 @@ def _status_after_e92(session: Mapping[str, Any]) -> dict[str, Any]:
         "artifact_id": "current_runtime_status_after_e92_ceo_principal_codex_executor_boundary",
         "milestone_id": MILESTONE_ID,
         "CEO_principal_Codex_executor_boundary": session["end_to_end_ceo_codex_ceo_chain_proven"],
-        "CIEUStore_order_receipt_residual_records_written": session["CIEUStore_record_summary"]["event_count"] >= 3,
+        "Codex_prompt_generation_governed_action": session["codex_handoff_prompt_generation"]["prompt_generation_decision"]["decision"] == "ALLOW",
+        "Codex_prompt_generated_after_validated_cieu_written_order": session["codex_handoff_prompt_generation"][
+            "generated_after_validated_cieu_written_order"
+        ],
+        "CIEUStore_order_prompt_receipt_residual_records_written": session["CIEUStore_record_summary"]["event_count"] >= 4,
         **_l5_after_e92(),
         "no_L4_feedback_executed": True,
         "no_customer_revenue_payment_claim": True,
@@ -745,8 +860,10 @@ def _report_markdown(report: Mapping[str, Any]) -> str:
             "- CEO is principal, decision-maker, and strategy owner.",
             "- Codex is executor and engineering worker.",
             "- Codex cannot self-authorize strategic changes, expand scope, or execute external actions.",
+            "- Codex handoff prompt generation is itself governed and requires a validated CIEUStore-written CEOImplementationOrder.",
             f"- end_to_end_chain_proven: {str(report['end_to_end_chain_proven']).lower()}",
             f"- CEOImplementationOrder_status: {report['CEOImplementationOrder_status']}",
+            f"- Codex_handoff_prompt_generation_status: {report['Codex_handoff_prompt_generation_status']}",
             f"- CodexExecutionReceipt_status: {report['CodexExecutionReceipt_status']}",
             f"- CIEUStore_records: {report['CIEUStore_records']['event_count']}",
             "- no L4 feedback executed; no customer/revenue/payment evidence claimed.",
@@ -761,6 +878,8 @@ def _status_markdown(status: Mapping[str, Any]) -> str:
             "# Runtime Status After E92",
             "",
             f"- CEO_principal_Codex_executor_boundary: {str(status['CEO_principal_Codex_executor_boundary']).lower()}",
+            f"- Codex_prompt_generation_governed_action: {str(status['Codex_prompt_generation_governed_action']).lower()}",
+            f"- Codex_prompt_generated_after_validated_cieu_written_order: {str(status['Codex_prompt_generated_after_validated_cieu_written_order']).lower()}",
             f"- L5-A: {status['L5-A']}",
             f"- L5-B: {status['L5-B']}",
             f"- L5-C: {status['L5-C']}",

@@ -213,7 +213,7 @@
         "execution_receipt",
         "codex_job_proposal"
       ],
-      "evidence_excerpt": "low\", \"allow\" ], \"event_count\": 3, \"event_types\": [ \"CEO_IMPLEMENTATION_ORDER_DECISION\", \"CODEX_EXECUTION_RECEIPT_DECISION\", \"CEO_POST_CODEX_RESIDUAL_DECISION\" ], \"sealed_events\": 3, \"session_id\": \"e92_ceo_principal_codex_executor_boundary_session\" }, \"CIEUStore_write_status\": { \"formal_CIEU_log_path\":",
+      "evidence_excerpt": "low\", \"allow\" ], \"event_count\": 6, \"event_types\": [ \"CEO_IMPLEMENTATION_ORDER_DECISION\", \"CODEX_EXECUTION_RECEIPT_DECISION\", \"CEO_POST_CODEX_RESIDUAL_DECISION\", \"CEO_IMPLEMENTATION_ORDER_DECISION\", \"CODEX_EXECUTION_RECEIPT_DECISION\", \"CEO_POST_CODEX_RESIDUAL_DECISION\" ], \"sealed_events\": 6, \"s",
       "matched_terms": [
         "Codex",
         "executor",
@@ -3098,7 +3098,7 @@
       "runtime_status": "generated_or_historical_artifact"
     }
   ],
-  "generated_at": "2026-05-08T02:33:54.213722+00:00",
+  "generated_at": "2026-05-08T02:44:10.141663+00:00",
   "high_value_existing_assets": [
     {
       "exists": true,

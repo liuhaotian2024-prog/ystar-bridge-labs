@@ -5,29 +5,28 @@
       "allow",
       "allow",
       "allow",
-      "allow",
-      "allow",
       "allow"
     ],
-    "event_count": 6,
+    "event_count": 4,
     "event_types": [
       "CEO_IMPLEMENTATION_ORDER_DECISION",
-      "CODEX_EXECUTION_RECEIPT_DECISION",
-      "CEO_POST_CODEX_RESIDUAL_DECISION",
-      "CEO_IMPLEMENTATION_ORDER_DECISION",
+      "CODEX_HANDOFF_PROMPT_DECISION",
       "CODEX_EXECUTION_RECEIPT_DECISION",
       "CEO_POST_CODEX_RESIDUAL_DECISION"
     ],
-    "sealed_events": 6,
+    "sealed_events": 4,
     "session_id": "e92_ceo_principal_codex_executor_boundary_session"
   },
   "CIEUStore_write_status": {
     "formal_CIEU_log_path": "ystar.governance.cieu_store.CIEUStore.write_dict",
     "order_decision_written": true,
     "post_codex_residual_written": true,
+    "prompt_generation_decision_written": true,
     "receipt_decision_written": true
   },
   "CodexExecutionReceipt_status": "ALLOW",
+  "Codex_handoff_prompt_generated_after_validated_cieu_written_order": true,
+  "Codex_handoff_prompt_generation_status": "ALLOW",
   "E89_E90_integration_status": "E89 and E90 selected actions can be converted into CEOImplementationOrder",
   "L5_truth_table_after_E92": {
     "L5-A": "complete_internal_runtime_foundation",
@@ -39,6 +38,7 @@
   "end_to_end_chain": [
     "CEO builds CEOImplementationOrder",
     "Y-star-gov validates and writes order decision to CIEUStore",
+    "Y-star-gov validates and writes Codex handoff prompt generation decision to CIEUStore",
     "bridge-labs generates Codex handoff prompt",
     "Codex returns CodexExecutionReceipt",
     "Y-star-gov validates and writes receipt decision to CIEUStore",
@@ -69,7 +69,9 @@
     "CEO": "principal_decision_maker_strategy_owner",
     "Codex": "executor_engineering_worker",
     "Codex_can_change_strategy": false,
-    "Codex_can_execute_external_action_without_order": false
+    "Codex_can_execute_external_action_without_order": false,
+    "codex_prompt_generation_requires_validated_cieu_written_order": true,
+    "raw_natural_language_prompt_can_authorize_codex": false
   },
   "recommended_next_milestone": "E93_Owner_Gated_L4_Public_Read_Observation_Runtime_Or_Codex_Order_Execution_Pilot_R1",
   "repos_modified": [

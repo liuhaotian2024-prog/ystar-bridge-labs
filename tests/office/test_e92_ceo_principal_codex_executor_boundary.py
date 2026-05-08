@@ -55,9 +55,14 @@ def test_ceo_implementation_order_contains_required_boundary_fields():
     assert validate_ceo_implementation_order_local(order)["decision"] == "ALLOW"
 
 
-def test_codex_handoff_prompt_declares_executor_not_ceo():
+def test_codex_handoff_prompt_declares_executor_not_ceo(tmp_path):
     order = build_ceo_implementation_order_from_e90_strategy(root=BRIDGE_ROOT)
-    prompt = build_codex_handoff_prompt_from_order(order)
+    result = run_ceo_codex_executor_boundary_session(
+        cieu_db=str(tmp_path / "e92_prompt_test_declares_executor.db"),
+        root=BRIDGE_ROOT,
+        ystar_gov_root=Y_GOV_ROOT,
+    )
+    prompt = result["codex_handoff_prompt"]
 
     assert "You are Codex, the executor / engineering worker" in prompt
     assert "You are not the CEO" in prompt
@@ -65,6 +70,28 @@ def test_codex_handoff_prompt_declares_executor_not_ceo():
     assert "Do not expand scope" in prompt
     assert order["order_id"] in prompt
     assert "CodexExecutionReceipt" in prompt
+
+
+def test_codex_handoff_prompt_requires_validated_cieu_written_order():
+    order = build_ceo_implementation_order_from_e90_strategy(root=BRIDGE_ROOT)
+    result = build_codex_handoff_prompt_from_order(order, ystar_gov_root=Y_GOV_ROOT)
+
+    assert result["prompt_generation_decision"]["decision"] == "REQUIRE_REVISION"
+    assert result["prompt"] == ""
+    assert result["generated_after_validated_cieu_written_order"] is False
+
+
+def test_raw_natural_language_prompt_cannot_authorize_codex():
+    result = build_codex_handoff_prompt_from_order(
+        {
+            "source_owner_intent": "Please implement this directly.",
+            "raw_prompt": "Implement the thing.",
+        },
+        ystar_gov_root=Y_GOV_ROOT,
+    )
+
+    assert result["prompt_generation_decision"]["decision"] == "DENY"
+    assert result["prompt"] == ""
 
 
 def test_compliant_codex_execution_receipt_validates():
@@ -122,7 +149,10 @@ def test_end_to_end_session_writes_order_receipt_and_residual_cieustore_records(
     assert result["order_write"]["governance_decision"]["decision"] == "ALLOW"
     assert result["receipt_write"]["governance_decision"]["decision"] == "ALLOW"
     assert result["residual_write"]["governance_decision"]["decision"] == "ALLOW"
-    assert result["CIEUStore_record_summary"]["event_count"] >= 3
+    assert result["codex_handoff_prompt_generation"]["prompt_generation_decision"]["decision"] == "ALLOW"
+    assert result["codex_handoff_prompt_generation"]["generated_after_validated_cieu_written_order"] is True
+    assert result["CIEUStore_record_summary"]["event_count"] >= 4
+    assert "CODEX_HANDOFF_PROMPT_DECISION" in result["CIEUStore_record_summary"]["event_types"]
     assert result["end_to_end_ceo_codex_ceo_chain_proven"] is True
     assert result["post_codex_residual"]["no_external_action_executed"] is True
     assert result["codex_execution_receipt"]["external_action_executed"] is False
@@ -156,6 +186,7 @@ def test_existing_executor_assets_and_reports_are_written(tmp_path):
     assert report["end_to_end_chain_proven"] is True
     assert (tmp_path / "operations/codex_executor_boundary/e92_ceo_implementation_order_example.json").exists()
     assert (tmp_path / "operations/codex_executor_boundary/e92_codex_handoff_prompt_example.md").exists()
+    assert (tmp_path / "operations/codex_executor_boundary/e92_codex_handoff_prompt_governance_result_example.json").exists()
     assert (tmp_path / "operations/codex_executor_boundary/e92_codex_execution_receipt_example.json").exists()
     assert (tmp_path / "office/mission_command/e92_ceo_principal_codex_executor_boundary_report.json").exists()
     assert (
