@@ -1,0 +1,32 @@
+{
+  "CIEUStore_records_written": {
+    "decisions": [
+      "allow",
+      "allow",
+      "allow",
+      "allow"
+    ],
+    "event_count": 4,
+    "event_types": [
+      "CEO_INTELLIGENCE_LOOP_RUNTIME_DECISION",
+      "CEO_STRATEGIC_INTELLIGENCE_BENCHMARK_DECISION",
+      "CEO_COGNITIVE_OS_RUNTIME_DECISION",
+      "CEO_COGNITIVE_OS_RUNTIME_DECISION"
+    ],
+    "sealed_events": 4,
+    "sealed_session_valid": true,
+    "session_id": "e90_ceo_strategic_intelligence_runtime_session"
+  },
+  "K9Audit_not_integrated": true,
+  "L5-A": "complete_internal_runtime_foundation",
+  "L5-B": "complete_for_structured_governed_intelligence_loop_with_strategy_benchmark",
+  "L5-C": "partial_dry_run_only",
+  "L5-D": "absent_or_not_executed",
+  "end_to_end_chain_proven": true,
+  "gov_mcp_dry_run_only": true,
+  "milestone_id": "E90_CEO_Strategic_Intelligence_Benchmark_And_Market_Grounded_Strategy_Run_R1",
+  "no_L4_feedback_executed": true,
+  "no_customer_revenue_payment_claim": true,
+  "recommended_next_milestone": "E91_Owner_Approved_Minimal_L4_Feedback_Pilot_Through_Governed_Runtime_R1",
+  "status": "completed"
+}
