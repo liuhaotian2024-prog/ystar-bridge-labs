@@ -1,0 +1,42 @@
+{
+  "milestone_id": "E123_Aiden_Model_Orchestration_Runtime_R1",
+  "base_hashes": {
+    "Y_star_gov": "9ff774d35f01c2335bab126372e2217a22d796f1",
+    "bridge_labs": "0f72085df02f861a604934744d68ecaba1ae72c6"
+  },
+  "what_was_implemented": [
+    "Aiden model/tool catalog for deterministic validator, local Gemma4, local ystar-gemma, Codex executor, external GPT, and external Claude",
+    "task classification by task type, risk, privacy, context size, cost sensitivity, and required wisdom",
+    "memory-aware model orchestration packet",
+    "Y-star-gov model-choice governance path",
+    "CIEUStore model-choice record path",
+    "local long-term memory asset discovery and reuse plan",
+    "quality comparison and routing-policy update candidate plan"
+  ],
+  "selected_model_for_report_run": "local_gemma4_e4b",
+  "candidate_models": [
+    "deterministic_validator",
+    "local_gemma4_e4b",
+    "local_ystar_gemma",
+    "codex_executor",
+    "external_gpt",
+    "external_claude"
+  ],
+  "memory_reuse_conclusion": "E123 reuses CIEUStore, Aiden 6D brain, Y-star-gov MemoryStore, CIEU-to-brain bridge, governed brain-learning boundaries, and the local CEO knowledge corpus. It does not create another memory database.",
+  "truth_constraints": {
+    "direct_external_model_execution": false,
+    "direct_policy_mutation": false,
+    "external_business_action_executed": false,
+    "customer_validation_claim": false,
+    "payment_claim": false,
+    "production_brain_write": false,
+    "K9Audit_write": false
+  },
+  "L5_truth_table_after": {
+    "L5-A": "complete_internal_runtime_foundation_with_governed_model_orchestration",
+    "L5-B": "stronger_governed_intelligence_with_memory_aware_model_tool_routing",
+    "L5-C": "partial_dry_run_only",
+    "L5-D": "absent_or_not_executed",
+    "L5-E": "partial_safe_brain_learning_with_reused_local_memory_substrates"
+  }
+}

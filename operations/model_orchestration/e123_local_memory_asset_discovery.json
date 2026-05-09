@@ -1,0 +1,18 @@
+{
+  "artifact_id": "e123_local_memory_asset_discovery",
+  "asset_count": 11,
+  "key_reuse_findings": [
+    "Y-star-gov already contains ystar.memory MemoryStore: SQLite-backed local long-term memory with decay, recall, reinforcement, and access log.",
+    "Y-star-gov CIEUStore is the formal durable evidence/memory store and remains mandatory for model-choice records.",
+    "Aiden 6D brain is the CEO cognition graph; E116/E118 provide governed brain-learning and owner/backup-gated production write boundaries.",
+    "CIEU-to-brain bridge and brain learning modules already map governance events into 6D activation and learning signals.",
+    "E24 and the knowledge/ceo corpus preserve older CEO knowledge graph, theory, wisdom, and operating-memory assets as historical context.",
+    "scripts/gemma_client.py contains a useful shadow-quality idea but remains quarantined because it can fall back to an external Claude API path."
+  ],
+  "mandatory_reused_memory_assets": [
+    "CIEUStore_formal_memory",
+    "Aiden_6D_brain",
+    "YstarGov_memory_store"
+  ],
+  "reuse_conclusion": "E123 does not create another memory database. It routes model/tool selection through existing CIEUStore, Aiden 6D brain, Y-star-gov MemoryStore, CIEU-to-brain bridge, governed brain-learning boundaries, and the file-backed CEO wisdom/theory corpus."
+}
