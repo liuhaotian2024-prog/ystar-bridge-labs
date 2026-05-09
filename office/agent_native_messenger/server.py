@@ -20,7 +20,7 @@ from pathlib import Path
 
 
 PORT = int(os.environ.get("AIDEN_MESSENGER_PORT", "8784"))
-RUNTIME_TIMEOUT_SECONDS = float(os.environ.get("AIDEN_MESSENGER_RUNTIME_TIMEOUT_SECONDS", "45"))
+RUNTIME_TIMEOUT_SECONDS = float(os.environ.get("AIDEN_MESSENGER_RUNTIME_TIMEOUT_SECONDS", "120"))
 ALLOW_LIVE_NETWORK_BY_DEFAULT = os.environ.get("AIDEN_MESSENGER_ALLOW_LIVE_NETWORK", "").lower() in {
     "1",
     "true",
@@ -93,6 +93,30 @@ def _runtime_notice_payload(*, human_text: str, status: str, reason: str, detail
             "occurred_at": now,
         },
         "message_packets": [
+            {
+                "message": {
+                    "message_id": f"e131_owner_preserved_{int(time.time() * 1000)}",
+                    "sender_id": "owner",
+                    "recipient_ids": ["Aiden"],
+                    "message_kind": "human_to_agent_runtime_preserved",
+                    "human_readable_text": human_text,
+                    "cieu_five_tuple": {
+                        "Y_star_t": "Owner input must remain visible even when Aiden runtime times out.",
+                        "X_t": {
+                            "source": "E131 messenger runtime watchdog owner-preservation path",
+                            "runtime_status": status,
+                            "local_only": True,
+                        },
+                        "U_t": {
+                            "speech_act": "owner_message_to_aiden_preserved_after_runtime_failure",
+                            "external_action_executed": False,
+                        },
+                        "Y_t_plus_1": "Aiden or owner can retry from the preserved message instead of losing context.",
+                        "R_t_plus_1": reason,
+                        "residual_status": "runtime_residual_open",
+                    },
+                }
+            },
             {
                 "message": {
                     "message_id": f"e127_runtime_notice_{int(time.time() * 1000)}",

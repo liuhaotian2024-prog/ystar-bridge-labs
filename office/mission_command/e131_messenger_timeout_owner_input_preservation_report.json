@@ -1,0 +1,24 @@
+{
+  "milestone_id": "E131_Messenger_Timeout_Owner_Input_Preservation_R1",
+  "base_hash": "7123303e53f8ba0039f51ef8870dab2e97a5550c",
+  "problem": "When Aiden runtime timed out, the browser removed the pending owner message and the server timeout payload only returned an Aiden notice, making the owner input appear deleted.",
+  "implemented": [
+    "Server watchdog timeout/error payloads now include a preserved owner message packet before the Aiden runtime notice.",
+    "Browser runtime-failure handling now preserves owner input if a timeout/error payload lacks an owner echo.",
+    "Browser network/abort failures now mark the pending owner message as locally preserved instead of deleting it.",
+    "Default server runtime timeout increased from 45 seconds to 120 seconds for live public-read workloads.",
+    "Browser request timeout increased from 60 seconds to 150 seconds."
+  ],
+  "truth_constraints": {
+    "external_action_executed": false,
+    "provider_action_executed": false,
+    "payment_executed": false,
+    "customer_validation_claim": false,
+    "revenue_claim": false
+  },
+  "owner_visible_change": "The owner input remains visible even when Aiden times out. The owner sees both the preserved input and the runtime notice.",
+  "limitations": [
+    "This does not make slow strategy/live-public-read runs faster.",
+    "A watchdog notice may still occur if the runtime exceeds the configured timeout."
+  ]
+}

@@ -15,7 +15,7 @@ runtimeStatusEl.className = "runtime-status idle";
 runtimeStatusEl.textContent = "Ready";
 composer.insertAdjacentElement("beforebegin", runtimeStatusEl);
 
-const MESSENGER_REQUEST_TIMEOUT_MS = 60000;
+const MESSENGER_REQUEST_TIMEOUT_MS = 150000;
 const LONG_OWNER_MESSAGE_COLLAPSE_CHARS = 420;
 
 const fallbackSession = {
@@ -184,6 +184,13 @@ composer.addEventListener("submit", async (event) => {
     const turnMessages = (payload.message_packets || [])
       .map((packet) => packet.message)
       .filter(Boolean);
+    if (isRuntimeFailurePayload(payload) && !turnMessages.some((message) => message.sender_id === "owner")) {
+      const preserved = buildLocalOwnerMessage(text, `preserved_${Date.now()}`);
+      preserved.pending = false;
+      preserved.message_kind = "human_to_agent_local_preserved";
+      preserved.cieu_five_tuple.X_t.delivery_state = "server_runtime_failed_but_browser_preserved_input";
+      turnMessages.unshift(preserved);
+    }
     if (turnMessages.length) {
       state.messages.push(...turnMessages);
       renderMessages();
@@ -209,7 +216,7 @@ composer.addEventListener("submit", async (event) => {
       setRuntimeStatus("Aiden returned no message; a governed notice was added.", "warn");
     }
   } catch (error) {
-    removeMessage(pendingId);
+    markPendingMessagePreserved(pendingId);
     const notice = appendSystemNotice(
       error.name === "AbortError"
         ? "Aiden Messenger Runtime Notice: the local runtime did not answer before the browser timeout. The message is visible here, but the backend should be inspected or restarted before retrying."
@@ -264,6 +271,20 @@ function appendSystemNotice(text) {
 
 function removeMessage(messageId) {
   state.messages = state.messages.filter((message) => message.message_id !== messageId);
+}
+
+function markPendingMessagePreserved(messageId) {
+  const message = state.messages.find((item) => item.message_id === messageId);
+  if (!message) return;
+  message.pending = false;
+  message.message_kind = "human_to_agent_local_preserved";
+  message.cieu_five_tuple.X_t.delivery_state = "browser_request_failed_but_input_preserved";
+  message.cieu_five_tuple.R_t_plus_1 = "runtime failure visible; owner input preserved";
+}
+
+function isRuntimeFailurePayload(payload) {
+  const status = String(payload.turn_status || "");
+  return status.startsWith("runtime_") || Boolean(payload.runtime_error);
 }
 
 function updateEventCount(payload) {

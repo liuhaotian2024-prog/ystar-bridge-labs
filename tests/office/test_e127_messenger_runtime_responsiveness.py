@@ -20,6 +20,8 @@ def test_messenger_server_has_runtime_watchdog_and_threaded_handler():
     assert "AIDEN_MESSENGER_ALLOW_LIVE_NETWORK" in text
     assert "_allow_live_network_for_message" in text
     assert "LIVE_PUBLIC_READ_TRIGGERS" in text
+    assert '"120"' in text
+    assert "human_to_agent_runtime_preserved" in text
 
 
 def test_messenger_server_can_trigger_live_public_read_from_owner_request():
@@ -43,6 +45,10 @@ def test_messenger_browser_shows_pending_timeout_and_runtime_notices():
     assert "appendSystemNotice" in text
     assert "Aiden is thinking through governed retrieval" in text
     assert "no silent hang" in text
+    assert "150000" in text
+    assert "markPendingMessagePreserved" in text
+    assert "human_to_agent_local_preserved" in text
+    assert "isRuntimeFailurePayload" in text
 
 
 def test_messenger_styles_include_visible_busy_and_error_states():
