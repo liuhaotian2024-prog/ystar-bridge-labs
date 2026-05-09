@@ -1,0 +1,127 @@
+{
+  "CIEU_linkage": {
+    "formal_CIEU_log_path": "ystar.governance.cieu_store.CIEUStore.write_dict",
+    "target_event_type": "AIDEN_SELF_GOVERNANCE_UPDATE_PROPOSAL_DECISION"
+  },
+  "class_of_issue": {
+    "description": "A point failure is repaired but the governing class of similar future failures remains unmodeled.",
+    "generalization_boundary": "applies across strategy dossiers, idle brain learning, production brain write preflight, and future governance proposals",
+    "issue_class_id": "point_fix_without_generalization"
+  },
+  "current_contract_refs": [
+    "ystar/governance/ceo_deep_strategic_intelligence_contract.py",
+    "ystar/governance/aiden_idle_learning_contract.py",
+    "ystar/governance/aiden_self_governance_update_proposal_contract.py"
+  ],
+  "extrapolation_to_other_cases": [
+    {
+      "case_id": "single_source_learning_fact",
+      "preventive_rule": "require corroboration status or mark fact as hypothesis before high-confidence brain use",
+      "why_same_class": "a single fresh source can look valid while lacking corroboration"
+    },
+    {
+      "case_id": "internal_asset_as_market_value",
+      "preventive_rule": "require buyer-visible proof and why_buyer_cares for right-to-win claims",
+      "why_same_class": "an internal capability can masquerade as buyer-visible value"
+    },
+    {
+      "case_id": "planning_residual_as_market_truth",
+      "preventive_rule": "separate planning residual closure from real market residual closure",
+      "why_same_class": "internal residual closure can be mistaken for real customer validation"
+    },
+    {
+      "case_id": "raw_prompt_as_governed_order",
+      "preventive_rule": "require linked CEOImplementationOrder before Codex prompt generation",
+      "why_same_class": "field presence can hide missing CEOImplementationOrder governance"
+    }
+  ],
+  "generated_at": "2026-05-09T13:06:09.582263+00:00",
+  "implementation_plan": [
+    "invoke Aiden operating pattern doctrine registry",
+    "validate proposal through Y-star-gov",
+    "write proposal CIEU record",
+    "write pending owner-visible proposal artifact",
+    "wait for owner approval before any future contract patch generation"
+  ],
+  "milestone_id": "E119_Learning_To_Governance_Extrapolation_And_Self_Governance_Proposal_R1",
+  "observed_point_failures": [
+    {
+      "evidence_ref": "E115 audit: 14 dimensions reused the same evidence bundle",
+      "failure_id": "reused_deep_strategy_evidence",
+      "repair_status": "E117 locked evidence diversity"
+    },
+    {
+      "evidence_ref": "E117 audit: competitor homepage rows could receive today's public_signal_date",
+      "failure_id": "self_assigned_competitor_current_date",
+      "repair_status": "E118 locked source-dated public evidence basis"
+    },
+    {
+      "evidence_ref": "E118 audit: owner approval was a boolean without out-of-band proof",
+      "failure_id": "boolean_owner_approval_for_brain_write",
+      "repair_status": "E118 added approval + backup gate; future out-of-band approval remains next step"
+    }
+  ],
+  "operating_pattern_doctrine_updates": {
+    "governance_contract_path": "ystar/governance/aiden_operating_pattern_doctrine_contract.py",
+    "patterns_mechanized": [
+      "full_repo_and_baseline_first",
+      "no_new_wheel_preflight",
+      "capability_utilization_sweep",
+      "class_level_extrapolation_gate",
+      "correct_path_navigation",
+      "evidence_quality_and_freshness_gate",
+      "regression_test_and_cieu_closure",
+      "brain_provenance_required",
+      "competitive_landscape_current_signal",
+      "buyer_visible_value_translation",
+      "residual_truth_scope_split",
+      "CEOImplementationOrder_before_Codex_prompt",
+      "CodexExecutionReceipt_return_path",
+      "production_brain_write_owner_backup_gate",
+      "learning_quality_scoring_v2",
+      "gov_mcp_no_send_preflight",
+      "owner_boundary_minimization_and_escalation",
+      "proposal_only_no_direct_contract_mutation",
+      "owner_review_before_contract_patch"
+    ],
+    "registry_path": "office/mission_command/e119_aiden_operating_pattern_doctrine_registry.py",
+    "status": "mechanized_as_runtime_obligations"
+  },
+  "owner_review_policy": {
+    "Aiden_direct_contract_mutation_allowed": false,
+    "owner_explicit_approval_required": true,
+    "proposal_only_until_approved": true
+  },
+  "proposal_id": "e119_point_fix_to_class_level_governance_proposal",
+  "proposed_contract_amendment": {
+    "auto_apply": false,
+    "correct_path_navigation": "if missing, REQUIRE_REVISION with navigation to generalize the point failure before proceeding",
+    "proposed_rule": "Any Aiden strategy, learning, residual, or governance-improvement artifact that repairs a failure must include class_of_issue, at least three extrapolated same-class cases, and a proposed_class_level_fix.",
+    "target_contract": "cross_runtime_extrapolation_gate"
+  },
+  "source_residual": {
+    "CZL_R_t_plus_1": 1.0,
+    "learning_update": "Future strategy, learning, and governance outputs must identify the issue class and same-class variants.",
+    "observed_gap": "Aiden/Codex repeatedly fixed named audit findings without always generalizing the failure class.",
+    "residual_id": "e119_audit_driven_point_fix_residual"
+  },
+  "tests_required": [
+    "missing extrapolation gate requires revision",
+    "direct contract write attempt denies",
+    "valid proposal writes CIEU record",
+    "pending proposal artifact is owner-visible and does not modify Y-star-gov"
+  ],
+  "truth_constraints": {
+    "K9Audit_integration_claim": false,
+    "contract_patch_applied": false,
+    "customer_validation_claim": false,
+    "direct_contract_write_attempted": false,
+    "external_action_executed": false,
+    "live_provider_execution_claim": false,
+    "paid_signal_claim": false,
+    "payment_claim": false,
+    "pricing_validation_claim": false,
+    "provider_action_executed": false,
+    "revenue_claim": false
+  }
+}

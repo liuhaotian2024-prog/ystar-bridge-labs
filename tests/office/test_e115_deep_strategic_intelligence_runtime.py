@@ -55,6 +55,8 @@ def test_e115_deep_strategy_runtime_writes_governed_dossier(tmp_path):
     assert len(dossier["product_shape"]["buyer_visible_deliverables"]) >= 5
     assert dossier["causal_zero_loop_model"]["R_t_plus_1"] == 0.0
     assert dossier["causal_zero_loop_model"]["residual_truth_status"]["real_market_residual_closed"] is False
+    assert dossier["extrapolation_gate"]["class_of_issue"]["issue_class_id"]
+    assert len(dossier["extrapolation_gate"]["extrapolation_to_other_cases"]) >= 3
     assert "CEO_DEEP_STRATEGIC_INTELLIGENCE_DECISION" in result["CIEUStore_summary"]["event_types"]
     assert result["truth_constraints"]["no_customer_validation_claim"] is True
     assert result["L5_truth_table_after"]["L5-D"] == "absent_or_not_executed"

@@ -34,7 +34,11 @@ def test_e116_curriculum_covers_ceo_learning_breadth():
     assert "competitive_strategy" in domain_ids
     assert "technology_architecture" in domain_ids
     assert "failure_residual_learning" in domain_ids
-    assert len(domains) >= 10
+    assert "classical_theory_canon" in domain_ids
+    assert "peer_experience_corpus" in domain_ids
+    assert "historical_case_corpus" in domain_ids
+    assert "customer_contact_residuals" in domain_ids
+    assert len(domains) >= 14
 
 
 def test_e116_packet_builds_source_dated_knowledge_graph_delta(tmp_path):
@@ -55,6 +59,8 @@ def test_e116_packet_builds_source_dated_knowledge_graph_delta(tmp_path):
     assert len(packet["knowledge_graph_delta"]["edges"]) >= 8
     assert all(node["learning_quality_score"] >= 0.6 for node in packet["knowledge_graph_delta"]["nodes"])
     assert packet["CZL_closure"]["R_t_plus_1"] == 0.0
+    assert packet["extrapolation_gate"]["class_of_issue"]["issue_class_id"]
+    assert len(packet["extrapolation_gate"]["extrapolation_to_other_cases"]) >= 3
     assert packet["truth_constraints"]["external_action_executed"] is False
 
 

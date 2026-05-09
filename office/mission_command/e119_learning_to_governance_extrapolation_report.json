@@ -1,0 +1,60 @@
+{
+  "L5_truth_table_after": {
+    "L5-A": "complete_internal_runtime_foundation_with_self_governance_proposal_boundary",
+    "L5-B": "stronger_structured_governed_intelligence_with_extrapolation_gate_and_self_governance_proposals",
+    "L5-C": "partial_dry_run_only",
+    "L5-D": "absent_or_not_executed",
+    "L5-E": "partial_learning_to_governance_proposal_loop_proven_owner_approval_required"
+  },
+  "Y_star_gov_decision": "ALLOW",
+  "class_of_issue": {
+    "description": "A point failure is repaired but the governing class of similar future failures remains unmodeled.",
+    "generalization_boundary": "applies across strategy dossiers, idle brain learning, production brain write preflight, and future governance proposals",
+    "issue_class_id": "point_fix_without_generalization"
+  },
+  "curriculum_expansion": [
+    "classical_theory_canon",
+    "peer_experience_corpus",
+    "historical_case_corpus",
+    "customer_contact_residuals"
+  ],
+  "extrapolated_case_count": 4,
+  "milestone_id": "E119_Learning_To_Governance_Extrapolation_And_Self_Governance_Proposal_R1",
+  "operating_pattern_decision": "ALLOW",
+  "operating_patterns_mechanized": [
+    "full_repo_and_baseline_first",
+    "no_new_wheel_preflight",
+    "capability_utilization_sweep",
+    "class_level_extrapolation_gate",
+    "correct_path_navigation",
+    "evidence_quality_and_freshness_gate",
+    "regression_test_and_cieu_closure",
+    "brain_provenance_required",
+    "competitive_landscape_current_signal",
+    "buyer_visible_value_translation",
+    "residual_truth_scope_split",
+    "CEOImplementationOrder_before_Codex_prompt",
+    "CodexExecutionReceipt_return_path",
+    "production_brain_write_owner_backup_gate",
+    "learning_quality_scoring_v2",
+    "gov_mcp_no_send_preflight",
+    "owner_boundary_minimization_and_escalation",
+    "proposal_only_no_direct_contract_mutation",
+    "owner_review_before_contract_patch"
+  ],
+  "pending_proposal_path": "/private/tmp/e119_bridge_test_work_60145/operations/governance_proposals/pending/e119_point_fix_to_class_level_governance_proposal.json",
+  "self_governance_proposal_proven": true,
+  "truth_constraints": {
+    "K9Audit_integration_claim": false,
+    "contract_patch_applied": false,
+    "customer_validation_claim": false,
+    "direct_contract_write_attempted": false,
+    "external_action_executed": false,
+    "live_provider_execution_claim": false,
+    "paid_signal_claim": false,
+    "payment_claim": false,
+    "pricing_validation_claim": false,
+    "provider_action_executed": false,
+    "revenue_claim": false
+  }
+}

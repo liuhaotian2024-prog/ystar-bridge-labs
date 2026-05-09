@@ -215,6 +215,7 @@ def build_e115_deep_strategy_dossier(e114_result: Mapping[str, Any], *, owner_in
                 "falsification_condition": "target buyer rejects urgency, budget, or trust in the deliverable",
             }
         ],
+        "extrapolation_gate": build_strategy_extrapolation_gate(domain_id),
         "no_overclaim_boundary": {
             "customer_validation_claim": False,
             "revenue_claim": False,
@@ -530,6 +531,50 @@ def build_assumption_registry(selected_route_id: str, domain_id: str) -> list[di
             "falsification_condition": "buyers expect free template or sub-$200 price",
         },
     ]
+
+
+def build_strategy_extrapolation_gate(domain_id: str) -> dict[str, Any]:
+    return {
+        "class_of_issue": {
+            "issue_class_id": "strategy_point_fix_without_generalization",
+            "description": "A strategic runtime can repair a named audit finding while leaving same-class semantic failures open.",
+            "generalization_boundary": (
+                "applies to evidence diversity, competitor current-signal proof, right-to-win proof, CZL truth, "
+                "and future market-strategy packets"
+            ),
+        },
+        "extrapolation_to_other_cases": [
+            {
+                "case_id": "single_source_competitor_claim",
+                "why_same_class": "a strategy can cite one fresh article and overgeneralize competitor reality",
+                "preventive_rule": "mark single-source competitor facts as hypotheses unless corroborated",
+            },
+            {
+                "case_id": "buyer_visible_value_claim",
+                "why_same_class": "internal mechanisms can be described as buyer value without buyer-visible proof",
+                "preventive_rule": "require buyer-visible proof for every right-to-win claim",
+            },
+            {
+                "case_id": "planning_residual_misread_as_market_truth",
+                "why_same_class": "a closed planning residual can be mistaken for real-world validation",
+                "preventive_rule": "separate planning residual closure from market residual closure",
+            },
+        ],
+        "proposed_class_level_fix": {
+            "rule": "deep strategy must include issue-class generalization and preventive rules before governance ALLOW",
+            "affected_runtime_paths": [
+                "office/mission_command/e115_deep_strategic_intelligence_runtime.py",
+                "ystar/governance/ceo_deep_strategic_intelligence_contract.py",
+            ],
+            "correct_path_navigation": "if a point failure is found, generalize it to at least three future same-class variants before proceeding",
+        },
+        "evidence_refs": [
+            "office/mission_command/e115_deep_strategic_intelligence_runtime.py",
+            "ystar/governance/ceo_deep_strategic_intelligence_contract.py",
+            f"domain://{domain_id}",
+        ],
+        "point_fix_only": False,
+    }
 
 
 def _extract_evidence_items(e114_result: Mapping[str, Any]) -> list[dict[str, Any]]:

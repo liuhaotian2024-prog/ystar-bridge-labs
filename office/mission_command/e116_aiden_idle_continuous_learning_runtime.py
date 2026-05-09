@@ -45,6 +45,10 @@ def build_ceo_idle_learning_curriculum() -> list[dict[str, Any]]:
         _domain("failure_residual_learning", "Failed theses, stale evidence, residuals, pivot rules", ["startup postmortem", "strategy falsification", "failure residual learning"]),
         _domain("capital_and_cash_discipline", "Cash constraints, pricing, margins, time-to-cash", ["startup pricing", "cash path", "bootstrapped revenue"]),
         _domain("organization_and_operating_system", "How autonomous company loops allocate work and close learning", ["AI agent operating system", "company operating rhythm", "autonomous agents governance"]),
+        _domain("classical_theory_canon", "Durable CEO theory: decision theory, strategy, organizations, learning, and systems thinking", ["decision theory", "strategy canon", "organizational learning"]),
+        _domain("peer_experience_corpus", "Founder/operator experience from peers, interviews, postmortems, and practitioner playbooks", ["founder lessons", "startup operator experience", "go to market lessons"]),
+        _domain("historical_case_corpus", "Historical success and failure cases that prevent present-day overfitting", ["startup failure case study", "company strategy pivot", "technology adoption case"]),
+        _domain("customer_contact_residuals", "Owner-approved L4/L5 feedback residuals once real buyer contact exists", ["customer feedback residual", "buyer response learning", "sales discovery learning"]),
     ]
 
 
@@ -69,7 +73,7 @@ def detect_idle_state(*, explicit_session_task_active: bool = False, marker_path
 def collect_idle_learning_evidence(
     *,
     use_host_live_network: bool = False,
-    max_items: int = 30,
+    max_items: int = 48,
 ) -> list[dict[str, Any]]:
     """Collect source-dated evidence for idle knowledge growth.
 
@@ -101,6 +105,11 @@ def build_idle_learning_evergreen_evidence_snapshot() -> list[dict[str, Any]]:
         _ev("sales_and_distribution", "Y Combinator startup sales advice", "https://www.ycombinator.com/library/5x-how-to-sell", "2024-08-01", "Early B2B founders need direct customer conversations, sharp qualification, and fast learning instead of broad generic marketing.", "accepted_evergreen_context", observed),
         _ev("product_strategy", "Stripe guide to pricing", "https://stripe.com/resources/more/how-to-price-a-product", "2025-09-16", "Pricing should connect to value, buyer segments, willingness-to-pay evidence, and iteration.", "accepted_evergreen_context", observed),
         _ev("failure_residual_learning", "CB Insights startup failure patterns", "https://www.cbinsights.com/research/startup-failure-reasons-top/", "2025-10-01", "Common startup failures include no market need, running out of cash, weak team fit, competition, and pricing issues.", "accepted_evergreen_context", observed),
+        _ev("classical_theory_canon", "Stanford Encyclopedia decision theory", "https://plato.stanford.edu/entries/decision-theory/", "2024-01-01", "Decision theory provides a durable framework for choices under uncertainty, preferences, expected utility, and rational action.", "accepted_evergreen_context", observed),
+        _ev("classical_theory_canon", "Keeney and Raiffa decision analysis canon", "https://www.cambridge.org/core/books/decisions-with-multiple-objectives/8E8D523F7822B8F6B59F6BC56B19C44F", "2024-01-01", "Multi-objective decision analysis is a classic framework for comparing routes with competing objectives and tradeoffs.", "accepted_evergreen_context", observed),
+        _ev("peer_experience_corpus", "Y Combinator startup library", "https://www.ycombinator.com/library", "2025-01-01", "Founder/operator lessons should be learned as reusable patterns rather than copied as point tactics.", "accepted_evergreen_context", observed),
+        _ev("historical_case_corpus", "CB Insights startup failure reasons", "https://www.cbinsights.com/research/startup-failure-reasons-top/", "2025-10-01", "Historical failure cases should become negative examples for Aiden's strategy and product judgment.", "accepted_evergreen_context", observed),
+        _ev("customer_contact_residuals", "Y Combinator how to talk to users", "https://www.ycombinator.com/library/6g-how-to-talk-to-users", "2024-01-01", "Customer feedback must be treated as residual evidence that updates hypotheses instead of confirming pre-existing beliefs.", "accepted_evergreen_context", observed),
     ]
 
 
@@ -300,6 +309,7 @@ def build_aiden_idle_learning_packet(
             "Y_t_plus_1": {"Aiden_continuously_learns_when_idle": True, "active_session_not_interrupted": True},
             "R_t_plus_1": 0.0,
         },
+        "extrapolation_gate": build_idle_learning_extrapolation_gate(),
         "truth_constraints": {
             "external_action_executed": False,
             "provider_action_executed": False,
@@ -647,6 +657,50 @@ def _ev(domain_id: str, title: str, url: str, source_date: str, claim: str, fres
         "claim_summary": claim,
         "evidence_type": "idle_learning_public_read_evidence",
         "freshness_status": freshness_status,
+    }
+
+
+def build_idle_learning_extrapolation_gate() -> dict[str, Any]:
+    return {
+        "class_of_issue": {
+            "issue_class_id": "durable_learning_point_fix_without_generalization",
+            "description": "Aiden can learn a repaired fact while failing to learn the class of failure that produced the repair.",
+            "generalization_boundary": (
+                "applies to evidence freshness, evidence quality, curriculum coverage, production brain writes, "
+                "and future customer residual learning"
+            ),
+        },
+        "extrapolation_to_other_cases": [
+            {
+                "case_id": "single_source_market_fact",
+                "why_same_class": "a fact can pass quality scoring while remaining insufficiently corroborated",
+                "preventive_rule": "mark single-source facts as hypotheses or require corroboration before high-confidence brain use",
+            },
+            {
+                "case_id": "curriculum_missing_theory",
+                "why_same_class": "a learning loop can optimize recent market facts while ignoring durable theory and history",
+                "preventive_rule": "require classical theory, peer experience, historical cases, and customer residual domains",
+            },
+            {
+                "case_id": "owner_approval_boolean",
+                "why_same_class": "a boolean can stand in for an owner-visible decision artifact",
+                "preventive_rule": "require owner-visible preflight, backup, and rollback proof for production mutation",
+            },
+        ],
+        "proposed_class_level_fix": {
+            "rule": "durable brain learning must generalize observed residuals into class-level preventive rules",
+            "affected_runtime_paths": [
+                "office/mission_command/e116_aiden_idle_continuous_learning_runtime.py",
+                "ystar/governance/aiden_idle_learning_contract.py",
+            ],
+            "correct_path_navigation": "reject point-fix-only learning and ask Aiden to name the issue class and future variants",
+        },
+        "evidence_refs": [
+            "office/mission_command/e116_aiden_idle_continuous_learning_runtime.py",
+            "ystar/governance/aiden_idle_learning_contract.py",
+            "operations/baseline/e87r_full_repo_baseline/current_runtime_status_after_e118_production_brain_write_boundary.json",
+        ],
+        "point_fix_only": False,
     }
 
 

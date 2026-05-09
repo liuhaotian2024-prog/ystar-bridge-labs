@@ -1,0 +1,15 @@
+{
+  "L5_truth_table_after": {
+    "L5-A": "complete_internal_runtime_foundation_with_self_governance_proposal_boundary",
+    "L5-B": "stronger_structured_governed_intelligence_with_extrapolation_gate_and_self_governance_proposals",
+    "L5-C": "partial_dry_run_only",
+    "L5-D": "absent_or_not_executed",
+    "L5-E": "partial_learning_to_governance_proposal_loop_proven_owner_approval_required"
+  },
+  "extrapolation_gate_required": true,
+  "milestone_id": "E119_Learning_To_Governance_Extrapolation_And_Self_Governance_Proposal_R1",
+  "operating_pattern_doctrine_required": true,
+  "owner_approval_required_for_contract_change": true,
+  "self_governance_direct_contract_write_allowed": false,
+  "status": "implemented_proposal_loop"
+}
