@@ -1,0 +1,207 @@
+{
+  "CIEUStore_summary": {
+    "decisions": [
+      "ALLOW",
+      "ALLOW",
+      "allow",
+      "allow",
+      "allow",
+      "allow",
+      "ALLOW",
+      "ALLOW"
+    ],
+    "event_count": 8,
+    "event_ids": [
+      "33b46c45-c5cc-4858-abb5-300061e5fa64",
+      "a59220e1-8122-48b2-a024-681045e09d7e",
+      "0a5737d7-350c-4f72-810b-29bd4939e876",
+      "fb31313a-347c-434b-9d3d-e355e74f24c4",
+      "8710db80-a5ad-4dcc-bed5-fe689472abe4",
+      "c5a50721-90c6-44f0-99fd-47e93f2ad2ab",
+      "1e713c9c-5f98-43e0-b969-2bb16307ee35",
+      "63109b6d-16fc-432e-a689-d9daf2937f28"
+    ],
+    "event_types": [
+      "NO_NEW_WHEEL_RUNTIME_LAW_DECISION",
+      "LABS_UNIVERSAL_OPERATING_CONTROL_DECISION",
+      "CEO_LIVE_GLOBAL_OPEN_WORLD_STRATEGY_DECISION",
+      "CEO_STRATEGY_MATH_MODEL_DECISION",
+      "CEO_IMPLEMENTATION_ORDER_DECISION",
+      "CODEX_HANDOFF_PROMPT_DECISION",
+      "AIDEN_HOST_RUNTIME_CYCLE_DECISION",
+      "CEO_BRAIN_LEARNING_LOOP_DECISION"
+    ]
+  },
+  "L5_truth_table_after": {
+    "L5-A": "complete_internal_runtime_foundation_with_capability_utilization_law",
+    "L5-B": "complete_for_structured_governed_intelligence_loop_with_live_public_read_strategy_and_brain_learning_candidates",
+    "L5-C": "partial_dry_run_only",
+    "L5-D": "absent_or_not_executed",
+    "L5-E": "partial_CIEU_backed_brain_learning_candidate_loop_no_production_brain_write"
+  },
+  "ability_leap_proof": {
+    "CIEU_backed_brain_learning_candidates_created": true,
+    "E108_public_read_strategy_passed": true,
+    "E110_universal_control_passed": true,
+    "E112_freshness_filter_passed": true,
+    "E113_capability_utilization_gate_passed": true,
+    "external_action_executed": false,
+    "stale_or_undated_evidence_blocked": false
+  },
+  "capability_utilization_summary": {
+    "Rt_plus_1": 0.0,
+    "action_relevant_capability_group_count": 12,
+    "available_for_future_activation_count": 3,
+    "code_index_loaded": true,
+    "indexed_capability_counts": {
+      "total_classes": 1660,
+      "total_functions": 11495,
+      "total_generated_reports": 28118,
+      "total_python_files": 3085,
+      "total_tests": 1561,
+      "total_tracked_files": 34677
+    },
+    "no_new_wheel_decision": "ALLOW",
+    "unreviewed_runtime_active_capability_count": 0
+  },
+  "freshness_and_brain_learning_summary": {
+    "brain_mutation_candidate_count": 30,
+    "failure_residual_candidate_count": 5,
+    "freshness_filter_summary": {
+      "accepted_count": 30,
+      "rejected_count": 0,
+      "rejected_status_counts": {},
+      "stale_or_undated_evidence_blocked_from_brain": false
+    },
+    "production_brain_write_performed": false
+  },
+  "host_live_run_command": "python3 -m office.mission_command.e114_live_web_capability_utilized_strategy_run --use-host-live-network --cieu-db /tmp/e114_aiden_live_web_strategy.db",
+  "live_public_read_scan_summary": {
+    "domain_count": 16,
+    "evidence_count": 30,
+    "opportunity_cluster_count": 10,
+    "provider_status": "success",
+    "scan_mode": "owner_supplied_live_public_read",
+    "source_date_summary": {
+      "dated_count": 30,
+      "newest_source_date": "2026-05-09",
+      "oldest_source_date": "2026-01-14",
+      "source_date_required_for_brain_learning": true,
+      "undated_count": 0
+    }
+  },
+  "milestone_id": "E114_Live_Web_Capability_Utilized_Strategy_Run_R1",
+  "provider_mode": "dated_public_read_evidence_snapshot",
+  "selected_first_cash_path": "AI security, compliance, & audit readiness Evidence & Control Pack",
+  "selected_route_id": "ai_security_compliance_first_cash_pack",
+  "selected_strategy": {
+    "current_best_first_cash_path": "AI security, compliance, & audit readiness Evidence & Control Pack",
+    "math_model_evsi_usd": 44.37,
+    "math_model_score": 3.01,
+    "next_48h_action": "Prepare a no-send sample buyer-facing diagnostic artifact for the selected route.",
+    "next_7d_action": "Run owner-approved L4 feedback only after no-send packet review.",
+    "next_owner_decision_needed": "Approve whether to turn the no-send validation packet into controlled external feedback.",
+    "second_best_path": "Construction bidding & compliance admin 48h Operations Rescue Pack",
+    "selected_route_id": "ai_security_compliance_first_cash_pack",
+    "what_evidence_could_falsify_it": "Owner-approved buyer feedback fails to confirm urgency, budget ownership, or trust in the proposed deliverable.",
+    "why_not_others": "Lower-ranked routes had weaker buyer access, heavier regulation, more competition, or weaker delivery feasibility.",
+    "why_this_path_now": "Selected only after live global public-read domains were scanned and ranked. The route has the best market-first expected utility after penalties for competition, regulation, uncertainty, time-to-signal, and feasibility."
+  },
+  "top_routes": [
+    {
+      "domain_id": "ai_security_compliance",
+      "evsi_usd": 44.37,
+      "market_first_score": 3.01,
+      "name": "AI security, compliance, & audit readiness Evidence & Control Pack",
+      "route_id": "ai_security_compliance_first_cash_pack",
+      "why_it_might_fail": "pain may be real but not urgent, budget-owned, or trusted enough for a paid diagnostic"
+    },
+    {
+      "domain_id": "construction_bids",
+      "evsi_usd": 44.37,
+      "market_first_score": 3.01,
+      "name": "Construction bidding & compliance admin 48h Operations Rescue Pack",
+      "route_id": "construction_bids_first_cash_pack",
+      "why_it_might_fail": "pain may be real but not urgent, budget-owned, or trusted enough for a paid diagnostic"
+    },
+    {
+      "domain_id": "grant_ops",
+      "evsi_usd": 44.37,
+      "market_first_score": 3.01,
+      "name": "Grant proposal & compliance operations 48h Operations Rescue Pack",
+      "route_id": "grant_ops_first_cash_pack",
+      "why_it_might_fail": "pain may be real but not urgent, budget-owned, or trusted enough for a paid diagnostic"
+    },
+    {
+      "domain_id": "local_services_dispatch",
+      "evsi_usd": 31.32,
+      "market_first_score": -6.7,
+      "name": "Local services dispatch & estimate follow-up 48h Operations Rescue Pack",
+      "route_id": "local_services_dispatch_first_cash_pack",
+      "why_it_might_fail": "pain may be real but not urgent, budget-owned, or trusted enough for a paid diagnostic"
+    },
+    {
+      "domain_id": "manufacturing_quality",
+      "evsi_usd": 31.32,
+      "market_first_score": -6.7,
+      "name": "Manufacturing quality & supplier documentation 48h Operations Rescue Pack",
+      "route_id": "manufacturing_quality_first_cash_pack",
+      "why_it_might_fail": "pain may be real but not urgent, budget-owned, or trusted enough for a paid diagnostic"
+    },
+    {
+      "domain_id": "cyber_insurance",
+      "evsi_usd": 44.37,
+      "market_first_score": -16.13,
+      "name": "Cyber insurance & security questionnaire readiness Evidence & Control Pack",
+      "route_id": "cyber_insurance_first_cash_pack",
+      "why_it_might_fail": "regulated buyer trust or compliance constraints may slow first cash"
+    },
+    {
+      "domain_id": "healthcare_admin",
+      "evsi_usd": 44.37,
+      "market_first_score": -16.13,
+      "name": "Healthcare prior authorization & admin automation 48h Operations Rescue Pack",
+      "route_id": "healthcare_admin_first_cash_pack",
+      "why_it_might_fail": "regulated buyer trust or compliance constraints may slow first cash"
+    },
+    {
+      "domain_id": "insurance_claims",
+      "evsi_usd": 44.37,
+      "market_first_score": -16.13,
+      "name": "Insurance claims operations Evidence & Control Pack",
+      "route_id": "insurance_claims_first_cash_pack",
+      "why_it_might_fail": "regulated buyer trust or compliance constraints may slow first cash"
+    },
+    {
+      "domain_id": "legal_ops",
+      "evsi_usd": 44.37,
+      "market_first_score": -16.13,
+      "name": "Legal intake & contract operations 48h Operations Rescue Pack",
+      "route_id": "legal_ops_first_cash_pack",
+      "why_it_might_fail": "regulated buyer trust or compliance constraints may slow first cash"
+    },
+    {
+      "domain_id": "cpa_tax_accounting",
+      "evsi_usd": 44.37,
+      "market_first_score": -22.0,
+      "name": "CPA tax/accounting workflow 48h Operations Rescue Pack",
+      "route_id": "cpa_tax_accounting_first_cash_pack",
+      "why_it_might_fail": "may be too close to prior anchors or already crowded"
+    }
+  ],
+  "truth_constraints": {
+    "K9Audit_not_integrated": true,
+    "no_L4_feedback_executed": true,
+    "no_customer_validation_claim": true,
+    "no_live_provider_execution": true,
+    "no_revenue_or_payment_signal": true
+  },
+  "what_was_not_claimed": [
+    "no L4 feedback executed",
+    "no customer validation",
+    "no revenue/payment signal",
+    "no live provider execution",
+    "no K9Audit integration",
+    "no production brain write performed"
+  ]
+}

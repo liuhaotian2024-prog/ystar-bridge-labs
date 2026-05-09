@@ -20,12 +20,16 @@ from office.mission_command.e110_labs_universal_operating_control_plane import (
 from office.mission_command.e111_aiden_host_runtime_and_autonomy_control_plane import (
     run_aiden_host_runtime_cycle,
 )
+from office.mission_command.e114_live_web_capability_utilized_strategy_run import (
+    run_e114_live_web_capability_utilized_strategy_run,
+)
 
 
 AIDEN_MEETING_ROOM_PREFIXES = ("Aiden:", "Aiden：", "aiden:", "aiden：")
 MEETING_ROOM_PROTOCOL = "AidenPrefixV1"
 STRATEGY_RUNTIME_PROTOCOL = "AidenStrategyRuntimeV1"
 HOST_RUNTIME_PROTOCOL = "AidenHostRuntimeV1"
+LIVE_WEB_STRATEGY_RUNTIME_PROTOCOL = "AidenLiveWebCapabilityStrategyRuntimeV1"
 
 _STRATEGY_RUNTIME_TERMS = (
     "strategy",
@@ -68,6 +72,27 @@ _HOST_RUNTIME_TERMS = (
     "自治",
     "公司操作系统",
     "宿主",
+)
+
+_LIVE_WEB_STRATEGY_TERMS = (
+    "live web",
+    "live-web",
+    "live public",
+    "latest",
+    "current",
+    "global",
+    "open world",
+    "open-world",
+    "internet",
+    "web search",
+    "联网",
+    "上网",
+    "实时",
+    "最新",
+    "全球",
+    "全球化",
+    "全世界",
+    "真上网",
 )
 
 
@@ -136,6 +161,13 @@ def is_aiden_host_runtime_message(owner_message: str) -> bool:
     return any(term in text for term in _HOST_RUNTIME_TERMS)
 
 
+def is_aiden_live_web_strategy_runtime_message(owner_message: str) -> bool:
+    """Return true when Aiden should use the E114 live-web capability-utilized loop."""
+
+    text = (owner_message or "").lower()
+    return is_aiden_strategy_runtime_message(owner_message) and any(term in text for term in _LIVE_WEB_STRATEGY_TERMS)
+
+
 def default_aiden_strategy_cieu_db(repo_root: Path) -> Path:
     runtime_dir = repo_root / ".runtime"
     runtime_dir.mkdir(parents=True, exist_ok=True)
@@ -200,6 +232,43 @@ def render_aiden_host_runtime_response(result: dict[str, Any]) -> str:
         "Boundary:\n"
         "No external action was executed. No customer validation, pricing validation, paid signal, payment, revenue, "
         "live provider execution, or K9Audit integration is claimed."
+    )
+
+
+def render_aiden_live_web_capability_strategy_response(result: dict[str, Any]) -> str:
+    selected = result["selected_strategy"]
+    scan = result["live_public_read_scan_summary"]
+    utilization = result["capability_utilization_summary"]
+    freshness = result["freshness_and_brain_learning_summary"]
+    top_lines = "\n".join(
+        f"- {row['route_id']}: score={row['market_first_score']}, EVSI=${row['evsi_usd']} | {row['name']}"
+        for row in result["top_routes"][:6]
+    )
+    return (
+        "CEO Strategy Runtime: E114_LIVE_WEB_CAPABILITY_UTILIZED_STRATEGY_RUN\n"
+        "This Aiden strategy question was routed through E113 full-system capability utilization, "
+        "E110 universal control, E108 public-read strategy, E112 source-date freshness filtering, "
+        "CIEU-backed brain learning candidates, Y-star-gov validation, and CIEUStore recording.\n\n"
+        f"Provider mode: {result['provider_mode']}\n"
+        f"No-new-wheel decision: {utilization['no_new_wheel_decision']}\n"
+        f"CZL Rt+1: {utilization['Rt_plus_1']}\n"
+        f"Code index loaded: {str(utilization['code_index_loaded']).lower()}\n"
+        f"Action-relevant capability groups: {utilization['action_relevant_capability_group_count']}\n"
+        f"Evidence count: {scan['evidence_count']}\n"
+        f"Dated evidence: {scan['source_date_summary']['dated_count']}\n"
+        f"Fresh evidence accepted: {freshness['freshness_filter_summary']['accepted_count']}\n"
+        f"Brain learning candidates: {freshness['brain_mutation_candidate_count']}\n"
+        f"CIEU events: {result['CIEUStore_summary']['event_count']}\n\n"
+        "Selected first-cash path:\n"
+        f"{selected['current_best_first_cash_path']}\n"
+        f"- selected_route_id: {selected['selected_route_id']}\n"
+        f"- math_model_score: {selected['math_model_score']}\n"
+        f"- EVSI: ${selected['math_model_evsi_usd']}\n\n"
+        "Top market-first routes:\n"
+        f"{top_lines}\n\n"
+        "Boundary:\n"
+        "No external action was executed. No customer validation, pricing validation, paid signal, payment, revenue, "
+        "live provider execution, K9Audit integration, or production brain write is claimed."
     )
     route_lines = "\n".join(
         f"- {item['route_id']}: {item['first_cash_score']}" for item in route_scores
@@ -492,6 +561,35 @@ def run_aiden_host_runtime(
         allow_live_network=allow_live_network,
         seal_session=True,
     )
+
+
+def run_aiden_live_web_capability_strategy_runtime(
+    owner_message: str,
+    *,
+    repo_root: Path | None = None,
+    cieu_db: str | Path | None = None,
+    brain_db: Path | None = None,
+    ystar_gov_root: Path | None = None,
+    live_public_read_provider: Any | None = None,
+    allow_live_network: bool = True,
+) -> AidenChatRoute:
+    root = repo_root or Path(__file__).resolve().parents[2]
+    selected_cieu_db = Path(cieu_db) if cieu_db is not None else default_aiden_strategy_cieu_db(root)
+    result = run_e114_live_web_capability_utilized_strategy_run(
+        cieu_db=selected_cieu_db,
+        owner_intent=owner_message,
+        brain_db=brain_db,
+        ystar_gov_root=ystar_gov_root,
+        use_host_live_network=allow_live_network and live_public_read_provider is None,
+        seal_session=True,
+    )
+    return AidenChatRoute(
+        route="aiden_ceo_live_web_capability_strategy_runtime",
+        prefixed=True,
+        owner_message=owner_message,
+        response_text=render_aiden_live_web_capability_strategy_response(result),
+        protocol=LIVE_WEB_STRATEGY_RUNTIME_PROTOCOL,
+    )
     return AidenChatRoute(
         route="aiden_ceo_host_runtime",
         prefixed=True,
@@ -548,6 +646,17 @@ def route_chat_message_to_aiden_meeting_room(
             allow_live_network=allow_live_network,
         )
 
+    if is_aiden_live_web_strategy_runtime_message(owner_message):
+        return run_aiden_live_web_capability_strategy_runtime(
+            owner_message,
+            repo_root=repo_root,
+            cieu_db=cieu_db,
+            brain_db=brain_db,
+            ystar_gov_root=ystar_gov_root,
+            live_public_read_provider=live_public_read_provider,
+            allow_live_network=allow_live_network,
+        )
+
     if is_aiden_strategy_runtime_message(owner_message):
         return run_aiden_strategy_runtime(
             owner_message,
@@ -580,7 +689,7 @@ def answer_aiden_prefixed_message(message: str, **kwargs: Any) -> str:
     """Return the governed Aiden response for an explicit ``Aiden:`` message."""
 
     route = route_chat_message_to_aiden_meeting_room(message, **kwargs)
-    if route.route in {"aiden_ceo_strategy_runtime", "aiden_ceo_host_runtime"}:
+    if route.route in {"aiden_ceo_strategy_runtime", "aiden_ceo_host_runtime", "aiden_ceo_live_web_capability_strategy_runtime"}:
         return route.response_text or build_empty_aiden_prefix_revision()
     if route.route != "aiden_ceo_meeting_room":
         return (
@@ -595,19 +704,23 @@ __all__ = [
     "AidenChatRoute",
     "MEETING_ROOM_PROTOCOL",
     "HOST_RUNTIME_PROTOCOL",
+    "LIVE_WEB_STRATEGY_RUNTIME_PROTOCOL",
     "STRATEGY_RUNTIME_PROTOCOL",
     "answer_aiden_prefixed_message",
     "build_empty_aiden_prefix_revision",
     "default_aiden_strategy_cieu_db",
     "is_aiden_meeting_room_message",
     "is_aiden_host_runtime_message",
+    "is_aiden_live_web_strategy_runtime_message",
     "is_aiden_strategy_runtime_message",
     "render_aiden_host_runtime_response",
+    "render_aiden_live_web_capability_strategy_response",
     "render_aiden_universal_control_strategy_runtime_response",
     "render_aiden_strategy_runtime_response",
     "render_aiden_live_global_strategy_runtime_response",
     "route_chat_message_to_aiden_meeting_room",
     "run_aiden_strategy_runtime",
     "run_aiden_host_runtime",
+    "run_aiden_live_web_capability_strategy_runtime",
     "strip_aiden_meeting_room_prefix",
 ]

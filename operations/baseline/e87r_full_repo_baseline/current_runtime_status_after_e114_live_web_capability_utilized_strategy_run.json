@@ -1,0 +1,24 @@
+{
+  "L5-A": "complete_internal_runtime_foundation_with_capability_utilization_law",
+  "L5-B": "complete_for_structured_governed_intelligence_loop_with_live_public_read_strategy_and_brain_learning_candidates",
+  "L5-C": "partial_dry_run_only",
+  "L5-D": "absent_or_not_executed",
+  "L5-E": "partial_CIEU_backed_brain_learning_candidate_loop_no_production_brain_write",
+  "ability_leap_proof": {
+    "CIEU_backed_brain_learning_candidates_created": true,
+    "E108_public_read_strategy_passed": true,
+    "E110_universal_control_passed": true,
+    "E112_freshness_filter_passed": true,
+    "E113_capability_utilization_gate_passed": true,
+    "external_action_executed": false,
+    "stale_or_undated_evidence_blocked": false
+  },
+  "milestone_id": "E114_Live_Web_Capability_Utilized_Strategy_Run_R1",
+  "provider_mode": "dated_public_read_evidence_snapshot",
+  "remaining_blockers": [
+    "host live network run must be executed on the Mac host to prove direct Aiden network access outside Codex sandbox",
+    "owner-approved L4 feedback/customer/revenue/payment loop remains pending",
+    "production brain write remains blocked; only CIEU-backed candidates are created"
+  ],
+  "runtime_status": "live_public_read_capability_utilized_strategy_run_structurally_enforceable"
+}
