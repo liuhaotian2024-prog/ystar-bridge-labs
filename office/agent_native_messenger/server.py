@@ -12,10 +12,15 @@ import json
 import os
 import sys
 import tempfile
+import time
+import traceback
+from concurrent.futures import ThreadPoolExecutor, TimeoutError
+from datetime import datetime, timezone
 from pathlib import Path
 
 
 PORT = int(os.environ.get("AIDEN_MESSENGER_PORT", "8784"))
+RUNTIME_TIMEOUT_SECONDS = float(os.environ.get("AIDEN_MESSENGER_RUNTIME_TIMEOUT_SECONDS", "45"))
 DIRECTORY = Path(__file__).resolve().parent
 BRIDGE_ROOT = Path(os.environ.get("YSTAR_BRIDGE_LABS_ROOT", Path(__file__).resolve().parents[2]))
 Y_GOV_ROOT = Path(os.environ.get("YSTAR_GOV_ROOT", "/Users/haotianliu/.openclaw/workspace/Y-star-gov"))
@@ -29,6 +34,9 @@ from office.mission_command.e124_agent_native_company_messenger import (  # noqa
 )
 
 
+RUNTIME_EXECUTOR = ThreadPoolExecutor(max_workers=2, thread_name_prefix="aiden-messenger-runtime")
+
+
 def _json_response(handler: http.server.BaseHTTPRequestHandler, payload: dict, status: int = 200) -> None:
     body = json.dumps(payload, indent=2, ensure_ascii=False).encode("utf-8")
     handler.send_response(status)
@@ -39,6 +47,62 @@ def _json_response(handler: http.server.BaseHTTPRequestHandler, payload: dict, s
     handler.wfile.write(body)
 
 
+def _runtime_notice_payload(*, human_text: str, status: str, reason: str, detail: str, elapsed_seconds: float) -> dict:
+    now = datetime.now(timezone.utc).isoformat()
+    notice_text = (
+        "Aiden Messenger Runtime Notice: I received your message inside the governed local messenger, "
+        f"but the Aiden behavior runtime returned {status}. {detail} "
+        "The message was not lost; correct path: inspect the local runtime log, keep the CIEU/CZL record, "
+        "and retry after the runtime is responsive."
+    )
+    return {
+        "artifact_id": "e127_aiden_messenger_runtime_notice",
+        "turn_status": status,
+        "runtime_error": {
+            "reason": reason,
+            "detail": detail,
+            "elapsed_seconds": round(elapsed_seconds, 3),
+            "runtime_timeout_seconds": RUNTIME_TIMEOUT_SECONDS,
+            "occurred_at": now,
+        },
+        "message_packets": [
+            {
+                "message": {
+                    "message_id": f"e127_runtime_notice_{int(time.time() * 1000)}",
+                    "sender_id": "Aiden",
+                    "recipient_ids": ["owner"],
+                    "message_kind": "governance_notice",
+                    "human_readable_text": notice_text,
+                    "cieu_five_tuple": {
+                        "Y_star_t": "Aiden meeting room must fail visibly instead of silently hanging.",
+                        "X_t": {
+                            "source": "E127 messenger runtime watchdog",
+                            "owner_message_preview": human_text[:180],
+                            "runtime_status": status,
+                        },
+                        "U_t": {
+                            "speech_act": "runtime_failure_notice",
+                            "external_action_executed": False,
+                        },
+                        "Y_t_plus_1": "Owner receives a governed notice and can retry after runtime diagnosis.",
+                        "R_t_plus_1": reason,
+                        "residual_status": "runtime_residual_open",
+                    },
+                }
+            }
+        ],
+        "CIEUStore_summary": {
+            "event_count": 0,
+            "write_status": "not_written_by_watchdog_notice",
+            "correct_path": "restart or inspect the Aiden runtime, then retry the governed turn",
+        },
+        "external_action_executed": False,
+        "provider_action_executed": False,
+        "payment_executed": False,
+        "aiden_auto_reply_generated": False,
+    }
+
+
 class Handler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=str(DIRECTORY), **kwargs)
@@ -47,9 +111,33 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         sys.stderr.write(f"[aiden-messenger] {fmt % args}\n")
 
     def do_GET(self) -> None:
+        if self.path == "/api/health":
+            _json_response(
+                self,
+                {
+                    "status": "ok",
+                    "service": "aiden-agent-native-messenger",
+                    "runtime_timeout_seconds": RUNTIME_TIMEOUT_SECONDS,
+                    "local_only": True,
+                    "external_send_enabled": False,
+                    "payment_execution_enabled": False,
+                },
+            )
+            return
         if self.path == "/api/demo-session":
             db_path = Path(tempfile.gettempdir()) / "e124_agent_native_messenger_server_demo.db"
-            result = run_agent_native_messenger_demo_session(cieu_db=db_path, ystar_gov_root=Y_GOV_ROOT)
+            started = time.monotonic()
+            try:
+                result = run_agent_native_messenger_demo_session(cieu_db=db_path, ystar_gov_root=Y_GOV_ROOT)
+            except Exception as exc:  # pragma: no cover - defensive server guard
+                traceback.print_exc()
+                result = _runtime_notice_payload(
+                    human_text="demo-session",
+                    status="runtime_error",
+                    reason=exc.__class__.__name__,
+                    detail="The demo session could not complete.",
+                    elapsed_seconds=time.monotonic() - started,
+                )
             _json_response(self, result)
             return
         super().do_GET()
@@ -69,11 +157,43 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if not human_text:
             _json_response(self, {"error": "empty text"}, 400)
             return
-        turn = run_agent_native_messenger_turn(
+        started = time.monotonic()
+        future = RUNTIME_EXECUTOR.submit(
+            run_agent_native_messenger_turn,
             owner_text=human_text,
             cieu_db=db_path,
             ystar_gov_root=Y_GOV_ROOT,
             allow_live_network=False,
+        )
+        try:
+            turn = future.result(timeout=RUNTIME_TIMEOUT_SECONDS)
+        except TimeoutError:
+            turn = _runtime_notice_payload(
+                human_text=human_text,
+                status="runtime_timeout",
+                reason="Aiden runtime exceeded the local messenger watchdog timeout.",
+                detail=(
+                    "This usually means retrieval, brain activation, governance validation, or strategy routing is still "
+                    "running too slowly for an interactive chat turn."
+                ),
+                elapsed_seconds=time.monotonic() - started,
+            )
+        except Exception as exc:  # pragma: no cover - defensive server guard
+            traceback.print_exc()
+            turn = _runtime_notice_payload(
+                human_text=human_text,
+                status="runtime_error",
+                reason=exc.__class__.__name__,
+                detail=str(exc) or "The Aiden runtime raised an exception.",
+                elapsed_seconds=time.monotonic() - started,
+            )
+        turn.setdefault("server_runtime", {})
+        turn["server_runtime"].update(
+            {
+                "elapsed_seconds": round(time.monotonic() - started, 3),
+                "runtime_timeout_seconds": RUNTIME_TIMEOUT_SECONDS,
+                "watchdog_enabled": True,
+            }
         )
         _json_response(self, turn)
 
@@ -86,9 +206,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
 
 def main() -> None:
-    with http.server.HTTPServer(("127.0.0.1", PORT), Handler) as httpd:
+    with http.server.ThreadingHTTPServer(("127.0.0.1", PORT), Handler) as httpd:
         print(f"[Aiden Messenger] serving on http://127.0.0.1:{PORT}")
         print("[Aiden Messenger] local-only; external send and payment execution disabled")
+        print(f"[Aiden Messenger] runtime watchdog timeout: {RUNTIME_TIMEOUT_SECONDS}s")
         httpd.serve_forever()
 
 

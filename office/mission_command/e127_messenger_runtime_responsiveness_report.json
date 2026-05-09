@@ -1,0 +1,32 @@
+{
+  "milestone_id": "E127_Aiden_Messenger_Runtime_Responsiveness_And_Error_Transparency_R1",
+  "base_hash": "1cf1b346b6890de601eefd420c10ed212919c02e",
+  "problem": "The Aiden meeting room could appear motionless when the runtime was slow, blocked, or raised an exception because the browser waited silently on a synchronous request.",
+  "root_cause": {
+    "server": "The local HTTP server used a single-threaded synchronous request path and did not wrap Aiden runtime calls with timeout or exception notices.",
+    "browser": "The composer did not optimistically display the owner message, show runtime progress, disable duplicate sends, or enforce a browser timeout."
+  },
+  "implemented": [
+    "Added ThreadingHTTPServer so a slow runtime request does not freeze the local server.",
+    "Added a server-side runtime watchdog using AIDEN_MESSENGER_RUNTIME_TIMEOUT_SECONDS.",
+    "Added governed runtime notice payloads for timeout and error paths.",
+    "Added /api/health for local service checks.",
+    "Added browser-side pending owner messages, busy status, disabled send state, AbortController timeout, and visible system notices.",
+    "Added CSS states for pending, busy, warning, and error visibility."
+  ],
+  "governance_boundary": {
+    "external_action_executed": false,
+    "provider_action_executed": false,
+    "payment_executed": false,
+    "local_only": true
+  },
+  "CIEU_behavior": "Runtime watchdog notices include CIEU/CZL five-tuple fields and tell the owner the correct path instead of silently failing.",
+  "tests_added": [
+    "tests/office/test_e127_messenger_runtime_responsiveness.py"
+  ],
+  "limitations": [
+    "A timeout notice does not cancel an already-running Python worker thread; it prevents silent UI stalls and keeps the server responsive.",
+    "This milestone fixes visibility and recoverability, not the deeper runtime latency of Aiden retrieval/brain/governance paths."
+  ],
+  "next_recommended_milestone": "Optimize the Aiden meeting room reply path so lightweight memo/chat turns use fast retrieval and defer heavy strategy/runtime cycles unless explicitly requested."
+}

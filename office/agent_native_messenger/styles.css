@@ -190,6 +190,10 @@ h2 { font-size: 18px; }
 .message.owner { align-self: flex-end; background: rgba(38, 91, 143, 0.13); }
 .message.Aiden { border-color: rgba(24, 61, 42, 0.25); }
 .message.StrategyAgent { background: rgba(217, 144, 47, 0.14); }
+.message.pending {
+  opacity: 0.76;
+  border-style: dashed;
+}
 
 .meta {
   display: flex;
@@ -224,6 +228,34 @@ h2 { font-size: 18px; }
   border-top: 1px solid var(--line);
 }
 
+.runtime-status {
+  margin: 14px 18px 0;
+  padding: 10px 14px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  background: rgba(255,255,255,0.48);
+  font-size: 13px;
+}
+
+.runtime-status.busy {
+  color: var(--forest);
+  border-color: rgba(217, 144, 47, 0.36);
+  background: rgba(217, 144, 47, 0.14);
+}
+
+.runtime-status.ok {
+  color: var(--forest);
+  background: rgba(24, 61, 42, 0.1);
+}
+
+.runtime-status.warn,
+.runtime-status.error {
+  color: #6d2f24;
+  border-color: rgba(168, 83, 70, 0.32);
+  background: rgba(168, 83, 70, 0.12);
+}
+
 .composer input {
   flex: 1;
   min-width: 0;
@@ -235,6 +267,10 @@ h2 { font-size: 18px; }
   font: 16px Georgia, "Times New Roman", serif;
 }
 
+.composer input:disabled {
+  opacity: 0.7;
+}
+
 .composer button {
   border: 0;
   border-radius: 18px;
@@ -243,6 +279,11 @@ h2 { font-size: 18px; }
   background: linear-gradient(135deg, var(--forest), var(--blue));
   font: 700 14px Georgia, "Times New Roman", serif;
   cursor: pointer;
+}
+
+.composer button:disabled {
+  cursor: wait;
+  opacity: 0.65;
 }
 
 .tuple-view {
