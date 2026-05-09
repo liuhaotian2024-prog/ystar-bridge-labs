@@ -626,6 +626,13 @@ def run_aiden_host_runtime(
         allow_live_network=allow_live_network,
         seal_session=True,
     )
+    return AidenChatRoute(
+        route="aiden_ceo_host_runtime",
+        prefixed=True,
+        owner_message=owner_message,
+        response_text=render_aiden_host_runtime_response(result),
+        protocol=HOST_RUNTIME_PROTOCOL,
+    )
 
 
 def run_aiden_live_web_capability_strategy_runtime(
@@ -654,13 +661,6 @@ def run_aiden_live_web_capability_strategy_runtime(
         owner_message=owner_message,
         response_text=render_aiden_live_web_capability_strategy_response(result),
         protocol=LIVE_WEB_STRATEGY_RUNTIME_PROTOCOL,
-    )
-    return AidenChatRoute(
-        route="aiden_ceo_host_runtime",
-        prefixed=True,
-        owner_message=owner_message,
-        response_text=render_aiden_host_runtime_response(result),
-        protocol=HOST_RUNTIME_PROTOCOL,
     )
 
 
@@ -729,6 +729,17 @@ def route_chat_message_to_aiden_meeting_room(
             response_text=build_empty_aiden_prefix_revision(),
         )
 
+    if is_aiden_live_web_strategy_runtime_message(owner_message):
+        return run_aiden_live_web_capability_strategy_runtime(
+            owner_message,
+            repo_root=repo_root,
+            cieu_db=cieu_db,
+            brain_db=brain_db,
+            ystar_gov_root=ystar_gov_root,
+            live_public_read_provider=live_public_read_provider,
+            allow_live_network=allow_live_network,
+        )
+
     if is_aiden_host_runtime_message(owner_message):
         return run_aiden_host_runtime(
             owner_message,
@@ -742,17 +753,6 @@ def route_chat_message_to_aiden_meeting_room(
 
     if is_aiden_strategy_runtime_message(owner_message):
         return run_aiden_deep_strategy_runtime(
-            owner_message,
-            repo_root=repo_root,
-            cieu_db=cieu_db,
-            brain_db=brain_db,
-            ystar_gov_root=ystar_gov_root,
-            live_public_read_provider=live_public_read_provider,
-            allow_live_network=allow_live_network,
-        )
-
-    if is_aiden_live_web_strategy_runtime_message(owner_message):
-        return run_aiden_live_web_capability_strategy_runtime(
             owner_message,
             repo_root=repo_root,
             cieu_db=cieu_db,

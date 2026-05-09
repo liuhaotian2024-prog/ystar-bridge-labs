@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 from shutil import copyfile
 
+import office.aiden_meeting_room.chat_router as chat_router
 from office.aiden_meeting_room.chat_router import (
     answer_aiden_prefixed_message,
     is_aiden_meeting_room_message,
@@ -94,3 +95,32 @@ def test_prefix_helpers_accept_both_colon_forms():
     assert is_aiden_strategy_runtime_message("我们怎么最快赚钱？")
     assert strip_aiden_meeting_room_prefix("Aiden: hello") == "hello"
     assert strip_aiden_meeting_room_prefix("Aiden：hello") == "hello"
+
+
+def test_host_runtime_route_returns_chat_route_not_none(monkeypatch, tmp_path):
+    monkeypatch.setattr(chat_router, "run_aiden_host_runtime_cycle", lambda **kwargs: {"host_runtime_packet": {}, "next_action_recommendation": {}})
+    monkeypatch.setattr(chat_router, "render_aiden_host_runtime_response", lambda result: "host runtime response")
+
+    route = chat_router.route_chat_message_to_aiden_meeting_room(
+        "Aiden: run the autonomous company runtime",
+        repo_root=REPO_ROOT,
+        cieu_db=tmp_path / "host_route.db",
+    )
+
+    assert route is not None
+    assert route.route == "aiden_ceo_host_runtime"
+    assert route.response_text == "host runtime response"
+
+
+def test_live_web_strategy_takes_priority_over_generic_strategy(monkeypatch, tmp_path):
+    monkeypatch.setattr(chat_router, "run_e114_live_web_capability_utilized_strategy_run", lambda **kwargs: {"ok": True})
+    monkeypatch.setattr(chat_router, "render_aiden_live_web_capability_strategy_response", lambda result: "live web strategy response")
+
+    route = chat_router.route_chat_message_to_aiden_meeting_room(
+        "Aiden: 请实时上网做全球市场战略分析",
+        repo_root=REPO_ROOT,
+        cieu_db=tmp_path / "live_priority.db",
+    )
+
+    assert route.route == "aiden_ceo_live_web_capability_strategy_runtime"
+    assert route.response_text == "live web strategy response"
