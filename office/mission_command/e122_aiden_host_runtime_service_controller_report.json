@@ -1,0 +1,64 @@
+{
+  "L5_truth_table_after": {
+    "L5-A": "complete_internal_runtime_foundation_with_host_runtime_service_controller",
+    "L5-B": "stronger_governed_intelligence_with_local_service_control_path_for_gemma",
+    "L5-C": "partial_dry_run_only_for_external_business_actions",
+    "L5-D": "absent_or_not_executed",
+    "L5-E": "partial_safe_brain_learning_pending_local_model_activation"
+  },
+  "activation_model": {
+    "allowed_service_now": "ollama_server",
+    "installer": "scripts/host_runtime_service_bridge_install.py",
+    "queue_root": "/tmp/ystar_host_runtime_bridge",
+    "worker_script": "scripts/host_runtime_service_bridge_worker.py"
+  },
+  "base_hashes": {
+    "Y_star_gov": "5cb40d2796f5d70b3ef6fc57e3560fff81c96c5d",
+    "bridge_labs": "4182c009358cbb85a8efc1201d6ea8c435247845"
+  },
+  "milestone_id": "E122_Aiden_Host_Runtime_Service_Controller_R1",
+  "service_bridge_submission": {
+    "submitted": false
+  },
+  "service_order_decision": {
+    "artifact_id": "aiden_host_runtime_service_controller_decision",
+    "correct_path": [
+      "write service bridge job and let host_runtime_service_bridge execute the allowlisted action"
+    ],
+    "decision": "ALLOW",
+    "failed_section": null,
+    "guidance": {
+      "requested_action": "start",
+      "service_id": "ollama_server"
+    },
+    "passed": true,
+    "reason": "host runtime service order is allowlisted, local-only, owner-approved, and governed",
+    "violations": []
+  },
+  "truth_constraints": {
+    "K9Audit_write_allowed": false,
+    "account_creation_allowed": false,
+    "arbitrary_shell_allowed": false,
+    "customer_contact_allowed": false,
+    "external_business_action_allowed": false,
+    "external_llm_provider_allowed": false,
+    "login_allowed": false,
+    "payment_allowed": false,
+    "private_data_exfiltration_allowed": false
+  },
+  "what_was_implemented": [
+    "Y-star-gov governed host runtime service order",
+    "host runtime service bridge queue and worker",
+    "allowlisted Ollama/Gemma4 service lifecycle commands",
+    "LaunchAgent installer for long-running host service bridge",
+    "CIEU-backed service order validation"
+  ],
+  "what_was_not_claimed": [
+    "Codex sandbox did not directly bind localhost",
+    "no arbitrary shell access",
+    "no external business action",
+    "no customer contact",
+    "no payment",
+    "no production brain write"
+  ]
+}

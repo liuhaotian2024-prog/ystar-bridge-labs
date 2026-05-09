@@ -1,0 +1,15 @@
+{
+  "L5_truth_table_after": {
+    "L5-A": "complete_internal_runtime_foundation_with_host_runtime_service_controller",
+    "L5-B": "stronger_governed_intelligence_with_local_service_control_path_for_gemma",
+    "L5-C": "partial_dry_run_only_for_external_business_actions",
+    "L5-D": "absent_or_not_executed",
+    "L5-E": "partial_safe_brain_learning_pending_local_model_activation"
+  },
+  "arbitrary_shell_allowed": false,
+  "external_business_action_allowed": false,
+  "generated_at": "2026-05-09T14:47:09.403373+00:00",
+  "host_runtime_service_controller_available": true,
+  "milestone_id": "E122_Aiden_Host_Runtime_Service_Controller_R1",
+  "service_bridge_job_submitted_in_report_run": false
+}
