@@ -1,0 +1,98 @@
+{
+  "CIEUStore_summary": {
+    "decisions": [
+      "ALLOW",
+      "allow",
+      "allow",
+      "allow",
+      "allow",
+      "ALLOW",
+      "ALLOW"
+    ],
+    "event_count": 7,
+    "event_ids": [
+      "abb3ed15-d2d9-49ff-a0e2-4f5442b66a7a",
+      "1b31b0bf-e098-4ace-af21-f8761c1e98ad",
+      "e1bcb4a2-59a9-4b7a-a4e2-4c808d6431a2",
+      "9e1b4509-d909-4c95-b0b0-473ca3e162d6",
+      "994e0ee5-548c-4647-878b-f15d5202738c",
+      "b533adba-9afb-4050-81b4-bbf12e7a87fe",
+      "cd831b12-6687-4558-ad7d-52408a98f184"
+    ],
+    "event_types": [
+      "LABS_UNIVERSAL_OPERATING_CONTROL_DECISION",
+      "CEO_LIVE_GLOBAL_OPEN_WORLD_STRATEGY_DECISION",
+      "CEO_STRATEGY_MATH_MODEL_DECISION",
+      "CEO_IMPLEMENTATION_ORDER_DECISION",
+      "CODEX_HANDOFF_PROMPT_DECISION",
+      "AIDEN_HOST_RUNTIME_CYCLE_DECISION",
+      "CEO_BRAIN_LEARNING_LOOP_DECISION"
+    ]
+  },
+  "CZL_residual_loop_linkage": {
+    "czl_tuple_schema": [
+      "X_t",
+      "U",
+      "Y_star",
+      "Y_t_plus_1",
+      "R_t_plus_1"
+    ],
+    "documentation_refs": [
+      "Y-star-gov/docs/AMENDMENT_014_DELIVERY_REPORT.md",
+      "Y-star-gov/docs/cieu_prediction_delta/schema_v0.md"
+    ],
+    "mechanism_id": "CZL_CIEU_residual_loop_engine_v1",
+    "parallel_residual_model_created": false,
+    "relationship": "E112 failure residuals are represented as CZL/RLE tuples and written as CIEU-backed brain learning candidates.",
+    "residual_loop_engine_path": "ystar/governance/residual_loop_engine.py",
+    "uses_existing_czl_mechanism": true
+  },
+  "L5_truth_table_after": {
+    "L5-A": "complete_internal_runtime_foundation",
+    "L5-B": "complete_for_structured_governed_intelligence_loop_with_host_runtime_autonomy_control_and_CIEU_backed_brain_learning_candidates",
+    "L5-C": "partial_dry_run_only",
+    "L5-D": "absent_or_not_executed",
+    "L5-E": "partial_CIEU_backed_brain_learning_candidate_loop_no_production_brain_write"
+  },
+  "Y_star_gov_brain_learning_decision": "ALLOW",
+  "accepted_evidence_count": 48,
+  "brain_learning_loop_proven": true,
+  "brain_mutation_candidate_count": 48,
+  "failure_residual_candidate_count": 5,
+  "freshness_filter_summary": {
+    "accepted_count": 48,
+    "rejected_count": 0,
+    "rejected_status_counts": {},
+    "stale_or_undated_evidence_blocked_from_brain": false
+  },
+  "freshness_rejection_proof": {
+    "accepted_count": 0,
+    "brain_candidate_count_from_rejected_items": 0,
+    "conclusion": "stale and undated public-read evidence cannot feed brain mutation candidates",
+    "proof_id": "e112_stale_and_undated_rejection_proof",
+    "rejected_count": 2,
+    "rejected_status_counts": {
+      "rejected_missing_source_date_for_brain_learning": 1,
+      "rejected_stale": 1
+    }
+  },
+  "learning_boundary": {
+    "competitor_facts_enter_long_term_memory_as_candidates": true,
+    "direct_production_brain_write": false,
+    "failure_residuals_enter_long_term_memory_as_CZL_candidates": true,
+    "market_facts_enter_long_term_memory_as_candidates": true,
+    "stale_or_undated_evidence_blocked": true,
+    "uses_existing_CZL_residual_loop_engine": true
+  },
+  "milestone_id": "E112_CIEU_Backed_Brain_Learning_Loop_And_Freshness_Filter_R1",
+  "production_brain_write_performed": false,
+  "rejected_evidence_count": 0,
+  "what_was_not_claimed": [
+    "no production brain write performed",
+    "no L4 feedback executed",
+    "no customer validation",
+    "no revenue/payment signal",
+    "no live provider execution",
+    "no K9Audit integration"
+  ]
+}
