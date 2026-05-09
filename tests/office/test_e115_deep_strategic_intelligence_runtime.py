@@ -39,9 +39,18 @@ def test_e115_deep_strategy_runtime_writes_governed_dossier(tmp_path):
     assert result["deep_strategy_runtime_proven"] is True
     assert decision["decision"] == "ALLOW"
     assert len(dossier["deep_reasoning_dimensions"]) >= 14
+    evidence_sets = [tuple(item["evidence_refs"]) for item in dossier["deep_reasoning_dimensions"]]
+    unique_refs = {ref for refs in evidence_sets for ref in refs}
+    assert len(set(evidence_sets)) >= 8
+    assert len(unique_refs) >= 12
     assert len(dossier["competitive_landscape"]["competitors_and_substitutes"]) >= 5
+    assert all(
+        competitor.get("public_signal_date") or competitor.get("latest_funding_date") or competitor.get("observed_at")
+        for competitor in dossier["competitive_landscape"]["competitors_and_substitutes"]
+    )
     assert len(dossier["product_shape"]["buyer_visible_deliverables"]) >= 5
     assert dossier["causal_zero_loop_model"]["R_t_plus_1"] == 0.0
+    assert dossier["causal_zero_loop_model"]["residual_truth_status"]["real_market_residual_closed"] is False
     assert "CEO_DEEP_STRATEGIC_INTELLIGENCE_DECISION" in result["CIEUStore_summary"]["event_types"]
     assert result["truth_constraints"]["no_customer_validation_claim"] is True
     assert result["L5_truth_table_after"]["L5-D"] == "absent_or_not_executed"
@@ -62,6 +71,9 @@ def test_e115_dossier_makes_product_shape_and_right_to_win_concrete(tmp_path):
     assert "Evidence" in product["product_name"] or "Rescue" in product["product_name"]
     assert any("CIEU" in item for item in product["buyer_visible_deliverables"])
     assert any("Y-star-gov" in item for item in right_to_win["right_to_win_assets"])
+    assert len(right_to_win["market_visible_right_to_win_assets"]) >= 4
+    assert all(item["buyer_visible_proof"] for item in right_to_win["market_visible_right_to_win_assets"])
+    assert all(item["why_buyer_cares"] for item in right_to_win["market_visible_right_to_win_assets"])
     assert len(right_to_win["right_to_lose_risks"]) >= 3
 
 

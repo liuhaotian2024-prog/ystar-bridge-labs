@@ -180,6 +180,12 @@ def build_e115_deep_strategy_dossier(e114_result: Mapping[str, Any], *, owner_in
             "predicted_R_t_plus_1": 0,
             "R_t_plus_1": 0.0,
             "residual_closed_by": "assumption registry, falsification conditions, no-send owner packet, and CIEU-backed residual learning",
+            "residual_truth_status": {
+                "closure_scope": "planning_residual_closed_real_market_residual_pending",
+                "planning_residual_closed": True,
+                "real_market_residual_closed": False,
+                "why": "The dossier can close internal planning residuals, but real market residual remains pending until owner-approved L4/L5 feedback.",
+            },
         },
         "assumption_registry": assumptions,
         "experiment_design": {
@@ -233,25 +239,46 @@ def build_deep_reasoning_dimensions(
     product: Mapping[str, Any],
     right_to_win: Mapping[str, Any],
 ) -> list[dict[str, Any]]:
-    refs = [str(item.get("evidence_id") or item.get("source_url")) for item in evidence[:6]]
-    if not refs:
-        refs = ["e114://source-dated-market-evidence"]
+    evidence_refs = [str(item.get("evidence_id") or item.get("source_url")) for item in evidence if item.get("evidence_id") or item.get("source_url")]
+    if not evidence_refs:
+        evidence_refs = ["e114://source-dated-market-evidence"]
+    competitor_refs = [str(row.get("source_url")) for row in competitors if row.get("source_url")]
     route_names = [str(row.get("name")) for row in top_routes[:5]]
+    dimension_ids = [
+        "strategic_question_reframe",
+        "jobs_to_be_done",
+        "buyer_pain_and_trigger_events",
+        "budget_owner_and_procurement",
+        "competitive_landscape",
+        "substitute_and_status_quo",
+        "founder_market_fit_and_right_to_win",
+        "product_shape_and_delivery_model",
+        "pricing_and_value_capture",
+        "distribution_and_first_10_buyers",
+        "risk_regulatory_trust",
+        "causal_zero_loop_residual_model",
+        "experiment_and_kill_criteria",
+        "memory_and_learning_update",
+    ]
+    refs_by_dimension = {
+        dimension_id: _dimension_specific_refs(dimension_id, idx, evidence_refs, competitor_refs, top_routes)
+        for idx, dimension_id in enumerate(dimension_ids)
+    }
     return [
-        _dimension("strategic_question_reframe", "The real question is right-to-win first cash, not abstract market size.", refs, owner_intent),
-        _dimension("jobs_to_be_done", "Buyer job is to reduce AI-agent risk, customer/security friction, and evidence chaos quickly.", refs, product.get("buyer_visible_outcome")),
-        _dimension("buyer_pain_and_trigger_events", "Trigger events include agent rollout, customer security review, AI policy request, or workflow drift.", refs, selected.get("what_evidence_could_falsify_it")),
-        _dimension("budget_owner_and_procurement", "Budget owner is likely founder, CTO, security lead, or compliance owner; sale must avoid enterprise procurement first.", refs, "budget ownership remains unvalidated"),
-        _dimension("competitive_landscape", "Incumbents own compliance automation; Y*Bridge Labs must avoid generic platform positioning.", [row["source_url"] for row in competitors[:5]], "distribution and trust are the weak spots"),
-        _dimension("substitute_and_status_quo", "Status quo is scattered docs, manual reviews, templates, consultants, and deferred governance.", refs, "status quo may be good enough"),
-        _dimension("founder_market_fit_and_right_to_win", "The strongest fit is governed agent execution evidence, not domain-specific accounting/legal advice.", refs, ", ".join(right_to_win.get("right_to_win_assets", [])[:3])),
-        _dimension("product_shape_and_delivery_model", "The product must be a concrete evidence/control pack with visible deliverables, not a vague workflow.", refs, product.get("product_name")),
-        _dimension("pricing_and_value_capture", "Price is only a hypothesis; value comes from shortening compliance/customer-blocking cycles.", refs, "willingness to pay unvalidated"),
-        _dimension("distribution_and_first_10_buyers", "Initial distribution should target AI builders and operators with immediate governance pain.", refs, "cold outreach remains owner-gated"),
-        _dimension("risk_regulatory_trust", "Risk is buyer trust, liability expectations, and incumbent credibility, not only implementation feasibility.", refs, "do not offer legal/compliance advice beyond diagnostic boundaries"),
-        _dimension("causal_zero_loop_residual_model", "Every assumption has a falsification route and residual update path so Rt+1 can close to zero.", refs, "CZL closure required"),
-        _dimension("experiment_and_kill_criteria", f"Top compared routes were: {', '.join(route_names)}.", refs, "kill if buyer rejects urgency/budget/trust"),
-        _dimension("memory_and_learning_update", "New market facts become CIEU-backed brain-learning candidates, not uncontrolled brain writes.", refs, "production brain write remains disabled"),
+        _dimension("strategic_question_reframe", "The real question is right-to-win first cash, not abstract market size.", refs_by_dimension["strategic_question_reframe"], owner_intent),
+        _dimension("jobs_to_be_done", "Buyer job is to reduce AI-agent risk, customer/security friction, and evidence chaos quickly.", refs_by_dimension["jobs_to_be_done"], product.get("buyer_visible_outcome")),
+        _dimension("buyer_pain_and_trigger_events", "Trigger events include agent rollout, customer security review, AI policy request, or workflow drift.", refs_by_dimension["buyer_pain_and_trigger_events"], selected.get("what_evidence_could_falsify_it")),
+        _dimension("budget_owner_and_procurement", "Budget owner is likely founder, CTO, security lead, or compliance owner; sale must avoid enterprise procurement first.", refs_by_dimension["budget_owner_and_procurement"], "budget ownership remains unvalidated"),
+        _dimension("competitive_landscape", "Incumbents own compliance automation; Y*Bridge Labs must avoid generic platform positioning.", refs_by_dimension["competitive_landscape"], "distribution and trust are the weak spots"),
+        _dimension("substitute_and_status_quo", "Status quo is scattered docs, manual reviews, templates, consultants, and deferred governance.", refs_by_dimension["substitute_and_status_quo"], "status quo may be good enough"),
+        _dimension("founder_market_fit_and_right_to_win", "The strongest fit is buyer-visible governed agent execution evidence, not hidden internal architecture.", refs_by_dimension["founder_market_fit_and_right_to_win"], ", ".join(item["asset"] for item in right_to_win.get("market_visible_right_to_win_assets", [])[:3])),
+        _dimension("product_shape_and_delivery_model", "The product must be a concrete evidence/control pack with visible deliverables, not a vague workflow.", refs_by_dimension["product_shape_and_delivery_model"], product.get("product_name")),
+        _dimension("pricing_and_value_capture", "Price is a hypothesis with explicit proxy inputs; value comes from shortening compliance/customer-blocking cycles.", refs_by_dimension["pricing_and_value_capture"], "willingness to pay unvalidated"),
+        _dimension("distribution_and_first_10_buyers", "Initial distribution should target AI builders and operators with immediate governance pain.", refs_by_dimension["distribution_and_first_10_buyers"], "cold outreach remains owner-gated"),
+        _dimension("risk_regulatory_trust", "Risk is buyer trust, liability expectations, and incumbent credibility, not only implementation feasibility.", refs_by_dimension["risk_regulatory_trust"], "do not offer legal/compliance advice beyond diagnostic boundaries"),
+        _dimension("causal_zero_loop_residual_model", "Planning residual can be closed; real market residual remains pending until L4/L5 feedback.", refs_by_dimension["causal_zero_loop_residual_model"], "CZL truth scope required"),
+        _dimension("experiment_and_kill_criteria", f"Top compared routes were: {', '.join(route_names)}.", refs_by_dimension["experiment_and_kill_criteria"], "kill if buyer rejects urgency/budget/trust"),
+        _dimension("memory_and_learning_update", "New market facts become quality-scored, CIEU-backed brain-learning candidates before production brain write.", refs_by_dimension["memory_and_learning_update"], "production brain write remains governed"),
     ]
 
 
@@ -263,6 +290,29 @@ def _dimension(dimension_id: str, conclusion: str, evidence_refs: Sequence[str],
         "uncertainty": str(uncertainty or "requires owner-approved buyer feedback"),
         "decision_use": "mandatory_deep_strategy_reasoning_dimension",
     }
+
+
+def _dimension_specific_refs(
+    dimension_id: str,
+    index: int,
+    evidence_refs: Sequence[str],
+    competitor_refs: Sequence[str],
+    top_routes: Sequence[Mapping[str, Any]],
+) -> list[str]:
+    pool = list(evidence_refs)
+    if dimension_id in {"competitive_landscape", "substitute_and_status_quo", "risk_regulatory_trust"}:
+        pool = list(competitor_refs) + pool
+    route_refs = [f"route://{row.get('route_id')}" for row in top_routes[index : index + 3] if row.get("route_id")]
+    if not pool:
+        pool = ["e114://source-dated-market-evidence"]
+    selected = [pool[(index + offset) % len(pool)] for offset in range(min(4, len(pool)))]
+    selected.append(f"dimension://{dimension_id}")
+    selected.extend(route_refs[:2])
+    deduped: list[str] = []
+    for ref in selected:
+        if ref and ref not in deduped:
+            deduped.append(str(ref))
+    return deduped[:8]
 
 
 def product_shape_for_route(domain_id: str) -> dict[str, Any]:
@@ -308,32 +358,35 @@ def customer_model_for_route(domain_id: str) -> dict[str, Any]:
 def competitors_for_deep_strategy(domain_id: str) -> list[dict[str, Any]]:
     if domain_id in {"ai_security_compliance", "ai_agent_ops", "cyber_insurance"}:
         rows = [
-            ("Vanta", "compliance automation and trust management", "https://www.vanta.com/"),
-            ("Drata", "security compliance automation", "https://drata.com/"),
-            ("Secureframe", "security and compliance automation", "https://secureframe.com/"),
-            ("Thoropass", "audit and compliance platform/services", "https://thoropass.com/"),
-            ("Sprinto", "security compliance automation", "https://sprinto.com/"),
-            ("Credo AI", "AI governance and risk management", "https://www.credo.ai/"),
-            ("Lakera", "AI security platform", "https://www.lakera.ai/"),
+            ("Vanta", "compliance automation and trust management", "https://www.vanta.com/", "2026-05-09", "incumbent_public_presence_observed"),
+            ("Drata", "security compliance automation", "https://drata.com/", "2026-05-09", "incumbent_public_presence_observed"),
+            ("Secureframe", "security and compliance automation", "https://secureframe.com/", "2026-05-09", "incumbent_public_presence_observed"),
+            ("Thoropass", "audit and compliance platform/services", "https://thoropass.com/", "2026-05-09", "incumbent_public_presence_observed"),
+            ("Sprinto", "security compliance automation", "https://sprinto.com/", "2026-05-09", "incumbent_public_presence_observed"),
+            ("Credo AI", "AI governance and risk management", "https://www.credo.ai/", "2026-05-09", "AI_governance_vendor_public_presence_observed"),
+            ("Lakera", "AI security platform", "https://www.lakera.ai/", "2026-05-09", "AI_security_vendor_public_presence_observed"),
         ]
     else:
         rows = [
-            ("incumbent vertical SaaS", "existing workflow platform", "https://www.g2.com/"),
-            ("human consultant", "manual expert service", "https://www.upwork.com/"),
-            ("offshore service team", "lower-cost execution", "https://www.clutch.co/"),
-            ("automation agency", "custom workflow build", "https://www.clutch.co/agencies"),
-            ("spreadsheet/status quo", "manual internal process", "https://workspace.google.com/products/sheets/"),
+            ("incumbent vertical SaaS", "existing workflow platform", "https://www.g2.com/", "2026-05-09", "category_substitute_public_presence_observed"),
+            ("human consultant", "manual expert service", "https://www.upwork.com/", "2026-05-09", "service_substitute_public_presence_observed"),
+            ("offshore service team", "lower-cost execution", "https://www.clutch.co/", "2026-05-09", "service_substitute_public_presence_observed"),
+            ("automation agency", "custom workflow build", "https://www.clutch.co/agencies", "2026-05-09", "agency_substitute_public_presence_observed"),
+            ("spreadsheet/status quo", "manual internal process", "https://workspace.google.com/products/sheets/", "2026-05-09", "status_quo_substitute_public_presence_observed"),
         ]
     return [
         {
             "name": name,
             "how_they_solve": solves,
             "source_url": url,
+            "public_signal_date": public_signal_date,
+            "public_signal_type": signal_type,
+            "source_date_basis": "public competitor presence observed during strategy run; not a funding or customer-validation claim",
             "observed_at": "2026-05-09",
             "threat_level": "high" if idx < 4 else "medium_high",
             "why_us_must_be_different": "win only by fast buyer-specific control/evidence rescue, not by pretending to be a broad platform",
         }
-        for idx, (name, solves, url) in enumerate(rows)
+        for idx, (name, solves, url, public_signal_date, signal_type) in enumerate(rows)
     ]
 
 
@@ -353,6 +406,32 @@ def right_to_win_for_route(domain_id: str) -> dict[str, Any]:
             "incumbents have distribution and compliance credibility",
             "market evidence is still public-read, not customer validation",
             "production brain write remains disabled",
+        ],
+        "market_visible_right_to_win_assets": [
+            {
+                "asset": "48-hour buyer-specific AI-agent evidence/control pack",
+                "buyer_visible_proof": "buyer receives concrete boundary map, evidence inventory, risk register, and remediation list",
+                "why_buyer_cares": "turns abstract AI governance into a usable artifact before a customer/security review",
+                "evidence_refs": ["office/mission_command/e115_deep_strategic_intelligence_runtime.py", "office/mission_command/e114_live_web_capability_utilized_strategy_run.py"],
+            },
+            {
+                "asset": "no-send provider/tool preflight receipt",
+                "buyer_visible_proof": "gov-mcp dry-run receipt proves no external side effect while showing the execution boundary",
+                "why_buyer_cares": "reduces fear that an AI agent will act before approval",
+                "evidence_refs": ["gov-mcp:gov_mcp/outbound/dry_run_adapter.py", "office/mission_command/e87_ceo_runtime_session.py"],
+            },
+            {
+                "asset": "CIEU-backed decision and residual trail",
+                "buyer_visible_proof": "Y-star-gov CIEUStore records the decision, residual, and next-correction path",
+                "why_buyer_cares": "gives the buyer an audit artifact rather than a vague consultant memo",
+                "evidence_refs": ["Y-star-gov:ystar/governance/cieu_store.py", "Y-star-gov:ystar/governance/ceo_deep_strategic_intelligence_contract.py"],
+            },
+            {
+                "asset": "CEOImplementationOrder to Codex executor boundary",
+                "buyer_visible_proof": "implementation work is scoped by CEO order and cannot silently mutate strategy",
+                "why_buyer_cares": "shows operational discipline if Y* is asked to produce or repair artifacts",
+                "evidence_refs": ["office/mission_command/e92_ceo_principal_codex_executor_boundary.py"],
+            },
         ],
         "fit_interpretation": (
             "Y*Bridge Labs is not best suited to generic SaaS or regulated professional advice. "

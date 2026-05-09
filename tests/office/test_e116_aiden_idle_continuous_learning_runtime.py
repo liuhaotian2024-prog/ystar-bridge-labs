@@ -47,8 +47,13 @@ def test_e116_packet_builds_source_dated_knowledge_graph_delta(tmp_path):
     assert packet["trigger_context"]["idle_state_verified"] is True
     assert len(packet["evidence_items"]) >= 8
     assert all(item["source_date"] for item in packet["evidence_items"])
+    assert packet["learning_quality_summary"]["learning_quality_gate_applied"] is True
+    assert packet["learning_quality_summary"]["average_quality_score"] >= 0.65
+    assert packet["learning_quality_summary"]["low_quality_evidence_ids"] == []
+    assert all(item["learning_quality"]["quality_score"] >= 0.6 for item in packet["evidence_items"])
     assert len(packet["knowledge_graph_delta"]["nodes"]) >= 8
     assert len(packet["knowledge_graph_delta"]["edges"]) >= 8
+    assert all(node["learning_quality_score"] >= 0.6 for node in packet["knowledge_graph_delta"]["nodes"])
     assert packet["CZL_closure"]["R_t_plus_1"] == 0.0
     assert packet["truth_constraints"]["external_action_executed"] is False
 
@@ -101,4 +106,3 @@ def test_e116_report_mode_does_not_claim_revenue_or_external_action(tmp_path):
     assert result["truth_constraints"]["payment_claim"] is False
     assert result["truth_constraints"]["external_action_executed"] is False
     assert result["continuous_runtime_capability"]["supports_24h_idle_loop"] is True
-

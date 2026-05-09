@@ -106,8 +106,17 @@ def build_idle_learning_evergreen_evidence_snapshot() -> list[dict[str, Any]]:
 def filter_idle_learning_evidence(evidence_items: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
     policy = build_market_evidence_freshness_policy(current_date="2026-05-09")
     rows = [classify_evidence_freshness(item, policy, test_mode=False) for item in evidence_items]
-    accepted = [row for row in rows if str(row.get("freshness_status") or "").startswith("accepted_")]
+    freshness_accepted = [row for row in rows if str(row.get("freshness_status") or "").startswith("accepted_")]
     rejected = [row for row in rows if not str(row.get("freshness_status") or "").startswith("accepted_")]
+    scored = attach_learning_quality_scores(freshness_accepted)
+    accepted = [row for row in scored if float(row.get("learning_quality", {}).get("quality_score") or 0.0) >= 0.6]
+    low_quality = [
+        {**row, "freshness_status": "rejected_low_learning_quality"}
+        for row in scored
+        if float(row.get("learning_quality", {}).get("quality_score") or 0.0) < 0.6
+    ]
+    rejected.extend(low_quality)
+    quality_scores = [float(row.get("learning_quality", {}).get("quality_score") or 0.0) for row in accepted]
     return {
         "policy": {
             **policy,
@@ -116,6 +125,21 @@ def filter_idle_learning_evidence(evidence_items: Sequence[Mapping[str, Any]]) -
         },
         "accepted": accepted,
         "rejected": rejected,
+        "learning_quality_summary": {
+            "learning_quality_gate_applied": True,
+            "average_quality_score": round(sum(quality_scores) / len(quality_scores), 3) if quality_scores else 0.0,
+            "minimum_quality_score": round(min(quality_scores), 3) if quality_scores else 0.0,
+            "low_quality_evidence_ids": [str(row.get("evidence_id")) for row in low_quality],
+            "quality_dimensions": [
+                "source_authority",
+                "freshness",
+                "commercial_relevance",
+                "novelty",
+                "cross_source_support",
+                "actionability",
+                "risk_of_staleness",
+            ],
+        },
         "summary": {
             "total_count": len(rows),
             "accepted_count": len(accepted),
@@ -143,6 +167,7 @@ def build_idle_learning_knowledge_graph_delta(
             "depth_label": "foundational",
             "source_evidence_ids": [first_evidence],
             "summary": "Root node connecting source-dated idle learning into Aiden's CEO knowledge graph.",
+            "learning_quality_score": _average_quality_for_refs([first_evidence], accepted_evidence_items),
             "dims": {"y": 0.82, "x": 0.9, "z": 0.82, "t": 0.88, "phi": 0.84, "c": 0.72},
         }
     )
@@ -159,6 +184,7 @@ def build_idle_learning_knowledge_graph_delta(
                 "depth_label": "operational",
                 "source_evidence_ids": refs,
                 "summary": str(domain.get("learning_objective") or "")[:260],
+                "learning_quality_score": _average_quality_for_refs(refs, accepted_evidence_items),
                 "dims": {"y": 0.72, "x": 0.78, "z": 0.72, "t": 0.78, "phi": 0.78, "c": 0.68},
             }
         )
@@ -179,6 +205,8 @@ def build_idle_learning_knowledge_graph_delta(
                 "source_url": item.get("source_url"),
                 "source_date": item.get("source_date"),
                 "freshness_status": item.get("freshness_status"),
+                "learning_quality_score": float(item.get("learning_quality", {}).get("quality_score") or 0.0),
+                "learning_quality": item.get("learning_quality"),
                 "dims": _dims_for_domain(domain_id),
             }
         )
@@ -225,6 +253,7 @@ def build_aiden_idle_learning_packet(
         "source_date_policy": freshness["policy"],
         "evidence_items": accepted,
         "rejected_evidence_items": freshness["rejected"],
+        "learning_quality_summary": freshness["learning_quality_summary"],
         "freshness_summary": freshness["summary"],
         "knowledge_graph_delta": delta,
         "brain_write_policy": {
@@ -661,6 +690,92 @@ def _status_counts(rows: Sequence[Mapping[str, Any]]) -> dict[str, int]:
     return counts
 
 
+def attach_learning_quality_scores(rows: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
+    domain_counts: dict[str, int] = {}
+    for row in rows:
+        domain = str(row.get("domain_id") or "unknown")
+        domain_counts[domain] = domain_counts.get(domain, 0) + 1
+    scored = []
+    for row in rows:
+        item = dict(row)
+        item["learning_quality"] = score_learning_evidence_quality(item, domain_counts=domain_counts)
+        scored.append(item)
+    return scored
+
+
+def score_learning_evidence_quality(
+    evidence: Mapping[str, Any],
+    *,
+    domain_counts: Mapping[str, int] | None = None,
+) -> dict[str, Any]:
+    text = " ".join(
+        str(evidence.get(field) or "")
+        for field in ("source_title", "source_url", "claim_summary", "domain_id", "query")
+    ).lower()
+    url = str(evidence.get("source_url") or "").lower()
+    authoritative_domains = (
+        "gartner.com",
+        "mckinsey.com",
+        "nist.gov",
+        "owasp.org",
+        "modelcontextprotocol.io",
+        "ycombinator.com",
+        "stripe.com",
+        "cbinsights.com",
+        "businessinsider.com",
+        "ibm.com",
+        "guidehouse.com",
+        "internationalaccountingbulletin.com",
+        "crowdfundinsider.com",
+        "natlawreview.com",
+    )
+    source_authority = 0.82 if any(domain in url for domain in authoritative_domains) else 0.66
+    freshness_status = str(evidence.get("freshness_status") or "")
+    freshness = 0.9 if freshness_status == "accepted_current" else 0.76 if freshness_status == "accepted_recent" else 0.68
+    commercial_terms = ("buyer", "market", "pricing", "funding", "compliance", "automation", "customer", "revenue", "governance", "risk", "competitor", "paid", "enterprise")
+    commercial_relevance = min(0.95, 0.55 + 0.04 * sum(1 for term in commercial_terms if term in text))
+    novelty_terms = ("2026", "agentic", "ai agent", "funding", "launch", "readiness", "billion", "autopilot", "market")
+    novelty = min(0.92, 0.56 + 0.045 * sum(1 for term in novelty_terms if term in text))
+    domain = str(evidence.get("domain_id") or "unknown")
+    support_count = int((domain_counts or {}).get(domain, 1))
+    cross_source_support = min(0.9, 0.55 + 0.08 * min(support_count, 4))
+    action_terms = ("requires", "need", "pain", "risk", "reduces", "automation", "governance", "compliance", "buyer", "workflow", "evidence")
+    actionability = min(0.92, 0.55 + 0.04 * sum(1 for term in action_terms if term in text))
+    risk_of_staleness = 0.15 if freshness_status == "accepted_current" else 0.28 if freshness_status == "accepted_recent" else 0.35
+    quality_score = (
+        source_authority * 0.18
+        + freshness * 0.18
+        + commercial_relevance * 0.18
+        + novelty * 0.12
+        + cross_source_support * 0.14
+        + actionability * 0.14
+        + (1.0 - risk_of_staleness) * 0.06
+    )
+    return {
+        "quality_score": round(quality_score, 3),
+        "source_authority": round(source_authority, 3),
+        "freshness": round(freshness, 3),
+        "commercial_relevance": round(commercial_relevance, 3),
+        "novelty": round(novelty, 3),
+        "cross_source_support": round(cross_source_support, 3),
+        "actionability": round(actionability, 3),
+        "risk_of_staleness": round(risk_of_staleness, 3),
+        "quality_basis": "deterministic_public_read_quality_score_v1",
+    }
+
+
+def _average_quality_for_refs(refs: Sequence[str], evidence_items: Sequence[Mapping[str, Any]]) -> float:
+    by_id = {str(item.get("evidence_id")): item for item in evidence_items}
+    scores = [
+        float(by_id[ref].get("learning_quality", {}).get("quality_score") or 0.0)
+        for ref in refs
+        if ref in by_id
+    ]
+    if not scores:
+        return 0.7
+    return round(sum(scores) / len(scores), 3)
+
+
 def _slug(value: str) -> str:
     return "".join(ch if ch.isalnum() else "_" for ch in value.lower()).strip("_")
 
@@ -714,4 +829,3 @@ def main(argv: Sequence[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
