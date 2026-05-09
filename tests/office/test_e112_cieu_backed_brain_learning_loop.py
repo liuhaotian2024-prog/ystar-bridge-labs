@@ -68,6 +68,52 @@ def test_current_competitor_fact_becomes_cieu_backed_candidate():
     assert candidates[0]["production_brain_write_performed"] is False
 
 
+def test_content_type_policy_accepts_durable_operator_and_case_knowledge():
+    policy = build_market_evidence_freshness_policy()
+    rows = [
+        {
+            "evidence_id": "peer_lessons",
+            "domain_id": "peer_experience_corpus",
+            "content_type": "peer_experience",
+            "source_title": "Founder lessons",
+            "source_url": "https://www.ycombinator.com/library",
+            "source_date": "2025-01-01",
+            "observed_at": "2026-05-09T00:00:00Z",
+            "claim_summary": "Founder/operator lessons should become reusable patterns.",
+            "evidence_type": "idle_learning_public_read_evidence",
+        },
+        {
+            "evidence_id": "customer_method",
+            "domain_id": "customer_contact_residuals",
+            "content_type": "customer_learning_methodology",
+            "source_title": "How to talk to users",
+            "source_url": "https://www.ycombinator.com/library/6g-how-to-talk-to-users",
+            "source_date": "2024-01-01",
+            "observed_at": "2026-05-09T00:00:00Z",
+            "claim_summary": "Customer conversations are a methodology for future residual learning, not a customer-validation claim.",
+            "evidence_type": "idle_learning_public_read_evidence",
+        },
+        {
+            "evidence_id": "historical_case",
+            "domain_id": "historical_case_corpus",
+            "content_type": "historical_case",
+            "source_title": "Startup failure cases",
+            "source_url": "https://www.cbinsights.com/research/startup-failure-reasons-top/",
+            "source_date": "2025-10-01",
+            "observed_at": "2026-05-09T00:00:00Z",
+            "claim_summary": "Historical failure cases prevent overfitting to today's preferred thesis.",
+            "evidence_type": "idle_learning_public_read_evidence",
+        },
+    ]
+
+    accepted = [classify_evidence_freshness(item, policy) for item in rows]
+
+    assert {row["freshness_status"] for row in accepted} <= {"accepted_current", "accepted_recent", "accepted_evergreen_context"}
+    assert accepted[0]["content_type"] == "peer_experience"
+    assert accepted[1]["content_type"] == "customer_learning_methodology"
+    assert accepted[2]["content_type"] == "historical_case"
+
+
 def test_fixture_evidence_is_test_only_not_non_test_brain_learning():
     policy = build_market_evidence_freshness_policy()
     item = {

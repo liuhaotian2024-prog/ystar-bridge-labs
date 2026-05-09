@@ -13,6 +13,7 @@ def build_aiden_operating_pattern_doctrine_registry() -> dict[str, Any]:
         _pattern("no_new_wheel_preflight", "Search for existing capabilities before creating new ones.", ("all_major_actions",)),
         _pattern("capability_utilization_sweep", "Route through existing labs/Y-star-gov/gov-mcp capabilities where possible.", ("all_major_actions",)),
         _pattern("class_level_extrapolation_gate", "Convert point failures into class-level rules and same-class variants.", ("all_major_actions",)),
+        _pattern("downstream_impact_scan", "After changing a rule or runtime, scan sibling/downstream paths for same-class gaps.", ("all_major_actions",)),
         _pattern("correct_path_navigation", "Governance must return a repair path, not only a hard stop.", ("all_major_actions",)),
         _pattern("evidence_quality_and_freshness_gate", "Filter stale, low-quality, undated, or weakly corroborated evidence.", ("all_major_actions", "market_strategy")),
         _pattern("regression_test_and_cieu_closure", "Close implementation with tests and formal CIEU-backed proof.", ("all_major_actions",)),
@@ -28,6 +29,12 @@ def build_aiden_operating_pattern_doctrine_registry() -> dict[str, Any]:
         _pattern("owner_boundary_minimization_and_escalation", "Autonomously execute low-risk internal work; escalate high-risk external/payment actions.", ("external_action",)),
         _pattern("proposal_only_no_direct_contract_mutation", "Aiden may propose governance changes but cannot mutate contracts directly.", ("self_governance",)),
         _pattern("owner_review_before_contract_patch", "Governance patches require owner-visible review before code generation.", ("self_governance",)),
+        _pattern("unknown_problem_learning_protocol", "When Aiden faces an unfamiliar problem, first choose what knowledge must be learned.", ("unknown_problem",)),
+        _pattern("knowledge_graph_methodology_selection", "Convert learned theory, cases, tools, and residuals into typed graph nodes and edges.", ("unknown_problem", "durable_learning")),
+        _pattern("source_discovery_tool_selection", "Choose repo recall, brain recall, public-read research, canonical texts, cases, and owner/L4 channels by risk.", ("unknown_problem",)),
+        _pattern("thinking_mode_selection", "Select first-principles, systems, decision-theory, adversarial, and customer-empathy thinking modes.", ("unknown_problem",)),
+        _pattern("content_type_freshness_policy", "Freshness must use content_type, not brittle keyword guesses.", ("durable_learning",)),
+        _pattern("theory_case_peer_curriculum_coverage", "Idle learning must include classical theory, peer experience, historical cases, and customer-learning methodology.", ("durable_learning",)),
     ]
     return {
         "registry_id": REGISTRY_ID,
@@ -43,6 +50,7 @@ def resolve_required_operating_patterns(action_context: Mapping[str, Any]) -> li
         "no_new_wheel_preflight",
         "capability_utilization_sweep",
         "class_level_extrapolation_gate",
+        "downstream_impact_scan",
         "correct_path_navigation",
         "evidence_quality_and_freshness_gate",
         "regression_test_and_cieu_closure",
@@ -64,6 +72,17 @@ def resolve_required_operating_patterns(action_context: Mapping[str, Any]) -> li
         required.update({"gov_mcp_no_send_preflight", "owner_boundary_minimization_and_escalation"})
     if action_context.get("self_governance_related") is True:
         required.update({"proposal_only_no_direct_contract_mutation", "owner_review_before_contract_patch"})
+    if action_context.get("unknown_problem_related") is True:
+        required.update(
+            {
+                "unknown_problem_learning_protocol",
+                "knowledge_graph_methodology_selection",
+                "source_discovery_tool_selection",
+                "thinking_mode_selection",
+            }
+        )
+    if action_context.get("durable_learning_related") is True:
+        required.update({"content_type_freshness_policy", "theory_case_peer_curriculum_coverage"})
     return sorted(required)
 
 

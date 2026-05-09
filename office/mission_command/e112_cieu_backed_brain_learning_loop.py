@@ -27,11 +27,24 @@ Y_GOV_ROOT = Path(os.environ.get("YSTAR_GOV_ROOT", "/Users/haotianliu/.openclaw/
 
 def build_market_evidence_freshness_policy(*, current_date: str = "2026-05-09") -> dict[str, Any]:
     return {
-        "policy_id": "e112_market_evidence_freshness_policy_v1",
+        "policy_id": "e120_content_type_aware_evidence_freshness_policy_v2",
         "current_date": current_date,
         "market_current_max_age_days": 365,
         "competitive_current_max_age_days": 240,
         "evergreen_context_max_age_days": 1095,
+        "content_type_max_age_days": {
+            "current_market_signal": 365,
+            "competitive_signal": 240,
+            "regulatory_or_standard": 1095,
+            "technical_standard": 1095,
+            "classical_theory": 3650,
+            "peer_experience": 1460,
+            "historical_case": 3650,
+            "case_study": 3650,
+            "operator_playbook": 1460,
+            "customer_learning_methodology": 1460,
+            "customer_contact_residual": 365,
+        },
         "minimum_current_evidence_for_brain_learning": 1,
         "missing_source_date_policy": (
             "reject_for_brain_learning_unless_test_fixture; observed_at-only search results may be CIEU context "
@@ -80,9 +93,31 @@ def classify_evidence_freshness(
 
     age_days = _days_between(source_date, current_date)
     text = _text(evidence)
-    if any(term in text for term in ("competitor", "competition", "alternative", "substitute", "incumbent")):
+    content_type = _evidence_content_type(evidence)
+    content_type_limits = policy.get("content_type_max_age_days") if isinstance(policy.get("content_type_max_age_days"), Mapping) else {}
+    if content_type in content_type_limits:
+        max_age = int(content_type_limits[content_type])
+    elif any(term in text for term in ("competitor", "competition", "alternative", "substitute", "incumbent")):
         max_age = int(policy.get("competitive_current_max_age_days") or 240)
-    elif any(term in text for term in ("standard", "regulation", "law", "framework", "compliance")):
+    elif any(
+        term in text
+        for term in (
+            "standard",
+            "regulation",
+            "law",
+            "framework",
+            "compliance",
+            "playbook",
+            "lesson",
+            "case study",
+            "postmortem",
+            "founder",
+            "operator",
+            "classic",
+            "theory",
+            "canon",
+        )
+    ):
         max_age = int(policy.get("evergreen_context_max_age_days") or 1095)
     else:
         max_age = int(policy.get("market_current_max_age_days") or 365)
@@ -97,12 +132,12 @@ def classify_evidence_freshness(
             age_days=age_days,
         )
     status = "accepted_current" if age_days <= min(90, max_age) else "accepted_recent"
-    if max_age == int(policy.get("evergreen_context_max_age_days") or 1095) and age_days > int(policy.get("market_current_max_age_days") or 365):
+    if max_age > int(policy.get("market_current_max_age_days") or 365) and age_days > int(policy.get("market_current_max_age_days") or 365):
         status = "accepted_evergreen_context"
     return _freshness_row(
         evidence,
         status,
-        "source date is within freshness policy",
+        f"source date is within freshness policy for content_type={content_type or 'inferred'}",
         source_date=source_date,
         observed_at=observed_at,
         age_days=age_days,
@@ -634,6 +669,7 @@ def _freshness_row(
         "source_url": str(evidence.get("source_url") or ""),
         "claim_summary": str(evidence.get("claim_summary") or "")[:360],
         "domain_id": evidence.get("domain_id"),
+        "content_type": evidence.get("content_type") or evidence.get("knowledge_content_type") or _evidence_content_type(evidence),
         "query": evidence.get("query"),
         "evidence_type": evidence.get("evidence_type"),
         "source_date": source_date.date().isoformat() if source_date else evidence.get("source_date"),
@@ -701,6 +737,27 @@ def _text(value: Any) -> str:
     if isinstance(value, list):
         return " ".join(_text(item) for item in value).lower()
     return str(value or "").lower()
+
+
+def _evidence_content_type(evidence: Mapping[str, Any]) -> str:
+    explicit = str(evidence.get("content_type") or evidence.get("knowledge_content_type") or "").strip().lower()
+    if explicit:
+        return explicit
+    domain = str(evidence.get("domain_id") or "").strip().lower()
+    if domain == "classical_theory_canon":
+        return "classical_theory"
+    if domain == "peer_experience_corpus":
+        return "peer_experience"
+    if domain == "historical_case_corpus":
+        return "historical_case"
+    if domain == "customer_contact_residuals":
+        return "customer_learning_methodology"
+    text = _text(evidence)
+    if any(term in text for term in ("competitor", "competition", "alternative", "substitute", "incumbent")):
+        return "competitive_signal"
+    if any(term in text for term in ("standard", "regulation", "law", "compliance")):
+        return "regulatory_or_standard"
+    return "current_market_signal"
 
 
 def _now() -> str:

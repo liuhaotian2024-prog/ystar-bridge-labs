@@ -10,6 +10,8 @@ from office.mission_command.e116_aiden_idle_continuous_learning_runtime import (
     BRAIN_DB,
     build_aiden_idle_learning_packet,
     build_ceo_idle_learning_curriculum,
+    collect_idle_learning_evidence,
+    filter_idle_learning_evidence,
     run_aiden_idle_continuous_learning_cycle,
 )
 
@@ -62,6 +64,17 @@ def test_e116_packet_builds_source_dated_knowledge_graph_delta(tmp_path):
     assert packet["extrapolation_gate"]["class_of_issue"]["issue_class_id"]
     assert len(packet["extrapolation_gate"]["extrapolation_to_other_cases"]) >= 3
     assert packet["truth_constraints"]["external_action_executed"] is False
+
+
+def test_e120_curriculum_domains_survive_freshness_filter():
+    evidence = collect_idle_learning_evidence(use_host_live_network=False)
+    freshness = filter_idle_learning_evidence(evidence)
+    accepted_domains = {item["domain_id"] for item in freshness["accepted"]}
+
+    assert "classical_theory_canon" in accepted_domains
+    assert "peer_experience_corpus" in accepted_domains
+    assert "historical_case_corpus" in accepted_domains
+    assert "customer_contact_residuals" in accepted_domains
 
 
 def test_e116_idle_cycle_writes_cieu_then_test_brain_graph(tmp_path):

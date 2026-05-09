@@ -1,0 +1,66 @@
+{
+  "L5_truth_table_after": {
+    "L5-A": "complete_internal_runtime_foundation_with_downstream_impact_and_learning_protocol_governance",
+    "L5-B": "stronger_governed_intelligence_with_unknown_problem_learning_methodology",
+    "L5-C": "partial_dry_run_only",
+    "L5-D": "absent_or_not_executed",
+    "L5-E": "partial_safe_brain_learning_with_content_type_freshness_and_knowledge_graph_methodology"
+  },
+  "claude_assessment_verdict": {
+    "customer_learning_methodology_previously_rejected": true,
+    "freshness_filter_gap_verified": true,
+    "historical_case_domain_previously_lost_by_dedupe": true,
+    "peer_experience_previously_rejected": true
+  },
+  "content_type_freshness_fix": "implemented",
+  "downstream_impact_scan": {
+    "required": true,
+    "scan_targets": [
+      "freshness filters",
+      "learning quality gates",
+      "strategy dossier contracts",
+      "operating pattern registry",
+      "Codex handoff/order boundary",
+      "brain write boundary"
+    ],
+    "sibling_variant_question": "Where else can this same issue class appear?"
+  },
+  "knowledge_graph_methodology": {
+    "CIEU_backed_before_brain_write": true,
+    "content_type_freshness_policy_required": true,
+    "edge_types": [
+      "supports",
+      "contradicts",
+      "generalizes",
+      "falsifies",
+      "requires_tool",
+      "updates_strategy",
+      "maps_to_buyer_pain",
+      "blocks_overclaim"
+    ],
+    "node_types": [
+      "classical_theory_node",
+      "peer_experience_node",
+      "historical_case_node",
+      "current_market_fact_node",
+      "internal_capability_node",
+      "tool_affordance_node",
+      "assumption_node",
+      "CZL_residual_node"
+    ],
+    "production_brain_write_requires_owner_gate": true
+  },
+  "milestone_id": "E120_Aiden_Knowledge_Graph_Learning_Methodology_And_Downstream_Impact_R1",
+  "operating_pattern_decision": "ALLOW",
+  "truth_constraints": {
+    "customer_validation_claim": false,
+    "direct_brain_write_without_owner_gate": false,
+    "direct_contract_mutation": false,
+    "external_action_executed": false,
+    "payment_claim": false,
+    "recent_memory_only": false,
+    "revenue_claim": false
+  },
+  "unknown_problem_learning_decision": "ALLOW",
+  "unknown_problem_learning_protocol_proven": true
+}

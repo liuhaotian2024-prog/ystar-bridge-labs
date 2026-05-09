@@ -85,7 +85,7 @@ def collect_idle_learning_evidence(
     if use_host_live_network:
         provider = build_host_live_public_read_provider()
         rows: list[dict[str, Any]] = []
-        for domain in build_ceo_idle_learning_curriculum()[:8]:
+        for domain in build_ceo_idle_learning_curriculum():
             domain_id = _map_domain_to_e114_domain(domain["domain_id"])
             query = domain["queries"][0]
             rows.extend(provider.search(query, domain_id=domain_id, max_results=3))
@@ -650,6 +650,7 @@ def _ev(domain_id: str, title: str, url: str, source_date: str, claim: str, fres
     return {
         "evidence_id": f"e116_{_stable_hash(domain_id + url)[:12]}",
         "domain_id": domain_id,
+        "content_type": _content_type_for_domain(domain_id),
         "source_title": title,
         "source_url": url,
         "source_date": source_date,
@@ -713,6 +714,10 @@ def _map_domain_to_e114_domain(domain_id: str) -> str:
         "governance_and_risk": "ai_security_compliance",
         "technology_architecture": "ai_security_compliance",
         "failure_residual_learning": "cpa_tax_accounting",
+        "classical_theory_canon": "ai_security_compliance",
+        "peer_experience_corpus": "local_services_dispatch",
+        "historical_case_corpus": "cpa_tax_accounting",
+        "customer_contact_residuals": "local_services_dispatch",
     }.get(domain_id, "ai_security_compliance")
 
 
@@ -752,7 +757,11 @@ def _dedupe_evidence(rows: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
     seen: set[str] = set()
     for row in rows:
         item = dict(row)
-        key = str(item.get("source_url") or item.get("evidence_id") or item.get("source_title"))
+        key_base = str(item.get("source_url") or item.get("evidence_id") or item.get("source_title"))
+        # The same durable source can teach different knowledge domains. Keep
+        # domain-specific rows so a historical case is not swallowed by a
+        # generic failure-residual row.
+        key = f"{item.get('domain_id') or 'unknown'}::{item.get('content_type') or ''}::{key_base}"
         if key in seen:
             continue
         seen.add(key)
@@ -760,6 +769,25 @@ def _dedupe_evidence(rows: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
             item["evidence_id"] = f"e116_{_stable_hash(key + str(item.get('claim_summary') or ''))[:12]}"
         deduped.append(item)
     return deduped
+
+
+def _content_type_for_domain(domain_id: str) -> str:
+    return {
+        "ceo_judgment": "regulatory_or_standard",
+        "market_intelligence": "current_market_signal",
+        "competitive_strategy": "competitive_signal",
+        "product_strategy": "operator_playbook",
+        "sales_and_distribution": "operator_playbook",
+        "governance_and_risk": "regulatory_or_standard",
+        "technology_architecture": "technical_standard",
+        "failure_residual_learning": "historical_case",
+        "capital_and_cash_discipline": "operator_playbook",
+        "organization_and_operating_system": "operator_playbook",
+        "classical_theory_canon": "classical_theory",
+        "peer_experience_corpus": "peer_experience",
+        "historical_case_corpus": "historical_case",
+        "customer_contact_residuals": "customer_learning_methodology",
+    }.get(domain_id, "current_market_signal")
 
 
 def _status_counts(rows: Sequence[Mapping[str, Any]]) -> dict[str, int]:

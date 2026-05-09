@@ -13,10 +13,13 @@ def test_registry_mechanizes_codex_success_methods():
 
     assert "no_new_wheel_preflight" in pattern_ids
     assert "class_level_extrapolation_gate" in pattern_ids
+    assert "downstream_impact_scan" in pattern_ids
     assert "correct_path_navigation" in pattern_ids
     assert "CEOImplementationOrder_before_Codex_prompt" in pattern_ids
     assert "production_brain_write_owner_backup_gate" in pattern_ids
-    assert len(pattern_ids) >= 18
+    assert "unknown_problem_learning_protocol" in pattern_ids
+    assert "content_type_freshness_policy" in pattern_ids
+    assert len(pattern_ids) >= 25
 
 
 def test_market_codex_brain_action_requires_all_relevant_patterns():
@@ -27,6 +30,8 @@ def test_market_codex_brain_action_requires_all_relevant_patterns():
         "brain_write_related": True,
         "external_action_related": True,
         "self_governance_related": True,
+        "unknown_problem_related": True,
+        "durable_learning_related": True,
     }
 
     required = resolve_required_operating_patterns(context)
@@ -36,6 +41,8 @@ def test_market_codex_brain_action_requires_all_relevant_patterns():
     assert "learning_quality_scoring_v2" in required
     assert "gov_mcp_no_send_preflight" in required
     assert "owner_review_before_contract_patch" in required
+    assert "unknown_problem_learning_protocol" in required
+    assert "theory_case_peer_curriculum_coverage" in required
 
 
 def test_invocation_plan_marks_patterns_invoked_and_governed():
@@ -47,6 +54,8 @@ def test_invocation_plan_marks_patterns_invoked_and_governed():
             "brain_write_related": True,
             "external_action_related": True,
             "self_governance_related": True,
+            "unknown_problem_related": True,
+            "durable_learning_related": True,
         }
     )
 
