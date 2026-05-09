@@ -206,6 +206,21 @@ h2 { font-size: 18px; }
 
 .message p { line-height: 1.45; }
 
+.message-toggle {
+  margin-top: 10px;
+  border: 1px solid rgba(38, 91, 143, 0.22);
+  border-radius: 999px;
+  padding: 7px 11px;
+  color: var(--blue);
+  background: rgba(38, 91, 143, 0.08);
+  font: 700 12px Georgia, "Times New Roman", serif;
+  cursor: pointer;
+}
+
+.message-toggle:hover {
+  background: rgba(38, 91, 143, 0.14);
+}
+
 .tuple-strip {
   display: flex;
   flex-wrap: wrap;

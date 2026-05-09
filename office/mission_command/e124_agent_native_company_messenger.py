@@ -15,6 +15,7 @@ MILESTONE_ID = "E124_Agent_Native_Company_Messenger_R1"
 SESSION_ID = "e124_agent_native_company_messenger"
 BRIDGE_ROOT = Path(os.environ.get("YSTAR_BRIDGE_LABS_ROOT", Path(__file__).resolve().parents[2]))
 Y_GOV_ROOT = Path(os.environ.get("YSTAR_GOV_ROOT", "/Users/haotianliu/.openclaw/workspace/Y-star-gov"))
+OWNER_DIALOGUE_LANGUAGE = "zh-CN"
 
 CIEU_FIVE_TUPLE_FIELDS = ("Y_star_t", "X_t", "U_t", "Y_t_plus_1", "R_t_plus_1")
 
@@ -280,6 +281,71 @@ def generate_aiden_reply_text(
         }
 
 
+def _contains_cjk(text: str) -> bool:
+    return any("\u4e00" <= char <= "\u9fff" for char in text)
+
+
+def _is_chinese_owner_dialogue(text: str) -> bool:
+    if not text.strip():
+        return False
+    cjk_count = sum(1 for char in text if "\u4e00" <= char <= "\u9fff")
+    letter_count = sum(1 for char in text if char.isalpha())
+    return cjk_count >= 12 and cjk_count >= max(8, int(letter_count * 0.18))
+
+
+def _compact_owner_text(owner_text: str, limit: int = 180) -> str:
+    normalized = " ".join(str(owner_text).split())
+    if len(normalized) <= limit:
+        return normalized
+    return normalized[:limit].rstrip() + "..."
+
+
+def _compact_runtime_text(text: str, limit: int = 900) -> str:
+    normalized = "\n".join(line.rstrip() for line in str(text).strip().splitlines() if line.strip())
+    if len(normalized) <= limit:
+        return normalized
+    return normalized[:limit].rstrip() + "\n...（原始运行输出较长，已在 owner-facing 回复里截断；完整记录仍在 CIEU packet/runtime artifact 中。）"
+
+
+def apply_owner_dialogue_language_policy(owner_text: str, reply_runtime: Mapping[str, Any]) -> dict[str, Any]:
+    """Ensure Aiden's owner-facing message is clear Chinese, even if the runtime body is English."""
+
+    runtime = dict(reply_runtime)
+    raw_reply = str(runtime.get("reply_text") or "").strip()
+    policy = {
+        "target_language": OWNER_DIALOGUE_LANGUAGE,
+        "style": "fluent_logical_chinese_owner_dialogue",
+        "raw_runtime_reply_preserved_in_runtime_artifact": True,
+        "applied": False,
+    }
+    if _is_chinese_owner_dialogue(raw_reply):
+        runtime["owner_dialogue_language_policy"] = policy
+        return runtime
+
+    backend = str(runtime.get("reply_backend") or "unknown_runtime")
+    protocol = str(runtime.get("reply_protocol") or "unknown_protocol")
+    retrieval_decision = str(runtime.get("retrieval_decision") or "not_applicable")
+    planner_decision = str(runtime.get("adaptive_planner_decision") or "not_applicable")
+    if not raw_reply:
+        raw_reply = "Aiden runtime returned an empty response."
+
+    policy["applied"] = True
+    runtime["raw_reply_text_before_owner_dialogue_policy"] = raw_reply
+    runtime["reply_text"] = (
+        "我先用中文把这轮 Aiden 的回复整理清楚。\n\n"
+        f"1. 我理解你的输入：{_compact_owner_text(owner_text)}\n\n"
+        "2. 这轮实际走过的受控链路："
+        f"{backend} / {protocol}；检索规划决策={planner_decision}；检索治理决策={retrieval_decision}。\n\n"
+        "3. 当前可用结论：\n"
+        f"{_compact_runtime_text(raw_reply)}\n\n"
+        "4. 讨论边界：如果这只是备忘录，我会把它当作本地受控上下文记录；如果你是在要求战略、外部行动、付款、发布或客户触达，"
+        "我必须继续走对应的治理链路，不能把一句自然语言直接当成执行授权。\n\n"
+        "5. 下一步：你可以继续追问“为什么”“依据是什么”“下一步怎么做”，我会优先用中文、分点、带边界地回答。"
+    )
+    runtime["owner_dialogue_language_policy"] = policy
+    return runtime
+
+
 def run_agent_native_messenger_turn(
     *,
     owner_text: str,
@@ -334,6 +400,7 @@ def run_agent_native_messenger_turn(
             allow_live_network=allow_live_network,
         )
     )
+    reply_runtime = apply_owner_dialogue_language_policy(owner_text, reply_runtime)
     reply_packet = build_agent_native_message_packet(
         thread_id="local_owner_aiden_chat",
         sender_id="Aiden",
@@ -346,6 +413,8 @@ def run_agent_native_messenger_turn(
                 "source": "Aiden governed router",
                 "reply_backend": reply_runtime["reply_backend"],
                 "reply_protocol": reply_runtime["reply_protocol"],
+                "owner_dialogue_language": OWNER_DIALOGUE_LANGUAGE,
+                "owner_dialogue_language_policy": reply_runtime.get("owner_dialogue_language_policy", {}),
                 "adaptive_planner_decision": reply_runtime.get("adaptive_planner_decision", "not_applicable"),
                 "retrieval_decision": reply_runtime.get("retrieval_decision", "not_applicable"),
                 "retrieval_context_summary": reply_runtime.get("retrieval_context_summary", "")[:500],

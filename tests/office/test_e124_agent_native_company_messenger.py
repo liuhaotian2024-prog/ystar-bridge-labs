@@ -114,3 +114,32 @@ def test_owner_message_generates_governed_aiden_reply(tmp_path):
     assert "actual governed two-way messenger" in result["aiden_reply_packet"]["message"]["human_readable_text"]
     assert set(CIEU_FIVE_TUPLE_FIELDS).issubset(result["aiden_reply_packet"]["message"]["cieu_five_tuple"])
     assert result["CIEUStore_summary"]["event_count"] == 2
+
+
+def test_aiden_owner_reply_is_normalized_to_chinese_dialogue(tmp_path):
+    db = tmp_path / "e128_chinese_reply.db"
+    result = run_agent_native_messenger_turn(
+        owner_text="Please keep discussing this with me clearly.",
+        cieu_db=db,
+        reply_text_override="This backend runtime returned an English-only note.",
+    )
+    reply_text = result["aiden_reply_packet"]["message"]["human_readable_text"]
+    policy = result["aiden_reply_runtime"]["owner_dialogue_language_policy"]
+    assert policy["target_language"] == "zh-CN"
+    assert policy["applied"] is True
+    assert "我先用中文" in reply_text
+    assert "This backend runtime returned an English-only note." in reply_text
+    assert result["aiden_reply_packet"]["message"]["cieu_five_tuple"]["X_t"]["owner_dialogue_language"] == "zh-CN"
+
+
+def test_ui_collapses_only_long_owner_inputs_not_aiden_outputs():
+    root = Path(__file__).resolve().parents[2]
+    script = root / "office/agent_native_messenger/main.js"
+    styles = root / "office/agent_native_messenger/styles.css"
+    script_text = script.read_text(encoding="utf-8")
+    styles_text = styles.read_text(encoding="utf-8")
+    assert "LONG_OWNER_MESSAGE_COLLAPSE_CHARS" in script_text
+    assert 'message.sender_id === "owner"' in script_text
+    assert "你的长输入已折叠" in script_text
+    assert "展开完整输入" in script_text
+    assert ".message-toggle" in styles_text

@@ -16,6 +16,7 @@ runtimeStatusEl.textContent = "Ready";
 composer.insertAdjacentElement("beforebegin", runtimeStatusEl);
 
 const MESSENGER_REQUEST_TIMEOUT_MS = 60000;
+const LONG_OWNER_MESSAGE_COLLAPSE_CHARS = 420;
 
 const fallbackSession = {
   participants: [
@@ -45,6 +46,7 @@ const fallbackSession = {
   ],
   CIEUStore_summary: { event_count: 0 },
 };
+state.expandedMessageIds = new Set();
 
 async function loadDemo() {
   try {
@@ -76,7 +78,9 @@ function renderParticipants() {
 
 function renderMessages() {
   messagesEl.innerHTML = "";
-  state.messages.forEach((message) => {
+  state.messages.forEach((message, index) => {
+    const messageId = message.message_id || `${message.sender_id}_${index}`;
+    const collapseState = getMessageCollapseState(message, messageId);
     const card = document.createElement("article");
     card.className = `message ${message.sender_id}${message.pending ? " pending" : ""}`;
     card.tabIndex = 0;
@@ -85,11 +89,19 @@ function renderMessages() {
         <span>${message.sender_id} -> ${(message.recipient_ids || []).join(", ")}</span>
         <span>${message.message_kind}</span>
       </div>
-      <p>${escapeHtml(message.human_readable_text || "")}</p>
+      <p>${escapeHtml(collapseState.displayText)}</p>
+      ${collapseState.isLong ? `<button type="button" class="message-toggle" data-message-id="${escapeHtml(messageId)}">${collapseState.isExpanded ? "收起长输入" : `展开完整输入（${collapseState.fullLength} 字）`}</button>` : ""}
       <div class="tuple-strip">
         <span>Y*</span><span>X</span><span>U</span><span>Y+1</span><span>R+1</span>
       </div>
     `;
+    const toggle = card.querySelector(".message-toggle");
+    if (toggle) {
+      toggle.addEventListener("click", (event) => {
+        event.stopPropagation();
+        toggleExpandedMessage(messageId);
+      });
+    }
     card.addEventListener("click", () => renderTuple(message));
     card.addEventListener("keypress", (event) => {
       if (event.key === "Enter") renderTuple(message);
@@ -97,6 +109,31 @@ function renderMessages() {
     messagesEl.appendChild(card);
   });
   messagesEl.scrollTop = messagesEl.scrollHeight;
+}
+
+function getMessageCollapseState(message, messageId) {
+  const text = String(message.human_readable_text || "");
+  const isOwner = message.sender_id === "owner";
+  const isLong = isOwner && text.length > LONG_OWNER_MESSAGE_COLLAPSE_CHARS;
+  const isExpanded = state.expandedMessageIds.has(messageId);
+  if (!isLong || isExpanded) {
+    return { displayText: text, isLong, isExpanded, fullLength: text.length };
+  }
+  return {
+    displayText: `${text.slice(0, LONG_OWNER_MESSAGE_COLLAPSE_CHARS).trim()}\n\n...（你的长输入已折叠，点击下方按钮展开完整内容。）`,
+    isLong,
+    isExpanded,
+    fullLength: text.length,
+  };
+}
+
+function toggleExpandedMessage(messageId) {
+  if (state.expandedMessageIds.has(messageId)) {
+    state.expandedMessageIds.delete(messageId);
+  } else {
+    state.expandedMessageIds.add(messageId);
+  }
+  renderMessages();
 }
 
 function renderTuple(message) {

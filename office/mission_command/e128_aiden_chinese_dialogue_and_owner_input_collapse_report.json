@@ -1,0 +1,23 @@
+{
+  "milestone_id": "E128_Aiden_Chinese_Dialogue_And_Owner_Input_Collapse_R1",
+  "base_hash": "69f0a612d86a97612b077dd392201282b3303acd",
+  "implemented": [
+    "Added owner-facing zh-CN dialogue policy to Aiden messenger replies.",
+    "Aiden runtime replies that are not already clear Chinese are wrapped in a Chinese, logically structured owner-facing response.",
+    "Stored the dialogue language policy in the Aiden reply runtime and CIEU context.",
+    "Added long owner-input collapse in the meeting room UI.",
+    "Explicitly did not collapse Aiden outputs.",
+    "Added tests that lock the Chinese dialogue policy and owner-only collapse behavior."
+  ],
+  "truth_constraints": {
+    "external_action_executed": false,
+    "provider_action_executed": false,
+    "payment_executed": false,
+    "Aiden_output_collapsed": false,
+    "owner_long_input_collapsed": true
+  },
+  "limitations": [
+    "This is a deterministic owner-facing language envelope, not a full neural translation engine.",
+    "Long Aiden outputs remain fully visible by design, as requested."
+  ]
+}

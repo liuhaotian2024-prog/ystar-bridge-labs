@@ -1,0 +1,22 @@
+{
+  "milestone_id": "E128_Aiden_Chinese_Dialogue_And_Owner_Input_Collapse_R1",
+  "status": "completed_in_bridge_labs_payload",
+  "L5_truth_table": {
+    "L5-A": "complete_internal_runtime_foundation_with_visible_chinese_owner_dialogue_messenger",
+    "L5-B": "complete_for_structured_governed_intelligence_loop_with_owner_readable_chinese_discussion_surface",
+    "L5-C": "partial_dry_run_only",
+    "L5-D": "absent_or_not_executed",
+    "L5-E": "partial_production_brain_write_boundary_and_backup_preflight_proven"
+  },
+  "what_changed": [
+    "Aiden owner-facing replies are normalized to zh-CN if the underlying runtime is not already clear Chinese.",
+    "Owner long inputs are collapsed in the browser by default.",
+    "Aiden outputs remain uncollapsed."
+  ],
+  "what_was_not_claimed": [
+    "No live external action.",
+    "No customer validation.",
+    "No revenue or payment signal.",
+    "No K9Audit write."
+  ]
+}
