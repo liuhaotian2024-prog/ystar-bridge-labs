@@ -12,14 +12,14 @@
     ],
     "event_count": 8,
     "event_ids": [
-      "33b46c45-c5cc-4858-abb5-300061e5fa64",
-      "a59220e1-8122-48b2-a024-681045e09d7e",
-      "0a5737d7-350c-4f72-810b-29bd4939e876",
-      "fb31313a-347c-434b-9d3d-e355e74f24c4",
-      "8710db80-a5ad-4dcc-bed5-fe689472abe4",
-      "c5a50721-90c6-44f0-99fd-47e93f2ad2ab",
-      "1e713c9c-5f98-43e0-b969-2bb16307ee35",
-      "63109b6d-16fc-432e-a689-d9daf2937f28"
+      "7794ddba-fbc9-46d4-8424-075f6c422b38",
+      "287fd587-8c84-4d4f-8d30-7537838640cd",
+      "e2b1e686-cc10-409b-aca1-c513c78fb3a8",
+      "9a374456-3ca9-486b-b497-eb44c2826e37",
+      "a6762d94-17e9-4124-8515-082deb9cac59",
+      "20c332b6-af9c-4111-aa90-02cf80640830",
+      "ddc779b4-e194-46a8-94e0-f75d9bf832e0",
+      "e3bc7dcf-d3a6-4ab3-8a7e-b8ecbfbe325f"
     ],
     "event_types": [
       "NO_NEW_WHEEL_RUNTIME_LAW_DECISION",
@@ -91,7 +91,7 @@
     }
   },
   "milestone_id": "E114_Live_Web_Capability_Utilized_Strategy_Run_R1",
-  "provider_mode": "dated_public_read_evidence_snapshot",
+  "provider_mode": "host_mac_live_duckduckgo_public_read_with_source_dated_fallback",
   "selected_first_cash_path": "AI security, compliance, & audit readiness Evidence & Control Pack",
   "selected_route_id": "ai_security_compliance_first_cash_pack",
   "selected_strategy": {

@@ -1,6 +1,6 @@
 # E114 Live-Web Capability-Utilized Strategy Run
 
-- Provider mode: dated_public_read_evidence_snapshot
+- Provider mode: host_mac_live_duckduckgo_public_read_with_source_dated_fallback
 - Selected first-cash path: AI security, compliance, & audit readiness Evidence & Control Pack
 - Selected route id: ai_security_compliance_first_cash_pack
 - Evidence count: 30

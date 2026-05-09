@@ -1,7 +1,7 @@
 # Runtime Status After E114
 
 - Runtime status: live_public_read_capability_utilized_strategy_run_structurally_enforceable
-- Provider mode: dated_public_read_evidence_snapshot
+- Provider mode: host_mac_live_duckduckgo_public_read_with_source_dated_fallback
 - L5-A: complete_internal_runtime_foundation_with_capability_utilization_law
 - L5-B: complete_for_structured_governed_intelligence_loop_with_live_public_read_strategy_and_brain_learning_candidates
 - L5-C: partial_dry_run_only

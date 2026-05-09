@@ -49,10 +49,43 @@ class DatedPublicReadEvidenceSnapshotProvider:
         return rows[:max_results]
 
 
+@dataclass(frozen=True)
+class FreshnessBackfilledPublicReadProvider:
+    """Use host live public-read first, then fill freshness gaps with dated rows."""
+
+    live_provider: PublicReadProvider
+    dated_snapshot_provider: DatedPublicReadEvidenceSnapshotProvider
+
+    def search(self, query: str, *, domain_id: str, max_results: int = 3) -> list[dict[str, Any]]:
+        try:
+            live_rows = self.live_provider.search(query, domain_id=domain_id, max_results=max_results)
+        except Exception:
+            live_rows = []
+        fresh_live_rows = [dict(row) for row in live_rows if row.get("source_date")]
+        snapshot_rows = [
+            dict(row, evidence_type=f"{row.get('evidence_type', 'public_read_snapshot')}_freshness_backfill")
+            for row in self.dated_snapshot_provider.search(query, domain_id=domain_id, max_results=max_results)
+        ]
+        rows: list[dict[str, Any]] = []
+        seen_urls: set[str] = set()
+        for row in fresh_live_rows + snapshot_rows:
+            source_url = str(row.get("source_url") or "")
+            if source_url in seen_urls:
+                continue
+            seen_urls.add(source_url)
+            rows.append(row)
+            if len(rows) >= max_results:
+                break
+        return rows
+
+
 def build_host_live_public_read_provider() -> PublicReadProvider:
     """Return the provider Aiden should use when running on the Mac host."""
 
-    return DuckDuckGoLitePublicReadProvider()
+    return FreshnessBackfilledPublicReadProvider(
+        live_provider=DuckDuckGoLitePublicReadProvider(),
+        dated_snapshot_provider=build_snapshot_public_read_provider(),
+    )
 
 
 def build_snapshot_public_read_provider(
@@ -120,7 +153,7 @@ def run_e114_live_web_capability_utilized_strategy_run(
     provider_mode: str
     if use_host_live_network:
         provider = build_host_live_public_read_provider()
-        provider_mode = "host_mac_live_duckduckgo_public_read"
+        provider_mode = "host_mac_live_duckduckgo_public_read_with_source_dated_fallback"
     else:
         provider = build_snapshot_public_read_provider(evidence_items)
         provider_mode = "dated_public_read_evidence_snapshot"

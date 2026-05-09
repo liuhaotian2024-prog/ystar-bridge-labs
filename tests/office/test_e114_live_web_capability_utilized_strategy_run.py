@@ -7,6 +7,7 @@ from pathlib import Path
 import pytest
 
 from office.mission_command.e114_live_web_capability_utilized_strategy_run import (
+    FreshnessBackfilledPublicReadProvider,
     build_default_e114_live_public_read_evidence_snapshot,
     build_snapshot_public_read_provider,
     run_e114_live_web_capability_utilized_strategy_run,
@@ -50,6 +51,30 @@ def test_snapshot_provider_returns_domain_specific_public_read_rows():
     assert {row["domain_id"] for row in ai_rows} == {"ai_security_compliance"}
     assert {row["domain_id"] for row in cpa_rows} == {"cpa_tax_accounting"}
     assert all(row.get("source_date") for row in ai_rows + cpa_rows)
+
+
+def test_freshness_backfilled_provider_replaces_undated_live_rows():
+    class UndatedLiveProvider:
+        def search(self, query: str, *, domain_id: str, max_results: int = 3):
+            return [
+                {
+                    "source_title": "Undated live row",
+                    "source_url": "https://live.example/undated",
+                    "claim_summary": "Undated rows must not satisfy E112 brain learning.",
+                    "domain_id": domain_id,
+                    "evidence_type": "live_public_read_search_result",
+                }
+            ]
+
+    provider = FreshnessBackfilledPublicReadProvider(
+        live_provider=UndatedLiveProvider(),
+        dated_snapshot_provider=build_snapshot_public_read_provider(),
+    )
+    rows = provider.search("AI governance", domain_id="ai_security_compliance", max_results=3)
+
+    assert rows
+    assert all(row.get("source_date") for row in rows)
+    assert all("freshness_backfill" in row.get("evidence_type", "") for row in rows)
 
 
 def test_e114_runs_through_e113_e110_e108_e112_and_cieustore(tmp_path):

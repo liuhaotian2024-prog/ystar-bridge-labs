@@ -37,6 +37,7 @@ class PublicReadProvider(Protocol):
 class DuckDuckGoLitePublicReadProvider:
     timeout_seconds: int = 8
     user_agent: str = "Mozilla/5.0 YStarBridgeLabsAidenPublicRead/1.0"
+    fetch_result_dates: bool = True
 
     def search(self, query: str, *, domain_id: str, max_results: int = 3) -> list[dict[str, Any]]:
         encoded = urllib.parse.urlencode({"q": query})
@@ -47,24 +48,147 @@ class DuckDuckGoLitePublicReadProvider:
         results: list[dict[str, Any]] = []
         pattern = re.compile(r'<a[^>]+class="result__a"[^>]+href="(?P<href>[^"]+)"[^>]*>(?P<title>.*?)</a>', re.I | re.S)
         for match in pattern.finditer(body):
-            href = html.unescape(match.group("href"))
+            href = _normalize_duckduckgo_href(html.unescape(match.group("href")))
             title = _strip_tags(html.unescape(match.group("title"))).strip()
             if not href or not title:
                 continue
-            results.append(
-                {
-                    "source_title": title[:180],
-                    "source_url": href,
-                    "claim_summary": f"Public-read search result for: {query}",
-                    "domain_id": domain_id,
-                    "query": query,
-                    "observed_at": _now(),
-                    "evidence_type": "live_public_read_search_result",
-                }
-            )
+            row = {
+                "source_title": title[:180],
+                "source_url": href,
+                "claim_summary": f"Public-read search result for: {query}",
+                "domain_id": domain_id,
+                "query": query,
+                "observed_at": _now(),
+                "evidence_type": "live_public_read_search_result",
+            }
+            if self.fetch_result_dates:
+                row.update(_fetch_public_result_source_date(href, timeout_seconds=self.timeout_seconds, user_agent=self.user_agent))
+            results.append(row)
             if len(results) >= max_results:
                 break
         return results
+
+
+def _normalize_duckduckgo_href(href: str) -> str:
+    parsed = urllib.parse.urlparse(href)
+    query = urllib.parse.parse_qs(parsed.query)
+    uddg = query.get("uddg")
+    if uddg:
+        return urllib.parse.unquote(uddg[0])
+    return href
+
+
+def _fetch_public_result_source_date(href: str, *, timeout_seconds: int, user_agent: str) -> dict[str, Any]:
+    if not href.startswith(("http://", "https://")):
+        return {}
+    try:
+        request = urllib.request.Request(href, headers={"User-Agent": user_agent})
+        with urllib.request.urlopen(request, timeout=min(timeout_seconds, 6)) as response:
+            body = response.read(256_000).decode("utf-8", errors="ignore")
+    except Exception:
+        return {}
+    source_date = _extract_source_date_from_public_html(body, href)
+    if not source_date:
+        return {}
+    return {
+        "source_date": source_date,
+        "source_date_basis": "public_result_page_metadata_or_visible_date",
+        "source_date_confidence": "medium",
+    }
+
+
+def _extract_source_date_from_public_html(body: str, href: str = "") -> str | None:
+    candidates: list[str] = []
+    metadata_patterns = [
+        r'<meta[^>]+(?:property|name)=["\'](?:article:published_time|article:modified_time|date|dc\.date|dc\.date\.issued|publishdate|pubdate|datepublished|datemodified)["\'][^>]+content=["\']([^"\']+)["\']',
+        r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+(?:property|name)=["\'](?:article:published_time|article:modified_time|date|dc\.date|dc\.date\.issued|publishdate|pubdate|datepublished|datemodified)["\']',
+        r'<time[^>]+datetime=["\']([^"\']+)["\']',
+        r'"datePublished"\s*:\s*"([^"]+)"',
+        r'"dateModified"\s*:\s*"([^"]+)"',
+        r'"uploadDate"\s*:\s*"([^"]+)"',
+    ]
+    for pattern in metadata_patterns:
+        for match in re.finditer(pattern, body, flags=re.I | re.S):
+            candidates.append(html.unescape(match.group(1)))
+    visible_patterns = [
+        r'(?:Published|Updated|Posted|Date)\s*:?\s*([A-Z][a-z]{2,9}\s+\d{1,2},\s+20\d{2})',
+        r'(?:Published|Updated|Posted|Date)\s*:?\s*(20\d{2}[-/]\d{1,2}[-/]\d{1,2})',
+        r'(\d{1,2}\s+[A-Z][a-z]{2,9}\s+20\d{2})',
+        r'([A-Z][a-z]{2,9}\s+\d{1,2},\s+20\d{2})',
+    ]
+    visible_text = _strip_tags(body[:80_000])
+    for pattern in visible_patterns:
+        for match in re.finditer(pattern, visible_text, flags=re.I):
+            candidates.append(html.unescape(match.group(1)))
+            if len(candidates) >= 20:
+                break
+        if len(candidates) >= 20:
+            break
+    candidates.extend(re.findall(r'(20\d{2})[-/](\d{1,2})[-/](\d{1,2})', href))
+    for candidate in candidates:
+        normalized = _normalize_source_date_candidate(candidate)
+        if normalized:
+            return normalized
+    return None
+
+
+def _normalize_source_date_candidate(value: Any) -> str | None:
+    if isinstance(value, tuple):
+        value = "-".join(str(part) for part in value)
+    text = str(value or "").strip()
+    if not text:
+        return None
+    iso = re.search(r'(20\d{2})[-/](\d{1,2})[-/](\d{1,2})', text)
+    if iso:
+        year, month, day = (int(part) for part in iso.groups())
+        if 2024 <= year <= 2026 and 1 <= month <= 12 and 1 <= day <= 31:
+            return f"{year:04d}-{month:02d}-{day:02d}"
+    month_match = re.search(
+        r'(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\.?\s+(\d{1,2}),?\s+(20\d{2})',
+        text,
+        flags=re.I,
+    )
+    if month_match:
+        month_name, day, year = month_match.groups()
+        month = {
+            "jan": 1,
+            "january": 1,
+            "feb": 2,
+            "february": 2,
+            "mar": 3,
+            "march": 3,
+            "apr": 4,
+            "april": 4,
+            "may": 5,
+            "jun": 6,
+            "june": 6,
+            "jul": 7,
+            "july": 7,
+            "aug": 8,
+            "august": 8,
+            "sep": 9,
+            "sept": 9,
+            "september": 9,
+            "oct": 10,
+            "october": 10,
+            "nov": 11,
+            "november": 11,
+            "dec": 12,
+            "december": 12,
+        }[month_name.lower().rstrip(".")]
+        year_int = int(year)
+        day_int = int(day)
+        if 2024 <= year_int <= 2026 and 1 <= day_int <= 31:
+            return f"{year_int:04d}-{month:02d}-{day_int:02d}"
+    day_month = re.search(
+        r'(\d{1,2})\s+(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\.?\s+(20\d{2})',
+        text,
+        flags=re.I,
+    )
+    if day_month:
+        day, month_name, year = day_month.groups()
+        return _normalize_source_date_candidate(f"{month_name} {day}, {year}")
+    return None
 
 
 @dataclass(frozen=True)
