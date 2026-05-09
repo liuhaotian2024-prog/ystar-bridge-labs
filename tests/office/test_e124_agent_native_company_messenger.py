@@ -173,12 +173,47 @@ def test_strategy_runtime_receipt_is_rendered_as_owner_readable_chinese():
     )
     text = result["reply_text"]
     assert result["owner_dialogue_language_policy"]["strategy_runtime_receipt_translated"] is True
-    assert "这不是临时回复" in text
-    assert "机器收据" in text
+    assert "策略运行结果的中文解释" in text
     assert "AI security, compliance" in text
     assert "不是客户验证" in text
     assert "没有外部发送" in text
+    assert "snapshot" in text
     assert "Top market-first routes:" not in text
+    assert "- -" not in text
+
+
+def test_strategy_runtime_receipt_splits_top_routes_and_does_not_swallow_labels():
+    raw_receipt = (
+        "CEO Strategy Runtime: E114_LIVE_WEB_CAPABILITY_UTILIZED_STRATEGY_RUN "
+        "Provider mode: dated_public_read_evidence_snapshot "
+        "No-new-wheel decision: ALLOW "
+        "CZL Rt+1: 0.0 "
+        "Evidence count: 30 Dated evidence: 30 CIEU events: 48 "
+        "Selected first-cash path: AI security, compliance, & audit readiness Evidence & Control Pack "
+        "- selected_route_id: ai_security_compliance_first_cash_pack "
+        "- math_model_score: 3.01 "
+        "- EVSI: $44.37 "
+        "Top market-first routes: "
+        "- ai_security_compliance_first_cash_pack: score=3.01, EVSI=$44.37 | AI security, compliance, & audit readiness Evidence & Control Pack "
+        "- construction_bids_first_cash_pack: score=3.01, EVSI=$44.37 | Construction bidding & compliance admin 48h Operations Rescue Pack "
+        "- grant_ops_first_cash_pack: score=3.01, EVSI=$44.37 | Grant proposal & compliance operations 48h Operations Rescue Pack "
+        "Boundary: No external action was executed."
+    )
+    text = apply_owner_dialogue_language_policy(
+        "Aiden：请上网查询后分析。",
+        {
+            "reply_text": raw_receipt,
+            "reply_backend": "aiden_ceo_live_web_capability_strategy_runtime",
+            "reply_protocol": "AidenLiveWebCapabilityStrategyRuntimeV1",
+            "runtime_fallback_used": False,
+        },
+    )["reply_text"]
+    assert "no-new-wheel 决策是 `ALLOW`" in text
+    assert "CIEU 事件数是 `48`" in text
+    assert "ai_security_compliance_first_cash_pack：score=3.01" in text
+    assert "construction_bids_first_cash_pack：score=3.01" in text
+    assert "grant_ops_first_cash_pack：score=3.01" in text
+    assert "| Construction" not in text
 
 
 def test_message_css_wraps_long_runtime_tokens():

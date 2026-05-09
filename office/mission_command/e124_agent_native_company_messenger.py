@@ -308,28 +308,86 @@ def _compact_runtime_text(text: str, limit: int = 900) -> str:
     return normalized[:limit].rstrip() + "\n...（原始运行输出较长，已在 owner-facing 回复里截断；完整记录仍在 CIEU packet/runtime artifact 中。）"
 
 
-def _extract_strategy_receipt_value(text: str, label: str) -> str:
-    pattern = rf"{re.escape(label)}:\s*(.*?)(?:\s+-\s+[a-zA-Z_][a-zA-Z0-9_ -]*:|\s+[A-Z][A-Za-z &+/-]+:|$)"
-    match = re.search(pattern, text, flags=re.DOTALL)
+STRATEGY_RECEIPT_LABEL_ORDER = (
+    "Provider mode",
+    "No-new-wheel decision",
+    "CZL Rt+1",
+    "Code index loaded",
+    "Action-relevant capability groups",
+    "Evidence count",
+    "Dated evidence",
+    "Fresh evidence accepted",
+    "Brain learning candidates",
+    "CIEU events",
+    "Selected first-cash path",
+    "selected_route_id",
+    "math_model_score",
+    "EVSI",
+    "Top market-first routes",
+    "Boundary",
+)
+
+
+def _receipt_label_index(text: str, label: str, start: int = 0) -> int:
+    match = re.search(rf"(?:^|\s+-\s+|\s){re.escape(label)}:\s*", text[start:])
     if not match:
+        return -1
+    return start + match.start()
+
+
+def _extract_strategy_receipt_value(text: str, label: str) -> str:
+    start = _receipt_label_index(text, label)
+    if start < 0:
         return ""
-    return " ".join(match.group(1).split()).strip(" -")
+    value_start = text.find(":", start) + 1
+    next_indices = [
+        idx
+        for other in STRATEGY_RECEIPT_LABEL_ORDER
+        if other != label
+        for idx in [_receipt_label_index(text, other, value_start)]
+        if idx >= 0
+    ]
+    value_end = min(next_indices) if next_indices else len(text)
+    return " ".join(text[value_start:value_end].split()).strip(" -")
+
+
+def _format_strategy_route_for_owner(route: str) -> str:
+    match = re.match(r"(?P<route_id>[a-zA-Z0-9_]+):\s*score=(?P<score>[^,]+),\s*EVSI=(?P<evsi>[^|]+)\|\s*(?P<title>.+)", route)
+    if not match:
+        return route
+    return (
+        f"{match.group('route_id')}：score={match.group('score').strip()}，"
+        f"EVSI={match.group('evsi').strip()}；{match.group('title').strip()}"
+    )
+
+
+def _extract_strategy_milestone(text: str) -> str:
+    value = text.replace("CEO Strategy Runtime:", "", 1).strip()
+    cut_points = []
+    if "This Aiden strategy question" in value:
+        cut_points.append(value.index("This Aiden strategy question"))
+    for label in STRATEGY_RECEIPT_LABEL_ORDER:
+        idx = _receipt_label_index(value, label)
+        if idx >= 0:
+            cut_points.append(idx)
+    if cut_points:
+        value = value[: min(cut_points)]
+    return " ".join(value.split()).strip()
 
 
 def _extract_top_strategy_routes(text: str, limit: int = 3) -> list[str]:
-    if "Top market-first routes:" not in text:
+    section = _extract_strategy_receipt_value(text, "Top market-first routes")
+    if not section:
         return []
-    section = text.split("Top market-first routes:", 1)[1].split("Boundary:", 1)[0]
-    candidates = []
-    for chunk in section.split(" - "):
-        item = " ".join(chunk.split()).strip()
-        if not item or item.startswith("selected_route_id"):
-            continue
-        if ": score=" in item:
-            candidates.append(item)
-        if len(candidates) >= limit:
+    routes = []
+    pattern = re.compile(
+        r"(?:^|\s+-\s*)(?P<route>[a-zA-Z0-9_]+:\s*score=.*?)(?=\s+-\s*[a-zA-Z0-9_]+:\s*score=|$)"
+    )
+    for match in pattern.finditer(section):
+        routes.append(_format_strategy_route_for_owner(" ".join(match.group("route").split())))
+        if len(routes) >= limit:
             break
-    return candidates
+    return routes
 
 
 def _is_strategy_runtime_receipt(reply_runtime: Mapping[str, Any], raw_reply: str) -> bool:
@@ -344,7 +402,7 @@ def _is_strategy_runtime_receipt(reply_runtime: Mapping[str, Any], raw_reply: st
 
 
 def _render_strategy_receipt_as_chinese(owner_text: str, reply_runtime: Mapping[str, Any], raw_reply: str) -> str:
-    milestone = raw_reply.split("This Aiden strategy question", 1)[0].replace("CEO Strategy Runtime:", "").strip()
+    milestone = _extract_strategy_milestone(raw_reply)
     provider_mode = _extract_strategy_receipt_value(raw_reply, "Provider mode") or "未解析"
     no_new_wheel = _extract_strategy_receipt_value(raw_reply, "No-new-wheel decision") or "未解析"
     selected_path = _extract_strategy_receipt_value(raw_reply, "Selected first-cash path") or "未解析"
@@ -357,8 +415,15 @@ def _render_strategy_receipt_as_chinese(owner_text: str, reply_runtime: Mapping[
     top_routes = _extract_top_strategy_routes(raw_reply)
     rendered_routes = "\n".join(f"- {route}" for route in top_routes) if top_routes else "- 未能从机器收据中解析候选路线。"
 
+    freshness_warning = ""
+    if "snapshot" in provider_mode.lower():
+        freshness_warning = (
+            "\n\n重要提醒：这次 provider mode 显示为 snapshot，说明它使用的是受控公开证据快照，"
+            "不等同于实时联网扫描。若你的消息要求“上网/最新/实时搜索”，meeting room server 必须把 live public-read 打开。"
+        )
+
     return (
-        "这不是临时回复，而是 Aiden 策略 runtime 返回的一份机器收据。我不应该把它原样丢给你；下面是 owner-readable 的中文解释。\n\n"
+        "这是 Aiden 策略运行结果的中文解释。我会把机器收据转换成人能讨论的结论，而不是让你读日志。\n\n"
         "1. 这次到底跑了什么？\n"
         f"它触发的是 `{milestone or 'CEO strategy runtime'}`。意思是：Aiden 没有直接凭近期记忆回答，而是走了能力利用检查、"
         "公开证据快照、证据日期过滤、CIEU 记录、脑学习候选和 Y-star-gov 验证这些链路。\n\n"
@@ -368,7 +433,8 @@ def _render_strategy_receipt_as_chinese(owner_text: str, reply_runtime: Mapping[
         "3. 它为什么会这么选？\n"
         f"这轮使用的 provider mode 是 `{provider_mode}`，证据数量是 `{evidence_count}`，带日期证据是 `{dated_evidence}`，"
         f"no-new-wheel 决策是 `{no_new_wheel}`，CIEU 事件数是 `{cieu_events}`。也就是说，它主要是在当前受控证据集里，"
-        "把“AI 安全 / 合规 / 审计准备包”判断为更贴近我们已有治理、证据、CIEU、agent runtime 能力的第一现金路径。\n\n"
+        "把“AI 安全 / 合规 / 审计准备包”判断为更贴近我们已有治理、证据、CIEU、agent runtime 能力的第一现金路径。"
+        f"{freshness_warning}\n\n"
         "4. 其他候选路线有哪些？\n"
         f"{rendered_routes}\n\n"
         "5. 这条结论应该怎么理解？\n"

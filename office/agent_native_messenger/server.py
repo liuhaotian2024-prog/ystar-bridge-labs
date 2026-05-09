@@ -21,6 +21,12 @@ from pathlib import Path
 
 PORT = int(os.environ.get("AIDEN_MESSENGER_PORT", "8784"))
 RUNTIME_TIMEOUT_SECONDS = float(os.environ.get("AIDEN_MESSENGER_RUNTIME_TIMEOUT_SECONDS", "45"))
+ALLOW_LIVE_NETWORK_BY_DEFAULT = os.environ.get("AIDEN_MESSENGER_ALLOW_LIVE_NETWORK", "").lower() in {
+    "1",
+    "true",
+    "yes",
+    "on",
+}
 DIRECTORY = Path(__file__).resolve().parent
 BRIDGE_ROOT = Path(os.environ.get("YSTAR_BRIDGE_LABS_ROOT", Path(__file__).resolve().parents[2]))
 Y_GOV_ROOT = Path(os.environ.get("YSTAR_GOV_ROOT", "/Users/haotianliu/.openclaw/workspace/Y-star-gov"))
@@ -35,6 +41,20 @@ from office.mission_command.e124_agent_native_company_messenger import (  # noqa
 
 
 RUNTIME_EXECUTOR = ThreadPoolExecutor(max_workers=2, thread_name_prefix="aiden-messenger-runtime")
+LIVE_PUBLIC_READ_TRIGGERS = (
+    "上网",
+    "联网",
+    "实时",
+    "最新",
+    "搜索",
+    "查询",
+    "查一下",
+    "web",
+    "internet",
+    "browse",
+    "public-read",
+    "live public",
+)
 
 
 def _json_response(handler: http.server.BaseHTTPRequestHandler, payload: dict, status: int = 200) -> None:
@@ -45,6 +65,13 @@ def _json_response(handler: http.server.BaseHTTPRequestHandler, payload: dict, s
     handler.send_header("Access-Control-Allow-Origin", "*")
     handler.end_headers()
     handler.wfile.write(body)
+
+
+def _allow_live_network_for_message(human_text: str) -> bool:
+    if ALLOW_LIVE_NETWORK_BY_DEFAULT:
+        return True
+    lower = human_text.lower()
+    return any(trigger in lower for trigger in LIVE_PUBLIC_READ_TRIGGERS)
 
 
 def _runtime_notice_payload(*, human_text: str, status: str, reason: str, detail: str, elapsed_seconds: float) -> dict:
@@ -118,6 +145,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                     "status": "ok",
                     "service": "aiden-agent-native-messenger",
                     "runtime_timeout_seconds": RUNTIME_TIMEOUT_SECONDS,
+                    "allow_live_network_by_default": ALLOW_LIVE_NETWORK_BY_DEFAULT,
                     "local_only": True,
                     "external_send_enabled": False,
                     "payment_execution_enabled": False,
@@ -157,13 +185,14 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if not human_text:
             _json_response(self, {"error": "empty text"}, 400)
             return
+        allow_live_network = _allow_live_network_for_message(human_text)
         started = time.monotonic()
         future = RUNTIME_EXECUTOR.submit(
             run_agent_native_messenger_turn,
             owner_text=human_text,
             cieu_db=db_path,
             ystar_gov_root=Y_GOV_ROOT,
-            allow_live_network=False,
+            allow_live_network=allow_live_network,
         )
         try:
             turn = future.result(timeout=RUNTIME_TIMEOUT_SECONDS)
@@ -193,6 +222,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 "elapsed_seconds": round(time.monotonic() - started, 3),
                 "runtime_timeout_seconds": RUNTIME_TIMEOUT_SECONDS,
                 "watchdog_enabled": True,
+                "allow_live_network": allow_live_network,
+                "live_public_read_triggered_by_owner_message": allow_live_network and not ALLOW_LIVE_NETWORK_BY_DEFAULT,
             }
         )
         _json_response(self, turn)
@@ -210,6 +241,7 @@ def main() -> None:
         print(f"[Aiden Messenger] serving on http://127.0.0.1:{PORT}")
         print("[Aiden Messenger] local-only; external send and payment execution disabled")
         print(f"[Aiden Messenger] runtime watchdog timeout: {RUNTIME_TIMEOUT_SECONDS}s")
+        print(f"[Aiden Messenger] live public-read default: {ALLOW_LIVE_NETWORK_BY_DEFAULT}")
         httpd.serve_forever()
 
 

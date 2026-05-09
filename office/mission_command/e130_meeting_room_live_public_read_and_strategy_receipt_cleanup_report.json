@@ -1,0 +1,27 @@
+{
+  "milestone_id": "E130_Meeting_Room_Live_Public_Read_And_Strategy_Receipt_Cleanup_R1",
+  "base_hash": "c67457a83b8fd5fffc87c89dc12e801d6c8a67e4",
+  "problem": "Aiden meeting room still displayed awkward strategy receipt formatting and silently used snapshot mode even when the owner asked it to search the web.",
+  "implemented": [
+    "Replaced fragile strategy receipt parsing with ordered receipt-label parsing.",
+    "Split Top market-first routes into separate owner-readable bullets.",
+    "Prevented No-new-wheel decision from swallowing CZL Rt+1 and later fields.",
+    "Added snapshot freshness warning when provider mode is dated_public_read_evidence_snapshot.",
+    "Added server-side live public-read trigger detection for owner messages containing web/search/latest terms.",
+    "Added AIDEN_MESSENGER_ALLOW_LIVE_NETWORK environment flag for default live public-read mode.",
+    "Recorded allow_live_network status in server_runtime metadata."
+  ],
+  "truth_constraints": {
+    "external_send_executed": false,
+    "provider_action_executed": false,
+    "payment_executed": false,
+    "customer_validation_claim": false,
+    "revenue_claim": false,
+    "K9Audit_write_claim": false
+  },
+  "owner_visible_change": "Aiden strategy receipts now read less like logs, route candidates are separated, and web-search requests can trigger live public-read instead of hardcoded snapshot mode.",
+  "limitations": [
+    "Live public-read depends on the underlying E108/E114 provider and local network availability.",
+    "The system still does not perform external outreach, posting, payment, or provider-side execution."
+  ]
+}
