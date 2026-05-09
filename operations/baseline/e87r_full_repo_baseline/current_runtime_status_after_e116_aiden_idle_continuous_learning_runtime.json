@@ -1,0 +1,29 @@
+{
+  "milestone_id": "E116_Aiden_Idle_Continuous_Learning_Runtime_R1",
+  "status": "implemented_internal_runtime",
+  "aiden_idle_learning": {
+    "supports_24h_idle_loop": true,
+    "active_session_preempts_idle_learning": true,
+    "source_dated_evidence_required": true,
+    "stale_or_undated_evidence_rejected": true,
+    "Y_star_gov_governed": true,
+    "CIEUStore_write_required": true,
+    "brain_graph_delta_write_supported": true,
+    "production_launchagent_started": false
+  },
+  "L5_truth_table_after": {
+    "L5-A": "complete_internal_runtime_foundation_with_governed_idle_learning",
+    "L5-B": "stronger_structured_governed_intelligence_with_continuous_CEO_knowledge_graph_growth",
+    "L5-C": "partial_dry_run_only",
+    "L5-D": "absent_or_not_executed",
+    "L5-E": "partial_governed_idle_brain_graph_write_supported_test_proven"
+  },
+  "truth_constraints": {
+    "no_external_action_executed": true,
+    "no_customer_validation_claim": true,
+    "no_revenue_or_payment_signal": true,
+    "no_live_provider_execution": true,
+    "K9Audit_not_integrated": true
+  },
+  "next_recommended_milestone": "E117_Host_Idle_Learning_Daemon_Activation_And_Learning_Quality_Evaluator_R1"
+}

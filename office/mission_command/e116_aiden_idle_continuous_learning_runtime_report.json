@@ -1,0 +1,64 @@
+{
+  "milestone_id": "E116_Aiden_Idle_Continuous_Learning_Runtime_R1",
+  "status": "implemented_internal_runtime",
+  "purpose": "Give Aiden a governed idle-time continuous learning loop that grows CEO knowledge graph deltas from source-dated evidence when no explicit session task is active.",
+  "existing_systems_reused": [
+    "scripts/aiden_brain.py",
+    "Y-star-gov CIEUStore.write_dict",
+    "Y-star-gov brain_dream_scheduler idle/dream concept",
+    "E112 market evidence freshness policy",
+    "E112 CIEU-backed brain learning candidate boundary",
+    "E113 no-new-wheel and CZL R_t_plus_1=0 principle",
+    "E114 source-dated public-read evidence provider"
+  ],
+  "new_runtime_capability": {
+    "supports_24h_idle_loop": true,
+    "active_session_preempts_idle_learning": true,
+    "source_dated_evidence_required": true,
+    "stale_or_undated_evidence_rejected": true,
+    "Y_star_gov_validation_required_before_brain_write": true,
+    "CIEUStore_write_required_before_brain_write": true,
+    "brain_graph_delta_write_supported": true,
+    "host_launchagent_started_by_this_milestone": false
+  },
+  "curriculum_domains": [
+    "ceo_judgment",
+    "market_intelligence",
+    "competitive_strategy",
+    "product_strategy",
+    "sales_and_distribution",
+    "governance_and_risk",
+    "technology_architecture",
+    "failure_residual_learning",
+    "capital_and_cash_discipline",
+    "organization_and_operating_system"
+  ],
+  "Y_star_gov_contract": "ystar/governance/aiden_idle_learning_contract.py",
+  "bridge_runtime": "office/mission_command/e116_aiden_idle_continuous_learning_runtime.py",
+  "CIEU_event_type": "AIDEN_IDLE_CONTINUOUS_LEARNING_DECISION",
+  "brain_write_modes": [
+    "CIEU_backed_candidate_only",
+    "isolated_test_brain_db_write",
+    "governed_local_brain_db_write"
+  ],
+  "truth_constraints": {
+    "external_action_executed": false,
+    "customer_validation_claim": false,
+    "revenue_claim": false,
+    "payment_claim": false,
+    "live_provider_execution_claim": false,
+    "K9Audit_integration_claim": false
+  },
+  "L5_truth_table_after": {
+    "L5-A": "complete_internal_runtime_foundation_with_governed_idle_learning",
+    "L5-B": "stronger_structured_governed_intelligence_with_continuous_CEO_knowledge_graph_growth",
+    "L5-C": "partial_dry_run_only",
+    "L5-D": "absent_or_not_executed",
+    "L5-E": "partial_governed_idle_brain_graph_write_supported_test_proven"
+  },
+  "remaining_blockers": [
+    "A host LaunchAgent/daemon activation step is still needed to actually run this 24h on the Mac.",
+    "Host-live evidence quality depends on public source date metadata and network availability.",
+    "No external/customer/revenue feedback has occurred."
+  ]
+}
