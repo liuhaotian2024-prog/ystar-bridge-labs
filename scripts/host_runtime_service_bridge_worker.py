@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import signal
 import subprocess
 import time
@@ -79,6 +80,7 @@ def process_job(job: dict[str, Any], *, bridge_root: Path = BRIDGE_ROOT) -> dict
         result = run(argv, timeout=1800)
     elif action == "smoke_test_generate":
         result = run(argv, timeout=180)
+        result = sanitize_local_model_smoke_output(result)
     else:  # pragma: no cover - schema prevents this.
         result = {"returncode": 2, "stdout": "", "stderr": "unsupported action", "command": argv}
     report["commands"].append(result)
@@ -89,6 +91,19 @@ def process_job(job: dict[str, Any], *, bridge_root: Path = BRIDGE_ROOT) -> dict
     else:
         report["failure_code"] = "SERVICE_ACTION_FAILED"
     return report
+
+
+def sanitize_local_model_smoke_output(result: dict[str, Any]) -> dict[str, Any]:
+    """Keep model health proof while avoiding raw reasoning transcript capture."""
+
+    cleaned = dict(result)
+    stdout = str(cleaned.get("stdout") or "")
+    sanitized = re.sub(r"(?is)thinking\.\.\..*?\.\.\.done thinking\.\s*", "", stdout).strip()
+    if sanitized != stdout:
+        cleaned["stdout"] = sanitized
+        cleaned["stdout_sanitized"] = True
+        cleaned["redaction_reason"] = "removed local model thinking transcript from service bridge report"
+    return cleaned
 
 
 def start_ollama(argv: list[str], *, bridge_root: Path = BRIDGE_ROOT) -> dict[str, Any]:

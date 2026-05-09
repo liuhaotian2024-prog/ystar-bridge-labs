@@ -11,7 +11,7 @@ from office.mission_command.e122_aiden_host_runtime_service_controller import (
     submit_host_runtime_service_job,
 )
 from scripts.host_runtime_service_bridge_schema import validate_service_job
-from scripts.host_runtime_service_bridge_worker import process_job
+from scripts.host_runtime_service_bridge_worker import process_job, sanitize_local_model_smoke_output
 
 
 def test_service_order_builds_local_ollama_start_plan() -> None:
@@ -69,3 +69,16 @@ def test_worker_processes_health_check_with_fake_runner(monkeypatch, tmp_path: P
     report = process_job(job, bridge_root=tmp_path)
     assert report["status"] == "SERVICE_ACTION_SUCCEEDED"
     assert calls == [["ollama", "list"]]
+
+
+def test_smoke_output_sanitizes_local_model_thinking_transcript() -> None:
+    result = sanitize_local_model_smoke_output(
+        {
+            "command": ["ollama", "run", "gemma4:e4b", "One sentence: what is 2+2?"],
+            "returncode": 0,
+            "stdout": "Thinking...\nprivate reasoning\n...done thinking.\n\nThe answer is four.",
+            "stderr": "",
+        }
+    )
+    assert result["stdout"] == "The answer is four."
+    assert result["stdout_sanitized"] is True
