@@ -146,6 +146,20 @@ def test_ui_collapses_only_long_owner_inputs_not_aiden_outputs():
     assert ".message-toggle" in styles_text
 
 
+def test_messenger_uses_multiline_input_for_long_memos():
+    root = Path(__file__).resolve().parents[2]
+    index = root / "office/agent_native_messenger/index.html"
+    script = root / "office/agent_native_messenger/main.js"
+    styles = root / "office/agent_native_messenger/styles.css"
+    assert "<textarea id=\"message-input\"" in index.read_text(encoding="utf-8")
+    script_text = script.read_text(encoding="utf-8")
+    assert "composer.requestSubmit()" in script_text
+    assert "event.metaKey || event.ctrlKey" in script_text
+    styles_text = styles.read_text(encoding="utf-8")
+    assert ".composer textarea" in styles_text
+    assert "resize: vertical" in styles_text
+
+
 def test_strategy_runtime_receipt_is_rendered_as_owner_readable_chinese():
     raw_receipt = (
         "CEO Strategy Runtime: E114_LIVE_WEB_CAPABILITY_UTILIZED_STRATEGY_RUN "

@@ -231,6 +231,13 @@ composer.addEventListener("submit", async (event) => {
   }
 });
 
+input.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" && (event.metaKey || event.ctrlKey)) {
+    event.preventDefault();
+    composer.requestSubmit();
+  }
+});
+
 function buildLocalOwnerMessage(text, messageId) {
   return {
     message_id: messageId,

@@ -26,6 +26,10 @@ from office.mission_command.e114_live_web_capability_utilized_strategy_run impor
 from office.mission_command.e115_deep_strategic_intelligence_runtime import (
     run_e115_deep_strategic_intelligence_runtime,
 )
+from office.mission_command.e132_aiden_memo_investigation_runtime import (
+    is_memo_investigation_request,
+    run_aiden_memo_investigation_runtime,
+)
 
 
 AIDEN_MEETING_ROOM_PREFIXES = ("Aiden:", "Aiden：", "aiden:", "aiden：")
@@ -34,6 +38,7 @@ STRATEGY_RUNTIME_PROTOCOL = "AidenStrategyRuntimeV1"
 HOST_RUNTIME_PROTOCOL = "AidenHostRuntimeV1"
 LIVE_WEB_STRATEGY_RUNTIME_PROTOCOL = "AidenLiveWebCapabilityStrategyRuntimeV1"
 DEEP_STRATEGY_RUNTIME_PROTOCOL = "AidenDeepStrategicIntelligenceRuntimeV1"
+MEMO_INVESTIGATION_RUNTIME_PROTOCOL = "AidenMemoInvestigationRuntimeV1"
 
 _STRATEGY_RUNTIME_TERMS = (
     "strategy",
@@ -170,6 +175,17 @@ def is_aiden_live_web_strategy_runtime_message(owner_message: str) -> bool:
 
     text = (owner_message or "").lower()
     return is_aiden_strategy_runtime_message(owner_message) and any(term in text for term in _LIVE_WEB_STRATEGY_TERMS)
+
+
+def is_aiden_memo_investigation_message(owner_message: str) -> bool:
+    """Return true when the owner supplied a memo/research artifact to investigate.
+
+    This gate intentionally runs before generic strategy routing. A long memo
+    with words like "上网" and "战略" must not be swallowed by the first-cash
+    ranking runtime.
+    """
+
+    return is_memo_investigation_request(owner_message)
 
 
 def default_aiden_strategy_cieu_db(repo_root: Path) -> Path:
@@ -693,6 +709,35 @@ def run_aiden_deep_strategy_runtime(
     )
 
 
+def run_aiden_memo_investigation_chat_runtime(
+    owner_message: str,
+    *,
+    repo_root: Path | None = None,
+    cieu_db: str | Path | None = None,
+    brain_db: Path | None = None,
+    ystar_gov_root: Path | None = None,
+    live_public_read_provider: Any | None = None,
+    allow_live_network: bool = True,
+) -> AidenChatRoute:
+    root = repo_root or Path(__file__).resolve().parents[2]
+    selected_cieu_db = Path(cieu_db) if cieu_db is not None else default_aiden_strategy_cieu_db(root)
+    result = run_aiden_memo_investigation_runtime(
+        owner_message,
+        cieu_db=selected_cieu_db,
+        repo_root=root,
+        ystar_gov_root=Path(ystar_gov_root or "/Users/haotianliu/.openclaw/workspace/Y-star-gov"),
+        public_read_provider=live_public_read_provider,
+        allow_live_network=allow_live_network,
+    )
+    return AidenChatRoute(
+        route="aiden_ceo_memo_investigation_runtime",
+        prefixed=True,
+        owner_message=owner_message,
+        response_text=result["owner_facing_answer"],
+        protocol=MEMO_INVESTIGATION_RUNTIME_PROTOCOL,
+    )
+
+
 def route_chat_message_to_aiden_meeting_room(
     message: str,
     *,
@@ -727,6 +772,17 @@ def route_chat_message_to_aiden_meeting_room(
             prefixed=True,
             owner_message="",
             response_text=build_empty_aiden_prefix_revision(),
+        )
+
+    if is_aiden_memo_investigation_message(owner_message):
+        return run_aiden_memo_investigation_chat_runtime(
+            owner_message,
+            repo_root=repo_root,
+            cieu_db=cieu_db,
+            brain_db=brain_db,
+            ystar_gov_root=ystar_gov_root,
+            live_public_read_provider=live_public_read_provider,
+            allow_live_network=allow_live_network,
         )
 
     if is_aiden_live_web_strategy_runtime_message(owner_message):
@@ -783,7 +839,7 @@ def answer_aiden_prefixed_message(message: str, **kwargs: Any) -> str:
     """Return the governed Aiden response for an explicit ``Aiden:`` message."""
 
     route = route_chat_message_to_aiden_meeting_room(message, **kwargs)
-    if route.route in {"aiden_ceo_strategy_runtime", "aiden_ceo_host_runtime", "aiden_ceo_live_web_capability_strategy_runtime", "aiden_ceo_deep_strategic_intelligence_runtime"}:
+    if route.route in {"aiden_ceo_strategy_runtime", "aiden_ceo_host_runtime", "aiden_ceo_live_web_capability_strategy_runtime", "aiden_ceo_deep_strategic_intelligence_runtime", "aiden_ceo_memo_investigation_runtime"}:
         return route.response_text or build_empty_aiden_prefix_revision()
     if route.route != "aiden_ceo_meeting_room":
         return (
@@ -800,6 +856,7 @@ __all__ = [
     "HOST_RUNTIME_PROTOCOL",
     "LIVE_WEB_STRATEGY_RUNTIME_PROTOCOL",
     "DEEP_STRATEGY_RUNTIME_PROTOCOL",
+    "MEMO_INVESTIGATION_RUNTIME_PROTOCOL",
     "STRATEGY_RUNTIME_PROTOCOL",
     "answer_aiden_prefixed_message",
     "build_empty_aiden_prefix_revision",
@@ -807,6 +864,7 @@ __all__ = [
     "is_aiden_meeting_room_message",
     "is_aiden_host_runtime_message",
     "is_aiden_live_web_strategy_runtime_message",
+    "is_aiden_memo_investigation_message",
     "is_aiden_strategy_runtime_message",
     "render_aiden_host_runtime_response",
     "render_aiden_live_web_capability_strategy_response",
@@ -819,5 +877,6 @@ __all__ = [
     "run_aiden_host_runtime",
     "run_aiden_live_web_capability_strategy_runtime",
     "run_aiden_deep_strategy_runtime",
+    "run_aiden_memo_investigation_chat_runtime",
     "strip_aiden_meeting_room_prefix",
 ]

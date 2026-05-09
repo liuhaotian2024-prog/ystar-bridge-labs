@@ -124,3 +124,21 @@ def test_live_web_strategy_takes_priority_over_generic_strategy(monkeypatch, tmp
 
     assert route.route == "aiden_ceo_live_web_capability_strategy_runtime"
     assert route.response_text == "live web strategy response"
+
+
+def test_memo_investigation_takes_priority_over_live_web_strategy(monkeypatch, tmp_path):
+    monkeypatch.setattr(
+        chat_router,
+        "run_aiden_memo_investigation_runtime",
+        lambda *args, **kwargs: {"owner_facing_answer": "memo investigation response"},
+    )
+
+    route = chat_router.route_chat_message_to_aiden_meeting_room(
+        "Aiden: 请你自主上网搜索可信依据，验证分析下面这份备忘录跟我们之间的关系。# STRAT-002 — x402 Economy × Mission GO Integration",
+        repo_root=REPO_ROOT,
+        cieu_db=tmp_path / "memo_priority.db",
+    )
+
+    assert route.route == "aiden_ceo_memo_investigation_runtime"
+    assert route.protocol == "AidenMemoInvestigationRuntimeV1"
+    assert route.response_text == "memo investigation response"
