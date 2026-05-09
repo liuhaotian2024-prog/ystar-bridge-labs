@@ -17,11 +17,15 @@ from office.aiden_meeting_room.governed_gateway import answer_owner_governed_tex
 from office.mission_command.e110_labs_universal_operating_control_plane import (
     run_e110_controlled_aiden_strategy_session,
 )
+from office.mission_command.e111_aiden_host_runtime_and_autonomy_control_plane import (
+    run_aiden_host_runtime_cycle,
+)
 
 
 AIDEN_MEETING_ROOM_PREFIXES = ("Aiden:", "Aiden：", "aiden:", "aiden：")
 MEETING_ROOM_PROTOCOL = "AidenPrefixV1"
 STRATEGY_RUNTIME_PROTOCOL = "AidenStrategyRuntimeV1"
+HOST_RUNTIME_PROTOCOL = "AidenHostRuntimeV1"
 
 _STRATEGY_RUNTIME_TERMS = (
     "strategy",
@@ -49,6 +53,21 @@ _STRATEGY_RUNTIME_TERMS = (
     "定价",
     "会计事务所",
     "cpa",
+)
+
+_HOST_RUNTIME_TERMS = (
+    "autonomous",
+    "autonomy",
+    "self-operating",
+    "self operating",
+    "operating system",
+    "host runtime",
+    "company runtime",
+    "持续运营",
+    "自主运营",
+    "自治",
+    "公司操作系统",
+    "宿主",
 )
 
 
@@ -110,6 +129,13 @@ def is_aiden_strategy_runtime_message(owner_message: str) -> bool:
     return any(term in text for term in _STRATEGY_RUNTIME_TERMS)
 
 
+def is_aiden_host_runtime_message(owner_message: str) -> bool:
+    """Return true when Aiden should run the host-level operating loop."""
+
+    text = (owner_message or "").lower()
+    return any(term in text for term in _HOST_RUNTIME_TERMS)
+
+
 def default_aiden_strategy_cieu_db(repo_root: Path) -> Path:
     runtime_dir = repo_root / ".runtime"
     runtime_dir.mkdir(parents=True, exist_ok=True)
@@ -136,6 +162,44 @@ def render_aiden_strategy_runtime_response(result: dict[str, Any]) -> str:
     process = strategy["strategy_process_integrity_proof"]
     competitor_lines = "\n".join(
         f"- {item['competitor_id']}: {item['threat_level']}" for item in competitors[:8]
+    )
+
+
+def render_aiden_host_runtime_response(result: dict[str, Any]) -> str:
+    packet = result["host_runtime_packet"]
+    next_action = result["next_action_recommendation"]
+    value_cycle = packet["value_discovery_cycle"]
+    capability_lines = "\n".join(
+        f"- {item['capability_id']}: {item['role']}"
+        for item in packet["existing_capability_orchestration_map"]["capabilities"]
+    )
+    return (
+        "CEO Host Runtime: E111_AIDEN_HOST_RUNTIME_AND_AUTONOMY_CONTROL_PLANE\n"
+        "This Aiden request was routed through the host-level CEO operating loop, not a raw chat answer. "
+        "The loop anchors on the company mission, first-principles operating policy, existing mainline capability "
+        "orchestration, E110 universal control, open-world value discovery, CEOImplementationOrder, Codex prompt "
+        "governance, Y-star-gov validation, and CIEUStore memory.\n\n"
+        f"Host runtime proven: {str(result['host_runtime_cycle_proven']).lower()}\n"
+        f"Y-star-gov host runtime decision: {result['host_runtime_write']['governance_decision']['decision']}\n"
+        f"CEOImplementationOrder decision: {result['order_write']['governance_decision']['decision']}\n"
+        f"Codex prompt generation decision: {result['codex_handoff_prompt_generation']['prompt_generation_decision']['decision']}\n"
+        f"CIEU events: {result['CIEUStore_summary']['event_count']}\n\n"
+        "Existing systems orchestrated:\n"
+        f"{capability_lines}\n\n"
+        "Value discovery result:\n"
+        f"- selected value target: {value_cycle['selected_value_target']}\n"
+        f"- selected route id: {value_cycle['selected_route_id']}\n"
+        f"- evidence count: {value_cycle['evidence_count']}\n"
+        f"- route candidates: {value_cycle['route_candidate_count']}\n"
+        f"- anti-anchor proven: {str(value_cycle['anti_anchor_proven']).lower()}\n\n"
+        "Next autonomous internal action:\n"
+        f"- action_id: {next_action['action_id']}\n"
+        f"- autonomy_tier: {next_action['autonomy_tier']}\n"
+        f"- external_action_candidate: {str(next_action['external_action_candidate']).lower()}\n"
+        f"- why low risk: {next_action['why_this_is_low_risk']}\n\n"
+        "Boundary:\n"
+        "No external action was executed. No customer validation, pricing validation, paid signal, payment, revenue, "
+        "live provider execution, or K9Audit integration is claimed."
     )
     route_lines = "\n".join(
         f"- {item['route_id']}: {item['first_cash_score']}" for item in route_scores
@@ -407,6 +471,36 @@ def run_aiden_strategy_runtime(
     )
 
 
+def run_aiden_host_runtime(
+    owner_message: str,
+    *,
+    repo_root: Path | None = None,
+    cieu_db: str | Path | None = None,
+    brain_db: Path | None = None,
+    ystar_gov_root: Path | None = None,
+    live_public_read_provider: Any | None = None,
+    allow_live_network: bool = True,
+) -> AidenChatRoute:
+    root = repo_root or Path(__file__).resolve().parents[2]
+    selected_cieu_db = Path(cieu_db) if cieu_db is not None else default_aiden_strategy_cieu_db(root)
+    result = run_aiden_host_runtime_cycle(
+        cieu_db=selected_cieu_db,
+        owner_intent=owner_message,
+        brain_db=brain_db,
+        ystar_gov_root=ystar_gov_root,
+        provider=live_public_read_provider,
+        allow_live_network=allow_live_network,
+        seal_session=True,
+    )
+    return AidenChatRoute(
+        route="aiden_ceo_host_runtime",
+        prefixed=True,
+        owner_message=owner_message,
+        response_text=render_aiden_host_runtime_response(result),
+        protocol=HOST_RUNTIME_PROTOCOL,
+    )
+
+
 def route_chat_message_to_aiden_meeting_room(
     message: str,
     *,
@@ -443,6 +537,17 @@ def route_chat_message_to_aiden_meeting_room(
             response_text=build_empty_aiden_prefix_revision(),
         )
 
+    if is_aiden_host_runtime_message(owner_message):
+        return run_aiden_host_runtime(
+            owner_message,
+            repo_root=repo_root,
+            cieu_db=cieu_db,
+            brain_db=brain_db,
+            ystar_gov_root=ystar_gov_root,
+            live_public_read_provider=live_public_read_provider,
+            allow_live_network=allow_live_network,
+        )
+
     if is_aiden_strategy_runtime_message(owner_message):
         return run_aiden_strategy_runtime(
             owner_message,
@@ -475,7 +580,7 @@ def answer_aiden_prefixed_message(message: str, **kwargs: Any) -> str:
     """Return the governed Aiden response for an explicit ``Aiden:`` message."""
 
     route = route_chat_message_to_aiden_meeting_room(message, **kwargs)
-    if route.route == "aiden_ceo_strategy_runtime":
+    if route.route in {"aiden_ceo_strategy_runtime", "aiden_ceo_host_runtime"}:
         return route.response_text or build_empty_aiden_prefix_revision()
     if route.route != "aiden_ceo_meeting_room":
         return (
@@ -489,16 +594,20 @@ __all__ = [
     "AIDEN_MEETING_ROOM_PREFIXES",
     "AidenChatRoute",
     "MEETING_ROOM_PROTOCOL",
+    "HOST_RUNTIME_PROTOCOL",
     "STRATEGY_RUNTIME_PROTOCOL",
     "answer_aiden_prefixed_message",
     "build_empty_aiden_prefix_revision",
     "default_aiden_strategy_cieu_db",
     "is_aiden_meeting_room_message",
+    "is_aiden_host_runtime_message",
     "is_aiden_strategy_runtime_message",
+    "render_aiden_host_runtime_response",
     "render_aiden_universal_control_strategy_runtime_response",
     "render_aiden_strategy_runtime_response",
     "render_aiden_live_global_strategy_runtime_response",
     "route_chat_message_to_aiden_meeting_room",
     "run_aiden_strategy_runtime",
+    "run_aiden_host_runtime",
     "strip_aiden_meeting_room_prefix",
 ]
