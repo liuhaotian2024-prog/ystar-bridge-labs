@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aiden Company Messenger</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="sigil">Y*</span>
+        <div>
+          <h1>Aiden Messenger</h1>
+          <p>Agent-native company communication</p>
+        </div>
+      </div>
+      <section class="panel">
+        <h2>Rooms</h2>
+        <button class="room active" data-room="ceo">CEO Meeting Room</button>
+        <button class="room" data-room="agent">Agent Ops Thread</button>
+        <button class="room" data-room="wallet">Wallet Proposal Lab</button>
+      </section>
+      <section class="panel">
+        <h2>Participants</h2>
+        <ul id="participants" class="participants"></ul>
+      </section>
+      <section class="boundary">
+        <strong>Governance Boundary</strong>
+        <span>Local only</span>
+        <span>No external send</span>
+        <span>No payment execution</span>
+        <span>CIEUStore required</span>
+      </section>
+    </aside>
+
+    <section class="conversation">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Natural language + CIEU/CZL</p>
+          <h2>CEO Company Messenger</h2>
+        </div>
+        <div class="status">
+          <span id="event-count">0 CIEU events</span>
+          <span class="pulse">Y-star-gov gated</span>
+        </div>
+      </header>
+
+      <div id="messages" class="messages" aria-live="polite"></div>
+
+      <form id="composer" class="composer">
+        <input id="message-input" autocomplete="off" placeholder="Talk to Aiden. The system will wrap it in a CIEU/CZL five-tuple." />
+        <button type="submit">Send Governed Message</button>
+      </form>
+    </section>
+
+    <aside class="rightbar">
+      <section class="panel tall">
+        <h2>CIEU Five-Tuple</h2>
+        <div id="tuple-view" class="tuple-view">
+          <p>Select a message to inspect its Y*, X, U, Y+1, and R+1 fields.</p>
+        </div>
+      </section>
+      <section class="panel">
+        <h2>Future Rails</h2>
+        <p class="small">External agents, group meetings, image/file transfer, and USDC wallets are modeled as proposal-only until owner-approved boundaries exist.</p>
+      </section>
+    </aside>
+  </main>
+  <script src="main.js"></script>
+</body>
+</html>
