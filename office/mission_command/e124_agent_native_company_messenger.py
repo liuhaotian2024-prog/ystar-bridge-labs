@@ -198,17 +198,33 @@ def generate_aiden_reply_text(
     """Generate Aiden's reply through the existing governed meeting-room router."""
 
     try:
-        from office.mission_command.e125_aiden_retrieval_orchestration_runtime import run_aiden_retrieval_orchestration
+        from office.mission_command.e126_adaptive_retrieval_planner_runtime import run_adaptive_retrieval_planner_and_retrieval
         from office.aiden_meeting_room.chat_router import route_chat_message_to_aiden_meeting_room
 
-        retrieval_result = run_aiden_retrieval_orchestration(
+        adaptive_retrieval_result = run_adaptive_retrieval_planner_and_retrieval(
             owner_text,
             cieu_db=cieu_db,
             ystar_gov_root=ystar_gov_root,
             repo_root=repo_root or BRIDGE_ROOT,
-            high_wisdom_required=True,
-            external_public_read_required=False,
         )
+        planner_decision = adaptive_retrieval_result["YstarGov_planner_result"]["governance_decision"]
+        if planner_decision["decision"] != "ALLOW":
+            return {
+                "reply_text": (
+                    "Aiden Adaptive Retrieval Planner Notice: I cannot answer yet because the adaptive retrieval/capability "
+                    f"planner returned {planner_decision['decision']}: {planner_decision['reason']}. "
+                    f"Correct path: {'; '.join(planner_decision.get('correct_path') or [])}"
+                ),
+                "reply_backend": "adaptive_retrieval_planner_notice",
+                "reply_protocol": "AidenAdaptiveRetrievalPlannerV1",
+                "runtime_fallback_used": True,
+                "adaptive_retrieval_result": adaptive_retrieval_result,
+                "adaptive_planner_decision": planner_decision["decision"],
+                "retrieval_result": None,
+                "retrieval_decision": "not_run",
+                "retrieval_context_summary": "",
+            }
+        retrieval_result = adaptive_retrieval_result["retrieval_result"]
         retrieval_decision = retrieval_result["YstarGov_retrieval_result"]["governance_decision"]
         if retrieval_decision["decision"] != "ALLOW":
             return {
@@ -220,6 +236,8 @@ def generate_aiden_reply_text(
                 "reply_backend": "retrieval_governance_notice",
                 "reply_protocol": "AidenRetrievalOrchestrationV1",
                 "runtime_fallback_used": True,
+                "adaptive_retrieval_result": adaptive_retrieval_result,
+                "adaptive_planner_decision": planner_decision["decision"],
                 "retrieval_result": retrieval_result,
                 "retrieval_decision": retrieval_decision["decision"],
                 "retrieval_context_summary": retrieval_result["retrieval_context_summary"],
@@ -237,6 +255,8 @@ def generate_aiden_reply_text(
             "reply_backend": route.route,
             "reply_protocol": route.protocol,
             "runtime_fallback_used": False,
+            "adaptive_retrieval_result": adaptive_retrieval_result,
+            "adaptive_planner_decision": planner_decision["decision"],
             "retrieval_result": retrieval_result,
             "retrieval_decision": retrieval_decision["decision"],
             "retrieval_context_summary": retrieval_result["retrieval_context_summary"],
@@ -252,6 +272,8 @@ def generate_aiden_reply_text(
             "reply_protocol": "AidenMessengerFallbackV1",
             "runtime_fallback_used": True,
             "runtime_error": str(exc),
+            "adaptive_retrieval_result": None,
+            "adaptive_planner_decision": "runtime_error",
             "retrieval_result": None,
             "retrieval_decision": "runtime_error",
             "retrieval_context_summary": "",
@@ -324,6 +346,7 @@ def run_agent_native_messenger_turn(
                 "source": "Aiden governed router",
                 "reply_backend": reply_runtime["reply_backend"],
                 "reply_protocol": reply_runtime["reply_protocol"],
+                "adaptive_planner_decision": reply_runtime.get("adaptive_planner_decision", "not_applicable"),
                 "retrieval_decision": reply_runtime.get("retrieval_decision", "not_applicable"),
                 "retrieval_context_summary": reply_runtime.get("retrieval_context_summary", "")[:500],
             },

@@ -1,0 +1,381 @@
+{
+  "CIEU_linkage": {
+    "CIEU_recording_required": true,
+    "target_event_type": "AIDEN_ADAPTIVE_RETRIEVAL_PLANNER_DECISION"
+  },
+  "artifact_id": "e126_adaptive_retrieval_planner_packet",
+  "capability_invocation_plan": {
+    "invocations": [
+      {
+        "evidence_refs": [
+          "office/mission_command/e101_adaptive_governance_discovery_and_correct_path_navigator.py"
+        ],
+        "invocation_status": "invoked",
+        "mechanism_id": "E101_adaptive_governance_correct_path",
+        "output_summary": "E101_adaptive_governance_correct_path is bound into the adaptive retrieval planner before Aiden answers."
+      },
+      {
+        "evidence_refs": [
+          "office/mission_command/e113_no_new_wheel_runtime_law.py"
+        ],
+        "invocation_status": "invoked",
+        "mechanism_id": "E113_no_new_wheel_runtime_law",
+        "output_summary": "E113_no_new_wheel_runtime_law is bound into the adaptive retrieval planner before Aiden answers."
+      },
+      {
+        "evidence_refs": [
+          "office/mission_command/e119_aiden_operating_pattern_doctrine_registry.py"
+        ],
+        "invocation_status": "invoked",
+        "mechanism_id": "E119_operating_pattern_doctrine_registry",
+        "output_summary": "E119_operating_pattern_doctrine_registry is bound into the adaptive retrieval planner before Aiden answers."
+      },
+      {
+        "evidence_refs": [
+          "office/mission_command/e120_aiden_unknown_problem_learning_protocol.py"
+        ],
+        "invocation_status": "invoked",
+        "mechanism_id": "E120_unknown_problem_learning_protocol",
+        "output_summary": "E120_unknown_problem_learning_protocol is bound into the adaptive retrieval planner before Aiden answers."
+      },
+      {
+        "evidence_refs": [
+          "office/mission_command/e125_aiden_retrieval_orchestration_runtime.py"
+        ],
+        "invocation_status": "will_invoke_after_validation",
+        "mechanism_id": "E125_retrieval_orchestration_runtime",
+        "output_summary": "E125_retrieval_orchestration_runtime is bound into the adaptive retrieval planner before Aiden answers."
+      }
+    ],
+    "matched_capability_domains": [
+      "adaptive_governance_correct_path",
+      "aiden_brain_runtime",
+      "ceo_behavior_center",
+      "ceo_implementation_order",
+      "cieu_prediction_delta",
+      "cieu_store_formal_memory",
+      "czl_message_protocol",
+      "external_validation_and_l4_feedback",
+      "gov_mcp_dry_run_boundary",
+      "open_world_strategy_runtime",
+      "runtime_control_plane"
+    ],
+    "new_capability_policy": "do not hardcode forever; propose registry/governance additions for repeatable retrieval gaps",
+    "selected_operating_patterns": [
+      "brain_provenance_required",
+      "buyer_visible_value_translation",
+      "capability_utilization_sweep",
+      "class_level_extrapolation_gate",
+      "competitive_landscape_current_signal",
+      "content_type_freshness_policy",
+      "correct_path_navigation",
+      "downstream_impact_scan",
+      "evidence_quality_and_freshness_gate",
+      "full_repo_and_baseline_first",
+      "knowledge_graph_methodology_selection",
+      "no_new_wheel_preflight",
+      "owner_review_before_contract_patch",
+      "proposal_only_no_direct_contract_mutation",
+      "regression_test_and_cieu_closure",
+      "residual_truth_scope_split",
+      "source_discovery_tool_selection",
+      "theory_case_peer_curriculum_coverage",
+      "thinking_mode_selection",
+      "unknown_problem_learning_protocol"
+    ]
+  },
+  "created_at": "2026-05-09T21:30:45+00:00",
+  "dynamic_retrieval_plan": {
+    "future_source_addition_policy": "if new capability/source is discovered, add it through self-governance proposal and Y-star-gov validation",
+    "plan_mode": "adaptive_dynamic_source_selection",
+    "planned_source_ids": [
+      "aiden_6d_brain",
+      "cieu_store_history",
+      "classical_theory_case_corpus",
+      "code_index_or_capability_map",
+      "competitive_intelligence_runtime",
+      "e123_memory_asset_discovery",
+      "external_public_read_runtime",
+      "local_vector_rag",
+      "open_world_strategy_runtime",
+      "repo_evidence_index",
+      "unknown_problem_learning_protocol",
+      "ystar_memory_store"
+    ],
+    "retrieval_plan_not_closed_ontology": true,
+    "source_selection_rationale": [
+      {
+        "source_id": "aiden_6d_brain",
+        "why": "Selected to satisfy adaptive evidence families: CIEU_history, brain_provenance, buyer_visible_value_evidence, classical_theory_or_case_corpus, code_index_or_baseline, competitor_and_substitute_evidence, current_market_evidence_or_public_read_route, knowledge_graph_methodology, long_term_"
+      },
+      {
+        "source_id": "cieu_store_history",
+        "why": "Selected to satisfy adaptive evidence families: CIEU_history, brain_provenance, buyer_visible_value_evidence, classical_theory_or_case_corpus, code_index_or_baseline, competitor_and_substitute_evidence, current_market_evidence_or_public_read_route, knowledge_graph_methodology, long_term_"
+      },
+      {
+        "source_id": "classical_theory_case_corpus",
+        "why": "Selected to satisfy adaptive evidence families: CIEU_history, brain_provenance, buyer_visible_value_evidence, classical_theory_or_case_corpus, code_index_or_baseline, competitor_and_substitute_evidence, current_market_evidence_or_public_read_route, knowledge_graph_methodology, long_term_"
+      },
+      {
+        "source_id": "code_index_or_capability_map",
+        "why": "Selected to satisfy adaptive evidence families: CIEU_history, brain_provenance, buyer_visible_value_evidence, classical_theory_or_case_corpus, code_index_or_baseline, competitor_and_substitute_evidence, current_market_evidence_or_public_read_route, knowledge_graph_methodology, long_term_"
+      },
+      {
+        "source_id": "competitive_intelligence_runtime",
+        "why": "Selected to satisfy adaptive evidence families: CIEU_history, brain_provenance, buyer_visible_value_evidence, classical_theory_or_case_corpus, code_index_or_baseline, competitor_and_substitute_evidence, current_market_evidence_or_public_read_route, knowledge_graph_methodology, long_term_"
+      },
+      {
+        "source_id": "e123_memory_asset_discovery",
+        "why": "Selected to satisfy adaptive evidence families: CIEU_history, brain_provenance, buyer_visible_value_evidence, classical_theory_or_case_corpus, code_index_or_baseline, competitor_and_substitute_evidence, current_market_evidence_or_public_read_route, knowledge_graph_methodology, long_term_"
+      },
+      {
+        "source_id": "external_public_read_runtime",
+        "why": "Selected to satisfy adaptive evidence families: CIEU_history, brain_provenance, buyer_visible_value_evidence, classical_theory_or_case_corpus, code_index_or_baseline, competitor_and_substitute_evidence, current_market_evidence_or_public_read_route, knowledge_graph_methodology, long_term_"
+      },
+      {
+        "source_id": "local_vector_rag",
+        "why": "Selected to satisfy adaptive evidence families: CIEU_history, brain_provenance, buyer_visible_value_evidence, classical_theory_or_case_corpus, code_index_or_baseline, competitor_and_substitute_evidence, current_market_evidence_or_public_read_route, knowledge_graph_methodology, long_term_"
+      },
+      {
+        "source_id": "open_world_strategy_runtime",
+        "why": "Selected to satisfy adaptive evidence families: CIEU_history, brain_provenance, buyer_visible_value_evidence, classical_theory_or_case_corpus, code_index_or_baseline, competitor_and_substitute_evidence, current_market_evidence_or_public_read_route, knowledge_graph_methodology, long_term_"
+      },
+      {
+        "source_id": "repo_evidence_index",
+        "why": "Selected to satisfy adaptive evidence families: CIEU_history, brain_provenance, buyer_visible_value_evidence, classical_theory_or_case_corpus, code_index_or_baseline, competitor_and_substitute_evidence, current_market_evidence_or_public_read_route, knowledge_graph_methodology, long_term_"
+      },
+      {
+        "source_id": "unknown_problem_learning_protocol",
+        "why": "Selected to satisfy adaptive evidence families: CIEU_history, brain_provenance, buyer_visible_value_evidence, classical_theory_or_case_corpus, code_index_or_baseline, competitor_and_substitute_evidence, current_market_evidence_or_public_read_route, knowledge_graph_methodology, long_term_"
+      },
+      {
+        "source_id": "ystar_memory_store",
+        "why": "Selected to satisfy adaptive evidence families: CIEU_history, brain_provenance, buyer_visible_value_evidence, classical_theory_or_case_corpus, code_index_or_baseline, competitor_and_substitute_evidence, current_market_evidence_or_public_read_route, knowledge_graph_methodology, long_term_"
+      }
+    ]
+  },
+  "evidence_need_analysis": {
+    "adaptive_analysis_performed": true,
+    "required_evidence_families": [
+      "CIEU_history",
+      "brain_provenance",
+      "buyer_visible_value_evidence",
+      "classical_theory_or_case_corpus",
+      "code_index_or_baseline",
+      "competitor_and_substitute_evidence",
+      "current_market_evidence_or_public_read_route",
+      "knowledge_graph_methodology",
+      "long_term_memory_status",
+      "repo_capability_evidence",
+      "sensemaking_modes",
+      "unknown_problem_learning_protocol"
+    ],
+    "unknowns_to_resolve": [
+      "which existing capabilities already solve part of this task",
+      "which memory/evidence systems should be queried",
+      "which governed runtime should be invoked next",
+      "whether the task requires public-read evidence or only local context"
+    ],
+    "why_not_fixed_list_only": "fixed source lists miss new capability domains; this planner binds E101/E113/E119/E120 before E125"
+  },
+  "existing_capability_recall": {
+    "code_index_loaded": true,
+    "full_system_capability_scan_performed": true,
+    "mandatory_capability_domains": [
+      "cieu_store_formal_memory",
+      "adaptive_governance_correct_path",
+      "czl_message_protocol",
+      "cieu_prediction_delta",
+      "ceo_implementation_order",
+      "aiden_brain_runtime",
+      "open_world_strategy_runtime",
+      "gov_mcp_dry_run_boundary"
+    ],
+    "matched_capability_domains": [
+      "adaptive_governance_correct_path",
+      "aiden_brain_runtime",
+      "ceo_behavior_center",
+      "ceo_implementation_order",
+      "cieu_prediction_delta",
+      "cieu_store_formal_memory",
+      "czl_message_protocol",
+      "external_validation_and_l4_feedback",
+      "gov_mcp_dry_run_boundary",
+      "open_world_strategy_runtime",
+      "runtime_control_plane"
+    ],
+    "mechanism_id": "E113_no_new_wheel_runtime_law",
+    "recent_memory_only": false,
+    "runtime_active_capability_count": 11,
+    "tracked_file_counts": {
+      "Y-star-gov": 0,
+      "bridge-labs": 0,
+      "gov-mcp": 131
+    }
+  },
+  "governance_obligation_discovery": {
+    "advisory_obligations": [],
+    "correct_path_navigation_available": true,
+    "discovery_performed": true,
+    "mechanism_id": "E101_adaptive_governance_correct_path",
+    "required_obligations": [
+      "six_d_brain_review",
+      "right_to_win_analysis",
+      "strongest_validation_question",
+      "competitor_differentiation_map",
+      "external_observation_or_staleness_boundary",
+      "gov_mcp_dry_run_preflight",
+      "ceo_implementation_order",
+      "post_action_residual"
+    ],
+    "signals": [
+      "L4_feedback_packet_prepared",
+      "brain_strategy",
+      "codex_executor_boundary",
+      "codex_prompt_generation",
+      "external_action_candidate",
+      "major_action",
+      "market_strategy_required",
+      "route_selected",
+      "runtime_session",
+      "strategic_decision"
+    ]
+  },
+  "milestone_id": "E126_Adaptive_Retrieval_Planner_And_Capability_Invocation_Runtime_R1",
+  "operating_pattern_selection": {
+    "mechanism_id": "E119_operating_pattern_doctrine_registry",
+    "selected_pattern_count": 20,
+    "selected_pattern_ids": [
+      "brain_provenance_required",
+      "buyer_visible_value_translation",
+      "capability_utilization_sweep",
+      "class_level_extrapolation_gate",
+      "competitive_landscape_current_signal",
+      "content_type_freshness_policy",
+      "correct_path_navigation",
+      "downstream_impact_scan",
+      "evidence_quality_and_freshness_gate",
+      "full_repo_and_baseline_first",
+      "knowledge_graph_methodology_selection",
+      "no_new_wheel_preflight",
+      "owner_review_before_contract_patch",
+      "proposal_only_no_direct_contract_mutation",
+      "regression_test_and_cieu_closure",
+      "residual_truth_scope_split",
+      "source_discovery_tool_selection",
+      "theory_case_peer_curriculum_coverage",
+      "thinking_mode_selection",
+      "unknown_problem_learning_protocol"
+    ]
+  },
+  "planner_id": "planner_068b25aafd68",
+  "retrieval_orchestration_binding": {
+    "E125_bound": true,
+    "E125_parameters": {
+      "external_public_read_required": false,
+      "high_wisdom_required": true
+    },
+    "execute_E125_after_planner_allow": true,
+    "raw_answer_before_retrieval_allowed": false
+  },
+  "self_improvement_path": {
+    "direct_contract_mutation_allowed": false,
+    "new_capability_discovery_supported": true,
+    "proposal_route": "Aiden may write owner-visible governance/capability proposal artifacts; direct Y-star-gov contract mutation is forbidden.",
+    "self_governance_proposal_on_gap": true
+  },
+  "task_context": {
+    "agent_id": "Aiden",
+    "brain_write_related": false,
+    "codex_execution_required": false,
+    "durable_learning_related": true,
+    "external_action_related": false,
+    "governance_required": false,
+    "implementation_required": false,
+    "market_strategy_required": true,
+    "owner_message": "Aiden, plan adaptive retrieval for a new CEO strategy/runtime question and use existing capabilities first.",
+    "planning_mode": "adaptive_evidence_need_and_capability_invocation",
+    "retrieval_runtime_required": false,
+    "self_governance_related": true,
+    "task_objective": "adaptively plan retrieval and existing capability invocation before Aiden answers or acts",
+    "task_type": "strategy",
+    "unknown_problem_related": true
+  },
+  "truth_constraints": {
+    "CIEU_recording_bypassed": false,
+    "K9Audit_write_claim": false,
+    "adaptive_planning_bypassed": false,
+    "customer_validation_claim": false,
+    "external_action_executed": false,
+    "fixed_retrieval_list_only": false,
+    "hidden_chain_of_thought_stored": false,
+    "live_provider_execution_claim": false,
+    "no_new_wheel_bypassed": false,
+    "operating_pattern_registry_bypassed": false,
+    "payment_claim": false,
+    "provider_action_executed": false,
+    "recent_memory_only": false,
+    "revenue_claim": false,
+    "unknown_problem_protocol_bypassed": false
+  },
+  "unknown_problem_learning_assessment": {
+    "assessment_performed": true,
+    "learning_objectives": [
+      "classical_theory_canon",
+      "peer_experience_corpus",
+      "historical_case_corpus",
+      "current_market_evidence",
+      "internal_capability_recall",
+      "customer_contact_residuals"
+    ],
+    "mechanism_id": "E120_unknown_problem_learning_protocol",
+    "protocol_invocation_status": "invoked",
+    "source_discovery_plan": [
+      {
+        "risk": "read_only",
+        "source_type": "brain_recall",
+        "where": "aiden_brain.db 6D activation"
+      },
+      {
+        "risk": "read_only",
+        "source_type": "repo_capability_recall",
+        "where": "E87R baseline plus current repo code/tests/reports"
+      },
+      {
+        "risk": "no_external_side_effect",
+        "source_type": "public_read_research",
+        "where": "safe public-read provider with source dates"
+      },
+      {
+        "risk": "read_only",
+        "source_type": "classical_theory",
+        "where": "canonical books, papers, standards, durable references"
+      },
+      {
+        "risk": "read_only",
+        "source_type": "peer_experience",
+        "where": "operator interviews, YC/a16z-style lessons, practitioner playbooks"
+      },
+      {
+        "risk": "read_only",
+        "source_type": "historical_case",
+        "where": "startup and company success/failure case databases"
+      },
+      {
+        "risk": "owner_gated",
+        "source_type": "owner_or_L4_feedback_when_approved",
+        "where": "owner-approved no-send/send feedback packet only"
+      }
+    ],
+    "thinking_modes": [
+      "first_principles",
+      "systems_thinking",
+      "decision_theory",
+      "adversarial_critique",
+      "causal_zero_loop",
+      "customer_empathy",
+      "counterfactual_reasoning",
+      "no_new_wheel_reasoning"
+    ]
+  }
+}
