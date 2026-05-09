@@ -24,10 +24,8 @@ if str(BRIDGE_ROOT) not in sys.path:
     sys.path.insert(0, str(BRIDGE_ROOT))
 
 from office.mission_command.e124_agent_native_company_messenger import (  # noqa: E402
-    build_agent_native_message_packet,
-    build_cieu_five_tuple,
     run_agent_native_messenger_demo_session,
-    validate_and_record_agent_native_message,
+    run_agent_native_messenger_turn,
 )
 
 
@@ -68,26 +66,16 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
         db_path = Path(tempfile.gettempdir()) / "e124_agent_native_messenger_live_local.db"
         human_text = str(data.get("text") or "").strip()
-        recipient_id = str(data.get("recipient_id") or "Aiden")
         if not human_text:
             _json_response(self, {"error": "empty text"}, 400)
             return
-        packet = build_agent_native_message_packet(
-            thread_id="local_owner_aiden_chat",
-            sender_id="owner",
-            recipient_ids=[recipient_id],
-            message_kind="human_to_agent",
-            human_readable_text=human_text,
-            cieu_five_tuple=build_cieu_five_tuple(
-                y_star="Owner message enters governed local messenger.",
-                context={"source": "browser UI", "local_only": True},
-                action={"speech_act": "owner_message", "text_preview": human_text[:120]},
-                expected_next=f"{recipient_id} receives the governed message locally.",
-            ),
+        turn = run_agent_native_messenger_turn(
+            owner_text=human_text,
             cieu_db=db_path,
+            ystar_gov_root=Y_GOV_ROOT,
+            allow_live_network=False,
         )
-        validation = validate_and_record_agent_native_message(packet, cieu_db=db_path, ystar_gov_root=Y_GOV_ROOT)
-        _json_response(self, {"packet": packet, "validation": validation})
+        _json_response(self, turn)
 
     def do_OPTIONS(self) -> None:
         self.send_response(204)

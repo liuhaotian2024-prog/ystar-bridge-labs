@@ -123,7 +123,14 @@ composer.addEventListener("submit", async (event) => {
       body: JSON.stringify({ text, recipient_id: "Aiden" }),
     });
     const payload = await res.json();
-    if (payload.packet?.message) {
+    const turnMessages = (payload.message_packets || [])
+      .map((packet) => packet.message)
+      .filter(Boolean);
+    if (turnMessages.length) {
+      state.messages.push(...turnMessages);
+      renderMessages();
+      renderTuple(turnMessages[turnMessages.length - 1]);
+    } else if (payload.packet?.message) {
       state.messages.push(payload.packet.message);
       renderMessages();
       renderTuple(payload.packet.message);

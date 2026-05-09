@@ -187,6 +187,138 @@ def validate_and_record_agent_native_message(
     )
 
 
+def generate_aiden_reply_text(
+    owner_text: str,
+    *,
+    cieu_db: str | Path,
+    ystar_gov_root: str | Path | None = None,
+    repo_root: str | Path | None = None,
+    allow_live_network: bool = False,
+) -> dict[str, Any]:
+    """Generate Aiden's reply through the existing governed meeting-room router."""
+
+    try:
+        from office.aiden_meeting_room.chat_router import route_chat_message_to_aiden_meeting_room
+
+        route = route_chat_message_to_aiden_meeting_room(
+            f"Aiden: {owner_text}",
+            repo_root=Path(repo_root or BRIDGE_ROOT),
+            cieu_db=cieu_db,
+            ystar_gov_root=Path(ystar_gov_root or Y_GOV_ROOT),
+            allow_live_network=allow_live_network,
+        )
+        return {
+            "reply_text": route.response_text or "Aiden received the message, but the governed response was empty.",
+            "reply_backend": route.route,
+            "reply_protocol": route.protocol,
+            "runtime_fallback_used": False,
+        }
+    except Exception as exc:
+        return {
+            "reply_text": (
+                "Aiden Messenger Runtime Notice: I received your message inside the governed local messenger, "
+                "but the Aiden behavior runtime could not complete this reply. The message was still recorded "
+                "with CIEU/CZL provenance. Correct path: inspect the Aiden runtime error and retry."
+            ),
+            "reply_backend": "runtime_fallback_notice",
+            "reply_protocol": "AidenMessengerFallbackV1",
+            "runtime_fallback_used": True,
+            "runtime_error": str(exc),
+        }
+
+
+def run_agent_native_messenger_turn(
+    *,
+    owner_text: str,
+    cieu_db: str | Path,
+    ystar_gov_root: str | Path | None = None,
+    reply_text_override: str | None = None,
+    allow_live_network: bool = False,
+) -> dict[str, Any]:
+    """Record an owner message, generate Aiden's reply, and record the reply."""
+
+    participants = build_agent_native_participants()
+    owner_packet = build_agent_native_message_packet(
+        thread_id="local_owner_aiden_chat",
+        sender_id="owner",
+        recipient_ids=["Aiden"],
+        message_kind="human_to_agent",
+        human_readable_text=owner_text,
+        cieu_five_tuple=build_cieu_five_tuple(
+            y_star="Owner message enters Aiden's governed CEO meeting room.",
+            context={"source": "agent-native messenger", "local_only": True},
+            action={"speech_act": "owner_message_to_aiden", "text_preview": owner_text[:180]},
+            expected_next="Aiden generates a governed reply and records it as a CIEU-native message.",
+        ),
+        cieu_db=cieu_db,
+        participants=participants,
+    )
+    owner_validation = validate_and_record_agent_native_message(owner_packet, cieu_db=cieu_db, ystar_gov_root=ystar_gov_root)
+    if owner_validation["governance_decision"]["decision"] != "ALLOW":
+        return {
+            "artifact_id": "e124_agent_native_messenger_turn_result",
+            "turn_status": "owner_message_not_allowed",
+            "owner_packet": owner_packet,
+            "owner_validation": owner_validation,
+            "aiden_reply_packet": None,
+            "aiden_reply_validation": None,
+            "CIEUStore_summary": summarize_cieustore(cieu_db),
+            "aiden_auto_reply_generated": False,
+        }
+
+    reply_runtime = (
+        {
+            "reply_text": reply_text_override,
+            "reply_backend": "test_override",
+            "reply_protocol": "AidenMessengerTestOverrideV1",
+            "runtime_fallback_used": False,
+        }
+        if reply_text_override is not None
+        else generate_aiden_reply_text(
+            owner_text,
+            cieu_db=cieu_db,
+            ystar_gov_root=ystar_gov_root,
+            allow_live_network=allow_live_network,
+        )
+    )
+    reply_packet = build_agent_native_message_packet(
+        thread_id="local_owner_aiden_chat",
+        sender_id="Aiden",
+        recipient_ids=["owner"],
+        message_kind="agent_to_human",
+        human_readable_text=str(reply_runtime["reply_text"]),
+        cieu_five_tuple=build_cieu_five_tuple(
+            y_star="Aiden answers the owner as CEO through governed local messaging.",
+            context={
+                "source": "Aiden governed router",
+                "reply_backend": reply_runtime["reply_backend"],
+                "reply_protocol": reply_runtime["reply_protocol"],
+            },
+            action={"speech_act": "aiden_reply_to_owner", "runtime_fallback_used": reply_runtime["runtime_fallback_used"]},
+            expected_next="Owner receives an actual Aiden reply plus CIEU/CZL provenance.",
+            residual="pending until owner reads or responds",
+        ),
+        cieu_db=cieu_db,
+        message_id=f"reply_{uuid.uuid4().hex[:12]}",
+        participants=participants,
+    )
+    reply_validation = validate_and_record_agent_native_message(reply_packet, cieu_db=cieu_db, ystar_gov_root=ystar_gov_root)
+    return {
+        "artifact_id": "e124_agent_native_messenger_turn_result",
+        "turn_status": "completed" if reply_validation["governance_decision"]["decision"] == "ALLOW" else "reply_message_not_allowed",
+        "owner_packet": owner_packet,
+        "owner_validation": owner_validation,
+        "aiden_reply_runtime": reply_runtime,
+        "aiden_reply_packet": reply_packet,
+        "aiden_reply_validation": reply_validation,
+        "message_packets": [owner_packet, reply_packet],
+        "CIEUStore_summary": summarize_cieustore(cieu_db),
+        "aiden_auto_reply_generated": True,
+        "external_action_executed": False,
+        "payment_executed": False,
+    }
+
+
 def run_agent_native_messenger_demo_session(
     *,
     cieu_db: str | Path,

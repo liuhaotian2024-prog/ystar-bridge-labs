@@ -8,6 +8,7 @@ from office.mission_command.e124_agent_native_company_messenger import (
     build_agent_native_message_packet,
     build_cieu_five_tuple,
     run_agent_native_messenger_demo_session,
+    run_agent_native_messenger_turn,
     validate_and_record_agent_native_message,
 )
 
@@ -95,3 +96,21 @@ def test_ui_assets_expose_cieu_messenger_contract():
     text = index.read_text(encoding="utf-8") + script.read_text(encoding="utf-8")
     assert "CIEU/CZL" in text
     assert "five-tuple" in text
+
+
+def test_owner_message_generates_governed_aiden_reply(tmp_path):
+    db = tmp_path / "e124_turn.db"
+    result = run_agent_native_messenger_turn(
+        owner_text="Aiden, can you explain the company messenger?",
+        cieu_db=db,
+        reply_text_override="Owner, yes. This is now an actual governed two-way messenger turn.",
+    )
+    assert result["turn_status"] == "completed"
+    assert result["aiden_auto_reply_generated"] is True
+    assert result["owner_validation"]["governance_decision"]["decision"] == "ALLOW"
+    assert result["aiden_reply_validation"]["governance_decision"]["decision"] == "ALLOW"
+    assert result["aiden_reply_packet"]["message"]["sender_id"] == "Aiden"
+    assert result["aiden_reply_packet"]["message"]["recipient_ids"] == ["owner"]
+    assert "actual governed two-way messenger" in result["aiden_reply_packet"]["message"]["human_readable_text"]
+    assert set(CIEU_FIVE_TUPLE_FIELDS).issubset(result["aiden_reply_packet"]["message"]["cieu_five_tuple"])
+    assert result["CIEUStore_summary"]["event_count"] == 2

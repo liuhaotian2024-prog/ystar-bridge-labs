@@ -23,13 +23,15 @@
     "Y-star-gov deterministic contract for agent-native messages",
     "bridge-labs local company messenger runtime",
     "local messenger UI scaffold with CIEU five-tuple inspector",
+    "two-way owner-to-Aiden turn runtime with automatic governed Aiden reply",
     "human-agent and agent-agent demo session",
     "wallet proposal-only message boundary",
     "external-agent no-send proposal boundary"
   ],
-  "end_to_end_chain_proven": "owner/Aiden/team-agent messages -> Y-star-gov validation -> CIEUStore message records -> local messenger UI",
+  "end_to_end_chain_proven": "owner browser message -> Y-star-gov validation -> CIEUStore owner message -> governed Aiden router reply -> Y-star-gov validation -> CIEUStore Aiden reply -> local messenger UI",
   "CIEUStore_records_written_in_test": 5,
   "message_format_requirement": "Every formal message must include natural-language text plus Y_star_t, X_t, U_t, Y_t_plus_1, and R_t_plus_1.",
+  "two_way_chat_status": "implemented_owner_message_generates_governed_Aiden_reply",
   "what_was_not_claimed": [
     "no external agent message was sent",
     "no customer contact",

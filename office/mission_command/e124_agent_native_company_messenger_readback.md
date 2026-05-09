@@ -4,11 +4,13 @@
 - Built a local company messenger protocol for owner, Aiden, Codex, Labs agents, and future external-agent proposals.
 - Every formal message must include human-readable text and the CIEU/CZL five tuple.
 - Y-star-gov validates each message and CIEUStore records each decision.
+- Browser messages now generate an actual governed Aiden reply, not only an owner-side receipt.
 
 ## End-To-End Proof
 - Human to agent path: owner -> Aiden.
 - Agent to agent path: Aiden -> StrategyAgent -> Aiden.
 - Agent to human path: Aiden -> owner.
+- Two-way live turn path: owner browser message -> Aiden governed router reply -> UI.
 - Wallet path: proposal-only, no payment and no USDC transfer.
 - External-agent path: proposal-only, no send.
 

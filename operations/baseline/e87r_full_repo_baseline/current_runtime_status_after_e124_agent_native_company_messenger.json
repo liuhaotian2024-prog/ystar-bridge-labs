@@ -3,6 +3,7 @@
   "status": "implemented_agent_native_company_messenger",
   "human_readable_plus_CIEU_five_tuple_required": true,
   "human_agent_message_path": "proven",
+  "two_way_owner_aiden_chat_path": "implemented_owner_message_generates_governed_Aiden_reply",
   "agent_agent_message_path": "proven",
   "wallet_support": "proposal_only_no_payment_execution",
   "external_agent_support": "proposal_only_no_send",

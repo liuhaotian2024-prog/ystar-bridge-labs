@@ -18,3 +18,4 @@ Open `http://127.0.0.1:8784`.
 - External-agent contact is proposal-only in E124.
 - Wallet and USDC support is proposal-only in E124; no payment or transfer is executed.
 - Every formal message is validated by Y-star-gov and recorded in CIEUStore.
+- Sending a browser message records the owner message, routes it through the existing governed Aiden meeting-room runtime, records Aiden's reply, and returns both messages to the UI.
