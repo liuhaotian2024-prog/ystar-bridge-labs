@@ -1,0 +1,25 @@
+{
+  "milestone_id": "E129_Strategy_Runtime_Receipt_Chinese_Rendering_R1",
+  "base_hash": "fffa85495399e3f6fbfb099f92fa4aeb34a4daa3",
+  "problem": "Aiden strategy runtime receipts were being displayed as English machine logs instead of owner-readable Chinese strategic discussion.",
+  "implemented": [
+    "Added detection for strategy runtime receipt output.",
+    "Added a Chinese owner-readable renderer for E114/E108-style strategy receipts.",
+    "Preserved the raw runtime receipt inside the runtime artifact while replacing the visible reply with a Chinese explanation.",
+    "Added CSS wrapping for long route ids, runtime labels, and CIEU tuple code.",
+    "Added regression tests for strategy receipt rendering and long-token wrapping."
+  ],
+  "truth_constraints": {
+    "external_action_executed": false,
+    "provider_action_executed": false,
+    "payment_executed": false,
+    "customer_validation_claim": false,
+    "revenue_claim": false,
+    "K9Audit_write_claim": false
+  },
+  "owner_visible_change": "The owner sees what the strategy receipt means in Chinese instead of a raw English runtime log.",
+  "limitations": [
+    "This is deterministic receipt rendering, not a new strategic reasoning run.",
+    "The raw receipt remains available in runtime artifacts for audit/debug."
+  ]
+}

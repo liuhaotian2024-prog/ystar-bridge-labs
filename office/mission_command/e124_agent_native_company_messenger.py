@@ -3,6 +3,7 @@ from __future__ import annotations
 import importlib
 import json
 import os
+import re
 import sqlite3
 import sys
 import uuid
@@ -307,6 +308,79 @@ def _compact_runtime_text(text: str, limit: int = 900) -> str:
     return normalized[:limit].rstrip() + "\n...（原始运行输出较长，已在 owner-facing 回复里截断；完整记录仍在 CIEU packet/runtime artifact 中。）"
 
 
+def _extract_strategy_receipt_value(text: str, label: str) -> str:
+    pattern = rf"{re.escape(label)}:\s*(.*?)(?:\s+-\s+[a-zA-Z_][a-zA-Z0-9_ -]*:|\s+[A-Z][A-Za-z &+/-]+:|$)"
+    match = re.search(pattern, text, flags=re.DOTALL)
+    if not match:
+        return ""
+    return " ".join(match.group(1).split()).strip(" -")
+
+
+def _extract_top_strategy_routes(text: str, limit: int = 3) -> list[str]:
+    if "Top market-first routes:" not in text:
+        return []
+    section = text.split("Top market-first routes:", 1)[1].split("Boundary:", 1)[0]
+    candidates = []
+    for chunk in section.split(" - "):
+        item = " ".join(chunk.split()).strip()
+        if not item or item.startswith("selected_route_id"):
+            continue
+        if ": score=" in item:
+            candidates.append(item)
+        if len(candidates) >= limit:
+            break
+    return candidates
+
+
+def _is_strategy_runtime_receipt(reply_runtime: Mapping[str, Any], raw_reply: str) -> bool:
+    backend = str(reply_runtime.get("reply_backend") or "")
+    protocol = str(reply_runtime.get("reply_protocol") or "")
+    return (
+        "strategy" in backend
+        or "Strategy" in protocol
+        or raw_reply.startswith("CEO Strategy Runtime:")
+        or "Selected first-cash path:" in raw_reply
+    )
+
+
+def _render_strategy_receipt_as_chinese(owner_text: str, reply_runtime: Mapping[str, Any], raw_reply: str) -> str:
+    milestone = raw_reply.split("This Aiden strategy question", 1)[0].replace("CEO Strategy Runtime:", "").strip()
+    provider_mode = _extract_strategy_receipt_value(raw_reply, "Provider mode") or "未解析"
+    no_new_wheel = _extract_strategy_receipt_value(raw_reply, "No-new-wheel decision") or "未解析"
+    selected_path = _extract_strategy_receipt_value(raw_reply, "Selected first-cash path") or "未解析"
+    selected_route_id = _extract_strategy_receipt_value(raw_reply, "selected_route_id") or "未解析"
+    score = _extract_strategy_receipt_value(raw_reply, "math_model_score") or "未解析"
+    evsi = _extract_strategy_receipt_value(raw_reply, "EVSI") or "未解析"
+    evidence_count = _extract_strategy_receipt_value(raw_reply, "Evidence count") or "未解析"
+    dated_evidence = _extract_strategy_receipt_value(raw_reply, "Dated evidence") or "未解析"
+    cieu_events = _extract_strategy_receipt_value(raw_reply, "CIEU events") or "未解析"
+    top_routes = _extract_top_strategy_routes(raw_reply)
+    rendered_routes = "\n".join(f"- {route}" for route in top_routes) if top_routes else "- 未能从机器收据中解析候选路线。"
+
+    return (
+        "这不是临时回复，而是 Aiden 策略 runtime 返回的一份机器收据。我不应该把它原样丢给你；下面是 owner-readable 的中文解释。\n\n"
+        "1. 这次到底跑了什么？\n"
+        f"它触发的是 `{milestone or 'CEO strategy runtime'}`。意思是：Aiden 没有直接凭近期记忆回答，而是走了能力利用检查、"
+        "公开证据快照、证据日期过滤、CIEU 记录、脑学习候选和 Y-star-gov 验证这些链路。\n\n"
+        "2. 它选出的赚钱方向是什么？\n"
+        f"当前机器评分选中的是：{selected_path}。\n"
+        f"内部 route id 是 `{selected_route_id}`，数学分数是 `{score}`，EVSI 是 `{evsi}`。\n\n"
+        "3. 它为什么会这么选？\n"
+        f"这轮使用的 provider mode 是 `{provider_mode}`，证据数量是 `{evidence_count}`，带日期证据是 `{dated_evidence}`，"
+        f"no-new-wheel 决策是 `{no_new_wheel}`，CIEU 事件数是 `{cieu_events}`。也就是说，它主要是在当前受控证据集里，"
+        "把“AI 安全 / 合规 / 审计准备包”判断为更贴近我们已有治理、证据、CIEU、agent runtime 能力的第一现金路径。\n\n"
+        "4. 其他候选路线有哪些？\n"
+        f"{rendered_routes}\n\n"
+        "5. 这条结论应该怎么理解？\n"
+        "它不是客户验证，不是收入信号，也不是已经证明市场愿意付钱。它只是一次受治理的战略候选排序。"
+        "真正有价值的下一步不是继续看这份日志，而是让 Aiden 解释：目标买家是谁、具体交付物是什么、为什么我们比 Vanta/Drata/Secureframe 或咨询公司更适合、"
+        "第一个 no-send owner decision packet 应该怎么写。\n\n"
+        "6. 边界\n"
+        "这轮没有外部发送、没有客户联系、没有付款、没有收入证明、没有 live provider execution，也没有 K9Audit 写入。\n\n"
+        f"你的原始问题摘要：{_compact_owner_text(owner_text)}"
+    )
+
+
 def apply_owner_dialogue_language_policy(owner_text: str, reply_runtime: Mapping[str, Any]) -> dict[str, Any]:
     """Ensure Aiden's owner-facing message is clear Chinese, even if the runtime body is English."""
 
@@ -318,6 +392,14 @@ def apply_owner_dialogue_language_policy(owner_text: str, reply_runtime: Mapping
         "raw_runtime_reply_preserved_in_runtime_artifact": True,
         "applied": False,
     }
+    if _is_strategy_runtime_receipt(runtime, raw_reply):
+        policy["applied"] = True
+        policy["strategy_runtime_receipt_translated"] = True
+        runtime["raw_reply_text_before_owner_dialogue_policy"] = raw_reply
+        runtime["reply_text"] = _render_strategy_receipt_as_chinese(owner_text, runtime, raw_reply)
+        runtime["owner_dialogue_language_policy"] = policy
+        return runtime
+
     if _is_chinese_owner_dialogue(raw_reply):
         runtime["owner_dialogue_language_policy"] = policy
         return runtime

@@ -180,11 +180,14 @@ h2 { font-size: 18px; }
 
 .message {
   max-width: 78%;
+  min-width: 0;
   padding: 16px;
   border-radius: 22px;
   border: 1px solid var(--line);
   background: rgba(255,255,255,0.62);
   cursor: pointer;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .message.owner { align-self: flex-end; background: rgba(38, 91, 143, 0.13); }
@@ -202,9 +205,18 @@ h2 { font-size: 18px; }
   margin-bottom: 8px;
   color: var(--muted);
   font-size: 12px;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
-.message p { line-height: 1.45; }
+.meta span { min-width: 0; }
+
+.message p {
+  line-height: 1.45;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
 
 .message-toggle {
   margin-top: 10px;
@@ -323,6 +335,7 @@ h2 { font-size: 18px; }
 .tuple-card code {
   white-space: pre-wrap;
   word-break: break-word;
+  overflow-wrap: anywhere;
   color: #2c332d;
 }
 

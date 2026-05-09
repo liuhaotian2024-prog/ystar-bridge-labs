@@ -5,6 +5,7 @@ from pathlib import Path
 
 from office.mission_command.e124_agent_native_company_messenger import (
     CIEU_FIVE_TUPLE_FIELDS,
+    apply_owner_dialogue_language_policy,
     build_agent_native_message_packet,
     build_cieu_five_tuple,
     run_agent_native_messenger_demo_session,
@@ -143,3 +144,47 @@ def test_ui_collapses_only_long_owner_inputs_not_aiden_outputs():
     assert "你的长输入已折叠" in script_text
     assert "展开完整输入" in script_text
     assert ".message-toggle" in styles_text
+
+
+def test_strategy_runtime_receipt_is_rendered_as_owner_readable_chinese():
+    raw_receipt = (
+        "CEO Strategy Runtime: E114_LIVE_WEB_CAPABILITY_UTILIZED_STRATEGY_RUN "
+        "This Aiden strategy question was routed through E113 full-system capability utilization. "
+        "Provider mode: dated_public_read_evidence_snapshot "
+        "No-new-wheel decision: ALLOW "
+        "Evidence count: 30 Dated evidence: 30 CIEU events: 30 "
+        "Selected first-cash path: AI security, compliance, & audit readiness Evidence & Control Pack "
+        "- selected_route_id: ai_security_compliance_first_cash_pack "
+        "- math_model_score: 3.01 "
+        "- EVSI: $44.37 "
+        "Top market-first routes: "
+        "- ai_security_compliance_first_cash_pack: score=3.01, EVSI=$44.37 | AI security, compliance, & audit readiness Evidence & Control Pack "
+        "- construction_bids_first_cash_pack: score=3.01, EVSI=$44.37 | Construction bidding & compliance admin 48h Operations Rescue Pack "
+        "Boundary: No external action was executed."
+    )
+    result = apply_owner_dialogue_language_policy(
+        "Aiden，请重新做一次全球赚钱战略分析。",
+        {
+            "reply_text": raw_receipt,
+            "reply_backend": "aiden_ceo_live_web_capability_strategy_runtime",
+            "reply_protocol": "AidenLiveWebCapabilityStrategyRuntimeV1",
+            "runtime_fallback_used": False,
+        },
+    )
+    text = result["reply_text"]
+    assert result["owner_dialogue_language_policy"]["strategy_runtime_receipt_translated"] is True
+    assert "这不是临时回复" in text
+    assert "机器收据" in text
+    assert "AI security, compliance" in text
+    assert "不是客户验证" in text
+    assert "没有外部发送" in text
+    assert "Top market-first routes:" not in text
+
+
+def test_message_css_wraps_long_runtime_tokens():
+    root = Path(__file__).resolve().parents[2]
+    styles = root / "office/agent_native_messenger/styles.css"
+    text = styles.read_text(encoding="utf-8")
+    assert "overflow-wrap: anywhere" in text
+    assert "white-space: pre-wrap" in text
+    assert "word-break: break-word" in text
