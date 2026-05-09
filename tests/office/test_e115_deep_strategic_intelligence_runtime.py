@@ -45,7 +45,11 @@ def test_e115_deep_strategy_runtime_writes_governed_dossier(tmp_path):
     assert len(unique_refs) >= 12
     assert len(dossier["competitive_landscape"]["competitors_and_substitutes"]) >= 5
     assert all(
-        competitor.get("public_signal_date") or competitor.get("latest_funding_date") or competitor.get("observed_at")
+        competitor.get("source_date") and competitor.get("public_signal_date_basis") == "source_dated_public_evidence"
+        for competitor in dossier["competitive_landscape"]["competitors_and_substitutes"]
+    )
+    assert not any(
+        competitor["source_url"].rstrip("/").count("/") <= 2 and competitor.get("source_date_basis", "").startswith("public competitor presence")
         for competitor in dossier["competitive_landscape"]["competitors_and_substitutes"]
     )
     assert len(dossier["product_shape"]["buyer_visible_deliverables"]) >= 5

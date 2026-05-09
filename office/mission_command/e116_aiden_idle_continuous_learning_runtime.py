@@ -12,6 +12,7 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Mapping, Sequence
+from urllib.parse import urlparse
 
 from office.mission_command.e112_cieu_backed_brain_learning_loop import (
     build_market_evidence_freshness_policy,
@@ -137,6 +138,10 @@ def filter_idle_learning_evidence(evidence_items: Sequence[Mapping[str, Any]]) -
                 "novelty",
                 "cross_source_support",
                 "actionability",
+                "source_authority_basis",
+                "source_url_depth",
+                "claim_specificity",
+                "current_signal_verifiability",
                 "risk_of_staleness",
             ],
         },
@@ -231,6 +236,9 @@ def build_aiden_idle_learning_packet(
     explicit_session_task_active: bool = False,
     use_host_live_network: bool = False,
     marker_path: str | Path | None = None,
+    owner_explicit_production_write_approval: bool = False,
+    pre_write_backup_metadata: Mapping[str, Any] | None = None,
+    force_production_target: bool = False,
 ) -> dict[str, Any]:
     curriculum = build_ceo_idle_learning_curriculum()
     evidence = collect_idle_learning_evidence(use_host_live_network=use_host_live_network)
@@ -238,8 +246,29 @@ def build_aiden_idle_learning_packet(
     accepted = freshness["accepted"]
     delta = build_idle_learning_knowledge_graph_delta(accepted, curriculum)
     write_mode = "governed_local_brain_db_write" if allow_brain_write else "CIEU_backed_candidate_only"
-    if allow_brain_write and str(brain_db).startswith("/tmp/"):
+    if allow_brain_write and str(brain_db).startswith("/tmp/") and not force_production_target:
         write_mode = "isolated_test_brain_db_write"
+    production_target = force_production_target or _is_production_brain_target(brain_db)
+    backup_metadata = dict(pre_write_backup_metadata or {})
+    brain_write_policy = {
+        "write_mode": write_mode,
+        "automatic_direct_writeback": False,
+        "YstarGov_validation_required": True,
+        "target_brain_db": str(brain_db),
+        "production_target": production_target,
+        "owner_explicit_production_write_approval": owner_explicit_production_write_approval,
+        "backup_required_before_write": production_target,
+        "backup_verified": bool(backup_metadata.get("backup_verified")),
+        "pre_write_backup_path": backup_metadata.get("pre_write_backup_path"),
+        "pre_write_backup_sha256": backup_metadata.get("pre_write_backup_sha256"),
+        "pre_write_brain_db_sha256": backup_metadata.get("pre_write_brain_db_sha256"),
+        "backup_created_at": backup_metadata.get("backup_created_at"),
+        "rollback_plan": backup_metadata.get("rollback_plan"),
+        "max_nodes_per_cycle": 50,
+        "max_edges_per_cycle": 100,
+        "production_brain_write_performed": False,
+        "write_after_CIEU_record_only": True,
+    }
     return {
         "learning_cycle_id": f"e116_idle_learning_{_stable_hash(str(time.time()))[:10]}",
         "milestone_id": MILESTONE_ID,
@@ -256,16 +285,7 @@ def build_aiden_idle_learning_packet(
         "learning_quality_summary": freshness["learning_quality_summary"],
         "freshness_summary": freshness["summary"],
         "knowledge_graph_delta": delta,
-        "brain_write_policy": {
-            "write_mode": write_mode,
-            "automatic_direct_writeback": False,
-            "YstarGov_validation_required": True,
-            "target_brain_db": str(brain_db),
-            "max_nodes_per_cycle": 50,
-            "max_edges_per_cycle": 100,
-            "production_brain_write_performed": False,
-            "write_after_CIEU_record_only": True,
-        },
+        "brain_write_policy": brain_write_policy,
         "CIEU_linkage": {
             "target_event_type": "AIDEN_IDLE_CONTINUOUS_LEARNING_DECISION",
             "formal_CIEU_log_path": "ystar.governance.cieu_store.CIEUStore.write_dict",
@@ -305,6 +325,9 @@ def run_aiden_idle_continuous_learning_cycle(
     explicit_session_task_active: bool = False,
     use_host_live_network: bool = False,
     marker_path: str | Path | None = None,
+    owner_explicit_production_write_approval: bool = False,
+    pre_write_backup_metadata: Mapping[str, Any] | None = None,
+    force_production_target: bool = False,
     seal_session: bool = False,
 ) -> dict[str, Any]:
     brain_path = Path(brain_db or BRAIN_DB)
@@ -316,6 +339,9 @@ def run_aiden_idle_continuous_learning_cycle(
         explicit_session_task_active=explicit_session_task_active,
         use_host_live_network=use_host_live_network,
         marker_path=marker_path,
+        owner_explicit_production_write_approval=owner_explicit_production_write_approval,
+        pre_write_backup_metadata=pre_write_backup_metadata,
+        force_production_target=force_production_target,
     )
     gov = _load_ystar_module("ystar.governance.aiden_idle_learning_contract", ystar_gov_root)
     governance = gov.validate_and_write_aiden_idle_learning_packet(
@@ -713,23 +739,25 @@ def score_learning_evidence_quality(
         for field in ("source_title", "source_url", "claim_summary", "domain_id", "query")
     ).lower()
     url = str(evidence.get("source_url") or "").lower()
-    authoritative_domains = (
-        "gartner.com",
-        "mckinsey.com",
-        "nist.gov",
-        "owasp.org",
-        "modelcontextprotocol.io",
-        "ycombinator.com",
-        "stripe.com",
-        "cbinsights.com",
-        "businessinsider.com",
-        "ibm.com",
-        "guidehouse.com",
-        "internationalaccountingbulletin.com",
-        "crowdfundinsider.com",
-        "natlawreview.com",
-    )
-    source_authority = 0.82 if any(domain in url for domain in authoritative_domains) else 0.66
+    source_domain = _source_domain(url)
+    source_authority_tiers = {
+        "nist.gov": ("government_standard", 0.9),
+        "owasp.org": ("security_standard", 0.86),
+        "gartner.com": ("market_research", 0.84),
+        "mckinsey.com": ("strategy_research", 0.82),
+        "modelcontextprotocol.io": ("technical_standard", 0.82),
+        "ycombinator.com": ("startup_operator_guidance", 0.78),
+        "stripe.com": ("commercial_operator_guidance", 0.76),
+        "cbinsights.com": ("market_database", 0.78),
+        "businessinsider.com": ("business_press", 0.74),
+        "ibm.com": ("operator_research", 0.76),
+        "guidehouse.com": ("industry_advisory", 0.74),
+        "internationalaccountingbulletin.com": ("vertical_trade_press", 0.74),
+        "crowdfundinsider.com": ("funding_press", 0.72),
+        "natlawreview.com": ("legal_business_press", 0.72),
+        "techtarget.com": ("industry_trade_press", 0.72),
+    }
+    tier, source_authority = source_authority_tiers.get(source_domain, ("unclassified_public_source", 0.64))
     freshness_status = str(evidence.get("freshness_status") or "")
     freshness = 0.9 if freshness_status == "accepted_current" else 0.76 if freshness_status == "accepted_recent" else 0.68
     commercial_terms = ("buyer", "market", "pricing", "funding", "compliance", "automation", "customer", "revenue", "governance", "risk", "competitor", "paid", "enterprise")
@@ -741,26 +769,38 @@ def score_learning_evidence_quality(
     cross_source_support = min(0.9, 0.55 + 0.08 * min(support_count, 4))
     action_terms = ("requires", "need", "pain", "risk", "reduces", "automation", "governance", "compliance", "buyer", "workflow", "evidence")
     actionability = min(0.92, 0.55 + 0.04 * sum(1 for term in action_terms if term in text))
+    source_url_depth = min(0.9, 0.5 + 0.1 * min(_url_path_depth(url), 4))
+    claim_specificity = _claim_specificity_score(str(evidence.get("claim_summary") or ""))
+    current_signal_verifiability = 0.85 if evidence.get("source_date") and _url_path_depth(url) >= 1 else 0.62
     risk_of_staleness = 0.15 if freshness_status == "accepted_current" else 0.28 if freshness_status == "accepted_recent" else 0.35
     quality_score = (
-        source_authority * 0.18
-        + freshness * 0.18
-        + commercial_relevance * 0.18
-        + novelty * 0.12
-        + cross_source_support * 0.14
-        + actionability * 0.14
-        + (1.0 - risk_of_staleness) * 0.06
+        source_authority * 0.15
+        + freshness * 0.14
+        + commercial_relevance * 0.14
+        + novelty * 0.09
+        + cross_source_support * 0.11
+        + actionability * 0.12
+        + source_url_depth * 0.08
+        + claim_specificity * 0.1
+        + current_signal_verifiability * 0.04
+        + (1.0 - risk_of_staleness) * 0.03
     )
     return {
         "quality_score": round(quality_score, 3),
         "source_authority": round(source_authority, 3),
+        "source_authority_tier": tier,
+        "source_authority_basis": source_domain or "missing_source_domain",
         "freshness": round(freshness, 3),
         "commercial_relevance": round(commercial_relevance, 3),
         "novelty": round(novelty, 3),
         "cross_source_support": round(cross_source_support, 3),
         "actionability": round(actionability, 3),
+        "source_url_depth": round(source_url_depth, 3),
+        "claim_specificity": round(claim_specificity, 3),
+        "current_signal_verifiability": round(current_signal_verifiability, 3),
+        "corroboration_count": support_count,
         "risk_of_staleness": round(risk_of_staleness, 3),
-        "quality_basis": "deterministic_public_read_quality_score_v1",
+        "quality_basis": "deterministic_public_read_quality_score_v2_source_depth_specificity_verifiability",
     }
 
 
@@ -774,6 +814,42 @@ def _average_quality_for_refs(refs: Sequence[str], evidence_items: Sequence[Mapp
     if not scores:
         return 0.7
     return round(sum(scores) / len(scores), 3)
+
+
+def _is_production_brain_target(brain_db: str | Path) -> bool:
+    try:
+        return Path(brain_db).expanduser().resolve() == BRAIN_DB.expanduser().resolve()
+    except Exception:
+        return False
+
+
+def _source_domain(url: str) -> str:
+    try:
+        host = urlparse(url).netloc.lower()
+    except Exception:
+        return ""
+    if host.startswith("www."):
+        host = host[4:]
+    return host
+
+
+def _url_path_depth(url: str) -> int:
+    try:
+        path = urlparse(url).path
+    except Exception:
+        return 0
+    return len([part for part in path.split("/") if part])
+
+
+def _claim_specificity_score(claim: str) -> float:
+    if not claim:
+        return 0.45
+    tokens = [token for token in claim.replace("/", " ").replace("-", " ").split() if token]
+    has_number = any(any(char.isdigit() for char in token) for token in tokens)
+    has_named_signal = any(token[:1].isupper() for token in tokens[1:])
+    length_score = min(0.82, 0.46 + 0.012 * min(len(tokens), 30))
+    bonus = (0.06 if has_number else 0.0) + (0.04 if has_named_signal else 0.0)
+    return round(min(0.94, length_score + bonus), 3)
 
 
 def _slug(value: str) -> str:

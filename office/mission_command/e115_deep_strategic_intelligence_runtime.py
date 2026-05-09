@@ -81,7 +81,7 @@ def build_e115_deep_strategy_dossier(e114_result: Mapping[str, Any], *, owner_in
     domain_id = str(selected_route.get("domain_id") or "ai_security_compliance")
     source_scan = e114_result.get("live_public_read_scan_summary") if isinstance(e114_result.get("live_public_read_scan_summary"), Mapping) else {}
     source_evidence = _extract_evidence_items(e114_result)
-    competitors = competitors_for_deep_strategy(domain_id)
+    competitors = competitors_for_deep_strategy(domain_id, source_evidence)
     product = product_shape_for_route(domain_id)
     right_to_win = right_to_win_for_route(domain_id)
     assumptions = build_assumption_registry(selected_route_id, domain_id)
@@ -315,6 +315,37 @@ def _dimension_specific_refs(
     return deduped[:8]
 
 
+def _evidence_mentions_any(item: Mapping[str, Any], terms: Sequence[str]) -> bool:
+    text = " ".join(
+        str(item.get(field) or "")
+        for field in ("source_title", "source_url", "claim_summary", "domain_id")
+    ).lower()
+    return any(term.lower() in text for term in terms)
+
+
+def _competitor_name_from_evidence(source_title: str) -> str:
+    lower = source_title.lower()
+    known = {
+        "verirfp": "VeriRFP",
+        "akitra": "Akitra",
+        "optro": "Optro",
+        "vision compliance": "Vision Compliance",
+        "cto's edge": "CTO's Edge",
+        "gartner": "Gartner AI governance platform category",
+        "mckinsey": "McKinsey cybersecurity provider category",
+        "five eyes": "Five Eyes agentic AI risk guidance",
+        "black ore": "Black Ore",
+        "basis": "Basis",
+        "pilot": "Pilot",
+        "juno": "Juno",
+        "aiwyn": "Aiwyn",
+    }
+    for needle, name in known.items():
+        if needle in lower:
+            return name
+    return source_title[:80] or "source-dated competitor/substitute"
+
+
 def product_shape_for_route(domain_id: str) -> dict[str, Any]:
     if domain_id in {"ai_security_compliance", "ai_agent_ops", "cyber_insurance"}:
         return {
@@ -355,38 +386,64 @@ def customer_model_for_route(domain_id: str) -> dict[str, Any]:
     }
 
 
-def competitors_for_deep_strategy(domain_id: str) -> list[dict[str, Any]]:
+def competitors_for_deep_strategy(domain_id: str, evidence_items: Sequence[Mapping[str, Any]] | None = None) -> list[dict[str, Any]]:
+    """Build competitor rows only from source-dated public evidence.
+
+    E117 allowed homepage rows with a self-assigned current date. E118 closes
+    that loophole: competitor signals now inherit source_date and URL from the
+    public-read evidence snapshot/live provider. If there is no dated evidence,
+    the row is intentionally weak and should fail Y-star-gov validation.
+    """
+
+    evidence = [dict(item) for item in (evidence_items or []) if isinstance(item, Mapping)]
     if domain_id in {"ai_security_compliance", "ai_agent_ops", "cyber_insurance"}:
-        rows = [
-            ("Vanta", "compliance automation and trust management", "https://www.vanta.com/", "2026-05-09", "incumbent_public_presence_observed"),
-            ("Drata", "security compliance automation", "https://drata.com/", "2026-05-09", "incumbent_public_presence_observed"),
-            ("Secureframe", "security and compliance automation", "https://secureframe.com/", "2026-05-09", "incumbent_public_presence_observed"),
-            ("Thoropass", "audit and compliance platform/services", "https://thoropass.com/", "2026-05-09", "incumbent_public_presence_observed"),
-            ("Sprinto", "security compliance automation", "https://sprinto.com/", "2026-05-09", "incumbent_public_presence_observed"),
-            ("Credo AI", "AI governance and risk management", "https://www.credo.ai/", "2026-05-09", "AI_governance_vendor_public_presence_observed"),
-            ("Lakera", "AI security platform", "https://www.lakera.ai/", "2026-05-09", "AI_security_vendor_public_presence_observed"),
-        ]
+        wanted_terms = (
+            "verirfp",
+            "akitra",
+            "optro",
+            "vision compliance",
+            "cto's edge",
+            "gartner",
+            "mckinsey",
+            "five eyes",
+        )
+        candidates = [item for item in evidence if _evidence_mentions_any(item, wanted_terms)]
     else:
-        rows = [
-            ("incumbent vertical SaaS", "existing workflow platform", "https://www.g2.com/", "2026-05-09", "category_substitute_public_presence_observed"),
-            ("human consultant", "manual expert service", "https://www.upwork.com/", "2026-05-09", "service_substitute_public_presence_observed"),
-            ("offshore service team", "lower-cost execution", "https://www.clutch.co/", "2026-05-09", "service_substitute_public_presence_observed"),
-            ("automation agency", "custom workflow build", "https://www.clutch.co/agencies", "2026-05-09", "agency_substitute_public_presence_observed"),
-            ("spreadsheet/status quo", "manual internal process", "https://workspace.google.com/products/sheets/", "2026-05-09", "status_quo_substitute_public_presence_observed"),
-        ]
+        candidates = [item for item in evidence if str(item.get("domain_id") or "") == domain_id]
+    if len(candidates) < 5:
+        candidates = candidates + [item for item in evidence if item not in candidates]
+    competitors: list[dict[str, Any]] = []
+    for idx, item in enumerate(candidates[:8]):
+        source_date = str(item.get("source_date") or "")
+        source_url = str(item.get("source_url") or "")
+        source_title = str(item.get("source_title") or f"Public evidence competitor {idx + 1}")
+        competitors.append(
+            {
+                "name": _competitor_name_from_evidence(source_title),
+                "how_they_solve": str(item.get("claim_summary") or source_title)[:220],
+                "source_url": source_url,
+                "source_date": source_date,
+                "public_signal_date": source_date,
+                "public_signal_date_basis": "source_dated_public_evidence",
+                "public_signal_evidence_refs": [str(item.get("evidence_id") or source_url)],
+                "public_signal_type": "dated_public_read_competitor_or_substitute_signal",
+                "source_date_basis": "public_read_source_date",
+                "observed_at": str(item.get("observed_at") or "2026-05-09T00:00:00Z"),
+                "threat_level": "high" if idx < 4 else "medium_high",
+                "why_us_must_be_different": "win only by fast buyer-specific control/evidence rescue, not by pretending to be a broad platform",
+            }
+        )
+    if competitors:
+        return competitors
     return [
         {
-            "name": name,
-            "how_they_solve": solves,
-            "source_url": url,
-            "public_signal_date": public_signal_date,
-            "public_signal_type": signal_type,
-            "source_date_basis": "public competitor presence observed during strategy run; not a funding or customer-validation claim",
-            "observed_at": "2026-05-09",
-            "threat_level": "high" if idx < 4 else "medium_high",
-            "why_us_must_be_different": "win only by fast buyer-specific control/evidence rescue, not by pretending to be a broad platform",
+            "name": "undated competitor placeholder",
+            "how_they_solve": "no source-dated competitor evidence was available",
+            "source_url": "https://example.com/blocked-placeholder",
+            "public_signal_type": "blocked_missing_dated_evidence",
+            "threat_level": "unknown",
+            "why_us_must_be_different": "rerun public-read evidence discovery before strategy can pass",
         }
-        for idx, (name, solves, url, public_signal_date, signal_type) in enumerate(rows)
     ]
 
 
