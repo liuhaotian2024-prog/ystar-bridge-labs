@@ -1,0 +1,607 @@
+{
+  "CIEUStore_summary": {
+    "decisions": [
+      "ALLOW"
+    ],
+    "event_count": 1,
+    "event_types": [
+      "NO_NEW_WHEEL_RUNTIME_LAW_DECISION"
+    ]
+  },
+  "CZL_closure": {
+    "R_t_plus_1": 0.0,
+    "U": [
+      "scan bridge-labs, Y-star-gov, and gov-mcp with git ls-files",
+      "infer mandatory capability domains from action context",
+      "match canonical existing source paths",
+      "build reuse-or-extend plan",
+      "validate through Y-star-gov no-new-wheel runtime law"
+    ],
+    "X_t": {
+      "action_context": {
+        "action_id": "e113_no_new_wheel_runtime_law",
+        "action_type": "cross_repo_governance_mutation",
+        "actor": "Aiden",
+        "brain_learning": true,
+        "codex_executor_boundary": true,
+        "external_action_executed": false,
+        "goal_target_closure": true,
+        "major_action": true,
+        "market_strategy_required": true,
+        "operation_type": "runtime_implementation",
+        "owner_intent": "turn no-new-wheel from human reminder into runtime law across residual, goal, brain, strategy, governance, Codex, provider, and memory systems",
+        "provider_action_executed": false,
+        "provider_tool_boundary": true,
+        "requires_existing_capability_recall": true,
+        "residual_learning": true
+      },
+      "mandatory_domains": [
+        "cieu_store_formal_memory",
+        "adaptive_governance_correct_path",
+        "czl_residual_loop_engine",
+        "czl_message_protocol",
+        "cieu_prediction_delta",
+        "goal_tree_and_y_star_field",
+        "ceo_implementation_order",
+        "aiden_brain_runtime",
+        "open_world_strategy_runtime",
+        "gov_mcp_dry_run_boundary"
+      ],
+      "problem": "major action previously risked rebuilding existing systems or relying on recent memory"
+    },
+    "Y_star": {
+      "Rt_plus_1": 0,
+      "all_mandatory_domains_satisfied": true,
+      "full_system_scan_performed": true,
+      "parallel_rebuild_detected": false,
+      "prompt_summary_sufficient": false,
+      "recent_memory_sufficient": false
+    },
+    "Y_t_plus_1": {
+      "Rt_plus_1": 0.0,
+      "all_mandatory_domains_satisfied": true,
+      "full_system_scan_performed": true,
+      "missing_capability_domains": [],
+      "parallel_rebuild_detected": false
+    },
+    "residual_loop_engine_path": "ystar/governance/residual_loop_engine.py"
+  },
+  "L5_truth_table_after": {
+    "L5-A": "complete_internal_runtime_foundation_with_no_new_wheel_runtime_law",
+    "L5-B": "complete_for_structured_governed_intelligence_loop_with_existing_capability_recall_gate",
+    "L5-C": "partial_dry_run_only",
+    "L5-D": "absent_or_not_executed",
+    "L5-E": "partial_CIEU_backed_brain_learning_candidate_loop_no_production_brain_write"
+  },
+  "Rt_plus_1": 0.0,
+  "Y_star_gov_no_new_wheel_decision": "ALLOW",
+  "action_relevant_capability_groups": [
+    {
+      "domain_id": "ceo_behavior_center",
+      "indexed_symbol_hit_count": 20,
+      "indexed_symbol_hits": [
+        "office/aiden_meeting_room/__init__.py",
+        "office/aiden_meeting_room/aiden_ceo_profile.py",
+        "office/aiden_meeting_room/aiden_intent_classifier.py",
+        "office/aiden_meeting_room/aiden_response_engine.py",
+        "office/aiden_meeting_room/company_context_loader.py",
+        "office/aiden_meeting_room/directive_retriage_analyzer.py",
+        "office/aiden_meeting_room/evidence_extractor.py",
+        "office/aiden_meeting_room/governance_burden_analyzer.py",
+        "office/aiden_meeting_room/meeting_cli.py",
+        "office/aiden_meeting_room/meeting_memory.py",
+        "office/aiden_meeting_room/meeting_summary.py",
+        "office/aiden_meeting_room/operations_admin_analyzer.py"
+      ],
+      "invocation_requirement": "conditional",
+      "source_paths": [
+        "office/aiden_meeting_room/__init__.py",
+        "office/aiden_meeting_room/aiden_ceo_profile.py",
+        "office/aiden_meeting_room/aiden_intent_classifier.py",
+        "office/aiden_meeting_room/aiden_response_engine.py",
+        "office/aiden_meeting_room/company_context_loader.py",
+        "office/aiden_meeting_room/directive_retriage_analyzer.py",
+        "office/aiden_meeting_room/evidence_extractor.py",
+        "office/aiden_meeting_room/governance_burden_analyzer.py"
+      ],
+      "utilization_rule": "invoke_or_route_when owner-facing CEO behavior is requested",
+      "utilization_status": "consult_required"
+    },
+    {
+      "domain_id": "runtime_control_plane",
+      "indexed_symbol_hit_count": 0,
+      "indexed_symbol_hits": [],
+      "invocation_requirement": "conditional",
+      "source_paths": [],
+      "utilization_rule": "mandatory front door before CEO/Aiden runtime behavior continues",
+      "utilization_status": "consult_required"
+    },
+    {
+      "domain_id": "czl_residual_loop_engine",
+      "indexed_symbol_hit_count": 7,
+      "indexed_symbol_hits": [
+        "tests/test_residual_loop_engine.py",
+        "ystar.bak.20260415_again/governance/residual_loop_engine.py",
+        "tests/governance/test_cieu_prediction_delta.py",
+        "tests/kernel/test_czl_protocol.py",
+        "ystar/governance/cieu_prediction_delta.py",
+        "ystar/governance/residual_loop_engine.py",
+        "ystar/kernel/czl_protocol.py"
+      ],
+      "invocation_requirement": "mandatory",
+      "source_paths": [
+        "ystar/governance/residual_loop_engine.py",
+        "tests/test_residual_loop_engine.py",
+        "docs/AMENDMENT_014_DELIVERY_REPORT.md"
+      ],
+      "utilization_rule": "mandatory for failure residual, goal closure, learning loop, or Rt+1 claims",
+      "utilization_status": "runtime_bound"
+    },
+    {
+      "domain_id": "aiden_brain_runtime",
+      "indexed_symbol_hit_count": 4,
+      "indexed_symbol_hits": [
+        "scripts/aiden_brain.py",
+        "scripts/cieu_brain_learning_cycle.py",
+        "tests/governance/test_cieu_brain_learning.py",
+        "ystar/governance/cieu_brain_learning.py"
+      ],
+      "invocation_requirement": "mandatory",
+      "source_paths": [
+        "scripts/aiden_brain.py",
+        "office/mission_command/e112_cieu_backed_brain_learning_loop.py",
+        "tests/office/test_e112_cieu_backed_brain_learning_loop.py"
+      ],
+      "utilization_rule": "mandatory for CEO cognition, strategy, and durable learning candidates",
+      "utilization_status": "runtime_bound"
+    },
+    {
+      "domain_id": "open_world_strategy_runtime",
+      "indexed_symbol_hit_count": 60,
+      "indexed_symbol_hits": [
+        "office/mission_command/e32_ceo_kg_learning_strategy_feedback.py",
+        "office/mission_command/e32_ceo_strategy_control_room.py",
+        "office/mission_command/e32_existing_learning_strategy_wheel_inventory.py",
+        "office/mission_command/e32_market_buyer_understanding_synthesis.py",
+        "office/mission_command/e36_ceo_brain_strategy_field_trial_update.py",
+        "office/mission_command/e36_ceo_kg_strategy_field_trial_feedback.py",
+        "office/mission_command/e39_market_language_mining_lexicon.py",
+        "office/mission_command/e3_market_aware_evaluator.py",
+        "office/mission_command/e4_market_evidence_evaluator.py",
+        "office/mission_command/e4_market_research_plan.py",
+        "office/mission_command/e59_competitor_adjacent_technology_comparison.py",
+        "office/mission_command/e5_market_evidence_evaluator.py"
+      ],
+      "invocation_requirement": "mandatory",
+      "source_paths": [
+        "office/mission_command/e108_live_global_open_world_strategy_runtime.py",
+        "office/mission_command/e110_labs_universal_operating_control_plane.py",
+        "tests/office/test_e110_labs_universal_operating_control_plane.py"
+      ],
+      "utilization_rule": "mandatory for market strategy; static snapshots cannot satisfy live strategy",
+      "utilization_status": "runtime_bound"
+    },
+    {
+      "domain_id": "adaptive_governance_correct_path",
+      "indexed_symbol_hit_count": 0,
+      "indexed_symbol_hits": [],
+      "invocation_requirement": "mandatory",
+      "source_paths": [
+        "office/mission_command/e101_adaptive_governance_discovery_and_correct_path_navigator.py",
+        "tests/office/test_e101_adaptive_governance_discovery.py"
+      ],
+      "utilization_rule": "mandatory when validation fails; governance must navigate instead of blunt handoff",
+      "utilization_status": "runtime_bound"
+    },
+    {
+      "domain_id": "ceo_implementation_order",
+      "indexed_symbol_hit_count": 0,
+      "indexed_symbol_hits": [],
+      "invocation_requirement": "mandatory",
+      "source_paths": [
+        "office/mission_command/e92_ceo_principal_codex_executor_boundary.py",
+        "tests/office/test_e92_ceo_principal_codex_executor_boundary.py"
+      ],
+      "utilization_rule": "mandatory before Codex prompts, repo mutation, or implementation execution",
+      "utilization_status": "runtime_bound"
+    },
+    {
+      "domain_id": "gov_mcp_dry_run_boundary",
+      "indexed_symbol_hit_count": 127,
+      "indexed_symbol_hits": [
+        "office/mission_command/c3_dry_run_execution_receipts.py",
+        "office/mission_command/e15d_controlled_outbound_domain.py",
+        "office/mission_command/e15d_gov_mcp_outbound_adapter.py",
+        "office/mission_command/e15d_outbound_audit_receipts.py",
+        "office/mission_command/e15d_outbound_authorization_envelope.py",
+        "office/mission_command/e15d_outbound_safety_guards.py",
+        "office/mission_command/e15d_ygov_outbound_policy.py",
+        "office/mission_command/e20_autonomous_outbound_envelope.py",
+        "office/mission_command/e20_future_outbound_policy.py",
+        "office/mission_command/e22_autonomous_dry_run_control_room.py",
+        "office/mission_command/e22_dry_run_batch_selector.py",
+        "office/mission_command/e22_dry_run_receipt_ledger.py"
+      ],
+      "invocation_requirement": "mandatory",
+      "source_paths": [
+        "gov_mcp/outbound/dry_run_adapter.py",
+        "gov_mcp/outbound/policy.py",
+        "gov_mcp/outbound/receipts.py"
+      ],
+      "utilization_rule": "mandatory for provider/tool boundaries; live execution remains disabled",
+      "utilization_status": "runtime_bound"
+    },
+    {
+      "domain_id": "external_validation_and_l4_feedback",
+      "indexed_symbol_hit_count": 93,
+      "indexed_symbol_hits": [
+        "office/mission_command/b2r_external_validation_messaging.py",
+        "office/mission_command/c1_feedback_events.py",
+        "office/mission_command/c2_feedback_loop.py",
+        "office/mission_command/c3_feedback_intake_runtime.py",
+        "office/mission_command/e12_feedback_capture.py",
+        "office/mission_command/e14_feedback_events.py",
+        "office/mission_command/e15a_feedback_capture_pack.py",
+        "office/mission_command/e15a_feedback_signal_evaluator.py",
+        "office/mission_command/e17_feedback_intake.py",
+        "office/mission_command/e18_batch_feedback_intake.py",
+        "office/mission_command/e19_feedback_import_control_path.py",
+        "office/mission_command/e25_ceo_kg_feedback_ingestion.py"
+      ],
+      "invocation_requirement": "conditional",
+      "source_paths": [
+        "office/mission_command/b2r_external_validation_messaging.py",
+        "office/mission_command/c1_feedback_events.py",
+        "office/mission_command/c2_feedback_loop.py",
+        "office/mission_command/c3_feedback_intake_runtime.py",
+        "office/mission_command/e12_feedback_capture.py",
+        "office/mission_command/e14_feedback_events.py",
+        "office/mission_command/e15a_feedback_capture_pack.py",
+        "office/mission_command/e15a_feedback_signal_evaluator.py"
+      ],
+      "utilization_rule": "consult for external-feedback design; do not claim customer validation without evidence",
+      "utilization_status": "consult_required"
+    },
+    {
+      "domain_id": "cieu_store_formal_memory",
+      "indexed_symbol_hit_count": 103,
+      "indexed_symbol_hits": [
+        "cieu_trace.py",
+        "office/mission_command/e68_ceo_cieu_route_readback.py",
+        "office/mission_command/e68_cieu_route_evaluation_model.py",
+        "office/mission_command/e72_cieu_audit_module_readback.py",
+        "office/mission_command/e72_cieu_hash_chain_context.py",
+        "scripts/_cieu_helpers.py",
+        "scripts/amendment_cieu_listener.py",
+        "scripts/cieu_event_watcher.py",
+        "scripts/cieu_receipt_verifier.py",
+        "scripts/cieu_replay_recovery.py",
+        "scripts/k9_cieu_export.py",
+        "scripts/tests/test_aiden_dream_cieu_emit.py"
+      ],
+      "invocation_requirement": "mandatory",
+      "source_paths": [
+        "ystar/governance/cieu_store.py"
+      ],
+      "utilization_rule": "mandatory for formal runtime memory; do not invent parallel ledger",
+      "utilization_status": "runtime_bound"
+    },
+    {
+      "domain_id": "cieu_prediction_delta",
+      "indexed_symbol_hit_count": 0,
+      "indexed_symbol_hits": [],
+      "invocation_requirement": "mandatory",
+      "source_paths": [
+        "ystar/governance/cieu_prediction_delta.py",
+        "docs/cieu_prediction_delta/schema_v0.md"
+      ],
+      "utilization_rule": "reuse CIEU prediction-delta schema for prediction vs actual residual learning",
+      "utilization_status": "runtime_bound"
+    },
+    {
+      "domain_id": "czl_message_protocol",
+      "indexed_symbol_hit_count": 0,
+      "indexed_symbol_hits": [],
+      "invocation_requirement": "mandatory",
+      "source_paths": [
+        "ystar/kernel/czl_protocol.py",
+        "tests/kernel/test_czl_protocol.py"
+      ],
+      "utilization_rule": "reuse CZL dispatch/receipt protocol for executor handoff and empirical Rt+1 verification",
+      "utilization_status": "runtime_bound"
+    },
+    {
+      "domain_id": "goal_tree_and_y_star_field",
+      "indexed_symbol_hit_count": 0,
+      "indexed_symbol_hits": [],
+      "invocation_requirement": "mandatory",
+      "source_paths": [
+        "scripts/phase2_goal_tree_schema.py",
+        "scripts/phase3_goal_decomposer.py",
+        "tests/test_working_memory_snapshot.py"
+      ],
+      "utilization_rule": "reuse goal tree and Y* field validator before inventing target tracking",
+      "utilization_status": "runtime_bound"
+    }
+  ],
+  "capability_utilization_summary": {
+    "action_relevant_capability_group_count": 13,
+    "available_for_future_activation_count": 3,
+    "code_index_loaded": true,
+    "indexed_capability_counts": {
+      "total_classes": 1660,
+      "total_functions": 11495,
+      "total_generated_reports": 28118,
+      "total_python_files": 3085,
+      "total_tests": 1561,
+      "total_tracked_files": 34677
+    },
+    "unreviewed_runtime_active_capability_count": 0
+  },
+  "mandatory_capability_domains": [
+    "cieu_store_formal_memory",
+    "adaptive_governance_correct_path",
+    "czl_residual_loop_engine",
+    "czl_message_protocol",
+    "cieu_prediction_delta",
+    "goal_tree_and_y_star_field",
+    "ceo_implementation_order",
+    "aiden_brain_runtime",
+    "open_world_strategy_runtime",
+    "gov_mcp_dry_run_boundary"
+  ],
+  "milestone_id": "E113_No_New_Wheel_Runtime_Law_CZL_Closure_R1",
+  "repos_scanned": [
+    "bridge-labs",
+    "Y-star-gov",
+    "gov-mcp"
+  ],
+  "reuse_plan": [
+    {
+      "correct_path": "reuse ResidualLoopEngine and CZL 5-tuple before implementing residual/goal closure",
+      "domain_id": "czl_residual_loop_engine",
+      "reuse_mode": "reuse_or_extend_existing",
+      "source_paths": [
+        "ystar/governance/residual_loop_engine.py",
+        "tests/test_residual_loop_engine.py",
+        "docs/AMENDMENT_014_DELIVERY_REPORT.md"
+      ],
+      "will_reuse_existing_capability": true
+    },
+    {
+      "correct_path": "reuse CZL dispatch/receipt protocol for executor handoff and empirical Rt+1 verification",
+      "domain_id": "czl_message_protocol",
+      "reuse_mode": "reuse_or_extend_existing",
+      "source_paths": [
+        "ystar/kernel/czl_protocol.py",
+        "tests/kernel/test_czl_protocol.py"
+      ],
+      "will_reuse_existing_capability": true
+    },
+    {
+      "correct_path": "reuse CIEU prediction-delta schema for prediction vs actual residual learning",
+      "domain_id": "cieu_prediction_delta",
+      "reuse_mode": "reuse_or_extend_existing",
+      "source_paths": [
+        "ystar/governance/cieu_prediction_delta.py",
+        "docs/cieu_prediction_delta/schema_v0.md"
+      ],
+      "will_reuse_existing_capability": true
+    },
+    {
+      "correct_path": "reuse goal tree and Y* field validator before inventing target tracking",
+      "domain_id": "goal_tree_and_y_star_field",
+      "reuse_mode": "reuse_or_extend_existing",
+      "source_paths": [
+        "scripts/phase2_goal_tree_schema.py",
+        "scripts/phase3_goal_decomposer.py",
+        "tests/test_working_memory_snapshot.py"
+      ],
+      "will_reuse_existing_capability": true
+    },
+    {
+      "correct_path": "reuse E101 correct-path navigator instead of blunt deny or human handoff",
+      "domain_id": "adaptive_governance_correct_path",
+      "reuse_mode": "reuse_or_extend_existing",
+      "source_paths": [
+        "office/mission_command/e101_adaptive_governance_discovery_and_correct_path_navigator.py",
+        "tests/office/test_e101_adaptive_governance_discovery.py"
+      ],
+      "will_reuse_existing_capability": true
+    },
+    {
+      "correct_path": "reuse CEOImplementationOrder before any Codex prompt or repo mutation",
+      "domain_id": "ceo_implementation_order",
+      "reuse_mode": "reuse_or_extend_existing",
+      "source_paths": [
+        "office/mission_command/e92_ceo_principal_codex_executor_boundary.py",
+        "tests/office/test_e92_ceo_principal_codex_executor_boundary.py"
+      ],
+      "will_reuse_existing_capability": true
+    },
+    {
+      "correct_path": "reuse Aiden brain runtime and E112 CIEU-backed brain learning candidates",
+      "domain_id": "aiden_brain_runtime",
+      "reuse_mode": "reuse_or_extend_existing",
+      "source_paths": [
+        "scripts/aiden_brain.py",
+        "office/mission_command/e112_cieu_backed_brain_learning_loop.py",
+        "tests/office/test_e112_cieu_backed_brain_learning_loop.py"
+      ],
+      "will_reuse_existing_capability": true
+    },
+    {
+      "correct_path": "reuse E108/E110 live/open-world strategy, competitor, freshness, and math-model path",
+      "domain_id": "open_world_strategy_runtime",
+      "reuse_mode": "reuse_or_extend_existing",
+      "source_paths": [
+        "office/mission_command/e108_live_global_open_world_strategy_runtime.py",
+        "office/mission_command/e110_labs_universal_operating_control_plane.py",
+        "tests/office/test_e110_labs_universal_operating_control_plane.py"
+      ],
+      "will_reuse_existing_capability": true
+    },
+    {
+      "correct_path": "reuse gov-mcp dry-run/no-send boundary before provider/tool execution",
+      "domain_id": "gov_mcp_dry_run_boundary",
+      "reuse_mode": "reuse_or_extend_existing",
+      "source_paths": [
+        "gov_mcp/outbound/dry_run_adapter.py",
+        "gov_mcp/outbound/policy.py",
+        "gov_mcp/outbound/receipts.py"
+      ],
+      "will_reuse_existing_capability": true
+    },
+    {
+      "correct_path": "reuse CIEUStore.write_dict; do not create a parallel ledger",
+      "domain_id": "cieu_store_formal_memory",
+      "reuse_mode": "reuse_or_extend_existing",
+      "source_paths": [
+        "ystar/governance/cieu_store.py"
+      ],
+      "will_reuse_existing_capability": true
+    }
+  ],
+  "runtime_law_meaning": "Every major action must prove full-system existing capability recall and reuse before implementation; recent memory, prompt summaries, and parallel rebuilds are not sufficient.",
+  "runtime_law_proven": true,
+  "semantic_capability_matches": [
+    {
+      "correct_path": "reuse ResidualLoopEngine and CZL 5-tuple before implementing residual/goal closure",
+      "domain_id": "czl_residual_loop_engine",
+      "owner_repo": "Y-star-gov",
+      "runtime_status": "runtime_active",
+      "satisfies_mandatory_domain": true,
+      "secondary_source_paths": [],
+      "source_paths": [
+        "ystar/governance/residual_loop_engine.py",
+        "tests/test_residual_loop_engine.py",
+        "docs/AMENDMENT_014_DELIVERY_REPORT.md"
+      ]
+    },
+    {
+      "correct_path": "reuse CZL dispatch/receipt protocol for executor handoff and empirical Rt+1 verification",
+      "domain_id": "czl_message_protocol",
+      "owner_repo": "Y-star-gov",
+      "runtime_status": "runtime_active",
+      "satisfies_mandatory_domain": true,
+      "secondary_source_paths": [],
+      "source_paths": [
+        "ystar/kernel/czl_protocol.py",
+        "tests/kernel/test_czl_protocol.py"
+      ]
+    },
+    {
+      "correct_path": "reuse CIEU prediction-delta schema for prediction vs actual residual learning",
+      "domain_id": "cieu_prediction_delta",
+      "owner_repo": "Y-star-gov",
+      "runtime_status": "runtime_active",
+      "satisfies_mandatory_domain": true,
+      "secondary_source_paths": [],
+      "source_paths": [
+        "ystar/governance/cieu_prediction_delta.py",
+        "docs/cieu_prediction_delta/schema_v0.md"
+      ]
+    },
+    {
+      "correct_path": "reuse goal tree and Y* field validator before inventing target tracking",
+      "domain_id": "goal_tree_and_y_star_field",
+      "owner_repo": "bridge-labs",
+      "runtime_status": "runtime_active",
+      "satisfies_mandatory_domain": true,
+      "secondary_source_paths": [
+        "Y-star-gov:ystar/governance/y_star_field_validator.py"
+      ],
+      "source_paths": [
+        "scripts/phase2_goal_tree_schema.py",
+        "scripts/phase3_goal_decomposer.py",
+        "tests/test_working_memory_snapshot.py"
+      ]
+    },
+    {
+      "correct_path": "reuse E101 correct-path navigator instead of blunt deny or human handoff",
+      "domain_id": "adaptive_governance_correct_path",
+      "owner_repo": "bridge-labs",
+      "runtime_status": "runtime_active",
+      "satisfies_mandatory_domain": true,
+      "secondary_source_paths": [],
+      "source_paths": [
+        "office/mission_command/e101_adaptive_governance_discovery_and_correct_path_navigator.py",
+        "tests/office/test_e101_adaptive_governance_discovery.py"
+      ]
+    },
+    {
+      "correct_path": "reuse CEOImplementationOrder before any Codex prompt or repo mutation",
+      "domain_id": "ceo_implementation_order",
+      "owner_repo": "bridge-labs",
+      "runtime_status": "runtime_active",
+      "satisfies_mandatory_domain": true,
+      "secondary_source_paths": [],
+      "source_paths": [
+        "office/mission_command/e92_ceo_principal_codex_executor_boundary.py",
+        "tests/office/test_e92_ceo_principal_codex_executor_boundary.py"
+      ]
+    },
+    {
+      "correct_path": "reuse Aiden brain runtime and E112 CIEU-backed brain learning candidates",
+      "domain_id": "aiden_brain_runtime",
+      "owner_repo": "bridge-labs",
+      "runtime_status": "runtime_active",
+      "satisfies_mandatory_domain": true,
+      "secondary_source_paths": [],
+      "source_paths": [
+        "scripts/aiden_brain.py",
+        "office/mission_command/e112_cieu_backed_brain_learning_loop.py",
+        "tests/office/test_e112_cieu_backed_brain_learning_loop.py"
+      ]
+    },
+    {
+      "correct_path": "reuse E108/E110 live/open-world strategy, competitor, freshness, and math-model path",
+      "domain_id": "open_world_strategy_runtime",
+      "owner_repo": "bridge-labs",
+      "runtime_status": "runtime_active",
+      "satisfies_mandatory_domain": true,
+      "secondary_source_paths": [],
+      "source_paths": [
+        "office/mission_command/e108_live_global_open_world_strategy_runtime.py",
+        "office/mission_command/e110_labs_universal_operating_control_plane.py",
+        "tests/office/test_e110_labs_universal_operating_control_plane.py"
+      ]
+    },
+    {
+      "correct_path": "reuse gov-mcp dry-run/no-send boundary before provider/tool execution",
+      "domain_id": "gov_mcp_dry_run_boundary",
+      "owner_repo": "gov-mcp",
+      "runtime_status": "runtime_active",
+      "satisfies_mandatory_domain": true,
+      "secondary_source_paths": [],
+      "source_paths": [
+        "gov_mcp/outbound/dry_run_adapter.py",
+        "gov_mcp/outbound/policy.py",
+        "gov_mcp/outbound/receipts.py"
+      ]
+    },
+    {
+      "correct_path": "reuse CIEUStore.write_dict; do not create a parallel ledger",
+      "domain_id": "cieu_store_formal_memory",
+      "owner_repo": "Y-star-gov",
+      "runtime_status": "runtime_active",
+      "satisfies_mandatory_domain": true,
+      "secondary_source_paths": [],
+      "source_paths": [
+        "ystar/governance/cieu_store.py"
+      ]
+    }
+  ],
+  "tracked_file_counts": {
+    "Y-star-gov": 686,
+    "bridge-labs": 34059,
+    "gov-mcp": 131
+  },
+  "what_was_not_claimed": [
+    "no L4 feedback executed",
+    "no customer validation",
+    "no revenue/payment signal",
+    "no live provider execution",
+    "no K9Audit integration"
+  ]
+}

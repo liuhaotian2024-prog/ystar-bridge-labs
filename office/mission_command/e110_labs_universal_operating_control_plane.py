@@ -25,6 +25,7 @@ def _cap(owner_repo: str, source_path: str) -> dict[str, Any]:
 
 
 CAPABILITY_CATALOG: dict[str, dict[str, Any]] = {
+    "no_new_wheel_runtime_law": _cap("bridge-labs", "office/mission_command/e113_no_new_wheel_runtime_law.py"),
     "adaptive_governance_discovery": _cap("Y-star-gov", "ystar/governance/ceo_adaptive_governance_contract.py"),
     "open_world_doctrine_registry": _cap("bridge-labs", "office/mission_command/e91_ceo_operating_doctrine_registry.py"),
     "Y_star_gov_runtime_validation": _cap("Y-star-gov", "ystar/governance"),
@@ -46,6 +47,7 @@ CAPABILITY_CATALOG: dict[str, dict[str, Any]] = {
 }
 
 BASELINE_CAPABILITIES = (
+    "no_new_wheel_runtime_law",
     "adaptive_governance_discovery",
     "open_world_doctrine_registry",
     "Y_star_gov_runtime_validation",
@@ -239,6 +241,29 @@ def enforce_labs_universal_control_before_runtime(
     session_id: str | None = None,
     seal_session: bool = False,
 ) -> dict[str, Any]:
+    no_new_wheel_gate = enforce_no_new_wheel_runtime_law_before_universal_control(
+        operation_context=operation_context,
+        cieu_db=cieu_db,
+        ystar_gov_root=ystar_gov_root,
+        session_id=session_id,
+        seal_session=False,
+    )
+    if not no_new_wheel_gate.get("runtime_may_continue"):
+        return {
+            "artifact_id": "e110_labs_universal_control_gate",
+            "control_packet": {},
+            "local_decision": {
+                "decision": no_new_wheel_gate.get("Y_star_gov_no_new_wheel_decision", "REQUIRE_REVISION"),
+                "passed": False,
+                "missing_capabilities": ["no_new_wheel_runtime_law"],
+                "correct_path": no_new_wheel_gate.get("correct_path", []),
+            },
+            "no_new_wheel_runtime_law_gate": no_new_wheel_gate,
+            "YstarGov_universal_control_write_result": {},
+            "Y_star_gov_universal_control_decision": no_new_wheel_gate.get("Y_star_gov_no_new_wheel_decision", ""),
+            "runtime_may_continue": False,
+            "correct_path": no_new_wheel_gate.get("correct_path", []),
+        }
     packet = build_labs_universal_control_packet(operation_context, capability_overrides=capability_overrides)
     local = validate_labs_universal_control_local(packet)
     governance = _load_ystar_module("ystar.governance.labs_universal_operating_control_contract", ystar_gov_root)
@@ -253,6 +278,7 @@ def enforce_labs_universal_control_before_runtime(
         "artifact_id": "e110_labs_universal_control_gate",
         "control_packet": packet,
         "local_decision": local,
+        "no_new_wheel_runtime_law_gate": no_new_wheel_gate,
         "YstarGov_universal_control_write_result": write,
         "Y_star_gov_universal_control_decision": decision,
         "runtime_may_continue": local["decision"] == "ALLOW" and decision == "ALLOW",
@@ -310,6 +336,7 @@ def run_e110_controlled_aiden_strategy_session(
     strategy["universal_operating_control_plane"] = {
         "control_plane_id": CONTROL_PLANE_ID,
         "Y_star_gov_universal_control_decision": control_gate["Y_star_gov_universal_control_decision"],
+        "Y_star_gov_no_new_wheel_decision": control_gate.get("no_new_wheel_runtime_law_gate", {}).get("Y_star_gov_no_new_wheel_decision"),
         "required_capabilities": [
             item["capability_id"] for item in control_gate["control_packet"]["required_capabilities"]
         ],
@@ -324,6 +351,7 @@ def run_e110_controlled_aiden_strategy_session(
             if e108["end_to_end_live_global_open_world_strategy_proven"] and control_gate["runtime_may_continue"]
             else "CEO_RUNTIME_REQUIRES_REVISION",
             "Y_star_gov_universal_control_decision": control_gate["Y_star_gov_universal_control_decision"],
+            "Y_star_gov_no_new_wheel_decision": control_gate.get("no_new_wheel_runtime_law_gate", {}).get("Y_star_gov_no_new_wheel_decision"),
             "universal_control_plane_passed": control_gate["runtime_may_continue"],
             "competitive_intelligence_gate_passed": strategy["strategic_completeness_gate"]["competitive_intelligence_present"],
             "current_source_freshness_gate_passed": strategy["strategic_completeness_gate"]["latest_source_freshness_present"],
@@ -474,6 +502,7 @@ def competitors_for_route(route_id: str, domain_id: Any = None) -> list[dict[str
 
 def correct_path_for_capability(capability_id: str) -> str:
     paths = {
+        "no_new_wheel_runtime_law": "run E113 full-system existing capability recall, reuse plan, and CZL Rt+1=0 closure before implementation",
         "adaptive_governance_discovery": "run adaptive governance discovery and attach obligation proof",
         "open_world_doctrine_registry": "resolve required doctrines from E91 open-world doctrine registry",
         "Y_star_gov_runtime_validation": "validate through Y-star-gov before behavior continues",
@@ -494,6 +523,37 @@ def correct_path_for_capability(capability_id: str) -> str:
         "report_truth_boundary": "bind report claims to evidence and no-overclaim constraints",
     }
     return paths.get(capability_id, f"satisfy {capability_id} before continuing")
+
+
+def enforce_no_new_wheel_runtime_law_before_universal_control(
+    *,
+    operation_context: Mapping[str, Any],
+    cieu_db: str | Path,
+    ystar_gov_root: Path | None = None,
+    session_id: str | None = None,
+    seal_session: bool = False,
+) -> dict[str, Any]:
+    try:
+        from office.mission_command.e113_no_new_wheel_runtime_law import (
+            enforce_no_new_wheel_runtime_law_for_operation,
+        )
+    except Exception as exc:
+        return {
+            "artifact_id": "e113_no_new_wheel_runtime_law_gate",
+            "Y_star_gov_no_new_wheel_decision": "REQUIRE_REVISION",
+            "runtime_may_continue": False,
+            "correct_path": [
+                "restore office/mission_command/e113_no_new_wheel_runtime_law.py before any CEO runtime action",
+            ],
+            "import_error": str(exc),
+        }
+    return enforce_no_new_wheel_runtime_law_for_operation(
+        action_context=operation_context,
+        cieu_db=cieu_db,
+        ystar_gov_root=ystar_gov_root,
+        session_id=session_id or str(operation_context.get("operation_id") or "labs_universal_control"),
+        seal_session=seal_session,
+    )
 
 
 def summarize_e110_cieustore(cieu_db: str | Path) -> dict[str, Any]:
@@ -582,6 +642,7 @@ __all__ = [
     "build_strategic_completeness_gate",
     "classify_operation_type",
     "correct_path_for_capability",
+    "enforce_no_new_wheel_runtime_law_before_universal_control",
     "enforce_labs_universal_control_before_runtime",
     "resolve_required_capabilities_for_operation",
     "run_e110_controlled_aiden_strategy_session",
