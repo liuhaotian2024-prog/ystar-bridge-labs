@@ -198,7 +198,32 @@ def generate_aiden_reply_text(
     """Generate Aiden's reply through the existing governed meeting-room router."""
 
     try:
+        from office.mission_command.e125_aiden_retrieval_orchestration_runtime import run_aiden_retrieval_orchestration
         from office.aiden_meeting_room.chat_router import route_chat_message_to_aiden_meeting_room
+
+        retrieval_result = run_aiden_retrieval_orchestration(
+            owner_text,
+            cieu_db=cieu_db,
+            ystar_gov_root=ystar_gov_root,
+            repo_root=repo_root or BRIDGE_ROOT,
+            high_wisdom_required=True,
+            external_public_read_required=False,
+        )
+        retrieval_decision = retrieval_result["YstarGov_retrieval_result"]["governance_decision"]
+        if retrieval_decision["decision"] != "ALLOW":
+            return {
+                "reply_text": (
+                    "Aiden Retrieval Runtime Notice: I cannot responsibly answer from recent memory alone. "
+                    f"Retrieval governance returned {retrieval_decision['decision']}: {retrieval_decision['reason']}. "
+                    f"Correct path: {'; '.join(retrieval_decision.get('correct_path') or [])}"
+                ),
+                "reply_backend": "retrieval_governance_notice",
+                "reply_protocol": "AidenRetrievalOrchestrationV1",
+                "runtime_fallback_used": True,
+                "retrieval_result": retrieval_result,
+                "retrieval_decision": retrieval_decision["decision"],
+                "retrieval_context_summary": retrieval_result["retrieval_context_summary"],
+            }
 
         route = route_chat_message_to_aiden_meeting_room(
             f"Aiden: {owner_text}",
@@ -212,6 +237,9 @@ def generate_aiden_reply_text(
             "reply_backend": route.route,
             "reply_protocol": route.protocol,
             "runtime_fallback_used": False,
+            "retrieval_result": retrieval_result,
+            "retrieval_decision": retrieval_decision["decision"],
+            "retrieval_context_summary": retrieval_result["retrieval_context_summary"],
         }
     except Exception as exc:
         return {
@@ -224,6 +252,9 @@ def generate_aiden_reply_text(
             "reply_protocol": "AidenMessengerFallbackV1",
             "runtime_fallback_used": True,
             "runtime_error": str(exc),
+            "retrieval_result": None,
+            "retrieval_decision": "runtime_error",
+            "retrieval_context_summary": "",
         }
 
 
@@ -293,6 +324,8 @@ def run_agent_native_messenger_turn(
                 "source": "Aiden governed router",
                 "reply_backend": reply_runtime["reply_backend"],
                 "reply_protocol": reply_runtime["reply_protocol"],
+                "retrieval_decision": reply_runtime.get("retrieval_decision", "not_applicable"),
+                "retrieval_context_summary": reply_runtime.get("retrieval_context_summary", "")[:500],
             },
             action={"speech_act": "aiden_reply_to_owner", "runtime_fallback_used": reply_runtime["runtime_fallback_used"]},
             expected_next="Owner receives an actual Aiden reply plus CIEU/CZL provenance.",

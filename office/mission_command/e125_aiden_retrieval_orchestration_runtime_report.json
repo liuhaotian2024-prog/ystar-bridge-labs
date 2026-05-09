@@ -1,0 +1,605 @@
+{
+  "milestone_id": "E125_Aiden_Retrieval_Orchestration_Runtime_R1",
+  "result": {
+    "CIEUStore_summary": {
+      "db_path": "/tmp/e125_report_cieu.db",
+      "event_count": 1,
+      "event_types": [
+        "AIDEN_RETRIEVAL_ORCHESTRATION_DECISION"
+      ]
+    },
+    "YstarGov_retrieval_result": {
+      "CIEU_write_result": {
+        "CIEU_record": {
+          "agent_id": "Aiden",
+          "contract_hash": "aiden-retrieval-orchestration-v1",
+          "created_at": 1778361433.217838,
+          "decision": "ALLOW",
+          "drift_details": null,
+          "drift_detected": false,
+          "event_id": "b15888eb-f678-489a-9371-a5d245ece959",
+          "event_type": "AIDEN_RETRIEVAL_ORCHESTRATION_DECISION",
+          "evidence_grade": "governance",
+          "human_initiator": "owner",
+          "lineage_path": [
+            "bridge-labs",
+            "retrieval-orchestration",
+            "Y-star-gov",
+            "CIEUStore"
+          ],
+          "m_functor": "M-2b",
+          "m_weight": 1.0,
+          "params": {
+            "evidence_count": 28,
+            "mandatory_source_ids": [
+              "repo_evidence_index",
+              "aiden_6d_brain",
+              "code_index_or_capability_map",
+              "cieu_store_history",
+              "ystar_memory_store",
+              "local_vector_rag"
+            ],
+            "retrieval_id": "retrieval_83fa75fd6a52",
+            "source_count": 7,
+            "task_type": "governance"
+          },
+          "passed": true,
+          "result": {
+            "correct_path": [
+              "bind retrieved_evidence_pack into the downstream Aiden answer/action and record the CIEU decision"
+            ],
+            "decision": "ALLOW",
+            "evidence_refs": [
+              "governance/ACTIVE_OPERATING_CHARTER.md:7:Active charter mission",
+              "governance/ACTIVE_OPERATING_CHARTER.md:24:Active runtime Mission Command",
+              "governance/ACTIVE_OPERATING_CHARTER.md:25:Active runtime Mission Command",
+              "governance/ACTIVE_OPERATING_CHARTER.md:26:Active runtime Mission Command",
+              "governance/ACTIVE_OPERATING_CHARTER.md:32:Administrative rationalization",
+              "governance/ACTIVE_OPERATING_CHARTER.md:33:Administrative rationalization",
+              "governance/ACTIVE_OPERATING_CHARTER.md:35:Administrative rationalization",
+              "governance/ACTIVE_OPERATING_CHARTER.md:3:Approval model",
+              "brain:product/ystar_defuse",
+              "brain:WHO_I_AM",
+              "brain:strategic/workaround_before_restart",
+              "brain:strategic/evidence_before_pitch",
+              "brain:strategic/foundation_before_expansion",
+              "brain:meta/retrospective_sandbox_workflow",
+              "brain:meta/persistence_is_architecture",
+              "brain:meta/sandbox_16h_counterfactual_replay",
+              "operations/baseline/e87r_full_repo_baseline/baseline_summary.json",
+              "operations/baseline/e87r_full_repo_baseline/architecture_evidence_map.json",
+              "operations/baseline/e87r_full_repo_baseline/stable_vocabulary_and_owner_map.json",
+              "operations/baseline/e87r_full_repo_baseline/code_index.json"
+            ],
+            "formal_CIEU_log_path": "ystar.governance.cieu_store.CIEUStore.write_dict",
+            "guidance": {
+              "correct_next_step": "use the retrieved evidence pack as context for Aiden's answer or action packet",
+              "evidence_count": 28,
+              "mandatory_source_ids": [
+                "repo_evidence_index",
+                "aiden_6d_brain",
+                "code_index_or_capability_map",
+                "cieu_store_history",
+                "ystar_memory_store",
+                "local_vector_rag"
+              ],
+              "queried_source_count": 7,
+              "retrieval_id": "retrieval_83fa75fd6a52"
+            },
+            "reason": "retrieval orchestration queried mandatory local evidence systems, declared unavailable systems honestly, and is safe for downstream Aiden use",
+            "source_coverage": {
+              "mandatory_source_ids": [
+                "repo_evidence_index",
+                "aiden_6d_brain",
+                "code_index_or_capability_map",
+                "cieu_store_history",
+                "ystar_memory_store",
+                "local_vector_rag"
+              ],
+              "queried_source_ids": [
+                "repo_evidence_index",
+                "aiden_6d_brain",
+                "code_index_or_capability_map",
+                "cieu_store_history",
+                "ystar_memory_store",
+                "local_vector_rag",
+                "e123_memory_asset_discovery"
+              ],
+              "satisfied_source_family_count": 4,
+              "satisfied_source_ids": [
+                "aiden_6d_brain",
+                "code_index_or_capability_map",
+                "e123_memory_asset_discovery",
+                "repo_evidence_index"
+              ],
+              "unavailable_source_ids": [
+                "cieu_store_history",
+                "local_vector_rag"
+              ]
+            }
+          },
+          "seq_global": 1778361433217837,
+          "session_id": "e125_aiden_retrieval_orchestration",
+          "task_description": "Aiden governed retrieval orchestration validation",
+          "violations": [],
+          "y_star_validator_pass": true
+        },
+        "event_id": "b15888eb-f678-489a-9371-a5d245ece959",
+        "event_type": "AIDEN_RETRIEVAL_ORCHESTRATION_DECISION"
+      },
+      "artifact_id": "aiden_retrieval_orchestration_validate_and_write_result",
+      "formal_CIEU_log_status": "formal_CIEU_record_written",
+      "formal_CIEU_log_written": true,
+      "governance_decision": {
+        "artifact_id": "aiden_retrieval_orchestration_decision",
+        "correct_path": [
+          "bind retrieved_evidence_pack into the downstream Aiden answer/action and record the CIEU decision"
+        ],
+        "decision": "ALLOW",
+        "failed_section": null,
+        "guidance": {
+          "correct_next_step": "use the retrieved evidence pack as context for Aiden's answer or action packet",
+          "evidence_count": 28,
+          "mandatory_source_ids": [
+            "repo_evidence_index",
+            "aiden_6d_brain",
+            "code_index_or_capability_map",
+            "cieu_store_history",
+            "ystar_memory_store",
+            "local_vector_rag"
+          ],
+          "queried_source_count": 7,
+          "retrieval_id": "retrieval_83fa75fd6a52"
+        },
+        "passed": true,
+        "reason": "retrieval orchestration queried mandatory local evidence systems, declared unavailable systems honestly, and is safe for downstream Aiden use",
+        "violations": []
+      },
+      "seal_result": {},
+      "verify_result": {}
+    },
+    "artifact_id": "e125_aiden_retrieval_orchestration_result",
+    "external_action_executed": false,
+    "milestone_id": "E125_Aiden_Retrieval_Orchestration_Runtime_R1",
+    "payment_executed": false,
+    "provider_action_executed": false,
+    "retrieval_context_summary": "Governed retrieval context was built before this answer.\nSources satisfied: aiden_6d_brain, code_index_or_capability_map, e123_memory_asset_discovery, repo_evidence_index\nSources unavailable/declared: cieu_store_history, local_vector_rag\n1. [repo_evidence_index] Y*Bridge Labs exists to prove that an AI agent team can autonomously operate a real company and produce real value. (governance/ACTIVE_OPERATING_CHARTER.md:7:Active charter mission)\n2. [repo_evidence_index] - Mission Command: owner mission to team plan, preflight, task split, approval queue, and next owner decision. (governance/ACTIVE_OPERATING_CHARTER.md:24:Active runtime Mission Command)\n3. [repo_evidence_index] - Y-star-gov company_runtime policy: permission tiers, admin rationalization, value alignment, and mission/action preflight. (governance/ACTIVE_OPERATING_CHARTER.md:25:Active runtime Mission Command)\n4. [repo_evidence_index] - gov-mcp company preflight tools: local preflight envelopes for company actions, missions, admin rules, value alignment, escalations, and owner decisions. (governance/ACTIVE_OPERATING_CHARTER.md:26:Active runtime Mission Command)\n5. [repo_evidence_index] - Old daily, weekly, and nightly reports are not active by default. (governance/ACTIVE_OPERATING_CHARTER.md:32:Administrative rationalization)\n6. [repo_evidence_index] - Old HN and LinkedIn calendars are historical unless reactivated for a current mission. (governance/ACTIVE_OPERATING_CHARTER.md:33:Administrative rationalization)\n7. [repo_evidence_index] - Old directive tracker items must be re-triaged before execution. (governance/ACTIVE_OPERATING_CHARTER.md:35:Administrative rationalization)\n8. [repo_evidence_index] This is the current active operating summary for Y*Bridge Labs. Historical governance, operations, and directive text remains useful evidence, but it is not automatically active unless this charter, a current mission, o\u2026 (governance/ACTIVE_OPERATING_CHARTER.md:3:Approval model)",
+    "retrieval_decision": "ALLOW",
+    "retrieval_packet": {
+      "CIEU_linkage": {
+        "CIEU_recording_required": true,
+        "target_cieu_db": "/tmp/e125_report_cieu.db",
+        "target_event_type": "AIDEN_RETRIEVAL_ORCHESTRATION_DECISION"
+      },
+      "artifact_id": "e125_aiden_retrieval_orchestration_packet",
+      "created_at": "2026-05-09T21:17:13+00:00",
+      "downstream_binding": {
+        "aiden_reply_should_reference_retrieval_summary": true,
+        "raw_prompt_to_codex_allowed": false,
+        "retrieval_required_before_aiden_answer": true,
+        "retrieved_context_bound_to_answer": true
+      },
+      "milestone_id": "E125_Aiden_Retrieval_Orchestration_Runtime_R1",
+      "retrieval_id": "retrieval_83fa75fd6a52",
+      "retrieval_plan": {
+        "mandatory_source_ids": [
+          "repo_evidence_index",
+          "aiden_6d_brain",
+          "code_index_or_capability_map",
+          "cieu_store_history",
+          "ystar_memory_store",
+          "local_vector_rag"
+        ],
+        "optional_source_ids": [
+          "e123_memory_asset_discovery",
+          "external_public_read_runtime"
+        ],
+        "recent_memory_only_allowed": false,
+        "retrieval_policy": "query mandatory local memory/evidence systems and declare unavailable systems with correct path",
+        "retrieval_required_before_answer": true
+      },
+      "retrieval_sources": [
+        {
+          "correct_path": [],
+          "evidence_count": 8,
+          "evidence_refs": [
+            "governance/ACTIVE_OPERATING_CHARTER.md:7:Active charter mission",
+            "governance/ACTIVE_OPERATING_CHARTER.md:24:Active runtime Mission Command",
+            "governance/ACTIVE_OPERATING_CHARTER.md:25:Active runtime Mission Command",
+            "governance/ACTIVE_OPERATING_CHARTER.md:26:Active runtime Mission Command",
+            "governance/ACTIVE_OPERATING_CHARTER.md:32:Administrative rationalization",
+            "governance/ACTIVE_OPERATING_CHARTER.md:33:Administrative rationalization",
+            "governance/ACTIVE_OPERATING_CHARTER.md:35:Administrative rationalization",
+            "governance/ACTIVE_OPERATING_CHARTER.md:3:Approval model"
+          ],
+          "retrieval_status": "queried",
+          "source_id": "repo_evidence_index",
+          "unavailable_reason": ""
+        },
+        {
+          "correct_path": [],
+          "evidence_count": 8,
+          "evidence_refs": [
+            "brain:product/ystar_defuse",
+            "brain:WHO_I_AM",
+            "brain:strategic/workaround_before_restart",
+            "brain:strategic/evidence_before_pitch",
+            "brain:strategic/foundation_before_expansion",
+            "brain:meta/retrospective_sandbox_workflow",
+            "brain:meta/persistence_is_architecture",
+            "brain:meta/sandbox_16h_counterfactual_replay"
+          ],
+          "retrieval_status": "queried",
+          "source_id": "aiden_6d_brain",
+          "unavailable_reason": ""
+        },
+        {
+          "correct_path": [],
+          "evidence_count": 4,
+          "evidence_refs": [
+            "operations/baseline/e87r_full_repo_baseline/baseline_summary.json",
+            "operations/baseline/e87r_full_repo_baseline/architecture_evidence_map.json",
+            "operations/baseline/e87r_full_repo_baseline/stable_vocabulary_and_owner_map.json",
+            "operations/baseline/e87r_full_repo_baseline/code_index.json"
+          ],
+          "retrieval_status": "queried",
+          "source_id": "code_index_or_capability_map",
+          "unavailable_reason": ""
+        },
+        {
+          "correct_path": [
+            "after first CIEU writes, query this store for prior governed decisions"
+          ],
+          "evidence_count": 0,
+          "evidence_refs": [],
+          "retrieval_status": "unavailable_declared",
+          "source_id": "cieu_store_history",
+          "unavailable_reason": "target CIEUStore database does not exist yet; retrieval decision will create it"
+        },
+        {
+          "correct_path": [],
+          "evidence_count": 0,
+          "evidence_refs": [],
+          "retrieval_status": "empty",
+          "source_id": "ystar_memory_store",
+          "unavailable_reason": ""
+        },
+        {
+          "correct_path": [
+            "verify Ollama is serving, nomic-embed-text is pulled, ChromaDB is installed, and rebuild scripts/build_rag_index.py"
+          ],
+          "evidence_count": 0,
+          "evidence_refs": [],
+          "retrieval_status": "dependency_unavailable",
+          "source_id": "local_vector_rag",
+          "unavailable_reason": "vector RAG query failed or dependency unavailable: error returned from database: (code: 8) attempt to write a readonly database"
+        },
+        {
+          "correct_path": [],
+          "evidence_count": 8,
+          "evidence_refs": [
+            "CIEUStore_formal_memory",
+            "YstarGov_memory_store",
+            "Aiden_6D_brain",
+            "CIEU_to_brain_bridge",
+            "E116_E118_governed_brain_learning",
+            "E120_unknown_problem_learning_protocol",
+            "E24_legacy_CEO_knowledge_graph",
+            "file_backed_CEO_wisdom_corpus"
+          ],
+          "retrieval_status": "queried",
+          "source_id": "e123_memory_asset_discovery",
+          "unavailable_reason": ""
+        }
+      ],
+      "retrieved_evidence_pack": {
+        "evidence_items": [
+          {
+            "classification": "core_constitutional",
+            "evidence_ref": "governance/ACTIVE_OPERATING_CHARTER.md:7:Active charter mission",
+            "runtime_status": "retrieved",
+            "source_id": "repo_evidence_index",
+            "summary": "Y*Bridge Labs exists to prove that an AI agent team can autonomously operate a real company and produce real value."
+          },
+          {
+            "classification": "active_runtime_rule",
+            "evidence_ref": "governance/ACTIVE_OPERATING_CHARTER.md:24:Active runtime Mission Command",
+            "runtime_status": "retrieved",
+            "source_id": "repo_evidence_index",
+            "summary": "- Mission Command: owner mission to team plan, preflight, task split, approval queue, and next owner decision."
+          },
+          {
+            "classification": "active_runtime_rule",
+            "evidence_ref": "governance/ACTIVE_OPERATING_CHARTER.md:25:Active runtime Mission Command",
+            "runtime_status": "retrieved",
+            "source_id": "repo_evidence_index",
+            "summary": "- Y-star-gov company_runtime policy: permission tiers, admin rationalization, value alignment, and mission/action preflight."
+          },
+          {
+            "classification": "active_runtime_rule",
+            "evidence_ref": "governance/ACTIVE_OPERATING_CHARTER.md:26:Active runtime Mission Command",
+            "runtime_status": "retrieved",
+            "source_id": "repo_evidence_index",
+            "summary": "- gov-mcp company preflight tools: local preflight envelopes for company actions, missions, admin rules, value alignment, escalations, and owner decisions."
+          },
+          {
+            "classification": "active_runtime_rule",
+            "evidence_ref": "governance/ACTIVE_OPERATING_CHARTER.md:32:Administrative rationalization",
+            "runtime_status": "retrieved",
+            "source_id": "repo_evidence_index",
+            "summary": "- Old daily, weekly, and nightly reports are not active by default."
+          },
+          {
+            "classification": "active_runtime_rule",
+            "evidence_ref": "governance/ACTIVE_OPERATING_CHARTER.md:33:Administrative rationalization",
+            "runtime_status": "retrieved",
+            "source_id": "repo_evidence_index",
+            "summary": "- Old HN and LinkedIn calendars are historical unless reactivated for a current mission."
+          },
+          {
+            "classification": "active_runtime_rule",
+            "evidence_ref": "governance/ACTIVE_OPERATING_CHARTER.md:35:Administrative rationalization",
+            "runtime_status": "retrieved",
+            "source_id": "repo_evidence_index",
+            "summary": "- Old directive tracker items must be re-triaged before execution."
+          },
+          {
+            "classification": "replace_with_permission_tier",
+            "evidence_ref": "governance/ACTIVE_OPERATING_CHARTER.md:3:Approval model",
+            "runtime_status": "retrieved",
+            "source_id": "repo_evidence_index",
+            "summary": "This is the current active operating summary for Y*Bridge Labs. Historical governance, operations, and directive text remains useful evidence, but it is not automatically active unless this charter, a current mission, o\u2026"
+          },
+          {
+            "evidence_ref": "brain:product/ystar_defuse",
+            "hop": 0,
+            "runtime_status": "retrieved",
+            "source_id": "aiden_6d_brain",
+            "summary": "Product: ystar_defuse | activation=0.615 | path="
+          },
+          {
+            "evidence_ref": "brain:WHO_I_AM",
+            "hop": 0,
+            "runtime_status": "retrieved",
+            "source_id": "aiden_6d_brain",
+            "summary": "Who I Am | activation=0.308 | path=WHO_I_AM.md"
+          },
+          {
+            "evidence_ref": "brain:strategic/workaround_before_restart",
+            "hop": 0,
+            "runtime_status": "retrieved",
+            "source_id": "aiden_6d_brain",
+            "summary": "Workaround Before Restart (\u5148\u627e\u65c1\u8def\u518d\u8003\u8651\u91cd\u542f) | activation=0.308 | path=strategic/workaround_before_restart.md"
+          },
+          {
+            "evidence_ref": "brain:strategic/evidence_before_pitch",
+            "hop": 0,
+            "runtime_status": "retrieved",
+            "source_id": "aiden_6d_brain",
+            "summary": "Evidence Before Pitch (\u5148\u6709\u8bc1\u636e\u518d\u8c08\u5ba2\u6237) | activation=0.308 | path=strategic/evidence_before_pitch.md"
+          },
+          {
+            "evidence_ref": "brain:strategic/foundation_before_expansion",
+            "hop": 0,
+            "runtime_status": "retrieved",
+            "source_id": "aiden_6d_brain",
+            "summary": "Foundation Before Expansion (\u5730\u57fa\u4e0d\u7a33\u522b\u76d6\u697c) | activation=0.308 | path=strategic/foundation_before_expansion.md"
+          },
+          {
+            "evidence_ref": "brain:meta/retrospective_sandbox_workflow",
+            "hop": 0,
+            "runtime_status": "retrieved",
+            "source_id": "aiden_6d_brain",
+            "summary": "Retrospective Sandbox Workflow (\u7ecf\u9a8c\u63d0\u53d6\u6807\u51c6\u6d41\u7a0b) | activation=0.308 | path=meta/retrospective_sandbox_workflow.md"
+          },
+          {
+            "evidence_ref": "brain:meta/persistence_is_architecture",
+            "hop": 0,
+            "runtime_status": "retrieved",
+            "source_id": "aiden_6d_brain",
+            "summary": "Persistence Is Architecture (\u5b58\u4e0b\u6765 \u2260 \u5199\u4e2a note) | activation=0.308 | path=meta/persistence_is_architecture.md"
+          },
+          {
+            "evidence_ref": "brain:meta/sandbox_16h_counterfactual_replay",
+            "hop": 0,
+            "runtime_status": "retrieved",
+            "source_id": "aiden_6d_brain",
+            "summary": "16h Session Counterfactual Sandbox \u2014 \u5e73\u884c\u5b87\u5b99\u590d\u76d8 | activation=0.308 | path=meta/sandbox_16h_counterfactual_replay.md"
+          },
+          {
+            "evidence_ref": "operations/baseline/e87r_full_repo_baseline/baseline_summary.json",
+            "runtime_status": "retrieved",
+            "source_id": "code_index_or_capability_map",
+            "summary": "baseline_summary.json: keys=['L5_truth_table_summary', 'artifact_id', 'biggest_previous_misconception_corrected', 'code_counts', 'job_id', 'real_architecture_baseline']; counts={'L5_truth_table_summary': 4, 'code_counts': 10, 'real_architecture_baseline': 4}"
+          },
+          {
+            "evidence_ref": "operations/baseline/e87r_full_repo_baseline/architecture_evidence_map.json",
+            "runtime_status": "retrieved",
+            "source_id": "code_index_or_capability_map",
+            "summary": "architecture_evidence_map.json: keys=['artifact_id', 'domain_queries_used', 'domains']; counts={'domain_queries_used': 4, 'domains': 4}"
+          },
+          {
+            "evidence_ref": "operations/baseline/e87r_full_repo_baseline/stable_vocabulary_and_owner_map.json",
+            "runtime_status": "retrieved",
+            "source_id": "code_index_or_capability_map",
+            "summary": "stable_vocabulary_and_owner_map.json: keys=['artifact_id', 'guardrails', 'terms']; counts={'guardrails': 4, 'terms': 12}"
+          },
+          {
+            "evidence_ref": "operations/baseline/e87r_full_repo_baseline/code_index.json",
+            "runtime_status": "retrieved",
+            "source_id": "code_index_or_capability_map",
+            "summary": "code_index.json: keys=['artifact_id', 'counts', 'counts_by_repo', 'entrypoints', 'python_symbol_index', 'test_file_paths']; counts={'counts': 10, 'counts_by_repo': 3, 'entrypoints': 26987, 'python_symbol_index': 3085, 'test_file_paths': 1561}"
+          },
+          {
+            "evidence_ref": "CIEUStore_formal_memory",
+            "runtime_status": "retrieved",
+            "source_id": "e123_memory_asset_discovery",
+            "summary": "formal governance/evidence memory; all model choices must be written here"
+          },
+          {
+            "evidence_ref": "YstarGov_memory_store",
+            "runtime_status": "retrieved",
+            "source_id": "e123_memory_asset_discovery",
+            "summary": "SQLite-backed local long-term agent/team memory with decay, recall, reinforcement, access log"
+          },
+          {
+            "evidence_ref": "Aiden_6D_brain",
+            "runtime_status": "retrieved",
+            "source_id": "e123_memory_asset_discovery",
+            "summary": "Aiden 6D brain graph used by E93/E108/E116/E118; writes remain owner/backup gated"
+          },
+          {
+            "evidence_ref": "CIEU_to_brain_bridge",
+            "runtime_status": "retrieved",
+            "source_id": "e123_memory_asset_discovery",
+            "summary": "projects CIEU events into 6D brain space and records activations"
+          },
+          {
+            "evidence_ref": "E116_E118_governed_brain_learning",
+            "runtime_status": "retrieved",
+            "source_id": "e123_memory_asset_discovery",
+            "summary": "governed idle learning, evidence quality, and production brain write boundary"
+          },
+          {
+            "evidence_ref": "E120_unknown_problem_learning_protocol",
+            "runtime_status": "retrieved",
+            "source_id": "e123_memory_asset_discovery",
+            "summary": "teaches Aiden what to learn, which thinking modes/tools to use, and how to build knowledge graphs for unfamiliar problems"
+          },
+          {
+            "evidence_ref": "E24_legacy_CEO_knowledge_graph",
+            "runtime_status": "retrieved",
+            "source_id": "e123_memory_asset_discovery",
+            "summary": "early CEO knowledge graph, whole-ecosystem archaeology, route registry, and commercial path portfolio"
+          },
+          {
+            "evidence_ref": "file_backed_CEO_wisdom_corpus",
+            "runtime_status": "retrieved",
+            "source_id": "e123_memory_asset_discovery",
+            "summary": "local CEO principles, theory, paradigms, and self-knowledge files for long-term cognition"
+          }
+        ],
+        "human_summary": "Retrieved 28 items from 4 source families: aiden_6d_brain, code_index_or_capability_map, e123_memory_asset_discovery, repo_evidence_index. Unavailable but declared: cieu_store_history, local_vector_rag."
+      },
+      "source_coverage": {
+        "mandatory_source_ids": [
+          "repo_evidence_index",
+          "aiden_6d_brain",
+          "code_index_or_capability_map",
+          "cieu_store_history",
+          "ystar_memory_store",
+          "local_vector_rag"
+        ],
+        "queried_source_ids": [
+          "repo_evidence_index",
+          "aiden_6d_brain",
+          "code_index_or_capability_map",
+          "cieu_store_history",
+          "ystar_memory_store",
+          "local_vector_rag",
+          "e123_memory_asset_discovery"
+        ],
+        "satisfied_source_family_count": 4,
+        "satisfied_source_ids": [
+          "aiden_6d_brain",
+          "code_index_or_capability_map",
+          "e123_memory_asset_discovery",
+          "repo_evidence_index"
+        ],
+        "unavailable_source_ids": [
+          "cieu_store_history",
+          "local_vector_rag"
+        ]
+      },
+      "sufficiency_assessment": {
+        "actual_evidence_items": 28,
+        "correct_path": [],
+        "minimum_evidence_items_required": 5,
+        "recent_memory_only": false,
+        "sufficient_for_answer": true
+      },
+      "task_context": {
+        "agent_id": "Aiden",
+        "external_public_read_required": false,
+        "generation_mode": "retrieval_orchestrated_structured_output",
+        "high_wisdom_required": true,
+        "major_action": true,
+        "owner_message": "Aiden, explain whether you have RAG-like retrieval and use governed retrieval before answering.",
+        "task_objective": "retrieve relevant governed memory and evidence before Aiden answers or acts",
+        "task_type": "governance"
+      },
+      "truth_constraints": {
+        "CIEU_recording_bypassed": false,
+        "K9Audit_write_claim": false,
+        "customer_validation_claim": false,
+        "external_web_research_claim_without_provider": false,
+        "hidden_chain_of_thought_stored": false,
+        "live_provider_execution_claim": false,
+        "payment_claim": false,
+        "raw_natural_language_only_answer": false,
+        "recent_memory_only": false,
+        "retrieval_bypassed": false,
+        "revenue_claim": false,
+        "static_template_only": false
+      }
+    }
+  },
+  "source_map": {
+    "merged_systems": [
+      "office.aiden_meeting_room.repo_evidence_index",
+      "scripts.aiden_brain.activate",
+      "Y-star-gov CIEUStore",
+      "Y-star-gov MemoryStore when configured",
+      "scripts/build_rag_index.py Chroma/Ollama vector RAG when configured",
+      "E87R baseline code/capability artifacts",
+      "E123 long-term memory asset discovery"
+    ],
+    "milestone_id": "E125_Aiden_Retrieval_Orchestration_Runtime_R1",
+    "no_external_action_executed": true,
+    "source_ids": [
+      "repo_evidence_index",
+      "aiden_6d_brain",
+      "code_index_or_capability_map",
+      "cieu_store_history",
+      "ystar_memory_store",
+      "local_vector_rag",
+      "e123_memory_asset_discovery",
+      "external_public_read_runtime"
+    ],
+    "vector_rag_status": {
+      "correct_path": [
+        "verify Ollama is serving, nomic-embed-text is pulled, ChromaDB is installed, and rebuild scripts/build_rag_index.py"
+      ],
+      "evidence_count": 0,
+      "evidence_refs": [],
+      "retrieval_status": "dependency_unavailable",
+      "source_id": "local_vector_rag",
+      "unavailable_reason": "vector RAG query failed or dependency unavailable: error returned from database: (code: 8) attempt to write a readonly database"
+    }
+  },
+  "status": {
+    "CIEUStore_summary": {
+      "db_path": "/tmp/e125_report_cieu.db",
+      "event_count": 1,
+      "event_types": [
+        "AIDEN_RETRIEVAL_ORCHESTRATION_DECISION"
+      ]
+    },
+    "L5_truth_table_after": {
+      "L5-A": "complete_internal_runtime_foundation_with_governed_retrieval_orchestration",
+      "L5-B": "stronger_governed_intelligence_with_repo_brain_cieu_memory_and_vector_rag_orchestration",
+      "L5-C": "partial_dry_run_only",
+      "L5-D": "absent_or_not_executed",
+      "L5-E": "partial_safe_brain_learning_and_retrieval_backed_memory_growth"
+    },
+    "milestone_id": "E125_Aiden_Retrieval_Orchestration_Runtime_R1",
+    "retrieval_required_before_aiden_answer": true,
+    "status": "implemented_governed_retrieval_orchestration_runtime"
+  },
+  "what_was_not_claimed": [
+    "no live external research executed by retrieval orchestration",
+    "no customer validation",
+    "no revenue or payment evidence",
+    "no K9Audit write"
+  ]
+}

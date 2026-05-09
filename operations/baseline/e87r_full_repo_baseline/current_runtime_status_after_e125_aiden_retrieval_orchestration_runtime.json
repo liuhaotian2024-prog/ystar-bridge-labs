@@ -1,0 +1,19 @@
+{
+  "CIEUStore_summary": {
+    "db_path": "/tmp/e125_report_cieu.db",
+    "event_count": 1,
+    "event_types": [
+      "AIDEN_RETRIEVAL_ORCHESTRATION_DECISION"
+    ]
+  },
+  "L5_truth_table_after": {
+    "L5-A": "complete_internal_runtime_foundation_with_governed_retrieval_orchestration",
+    "L5-B": "stronger_governed_intelligence_with_repo_brain_cieu_memory_and_vector_rag_orchestration",
+    "L5-C": "partial_dry_run_only",
+    "L5-D": "absent_or_not_executed",
+    "L5-E": "partial_safe_brain_learning_and_retrieval_backed_memory_growth"
+  },
+  "milestone_id": "E125_Aiden_Retrieval_Orchestration_Runtime_R1",
+  "retrieval_required_before_aiden_answer": true,
+  "status": "implemented_governed_retrieval_orchestration_runtime"
+}

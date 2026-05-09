@@ -1,0 +1,33 @@
+{
+  "merged_systems": [
+    "office.aiden_meeting_room.repo_evidence_index",
+    "scripts.aiden_brain.activate",
+    "Y-star-gov CIEUStore",
+    "Y-star-gov MemoryStore when configured",
+    "scripts/build_rag_index.py Chroma/Ollama vector RAG when configured",
+    "E87R baseline code/capability artifacts",
+    "E123 long-term memory asset discovery"
+  ],
+  "milestone_id": "E125_Aiden_Retrieval_Orchestration_Runtime_R1",
+  "no_external_action_executed": true,
+  "source_ids": [
+    "repo_evidence_index",
+    "aiden_6d_brain",
+    "code_index_or_capability_map",
+    "cieu_store_history",
+    "ystar_memory_store",
+    "local_vector_rag",
+    "e123_memory_asset_discovery",
+    "external_public_read_runtime"
+  ],
+  "vector_rag_status": {
+    "correct_path": [
+      "verify Ollama is serving, nomic-embed-text is pulled, ChromaDB is installed, and rebuild scripts/build_rag_index.py"
+    ],
+    "evidence_count": 0,
+    "evidence_refs": [],
+    "retrieval_status": "dependency_unavailable",
+    "source_id": "local_vector_rag",
+    "unavailable_reason": "vector RAG query failed or dependency unavailable: error returned from database: (code: 8) attempt to write a readonly database"
+  }
+}
