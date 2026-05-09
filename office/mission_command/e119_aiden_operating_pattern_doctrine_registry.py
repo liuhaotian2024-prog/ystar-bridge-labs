@@ -35,6 +35,11 @@ def build_aiden_operating_pattern_doctrine_registry() -> dict[str, Any]:
         _pattern("thinking_mode_selection", "Select first-principles, systems, decision-theory, adversarial, and customer-empathy thinking modes.", ("unknown_problem",)),
         _pattern("content_type_freshness_policy", "Freshness must use content_type, not brittle keyword guesses.", ("durable_learning",)),
         _pattern("theory_case_peer_curriculum_coverage", "Idle learning must include classical theory, peer experience, historical cases, and customer-learning methodology.", ("durable_learning",)),
+        _pattern("host_autonomous_public_read_observer", "Aiden may observe the public web from the host only through read-only, no-side-effect operations.", ("autonomous_web_observation",)),
+        _pattern("autonomous_query_frontier_expansion", "Aiden must expand beyond recent-memory anchors with multi-round broad, contradiction, and adjacent-domain search.", ("autonomous_web_observation",)),
+        _pattern("public_read_no_side_effect_boundary", "Public web observation must forbid login, form submission, contact, payment, account creation, and private-data scraping.", ("autonomous_web_observation",)),
+        _pattern("local_gemma_runtime_boundary", "Local Gemma inference must be host-local, explicitly probed, and never silently replaced by an external provider.", ("local_llm",)),
+        _pattern("local_llm_no_external_provider", "If Gemma is unavailable, return a correct path instead of calling external LLM APIs.", ("local_llm",)),
     ]
     return {
         "registry_id": REGISTRY_ID,
@@ -83,6 +88,16 @@ def resolve_required_operating_patterns(action_context: Mapping[str, Any]) -> li
         )
     if action_context.get("durable_learning_related") is True:
         required.update({"content_type_freshness_policy", "theory_case_peer_curriculum_coverage"})
+    if action_context.get("autonomous_web_observation_related") is True:
+        required.update(
+            {
+                "host_autonomous_public_read_observer",
+                "autonomous_query_frontier_expansion",
+                "public_read_no_side_effect_boundary",
+            }
+        )
+    if action_context.get("local_llm_related") is True:
+        required.update({"local_gemma_runtime_boundary", "local_llm_no_external_provider"})
     return sorted(required)
 
 

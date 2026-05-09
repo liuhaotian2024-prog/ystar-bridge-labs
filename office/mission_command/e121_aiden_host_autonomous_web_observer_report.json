@@ -1,0 +1,113 @@
+{
+  "CIEUStore_summary": {
+    "db_path": "/tmp/e121_reports.db",
+    "event_type_counts": {
+      "AIDEN_HOST_AUTONOMOUS_WEB_OBSERVER_DECISION": 1,
+      "AIDEN_OPERATING_PATTERN_DOCTRINE_DECISION": 1,
+      "AIDEN_UNKNOWN_PROBLEM_LEARNING_PROTOCOL_DECISION": 1
+    },
+    "total_records": 3
+  },
+  "L5_truth_table_after": {
+    "L5-A": "complete_internal_runtime_foundation_with_host_public_read_observer_boundary",
+    "L5-B": "stronger_governed_intelligence_with_autonomous_public_read_world_observation_and_local_gemma_feasibility",
+    "L5-C": "partial_dry_run_only",
+    "L5-D": "absent_or_not_executed",
+    "L5-E": "partial_safe_brain_learning_with_source_dated_public_world_observation_candidates"
+  },
+  "base_hashes": {
+    "Y_star_gov": "7fdc267c421918eb6d239e91d3c3bcabcf1cddc7",
+    "bridge_labs": "d516f8beaaa59811f0c1334926545bbfdffa9709"
+  },
+  "evidence_summary": {
+    "accepted_count": 37,
+    "average_quality_score": 0.723,
+    "domain_count": 10,
+    "observation_mode": "dated_snapshot_public_read",
+    "rejected_count": 0
+  },
+  "host_run_command": "PYTHONPATH=. python3 -m office.mission_command.e121_aiden_host_autonomous_web_observer --use-host-live-network --cieu-db /tmp/e121_aiden_host_web_observer.db",
+  "local_gemma_feasibility": {
+    "available": false,
+    "can_embed_aiden": false,
+    "compatible_fallback_models": [
+      "gemma4:*",
+      "gemma3:*",
+      "gemma:*"
+    ],
+    "correct_path_if_missing": [
+      "Install/start Ollama on the Mac host.",
+      "Pull a Gemma4-compatible local model, for example `ollama pull gemma4` if available in the local Ollama library.",
+      "Rerun this probe and keep external_provider_api_used=false.",
+      "Route any Gemma-backed Aiden prompt through Y-star-gov before use."
+    ],
+    "external_provider_api_used": false,
+    "feasibility_conclusion": "Feasible but not active until Ollama and a Gemma4-compatible local model are installed on the Mac host.",
+    "model_name": "gemma4",
+    "official_research_refs": [
+      "https://developers.googleblog.com/en/introducing-gemma-4/",
+      "https://ollama.com/library/gemma4"
+    ],
+    "ollama_path": "/opt/homebrew/bin/ollama",
+    "preferred_model": "gemma4",
+    "private_data_exfiltration_allowed": false,
+    "probe_error": "ollama list exited 1",
+    "requested": false,
+    "runtime_host": "host-local",
+    "runtime_id": "local_ollama_gemma4_probe",
+    "side_effects_performed": false,
+    "status": "not_available"
+  },
+  "local_gemma_probe_command": "PYTHONPATH=. python3 -m office.mission_command.e121_aiden_host_autonomous_web_observer --require-local-gemma --cieu-db /tmp/e121_aiden_gemma_probe.db",
+  "milestone_id": "E121_Aiden_Host_Autonomous_Web_Observer_And_Local_Gemma_Runtime_R1",
+  "observer_governance_decision": {
+    "artifact_id": "aiden_host_autonomous_web_observer_decision",
+    "correct_path": [
+      "allow Aiden to observe public web evidence within the declared host-local no-side-effect boundary"
+    ],
+    "decision": "ALLOW",
+    "failed_section": null,
+    "guidance": {
+      "accepted_evidence_count": 37,
+      "local_gemma": "not_available",
+      "public_read_only": true
+    },
+    "passed": true,
+    "reason": "Aiden host autonomous web observation is public-read-only, source-dated, quality-gated, and governed",
+    "violations": []
+  },
+  "operating_pattern_decision": "ALLOW",
+  "truth_constraints": {
+    "K9Audit_integration_claim": false,
+    "customer_validation_claim": false,
+    "external_action_executed": false,
+    "external_llm_provider_used_for_local_gemma": false,
+    "form_submitted": false,
+    "live_provider_execution_claim": false,
+    "login_attempted": false,
+    "message_sent": false,
+    "payment_attempted": false,
+    "payment_claim": false,
+    "provider_action_executed": false,
+    "raw_unvalidated_codex_prompt_used": false,
+    "revenue_claim": false,
+    "scraped_private_data": false
+  },
+  "unknown_problem_learning_decision": "ALLOW",
+  "what_was_implemented": [
+    "host-local autonomous public-read observer packet",
+    "multi-round query frontier beyond recent-memory anchors",
+    "source-date and content-type freshness filtering",
+    "learning quality gate before durable observation use",
+    "Y-star-gov autonomous web observer contract",
+    "local Ollama/Gemma4 feasibility probe and no-external-provider boundary"
+  ],
+  "what_was_not_claimed": [
+    "not a literal exhaustive copy of the entire internet",
+    "no external action",
+    "no customer validation",
+    "no revenue/payment signal",
+    "no production brain write",
+    "no K9Audit integration"
+  ]
+}
