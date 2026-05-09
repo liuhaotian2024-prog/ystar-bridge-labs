@@ -10,8 +10,10 @@ from pathlib import Path
 from typing import Any, Mapping, Protocol
 
 from office.mission_command.e114_live_web_capability_utilized_strategy_run import (
-    build_host_live_public_read_provider,
     summarize_source_dates,
+)
+from office.mission_command.e108_live_global_open_world_strategy_runtime import (
+    DuckDuckGoLitePublicReadProvider,
 )
 
 
@@ -244,8 +246,8 @@ def collect_memo_public_read_evidence(
     selected_provider = provider
     provider_mode = "owner_supplied_public_read_provider"
     if selected_provider is None and allow_live_network:
-        selected_provider = build_host_live_public_read_provider()
-        provider_mode = "host_mac_live_public_read_provider"
+        selected_provider = DuckDuckGoLitePublicReadProvider()
+        provider_mode = "host_mac_live_duckduckgo_public_read_provider"
     if selected_provider is None:
         return []
 
@@ -267,6 +269,21 @@ def collect_memo_public_read_evidence(
                     "observed_at": _now(),
                     "provider_mode": provider_mode,
                     "evidence_type": "provider_failure",
+                }
+            )
+            continue
+        if not rows:
+            evidence.append(
+                {
+                    "evidence_id": f"memo_provider_no_result_{len(evidence) + 1:03d}",
+                    "source_title": "public-read provider returned no results",
+                    "source_url": "provider://no-result",
+                    "claim_summary": f"Provider returned no public-read rows for query {query}.",
+                    "query": query,
+                    "domain_id": "memo_investigation",
+                    "observed_at": _now(),
+                    "provider_mode": provider_mode,
+                    "evidence_type": "provider_no_result",
                 }
             )
             continue
@@ -362,10 +379,23 @@ def build_memo_strategic_analysis(
     allow_live_network: bool,
 ) -> dict[str, Any]:
     date_summary = summarize_source_dates(evidence)
+    provider_failure_count = sum(
+        1
+        for item in evidence
+        if str(item.get("evidence_type") or "") in {"provider_failure", "provider_no_result"}
+    )
+    public_evidence_count = max(0, len(evidence) - provider_failure_count)
     entity_names = [str(item.get("entity")) for item in entities]
     has_x402 = any(name.lower() == "x402" for name in entity_names)
     has_payment = any(name.lower() in {"usdc", "wallet", "stablecoin", "agent payments"} for name in entity_names)
-    public_read_status = "live_or_provider_public_read_attempted" if allow_live_network else "not_live_network_this_run"
+    if not allow_live_network:
+        public_read_status = "not_live_network_this_run"
+    elif provider_failure_count and public_evidence_count == 0:
+        public_read_status = "live_public_read_attempted_but_provider_failed_or_returned_no_results"
+    elif provider_failure_count:
+        public_read_status = "live_public_read_partial_with_provider_failures"
+    else:
+        public_read_status = "live_or_provider_public_read_attempted"
     immediate_verdict = (
         "这份 memo 应被当作“agent 经济支付/结算基础设施方向”的战略调查材料，而不是当前可直接执行的付款或外部联系授权。"
         if has_x402 or has_payment
@@ -389,9 +419,10 @@ def build_memo_strategic_analysis(
             "query_count": len(queries),
         },
         "public_read_status": public_read_status,
-        "evidence_count": len(evidence),
+        "evidence_count": public_evidence_count,
+        "provider_failure_count": provider_failure_count,
         "dated_evidence_count": date_summary["dated_count"],
-        "undated_evidence_count": date_summary["undated_count"],
+        "undated_evidence_count": max(0, date_summary["undated_count"] - provider_failure_count),
         "repo_matched_path_count": repo_relation.get("matched_path_count", 0),
         "strategic_verdict": immediate_verdict,
         "relation_to_labs": relation_to_labs,
@@ -425,6 +456,7 @@ def render_memo_investigation_owner_answer(analysis: Mapping[str, Any]) -> str:
         "2. 这轮证据状态\n"
         f"public-read 状态：{analysis['public_read_status']}\n"
         f"公开证据数量：{analysis['evidence_count']}；带日期证据：{analysis['dated_evidence_count']}；未带日期证据：{analysis['undated_evidence_count']}。\n"
+        f"provider 失败/无结果次数：{analysis.get('provider_failure_count', 0)}。\n"
         f"本仓库相关能力命中路径数：{analysis['repo_matched_path_count']}。\n\n"
         "3. Aiden 的初步战略判断\n"
         f"{analysis['strategic_verdict']}\n\n"

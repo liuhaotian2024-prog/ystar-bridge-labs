@@ -29,6 +29,11 @@ class FakeMemoPublicReadProvider:
         ][:max_results]
 
 
+class BrokenMemoPublicReadProvider:
+    def search(self, query: str, *, domain_id: str, max_results: int = 3) -> list[dict]:
+        raise OSError("network unavailable in test")
+
+
 def _repo_root() -> Path:
     return Path(__file__).resolve().parents[2]
 
@@ -112,3 +117,19 @@ def test_query_builder_uses_memo_entities_not_fixed_market_domains():
     assert "mission go" in query_text
     assert "construction bid" not in query_text
     assert "cpa review" not in query_text
+
+
+def test_memo_public_read_provider_failure_is_visible_not_silent(tmp_path):
+    result = run_aiden_memo_investigation_runtime(
+        _memo(),
+        cieu_db=tmp_path / "memo_provider_failure.db",
+        repo_root=_repo_root(),
+        ystar_gov_root=Path("/Users/haotianliu/.openclaw/workspace/Y-star-gov"),
+        public_read_provider=BrokenMemoPublicReadProvider(),
+        allow_live_network=True,
+    )
+    analysis = result["strategic_analysis"]
+    assert analysis["public_read_status"] == "live_public_read_attempted_but_provider_failed_or_returned_no_results"
+    assert analysis["evidence_count"] == 0
+    assert analysis["provider_failure_count"] >= 1
+    assert "provider 失败/无结果次数" in result["owner_facing_answer"]
