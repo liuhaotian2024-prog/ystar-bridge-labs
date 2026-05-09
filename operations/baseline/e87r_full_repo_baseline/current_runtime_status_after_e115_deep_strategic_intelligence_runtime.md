@@ -1,0 +1,7 @@
+# Current Runtime Status After E115
+
+- L5-A: complete_internal_runtime_foundation_with_capability_utilization_law
+- L5-B: stronger_structured_governed_intelligence_with_deep_strategy_dossier
+- L5-C: partial_dry_run_only
+- L5-D: absent_or_not_executed
+- L5-E: partial_CIEU_backed_brain_learning_candidate_loop_no_production_brain_write

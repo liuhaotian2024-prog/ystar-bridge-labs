@@ -37,7 +37,7 @@ def test_aiden_ascii_prefix_routes_to_governed_meeting_room(tmp_path):
     assert "Runtime governance:" in route.response_text
 
 
-def test_aiden_strategy_question_auto_upgrades_to_universal_controlled_open_world_runtime(tmp_path):
+def test_aiden_strategy_question_auto_upgrades_to_deep_strategic_runtime(tmp_path):
     route = route_chat_message_to_aiden_meeting_room(
         "Aiden：你提出的给小会计事务所出那个类似于workflow的东西，你到底是怎么想的？",
         repo_root=REPO_ROOT,
@@ -48,21 +48,15 @@ def test_aiden_strategy_question_auto_upgrades_to_universal_controlled_open_worl
         allow_live_network=False,
     )
 
-    assert route.route == "aiden_ceo_strategy_runtime"
-    assert route.protocol == "AidenStrategyRuntimeV1"
-    assert "CEO Strategy Runtime: E110_LABS_UNIVERSAL_OPERATING_CONTROL_PLANE" in route.response_text
-    assert "Y-star-gov universal control decision: ALLOW" in route.response_text
-    assert "Y-star-gov live-global decision: ALLOW" in route.response_text
-    assert "Y-star-gov math model decision: ALLOW" in route.response_text
-    assert "Universal required capability gates:" in route.response_text
-    assert "scan_mode: owner_supplied_live_public_read" in route.response_text
-    assert "scan domains:" in route.response_text
-    assert "route candidates:" in route.response_text
-    assert "Competitor and substitute analysis:" in route.response_text
-    assert "latest source freshness gate: true" in route.response_text
-    assert "Market-first mathematical ranking:" in route.response_text
-    assert "Anchor proximity audit:" in route.response_text
-    assert "selected_route_is_prior_anchor_clone: false" in route.response_text
+    assert route.route == "aiden_ceo_deep_strategic_intelligence_runtime"
+    assert route.protocol == "AidenDeepStrategicIntelligenceRuntimeV1"
+    assert "CEO Strategy Runtime: E115_AIDEN_DEEP_STRATEGIC_INTELLIGENCE_RUNTIME" in route.response_text
+    assert "Y-star-gov deep strategy decision: ALLOW" in route.response_text
+    assert "Concrete product shape:" in route.response_text
+    assert "Deep reasoning dimensions:" in route.response_text
+    assert "Competitors and substitutes:" in route.response_text
+    assert "Right to win / right to lose:" in route.response_text
+    assert "Assumptions to test:" in route.response_text
     assert "No external action was executed" in route.response_text
 
 

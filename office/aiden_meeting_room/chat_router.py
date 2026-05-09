@@ -23,6 +23,9 @@ from office.mission_command.e111_aiden_host_runtime_and_autonomy_control_plane i
 from office.mission_command.e114_live_web_capability_utilized_strategy_run import (
     run_e114_live_web_capability_utilized_strategy_run,
 )
+from office.mission_command.e115_deep_strategic_intelligence_runtime import (
+    run_e115_deep_strategic_intelligence_runtime,
+)
 
 
 AIDEN_MEETING_ROOM_PREFIXES = ("Aiden:", "Aiden：", "aiden:", "aiden：")
@@ -30,6 +33,7 @@ MEETING_ROOM_PROTOCOL = "AidenPrefixV1"
 STRATEGY_RUNTIME_PROTOCOL = "AidenStrategyRuntimeV1"
 HOST_RUNTIME_PROTOCOL = "AidenHostRuntimeV1"
 LIVE_WEB_STRATEGY_RUNTIME_PROTOCOL = "AidenLiveWebCapabilityStrategyRuntimeV1"
+DEEP_STRATEGY_RUNTIME_PROTOCOL = "AidenDeepStrategicIntelligenceRuntimeV1"
 
 _STRATEGY_RUNTIME_TERMS = (
     "strategy",
@@ -269,6 +273,67 @@ def render_aiden_live_web_capability_strategy_response(result: dict[str, Any]) -
         "Boundary:\n"
         "No external action was executed. No customer validation, pricing validation, paid signal, payment, revenue, "
         "live provider execution, K9Audit integration, or production brain write is claimed."
+    )
+
+
+def render_aiden_deep_strategic_intelligence_response(result: dict[str, Any]) -> str:
+    dossier = result["deep_strategy_dossier"]
+    selected = dossier["selected_route_thesis"]
+    product = dossier["product_shape"]
+    market = dossier["market_map"]
+    competitors = dossier["competitive_landscape"]["competitors_and_substitutes"][:7]
+    assumptions = dossier["assumption_registry"]
+    dimensions = dossier["deep_reasoning_dimensions"]
+    competitor_lines = "\n".join(
+        f"- {row['name']}: {row['how_they_solve']} | threat={row['threat_level']}"
+        for row in competitors
+    )
+    deliverable_lines = "\n".join(f"- {item}" for item in product["buyer_visible_deliverables"])
+    assumption_lines = "\n".join(
+        f"- {item['assumption_id']}: {item['claim']} | falsify if: {item['falsification_condition']}"
+        for item in assumptions
+    )
+    dimension_lines = "\n".join(
+        f"- {item['dimension_id']}: {item['conclusion']}"
+        for item in dimensions
+    )
+    return (
+        "CEO Strategy Runtime: E115_AIDEN_DEEP_STRATEGIC_INTELLIGENCE_RUNTIME\n"
+        "This Aiden strategy answer was upgraded from route ranking into a governed deep strategy dossier. "
+        "It must include product shape, ICP, competitors/substitutes, right-to-win/right-to-lose, pricing hypothesis, "
+        "distribution path, CZL residual closure, assumptions, falsification, and CIEU-backed learning boundaries.\n\n"
+        f"Y-star-gov deep strategy decision: {result['YstarGov_deep_strategy_write_result']['governance_decision']['decision']}\n"
+        f"Deep strategy runtime proven: {str(result['deep_strategy_runtime_proven']).lower()}\n"
+        f"CIEU events: {result['CIEUStore_summary']['event_count']}\n"
+        f"Evidence count: {market['evidence_count']}\n"
+        f"Dated evidence: {market['source_date_coverage']['dated_count']}\n"
+        f"Opportunity clusters: {market['opportunity_cluster_count']}\n\n"
+        "Selected thesis:\n"
+        f"- route_id: {selected['selected_route_id']}\n"
+        f"- thesis: {selected['thesis']}\n"
+        f"- second_best_path: {selected['second_best_path']}\n"
+        f"- falsification: {selected['falsification_condition']}\n\n"
+        "Concrete product shape:\n"
+        f"- product: {product['product_name']}\n"
+        f"- buyer outcome: {product['buyer_visible_outcome']}\n"
+        f"{deliverable_lines}\n\n"
+        "Deep reasoning dimensions:\n"
+        f"{dimension_lines}\n\n"
+        "Competitors and substitutes:\n"
+        f"{competitor_lines}\n\n"
+        "Right to win / right to lose:\n"
+        f"- assets: {', '.join(dossier['right_to_win_and_right_to_lose']['right_to_win_assets'][:5])}\n"
+        f"- risks: {', '.join(dossier['right_to_win_and_right_to_lose']['right_to_lose_risks'][:4])}\n\n"
+        "Assumptions to test:\n"
+        f"{assumption_lines}\n\n"
+        "Next experiment boundary:\n"
+        f"- experiment_id: {dossier['experiment_design']['experiment_id']}\n"
+        f"- owner_decision_required: {str(dossier['experiment_design']['owner_decision_required']).lower()}\n"
+        f"- no_send_default: {str(dossier['experiment_design']['no_send_default']).lower()}\n"
+        f"- external_action_executed: {str(dossier['experiment_design']['external_action_executed']).lower()}\n\n"
+        "Boundary:\n"
+        "No external action was executed. No customer validation, pricing validation, paid signal, payment, revenue, "
+        "live provider execution, production brain write, or K9Audit integration is claimed."
     )
     route_lines = "\n".join(
         f"- {item['route_id']}: {item['first_cash_score']}" for item in route_scores
@@ -599,6 +664,35 @@ def run_aiden_live_web_capability_strategy_runtime(
     )
 
 
+def run_aiden_deep_strategy_runtime(
+    owner_message: str,
+    *,
+    repo_root: Path | None = None,
+    cieu_db: str | Path | None = None,
+    brain_db: Path | None = None,
+    ystar_gov_root: Path | None = None,
+    live_public_read_provider: Any | None = None,
+    allow_live_network: bool = True,
+) -> AidenChatRoute:
+    root = repo_root or Path(__file__).resolve().parents[2]
+    selected_cieu_db = Path(cieu_db) if cieu_db is not None else default_aiden_strategy_cieu_db(root)
+    result = run_e115_deep_strategic_intelligence_runtime(
+        cieu_db=selected_cieu_db,
+        owner_intent=owner_message,
+        brain_db=brain_db,
+        ystar_gov_root=ystar_gov_root,
+        use_host_live_network=allow_live_network and live_public_read_provider is None,
+        seal_session=True,
+    )
+    return AidenChatRoute(
+        route="aiden_ceo_deep_strategic_intelligence_runtime",
+        prefixed=True,
+        owner_message=owner_message,
+        response_text=render_aiden_deep_strategic_intelligence_response(result),
+        protocol=DEEP_STRATEGY_RUNTIME_PROTOCOL,
+    )
+
+
 def route_chat_message_to_aiden_meeting_room(
     message: str,
     *,
@@ -646,8 +740,8 @@ def route_chat_message_to_aiden_meeting_room(
             allow_live_network=allow_live_network,
         )
 
-    if is_aiden_live_web_strategy_runtime_message(owner_message):
-        return run_aiden_live_web_capability_strategy_runtime(
+    if is_aiden_strategy_runtime_message(owner_message):
+        return run_aiden_deep_strategy_runtime(
             owner_message,
             repo_root=repo_root,
             cieu_db=cieu_db,
@@ -657,8 +751,8 @@ def route_chat_message_to_aiden_meeting_room(
             allow_live_network=allow_live_network,
         )
 
-    if is_aiden_strategy_runtime_message(owner_message):
-        return run_aiden_strategy_runtime(
+    if is_aiden_live_web_strategy_runtime_message(owner_message):
+        return run_aiden_live_web_capability_strategy_runtime(
             owner_message,
             repo_root=repo_root,
             cieu_db=cieu_db,
@@ -689,7 +783,7 @@ def answer_aiden_prefixed_message(message: str, **kwargs: Any) -> str:
     """Return the governed Aiden response for an explicit ``Aiden:`` message."""
 
     route = route_chat_message_to_aiden_meeting_room(message, **kwargs)
-    if route.route in {"aiden_ceo_strategy_runtime", "aiden_ceo_host_runtime", "aiden_ceo_live_web_capability_strategy_runtime"}:
+    if route.route in {"aiden_ceo_strategy_runtime", "aiden_ceo_host_runtime", "aiden_ceo_live_web_capability_strategy_runtime", "aiden_ceo_deep_strategic_intelligence_runtime"}:
         return route.response_text or build_empty_aiden_prefix_revision()
     if route.route != "aiden_ceo_meeting_room":
         return (
@@ -705,6 +799,7 @@ __all__ = [
     "MEETING_ROOM_PROTOCOL",
     "HOST_RUNTIME_PROTOCOL",
     "LIVE_WEB_STRATEGY_RUNTIME_PROTOCOL",
+    "DEEP_STRATEGY_RUNTIME_PROTOCOL",
     "STRATEGY_RUNTIME_PROTOCOL",
     "answer_aiden_prefixed_message",
     "build_empty_aiden_prefix_revision",
@@ -715,6 +810,7 @@ __all__ = [
     "is_aiden_strategy_runtime_message",
     "render_aiden_host_runtime_response",
     "render_aiden_live_web_capability_strategy_response",
+    "render_aiden_deep_strategic_intelligence_response",
     "render_aiden_universal_control_strategy_runtime_response",
     "render_aiden_strategy_runtime_response",
     "render_aiden_live_global_strategy_runtime_response",
@@ -722,5 +818,6 @@ __all__ = [
     "run_aiden_strategy_runtime",
     "run_aiden_host_runtime",
     "run_aiden_live_web_capability_strategy_runtime",
+    "run_aiden_deep_strategy_runtime",
     "strip_aiden_meeting_room_prefix",
 ]
