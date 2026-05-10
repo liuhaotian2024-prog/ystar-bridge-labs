@@ -42,3 +42,33 @@ def test_dry_run_does_not_install_launchagent(tmp_path: Path) -> None:
     assert result["dry_run"] is True
     assert result["installed"] is False
     assert result["target"].endswith(f"{LABEL}.plist")
+
+
+def test_install_report_uses_dict_results_for_bootout(monkeypatch, tmp_path: Path) -> None:
+    import aiden_messenger_service_install as installer
+
+    calls = []
+
+    def fake_run(args):
+        calls.append(args)
+        if args[:2] == ["/usr/bin/curl", "-sS"]:
+            return {"command": args, "returncode": 0, "stdout": '{"ok": true}', "stderr": ""}
+        return {"command": args, "returncode": 0, "stdout": "", "stderr": ""}
+
+    class FakeCompleted:
+        returncode = 0
+        stdout = ""
+        stderr = ""
+
+    monkeypatch.setattr(installer, "_run", fake_run)
+    monkeypatch.setattr(installer, "_uid", lambda: "501")
+    monkeypatch.setattr(installer.subprocess, "run", lambda *args, **kwargs: FakeCompleted())
+    monkeypatch.setattr(installer.Path, "home", lambda: tmp_path / "home")
+
+    result = install_launch_agent(repo_root=tmp_path / "repo", ystar_gov_root=tmp_path / "Y-star-gov")
+
+    assert result["installed"] is True
+    assert result["bootout_returncode"] == 0
+    assert result["bootout_stderr"] == ""
+    assert result["health_returncode"] == 0
+    assert calls
