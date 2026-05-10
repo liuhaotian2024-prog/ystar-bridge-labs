@@ -37,6 +37,28 @@ def test_engineering_task_selects_codex_executor_boundary() -> None:
     assert selected["model_id"] == "codex_executor"
 
 
+def test_owner_facing_reply_surface_never_selects_codex_executor_for_answer() -> None:
+    task = classify_aiden_task("Aiden，请你现在实现这个工程任务。")
+
+    selected = select_model_for_task(task, execution_surface="owner_facing_reply")
+
+    assert selected["model_id"] == "local_gemma4_e4b"
+    assert selected["surface_constraint_applied"] is True
+    assert selected["routed_from_model_id"] == "codex_executor"
+
+
+def test_owner_facing_reply_packet_uses_generating_model_even_for_engineering_words(tmp_path) -> None:
+    packet = build_model_orchestration_packet(
+        "Aiden，请你现在实现这个工程任务。",
+        cieu_db=tmp_path / "e123_owner_reply.db",
+        execution_surface="owner_facing_reply",
+    )
+
+    assert packet["task_context"]["task_type"] == "engineering_execution"
+    assert packet["selected_model"]["model_id"] == "local_gemma4_e4b"
+    assert packet["selected_model"]["routed_from_model_id"] == "codex_executor"
+
+
 def test_packet_contains_memory_plan_quality_plan_and_no_direct_policy_mutation(tmp_path) -> None:
     packet = build_model_orchestration_packet(
         "Aiden should decide which model to use for a private local memory task.",

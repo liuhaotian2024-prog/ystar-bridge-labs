@@ -109,3 +109,27 @@ def test_governed_real_model_invocation_records_actual_resolved_model(tmp_path):
     assert proof["actual_generation_executed"] is True
     assert proof["model_name"] == "gemma3:4b"
     assert proof["raw_result_metadata"]["installed_models"] == ["gemma3:4b"]
+
+
+def test_owner_facing_reply_does_not_try_to_execute_codex_as_model(tmp_path):
+    def fake_invoker(model_name, prompt, context):
+        assert context["selected_model_id"] == "local_gemma4_e4b"
+        return {
+            "provider": "fake_local_ollama",
+            "model": "gemma3:4b",
+            "text": "Aiden 使用真实生成模型回答，然后再决定是否生成 CEOImplementationOrder 给 Codex。",
+            "latency_ms": 12,
+            "error": None,
+        }
+
+    result = run_governed_real_model_invocation(
+        owner_text="Aiden，请你现在实现这个工程任务，并给我解释下一步。",
+        retrieval_context_summary="engineering context is present",
+        cieu_db=tmp_path / "e149_no_codex_reply.db",
+        real_model_invoker=fake_invoker,
+    )
+
+    selected = result["model_orchestration_result"]["model_orchestration_packet"]["selected_model"]
+    assert selected["model_id"] == "local_gemma4_e4b"
+    assert selected["routed_from_model_id"] == "codex_executor"
+    assert result["reply_backend"] == "governed_real_local_model_invocation"

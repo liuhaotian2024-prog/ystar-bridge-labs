@@ -47,6 +47,7 @@ def run_governed_real_model_invocation(
         task_id=f"e149_owner_reply_{uuid.uuid4().hex[:8]}",
         ystar_gov_root=ystar_gov_root,
         owner_approved_external_model_use=owner_approved_external_model_use,
+        execution_surface="owner_facing_reply",
     )
     decision = orchestration["YstarGov_model_orchestration_result"]["governance_decision"]
     selected = orchestration["model_orchestration_packet"]["selected_model"]

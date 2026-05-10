@@ -16,6 +16,8 @@ BRIDGE_ROOT = Path(os.environ.get("YSTAR_BRIDGE_LABS_ROOT", Path(__file__).resol
 Y_GOV_ROOT = Path(os.environ.get("YSTAR_GOV_ROOT", "/Users/haotianliu/.openclaw/workspace/Y-star-gov"))
 GOV_MCP_ROOT = Path(os.environ.get("GOV_MCP_ROOT", "/Users/haotianliu/.openclaw/workspace/gov-mcp"))
 HOST_RUNTIME_BRIDGE_ROOT = Path(os.environ.get("YSTAR_HOST_RUNTIME_BRIDGE_ROOT", "/tmp/ystar_host_runtime_bridge"))
+OWNER_FACING_REPLY_SURFACES = {"owner_facing_reply", "aiden_owner_reply", "meeting_room_reply"}
+REPLY_EXECUTABLE_MODEL_IDS = {"local_gemma4_e4b", "local_ystar_gemma", "external_gpt", "external_claude"}
 
 
 def discover_local_long_term_memory_assets(
@@ -229,18 +231,55 @@ def classify_aiden_task(owner_intent: str, *, task_id: str = "e123_owner_task") 
     }
 
 
-def select_model_for_task(task_context: Mapping[str, Any], *, owner_approved_external_model_use: bool = False) -> dict[str, Any]:
+def select_model_for_task(
+    task_context: Mapping[str, Any],
+    *,
+    owner_approved_external_model_use: bool = False,
+    execution_surface: str = "general",
+) -> dict[str, Any]:
     task_type = str(task_context.get("task_type") or "")
     privacy = str(task_context.get("privacy_tier") or "")
+    base_selection: dict[str, Any]
     if task_type == "governance_validation":
-        return {"model_id": "deterministic_validator", "role": "validator", "selection_reason": "deterministic governance task"}
-    if task_type == "engineering_execution":
-        return {"model_id": "codex_executor", "role": "executor", "selection_reason": "repo implementation requires Codex executor boundary"}
-    if task_type == "high_wisdom_strategy" and owner_approved_external_model_use and privacy != "local_private":
-        return {"model_id": "external_gpt", "role": "frontier_reasoner", "selection_reason": "owner-approved frontier synthesis for public/low-sensitivity strategy"}
-    if task_type == "high_wisdom_strategy":
-        return {"model_id": "local_gemma4_e4b", "role": "local_reasoner", "selection_reason": "no owner-approved external model boundary; use local model plus deterministic validators"}
-    return {"model_id": "local_gemma4_e4b", "role": "local_reasoner", "selection_reason": "low/medium private local reasoning at low cost"}
+        base_selection = {"model_id": "deterministic_validator", "role": "validator", "selection_reason": "deterministic governance task"}
+    elif task_type == "engineering_execution":
+        base_selection = {
+            "model_id": "codex_executor",
+            "role": "executor",
+            "selection_reason": "repo implementation requires Codex executor boundary",
+        }
+    elif task_type == "high_wisdom_strategy" and owner_approved_external_model_use and privacy != "local_private":
+        base_selection = {
+            "model_id": "external_gpt",
+            "role": "frontier_reasoner",
+            "selection_reason": "owner-approved frontier synthesis for public/low-sensitivity strategy",
+        }
+    elif task_type == "high_wisdom_strategy":
+        base_selection = {
+            "model_id": "local_gemma4_e4b",
+            "role": "local_reasoner",
+            "selection_reason": "no owner-approved external model boundary; use local model plus deterministic validators",
+        }
+    else:
+        base_selection = {
+            "model_id": "local_gemma4_e4b",
+            "role": "local_reasoner",
+            "selection_reason": "low/medium private local reasoning at low cost",
+        }
+
+    if execution_surface in OWNER_FACING_REPLY_SURFACES and base_selection["model_id"] not in REPLY_EXECUTABLE_MODEL_IDS:
+        return {
+            "model_id": "local_gemma4_e4b",
+            "role": "local_reasoner",
+            "selection_reason": (
+                "owner-facing Aiden reply requires a generative CEO model; "
+                f"{base_selection['model_id']} remains available only as a downstream tool/executor boundary"
+            ),
+            "surface_constraint_applied": True,
+            "routed_from_model_id": base_selection["model_id"],
+            "downstream_boundary_preserved": base_selection,
+        }
+    return base_selection
 
 
 def build_model_orchestration_packet(
@@ -249,13 +288,19 @@ def build_model_orchestration_packet(
     cieu_db: str | Path,
     task_id: str = "e123_owner_task",
     owner_approved_external_model_use: bool = False,
+    execution_surface: str = "general",
     bridge_root: str | Path | None = None,
     ystar_gov_root: str | Path | None = None,
     gov_mcp_root: str | Path | None = None,
 ) -> dict[str, Any]:
     task = classify_aiden_task(owner_intent, task_id=task_id)
+    task["execution_surface"] = execution_surface
     catalog = build_model_tool_catalog()
-    selected = select_model_for_task(task, owner_approved_external_model_use=owner_approved_external_model_use)
+    selected = select_model_for_task(
+        task,
+        owner_approved_external_model_use=owner_approved_external_model_use,
+        execution_surface=execution_surface,
+    )
     memory_discovery = discover_local_long_term_memory_assets(
         bridge_root=bridge_root,
         ystar_gov_root=ystar_gov_root,
@@ -277,6 +322,7 @@ def build_model_orchestration_packet(
             "context_size": task["context_size"],
             "cost_sensitivity": "prefer_local_low_cost_then_escalate",
             "required_wisdom_level": task["required_wisdom_level"],
+            "execution_surface": execution_surface,
         },
         "candidate_models": catalog,
         "selected_model": selected,
@@ -343,6 +389,7 @@ def run_aiden_model_orchestration_session(
     task_id: str = "e123_owner_task",
     ystar_gov_root: str | Path | None = None,
     owner_approved_external_model_use: bool = False,
+    execution_surface: str = "general",
     seal_session: bool = False,
 ) -> dict[str, Any]:
     packet = build_model_orchestration_packet(
@@ -350,6 +397,7 @@ def run_aiden_model_orchestration_session(
         cieu_db=cieu_db,
         task_id=task_id,
         owner_approved_external_model_use=owner_approved_external_model_use,
+        execution_surface=execution_surface,
         ystar_gov_root=ystar_gov_root,
     )
     gov = _load_ystar_module("ystar.governance.aiden_model_orchestration_contract", ystar_gov_root)
