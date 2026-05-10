@@ -91,6 +91,7 @@ def run_aiden_memo_investigation_runtime(
     repo_relation = scan_labs_relation_to_memo(owner_message, repo_root=base, entities=entities)
     suitability = build_runtime_suitability_gate(owner_message)
     analysis = build_memo_strategic_analysis(
+        owner_message=owner_message,
         metadata=metadata,
         entities=entities,
         claims=claims,
@@ -370,6 +371,7 @@ def build_runtime_suitability_gate(owner_message: str) -> dict[str, Any]:
 
 def build_memo_strategic_analysis(
     *,
+    owner_message: str,
     metadata: Mapping[str, Any],
     entities: list[Mapping[str, Any]],
     claims: list[Mapping[str, Any]],
@@ -412,6 +414,11 @@ def build_memo_strategic_analysis(
         "我们能做的治理差异化，以及是否值得进入 owner-approved 技术预研。"
     )
     evidence_digest = build_evidence_digest(evidence)
+    strat002_dossier = build_strat002_deep_strategy_dossier(
+        owner_message=owner_message,
+        evidence_digest=evidence_digest,
+        repo_relation=repo_relation,
+    )
     claim_verification_matrix = build_claim_verification_matrix(claims=claims, evidence_digest=evidence_digest)
     strategic_implications = build_memo_strategic_implications(
         entity_names=entity_names,
@@ -450,6 +457,7 @@ def build_memo_strategic_analysis(
         "strategic_implications": strategic_implications,
         "opportunity_map": opportunity_map,
         "decision_recommendation": decision_recommendation,
+        "strat002_deep_strategy_dossier": strat002_dossier,
         "relation_to_labs": relation_to_labs,
         "what_is_not_proven": [
             "没有证明 x402/Mission GO 已经和 Labs 集成",
@@ -465,6 +473,126 @@ def build_memo_strategic_analysis(
         ],
         "recommended_next_action": next_step,
         "owner_decision_packet_status": "not_sent_prepare_no_send_investigation_packet_only",
+    }
+
+
+def build_strat002_deep_strategy_dossier(
+    *,
+    owner_message: str,
+    evidence_digest: list[Mapping[str, Any]],
+    repo_relation: Mapping[str, Any],
+) -> dict[str, Any]:
+    text = owner_message.lower()
+    is_strat002 = "strat-002" in text or ("x402" in text and ("e34" in text or "defuse" in text or "mining plant" in text))
+    if not is_strat002:
+        return {"applies": False, "reason": "memo is not STRAT-002 style x402/Mission GO investigation"}
+
+    evidence_ids = [str(row.get("evidence_id")) for row in evidence_digest[:6]]
+    return {
+        "applies": True,
+        "answer_to_owner_question": (
+            "x402 改变的是“agent 买方可以机器化付款/调用”的基础设施条件，"
+            "但没有自动证明 Y* 应该做支付执行或公开 launch。最干净路径是：把 Mission GO 资产包装成 "
+            "agent-to-agent trust/receipt/preflight 服务面，而不是做钱包或支付处理商。"
+        ),
+        "path_sequencing": {
+            "decision": "parallel_research_not_replacement",
+            "why": (
+                "Plugin/Mining Plant 仍是面向人类开发者和平台分发的主线；x402 是面向 agent buyer 的第二表面。"
+                "当前证据支持并行 no-send 预研，不支持替代 Plugin 主线。"
+            ),
+            "resource_rule": "只允许小范围 owner-review packet 与 technical spike；不得挤占 Plugin mainline execution capacity。",
+        },
+        "e34_rescore": [
+            {
+                "item": "void_10_agent_to_agent_payment",
+                "movement": "commercial_reality_up",
+                "reason": "payment rail/bazaar/gateway infrastructure now exists; governance half remains open.",
+                "evidence_refs": evidence_ids,
+            },
+            {
+                "item": "opportunity_space_05_autonomous_chain_of_custody_receipt_standard",
+                "movement": "priority_up",
+                "reason": "paid agent calls require receipts, delivery proof, dispute evidence, and replayable audit trails.",
+                "evidence_refs": evidence_ids,
+            },
+            {
+                "item": "opportunity_space_17_autonomous_approval_mandate_compiler",
+                "movement": "priority_up",
+                "reason": "AP2/x402-style payment flows need machine-readable authorization and spending mandates.",
+                "evidence_refs": evidence_ids,
+            },
+            {
+                "item": "opportunity_space_22_residual_risk_marketplace_for_agent_actions",
+                "movement": "watchlist_up_not_build_now",
+                "reason": "risk residual pricing becomes more concrete when agent actions have payment events, but buyer demand remains unproven.",
+                "evidence_refs": evidence_ids,
+            },
+            {
+                "item": "generic_low_price_gov_check_endpoint",
+                "movement": "priority_down",
+                "reason": "sub-cent generic endpoints push Y* into STRAT-001 speed-race, not trust-race.",
+                "evidence_refs": evidence_ids,
+            },
+        ],
+        "asset_to_surface_matching": [
+            {
+                "asset": "gov-mcp outbound state machine",
+                "surface": "x402/payment intent preflight verifier",
+                "fit": "strong",
+                "why": "already models sandbox/dry-run/canary/live promotion, kill switch, receipts, and no-send/no-payment boundaries.",
+            },
+            {
+                "asset": "CIEUStore + K9 sentinel",
+                "surface": "agent action receipt and chain-of-custody proof object",
+                "fit": "strong_but_multi_tenant_needed",
+                "why": "maps naturally to payable proof/receipt demand, but current deployment is single-tenant/local.",
+            },
+            {
+                "asset": "counterfactual_engine / Pearl L3 SCM",
+                "surface": "counterfactual risk proof for paid agent actions",
+                "fit": "potentially_differentiated_requires_competitor_verification",
+                "why": "could be more defensible than generic LLM-judge guardrails, but must be compared against Promptfoo/Galileo/Maxim/Braintrust/Langfuse-class tooling.",
+            },
+            {
+                "asset": "OmissionEngine / Narrative Coherence / ClaimMismatch",
+                "surface": "tool receipt verifier and obligation-gap detector for paid agent work",
+                "fit": "strong_if_packaged_as evidence audit not generic governance",
+                "why": "payment events increase the cost of missing obligations and false tool-use claims.",
+            },
+        ],
+        "defuse_revival": {
+            "decision": "re_surface_as_capability_under_y_provider_identity_not_standalone_brand",
+            "why": (
+                "owner rejected brand-conflict reason, but duplication and premature launch constraints remain. "
+                "Endpoint exposure under Y* provider identity can be evaluated; PyPI/Show HN/independent Defuse brand remains forbidden."
+            ),
+            "required_gate": "dead_path revival evaluation plus no independent launch proof",
+        },
+        "multi_tenant_cost_scope": [
+            "tenant-scoped CIEU databases or tenant_id isolation with access-control tests",
+            "K9 sentinel per-tenant stream isolation instead of owner-machine PID coupling",
+            "provider receipt retention, idempotency, replay protection, and audit export",
+            "wallet/payment credential never exposed to Aiden; only payment-intent preflight until owner/Board approves live path",
+            "patent/IP review before exposing P3/P4-adjacent mechanisms as public APIs",
+        ],
+        "patent_boundary": {
+            "safe_default": "externalize proof artifacts and preflight outputs, not the full self-governing core mechanism",
+            "requires_counsel": ["P3 SRGCS self-referential governance closure", "P4 OmissionEngine claim scope"],
+            "productization_rule": "API output can be a receipt/risk decision; proprietary internal reasoning/contract lifecycle remains internal unless counsel approves.",
+        },
+        "single_best_uncertainty_reducing_evidence": (
+            "Find whether real x402/Bazaar/AP2 service providers would pay for an independent preflight/receipt/mandate verifier "
+            "that reduces failed paid-agent calls, disputes, or compliance burden. The no-send version is a buyer-facing packet plus 3 target profiles; "
+            "no live outreach until owner approves."
+        ),
+        "do_not_do": [
+            "do not expose generic sub-cent gov_check endpoints as first move",
+            "do not integrate wallets or execute USDC",
+            "do not abandon Mining Plant/Plugin mainline based on infrastructure evidence alone",
+            "do not revive Defuse as independent brand",
+            "do not use Coinbase self-reported volume as audited buyer demand",
+        ],
     }
 
 
@@ -700,6 +828,39 @@ def render_memo_investigation_owner_answer(analysis: Mapping[str, Any]) -> str:
         f"- {row.get('theme')}: {row.get('judgment')}（意义：{row.get('why_it_matters')}）"
         for row in analysis.get("strategic_implications", [])[:5]
     )
+    strat002 = analysis.get("strat002_deep_strategy_dossier", {})
+    strat002_section = ""
+    if strat002.get("applies"):
+        rescore_lines = "\n".join(
+            f"- {row.get('item')}: {row.get('movement')}。理由：{row.get('reason')}"
+            for row in strat002.get("e34_rescore", [])[:5]
+        )
+        asset_lines = "\n".join(
+            f"- {row.get('asset')} -> {row.get('surface')}；fit={row.get('fit')}；{row.get('why')}"
+            for row in strat002.get("asset_to_surface_matching", [])[:4]
+        )
+        multi_tenant_lines = "\n".join(f"- {item}" for item in strat002.get("multi_tenant_cost_scope", [])[:5])
+        do_not_lines = "\n".join(f"- {item}" for item in strat002.get("do_not_do", [])[:5])
+        strat002_section = (
+            "\n\n5. STRAT-002 真正问的问题，我的回答\n"
+            f"{strat002.get('answer_to_owner_question')}\n"
+            f"路径关系：{strat002.get('path_sequencing', {}).get('decision')}。"
+            f"{strat002.get('path_sequencing', {}).get('why')}\n\n"
+            "e34 重评分建议：\n"
+            f"{rescore_lines}\n\n"
+            "资产到 x402/A2A 服务面的匹配：\n"
+            f"{asset_lines}\n\n"
+            "Defuse revival 判断：\n"
+            f"{strat002.get('defuse_revival', {}).get('decision')}。{strat002.get('defuse_revival', {}).get('why')}\n\n"
+            "multi-tenant 工程成本范围，不给时间估计：\n"
+            f"{multi_tenant_lines}\n\n"
+            "专利/IP 默认边界：\n"
+            f"{strat002.get('patent_boundary', {}).get('safe_default')}\n\n"
+            "最能降低不确定性的一条证据：\n"
+            f"{strat002.get('single_best_uncertainty_reducing_evidence')}\n\n"
+            "明确不要做：\n"
+            f"{do_not_lines}"
+        )
     opportunity_lines = "\n".join(
         f"- {row.get('name')}: {row.get('buyer_visible_shape')} 下一步：{row.get('next_test')}"
         for row in analysis.get("opportunity_map", [])[:3]
@@ -723,6 +884,7 @@ def render_memo_investigation_owner_answer(analysis: Mapping[str, Any]) -> str:
         f"{implication_lines}\n\n"
         "5. 这件事和 Y*Bridge Labs 的关系\n"
         f"{analysis['relation_to_labs']}\n\n"
+        f"{strat002_section}\n\n"
         "6. 我认为可以形成的产品/机会形态\n"
         f"{opportunity_lines}\n\n"
         "7. 我不会采纳的错误方向\n"

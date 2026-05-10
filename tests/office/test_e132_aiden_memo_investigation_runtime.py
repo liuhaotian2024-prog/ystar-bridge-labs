@@ -47,7 +47,9 @@ def _memo() -> str:
         "**Date**: 2026-05-09\n"
         "**Type**: Research memo for CEO investigation\n"
         "This memo claims x402, Mission GO, USDC, wallet, and agent payments may create an agent economy opportunity. "
-        "It asks whether Y*Bridge Labs should integrate payment intent governance before any live payment execution."
+        "It asks whether Y*Bridge Labs should integrate payment intent governance before any live payment execution. "
+        "It asks Aiden to re-score e34 institutional void #10 agent_to_agent_payment, compare against the Mining Plant Plugin path, "
+        "evaluate Defuse revival under dead-path constraints, scope multi-tenant cost, and respect P3/P4 patent boundaries."
     )
 
 
@@ -109,6 +111,10 @@ def test_generate_aiden_reply_text_for_memo_is_not_generic_first_cash(tmp_path):
     assert "战略判断" in result["reply_text"]
     assert "Selected first-cash path" not in result["reply_text"]
     assert "Construction bidding" not in result["reply_text"]
+    assert "e34 重评分" in result["reply_text"]
+    assert "Defuse revival" in result["reply_text"]
+    assert "multi-tenant" in result["reply_text"]
+    assert "Mining Plant" in result["reply_text"]
 
 
 def test_query_builder_uses_memo_entities_not_fixed_market_domains():
@@ -135,3 +141,23 @@ def test_memo_public_read_provider_failure_is_visible_not_silent(tmp_path):
     assert analysis["evidence_count"] == 0
     assert analysis["provider_failure_count"] >= 1
     assert "证据获取异常/无结果" in result["owner_facing_answer"]
+
+
+def test_strat002_dossier_answers_owner_open_questions(tmp_path):
+    result = run_aiden_memo_investigation_runtime(
+        _memo(),
+        cieu_db=tmp_path / "strat002_dossier.db",
+        repo_root=_repo_root(),
+        ystar_gov_root=Path("/Users/haotianliu/.openclaw/workspace/Y-star-gov"),
+        public_read_provider=FakeMemoPublicReadProvider(),
+        allow_live_network=False,
+    )
+    dossier = result["strategic_analysis"]["strat002_deep_strategy_dossier"]
+    assert dossier["applies"] is True
+    assert dossier["path_sequencing"]["decision"] == "parallel_research_not_replacement"
+    assert any(row["item"] == "void_10_agent_to_agent_payment" for row in dossier["e34_rescore"])
+    assert any("gov-mcp" in row["asset"] for row in dossier["asset_to_surface_matching"])
+    assert dossier["defuse_revival"]["decision"] == "re_surface_as_capability_under_y_provider_identity_not_standalone_brand"
+    assert dossier["multi_tenant_cost_scope"]
+    assert "P3" in " ".join(dossier["patent_boundary"]["requires_counsel"])
+    assert "Coinbase self-reported volume" in " ".join(dossier["do_not_do"])
