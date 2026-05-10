@@ -100,6 +100,15 @@ INTENT_FEATURES: dict[str, tuple[str, ...]] = {
         "推进",
         "落地",
     ),
+    "owner_coordination_help": (
+        "怎么配合",
+        "如何配合",
+        "我需要做什么",
+        "要求我怎么",
+        "我完全不明白",
+        "我不明白",
+        "你需要我",
+    ),
 }
 
 

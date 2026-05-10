@@ -238,6 +238,12 @@ def _render_mode_specific_analysis(ctx: CompanyContext, profile: IntentProfile, 
         )
     if profile.intent == "approval":
         return "审批判断：需要 owner 批准的不是内部思考，而是任何外部副作用、报价、付款、合同、公开发布和核心写回。"
+    if profile.intent == "owner_coordination_help":
+        return (
+            "协作判断：你不需要替 Aiden 做内部分析、检索、整理、生成 no-send packet 或 dry-run 草案；"
+            "这些都应该由 Aiden 在本地受控边界里自主完成。你只需要在真正会产生外部副作用或核心写回的关口做选择："
+            "approve / reject / hold / revise。"
+        )
     if profile.intent == "next_ceo_action":
         return "推进判断：下一步应该输出行动包，而不是只说“建议下一步”。Aiden 要给出目标、交付物、验证问题、风险边界和执行 backlog。"
     return "综合判断：这条请求需要按 M Triangle、证据、能力召回和行动边界组织，不应该落回近期记忆或单点模板。"
@@ -344,6 +350,8 @@ def _infer_target(owner_message: str, profile: IntentProfile) -> str:
         return "把散落能力变成可检索、可调用、可治理的主线 runtime。"
     if profile.intent == "agents_burden":
         return "保留安全内核，移除拖慢 M-3 的行政仪式。"
+    if profile.intent == "owner_coordination_help":
+        return "把 owner 从内部执行负担里解放出来：Aiden 自主推进本地 no-send 工作，只在高风险边界请求 owner 决策。"
     return "把 owner 的问题变成可验证、可执行、可回收 residual 的 CEO action thread。"
 
 
@@ -354,6 +362,8 @@ def _infer_deliverable(profile: IntentProfile) -> str:
         return "permission tier map：Tier 0-4、对应动作、审批条件、拒绝边界。"
     if profile.intent in {"fastest_cash", "next_ceo_action", "current_money_blocker"}:
         return "no-send action packet：买方/问题/交付物/验证问题/内部 backlog/风险边界。"
+    if profile.intent == "owner_coordination_help":
+        return "owner coordination map：Aiden 自主做什么、owner 只在哪些边界做 approve/reject/hold/revise。"
     return "CEO-readable action thread：判断、证据、取舍、下一步、边界。"
 
 
@@ -362,6 +372,8 @@ def _infer_validation_questions(profile: IntentProfile) -> str:
         return "谁有预算、为什么现在痛、替代方案是什么、我们凭什么赢、最小验证动作是什么。"
     if profile.intent == "repo_repair":
         return "是否已有能力、是否 runtime-active、是否可被检索调用、是否有治理/CIEU 记录。"
+    if profile.intent == "owner_coordination_help":
+        return "这一步是否能由 Aiden 本地自主完成；是否涉及外发、付款、报价、发布、客户触达或核心写回。"
     return "这一步是否推进 M-3、是否需要 owner approval、是否有真实证据、是否会产生外部副作用。"
 
 
@@ -370,6 +382,11 @@ def _infer_internal_backlog(profile: IntentProfile) -> str:
         return "先检索现有模块，再归并重复能力，最后接入 runtime/gov/CIEU，不重新造轮子。"
     if profile.intent in {"fastest_cash", "next_ceo_action", "current_money_blocker"}:
         return "调用 strategy/memo runtime，生成候选、竞品、right-to-win、no-send packet 和 CZL residual。"
+    if profile.intent == "owner_coordination_help":
+        return (
+            "Aiden 继续跑 memo/strategy/runtime、整理证据和 no-send owner packet；"
+            "owner 只需要对外部发送、支付、报价、发布、客户触达、production brain/core DB 写回做 approve/reject/hold/revise。"
+        )
     return "读取 repo 证据，形成 owner-facing 判断，再进入对应 runtime。"
 
 

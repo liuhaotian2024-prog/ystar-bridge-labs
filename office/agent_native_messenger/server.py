@@ -41,6 +41,7 @@ from office.mission_command.e124_agent_native_company_messenger import (  # noqa
 
 
 RUNTIME_EXECUTOR = ThreadPoolExecutor(max_workers=2, thread_name_prefix="aiden-messenger-runtime")
+CONVERSATION_CONTEXT_PATH = Path(tempfile.gettempdir()) / "e124_aiden_messenger_conversation_context.json"
 LIVE_PUBLIC_READ_TRIGGERS = (
     "上网",
     "联网",
@@ -60,6 +61,29 @@ LIVE_PUBLIC_READ_TRIGGERS = (
     "mission go",
     "生态",
 )
+FOLLOWUP_EXECUTION_TRIGGERS = (
+    "执行你说的下一步",
+    "执行下一步",
+    "开始执行",
+    "开始自主",
+    "现在就开始",
+    "你说的下一步",
+    "继续推进",
+    "开始做",
+    "推进下去",
+    "do it",
+    "execute",
+    "continue",
+)
+OWNER_COORDINATION_TRIGGERS = (
+    "怎么配合",
+    "如何配合",
+    "我需要做什么",
+    "要求我怎么",
+    "我完全不明白",
+    "我不明白",
+    "what do you need from me",
+)
 
 
 def _json_response(handler: http.server.BaseHTTPRequestHandler, payload: dict, status: int = 200) -> None:
@@ -77,6 +101,118 @@ def _allow_live_network_for_message(human_text: str) -> bool:
         return True
     lower = human_text.lower()
     return any(trigger in lower for trigger in LIVE_PUBLIC_READ_TRIGGERS)
+
+
+def _load_conversation_context() -> dict:
+    try:
+        if not CONVERSATION_CONTEXT_PATH.exists():
+            return {}
+        return json.loads(CONVERSATION_CONTEXT_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+def _save_conversation_context(*, human_text: str, runtime_owner_text: str, turn: dict) -> None:
+    reply_packet = turn.get("aiden_reply_packet") or {}
+    reply_text = str((reply_packet.get("message") or {}).get("human_readable_text") or "")
+    reply_runtime = turn.get("aiden_reply_runtime") or {}
+    payload = {
+        "updated_at": datetime.now(timezone.utc).isoformat(),
+        "last_human_text": human_text,
+        "last_runtime_owner_text": runtime_owner_text,
+        "last_reply_text": reply_text,
+        "last_reply_backend": reply_runtime.get("reply_backend"),
+        "last_reply_protocol": reply_runtime.get("reply_protocol"),
+        "last_turn_status": turn.get("turn_status"),
+    }
+    try:
+        CONVERSATION_CONTEXT_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    except Exception:
+        # Context memory is helpful but must never block the messenger response.
+        return
+
+
+def _is_execution_followup(text: str) -> bool:
+    lowered = (text or "").lower()
+    return any(trigger in lowered for trigger in FOLLOWUP_EXECUTION_TRIGGERS)
+
+
+def _is_owner_coordination_followup(text: str) -> bool:
+    lowered = (text or "").lower()
+    return any(trigger in lowered for trigger in OWNER_COORDINATION_TRIGGERS)
+
+
+def _infer_prior_subject(prior_runtime_text: str, prior_reply: str) -> str:
+    joined = f"{prior_runtime_text}\n{prior_reply}".lower()
+    if any(token in joined for token in ("strat-002", "x402", "mission go", "agentcore", "ap2", "usdc")):
+        return (
+            "STRAT-002 / x402 / Mission GO memo investigation context. "
+            "The owner is asking Aiden to advance the prior memo analysis about agent-to-agent payment/economic "
+            "infrastructure, machine-buyer commercialization surfaces, Mission GO/Y* assets, CIEU/CZL receipts, "
+            "Y-star-gov governance, gov-mcp no-send/no-payment boundaries, e34 opportunity re-scoring, Defuse "
+            "resurfacing, multi-tenant cost, patent/IP boundaries, and owner-gated no-send decision packets."
+        )
+    if any(token in joined for token in ("strategy", "first-cash", "赚钱", "变现", "m-3")):
+        return (
+            "Prior Aiden strategy context. The owner is asking Aiden to continue the previous governed strategy "
+            "work toward M-3 value production, not to restart from a generic meeting-room template."
+        )
+    return (
+        "Prior Aiden conversation context. The owner is asking Aiden to continue the immediately previous "
+        "commitment rather than treating this short follow-up as a standalone request."
+    )
+
+
+def _resolve_runtime_owner_text_from_context(human_text: str) -> tuple[str, dict]:
+    """Resolve short follow-ups to the previous runtime context while preserving visible owner text."""
+
+    context = _load_conversation_context()
+    prior_runtime_text = str(context.get("last_runtime_owner_text") or context.get("last_human_text") or "")
+    prior_reply = str(context.get("last_reply_text") or "")
+    execution_followup = _is_execution_followup(human_text)
+    coordination_followup = _is_owner_coordination_followup(human_text)
+    if not (execution_followup or coordination_followup) or not (prior_runtime_text or prior_reply):
+        return human_text, {
+            "applied": False,
+            "reason": "not_a_contextual_followup_or_no_prior_context",
+            "context_path": str(CONVERSATION_CONTEXT_PATH),
+        }
+
+    prior_subject = _infer_prior_subject(prior_runtime_text, prior_reply)
+    if coordination_followup:
+        resolved = (
+            f"{prior_subject}\n\n"
+            "[OWNER FOLLOW-UP: coordination clarity]\n"
+            f"Visible owner message: {human_text}\n\n"
+            "Do not answer with a generic action-packet template. Explain in Chinese what Aiden can do autonomously "
+            "inside the no-send/no-payment local boundary, what the owner does NOT need to do, and the exact points "
+            "where owner must choose approve/reject/hold/revise. Continue the prior no-send memo/strategy packet "
+            "instead of asking the owner to manually execute internal analysis."
+        )
+        reason = "owner_coordination_followup_resolved_to_prior_context"
+    else:
+        resolved = (
+            f"{prior_subject}\n\n"
+            "[OWNER FOLLOW-UP: execute the previous recommended next step]\n"
+            f"Visible owner message: {human_text}\n\n"
+            "Do not only recommend a next step. Execute the previous recommended_next_action as an internal, "
+            "no-send owner decision packet / action advancement packet. Include the buyer or machine-buyer, "
+            "problem, product shape, monetization hypothesis, evidence to verify, competitor/substitute map, "
+            "right-to-win and right-to-lose, first no-send validation questions, internal engineering backlog, "
+            "CZL residuals, and owner approval options. Do not execute external send, payment, wallet transfer, "
+            "publication, customer contact, or core DB/brain production write."
+        )
+        reason = "execution_followup_resolved_to_prior_context"
+
+    return resolved, {
+        "applied": True,
+        "reason": reason,
+        "context_path": str(CONVERSATION_CONTEXT_PATH),
+        "visible_owner_text": human_text,
+        "prior_subject": prior_subject,
+        "prior_reply_backend": context.get("last_reply_backend"),
+        "prior_reply_protocol": context.get("last_reply_protocol"),
+    }
 
 
 def _runtime_notice_payload(*, human_text: str, status: str, reason: str, detail: str, elapsed_seconds: float) -> dict:
@@ -220,11 +356,13 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if not human_text:
             _json_response(self, {"error": "empty text"}, 400)
             return
-        allow_live_network = _allow_live_network_for_message(human_text)
+        runtime_owner_text, context_resolution = _resolve_runtime_owner_text_from_context(human_text)
+        allow_live_network = _allow_live_network_for_message(runtime_owner_text)
         started = time.monotonic()
         future = RUNTIME_EXECUTOR.submit(
             run_agent_native_messenger_turn,
             owner_text=human_text,
+            runtime_owner_text=runtime_owner_text,
             cieu_db=db_path,
             ystar_gov_root=Y_GOV_ROOT,
             allow_live_network=allow_live_network,
@@ -259,8 +397,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 "watchdog_enabled": True,
                 "allow_live_network": allow_live_network,
                 "live_public_read_triggered_by_owner_message": allow_live_network and not ALLOW_LIVE_NETWORK_BY_DEFAULT,
+                "context_resolution": context_resolution,
             }
         )
+        _save_conversation_context(human_text=human_text, runtime_owner_text=runtime_owner_text, turn=turn)
         _json_response(self, turn)
 
     def do_OPTIONS(self) -> None:

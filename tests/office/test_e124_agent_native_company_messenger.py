@@ -139,6 +139,26 @@ def test_owner_message_generates_governed_aiden_reply(tmp_path):
     assert result["CIEUStore_summary"]["event_count"] == 2
 
 
+def test_runtime_owner_text_can_be_resolved_from_context_without_overwriting_visible_owner_message(tmp_path):
+    db = tmp_path / "e124_context_resolved_turn.db"
+    result = run_agent_native_messenger_turn(
+        owner_text="那么你现在就开始自主的执行你说的下一步吧",
+        runtime_owner_text=(
+            "STRAT-002 x402 Mission GO memo investigation. Execute the previous recommended next step as a "
+            "no-send owner decision packet."
+        ),
+        cieu_db=db,
+        reply_text_override="Aiden now advances STRAT-002 into a no-send owner decision packet.",
+    )
+    assert result["turn_status"] == "completed"
+    assert result["owner_packet"]["message"]["human_readable_text"] == "那么你现在就开始自主的执行你说的下一步吧"
+    runtime = result["aiden_reply_runtime"]
+    assert runtime["runtime_owner_text_resolved_from_context"] is True
+    assert runtime["visible_owner_text"] == "那么你现在就开始自主的执行你说的下一步吧"
+    assert "STRAT-002 x402 Mission GO" in runtime["resolved_runtime_owner_text_preview"]
+    assert "STRAT-002" in result["aiden_reply_packet"]["message"]["human_readable_text"]
+
+
 def test_aiden_owner_reply_is_normalized_to_chinese_dialogue(tmp_path):
     db = tmp_path / "e128_chinese_reply.db"
     result = run_agent_native_messenger_turn(

@@ -516,6 +516,7 @@ def run_agent_native_messenger_turn(
     ystar_gov_root: str | Path | None = None,
     reply_text_override: str | None = None,
     allow_live_network: bool = False,
+    runtime_owner_text: str | None = None,
 ) -> dict[str, Any]:
     """Record an owner message, generate Aiden's reply, and record the reply."""
 
@@ -548,6 +549,7 @@ def run_agent_native_messenger_turn(
             "aiden_auto_reply_generated": False,
         }
 
+    effective_owner_text = runtime_owner_text or owner_text
     reply_runtime = (
         {
             "reply_text": reply_text_override,
@@ -557,12 +559,16 @@ def run_agent_native_messenger_turn(
         }
         if reply_text_override is not None
         else generate_aiden_reply_text(
-            owner_text,
+            effective_owner_text,
             cieu_db=cieu_db,
             ystar_gov_root=ystar_gov_root,
             allow_live_network=allow_live_network,
         )
     )
+    if runtime_owner_text and runtime_owner_text != owner_text:
+        reply_runtime["runtime_owner_text_resolved_from_context"] = True
+        reply_runtime["visible_owner_text"] = owner_text
+        reply_runtime["resolved_runtime_owner_text_preview"] = runtime_owner_text[:600]
     reply_runtime = apply_owner_dialogue_language_policy(owner_text, reply_runtime)
     reply_packet = build_agent_native_message_packet(
         thread_id="local_owner_aiden_chat",

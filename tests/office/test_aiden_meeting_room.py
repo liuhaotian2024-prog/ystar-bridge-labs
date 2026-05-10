@@ -25,6 +25,7 @@ def test_intent_classifier_owner_examples():
     assert classify_intent("Aiden，你是依据什么得出这个方向的？你对于我们 Labs 的元发展是怎么认识的？") == "rationale_meta"
     assert classify_intent("Aiden，你现在自己是一个什么状态？你现在怎么形容自己的？") == "self_state"
     assert classify_intent("我们之前仓库的问题是什么？这几天的新架构能怎么修？") == "repo_repair"
+    assert classify_intent("我完全不明白，你在要求我怎么配合你去行动？") == "owner_coordination_help"
 
 
 def test_fastest_cash_answer_is_repo_grounded(tmp_path):
@@ -70,3 +71,11 @@ def test_no_external_action_claims(tmp_path):
     text = _ask("下一步你需要我批准什么？", tmp_path)
     assert "外部副作用" in text
     assert "不会自动发邮件" in text
+
+
+def test_owner_coordination_help_does_not_push_internal_execution_back_to_owner(tmp_path):
+    text = _ask("我完全不明白，你在要求我怎么配合你去行动？", tmp_path)
+    assert "你不需要替 Aiden 做内部分析" in text
+    assert "approve / reject / hold / revise" in text
+    assert "外部发送" in text
+    assert "production brain" in text or "core DB" in text
