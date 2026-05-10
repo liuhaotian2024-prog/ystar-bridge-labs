@@ -11,6 +11,7 @@ from office.mission_command.e132_aiden_memo_investigation_runtime import (
     extract_memo_open_questions,
     extract_memo_entities,
     is_memo_investigation_request,
+    is_strat002_action_advancement_request,
     run_aiden_memo_investigation_runtime,
 )
 
@@ -204,3 +205,28 @@ def test_memo_open_question_gate_prevents_payment_boundary_from_becoming_the_top
     assert answer.index("这份 memo 明确问题的逐项回答") < answer.index("主要风险")
     assert "generic_low_price_gov_check_endpoint" in answer
     assert "parallel_research_not_replacement" in answer
+
+
+def test_strat002_x402_advancement_request_generates_action_packet_not_next_step_loop(tmp_path):
+    owner_text = "Aiden，我让你去对之前的备忘录做深度的战略分析的推进，还有拟定我们如何通过X402生态去实现赚钱。你为什么一直都没有行动啊？"
+    assert is_memo_investigation_request(owner_text) is True
+    assert is_strat002_action_advancement_request(owner_text) is True
+    result = run_aiden_memo_investigation_runtime(
+        owner_text,
+        cieu_db=tmp_path / "strat002_action.db",
+        repo_root=_repo_root(),
+        ystar_gov_root=Path("/Users/haotianliu/.openclaw/workspace/Y-star-gov"),
+        public_read_provider=FakeMemoPublicReadProvider(),
+        allow_live_network=False,
+    )
+    packet = result["strategic_analysis"]["strat002_action_advancement_packet"]
+    answer = result["owner_facing_answer"]
+    assert result["strat002_action_advancement_requested"] is True
+    assert packet["applies"] is True
+    assert packet["packet_id"] == "STRAT002_X402_REVENUE_ADVANCEMENT_PACKET_V1"
+    assert "我现在直接推进" in answer
+    assert "目标买方" in answer
+    assert "买方能看懂的交付物" in answer
+    assert "内部行动 backlog" in answer
+    assert "Agent Payment Intent Governance & Receipt Pack" in answer
+    assert "建议下一步生成" not in answer

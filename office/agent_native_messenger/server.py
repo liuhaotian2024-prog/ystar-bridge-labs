@@ -54,6 +54,11 @@ LIVE_PUBLIC_READ_TRIGGERS = (
     "browse",
     "public-read",
     "live public",
+    "x402",
+    "agentcore",
+    "ap2",
+    "mission go",
+    "生态",
 )
 
 

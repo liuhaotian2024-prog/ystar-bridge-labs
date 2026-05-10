@@ -111,6 +111,16 @@ def test_messenger_static_assets_are_cache_busted_for_ui_updates():
     assert "no-store, no-cache" in server_text
 
 
+def test_x402_messages_trigger_live_public_read_by_default():
+    root = Path(__file__).resolve().parents[2]
+    server = root / "office/agent_native_messenger/server.py"
+    text = server.read_text(encoding="utf-8")
+    assert '"x402"' in text
+    assert '"agentcore"' in text
+    assert '"ap2"' in text
+    assert '"生态"' in text
+
+
 def test_owner_message_generates_governed_aiden_reply(tmp_path):
     db = tmp_path / "e124_turn.db"
     result = run_agent_native_messenger_turn(
