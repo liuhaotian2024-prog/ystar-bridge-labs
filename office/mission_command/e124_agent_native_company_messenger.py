@@ -196,8 +196,10 @@ def generate_aiden_reply_text(
     ystar_gov_root: str | Path | None = None,
     repo_root: str | Path | None = None,
     allow_live_network: bool = False,
+    require_real_model_invocation: bool = False,
+    real_model_invoker: Any | None = None,
 ) -> dict[str, Any]:
-    """Generate Aiden's reply through the existing governed meeting-room router."""
+    """Generate Aiden's reply through governed retrieval plus a real model when required."""
 
     try:
         from office.mission_command.e126_adaptive_retrieval_planner_runtime import run_adaptive_retrieval_planner_and_retrieval
@@ -243,6 +245,33 @@ def generate_aiden_reply_text(
                 "retrieval_result": retrieval_result,
                 "retrieval_decision": retrieval_decision["decision"],
                 "retrieval_context_summary": retrieval_result["retrieval_context_summary"],
+            }
+
+        if require_real_model_invocation:
+            from office.mission_command.e149_governed_real_model_invocation_runtime import (
+                run_governed_real_model_invocation,
+            )
+
+            invocation = run_governed_real_model_invocation(
+                owner_text=owner_text,
+                cieu_db=cieu_db,
+                retrieval_context_summary=retrieval_result["retrieval_context_summary"],
+                ystar_gov_root=ystar_gov_root,
+                repo_root=repo_root or BRIDGE_ROOT,
+                real_model_invoker=real_model_invoker,
+            )
+            return {
+                "reply_text": invocation["reply_text"],
+                "reply_backend": invocation["reply_backend"],
+                "reply_protocol": invocation["reply_protocol"],
+                "runtime_fallback_used": invocation["runtime_fallback_used"],
+                "adaptive_retrieval_result": adaptive_retrieval_result,
+                "adaptive_planner_decision": planner_decision["decision"],
+                "retrieval_result": retrieval_result,
+                "retrieval_decision": retrieval_decision["decision"],
+                "retrieval_context_summary": retrieval_result["retrieval_context_summary"],
+                "model_orchestration_result": invocation["model_orchestration_result"],
+                "actual_model_invocation_proof": invocation["actual_model_invocation_proof"],
             }
 
         route = route_chat_message_to_aiden_meeting_room(
@@ -517,6 +546,7 @@ def run_agent_native_messenger_turn(
     reply_text_override: str | None = None,
     allow_live_network: bool = False,
     runtime_owner_text: str | None = None,
+    real_model_invoker: Any | None = None,
 ) -> dict[str, Any]:
     """Record an owner message, generate Aiden's reply, and record the reply."""
 
@@ -563,6 +593,8 @@ def run_agent_native_messenger_turn(
             cieu_db=cieu_db,
             ystar_gov_root=ystar_gov_root,
             allow_live_network=allow_live_network,
+            require_real_model_invocation=True,
+            real_model_invoker=real_model_invoker,
         )
     )
     if runtime_owner_text and runtime_owner_text != owner_text:
@@ -587,6 +619,7 @@ def run_agent_native_messenger_turn(
                 "adaptive_planner_decision": reply_runtime.get("adaptive_planner_decision", "not_applicable"),
                 "retrieval_decision": reply_runtime.get("retrieval_decision", "not_applicable"),
                 "retrieval_context_summary": reply_runtime.get("retrieval_context_summary", "")[:500],
+                "actual_model_invocation_proof": reply_runtime.get("actual_model_invocation_proof", {}),
             },
             action={"speech_act": "aiden_reply_to_owner", "runtime_fallback_used": reply_runtime["runtime_fallback_used"]},
             expected_next="Owner receives an actual Aiden reply plus CIEU/CZL provenance.",

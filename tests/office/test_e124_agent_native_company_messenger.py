@@ -8,6 +8,7 @@ from office.mission_command.e124_agent_native_company_messenger import (
     apply_owner_dialogue_language_policy,
     build_agent_native_message_packet,
     build_cieu_five_tuple,
+    generate_aiden_reply_text,
     run_agent_native_messenger_demo_session,
     run_agent_native_messenger_turn,
     validate_and_record_agent_native_message,
@@ -173,6 +174,45 @@ def test_aiden_owner_reply_is_normalized_to_chinese_dialogue(tmp_path):
     assert "我先用中文" in reply_text
     assert "This backend runtime returned an English-only note." in reply_text
     assert result["aiden_reply_packet"]["message"]["cieu_five_tuple"]["X_t"]["owner_dialogue_language"] == "zh-CN"
+
+
+def test_generate_aiden_reply_requires_real_model_invocation_when_enabled(tmp_path):
+    def fake_invoker(model_name, prompt, context):
+        return {
+            "provider": "fake_local_ollama",
+            "text": "这是本地模型真实调用后的 CEO 回复，不是 deterministic 模板。",
+            "latency_ms": 7,
+            "error": None,
+        }
+
+    result = generate_aiden_reply_text(
+        "Aiden，请基于治理和检索认真回答我的战略问题。",
+        cieu_db=tmp_path / "e149_e124_real_model.db",
+        require_real_model_invocation=True,
+        real_model_invoker=fake_invoker,
+    )
+
+    assert result["reply_backend"] == "governed_real_local_model_invocation"
+    assert result["actual_model_invocation_proof"]["actual_generation_executed"] is True
+    assert result["actual_model_invocation_proof"]["deterministic_template_substitute_used"] is False
+    assert "本地模型真实调用" in result["reply_text"]
+
+
+def test_generate_aiden_reply_does_not_fallback_to_template_when_real_model_unavailable(tmp_path):
+    def failing_invoker(model_name, prompt, context):
+        return {"provider": "fake_local_ollama", "text": "", "latency_ms": 3, "error": "connection refused"}
+
+    result = generate_aiden_reply_text(
+        "Aiden，请基于治理和检索认真回答我的战略问题。",
+        cieu_db=tmp_path / "e149_e124_model_unavailable.db",
+        require_real_model_invocation=True,
+        real_model_invoker=failing_invoker,
+    )
+
+    assert result["reply_backend"] == "governed_real_model_unavailable_notice"
+    assert result["actual_model_invocation_proof"]["actual_generation_executed"] is False
+    assert "我不能把这轮回答伪装成 CEO 的真实思考" in result["reply_text"]
+    assert "你要的不是再听一段固定解释" not in result["reply_text"]
 
 
 def test_ui_collapses_only_long_owner_inputs_not_aiden_outputs():
