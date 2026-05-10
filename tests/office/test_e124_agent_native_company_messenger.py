@@ -155,6 +155,8 @@ def test_ui_can_copy_full_message_content_even_when_collapsed():
     assert "复制完整内容" in script_text
     assert "buildMessageCopyText(message)" in script_text
     assert "copyTextToClipboard(text)" in script_text
+    assert "withTimeout(navigator.clipboard.writeText(text), 800)" in script_text
+    assert "copyTextWithTextareaFallback(text)" in script_text
     assert "String(message.human_readable_text || \"\")" in script_text
     assert "navigator.clipboard" in script_text
     assert "document.execCommand(\"copy\")" in script_text

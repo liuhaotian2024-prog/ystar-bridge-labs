@@ -170,9 +170,32 @@ function buildMessageCopyText(message) {
 
 async function copyTextToClipboard(text) {
   if (navigator.clipboard?.writeText && window.isSecureContext) {
-    await navigator.clipboard.writeText(text);
-    return;
+    try {
+      await withTimeout(navigator.clipboard.writeText(text), 800);
+      return;
+    } catch (error) {
+      // Some embedded browsers leave Clipboard API promises pending behind a permission gate.
+      // Fall through to the local textarea copy path so the user's click still has a result.
+    }
   }
+  copyTextWithTextareaFallback(text);
+}
+
+async function withTimeout(promise, timeoutMs) {
+  let timeoutId;
+  try {
+    return await Promise.race([
+      promise,
+      new Promise((_, reject) => {
+        timeoutId = setTimeout(() => reject(new Error("clipboard write timed out")), timeoutMs);
+      }),
+    ]);
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}
+
+function copyTextWithTextareaFallback(text) {
   const textarea = document.createElement("textarea");
   textarea.value = text;
   textarea.setAttribute("readonly", "");
