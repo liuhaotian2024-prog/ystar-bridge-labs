@@ -6,7 +6,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
 
-from aiden_messenger_service_install import LABEL, LEGACY_LABELS, build_plist, install_launch_agent
+from aiden_messenger_service_install import LABEL, LEGACY_LABELS, build_plist, install_launch_agent, wait_for_health
 
 
 def test_aiden_messenger_launchagent_plist_points_to_local_server(tmp_path: Path) -> None:
@@ -71,4 +71,25 @@ def test_install_report_uses_dict_results_for_bootout(monkeypatch, tmp_path: Pat
     assert result["bootout_returncode"] == 0
     assert result["bootout_stderr"] == ""
     assert result["health_returncode"] == 0
+    assert result["health_attempts"] == 1
     assert calls
+
+
+def test_health_check_waits_for_server_to_bind(monkeypatch) -> None:
+    import aiden_messenger_service_install as installer
+
+    attempts = []
+
+    def fake_run(args):
+        attempts.append(args)
+        if len(attempts) < 3:
+            return {"command": args, "returncode": 7, "stdout": "", "stderr": "connection refused"}
+        return {"command": args, "returncode": 0, "stdout": '{"ok": true}', "stderr": ""}
+
+    monkeypatch.setattr(installer, "_run", fake_run)
+    monkeypatch.setattr(installer.time, "sleep", lambda seconds: None)
+
+    result = wait_for_health(port=8784, attempts=5, sleep_seconds=0)
+
+    assert result["returncode"] == 0
+    assert result["attempts"] == 3

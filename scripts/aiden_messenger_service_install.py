@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import plistlib
 import subprocess
+import time
 from pathlib import Path
 from typing import Any
 
@@ -88,7 +89,7 @@ def install_launch_agent(
         legacy_load = _run(["launchctl", "load", "-w", str(target)])
     enable = subprocess.run(["launchctl", "enable", service], text=True, capture_output=True, check=False)
     kick = subprocess.run(["launchctl", "kickstart", "-k", service], text=True, capture_output=True, check=False)
-    health = _run(["/usr/bin/curl", "-sS", "--max-time", "5", f"http://127.0.0.1:{port}/api/health"])
+    health = wait_for_health(port=port)
     return {
         "installed": True,
         "target": str(target),
@@ -109,6 +110,7 @@ def install_launch_agent(
         "health_returncode": health["returncode"],
         "health_stdout": health["stdout"],
         "health_stderr": health["stderr"],
+        "health_attempts": health.get("attempts"),
         "legacy_cleanup": legacy_cleanup,
         "log_root": str(log_root),
     }
@@ -148,6 +150,24 @@ def _run(args: list[str]) -> dict[str, Any]:
         "stdout": (completed.stdout or "").strip(),
         "stderr": (completed.stderr or "").strip(),
     }
+
+
+def wait_for_health(*, port: int, attempts: int = 30, sleep_seconds: float = 0.5) -> dict[str, Any]:
+    """Wait for the LaunchAgent process to bind the HTTP port before reporting health.
+
+    launchctl kickstart can return before the Python server has finished imports and
+    called listen(2). A single immediate curl therefore creates a false failure for
+    the owner even though KeepAlive starts the service a moment later.
+    """
+
+    last = {"command": [], "returncode": 7, "stdout": "", "stderr": "health check not attempted", "attempts": 0}
+    for attempt in range(1, attempts + 1):
+        last = _run(["/usr/bin/curl", "-sS", "--max-time", "5", f"http://127.0.0.1:{port}/api/health"])
+        last["attempts"] = attempt
+        if last["returncode"] == 0:
+            return last
+        time.sleep(sleep_seconds)
+    return last
 
 
 def _uid() -> str:
