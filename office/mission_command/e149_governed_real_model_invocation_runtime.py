@@ -77,11 +77,13 @@ def run_governed_real_model_invocation(
     )
 
     if selected_model_id in {"local_gemma4_e4b", "local_ystar_gemma"}:
-        model_name = _ollama_model_name_for(selected_model_id)
+        model_name = resolve_ollama_model_name(selected_model_id)
         invoker = real_model_invoker or _call_local_ollama
         raw = dict(invoker(model_name, prompt, {"selected_model_id": selected_model_id}))
+        model_name = str(raw.get("model") or model_name)
         text = str(raw.get("text") or "").strip()
         ok = raw.get("error") in {None, ""} and bool(text)
+        raw_metadata = {k: v for k, v in raw.items() if k != "text"}
         proof = _build_proof(
             selected_model_id=selected_model_id,
             status="executed" if ok else "not_executed",
@@ -92,7 +94,7 @@ def run_governed_real_model_invocation(
             output_chars=len(text),
             external_provider_called=False,
             deterministic_template_substitute_used=False,
-            raw_result={k: v for k, v in raw.items() if k != "text"},
+            raw_result=raw_metadata,
         )
         _write_invocation_record(cieu_db, owner_text, orchestration, proof, text)
         if ok:
@@ -153,6 +155,10 @@ def build_aiden_owner_reply_prompt(
 
 def _call_local_ollama(model_name: str, prompt: str, context: Mapping[str, Any]) -> dict[str, Any]:
     _ensure_ollama_started_if_allowed()
+    installed_models = list_installed_ollama_models()
+    resolved_model_name = resolve_ollama_model_name(str(context.get("selected_model_id") or ""), installed_models=installed_models)
+    if resolved_model_name:
+        model_name = resolved_model_name
     start = time.perf_counter()
     payload = json.dumps(
         {
@@ -174,6 +180,7 @@ def _call_local_ollama(model_name: str, prompt: str, context: Mapping[str, Any])
         return {
             "provider": "Ollama_local",
             "model": model_name,
+            "installed_models": installed_models,
             "text": data.get("response", ""),
             "eval_count": data.get("eval_count", 0),
             "latency_ms": int((time.perf_counter() - start) * 1000),
@@ -183,6 +190,7 @@ def _call_local_ollama(model_name: str, prompt: str, context: Mapping[str, Any])
         return {
             "provider": "Ollama_local",
             "model": model_name,
+            "installed_models": installed_models,
             "text": "",
             "latency_ms": int((time.perf_counter() - start) * 1000),
             "error": f"{exc.__class__.__name__}: {exc}",
@@ -209,10 +217,103 @@ def _ensure_ollama_started_if_allowed() -> None:
         return
 
 
-def _ollama_model_name_for(selected_model_id: str) -> str:
+def resolve_ollama_model_name(selected_model_id: str, *, installed_models: list[str] | None = None) -> str:
+    """Pick an installed Ollama model instead of assuming `gemma4` exists.
+
+    E149 deliberately stopped Aiden from faking CEO thought when the selected
+    model could not be called. This resolver fixes the next layer down: host
+    machines may have ``gemma3:4b`` or ``ystar-gemma`` installed even when a
+    literal ``gemma4`` tag does not exist.
+    """
+
+    env_model = _env_model_name_for(selected_model_id)
+    models = installed_models if installed_models is not None else list_installed_ollama_models()
+    if env_model and _model_available(env_model, models):
+        return _matching_model_name(env_model, models)
+
+    preferences = _model_preferences_for(selected_model_id)
+    for candidate in preferences:
+        if _model_available(candidate, models):
+            return _matching_model_name(candidate, models)
+
+    if models:
+        return models[0]
+    return env_model or preferences[0]
+
+
+def list_installed_ollama_models() -> list[str]:
+    _ensure_ollama_started_if_allowed()
+    try:
+        req = urllib.request.Request(f"{OLLAMA_ENDPOINT}/api/tags", method="GET")
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+        names = []
+        for item in data.get("models") or []:
+            name = str(item.get("name") or "").strip()
+            if name:
+                names.append(name)
+        return names
+    except Exception:
+        return []
+
+
+def _env_model_name_for(selected_model_id: str) -> str:
     if selected_model_id == "local_ystar_gemma":
         return os.environ.get("AIDEN_YSTAR_GEMMA_MODEL", "ystar-gemma:latest")
     return os.environ.get("AIDEN_GEMMA4_MODEL", "gemma4")
+
+
+def _model_preferences_for(selected_model_id: str) -> list[str]:
+    if selected_model_id == "local_ystar_gemma":
+        return [
+            "ystar-gemma:latest",
+            "ystar-gemma",
+            "gemma4",
+            "gemma4:latest",
+            "gemma3:4b",
+            "gemma3:latest",
+            "gemma3",
+            "gemma:latest",
+            "gemma",
+            "qwen2.5:7b",
+            "llama3.2:3b",
+        ]
+    return [
+        "gemma4",
+        "gemma4:latest",
+        "gemma3:4b",
+        "gemma3:latest",
+        "gemma3",
+        "gemma:latest",
+        "gemma",
+        "ystar-gemma:latest",
+        "ystar-gemma",
+        "qwen2.5:7b",
+        "llama3.2:3b",
+    ]
+
+
+def _model_available(candidate: str, installed_models: list[str]) -> bool:
+    return bool(_matching_model_name(candidate, installed_models))
+
+
+def _matching_model_name(candidate: str, installed_models: list[str]) -> str:
+    candidate = str(candidate or "").strip()
+    if not candidate:
+        return ""
+    lowered = {model.lower(): model for model in installed_models}
+    exact = lowered.get(candidate.lower())
+    if exact:
+        return exact
+    if ":" not in candidate:
+        latest = lowered.get(f"{candidate.lower()}:latest")
+        if latest:
+            return latest
+    candidate_base = candidate.split(":", 1)[0]
+    for model in installed_models:
+        if model.split(":", 1)[0].lower() == candidate_base.lower():
+            return model
+    return ""
 
 
 def _build_proof(
@@ -349,5 +450,7 @@ __all__ = [
     "MILESTONE_ID",
     "PROTOCOL",
     "build_aiden_owner_reply_prompt",
+    "list_installed_ollama_models",
+    "resolve_ollama_model_name",
     "run_governed_real_model_invocation",
 ]

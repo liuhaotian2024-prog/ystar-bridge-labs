@@ -4,6 +4,7 @@ import sqlite3
 
 from office.mission_command.e149_governed_real_model_invocation_runtime import (
     build_aiden_owner_reply_prompt,
+    resolve_ollama_model_name,
     run_governed_real_model_invocation,
 )
 
@@ -68,3 +69,43 @@ def test_prompt_instructs_owner_readable_chinese_and_no_overclaims():
     assert "不要展示隐藏推理链" in prompt
     assert "禁止声称已经外发" in prompt
     assert "STRAT-002" in prompt
+
+
+def test_resolve_ollama_model_name_uses_installed_gemma3_when_gemma4_missing(monkeypatch):
+    monkeypatch.delenv("AIDEN_GEMMA4_MODEL", raising=False)
+
+    resolved = resolve_ollama_model_name("local_gemma4_e4b", installed_models=["gemma3:4b"])
+
+    assert resolved == "gemma3:4b"
+
+
+def test_resolve_ollama_model_name_prefers_installed_owner_env_model(monkeypatch):
+    monkeypatch.setenv("AIDEN_GEMMA4_MODEL", "qwen2.5:7b")
+
+    resolved = resolve_ollama_model_name("local_gemma4_e4b", installed_models=["gemma3:4b", "qwen2.5:7b"])
+
+    assert resolved == "qwen2.5:7b"
+
+
+def test_governed_real_model_invocation_records_actual_resolved_model(tmp_path):
+    def fake_invoker(model_name, prompt, context):
+        return {
+            "provider": "fake_local_ollama",
+            "model": "gemma3:4b",
+            "installed_models": ["gemma3:4b"],
+            "text": "Aiden 通过已安装的 gemma3:4b 真模型完成回复。",
+            "latency_ms": 11,
+            "error": None,
+        }
+
+    result = run_governed_real_model_invocation(
+        owner_text="Aiden，请用真实本地模型回答。",
+        retrieval_context_summary="retrieval succeeded",
+        cieu_db=tmp_path / "e149_resolved_model.db",
+        real_model_invoker=fake_invoker,
+    )
+
+    proof = result["actual_model_invocation_proof"]
+    assert proof["actual_generation_executed"] is True
+    assert proof["model_name"] == "gemma3:4b"
+    assert proof["raw_result_metadata"]["installed_models"] == ["gemma3:4b"]
