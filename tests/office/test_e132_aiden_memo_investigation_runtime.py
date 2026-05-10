@@ -219,9 +219,12 @@ def test_strat002_x402_advancement_request_generates_action_packet_not_next_step
         public_read_provider=FakeMemoPublicReadProvider(),
         allow_live_network=False,
     )
+    entities = {item["entity"] for item in result["memo_entities"]}
     packet = result["strategic_analysis"]["strat002_action_advancement_packet"]
     answer = result["owner_facing_answer"]
+    assert "x402" in entities
     assert result["strat002_action_advancement_requested"] is True
+    assert "不再把这件事停留在“建议下一步”" in answer
     assert packet["applies"] is True
     assert packet["packet_id"] == "STRAT002_X402_REVENUE_ADVANCEMENT_PACKET_V1"
     assert "我现在直接推进" in answer
@@ -230,3 +233,18 @@ def test_strat002_x402_advancement_request_generates_action_packet_not_next_step
     assert "内部行动 backlog" in answer
     assert "Agent Payment Intent Governance & Receipt Pack" in answer
     assert "建议下一步生成" not in answer
+
+
+def test_strat002_question_classifier_keeps_multi_tenant_distinct_from_asset_surface(tmp_path):
+    result = run_aiden_memo_investigation_runtime(
+        _memo(),
+        cieu_db=tmp_path / "strat002_question_classifier.db",
+        repo_root=_repo_root(),
+        ystar_gov_root=Path("/Users/haotianliu/.openclaw/workspace/Y-star-gov"),
+        public_read_provider=FakeMemoPublicReadProvider(),
+        allow_live_network=False,
+    )
+    matrix = result["strategic_analysis"]["memo_open_question_coverage"]
+    multi = next(row for row in matrix if row["source_heading_id"] == "8.5")
+    assert multi["decision"] == "multi_tenanting_is_required_before_external_service_surface"
+    assert "多租户安全" in multi["answer_summary"]

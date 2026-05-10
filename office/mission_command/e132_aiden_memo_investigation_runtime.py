@@ -47,7 +47,7 @@ MEMO_INVESTIGATION_SIGNALS = (
 )
 
 ENTITY_PATTERNS = {
-    "x402": re.compile(r"\bx402\b", re.I),
+    "x402": re.compile(r"(?<![A-Za-z0-9_])x402(?![A-Za-z0-9_])", re.I),
     "Mission GO": re.compile(r"\bMission\s+GO\b", re.I),
     "USDC": re.compile(r"\bUSDC\b", re.I),
     "agent payments": re.compile(r"\bagent(?:ic)?\s+payments?\b|agent\s+economy|agent经济", re.I),
@@ -587,6 +587,16 @@ def build_memo_strategic_analysis(
         has_payment=has_payment,
         has_x402=has_x402,
     )
+    if advancement_requested:
+        decision_recommendation = {
+            **decision_recommendation,
+            "ceo_bottom_line": (
+                "我不再把这件事停留在“建议下一步”。STRAT-002/x402 现在应推进为 no-send 赚钱路径设计："
+                "选定 Agent Payment Intent Governance & Receipt Pack，先做买方可读交付物、验证包和内部 dry-run demo。"
+            ),
+            "decision": "ALLOW_STRAT002_NO_SEND_REVENUE_ADVANCEMENT_PACKET",
+            "owner_decision_needed": True,
+        }
     return {
         "memo_understanding": {
             "title": metadata.get("title"),
@@ -921,6 +931,17 @@ def build_strat002_action_advancement_packet(
 
 
 def _answer_open_question_by_class(question_lower: str) -> dict[str, str]:
+    if "multi-tenant" in question_lower or "tenant" in question_lower or "engineering cost" in question_lower:
+        return {
+            "answer_summary": (
+                "最大工程成本不是 x402 HTTP wrapper，而是多租户安全：tenant-scoped CIEU/K9、receipt retention、idempotency/replay protection、"
+                "provider dry-run/canary/live promotion、密钥/钱包隔离、审计导出、滥用/争议处理。"
+            ),
+            "decision": "multi_tenanting_is_required_before_external_service_surface",
+            "uncertainty": "当前只能给 scope，不应给时间估计；单租户 owner-machine 形态不能直接商业化。",
+            "correct_next_action": "产出 multi-tenant scope checklist 和 minimal safe endpoint boundary。",
+            "why_this_is_the_memo_point": "memo 明确问的是工程范围，不是付款开关。",
+        }
     if "asset" in question_lower or "surface" in question_lower or "capabilit" in question_lower:
         return {
             "answer_summary": (
@@ -965,17 +986,6 @@ def _answer_open_question_by_class(question_lower: str) -> dict[str, str]:
             "uncertainty": "是否值得 resurfacing 取决于 endpoint 是否提供 Y*gov 主线没有的 buyer-visible value。",
             "correct_next_action": "跑 dead_path revival evaluation，明确哪些 revival 条件满足，哪些仍阻塞。",
             "why_this_is_the_memo_point": "memo 要求重新判断旧 dead path 在新 A2A 基础设施下是否出现非 launch 型出口。",
-        }
-    if "multi-tenant" in question_lower or "tenant" in question_lower or "engineering cost" in question_lower:
-        return {
-            "answer_summary": (
-                "最大工程成本不是 x402 HTTP wrapper，而是多租户安全：tenant-scoped CIEU/K9、receipt retention、idempotency/replay protection、"
-                "provider dry-run/canary/live promotion、密钥/钱包隔离、审计导出、滥用/争议处理。"
-            ),
-            "decision": "multi_tenanting_is_required_before_external_service_surface",
-            "uncertainty": "当前只能给 scope，不应给时间估计；单租户 owner-machine 形态不能直接商业化。",
-            "correct_next_action": "产出 multi-tenant scope checklist 和 minimal safe endpoint boundary。",
-            "why_this_is_the_memo_point": "memo 明确问的是工程范围，不是付款开关。",
         }
     if "patent" in question_lower or "p3" in question_lower or "p4" in question_lower or "claim" in question_lower:
         return {
