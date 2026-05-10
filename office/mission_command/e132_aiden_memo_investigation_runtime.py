@@ -94,7 +94,7 @@ DEFAULT_STRAT002_OPEN_QUESTIONS = (
     },
 )
 
-STRAT002_ACTION_TERMS = (
+MEMO_ACTION_ADVANCEMENT_TERMS = (
     "推进",
     "行动",
     "赚钱",
@@ -131,9 +131,16 @@ def is_strat002_reference(text: str) -> bool:
     )
 
 
-def is_strat002_action_advancement_request(text: str) -> bool:
+def is_memo_action_advancement_request(text: str) -> bool:
     lowered = (text or "").lower()
-    return is_strat002_reference(text) and any(term in lowered for term in STRAT002_ACTION_TERMS)
+    has_action_intent = any(term in lowered for term in MEMO_ACTION_ADVANCEMENT_TERMS)
+    has_memo_or_strategy_context = is_memo_investigation_request(text) or is_strat002_reference(text)
+    return has_action_intent and has_memo_or_strategy_context
+
+
+def is_strat002_action_advancement_request(text: str) -> bool:
+    """Backward-compatible alias; the runtime uses the generic memo action gate."""
+    return is_memo_action_advancement_request(text)
 
 
 def run_aiden_memo_investigation_runtime(
@@ -151,7 +158,7 @@ def run_aiden_memo_investigation_runtime(
     entities = extract_memo_entities(owner_message)
     claims = extract_memo_claims(owner_message, entities=entities)
     open_questions = extract_memo_open_questions(owner_message)
-    advancement_requested = is_strat002_action_advancement_request(owner_message)
+    advancement_requested = is_memo_action_advancement_request(owner_message)
     queries = build_memo_investigation_queries(owner_message, entities=entities, metadata=metadata)
     evidence = collect_memo_public_read_evidence(
         queries,
@@ -183,7 +190,7 @@ def run_aiden_memo_investigation_runtime(
         "memo_entities": entities,
         "memo_claims": claims,
         "memo_open_questions": open_questions,
-        "strat002_action_advancement_requested": advancement_requested,
+        "memo_action_advancement_requested": advancement_requested,
         "public_read_queries": queries,
         "public_read_evidence": evidence,
         "source_date_summary": summarize_source_dates(evidence),
@@ -563,12 +570,6 @@ def build_memo_strategic_analysis(
         evidence_digest=evidence_digest,
         repo_relation=repo_relation,
     )
-    strat002_action_packet = build_strat002_action_advancement_packet(
-        owner_message=owner_message,
-        evidence_digest=evidence_digest,
-        repo_relation=repo_relation,
-        advancement_requested=advancement_requested,
-    )
     claim_verification_matrix = build_claim_verification_matrix(claims=claims, evidence_digest=evidence_digest)
     strategic_implications = build_memo_strategic_implications(
         entity_names=entity_names,
@@ -579,6 +580,16 @@ def build_memo_strategic_analysis(
         entity_names=entity_names,
         evidence_digest=evidence_digest,
         repo_relation=repo_relation,
+    )
+    memo_action_packet = build_memo_action_advancement_packet(
+        owner_message=owner_message,
+        metadata=metadata,
+        entities=entities,
+        evidence_digest=evidence_digest,
+        repo_relation=repo_relation,
+        open_question_coverage=open_question_coverage,
+        opportunity_map=opportunity_map,
+        advancement_requested=advancement_requested,
     )
     decision_recommendation = build_memo_decision_recommendation(
         evidence_count=public_evidence_count,
@@ -591,10 +602,10 @@ def build_memo_strategic_analysis(
         decision_recommendation = {
             **decision_recommendation,
             "ceo_bottom_line": (
-                "我不再把这件事停留在“建议下一步”。STRAT-002/x402 现在应推进为 no-send 赚钱路径设计："
-                "选定 Agent Payment Intent Governance & Receipt Pack，先做买方可读交付物、验证包和内部 dry-run demo。"
+                "我不再把这件事停留在“建议下一步”。这轮 owner 要的是把 memo/战略讨论推进成可执行的受控行动产物："
+                "明确买方、交付物、赚钱假设、no-send 验证问题和内部 dry-run backlog。"
             ),
-            "decision": "ALLOW_STRAT002_NO_SEND_REVENUE_ADVANCEMENT_PACKET",
+            "decision": "ALLOW_MEMO_ACTION_ADVANCEMENT_PACKET",
             "owner_decision_needed": True,
         }
     return {
@@ -619,7 +630,7 @@ def build_memo_strategic_analysis(
         "opportunity_map": opportunity_map,
         "decision_recommendation": decision_recommendation,
         "strat002_deep_strategy_dossier": strat002_dossier,
-        "strat002_action_advancement_packet": strat002_action_packet,
+        "memo_action_advancement_packet": memo_action_packet,
         "relation_to_labs": relation_to_labs,
         "what_is_not_proven": [
             "没有证明 x402/Mission GO 已经和 Labs 集成",
@@ -809,101 +820,99 @@ def build_memo_open_question_answer_matrix(
     return matrix
 
 
-def build_strat002_action_advancement_packet(
+def build_memo_action_advancement_packet(
     *,
     owner_message: str,
+    metadata: Mapping[str, Any],
+    entities: list[Mapping[str, Any]],
     evidence_digest: list[Mapping[str, Any]],
     repo_relation: Mapping[str, Any],
+    open_question_coverage: list[Mapping[str, Any]],
+    opportunity_map: list[Mapping[str, Any]],
     advancement_requested: bool,
 ) -> dict[str, Any]:
     if not advancement_requested:
-        return {"applies": False, "reason": "owner did not ask to advance STRAT-002 into action"}
+        return {"applies": False, "reason": "owner did not ask to advance the memo into action"}
 
     evidence_refs = [str(row.get("evidence_id")) for row in evidence_digest[:6] if row.get("evidence_id")]
     repo_refs = [str(row.get("path")) for row in repo_relation.get("matched_paths", [])[:6] if row.get("path")]
+    entity_names = [str(entity.get("entity") or "") for entity in entities if entity.get("entity")]
+    title = str(metadata.get("title") or "owner-supplied research memo")
+    primary_opportunity = opportunity_map[0] if opportunity_map else {
+        "name": "Memo-derived opportunity packet",
+        "buyer_visible_shape": "把 memo 的问题转成买方能理解的交付物、验证问题和内部 dry-run。",
+        "why_us": "复用当前 Labs 能力、CIEU/CZL 和治理边界。",
+        "risk": "买方、预算和付费意愿未验证。",
+        "next_test": "生成 no-send owner decision packet。",
+    }
+    buyer_context = infer_action_packet_buyer_context(entity_names=entity_names, title=title)
+    deliverables = build_action_packet_deliverables(
+        primary_opportunity=primary_opportunity,
+        open_question_coverage=open_question_coverage,
+        buyer_context=buyer_context,
+    )
+    validation_questions = build_action_packet_validation_questions(
+        primary_opportunity=primary_opportunity,
+        buyer_context=buyer_context,
+    )
     return {
         "applies": True,
-        "packet_id": "STRAT002_X402_REVENUE_ADVANCEMENT_PACKET_V1",
-        "owner_intent_class": "advance_previous_strat002_memo_into_revenue_path",
+        "packet_id": "MEMO_ACTION_ADVANCEMENT_PACKET_V1",
+        "owner_intent_class": "advance_memo_or_strategy_discussion_into_controlled_action",
+        "memo_subject": {
+            "title": title,
+            "entities": entity_names,
+            "detected_reference": "strat002_reference" if is_strat002_reference(owner_message) else "generic_memo_or_strategy_reference",
+        },
         "ceo_decision": (
-            "立即把 STRAT-002 从 memo analysis 推进为 no-send 赚钱路径设计：不做支付 rail，不做钱包，不做低价通用 endpoint；"
-            "做 agent payment / paid-tool-call 的治理、授权、receipt、争议证据和 preflight 服务面。"
+            "把 owner 的 memo/战略讨论推进成 no-send 行动产物：先选择最小买方 wedge，产出买方可读交付物、"
+            "验证问题、内部 dry-run backlog 和 owner approval 边界；不再停留在“建议下一步”。"
         ),
         "selected_wedge": {
-            "name": "Agent Payment Intent Governance & Receipt Pack",
-            "one_sentence": (
-                "给 x402/AP2/AgentCore/Bazaar 生态里的 agent service provider 一套可嵌入的付费调用前置授权、"
-                "CIEU/CZL receipt、失败/争议证据和 no-payment dry-run 证明包。"
-            ),
-            "why_not_payment_processor": "支付处理已经由 Coinbase/AWS/Stripe/Privy/Cloudflare 等生态承担；我们的差异化在支付意图治理和行动合法性证明。",
+            "name": primary_opportunity.get("name"),
+            "one_sentence": primary_opportunity.get("buyer_visible_shape"),
+            "why_us": primary_opportunity.get("why_us"),
+            "risk": primary_opportunity.get("risk"),
         },
-        "target_buyers": [
-            {
-                "buyer": "x402/Bazaar paid endpoint providers",
-                "pain": "付费 API/agent endpoint 被调用后，需要证明调用是否授权、交付是否发生、失败责任在哪里。",
-                "entry_offer": "receipt/preflight schema review + sample governed thread + dispute evidence map",
-            },
-            {
-                "buyer": "MCP server operators preparing paid tools",
-                "pain": "工具一旦收费，普通日志不足以处理拒付、重放、越权调用和客户审计。",
-                "entry_offer": "paid-tool-call governance readiness pack",
-            },
-            {
-                "buyer": "enterprise agent platform/security teams",
-                "pain": "他们会允许 agent 花钱，但需要 spending mandate、approval boundary、audit trail 和 kill-switch proof。",
-                "entry_offer": "agent payment mandate compiler + CIEU receipt demo",
-            },
-        ],
-        "buyer_visible_deliverables": [
-            "Payment-intent boundary map: 哪些 agent 行为可付费、需审批、必须拒绝",
-            "CIEU/CZL five-tuple receipt schema for paid agent actions",
-            "x402/AP2 request-to-receipt field mapping, proposal-only",
-            "Dry-run preflight transcript: allow / require_revision / deny / escalate",
-            "Dispute and rollback evidence pack: failed delivery, replay, unauthorized spend, scope drift",
-            "Integration risk register: tenant isolation, wallet/key boundary, idempotency, live canary gate",
-            "Owner decision packet for whether to approve a technical spike",
-        ],
+        "target_buyers": buyer_context,
+        "buyer_visible_deliverables": deliverables,
         "first_money_path_hypothesis": {
             "path": "paid diagnostic / readiness pack before any live integration",
             "pricing_status": "hypothesis_only_not_validated",
             "why_someone_might_pay": (
-                "付费 agent endpoint 的风险不是能不能收 USDC，而是出事后能不能证明授权、交付、责任和拒绝理由；"
-                "这类证明对象接近合规/审计预算，而不是普通开发工具预算。"
+                "如果这个 memo 指向的是高风险、高责任或高摩擦工作流，买方可能愿意先为一份具体的 readiness / evidence / control pack 付费，"
+                "因为它降低了集成、审计、争议、合规或内部决策成本。该假设必须通过 no-send buyer validation 证明。"
             ),
-            "forbidden_claim": "不能声称已有客户、收入、付费意愿、Mission GO/x402 集成或钱包能力。",
+            "forbidden_claim": "不能声称已有客户、收入、付费意愿、live integration、钱包能力或外部执行。",
         },
         "no_send_owner_packet_now": {
-            "title": "x402 Agent Payment Intent Governance Pack - no-send buyer validation packet",
-            "recipient_profile": "founder/CTO/security lead of a paid MCP/x402 endpoint provider",
+            "title": f"{primary_opportunity.get('name')} - no-send buyer validation packet",
+            "recipient_profile": buyer_context[0]["buyer"] if buyer_context else "target buyer profile pending",
             "opening_claim": (
-                "We are not offering payment processing. We are testing whether paid agent endpoints need independent proof of "
-                "authorization, delivery, denial, replay protection, and dispute evidence."
+                "We are testing whether this specific high-friction agent/company workflow needs an evidence-bound readiness pack, "
+                "not claiming a live integration or asking for payment yet."
             ),
-            "three_validation_questions": [
-                "When an agent pays/calls your endpoint, what proof do you currently keep that the call was authorized and delivered?",
-                "What happens if the buyer agent disputes the call, says scope drift occurred, or asks why payment was required?",
-                "Would a preflight/receipt pack that produces machine-readable allow/deny/escalate evidence reduce your support/compliance burden?",
-            ],
+            "three_validation_questions": validation_questions,
             "non_send_status": "draft_only_owner_must_approve_before_any_external_contact",
         },
         "internal_action_backlog": [
             {
-                "task": "Map x402/AP2 paid-call fields to CIEU/CZL tuple and gov-mcp dry-run receipt fields",
+                "task": "Turn the memo into an asset-to-surface map with buyer, pain, deliverable, evidence, and boundary columns",
                 "owner": "Aiden -> Codex order candidate",
                 "external_action": False,
             },
             {
-                "task": "Generate one local demo thread: agent requests paid tool; Y-star-gov validates mandate; gov-mcp dry-run produces receipt; no payment sent",
+                "task": "Generate one local dry-run demo thread showing the proposed buyer workflow and governance receipt",
                 "owner": "Aiden -> Codex order candidate",
                 "external_action": False,
             },
             {
-                "task": "Build buyer-facing one-page no-send packet and target-profile list",
+                "task": "Build buyer-facing one-page no-send packet and target-profile list from the inferred buyer context",
                 "owner": "Aiden",
                 "external_action": False,
             },
             {
-                "task": "Run dead-path revival check for Defuse-class action defense as a Y* provider capability, not standalone brand",
+                "task": "Run no-new-wheel and dead-path checks before creating any new endpoint, product label, or integration path",
                 "owner": "Aiden",
                 "external_action": False,
             },
@@ -928,6 +937,80 @@ def build_strat002_action_advancement_packet(
         "evidence_refs": evidence_refs,
         "repo_refs": repo_refs,
     }
+
+
+def infer_action_packet_buyer_context(*, entity_names: list[str], title: str) -> list[dict[str, str]]:
+    lowered = " ".join(entity_names + [title]).lower()
+    if "x402" in lowered or "agent payments" in lowered or "usdc" in lowered or "wallet" in lowered:
+        return [
+            {
+                "buyer": "paid agent endpoint / MCP server provider",
+                "pain": "付费调用后需要证明授权、交付、拒绝、重放和争议责任。",
+                "entry_offer": "governed preflight + CIEU/CZL receipt readiness pack",
+            },
+            {
+                "buyer": "agent platform / security / compliance lead",
+                "pain": "允许 agent 花钱或调用付费工具前，需要 spending mandate、审计链和 kill-switch proof。",
+                "entry_offer": "agent action mandate and receipt control pack",
+            },
+            {
+                "buyer": "protocol / wallet / payment infrastructure team",
+                "pain": "payment rail 有了，但上层行动合法性、争议证据和拒绝理由仍然不完整。",
+                "entry_offer": "payment-intent governance and dispute-evidence map",
+            },
+        ]
+    if "market" in lowered or "strategy" in lowered or "战略" in lowered:
+        return [
+            {
+                "buyer": "founder / operator with an urgent strategy-to-execution gap",
+                "pain": "有战略判断但缺少可执行、可验证、可复盘的行动包。",
+                "entry_offer": "strategy-to-action evidence and execution packet",
+            }
+        ]
+    return [
+        {
+            "buyer": "owner-approved target profile derived from the memo",
+            "pain": "memo 指向的问题尚未转成买方、痛点、交付物和验证问题。",
+            "entry_offer": "no-send opportunity validation packet",
+        }
+    ]
+
+
+def build_action_packet_deliverables(
+    *,
+    primary_opportunity: Mapping[str, Any],
+    open_question_coverage: list[Mapping[str, Any]],
+    buyer_context: list[Mapping[str, str]],
+) -> list[str]:
+    deliverables = [
+        f"Buyer-visible offer brief: {primary_opportunity.get('name')}",
+        f"Target buyer profile and pain map: {buyer_context[0].get('buyer') if buyer_context else 'pending'}",
+        "Evidence digest with source dates and uncertainty flags",
+        "Capability-to-surface map: existing assets, missing wiring, no-new-wheel check",
+        "Governance boundary map: allow / require_revision / deny / escalate",
+        "No-send buyer validation questions",
+        "Internal dry-run demo plan with CIEU/CZL receipt output",
+        "Owner decision packet: approve research spike / hold / reject",
+    ]
+    for row in open_question_coverage[:3]:
+        title = str(row.get("question_title") or "").strip()
+        if title:
+            deliverables.append(f"Open-question answer artifact: {title}")
+    return list(dict.fromkeys(deliverables))
+
+
+def build_action_packet_validation_questions(
+    *,
+    primary_opportunity: Mapping[str, Any],
+    buyer_context: list[Mapping[str, str]],
+) -> list[str]:
+    buyer = buyer_context[0].get("buyer") if buyer_context else "your team"
+    offer = primary_opportunity.get("name") or "this readiness pack"
+    return [
+        f"For {buyer}, what is the current painful failure mode this offer would reduce?",
+        f"What evidence or artifact would make {offer} immediately useful rather than merely interesting?",
+        "Who owns the budget or approval for this problem, and what event makes it urgent now?",
+    ]
 
 
 def _answer_open_question_by_class(question_lower: str) -> dict[str, str]:
@@ -1168,6 +1251,18 @@ def build_memo_opportunity_map(
     evidence_digest: list[Mapping[str, Any]],
     repo_relation: Mapping[str, Any],
 ) -> list[dict[str, Any]]:
+    names = {name.lower() for name in entity_names}
+    if not {"x402", "usdc", "wallet", "stablecoin", "agent payments"}.intersection(names):
+        return [
+            {
+                "opportunity_id": "memo_to_action_readiness_pack",
+                "name": "Memo-to-Action Readiness Pack",
+                "buyer_visible_shape": "把 owner memo 转成买方、痛点、证据、交付物、风险边界和 no-send 验证问题。",
+                "why_us": "复用 Aiden memo investigation、retrieval、CIEU/CZL、Y-star-gov 和 no-new-wheel governance。",
+                "risk": "主题实体不足时不能声称已有明确市场或付费需求。",
+                "next_test": "抽取实体和 open questions 后生成 no-send owner decision packet。",
+            }
+        ]
     return [
         {
             "opportunity_id": "payment_intent_governance_pack",
@@ -1296,7 +1391,7 @@ def render_memo_investigation_owner_answer(analysis: Mapping[str, Any]) -> str:
         f"- {row.get('name')}: {row.get('buyer_visible_shape')} 下一步：{row.get('next_test')}"
         for row in analysis.get("opportunity_map", [])[:3]
     )
-    action_packet = analysis.get("strat002_action_advancement_packet", {})
+    action_packet = analysis.get("memo_action_advancement_packet", {})
     action_packet_section = ""
     if action_packet.get("applies"):
         buyer_lines = "\n".join(
@@ -1313,11 +1408,12 @@ def render_memo_investigation_owner_answer(analysis: Mapping[str, Any]) -> str:
         )
         action_packet_section = (
             "\n\n12. 我现在直接推进，而不是继续复读“下一步”\n"
-            f"推进包：{action_packet.get('packet_id')}\n"
+            f"通用行动推进包：{action_packet.get('packet_id')}\n"
             f"CEO 决策：{action_packet.get('ceo_decision')}\n\n"
             f"选定 wedge：{action_packet.get('selected_wedge', {}).get('name')}\n"
             f"{action_packet.get('selected_wedge', {}).get('one_sentence')}\n"
-            f"为什么不是支付处理商：{action_packet.get('selected_wedge', {}).get('why_not_payment_processor')}\n\n"
+            f"为什么是我们：{action_packet.get('selected_wedge', {}).get('why_us')}\n"
+            f"当前风险：{action_packet.get('selected_wedge', {}).get('risk')}\n\n"
             "目标买方：\n"
             f"{buyer_lines}\n\n"
             "买方能看懂的交付物：\n"
