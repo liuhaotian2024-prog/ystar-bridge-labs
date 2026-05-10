@@ -99,6 +99,18 @@ def test_ui_assets_expose_cieu_messenger_contract():
     assert "five-tuple" in text
 
 
+def test_messenger_static_assets_are_cache_busted_for_ui_updates():
+    root = Path(__file__).resolve().parents[2]
+    index = root / "office/agent_native_messenger/index.html"
+    server = root / "office/agent_native_messenger/server.py"
+    index_text = index.read_text(encoding="utf-8")
+    server_text = server.read_text(encoding="utf-8")
+    assert "main.js?v=e140-copy-buttons" in index_text
+    assert "styles.css?v=e140-copy-buttons" in index_text
+    assert "Cache-Control" in server_text
+    assert "no-store, no-cache" in server_text
+
+
 def test_owner_message_generates_governed_aiden_reply(tmp_path):
     db = tmp_path / "e124_turn.db"
     result = run_agent_native_messenger_turn(
