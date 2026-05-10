@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import sqlite3
 
 from office.agent_native_messenger import server
 
@@ -67,3 +68,53 @@ def test_non_followup_is_not_rewritten(tmp_path, monkeypatch):
 
     assert resolved == "Aiden，请解释你现在是什么状态。"
     assert meta["applied"] is False
+
+
+def test_execution_followup_recovers_strat002_context_from_cieustore_when_json_context_is_generic(tmp_path, monkeypatch):
+    context_path = tmp_path / "context.json"
+    context_path.write_text(
+        json.dumps(
+            {
+                "last_human_text": "那么你现在就开始自主的执行你说的下一步吧",
+                "last_runtime_owner_text": "那么你现在就开始自主的执行你说的下一步吧",
+                "last_reply_text": "我的判断：这是一个通用行动包。",
+            },
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+    db = tmp_path / "messenger.db"
+    with sqlite3.connect(db) as conn:
+        conn.execute(
+            "CREATE TABLE cieu_events(rowid INTEGER PRIMARY KEY AUTOINCREMENT, agent_id TEXT, event_type TEXT, result_json TEXT, created_at REAL)"
+        )
+        conn.execute(
+            "INSERT INTO cieu_events(agent_id, event_type, result_json, created_at) VALUES (?, ?, ?, ?)",
+            (
+                "owner",
+                "AIDEN_AGENT_NATIVE_MESSAGE_DECISION",
+                json.dumps({"human_readable_text": "Aiden，请分析 STRAT-002 x402 Mission GO memo。"}, ensure_ascii=False),
+                1.0,
+            ),
+        )
+        conn.execute(
+            "INSERT INTO cieu_events(agent_id, event_type, result_json, created_at) VALUES (?, ?, ?, ?)",
+            (
+                "Aiden",
+                "AIDEN_AGENT_NATIVE_MESSAGE_DECISION",
+                json.dumps({"human_readable_text": "下一步：生成 no-send 的 x402/Mission GO 机会核验包。"}, ensure_ascii=False),
+                2.0,
+            ),
+        )
+    monkeypatch.setattr(server, "CONVERSATION_CONTEXT_PATH", context_path)
+
+    resolved, meta = server._resolve_runtime_owner_text_from_context(
+        "那么你现在就开始自主的执行你说的下一步吧",
+        cieu_db=db,
+    )
+
+    assert meta["applied"] is True
+    assert meta["context_recovery_source"] == "cieustore_recent_aiden_messages"
+    assert "STRAT-002" in resolved
+    assert "x402" in resolved
+    assert "no-send owner decision packet" in resolved

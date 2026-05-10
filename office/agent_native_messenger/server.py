@@ -10,6 +10,8 @@ from __future__ import annotations
 import http.server
 import json
 import os
+import re
+import sqlite3
 import sys
 import tempfile
 import time
@@ -84,6 +86,23 @@ OWNER_COORDINATION_TRIGGERS = (
     "我不明白",
     "what do you need from me",
 )
+HIGH_SIGNAL_CONTEXT_TERMS = (
+    "strat-002",
+    "x402",
+    "mission go",
+    "agentcore",
+    "ap2",
+    "usdc",
+    "e34",
+    "defuse",
+    "plugin path",
+    "first-cash",
+    "memo investigation",
+    "备忘录",
+    "赚钱战略",
+    "赚钱路径",
+    "变现路径",
+)
 
 
 def _json_response(handler: http.server.BaseHTTPRequestHandler, payload: dict, status: int = 200) -> None:
@@ -132,6 +151,94 @@ def _save_conversation_context(*, human_text: str, runtime_owner_text: str, turn
         return
 
 
+def _context_signal_score(*texts: str) -> int:
+    joined = "\n".join(str(text or "").lower() for text in texts)
+    score = sum(1 for term in HIGH_SIGNAL_CONTEXT_TERMS if term in joined)
+    if len(joined) >= 500:
+        score += 1
+    return score
+
+
+def _extract_human_readable_text_from_jsonish(raw: str) -> str:
+    if not raw:
+        return ""
+    try:
+        data = json.loads(raw)
+        return str(data.get("human_readable_text") or "")
+    except Exception:
+        pass
+    match = re.search(r'"human_readable_text"\s*:\s*"((?:\\.|[^"\\])*)"', raw)
+    if not match:
+        return ""
+    try:
+        return str(json.loads(f'"{match.group(1)}"'))
+    except Exception:
+        return match.group(1)
+
+
+def _recover_conversation_context_from_cieustore(cieu_db: str | Path | None) -> dict:
+    """Recover recent high-signal messenger context from CIEU after service restarts."""
+
+    if not cieu_db:
+        return {}
+    db_path = Path(cieu_db)
+    if not db_path.exists():
+        return {}
+    try:
+        with sqlite3.connect(db_path) as conn:
+            rows = conn.execute(
+                """
+                SELECT agent_id, result_json, created_at
+                FROM cieu_events
+                WHERE event_type = 'AIDEN_AGENT_NATIVE_MESSAGE_DECISION'
+                ORDER BY rowid DESC
+                LIMIT 80
+                """
+            ).fetchall()
+    except Exception:
+        return {}
+
+    recent: list[dict[str, str]] = []
+    for agent_id, result_json, created_at in rows:
+        text = _extract_human_readable_text_from_jsonish(str(result_json or ""))
+        if text:
+            recent.append({"agent_id": str(agent_id or ""), "text": text, "created_at": str(created_at or "")})
+    if not recent:
+        return {}
+
+    owner_candidates = [
+        item for item in recent if item["agent_id"] == "owner" and _context_signal_score(item["text"]) > 0
+    ]
+    aiden_candidates = [
+        item
+        for item in recent
+        if item["agent_id"] == "Aiden"
+        and (
+            _context_signal_score(item["text"]) > 0
+            or any(term in item["text"] for term in ("下一步", "no-send", "owner decision packet", "核验包"))
+        )
+    ]
+    if not owner_candidates and not aiden_candidates:
+        long_owner = [item for item in recent if item["agent_id"] == "owner" and len(item["text"]) >= 500]
+        if long_owner:
+            owner_candidates = long_owner
+    if not owner_candidates and not aiden_candidates:
+        return {}
+
+    owner_text = owner_candidates[0]["text"] if owner_candidates else ""
+    reply_text = aiden_candidates[0]["text"] if aiden_candidates else ""
+    return {
+        "updated_at": datetime.now(timezone.utc).isoformat(),
+        "last_human_text": owner_text,
+        "last_runtime_owner_text": owner_text,
+        "last_reply_text": reply_text,
+        "last_reply_backend": "recovered_from_cieustore",
+        "last_reply_protocol": "AidenMessengerCIEUContextRecoveryV1",
+        "last_turn_status": "recovered",
+        "context_recovery_source": "cieustore_recent_aiden_messages",
+    }
+
+
 def _is_execution_followup(text: str) -> bool:
     lowered = (text or "").lower()
     return any(trigger in lowered for trigger in FOLLOWUP_EXECUTION_TRIGGERS)
@@ -163,10 +270,16 @@ def _infer_prior_subject(prior_runtime_text: str, prior_reply: str) -> str:
     )
 
 
-def _resolve_runtime_owner_text_from_context(human_text: str) -> tuple[str, dict]:
+def _resolve_runtime_owner_text_from_context(human_text: str, *, cieu_db: str | Path | None = None) -> tuple[str, dict]:
     """Resolve short follow-ups to the previous runtime context while preserving visible owner text."""
 
     context = _load_conversation_context()
+    recovered_context = _recover_conversation_context_from_cieustore(cieu_db)
+    if recovered_context and _context_signal_score(
+        recovered_context.get("last_runtime_owner_text", ""),
+        recovered_context.get("last_reply_text", ""),
+    ) > _context_signal_score(context.get("last_runtime_owner_text", ""), context.get("last_reply_text", "")):
+        context = recovered_context
     prior_runtime_text = str(context.get("last_runtime_owner_text") or context.get("last_human_text") or "")
     prior_reply = str(context.get("last_reply_text") or "")
     execution_followup = _is_execution_followup(human_text)
@@ -176,6 +289,7 @@ def _resolve_runtime_owner_text_from_context(human_text: str) -> tuple[str, dict
             "applied": False,
             "reason": "not_a_contextual_followup_or_no_prior_context",
             "context_path": str(CONVERSATION_CONTEXT_PATH),
+            "cieustore_context_recovered": bool(recovered_context),
         }
 
     prior_subject = _infer_prior_subject(prior_runtime_text, prior_reply)
@@ -212,6 +326,7 @@ def _resolve_runtime_owner_text_from_context(human_text: str) -> tuple[str, dict
         "prior_subject": prior_subject,
         "prior_reply_backend": context.get("last_reply_backend"),
         "prior_reply_protocol": context.get("last_reply_protocol"),
+        "context_recovery_source": context.get("context_recovery_source", "conversation_context_file"),
     }
 
 
@@ -356,7 +471,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if not human_text:
             _json_response(self, {"error": "empty text"}, 400)
             return
-        runtime_owner_text, context_resolution = _resolve_runtime_owner_text_from_context(human_text)
+        runtime_owner_text, context_resolution = _resolve_runtime_owner_text_from_context(human_text, cieu_db=db_path)
         allow_live_network = _allow_live_network_for_message(runtime_owner_text)
         started = time.monotonic()
         future = RUNTIME_EXECUTOR.submit(
