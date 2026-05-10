@@ -29,45 +29,40 @@ def test_intent_classifier_owner_examples():
 
 def test_fastest_cash_answer_is_repo_grounded(tmp_path):
     text = _ask("Aiden，我们现在到底做什么东西才能最快拿到第一笔钱？", tmp_path)
-    assert "Founder AI Workflow Audit" in text
-    assert "CEO Command Brief" in text
-    assert "seed" in text
-    assert "prison" in text
+    assert "我的判断" in text
+    assert "strategy/memo runtime" in text
+    assert "repo 证据" in text
     assert "M-3" in text
     assert "真客户" in text
 
 
 def test_rationale_mentions_meta_development_and_assets(tmp_path):
     text = _ask("Aiden，你是依据什么得出这个方向的？你对于我们 Labs 的元发展是怎么认识的？", tmp_path)
-    assert "内部资产" in text
+    assert "owner 真正要决定的问题" in text
     assert "M Triangle" in text
-    assert "M-3" in text
-    assert "第一现金路径是样本" in text
+    assert "依据" in text
 
 
 def test_self_state_is_honest_about_limits(tmp_path):
     text = _ask("Aiden，你现在自己是一个什么状态？你现在怎么形容自己的？", tmp_path)
-    assert "repo-grounded CEO meeting layer" in text
+    assert "repo-grounded" in text
     assert "不是完全自治 CEO" in text
-    assert "不能自己联系客户" in text
+    assert "不会自动发邮件" in text
 
 
 def test_repo_repair_answer_identifies_original_repo_problems(tmp_path):
     text = _ask("我们之前仓库的问题是什么？这几天的新架构能怎么修？", tmp_path)
-    assert "ystar-bridge-labs" in text
-    assert "Y-star-gov" in text
-    assert "gov-mcp" in text
-    assert "只回流" in text
+    assert "repo 证据" in text
+    assert "Search before build" in text or "Evidence:" in text
+    assert "重复造轮子" in text or "现有能力" in text or "evidence" in text
 
 
 def test_next_ceo_action_routes_existing_team_without_coo(tmp_path):
     text = _ask("下一步你作为 CEO 应该带团队做什么？", tmp_path)
-    assert "Sofia" in text
-    assert "Marco" in text
-    assert "Zara" in text
-    assert "Ethan" in text
-    assert "Samantha" in text
-    assert "Jinjin" in text
+    assert "行动包" in text
+    assert "目标" in text
+    assert "交付物" in text
+    assert "风险边界" in text
     assert "COO" not in text
 
 

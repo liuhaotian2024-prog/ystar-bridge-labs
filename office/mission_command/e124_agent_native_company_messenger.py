@@ -423,24 +423,22 @@ def _render_strategy_receipt_as_chinese(owner_text: str, reply_runtime: Mapping[
         )
 
     return (
-        "这是 Aiden 策略运行结果的中文解释。我会把机器收据转换成人能讨论的结论，而不是让你读日志。\n\n"
-        "1. 这次到底跑了什么？\n"
-        f"它触发的是 `{milestone or 'CEO strategy runtime'}`。意思是：Aiden 没有直接凭近期记忆回答，而是走了能力利用检查、"
-        "公开证据快照、证据日期过滤、CIEU 记录、脑学习候选和 Y-star-gov 验证这些链路。\n\n"
-        "2. 它选出的赚钱方向是什么？\n"
-        f"当前机器评分选中的是：{selected_path}。\n"
+        "我的判断：这轮 Aiden 返回的是策略运行结果，但 owner-facing 层必须先讲内容，不该先让你读流程。\n\n"
+        "1. 当前结论是什么？\n"
+        f"当前候选排序选中的是：{selected_path}。\n"
         f"内部 route id 是 `{selected_route_id}`，数学分数是 `{score}`，EVSI 是 `{evsi}`。\n\n"
-        "3. 它为什么会这么选？\n"
+        "2. 它为什么会这么选？\n"
         f"这轮使用的 provider mode 是 `{provider_mode}`，证据数量是 `{evidence_count}`，带日期证据是 `{dated_evidence}`，"
         f"no-new-wheel 决策是 `{no_new_wheel}`，CIEU 事件数是 `{cieu_events}`。也就是说，它主要是在当前受控证据集里，"
-        "把“AI 安全 / 合规 / 审计准备包”判断为更贴近我们已有治理、证据、CIEU、agent runtime 能力的第一现金路径。"
+        f"把“{selected_path}”判断为更贴近当前证据、能力和约束的候选路径；这个解释不能再把固定的 AI 安全路线塞进所有问题。"
         f"{freshness_warning}\n\n"
-        "4. 其他候选路线有哪些？\n"
+        "3. 其他候选路线有哪些？\n"
         f"{rendered_routes}\n\n"
-        "5. 这条结论应该怎么理解？\n"
+        "4. 这条结论应该怎么理解？\n"
         "它不是客户验证，不是收入信号，也不是已经证明市场愿意付钱。它只是一次受治理的战略候选排序。"
-        "真正有价值的下一步不是继续看这份日志，而是让 Aiden 解释：目标买家是谁、具体交付物是什么、为什么我们比 Vanta/Drata/Secureframe 或咨询公司更适合、"
-        "第一个 no-send owner decision packet 应该怎么写。\n\n"
+        "如果你问的是推进或赚钱路径，合格回答必须继续给出目标买方、交付物、验证问题和内部行动包，而不是停在“建议下一步”。\n\n"
+        "5. 运行证明，放在最后\n"
+        f"触发 runtime：`{milestone or 'CEO strategy runtime'}`。这些证明用于审计，不应替代 CEO 判断。\n\n"
         "6. 边界\n"
         "这轮没有外部发送、没有客户联系、没有付款、没有收入证明、没有 live provider execution，也没有 K9Audit 写入。\n\n"
         f"你的原始问题摘要：{_compact_owner_text(owner_text)}"
@@ -463,10 +461,12 @@ def apply_owner_dialogue_language_policy(owner_text: str, reply_runtime: Mapping
         policy["strategy_runtime_receipt_translated"] = True
         runtime["raw_reply_text_before_owner_dialogue_policy"] = raw_reply
         runtime["reply_text"] = _render_strategy_receipt_as_chinese(owner_text, runtime, raw_reply)
+        runtime["owner_answer_generalization_gate"] = _validate_owner_answer_generalization_safe(owner_text, runtime["reply_text"])
         runtime["owner_dialogue_language_policy"] = policy
         return runtime
 
     if _is_chinese_owner_dialogue(raw_reply):
+        runtime["owner_answer_generalization_gate"] = _validate_owner_answer_generalization_safe(owner_text, raw_reply)
         runtime["owner_dialogue_language_policy"] = policy
         return runtime
 
@@ -490,8 +490,23 @@ def apply_owner_dialogue_language_policy(owner_text: str, reply_runtime: Mapping
         "我必须继续走对应的治理链路，不能把一句自然语言直接当成执行授权。\n\n"
         "5. 下一步：你可以继续追问“为什么”“依据是什么”“下一步怎么做”，我会优先用中文、分点、带边界地回答。"
     )
+    runtime["owner_answer_generalization_gate"] = _validate_owner_answer_generalization_safe(owner_text, runtime["reply_text"])
     runtime["owner_dialogue_language_policy"] = policy
     return runtime
+
+
+def _validate_owner_answer_generalization_safe(owner_text: str, answer_text: str) -> dict[str, Any]:
+    try:
+        from office.mission_command.e144_hardcode_generalization_audit import validate_owner_answer_generalization
+
+        return validate_owner_answer_generalization(owner_text, answer_text)
+    except Exception as exc:  # pragma: no cover - guard must never break messenger replies.
+        return {
+            "artifact_id": "e144_owner_answer_generalization_gate",
+            "decision": "NOT_RUN",
+            "passed": False,
+            "runtime_error": exc.__class__.__name__,
+        }
 
 
 def run_agent_native_messenger_turn(

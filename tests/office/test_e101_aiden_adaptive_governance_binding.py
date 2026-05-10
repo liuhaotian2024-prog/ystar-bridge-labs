@@ -21,7 +21,8 @@ def test_fastest_cash_answer_is_adaptive_governance_gated(tmp_path):
     assert "pricing_hypothesis_source_audit" in text
     assert "right_to_win_analysis" in text
     assert "Correct path" in text
-    assert "Founder AI Workflow Audit" in text
+    assert "meeting-room 里某个固定候选" in text
+    assert "no-send owner decision packet" in text
 
 
 def test_status_answer_still_gets_adaptive_discovery_without_full_strategy_lock(tmp_path):

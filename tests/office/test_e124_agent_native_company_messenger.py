@@ -227,11 +227,12 @@ def test_strategy_runtime_receipt_is_rendered_as_owner_readable_chinese():
     )
     text = result["reply_text"]
     assert result["owner_dialogue_language_policy"]["strategy_runtime_receipt_translated"] is True
-    assert "策略运行结果的中文解释" in text
+    assert "先讲内容" in text
     assert "AI security, compliance" in text
     assert "不是客户验证" in text
     assert "没有外部发送" in text
     assert "snapshot" in text
+    assert result["owner_answer_generalization_gate"]["decision"] == "ALLOW"
     assert "Top market-first routes:" not in text
     assert "- -" not in text
 
@@ -264,6 +265,7 @@ def test_strategy_runtime_receipt_splits_top_routes_and_does_not_swallow_labels(
     )["reply_text"]
     assert "no-new-wheel 决策是 `ALLOW`" in text
     assert "CIEU 事件数是 `48`" in text
+    assert "不能再把固定的 AI 安全路线塞进所有问题" in text
     assert "ai_security_compliance_first_cash_pack：score=3.01" in text
     assert "construction_bids_first_cash_pack：score=3.01" in text
     assert "grant_ops_first_cash_pack：score=3.01" in text

@@ -1,29 +1,148 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
+from typing import Iterable
+
+
+@dataclass(frozen=True)
+class IntentProfile:
+    intent: str
+    confidence: float
+    matched_features: tuple[str, ...]
+    classification_mode: str
+
+
+INTENT_FEATURES: dict[str, tuple[str, ...]] = {
+    "agents_burden": (
+        "agents.md",
+        "治理规则",
+        "拖慢",
+        "旧规则",
+        "m-3 value production",
+        "m-3",
+        "行政负担",
+    ),
+    "directive_retriage": (
+        "directive_tracker",
+        "directive tracker",
+        "归档",
+        "继续推进",
+        "re-triage",
+    ),
+    "operations_calendar": (
+        "operations.md",
+        "hn/linkedin",
+        "linkedin 日程",
+        "hn 日程",
+        "旧 hn",
+        "旧hn",
+        "发布节奏",
+    ),
+    "current_money_blocker": (
+        "最阻碍",
+        "阻碍 labs 赚钱",
+        "赚钱的是治理问题",
+        "产品问题",
+        "分发问题",
+        "为什么赚不到钱",
+    ),
+    "permission_tier_replacement": (
+        "permission tier",
+        "permission-tier",
+        "权限层",
+        "替代",
+        "审批层",
+    ),
+    "fastest_cash": (
+        "最快拿到第一笔钱",
+        "第一笔钱",
+        "现金",
+        "revenue",
+        "first cash",
+        "赚钱路径",
+        "变现路径",
+    ),
+    "rationale_meta": (
+        "依据",
+        "为什么",
+        "元发展",
+        "meta",
+        "怎么认识",
+    ),
+    "self_state": (
+        "什么状态",
+        "形容自己",
+        "你现在自己",
+        "你是谁",
+    ),
+    "repo_repair": (
+        "之前仓库的问题",
+        "新架构",
+        "怎么修",
+        "这几天",
+        "孤岛模块",
+        "散乱",
+        "重复造轮子",
+    ),
+    "approval": (
+        "批准",
+        "审批",
+        "approval",
+        "授权",
+        "外部动作",
+    ),
+    "next_ceo_action": (
+        "下一步",
+        "带团队",
+        "ceo 应该",
+        "ceo应该",
+        "马上做",
+        "推进",
+        "落地",
+    ),
+}
+
+
+def classify_intent_profile(message: str) -> IntentProfile:
+    text = (message or "").lower()
+    scores: list[tuple[float, str, tuple[str, ...]]] = []
+    for intent, features in INTENT_FEATURES.items():
+        matched = tuple(feature for feature in features if feature.lower() in text)
+        if not matched:
+            continue
+        coverage = len(matched) / max(1, len(features))
+        strength = min(1.0, 0.42 + coverage + (0.08 * min(3, len(matched))))
+        scores.append((strength, intent, matched))
+    if not scores:
+        return IntentProfile(
+            intent="general",
+            confidence=0.35,
+            matched_features=(),
+            classification_mode="feature_fallback",
+        )
+    scores.sort(reverse=True)
+    confidence, intent, matched = scores[0]
+    return IntentProfile(
+        intent=intent,
+        confidence=round(confidence, 3),
+        matched_features=matched,
+        classification_mode="feature_scored",
+    )
+
 
 def classify_intent(message: str) -> str:
-    text = message.lower()
-    if any(k in text for k in ["agents.md", "治理规则", "拖慢", "m-3 value production", "m-3"]):
-        if any(k in text for k in ["拖慢", "旧规则", "治理规则"]):
-            return "agents_burden"
-    if any(k in text for k in ["directive_tracker", "directive tracker", "归档", "继续推进"]):
-        return "directive_retriage"
-    if any(k in text for k in ["operations.md", "hn/linkedin", "linkedin 日程", "hn 日程", "旧 hn", "旧hn"]):
-        return "operations_calendar"
-    if any(k in text for k in ["最阻碍", "阻碍 labs 赚钱", "赚钱的是治理问题", "产品问题", "分发问题"]):
-        return "current_money_blocker"
-    if any(k in text for k in ["permission tier", "permission-tier", "权限层", "替代"]):
-        return "permission_tier_replacement"
-    if any(k in text for k in ["最快拿到第一笔钱", "第一笔钱", "现金", "revenue", "first cash"]):
-        return "fastest_cash"
-    if any(k in text for k in ["依据", "为什么", "元发展", "meta"]):
-        return "rationale_meta"
-    if any(k in text for k in ["什么状态", "形容自己", "你现在自己"]):
-        return "self_state"
-    if any(k in text for k in ["之前仓库的问题", "新架构", "怎么修", "这几天"]):
-        return "repo_repair"
-    if any(k in text for k in ["批准", "审批", "approval"]):
-        return "approval"
-    if any(k in text for k in ["下一步", "带团队", "ceo 应该", "ceo应该"]):
-        return "next_ceo_action"
-    return "general"
+    return classify_intent_profile(message).intent
+
+
+def flatten_intent_features() -> Iterable[str]:
+    for features in INTENT_FEATURES.values():
+        yield from features
+
+
+__all__ = [
+    "INTENT_FEATURES",
+    "IntentProfile",
+    "classify_intent",
+    "classify_intent_profile",
+    "flatten_intent_features",
+]
