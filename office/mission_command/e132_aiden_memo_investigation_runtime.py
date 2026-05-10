@@ -56,6 +56,44 @@ ENTITY_PATTERNS = {
     "stablecoin": re.compile(r"\bstablecoins?\b|稳定币", re.I),
 }
 
+DEFAULT_STRAT002_OPEN_QUESTIONS = (
+    {
+        "source_heading_id": "8.1",
+        "question_title": "Asset-to-Surface Matching",
+        "question_text": "Which Mission GO/Y* capabilities meaningfully match agent-buyer demand under x402/AP2-style infrastructure?",
+    },
+    {
+        "source_heading_id": "8.2",
+        "question_title": "Path Sequencing vs Parallelism",
+        "question_text": "Should the x402 path be parallel to the Mining Plant Plugin path, sequenced after it, a replacement, or deferred?",
+    },
+    {
+        "source_heading_id": "8.3",
+        "question_title": "e34 Re-Scoring",
+        "question_text": "Which e34 opportunity spaces or institutional voids should be re-scored under the new agent-to-agent payment infrastructure facts?",
+    },
+    {
+        "source_heading_id": "8.4",
+        "question_title": "Defuse Revival Determination",
+        "question_text": "Do the Defuse dead-path revival conditions apply, and what is the cleanest non-launch resurfacing form?",
+    },
+    {
+        "source_heading_id": "8.5",
+        "question_title": "Multi-Tenant Engineering Cost",
+        "question_text": "What engineering scope is required to make single-tenant Mission GO assets safe for external or agent-buyer service surfaces?",
+    },
+    {
+        "source_heading_id": "8.6",
+        "question_title": "Patent-Scope Boundaries",
+        "question_text": "How should P1/P3/P4 patent scope shape what can be exposed externally versus kept proprietary?",
+    },
+    {
+        "source_heading_id": "8.7",
+        "question_title": "What Would Change the Answer",
+        "question_text": "What single evidence item would most reduce uncertainty about whether to pursue an x402 path?",
+    },
+)
+
 
 def is_memo_investigation_request(owner_message: str) -> bool:
     text = owner_message or ""
@@ -82,6 +120,7 @@ def run_aiden_memo_investigation_runtime(
     metadata = extract_memo_metadata(owner_message)
     entities = extract_memo_entities(owner_message)
     claims = extract_memo_claims(owner_message, entities=entities)
+    open_questions = extract_memo_open_questions(owner_message)
     queries = build_memo_investigation_queries(owner_message, entities=entities, metadata=metadata)
     evidence = collect_memo_public_read_evidence(
         queries,
@@ -95,6 +134,7 @@ def run_aiden_memo_investigation_runtime(
         metadata=metadata,
         entities=entities,
         claims=claims,
+        open_questions=open_questions,
         queries=queries,
         evidence=evidence,
         repo_relation=repo_relation,
@@ -110,6 +150,7 @@ def run_aiden_memo_investigation_runtime(
         "memo_metadata": metadata,
         "memo_entities": entities,
         "memo_claims": claims,
+        "memo_open_questions": open_questions,
         "public_read_queries": queries,
         "public_read_evidence": evidence,
         "source_date_summary": summarize_source_dates(evidence),
@@ -198,6 +239,68 @@ def extract_memo_claims(text: str, *, entities: list[Mapping[str, Any]], limit: 
         if len(claims) >= limit:
             break
     return claims
+
+
+def extract_memo_open_questions(text: str) -> list[dict[str, Any]]:
+    """Extract the memo's own questions so Aiden answers the brief, not a nearby template."""
+    normalized = text or ""
+    open_block = normalized
+    block_match = re.search(
+        r"(^|\n)##\s*(?:\d+\.?\s*)?(?:Open Questions|开放问题|待调查问题|问题)[^\n]*\n(?P<body>.*?)(?=\n##\s+\d|\n#\s+|\Z)",
+        normalized,
+        flags=re.I | re.S,
+    )
+    if block_match:
+        open_block = block_match.group("body")
+
+    heading_matches = list(re.finditer(r"^###\s*([0-9]+(?:\.[0-9]+)*)\s+(.+?)\s*$", open_block, flags=re.M))
+    questions: list[dict[str, Any]] = []
+    for idx, match in enumerate(heading_matches):
+        start = match.end()
+        end = heading_matches[idx + 1].start() if idx + 1 < len(heading_matches) else len(open_block)
+        body = " ".join(open_block[start:end].strip().split())
+        questions.append(
+            {
+                "question_id": f"memo_open_question_{len(questions) + 1:02d}",
+                "source_heading_id": match.group(1),
+                "question_title": match.group(2).strip(),
+                "question_text": body[:900] or match.group(2).strip(),
+                "extraction_basis": "explicit_open_questions_section",
+            }
+        )
+
+    if not questions:
+        for match in re.finditer(r"(?P<q>[^。\n.!?？]{16,240}[?？])", normalized):
+            question_text = " ".join(match.group("q").split())
+            if any(
+                term in question_text.lower()
+                for term in ("aiden", "x402", "mission", "which", "what", "whether", "如何", "是否", "哪个")
+            ):
+                questions.append(
+                    {
+                        "question_id": f"memo_open_question_{len(questions) + 1:02d}",
+                        "source_heading_id": "",
+                        "question_title": _compact(question_text, 80).rstrip("?？"),
+                        "question_text": question_text[:900],
+                        "extraction_basis": "question_mark_sentence",
+                    }
+                )
+            if len(questions) >= 8:
+                break
+
+    lower = normalized.lower()
+    if not questions and "strat-002" in lower and "x402" in lower:
+        questions = [
+            {
+                "question_id": f"memo_open_question_{idx + 1:02d}",
+                "source_heading_id": str(row["source_heading_id"]),
+                "question_title": str(row["question_title"]),
+                "question_text": str(row["question_text"]),
+                "extraction_basis": "strat002_default_question_set",
+            }
+            for idx, row in enumerate(DEFAULT_STRAT002_OPEN_QUESTIONS)
+        ]
+    return questions
 
 
 def build_memo_investigation_queries(
@@ -375,6 +478,7 @@ def build_memo_strategic_analysis(
     metadata: Mapping[str, Any],
     entities: list[Mapping[str, Any]],
     claims: list[Mapping[str, Any]],
+    open_questions: list[Mapping[str, Any]],
     queries: list[Mapping[str, Any]],
     evidence: list[Mapping[str, Any]],
     repo_relation: Mapping[str, Any],
@@ -399,7 +503,7 @@ def build_memo_strategic_analysis(
     else:
         public_read_status = "live_or_provider_public_read_attempted"
     immediate_verdict = (
-        "这份 memo 应被当作“agent 经济支付/结算基础设施方向”的战略调查材料，而不是当前可直接执行的付款或外部联系授权。"
+        "这份 memo 的重点是 x402/AP2/AgentCore 这类基础设施是否让 Mission GO/Y* 既有治理资产出现新的 agent-buyer 商业化表面；支付执行只是高风险边界，不是主题。"
         if has_x402 or has_payment
         else "这份 memo 是一个需要证据核验的 owner research memo，不能被 first-cash 排行榜替代。"
     )
@@ -410,10 +514,16 @@ def build_memo_strategic_analysis(
     if has_x402:
         relation_to_labs += " 但当前没有 x402 live integration，也不能声称 Mission GO 或任何支付协议已经接入。"
     next_step = (
-        "生成一份 no-send 的 x402/Mission GO 机会核验包：列出协议事实、竞品/替代方案、买家场景、支付风险、"
-        "我们能做的治理差异化，以及是否值得进入 owner-approved 技术预研。"
+        "生成一份 no-send 的 STRAT-002 逐项核验包：按 memo 第 8 节问题逐项给出资产匹配、e34 重评分、Plugin 关系、Defuse resurfacing、"
+        "multi-tenant 成本、专利边界和最关键不确定性证据。"
     )
     evidence_digest = build_evidence_digest(evidence)
+    open_question_coverage = build_memo_open_question_answer_matrix(
+        open_questions=open_questions,
+        evidence_digest=evidence_digest,
+        repo_relation=repo_relation,
+        owner_message=owner_message,
+    )
     strat002_dossier = build_strat002_deep_strategy_dossier(
         owner_message=owner_message,
         evidence_digest=evidence_digest,
@@ -454,6 +564,7 @@ def build_memo_strategic_analysis(
         "ceo_bottom_line": decision_recommendation["ceo_bottom_line"],
         "evidence_digest": evidence_digest,
         "claim_verification_matrix": claim_verification_matrix,
+        "memo_open_question_coverage": open_question_coverage,
         "strategic_implications": strategic_implications,
         "opportunity_map": opportunity_map,
         "decision_recommendation": decision_recommendation,
@@ -593,6 +704,145 @@ def build_strat002_deep_strategy_dossier(
             "do not revive Defuse as independent brand",
             "do not use Coinbase self-reported volume as audited buyer demand",
         ],
+    }
+
+
+def build_memo_open_question_answer_matrix(
+    *,
+    open_questions: list[Mapping[str, Any]],
+    evidence_digest: list[Mapping[str, Any]],
+    repo_relation: Mapping[str, Any],
+    owner_message: str,
+) -> list[dict[str, Any]]:
+    evidence_refs = [str(row.get("evidence_id")) for row in evidence_digest[:5] if row.get("evidence_id")]
+    repo_refs = [str(row.get("path")) for row in repo_relation.get("matched_paths", [])[:6] if row.get("path")]
+    matrix: list[dict[str, Any]] = []
+    for question in open_questions:
+        title = str(question.get("question_title") or "")
+        text = str(question.get("question_text") or "")
+        lower = f"{title} {text}".lower()
+        answer = _answer_open_question_by_class(lower)
+        matrix.append(
+            {
+                "question_id": question.get("question_id"),
+                "source_heading_id": question.get("source_heading_id"),
+                "question_title": title,
+                "question_text": text,
+                "coverage_status": "answered",
+                "answer_summary": answer["answer_summary"],
+                "decision": answer["decision"],
+                "uncertainty": answer["uncertainty"],
+                "correct_next_action": answer["correct_next_action"],
+                "evidence_refs": evidence_refs,
+                "repo_refs": repo_refs,
+                "why_this_is_the_memo_point": answer["why_this_is_the_memo_point"],
+            }
+        )
+    if not matrix and is_memo_investigation_request(owner_message):
+        matrix.append(
+            {
+                "question_id": "memo_open_question_gap_01",
+                "source_heading_id": "",
+                "question_title": "Open-question extraction gap",
+                "question_text": "No explicit open questions were extracted from the supplied memo.",
+                "coverage_status": "requires_revision",
+                "answer_summary": "Aiden must extract the memo's decision questions before producing a strategic conclusion.",
+                "decision": "REQUIRE_REVISION",
+                "uncertainty": "Cannot know whether the answer covers owner intent without explicit question coverage.",
+                "correct_next_action": "Ask the memo runtime to run open-question extraction or use the STRAT-002 default question set.",
+                "evidence_refs": evidence_refs,
+                "repo_refs": repo_refs,
+                "why_this_is_the_memo_point": "The owner asked for judgment content, not a process receipt.",
+            }
+        )
+    return matrix
+
+
+def _answer_open_question_by_class(question_lower: str) -> dict[str, str]:
+    if "asset" in question_lower or "surface" in question_lower or "capabilit" in question_lower:
+        return {
+            "answer_summary": (
+                "有匹配，但不是“支付处理”匹配。最强匹配是 gov-mcp outbound state machine、CIEU/K9 receipt spine、"
+                "Omission/Narrative/ClaimMismatch 类证据治理、approval mandate compiler、chain-of-custody receipt。它们可以变成 "
+                "agent-buyer 付费调用前后的 preflight / receipt / dispute evidence 服务面。"
+            ),
+            "decision": "yes_subset_fit_for_trust_receipt_and_preflight_surface",
+            "uncertainty": "还不知道 x402/AP2 服务提供者是否愿意为独立治理/receipt 层付费。",
+            "correct_next_action": "做 asset-to-endpoint map，不做钱包集成；为每个可暴露能力列输入、输出、租户隔离和价格假设。",
+            "why_this_is_the_memo_point": "问题是已有 Mission GO 资产是否因为机器买方基础设施出现新商业表面。",
+        }
+    if "sequencing" in question_lower or "parallel" in question_lower or "plugin" in question_lower or "replacement" in question_lower:
+        return {
+            "answer_summary": (
+                "x402 路径应作为 Plugin/Mining Plant 的并行 no-send 研究线，不应替代主线。Plugin 是人类开发者/平台分发路径；"
+                "x402 是 agent buyer/机器调用路径。两者服务不同买方，短期只允许小范围研究，不挤占 Plugin mainline。"
+            ),
+            "decision": "parallel_research_not_replacement",
+            "uncertainty": "若出现明确 agent-buyer 付费意愿，资源比例可以上调；没有前不能替代 Plugin。",
+            "correct_next_action": "给 x402 设 research budget/scope cap，并保留 Mining Plant 为 canonical execution path。",
+            "why_this_is_the_memo_point": "memo 明确要求判定 parallel / sequenced / replacement / deferred。",
+        }
+    if "e34" in question_lower or "void" in question_lower or "opportunity" in question_lower:
+        return {
+            "answer_summary": (
+                "应重评分：void #10 agent_to_agent_payment 上升最大；opportunity #05 chain-of-custody receipt、#17 approval mandate compiler "
+                "上升；#22 residual risk marketplace 进入 watchlist；generic low-price gov_check endpoint 下降，因为会落入 STRAT-001 禁止的 speed-race。"
+            ),
+            "decision": "rescore_selected_voids_and_opportunity_spaces",
+            "uncertainty": "商业分数只能因基础设施存在而上调，不能因 Coinbase/AWS 生态热度直接推导付费需求。",
+            "correct_next_action": "重新生成 e34 delta table：old score、new score、reason、evidence、forbidden overclaim。",
+            "why_this_is_the_memo_point": "memo 的核心动作之一就是用新基础设施事实重评分旧战略资产。",
+        }
+    if "defuse" in question_lower or "revival" in question_lower or "dead-path" in question_lower:
+        return {
+            "answer_summary": (
+                "可以重新审查 Defuse-class 能力，但只能作为 Y* provider identity 下的能力/endpoint resurfacing；不能独立品牌、PyPI、Show HN 或 Day-N launch。"
+                "owner 已否定 mindshare-conflict 理由，但 capability duplication 和 premature launch 约束仍有效。"
+            ),
+            "decision": "re_surface_as_capability_not_standalone_brand",
+            "uncertainty": "是否值得 resurfacing 取决于 endpoint 是否提供 Y*gov 主线没有的 buyer-visible value。",
+            "correct_next_action": "跑 dead_path revival evaluation，明确哪些 revival 条件满足，哪些仍阻塞。",
+            "why_this_is_the_memo_point": "memo 要求重新判断旧 dead path 在新 A2A 基础设施下是否出现非 launch 型出口。",
+        }
+    if "multi-tenant" in question_lower or "tenant" in question_lower or "engineering cost" in question_lower:
+        return {
+            "answer_summary": (
+                "最大工程成本不是 x402 HTTP wrapper，而是多租户安全：tenant-scoped CIEU/K9、receipt retention、idempotency/replay protection、"
+                "provider dry-run/canary/live promotion、密钥/钱包隔离、审计导出、滥用/争议处理。"
+            ),
+            "decision": "multi_tenanting_is_required_before_external_service_surface",
+            "uncertainty": "当前只能给 scope，不应给时间估计；单租户 owner-machine 形态不能直接商业化。",
+            "correct_next_action": "产出 multi-tenant scope checklist 和 minimal safe endpoint boundary。",
+            "why_this_is_the_memo_point": "memo 明确问的是工程范围，不是付款开关。",
+        }
+    if "patent" in question_lower or "p3" in question_lower or "p4" in question_lower or "claim" in question_lower:
+        return {
+            "answer_summary": (
+                "默认只外露 proof object、receipt、preflight decision、risk summary，不外露 SRGCS/P3 自治理核心和 P4 OmissionEngine 内部机制。"
+                "任何 P3/P4 相邻能力产品化前必须做 counsel review。"
+            ),
+            "decision": "externalize_outputs_not_core_claimed_mechanisms",
+            "uncertainty": "具体 claim scope 需要律师确认，Aiden 不能替代法律判断。",
+            "correct_next_action": "给每个候选 endpoint 标记 patent adjacency：safe output / counsel-needed / blocked。",
+            "why_this_is_the_memo_point": "memo 要求判断可商业化边界，而不是把所有代码直接做成 API。",
+        }
+    if "change the answer" in question_lower or "single piece" in question_lower or "reduce" in question_lower or "uncertainty" in question_lower:
+        return {
+            "answer_summary": (
+                "最能改变答案的证据不是更多协议新闻，而是 3 个真实 agent-service/provider buyer 是否愿意使用或付费测试 "
+                "independent payment-intent preflight/receipt/mandate verifier。"
+            ),
+            "decision": "buyer_problem_signal_is_the_key_uncertainty_reducer",
+            "uncertainty": "基础设施存在已经较可信；需求侧和预算 owner 尚未证明。",
+            "correct_next_action": "准备 no-send buyer validation packet；owner 批准前不发送。",
+            "why_this_is_the_memo_point": "memo 明确把 infrastructure bet 和 demand bet 分开，下一步应验证需求而不是继续堆协议资料。",
+        }
+    return {
+        "answer_summary": "这个问题需要按 memo 原文、公开证据和 repo 能力三方交叉回答，不能用 first-cash 排行榜代替。",
+        "decision": "answer_requires_specific_evidence_mapping",
+        "uncertainty": "需要更多 question-specific evidence。",
+        "correct_next_action": "把该问题拆成 claim/evidence/repo capability/decision 四列后再判断。",
+        "why_this_is_the_memo_point": "Aiden 必须回答 owner memo 的具体问题。",
     }
 
 
@@ -824,6 +1074,15 @@ def render_memo_investigation_owner_answer(analysis: Mapping[str, Any]) -> str:
         f"- {row.get('claim_id')}: {row.get('verification_status')} -> {row.get('correct_path')}"
         for row in analysis.get("claim_verification_matrix", [])[:6]
     )
+    open_question_lines = "\n".join(
+        (
+            f"- {row.get('source_heading_id')} {row.get('question_title')}\n"
+            f"  回答：{row.get('answer_summary')}\n"
+            f"  判断：{row.get('decision')}\n"
+            f"  下一步：{row.get('correct_next_action')}"
+        )
+        for row in analysis.get("memo_open_question_coverage", [])[:8]
+    )
     implication_lines = "\n".join(
         f"- {row.get('theme')}: {row.get('judgment')}（意义：{row.get('why_it_matters')}）"
         for row in analysis.get("strategic_implications", [])[:5]
@@ -842,7 +1101,7 @@ def render_memo_investigation_owner_answer(analysis: Mapping[str, Any]) -> str:
         multi_tenant_lines = "\n".join(f"- {item}" for item in strat002.get("multi_tenant_cost_scope", [])[:5])
         do_not_lines = "\n".join(f"- {item}" for item in strat002.get("do_not_do", [])[:5])
         strat002_section = (
-            "\n\n5. STRAT-002 真正问的问题，我的回答\n"
+            "\n\n6. STRAT-002 综合判断\n"
             f"{strat002.get('answer_to_owner_question')}\n"
             f"路径关系：{strat002.get('path_sequencing', {}).get('decision')}。"
             f"{strat002.get('path_sequencing', {}).get('why')}\n\n"
@@ -869,8 +1128,8 @@ def render_memo_investigation_owner_answer(analysis: Mapping[str, Any]) -> str:
     return (
         f"我的判断：{analysis.get('ceo_bottom_line')}\n\n"
         "1. 这份备忘录的核心命题\n"
-        "它真正讨论的不是“我们要不要马上接入一个支付协议”，而是：当 agent 之间开始用 x402/USDC "
-        "之类的方式请求、授权和结算时，谁来判断这次付款是否该发生、证据是否充分、失败后如何回滚、责任如何记录。\n"
+        "它真正讨论的不是“支付还是不支付”，而是：x402/AP2/AgentCore 这类 agent-to-agent 经济基础设施出现后，"
+        "Mission GO/Y* 已经做出来的治理、证据、授权、receipt、CIEU/CZL、gov-mcp 边界能力，是否出现了新的机器买方商业化表面。\n"
         f"标题/主题：{understanding.get('title') or 'owner research memo'}\n"
         f"识别到的关键实体：{', '.join(understanding.get('entities') or [])}\n"
         f"我抽取到 {understanding.get('claim_count')} 条需要核验的主张。\n\n"
@@ -880,23 +1139,25 @@ def render_memo_investigation_owner_answer(analysis: Mapping[str, Any]) -> str:
         f"{evidence_lines}\n\n"
         "3. 哪些主张能暂时成立，哪些不能继承\n"
         f"{claim_lines}\n\n"
-        "4. 我的战略判断\n"
+        "4. 这份 memo 明确问题的逐项回答\n"
+        f"{open_question_lines or '- 没有抽取到明确 open questions；这是需要修正的输入覆盖缺口。'}\n\n"
+        "5. 我的战略判断\n"
         f"{implication_lines}\n\n"
-        "5. 这件事和 Y*Bridge Labs 的关系\n"
+        "6. 这件事和 Y*Bridge Labs 的关系\n"
         f"{analysis['relation_to_labs']}\n\n"
         f"{strat002_section}\n\n"
-        "6. 我认为可以形成的产品/机会形态\n"
+        "7. 我认为可以形成的产品/机会形态\n"
         f"{opportunity_lines}\n\n"
-        "7. 我不会采纳的错误方向\n"
+        "8. 我不会采纳的错误方向\n"
         "- 不把 x402 热度直接等同于客户愿意付钱。\n"
         "- 不把 Mission GO memo 当作已经验证过的事实。\n"
         "- 不把支付执行当作第一步；第一步应该是支付意图治理、preflight、receipt 和 owner approval。\n"
         "- 不把这件事塞回泛泛的 first-cash 排行榜。\n\n"
-        "8. 现在不能声称什么\n"
+        "9. 现在不能声称什么\n"
         f"{not_proven}\n\n"
-        "9. 主要风险\n"
+        "10. 主要风险\n"
         f"{risks}\n\n"
-        "10. 我建议的下一步\n"
+        "11. 我建议的下一步\n"
         f"{analysis['recommended_next_action']}\n"
         f"具体说：先做一份 no-send 的 owner decision packet，标题可以是 “x402/Mission GO Payment Intent Governance Pack”。它应该包含协议事实、证据来源、竞品/替代方案、我们可交付的治理工件、不能触碰的钱包/支付边界，以及是否批准进入技术预研。\n\n"
         "边界：这轮没有外部发送、没有客户联系、没有付款、没有 USDC 转账、没有 live provider execution、没有 K9Audit 写入。"

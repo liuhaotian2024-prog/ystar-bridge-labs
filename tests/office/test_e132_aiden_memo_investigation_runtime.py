@@ -8,6 +8,7 @@ from office.aiden_meeting_room.chat_router import route_chat_message_to_aiden_me
 from office.mission_command.e124_agent_native_company_messenger import generate_aiden_reply_text
 from office.mission_command.e132_aiden_memo_investigation_runtime import (
     build_memo_investigation_queries,
+    extract_memo_open_questions,
     extract_memo_entities,
     is_memo_investigation_request,
     run_aiden_memo_investigation_runtime,
@@ -50,6 +51,21 @@ def _memo() -> str:
         "It asks whether Y*Bridge Labs should integrate payment intent governance before any live payment execution. "
         "It asks Aiden to re-score e34 institutional void #10 agent_to_agent_payment, compare against the Mining Plant Plugin path, "
         "evaluate Defuse revival under dead-path constraints, scope multi-tenant cost, and respect P3/P4 patent boundaries."
+        "\n## 8. Open Questions for Aiden's Investigation\n"
+        "### 8.1 Asset-to-Surface Matching\n"
+        "Given the asset inventory and verified x402 infrastructure, are there capabilities currently inside Mission GO that match agent-buyer demand?\n"
+        "### 8.2 Path Sequencing vs Parallelism\n"
+        "Is the x402 path parallel to the Plugin path, sequenced after Plugin, replacement, or deferred?\n"
+        "### 8.3 e34 Re-Scoring\n"
+        "Which e34 opportunity spaces and institutional voids should be re-scored?\n"
+        "### 8.4 Defuse Revival Determination\n"
+        "Do the conditions for Defuse re-examination apply?\n"
+        "### 8.5 Multi-Tenant Engineering Cost\n"
+        "What engineering scope is required to multi-tenant these single-tenant assets?\n"
+        "### 8.6 Patent-Scope Boundaries\n"
+        "How do P1, P3, and P4 patent boundaries affect externalization?\n"
+        "### 8.7 What Would Change the Answer\n"
+        "What single piece of evidence would most reduce uncertainty about x402 pursuit?\n"
     )
 
 
@@ -89,6 +105,7 @@ def test_memo_investigation_extracts_entities_queries_and_writes_cieu(tmp_path):
     entities = {item["entity"] for item in result["memo_entities"]}
     assert {"x402", "Mission GO", "USDC", "wallet"}.issubset(entities)
     assert result["public_read_queries"]
+    assert len(result["memo_open_questions"]) == 7
     assert result["public_read_evidence"]
     assert result["source_date_summary"]["dated_count"] == len(result["public_read_evidence"])
     assert result["repo_relation"]["matched_path_count"] >= 2
@@ -108,6 +125,8 @@ def test_generate_aiden_reply_text_for_memo_is_not_generic_first_cash(tmp_path):
     assert result["reply_backend"] == "aiden_ceo_memo_investigation_runtime"
     assert result["reply_protocol"] == "AidenMemoInvestigationRuntimeV1"
     assert "我的判断" in result["reply_text"]
+    assert "支付还是不支付" in result["reply_text"]
+    assert "逐项回答" in result["reply_text"]
     assert "战略判断" in result["reply_text"]
     assert "Selected first-cash path" not in result["reply_text"]
     assert "Construction bidding" not in result["reply_text"]
@@ -153,7 +172,10 @@ def test_strat002_dossier_answers_owner_open_questions(tmp_path):
         allow_live_network=False,
     )
     dossier = result["strategic_analysis"]["strat002_deep_strategy_dossier"]
+    question_matrix = result["strategic_analysis"]["memo_open_question_coverage"]
     assert dossier["applies"] is True
+    assert len(question_matrix) == 7
+    assert {row["source_heading_id"] for row in question_matrix} == {"8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "8.7"}
     assert dossier["path_sequencing"]["decision"] == "parallel_research_not_replacement"
     assert any(row["item"] == "void_10_agent_to_agent_payment" for row in dossier["e34_rescore"])
     assert any("gov-mcp" in row["asset"] for row in dossier["asset_to_surface_matching"])
@@ -161,3 +183,24 @@ def test_strat002_dossier_answers_owner_open_questions(tmp_path):
     assert dossier["multi_tenant_cost_scope"]
     assert "P3" in " ".join(dossier["patent_boundary"]["requires_counsel"])
     assert "Coinbase self-reported volume" in " ".join(dossier["do_not_do"])
+
+
+def test_memo_open_question_gate_prevents_payment_boundary_from_becoming_the_topic(tmp_path):
+    questions = extract_memo_open_questions(_memo())
+    assert [row["question_title"] for row in questions][:2] == [
+        "Asset-to-Surface Matching",
+        "Path Sequencing vs Parallelism",
+    ]
+    result = run_aiden_memo_investigation_runtime(
+        _memo(),
+        cieu_db=tmp_path / "open_question_gate.db",
+        repo_root=_repo_root(),
+        ystar_gov_root=Path("/Users/haotianliu/.openclaw/workspace/Y-star-gov"),
+        public_read_provider=FakeMemoPublicReadProvider(),
+        allow_live_network=False,
+    )
+    answer = result["owner_facing_answer"]
+    assert "Mission GO/Y* 已经做出来的治理、证据、授权" in answer
+    assert answer.index("这份 memo 明确问题的逐项回答") < answer.index("主要风险")
+    assert "generic_low_price_gov_check_endpoint" in answer
+    assert "parallel_research_not_replacement" in answer
