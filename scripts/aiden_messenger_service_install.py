@@ -8,7 +8,8 @@ from pathlib import Path
 from typing import Any
 
 
-LABEL = "com.ystar.aiden-agent-native-messenger"
+LABEL = "com.ystar.aiden-messenger-runtime"
+LEGACY_LABELS = ("com.ystar.aiden-agent-native-messenger",)
 DEFAULT_LOG_ROOT = "/tmp/ystar_agent_native_messenger"
 DEFAULT_YSTAR_GOV_ROOT = "/Users/haotianliu/.openclaw/workspace/Y-star-gov"
 
@@ -70,15 +71,24 @@ def install_launch_agent(
 
     (log_root / "logs").mkdir(parents=True, exist_ok=True)
     target.parent.mkdir(parents=True, exist_ok=True)
+    legacy_cleanup = cleanup_legacy_launch_agents(target.parent)
     with target.open("wb") as handle:
         plistlib.dump(plist, handle)
 
     domain = f"gui/{_uid()}"
     service = f"{domain}/{LABEL}"
-    bootout = subprocess.run(["launchctl", "bootout", service], text=True, capture_output=True, check=False)
+    bootout = _run(["launchctl", "bootout", service])
+    # macOS can leave a label enabled but absent after a broken bootstrap. Booting
+    # out by plist path and then falling back to legacy load makes reinstalling
+    # idempotent for owner-facing repair commands.
+    bootout_by_path = _run(["launchctl", "bootout", domain, str(target)])
     bootstrap = subprocess.run(["launchctl", "bootstrap", domain, str(target)], text=True, capture_output=True, check=False)
+    legacy_load = {"returncode": None, "stderr": "", "stdout": ""}
+    if bootstrap.returncode != 0:
+        legacy_load = _run(["launchctl", "load", "-w", str(target)])
     enable = subprocess.run(["launchctl", "enable", service], text=True, capture_output=True, check=False)
     kick = subprocess.run(["launchctl", "kickstart", "-k", service], text=True, capture_output=True, check=False)
+    health = _run(["/usr/bin/curl", "-sS", "--max-time", "5", f"http://127.0.0.1:{port}/api/health"])
     return {
         "installed": True,
         "target": str(target),
@@ -86,12 +96,57 @@ def install_launch_agent(
         "port": port,
         "url": f"http://127.0.0.1:{port}",
         "bootout_returncode": bootout.returncode,
+        "bootout_stderr": bootout.stderr,
+        "bootout_by_path_returncode": bootout_by_path["returncode"],
+        "bootout_by_path_stderr": bootout_by_path["stderr"],
         "bootstrap_returncode": bootstrap.returncode,
         "bootstrap_stderr": bootstrap.stderr,
+        "legacy_load_returncode": legacy_load["returncode"],
+        "legacy_load_stderr": legacy_load["stderr"],
         "enable_returncode": enable.returncode,
         "kickstart_returncode": kick.returncode,
         "kickstart_stderr": kick.stderr,
+        "health_returncode": health["returncode"],
+        "health_stdout": health["stdout"],
+        "health_stderr": health["stderr"],
+        "legacy_cleanup": legacy_cleanup,
         "log_root": str(log_root),
+    }
+
+
+def cleanup_legacy_launch_agents(launch_agents_dir: Path) -> list[dict[str, Any]]:
+    domain = f"gui/{_uid()}"
+    cleaned: list[dict[str, Any]] = []
+    for label in LEGACY_LABELS:
+        service = f"{domain}/{label}"
+        plist = launch_agents_dir / f"{label}.plist"
+        by_service = _run(["launchctl", "bootout", service])
+        by_path = _run(["launchctl", "bootout", domain, str(plist)]) if plist.exists() else {"returncode": None, "stderr": "", "stdout": ""}
+        removed = False
+        try:
+            plist.unlink(missing_ok=True)
+            removed = True
+        except Exception:
+            removed = False
+        cleaned.append(
+            {
+                "label": label,
+                "plist": str(plist),
+                "bootout_returncode": by_service["returncode"],
+                "bootout_by_path_returncode": by_path["returncode"],
+                "removed_plist": removed,
+            }
+        )
+    return cleaned
+
+
+def _run(args: list[str]) -> dict[str, Any]:
+    completed = subprocess.run(args, text=True, capture_output=True, check=False)
+    return {
+        "command": args,
+        "returncode": completed.returncode,
+        "stdout": (completed.stdout or "").strip(),
+        "stderr": (completed.stderr or "").strip(),
     }
 
 

@@ -6,12 +6,14 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
 
-from aiden_messenger_service_install import LABEL, build_plist, install_launch_agent
+from aiden_messenger_service_install import LABEL, LEGACY_LABELS, build_plist, install_launch_agent
 
 
 def test_aiden_messenger_launchagent_plist_points_to_local_server(tmp_path: Path) -> None:
     plist = build_plist(repo_root=tmp_path / "repo", ystar_gov_root=tmp_path / "Y-star-gov")
     assert plist["Label"] == LABEL
+    assert LABEL == "com.ystar.aiden-messenger-runtime"
+    assert "com.ystar.aiden-agent-native-messenger" in LEGACY_LABELS
     assert plist["ProgramArguments"][1].endswith("office/agent_native_messenger/server.py")
     assert plist["WorkingDirectory"] == str(tmp_path / "repo")
     assert plist["KeepAlive"] is True
