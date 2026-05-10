@@ -68,7 +68,8 @@ def test_x402_memo_routes_to_memo_investigation_not_e114(tmp_path):
     )
     assert route.route == "aiden_ceo_memo_investigation_runtime"
     assert route.protocol == "AidenMemoInvestigationRuntimeV1"
-    assert "没有把你的备忘录丢进" in route.response_text
+    assert "我的判断" in route.response_text
+    assert "产品/机会形态" in route.response_text
     assert "E114_LIVE_WEB_CAPABILITY_UTILIZED_STRATEGY_RUN" not in route.response_text
     assert "x402" in route.response_text
     assert "Mission GO" in route.response_text
@@ -104,7 +105,8 @@ def test_generate_aiden_reply_text_for_memo_is_not_generic_first_cash(tmp_path):
     )
     assert result["reply_backend"] == "aiden_ceo_memo_investigation_runtime"
     assert result["reply_protocol"] == "AidenMemoInvestigationRuntimeV1"
-    assert "没有把你的备忘录丢进" in result["reply_text"]
+    assert "我的判断" in result["reply_text"]
+    assert "战略判断" in result["reply_text"]
     assert "Selected first-cash path" not in result["reply_text"]
     assert "Construction bidding" not in result["reply_text"]
 
@@ -132,4 +134,4 @@ def test_memo_public_read_provider_failure_is_visible_not_silent(tmp_path):
     assert analysis["public_read_status"] == "live_public_read_attempted_but_provider_failed_or_returned_no_results"
     assert analysis["evidence_count"] == 0
     assert analysis["provider_failure_count"] >= 1
-    assert "provider 失败/无结果次数" in result["owner_facing_answer"]
+    assert "证据获取异常/无结果" in result["owner_facing_answer"]

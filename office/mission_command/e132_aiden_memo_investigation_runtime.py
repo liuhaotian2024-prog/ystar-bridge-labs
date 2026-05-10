@@ -411,6 +411,25 @@ def build_memo_strategic_analysis(
         "生成一份 no-send 的 x402/Mission GO 机会核验包：列出协议事实、竞品/替代方案、买家场景、支付风险、"
         "我们能做的治理差异化，以及是否值得进入 owner-approved 技术预研。"
     )
+    evidence_digest = build_evidence_digest(evidence)
+    claim_verification_matrix = build_claim_verification_matrix(claims=claims, evidence_digest=evidence_digest)
+    strategic_implications = build_memo_strategic_implications(
+        entity_names=entity_names,
+        evidence_digest=evidence_digest,
+        repo_relation=repo_relation,
+    )
+    opportunity_map = build_memo_opportunity_map(
+        entity_names=entity_names,
+        evidence_digest=evidence_digest,
+        repo_relation=repo_relation,
+    )
+    decision_recommendation = build_memo_decision_recommendation(
+        evidence_count=public_evidence_count,
+        dated_evidence_count=date_summary["dated_count"],
+        provider_failure_count=provider_failure_count,
+        has_payment=has_payment,
+        has_x402=has_x402,
+    )
     return {
         "memo_understanding": {
             "title": metadata.get("title"),
@@ -425,6 +444,12 @@ def build_memo_strategic_analysis(
         "undated_evidence_count": max(0, date_summary["undated_count"] - provider_failure_count),
         "repo_matched_path_count": repo_relation.get("matched_path_count", 0),
         "strategic_verdict": immediate_verdict,
+        "ceo_bottom_line": decision_recommendation["ceo_bottom_line"],
+        "evidence_digest": evidence_digest,
+        "claim_verification_matrix": claim_verification_matrix,
+        "strategic_implications": strategic_implications,
+        "opportunity_map": opportunity_map,
+        "decision_recommendation": decision_recommendation,
         "relation_to_labs": relation_to_labs,
         "what_is_not_proven": [
             "没有证明 x402/Mission GO 已经和 Labs 集成",
@@ -443,33 +468,298 @@ def build_memo_strategic_analysis(
     }
 
 
+def build_evidence_digest(evidence: list[Mapping[str, Any]], limit: int = 8) -> list[dict[str, Any]]:
+    digest: list[dict[str, Any]] = []
+    for item in evidence:
+        evidence_type = str(item.get("evidence_type") or "")
+        if evidence_type in {"provider_failure", "provider_no_result"}:
+            continue
+        title = str(item.get("source_title") or "").strip()
+        url = str(item.get("source_url") or "").strip()
+        query = str(item.get("query") or "").strip()
+        lower = f"{title} {url} {query}".lower()
+        signal_type = "general_public_read_signal"
+        if "whitepaper" in lower or "documentation" in lower or "docs" in lower or "official" in lower:
+            signal_type = "protocol_or_official_source_signal"
+        elif "coinbase" in lower or "aws" in lower or "usdc" in lower:
+            signal_type = "ecosystem_or_enterprise_adoption_signal"
+        elif "verify" in lower or "verification" in lower or "payment processor" in lower:
+            signal_type = "implementation_or_verification_signal"
+        elif "competitor" in lower or "alternative" in lower:
+            signal_type = "competitive_landscape_signal"
+        digest.append(
+            {
+                "evidence_id": str(item.get("evidence_id") or f"memo_evidence_{len(digest) + 1:03d}"),
+                "title": title[:180] or "untitled public-read result",
+                "url": url,
+                "source_date": item.get("source_date") or "",
+                "source_date_basis": item.get("source_date_basis") or "",
+                "signal_type": signal_type,
+                "query": query[:180],
+            }
+        )
+        if len(digest) >= limit:
+            break
+    return digest
+
+
+def build_claim_verification_matrix(
+    *,
+    claims: list[Mapping[str, Any]],
+    evidence_digest: list[Mapping[str, Any]],
+) -> list[dict[str, Any]]:
+    matrix: list[dict[str, Any]] = []
+    for claim in claims[:6]:
+        claim_text = str(claim.get("claim_text") or "")
+        claim_terms = _keyword_terms(claim_text)
+        matches = []
+        for row in evidence_digest:
+            haystack = f"{row.get('title', '')} {row.get('query', '')} {row.get('url', '')}".lower()
+            overlap = sorted(term for term in claim_terms if term in haystack)
+            if overlap:
+                matches.append({"evidence_id": row.get("evidence_id"), "overlap_terms": overlap[:4]})
+        if len(matches) >= 2:
+            status = "partially_supported_by_public_read_evidence"
+            action = "use as working assumption, but require dated primary source before implementation"
+        elif matches:
+            status = "weakly_supported_single_source_or_query_overlap"
+            action = "seek corroboration before treating as strategic fact"
+        else:
+            status = "not_supported_by_current_public_read_snapshot"
+            action = "do not inherit this claim from the memo"
+        matrix.append(
+            {
+                "claim_id": claim.get("claim_id"),
+                "claim_text": claim_text[:260],
+                "verification_status": status,
+                "evidence_matches": matches[:3],
+                "correct_path": action,
+            }
+        )
+    if not matrix:
+        matrix.append(
+            {
+                "claim_id": "claim_gap_01",
+                "claim_text": "No concrete memo claims were extractable from the supplied text.",
+                "verification_status": "requires_revision",
+                "evidence_matches": [],
+                "correct_path": "ask Aiden to extract explicit claims before deciding strategy",
+            }
+        )
+    return matrix
+
+
+def build_memo_strategic_implications(
+    *,
+    entity_names: list[str],
+    evidence_digest: list[Mapping[str, Any]],
+    repo_relation: Mapping[str, Any],
+) -> list[dict[str, str]]:
+    names = {name.lower() for name in entity_names}
+    has_protocol_signal = any(row.get("signal_type") == "protocol_or_official_source_signal" for row in evidence_digest)
+    has_ecosystem_signal = any(row.get("signal_type") == "ecosystem_or_enterprise_adoption_signal" for row in evidence_digest)
+    has_implementation_signal = any(row.get("signal_type") == "implementation_or_verification_signal" for row in evidence_digest)
+    implications = [
+        {
+            "theme": "strategic_reframe",
+            "judgment": (
+                "x402/Mission GO 不应该先被理解成“我们马上接入支付”，而应该先被理解成 "
+                "agent-to-agent 经济里“支付意图、授权、证据、拒绝、回滚”的治理问题。"
+            ),
+            "why_it_matters": "这把讨论从高风险钱包执行，转成我们更有优势的治理/审计/控制层。"
+        },
+        {
+            "theme": "right_to_win",
+            "judgment": (
+                "Labs 的优势不是成为支付处理商，而是把 agent payment intent 变成可治理的 CIEU/CZL 记录、"
+                "owner decision packet、dry-run/preflight 和 no-send/no-payment 边界。"
+            ),
+            "why_it_matters": "这更贴近已有 messenger、Y-star-gov、CIEUStore、gov-mcp 边界能力。"
+        },
+    ]
+    if "x402" in names and has_protocol_signal:
+        implications.append(
+            {
+                "theme": "market_signal",
+                "judgment": "public-read 结果出现协议/白皮书/文档信号，说明 x402 至少值得作为 agent commerce 基础设施线索继续核验。",
+                "why_it_matters": "这支持进入 no-send 技术预研，而不是直接产品化或支付执行。"
+            }
+        )
+    if has_ecosystem_signal:
+        implications.append(
+            {
+                "theme": "ecosystem_signal",
+                "judgment": "USDC、Coinbase、AWS 等生态信号若被证据支持，说明 agent payment 不是孤立想象。",
+                "why_it_matters": "但生态热度仍不等于 Y*Bridge Labs 的付费客户需求。"
+            }
+        )
+    if has_implementation_signal:
+        implications.append(
+            {
+                "theme": "implementation_risk",
+                "judgment": "verification/payment-processor 相关信号提示：真正难点不是发起支付，而是证明支付、授权、失败、退款和争议处理。",
+                "why_it_matters": "这正好要求先做 preflight/receipt/audit，而不是 live wallet transfer。"
+            }
+        )
+    if not repo_relation.get("matched_path_count"):
+        implications.append(
+            {
+                "theme": "capability_gap",
+                "judgment": "当前 repo 未命中相关 runtime 能力路径，不能声称已有实现基础。",
+                "why_it_matters": "正确路径是先做 capability discovery，而不是 memo-based strategy claim。"
+            }
+        )
+    return implications
+
+
+def build_memo_opportunity_map(
+    *,
+    entity_names: list[str],
+    evidence_digest: list[Mapping[str, Any]],
+    repo_relation: Mapping[str, Any],
+) -> list[dict[str, Any]]:
+    return [
+        {
+            "opportunity_id": "payment_intent_governance_pack",
+            "name": "Agent Payment Intent Governance Pack",
+            "buyer_visible_shape": "给 agent 公司/协议团队一份支付意图治理包：授权边界、拒绝路径、CIEU/CZL receipt、dry-run trace、owner approval map。",
+            "why_us": "复用 agent-native messenger、Y-star-gov、CIEUStore、gov-mcp no-send/no-payment 边界。",
+            "risk": "客户未验证；不能声称 x402/Mission GO 已集成。",
+            "next_test": "生成 no-send opportunity packet，请 owner 选择是否进入技术预研。"
+        },
+        {
+            "opportunity_id": "x402_preflight_gateway_research",
+            "name": "x402 Payment Preflight Gateway Research Spike",
+            "buyer_visible_shape": "不转账，只模拟 agent 请求付费 API 时的授权、证据、失败、审计、回滚流程。",
+            "why_us": "我们擅长把高风险动作降级为 governed dry-run/preflight。",
+            "risk": "协议细节、钱包签名、Base/USDC rails 需要真实文档核验。",
+            "next_test": "列出 x402 request/response/verification 的最小字段，并映射到 CIEU 五元组。"
+        },
+        {
+            "opportunity_id": "agent_contract_messenger_extension",
+            "name": "Agent Contract Messenger Extension",
+            "buyer_visible_shape": "把 messenger 从对话工具升级为 agent 合同/付款意图协商室：人话 + CIEU/CZL + no-payment escrow intent。",
+            "why_us": "当前 meeting room 已有人/agent 消息脊柱和治理记录。",
+            "risk": "如果 UI/回复质量不成熟，会伤害信任；必须先修好 memo dossier 输出质量。",
+            "next_test": "在本地生成一个 x402 no-send contract thread demo，不连接钱包。"
+        },
+    ]
+
+
+def build_memo_decision_recommendation(
+    *,
+    evidence_count: int,
+    dated_evidence_count: int,
+    provider_failure_count: int,
+    has_payment: bool,
+    has_x402: bool,
+) -> dict[str, Any]:
+    if provider_failure_count and evidence_count == 0:
+        return {
+            "ceo_bottom_line": "不能做战略结论，只能做本地能力关系判断；先修 public-read provider 或换证据源。",
+            "decision": "REQUIRE_REVISION",
+            "why": "live public-read attempted but returned no usable evidence",
+            "owner_decision_needed": False,
+        }
+    if has_payment or has_x402:
+        return {
+            "ceo_bottom_line": (
+                "值得进入 no-send 技术/市场预研，但不值得立刻集成支付或对外承诺。最佳下一步是做 "
+                "x402/Mission GO Payment Intent Governance Pack 的 owner-review packet。"
+            ),
+            "decision": "ALLOW_NO_SEND_RESEARCH_PACKET",
+            "why": "memo relates to agent payments, but payment execution remains high-risk and unvalidated",
+            "owner_decision_needed": True,
+            "minimum_evidence_bar": {
+                "public_evidence_count": evidence_count,
+                "dated_evidence_count": dated_evidence_count,
+                "dated_primary_source_required_before_build": True,
+            },
+        }
+    return {
+        "ceo_bottom_line": "这份 memo 需要更多实体和可验证主张后才能进入战略路线选择。",
+        "decision": "REQUIRE_REVISION",
+        "why": "memo does not contain enough recognized agent-economy/payment entities",
+        "owner_decision_needed": False,
+    }
+
+
 def render_memo_investigation_owner_answer(analysis: Mapping[str, Any]) -> str:
     understanding = analysis["memo_understanding"]
     not_proven = "\n".join(f"- {item}" for item in analysis["what_is_not_proven"])
     risks = "\n".join(f"- {item}" for item in analysis["risk_register"])
+    evidence_lines = "\n".join(
+        f"- [{row.get('evidence_id')}] {row.get('title')} ({row.get('source_date') or 'date unknown'})\n  {row.get('url')}"
+        for row in analysis.get("evidence_digest", [])[:6]
+    ) or "- 本轮没有可用公开证据；不能把 memo 主张当作事实。"
+    claim_lines = "\n".join(
+        f"- {row.get('claim_id')}: {row.get('verification_status')} -> {row.get('correct_path')}"
+        for row in analysis.get("claim_verification_matrix", [])[:6]
+    )
+    implication_lines = "\n".join(
+        f"- {row.get('theme')}: {row.get('judgment')}（意义：{row.get('why_it_matters')}）"
+        for row in analysis.get("strategic_implications", [])[:5]
+    )
+    opportunity_lines = "\n".join(
+        f"- {row.get('name')}: {row.get('buyer_visible_shape')} 下一步：{row.get('next_test')}"
+        for row in analysis.get("opportunity_map", [])[:3]
+    )
+    decision = analysis.get("decision_recommendation", {})
     return (
-        "我这次没有把你的备忘录丢进“赚钱路线排行榜”。这是一轮受控的 memo investigation。\n\n"
-        "1. 我理解你给我的材料是什么\n"
+        f"我的判断：{analysis.get('ceo_bottom_line')}\n\n"
+        "1. 这份备忘录的核心命题\n"
+        "它真正讨论的不是“我们要不要马上接入一个支付协议”，而是：当 agent 之间开始用 x402/USDC "
+        "之类的方式请求、授权和结算时，谁来判断这次付款是否该发生、证据是否充分、失败后如何回滚、责任如何记录。\n"
         f"标题/主题：{understanding.get('title') or 'owner research memo'}\n"
         f"识别到的关键实体：{', '.join(understanding.get('entities') or [])}\n"
-        f"抽取待核验主张：{understanding.get('claim_count')} 条；生成公开检索问题：{understanding.get('query_count')} 条。\n\n"
-        "2. 这轮证据状态\n"
-        f"public-read 状态：{analysis['public_read_status']}\n"
-        f"公开证据数量：{analysis['evidence_count']}；带日期证据：{analysis['dated_evidence_count']}；未带日期证据：{analysis['undated_evidence_count']}。\n"
-        f"provider 失败/无结果次数：{analysis.get('provider_failure_count', 0)}。\n"
-        f"本仓库相关能力命中路径数：{analysis['repo_matched_path_count']}。\n\n"
-        "3. Aiden 的初步战略判断\n"
-        f"{analysis['strategic_verdict']}\n\n"
-        "4. 它和我们到底有什么关系\n"
+        f"我抽取到 {understanding.get('claim_count')} 条需要核验的主张。\n\n"
+        "2. 证据告诉我的事\n"
+        f"可用公开证据：{analysis['evidence_count']} 条；其中带日期证据：{analysis['dated_evidence_count']} 条。"
+        f"{' 证据获取异常/无结果：' + str(analysis.get('provider_failure_count', 0)) + ' 次。' if analysis.get('provider_failure_count', 0) else ''}\n"
+        f"{evidence_lines}\n\n"
+        "3. 哪些主张能暂时成立，哪些不能继承\n"
+        f"{claim_lines}\n\n"
+        "4. 我的战略判断\n"
+        f"{implication_lines}\n\n"
+        "5. 这件事和 Y*Bridge Labs 的关系\n"
         f"{analysis['relation_to_labs']}\n\n"
-        "5. 现在不能声称什么\n"
+        "6. 我认为可以形成的产品/机会形态\n"
+        f"{opportunity_lines}\n\n"
+        "7. 我不会采纳的错误方向\n"
+        "- 不把 x402 热度直接等同于客户愿意付钱。\n"
+        "- 不把 Mission GO memo 当作已经验证过的事实。\n"
+        "- 不把支付执行当作第一步；第一步应该是支付意图治理、preflight、receipt 和 owner approval。\n"
+        "- 不把这件事塞回泛泛的 first-cash 排行榜。\n\n"
+        "8. 现在不能声称什么\n"
         f"{not_proven}\n\n"
-        "6. 主要风险\n"
+        "9. 主要风险\n"
         f"{risks}\n\n"
-        "7. 下一步\n"
-        f"{analysis['recommended_next_action']}\n\n"
+        "10. 我建议的下一步\n"
+        f"{analysis['recommended_next_action']}\n"
+        f"具体说：先做一份 no-send 的 owner decision packet，标题可以是 “x402/Mission GO Payment Intent Governance Pack”。它应该包含协议事实、证据来源、竞品/替代方案、我们可交付的治理工件、不能触碰的钱包/支付边界，以及是否批准进入技术预研。\n\n"
         "边界：这轮没有外部发送、没有客户联系、没有付款、没有 USDC 转账、没有 live provider execution、没有 K9Audit 写入。"
     )
+
+
+def _keyword_terms(text: str) -> set[str]:
+    terms = {
+        token.lower()
+        for token in re.findall(r"[A-Za-z][A-Za-z0-9_-]{2,}|[\u4e00-\u9fff]{2,}", text)
+        if token.lower()
+        not in {
+            "the",
+            "and",
+            "for",
+            "with",
+            "this",
+            "that",
+            "should",
+            "would",
+            "could",
+            "about",
+        }
+    }
+    return {term for term in terms if len(term) >= 3}
 
 
 def write_memo_investigation_cieu_record(
