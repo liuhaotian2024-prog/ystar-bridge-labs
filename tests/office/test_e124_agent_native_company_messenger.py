@@ -146,6 +146,22 @@ def test_ui_collapses_only_long_owner_inputs_not_aiden_outputs():
     assert ".message-toggle" in styles_text
 
 
+def test_ui_can_copy_full_message_content_even_when_collapsed():
+    root = Path(__file__).resolve().parents[2]
+    script = root / "office/agent_native_messenger/main.js"
+    styles = root / "office/agent_native_messenger/styles.css"
+    script_text = script.read_text(encoding="utf-8")
+    styles_text = styles.read_text(encoding="utf-8")
+    assert "复制完整内容" in script_text
+    assert "buildMessageCopyText(message)" in script_text
+    assert "copyTextToClipboard(text)" in script_text
+    assert "String(message.human_readable_text || \"\")" in script_text
+    assert "navigator.clipboard" in script_text
+    assert "document.execCommand(\"copy\")" in script_text
+    assert ".message-copy" in styles_text
+    assert ".message-copy.copied" in styles_text
+
+
 def test_messenger_uses_multiline_input_for_long_memos():
     root = Path(__file__).resolve().parents[2]
     index = root / "office/agent_native_messenger/index.html"

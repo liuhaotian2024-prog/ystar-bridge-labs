@@ -218,7 +218,15 @@ h2 { font-size: 18px; }
   word-break: break-word;
 }
 
-.message-toggle {
+.message-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.message-toggle,
+.message-copy {
   margin-top: 10px;
   border: 1px solid rgba(38, 91, 143, 0.22);
   border-radius: 999px;
@@ -229,8 +237,26 @@ h2 { font-size: 18px; }
   cursor: pointer;
 }
 
-.message-toggle:hover {
+.message-actions .message-toggle,
+.message-actions .message-copy {
+  margin-top: 0;
+}
+
+.message-toggle:hover,
+.message-copy:hover {
   background: rgba(38, 91, 143, 0.14);
+}
+
+.message-copy.copied {
+  color: var(--forest);
+  border-color: rgba(24, 61, 42, 0.28);
+  background: rgba(24, 61, 42, 0.12);
+}
+
+.message-copy.copy-error {
+  color: #6d2f24;
+  border-color: rgba(168, 83, 70, 0.32);
+  background: rgba(168, 83, 70, 0.12);
 }
 
 .tuple-strip {

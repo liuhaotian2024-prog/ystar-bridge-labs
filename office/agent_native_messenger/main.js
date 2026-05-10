@@ -90,7 +90,10 @@ function renderMessages() {
         <span>${message.message_kind}</span>
       </div>
       <p>${escapeHtml(collapseState.displayText)}</p>
-      ${collapseState.isLong ? `<button type="button" class="message-toggle" data-message-id="${escapeHtml(messageId)}">${collapseState.isExpanded ? "收起长输入" : `展开完整输入（${collapseState.fullLength} 字）`}</button>` : ""}
+      <div class="message-actions">
+        ${collapseState.isLong ? `<button type="button" class="message-toggle" data-message-id="${escapeHtml(messageId)}">${collapseState.isExpanded ? "收起长输入" : `展开完整输入（${collapseState.fullLength} 字）`}</button>` : ""}
+        <button type="button" class="message-copy" data-message-id="${escapeHtml(messageId)}">复制完整内容</button>
+      </div>
       <div class="tuple-strip">
         <span>Y*</span><span>X</span><span>U</span><span>Y+1</span><span>R+1</span>
       </div>
@@ -100,6 +103,13 @@ function renderMessages() {
       toggle.addEventListener("click", (event) => {
         event.stopPropagation();
         toggleExpandedMessage(messageId);
+      });
+    }
+    const copyButton = card.querySelector(".message-copy");
+    if (copyButton) {
+      copyButton.addEventListener("click", async (event) => {
+        event.stopPropagation();
+        await copyMessageFullText(message, copyButton);
       });
     }
     card.addEventListener("click", () => renderTuple(message));
@@ -134,6 +144,56 @@ function toggleExpandedMessage(messageId) {
     state.expandedMessageIds.add(messageId);
   }
   renderMessages();
+}
+
+async function copyMessageFullText(message, button) {
+  const text = buildMessageCopyText(message);
+  try {
+    await copyTextToClipboard(text);
+    flashCopyButton(button, "已复制完整内容", "copied");
+  } catch (error) {
+    flashCopyButton(button, "复制失败，请手动选择", "copy-error");
+  }
+}
+
+function buildMessageCopyText(message) {
+  const sender = message.sender_id || "unknown";
+  const recipients = (message.recipient_ids || []).join(", ") || "unknown";
+  const kind = message.message_kind || "message";
+  return [
+    `${sender} -> ${recipients}`,
+    kind,
+    "",
+    String(message.human_readable_text || ""),
+  ].join("\n");
+}
+
+async function copyTextToClipboard(text) {
+  if (navigator.clipboard?.writeText && window.isSecureContext) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "fixed";
+  textarea.style.left = "-9999px";
+  textarea.style.top = "0";
+  document.body.appendChild(textarea);
+  textarea.select();
+  const ok = document.execCommand("copy");
+  textarea.remove();
+  if (!ok) throw new Error("document.execCommand copy failed");
+}
+
+function flashCopyButton(button, label, stateClass) {
+  const original = button.textContent;
+  button.textContent = label;
+  button.classList.add(stateClass);
+  setTimeout(() => {
+    button.textContent = original;
+    button.classList.remove(stateClass);
+  }, 1400);
 }
 
 function renderTuple(message) {
