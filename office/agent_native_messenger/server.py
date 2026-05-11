@@ -86,6 +86,42 @@ OWNER_COORDINATION_TRIGGERS = (
     "我不明白",
     "what do you need from me",
 )
+CONTEXTUAL_REFERENCE_TRIGGERS = (
+    "那份",
+    "这份",
+    "那个",
+    "这个",
+    "上面",
+    "前面",
+    "刚才",
+    "之前",
+    "上一轮",
+    "继续",
+    "重新",
+    "再次",
+    "再验证",
+    "再分析",
+    "the memo",
+    "that memo",
+    "this memo",
+    "previous memo",
+    "that document",
+    "previous document",
+)
+CONTEXT_ARTIFACT_MARKERS = (
+    "archive id",
+    "tl;dr",
+    "core question",
+    "open questions",
+    "cross-references",
+    "strat-",
+    "## ",
+    "### ",
+    "备忘录",
+    "核心问题",
+    "待核验",
+    "交叉引用",
+)
 HIGH_SIGNAL_CONTEXT_TERMS = (
     "strat-002",
     "x402",
@@ -159,6 +195,25 @@ def _context_signal_score(*texts: str) -> int:
     return score
 
 
+def _context_artifact_score(text: str) -> int:
+    normalized = str(text or "")
+    lowered = normalized.lower()
+    score = _context_signal_score(normalized)
+    score += min(8, len(normalized) // 900)
+    score += sum(2 for marker in CONTEXT_ARTIFACT_MARKERS if marker in lowered)
+    if len(normalized) >= 1200:
+        score += 3
+    if _is_contextual_reference_followup(normalized) and len(normalized) < 500:
+        score -= 4
+    return score
+
+
+def _conversation_context_score(context: dict) -> int:
+    return _context_artifact_score(str(context.get("last_runtime_owner_text") or context.get("last_human_text") or "")) + _context_signal_score(
+        str(context.get("last_reply_text") or "")
+    )
+
+
 def _extract_human_readable_text_from_jsonish(raw: str) -> str:
     if not raw:
         return ""
@@ -218,10 +273,28 @@ def _recover_conversation_context_from_cieustore(cieu_db: str | Path | None) -> 
             or any(term in item["text"] for term in ("下一步", "no-send", "owner decision packet", "核验包"))
         )
     ]
+    substantial_owner_candidates = [
+        item
+        for item in recent
+        if item["agent_id"] == "owner" and (len(item["text"]) >= 700 or _context_artifact_score(item["text"]) >= 6)
+    ]
+    if substantial_owner_candidates:
+        owner_candidates = sorted(
+            substantial_owner_candidates,
+            key=lambda item: (_context_artifact_score(item["text"]), len(item["text"]), item["created_at"]),
+            reverse=True,
+        )
+    elif owner_candidates:
+        owner_candidates = sorted(
+            owner_candidates,
+            key=lambda item: (_context_artifact_score(item["text"]), len(item["text"]), item["created_at"]),
+            reverse=True,
+        )
+
     if not owner_candidates and not aiden_candidates:
         long_owner = [item for item in recent if item["agent_id"] == "owner" and len(item["text"]) >= 500]
         if long_owner:
-            owner_candidates = long_owner
+            owner_candidates = sorted(long_owner, key=lambda item: (len(item["text"]), item["created_at"]), reverse=True)
     if not owner_candidates and not aiden_candidates:
         return {}
 
@@ -247,6 +320,13 @@ def _is_execution_followup(text: str) -> bool:
 def _is_owner_coordination_followup(text: str) -> bool:
     lowered = (text or "").lower()
     return any(trigger in lowered for trigger in OWNER_COORDINATION_TRIGGERS)
+
+
+def _is_contextual_reference_followup(text: str) -> bool:
+    lowered = (text or "").lower()
+    if len(lowered) > 1800 and any(marker in lowered for marker in CONTEXT_ARTIFACT_MARKERS):
+        return False
+    return any(trigger in lowered for trigger in CONTEXTUAL_REFERENCE_TRIGGERS)
 
 
 def _infer_prior_subject(prior_runtime_text: str, prior_reply: str) -> str:
@@ -275,16 +355,14 @@ def _resolve_runtime_owner_text_from_context(human_text: str, *, cieu_db: str | 
 
     context = _load_conversation_context()
     recovered_context = _recover_conversation_context_from_cieustore(cieu_db)
-    if recovered_context and _context_signal_score(
-        recovered_context.get("last_runtime_owner_text", ""),
-        recovered_context.get("last_reply_text", ""),
-    ) > _context_signal_score(context.get("last_runtime_owner_text", ""), context.get("last_reply_text", "")):
+    if recovered_context and _conversation_context_score(recovered_context) > _conversation_context_score(context):
         context = recovered_context
     prior_runtime_text = str(context.get("last_runtime_owner_text") or context.get("last_human_text") or "")
     prior_reply = str(context.get("last_reply_text") or "")
     execution_followup = _is_execution_followup(human_text)
     coordination_followup = _is_owner_coordination_followup(human_text)
-    if not (execution_followup or coordination_followup) or not (prior_runtime_text or prior_reply):
+    contextual_reference_followup = _is_contextual_reference_followup(human_text)
+    if not (execution_followup or coordination_followup or contextual_reference_followup) or not (prior_runtime_text or prior_reply):
         return human_text, {
             "applied": False,
             "reason": "not_a_contextual_followup_or_no_prior_context",
@@ -304,6 +382,22 @@ def _resolve_runtime_owner_text_from_context(human_text: str, *, cieu_db: str | 
             "instead of asking the owner to manually execute internal analysis."
         )
         reason = "owner_coordination_followup_resolved_to_prior_context"
+    elif contextual_reference_followup and not execution_followup:
+        resolved = (
+            f"{prior_subject}\n\n"
+            "[OWNER FOLLOW-UP: contextual reference to prior artifact]\n"
+            f"Visible owner message: {human_text}\n\n"
+            "The owner is referring to the previous source artifact / memo / conversation object. "
+            "Do not claim the memo is missing unless the recovered artifact below is empty. Bind deictic phrases "
+            "such as 'that memo', '那份备忘录', '重新验证', '继续分析', and '刚才' to the recovered source artifact. "
+            "If the artifact is insufficient, state exactly which section or evidence is missing instead of asking "
+            "the owner to resend everything.\n\n"
+            "[RECOVERED PRIOR OWNER ARTIFACT]\n"
+            f"{_truncate_for_runtime_context(prior_runtime_text, 14000)}\n\n"
+            "[RECENT AIDEN REPLY / COMMITMENT]\n"
+            f"{_truncate_for_runtime_context(prior_reply, 5000)}"
+        )
+        reason = "contextual_reference_resolved_to_prior_artifact"
     else:
         resolved = (
             f"{prior_subject}\n\n"
@@ -328,6 +422,13 @@ def _resolve_runtime_owner_text_from_context(human_text: str, *, cieu_db: str | 
         "prior_reply_protocol": context.get("last_reply_protocol"),
         "context_recovery_source": context.get("context_recovery_source", "conversation_context_file"),
     }
+
+
+def _truncate_for_runtime_context(text: str, limit: int) -> str:
+    normalized = str(text or "").strip()
+    if len(normalized) <= limit:
+        return normalized
+    return normalized[:limit].rstrip() + "\n...（prior context truncated for local model prompt; full message remains in CIEU/messenger records）"
 
 
 def _runtime_notice_payload(*, human_text: str, status: str, reason: str, detail: str, elapsed_seconds: float) -> dict:

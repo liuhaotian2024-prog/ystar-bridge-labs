@@ -70,6 +70,39 @@ def test_non_followup_is_not_rewritten(tmp_path, monkeypatch):
     assert meta["applied"] is False
 
 
+def test_contextual_memo_reference_resolves_to_prior_artifact(tmp_path, monkeypatch):
+    context_path = tmp_path / "context.json"
+    prior_memo = (
+        "# STRAT-002 — x402 Economy × Mission GO Integration\n\n"
+        "Archive ID: STRAT-002\n"
+        "Core question: Given x402 infrastructure facts and Mission GO assets, which e34 opportunity spaces "
+        "or institutional voids should be re-scored, and what is the cleanest A2A monetization path?"
+    )
+    context_path.write_text(
+        json.dumps(
+            {
+                "last_human_text": prior_memo,
+                "last_runtime_owner_text": prior_memo,
+                "last_reply_text": "Aiden should verify x402/AP2/AgentCore evidence and produce strategic judgment.",
+                "last_reply_backend": "aiden_memo_investigation_runtime",
+                "last_reply_protocol": "AidenMemoInvestigationRuntimeV1",
+            },
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(server, "CONVERSATION_CONTEXT_PATH", context_path)
+
+    resolved, meta = server._resolve_runtime_owner_text_from_context("Aiden，现在你再次验证和分析那份备忘录。")
+
+    assert meta["applied"] is True
+    assert meta["reason"] == "contextual_reference_resolved_to_prior_artifact"
+    assert "RECOVERED PRIOR OWNER ARTIFACT" in resolved
+    assert "STRAT-002" in resolved
+    assert "cleanest A2A monetization path" in resolved
+    assert "Do not claim the memo is missing" in resolved
+
+
 def test_execution_followup_recovers_strat002_context_from_cieustore_when_json_context_is_generic(tmp_path, monkeypatch):
     context_path = tmp_path / "context.json"
     context_path.write_text(
@@ -118,3 +151,60 @@ def test_execution_followup_recovers_strat002_context_from_cieustore_when_json_c
     assert "STRAT-002" in resolved
     assert "x402" in resolved
     assert "no-send owner decision packet" in resolved
+
+
+def test_cieustore_context_recovery_prefers_substantial_prior_artifact_over_short_recent_reference(tmp_path, monkeypatch):
+    context_path = tmp_path / "context.json"
+    context_path.write_text(
+        json.dumps(
+            {
+                "last_human_text": "Aiden，现在你再次验证和分析那份备忘录。",
+                "last_runtime_owner_text": "Aiden，现在你再次验证和分析那份备忘录。",
+                "last_reply_text": "memo missing",
+            },
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+    prior_memo = (
+        "# STRAT-002 — x402 Economy × Mission GO Integration\n\n"
+        "Archive ID: STRAT-002\n"
+        "TL;DR: x402 infrastructure may expose Mission GO governance assets as agent-buyer monetization surfaces.\n"
+        "Open Questions: asset-to-surface matching, e34 re-scoring, Defuse revival, patent boundaries.\n"
+        + "Mission GO asset inventory. " * 80
+    )
+    db = tmp_path / "messenger_context_prefer_artifact.db"
+    with sqlite3.connect(db) as conn:
+        conn.execute(
+            "CREATE TABLE cieu_events(rowid INTEGER PRIMARY KEY AUTOINCREMENT, agent_id TEXT, event_type TEXT, result_json TEXT, created_at REAL)"
+        )
+        conn.execute(
+            "INSERT INTO cieu_events(agent_id, event_type, result_json, created_at) VALUES (?, ?, ?, ?)",
+            (
+                "owner",
+                "AIDEN_AGENT_NATIVE_MESSAGE_DECISION",
+                json.dumps({"human_readable_text": prior_memo}, ensure_ascii=False),
+                1.0,
+            ),
+        )
+        conn.execute(
+            "INSERT INTO cieu_events(agent_id, event_type, result_json, created_at) VALUES (?, ?, ?, ?)",
+            (
+                "owner",
+                "AIDEN_AGENT_NATIVE_MESSAGE_DECISION",
+                json.dumps({"human_readable_text": "Aiden，现在你再次验证和分析那份备忘录。"}, ensure_ascii=False),
+                2.0,
+            ),
+        )
+    monkeypatch.setattr(server, "CONVERSATION_CONTEXT_PATH", context_path)
+
+    resolved, meta = server._resolve_runtime_owner_text_from_context(
+        "Aiden，现在你再次验证和分析那份备忘录。",
+        cieu_db=db,
+    )
+
+    assert meta["applied"] is True
+    assert meta["context_recovery_source"] == "cieustore_recent_aiden_messages"
+    assert "STRAT-002" in resolved
+    assert "asset-to-surface matching" in resolved
+    assert "memo missing" not in resolved
